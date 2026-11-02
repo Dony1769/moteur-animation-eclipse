@@ -33,3 +33,10 @@ Dépôt : `/home/claude/moteur_3_0`, branche `autonome`, git local (pas de GitHu
 
 ## Prochaine étape
 Déblocage humain (hors autonomie) : dessins de Aiko et Darius. Sinon, la prochaine étape technique est M3 avec un manifest réduit pour Kaël seul, puis M5 sur un épisode à un personnage.
+
+## 2026-11-02 — Planches de base des personnages : découpe et contrôle
+- Génération : Hugging Face connecté, mais `invoke` désactivé sur tous les Spaces (`gradio=none`). Génération faite par l'utilisateur dans Gemini à partir des briefs (docs/briefs/planches_personnages.md).
+- Contrôle des planches : lot v1 (4 acceptées), lot v2 (2 acceptées), lot v3 (2 acceptées). Toutes les 8 planches de base sont acceptées (docs/briefs/controle_planches_v*.md).
+- Découpe : engine/gen/decouper_grille.py, cellules explicites (4 colonnes pour les corps, 6 colonnes et rangées bornées pour les têtes). 60 cellules dans assets/personnages/.
+- Reste à faire : les repères magenta anti-aliasés subsistent dans environ 31 cellules sur 60 (traits fins, pâles). Il faut un nettoyage plus fin avant alignement et détourage.
+- Reste à faire : mettre à jour les manifestes M3 (Aiko, Darius, Alaric, Vorthaz) pointant vers assets/personnages/, puis aligner les bouches par les yeux (aligner_bouches) pour chaque personnage.
