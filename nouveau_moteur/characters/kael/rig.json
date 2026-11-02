@@ -1,0 +1,57 @@
+{
+  "format": "moteur-animation/rig-1",
+  "personnage": "kael",
+  "nom_affiche": "Kael Vareth",
+  "vues": {
+    "face": {
+      "disponible": true,
+      "image": "vues/face_g.png",
+      "taille_px": [856, 900],
+      "squelette": "squelette/face_g.json",
+      "source": "dessin fourni (universes/eclipse_royale/characters/kael/vues/face_g.png)"
+    },
+    "trois_quarts": {
+      "disponible": true,
+      "image": "vues/trois_quarts_g.png",
+      "taille_px": [856, 900],
+      "squelette": "squelette/trois_quarts_g.json",
+      "source": "dessin fourni (universes/eclipse_royale/characters/kael/vues/trois_quarts_g.png)"
+    },
+    "profil": {
+      "disponible": false,
+      "limitation": "approximation : vue profil absente. Une planche de référence en montre une, mais elle n'est pas découpée en pièces ni rattachée au squelette.",
+      "remplacement": {
+        "methode": "miroir_deforme",
+        "depuis": "trois_quarts",
+        "statut": "non utilisé par l'action idle (yaw limité à 45°)"
+      }
+    },
+    "dos": {
+      "disponible": false,
+      "limitation": "approximation : vue dos absente (non découpée, non rattachée au squelette).",
+      "remplacement": null
+    }
+  },
+  "pivots": {
+    "tete": {
+      "articulation": "cou",
+      "face": [290, 203],
+      "trois_quarts": [174, 170],
+      "source": "points 'cou' des squelettes face_g.json et trois_quarts_g.json"
+    }
+  },
+  "parametres_tete": {
+    "yaw_min_deg": -45.0,
+    "yaw_max_deg": 45.0,
+    "inclinaison_max_rad": 0.40,
+    "methode_entre_vues": "fondu_controle"
+  },
+  "pieces": {
+    "statut": "a_produire",
+    "note": "Les PNG par pièce (tête, cheveux avant, cheveux arrière, cape, torse, bras, jambes, accessoires) ne sont pas encore produits. Les masques existants (parts_v2_*.json) sont des polygones : à remplacer par une découpe issue du dessin avant usage (voir limitations de l'étape 2)."
+  },
+  "avertissements": [
+    "Cheveux bleus asymétriques : un miroir de la vue 3/4 montrera la différence de côté.",
+    "Entre face et 3/4, les dessins ne sont pas recalés : un fondu peut montrer deux silhouettes superposées."
+  ]
+}
