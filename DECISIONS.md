@@ -43,3 +43,15 @@
 - Vue « face » de chaque personnage = cellule « neutre » (pas de vue de face dédiée dans les planches).
 - Bouches alignées sur les yeux (DWPose) dans `tete_alignee/` ; échelles inter-oculaires dans 1 % d'écart entre formes.
 - Alaric : 3 rangées générées, seules les 2 premières sont utilisées.
+
+## NPR — rendu animé non photoréaliste (2 novembre 2026)
+- Périmètre : le moteur reste 2D (planches). Le module `engine/npr/` est une chaîne 3D-style (G-buffer). Il ne traite pas une planche tant qu'il n'existe ni profondeur ni normales pour elle. Alternative écartée : plaquer des effets 3D sur les planches sans géométrie.
+- OpenGL 3.3 core via EGL headless (llvmpipe). Raison : contexte réel vérifié, compilation des shaders par Mesa. Pas de `glslangValidator` : la compilation remplace la validation statique.
+- Normales stockées brutes en RGBA32F (pas d'encodage 0..1) : le fond vaut 0 sans décodage.
+- Sobel sur `log(profondeur)`, fond substitué par `profondeur_fond`. Raison : le seuil absolu sur la profondeur linéaire dépendait de la distance de la caméra.
+- Rampe lue en RGB uniquement. La version « masque visage » lisait le canal R de la rampe : écarté pour éviter deux conventions.
+- Masque visage opt-in (`masque_visage`). Raison : « hors masque = pleine lumière » éclairerait tout le corps.
+- Masques lus en UV de surface (canaux g, b du G-buffer), jamais en coordonnées d'écran.
+- `HeadCenter` en uniform, espace vue. La pièce jointe le déclarait `in` dans le fragment shader, ce qui est invalide.
+- Non implémenté : coque inversée (pas de maillage à contourner, pseudo-code non exécutable), anisotropie des cheveux (tangentes absentes), transfert de normales Blender (pas d'outil de ce type dans le dépôt).
+- Banc d'essai : sphère avec bosse analytique, pas un personnage. Raison : vérifier les formules sur une géométrie connue, sans attendre un modèle 3D.

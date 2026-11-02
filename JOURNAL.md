@@ -40,3 +40,14 @@ Déblocage humain (hors autonomie) : dessins de Aiko et Darius. Sinon, la procha
 - Découpe : engine/gen/decouper_grille.py, cellules explicites (4 colonnes pour les corps, 6 colonnes et rangées bornées pour les têtes). 60 cellules dans assets/personnages/.
 - Reste à faire : les repères magenta anti-aliasés subsistent dans environ 31 cellules sur 60 (traits fins, pâles). Il faut un nettoyage plus fin avant alignement et détourage.
 - Reste à faire : mettre à jour les manifestes M3 (Aiko, Darius, Alaric, Vorthaz) pointant vers assets/personnages/, puis aligner les bouches par les yeux (aligner_bouches) pour chaque personnage.
+
+## 2026-11-02 — NPR (rendu animé non photoréaliste) : fait, sur banc d'essai
+- Demande : analyser les six pièces jointes (toon ramp, Sobel G-buffer, normales sphériques, masque d'ombre visage, rim et spéculaire, pipeline studio), installer les dépendances, écrire les shaders et les passes, sauvegarder la compétence.
+- Environnement : pas de GPU, mais contexte OpenGL headless EGL fonctionnel (Mesa llvmpipe, OpenGL 4.5 core). moderngl 5.13.0 installé.
+- Livré : `engine/npr/` (passes MRT, ombrage, contour, référence numpy, banc d'essai), shaders GLSL 330 dans `engine/npr/shaders/`, `tests/test_npr.py`, `docs/npr.md`, `requirements.txt`, image de test `out/npr/test_tete_npr.png`.
+- Tests : 13 tests NPR, 32 au total, verts. Écart GPU/numpy ≈ 3·10⁻⁶.
+- Défaut trouvé et corrigé : les textures du G-buffer étaient en `REPEAT`, donc le Sobel lisait le bord opposé. Détecté par le test GPU sur un saut de profondeur en bord d'image.
+- Défaut de test trouvé et corrigé : le test contour ne vérifiait pas le terme de profondeur seul. Ajout de cas isolés (saut vertical et horizontal, profondeur et normale) ; deux mutations vérifiées.
+- Limite constatée : l'ombre de nez du masque visage est très petite sur la tête de test, car le masque n'ajoute pas d'ombre. Consigné dans docs/npr.md.
+- Non fait : coque inversée, anisotropie des cheveux, mesure de performance GPU, application aux planches 2D (il faut une profondeur et des normales).
+- Compétence : proposition de skill « moteur-rendu-anime-npr » à enregistrer par l'utilisateur.
