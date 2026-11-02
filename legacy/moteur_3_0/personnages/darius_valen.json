@@ -1,0 +1,30 @@
+{
+  "format": "monteur/personnage/1",
+  "id": "darius_valen",
+  "nom": "Darius Valen",
+  "description": "Cheveux rouges courts, cape bleu nuit doublée de rouge à col haut, tunique bleu nuit, ceinture sombre, pantalon noir, bottes noires.",
+  "vues": {
+    "face": "assets/personnages/darius_valen/tete/expr_neutre.png"
+  },
+  "poses": {
+    "marche_1": "assets/personnages/darius_valen/poses/marche_1.png",
+    "marche_2": "assets/personnages/darius_valen/poses/marche_2.png",
+    "marche_3": "assets/personnages/darius_valen/poses/marche_3.png",
+    "marche_4": "assets/personnages/darius_valen/poses/marche_4.png"
+  },
+  "expressions": {
+    "neutre": "assets/personnages/darius_valen/tete/expr_neutre.png",
+    "joie": "assets/personnages/darius_valen/tete/expr_joie.png",
+    "tristesse": "assets/personnages/darius_valen/tete/expr_tristesse.png",
+    "colere": "assets/personnages/darius_valen/tete/expr_colere.png",
+    "surprise": "assets/personnages/darius_valen/tete/expr_surprise.png"
+  },
+  "bouche": {
+    "A": "assets/personnages/darius_valen/tete_alignee/bouche_A.png",
+    "E": "assets/personnages/darius_valen/tete_alignee/bouche_E.png",
+    "I": "assets/personnages/darius_valen/tete_alignee/bouche_I.png",
+    "M": "assets/personnages/darius_valen/tete_alignee/bouche_M.png",
+    "O": "assets/personnages/darius_valen/tete_alignee/bouche_O.png",
+    "U": "assets/personnages/darius_valen/tete_alignee/bouche_U.png"
+  }
+}
