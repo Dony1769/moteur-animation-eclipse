@@ -171,6 +171,7 @@ class RenduNPR:
         self.t_masque_ombre = self.masque_defaut
         self.t_masque_cheveux = self.masque_zero       # pas de reflet tant qu'on n'en définit pas
         self._calques_gpu = {}                         # nom -> (Maillage, texture) des calques articulés
+        self._textures_partagees = {}                  # id(source) -> (source, texture) : atlas uploadés une fois
 
         self.prog_geo = ctx.program(vertex_shader=_lire("geometrie.vert"),
                                     fragment_shader=_lire("geometrie.frag"))
@@ -333,7 +334,7 @@ class RenduNPR:
             if c.nom not in self._calques_gpu:
                 maillage = Maillage(self.ctx, self.prog_geo, s["vue"], s["normales"],
                                     s["uv"], s["tangentes"], c.triangles)
-                self._calques_gpu[c.nom] = (maillage, self.texture_rgba(c.calque.rgba))
+                self._calques_gpu[c.nom] = (maillage, self._texture_du_calque(c))
             maillage, texture = self._calques_gpu[c.nom]
             maillage.mettre_a_jour(sommets=s["vue"], normales=s["normales"], tangentes=s["tangentes"])
             texture.use(location=0)
@@ -419,12 +420,23 @@ class RenduNPR:
         arr = np.frombuffer(self.t_final.read(), np.uint8).reshape(self.hauteur, self.largeur, 4)
         return arr[::-1].copy()
 
+    def _texture_du_calque(self, c):
+        """Texture d'un calque : l'atlas partagé s'il existe (uploadé une seule fois), sinon le calque."""
+        source = c.texture if c.texture is not None else c.calque.rgba
+        cle = id(source)
+        if cle not in self._textures_partagees:
+            self._textures_partagees[cle] = (source, self.texture_rgba(source))
+        return self._textures_partagees[cle][1]
+
     def liberer_calques(self):
         """Libère les VBO, IBO, VAO et textures des calques articulés."""
-        for maillage, texture in self._calques_gpu.values():
-            for ressource in (maillage.vao, maillage.vbo, maillage.ibo, texture):
+        for maillage, _ in self._calques_gpu.values():
+            for ressource in (maillage.vao, maillage.vbo, maillage.ibo):
                 ressource.release()
+        for _, texture in self._textures_partagees.values():
+            texture.release()
         self._calques_gpu = {}
+        self._textures_partagees = {}
 
     def liberer(self):
         self.liberer_calques()

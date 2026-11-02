@@ -75,3 +75,13 @@
 - Clignement = écrasement linéaire, fermeture plafonnée à 0,9. Raison : à 1,0 les triangles s'écrasent en segments dégénérés et laissent des points parasites.
 - Piste cubique = interpolation de Hermite à tangentes de Catmull-Rom. Raison : elle passe par les clés et sa dérivée est continue.
 - Rotation 2D seulement, pas de lacet 3D. Raison : les personnages du projet n'ont pas de géométrie 3D ; une rotation de visage en 3D relèverait d'un autre chantier.
+
+## Personnage réel, normales sous FFD, cheveux Verlet, vues multiples (2 novembre 2026)
+- Normales poussées par la jacobienne moyenne par triangle, et non plus tournées par os. Raison : une seule règle couvre la FFD et le skinning ; une rotation rigide donne le même résultat qu'avant (test de régression). Le gradient de la hauteur implicite est transformé par `J⁻ᵀ`, ce qui correspond à la règle de la chaîne inverse.
+- Atlas unique, une seule texture GPU partagée. Raison : un upload par couche gaspille la mémoire et le temps ; la correspondance UV est linéaire, donc exacte au pixel avec `GL_NEAREST`.
+- Marge de déformation FFD. Raison : sans elle, la grille déforme toute la boîte, et fermer un œil écrase toute la tête.
+- Verlet dans le repère de la tête, avant skinning, avec forces apparentes (Euler, centrifuge, Coriolis, entraînement du pivot). Raison : le FFD s'applique avant le squelette. Placer la racine dans le monde aurait demandé de convertir les positions entre deux repères à chaque pas.
+- Contraintes corrigées par masses inverses, et non à moitié. Raison : le document de conception laissait une racine épinglée glisser.
+- Gravité 540 px/s² (équivalent à 0,15 px/image² à 60 Hz). Raison : le document donnait une valeur par image, sans durée d'image.
+- Vues multiples par fondu entre vues réelles, sans invention de profil. Raison : seules la face et le trois quarts existent ; un profil généré serait une fausse donnée. Un fondu n'est pas une rotation et le dit.
+- Pas de géométrie 3D ajoutée. Raison : les données de Kaël sont des images découpées en 2D ; une rotation 3D relèverait d'un autre chantier.

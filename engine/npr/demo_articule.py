@@ -21,6 +21,7 @@ from npr import relief as RL  # noqa: E402
 from npr import tete_test as T  # noqa: E402
 from npr.calques_anim import construire  # noqa: E402
 from npr.parametres import ParamsOmbrage  # noqa: E402
+from npr.physique import ChevelureSimulee  # noqa: E402
 from npr.rig import GrilleFFD, Os, Squelette, Timeline  # noqa: E402
 from npr.rendu import RenduNPR, creer_contexte  # noqa: E402
 
@@ -30,6 +31,9 @@ LUMIERE = np.array([-0.5, 0.35, 0.8], np.float32)
 LUMIERE = (LUMIERE / np.linalg.norm(LUMIERE)).astype(np.float32)
 POINT_CHEVEUX = (256.0, 150.0)          # les mèches rayonnent depuis le haut du crâne
 BOITE_YEUX = (176.0, 236.0, 336.0, 290.0)
+BOITE_CHEVEUX = (96.0, 40.0, 416.0, 420.0)     # chevelure arrière : boîte de la nappe FFD
+BOITE_FRANGE = (126.0, 65.0, 386.0, 235.0)     # frange : boîte de la nappe FFD
+CALQUES_CHEVEUX = ("cheveux_arriere", "frange")
 
 
 def squelette():
@@ -87,7 +91,8 @@ def construire_personnage(cellule=4.0):
         construire("cheveux_arriere", RL.Calque(_rgba(formes["cheveux_arriere"], (0.42, 0.22, 0.26)),
                                                 plan=5.4, relief_max=0.3, rayon_biseau=30.0,
                                                 flux=flux, masque_cheveux=formes["cheveux_arriere"].astype(np.float32)),
-                   ordre=0, squelette=sq, os_actifs={"tete", "meche"}, cellule=cellule),
+                   ordre=0, squelette=sq, ffd=GrilleFFD(BOITE_CHEVEUX, nx=4, ny=4, marge=40.0),
+                   os_actifs={"tete", "meche"}, cellule=cellule),
         construire("corps", RL.Calque(_rgba(formes["corps"], (0.25, 0.45, 0.70)),
                                       plan=5.0, relief_max=0.15, rayon_biseau=25.0),
                    ordre=1, squelette=sq, os_actifs={"corps"}, cellule=cellule),
@@ -100,7 +105,8 @@ def construire_personnage(cellule=4.0):
         construire("frange", RL.Calque(_rgba(formes["frange"], (0.42, 0.22, 0.26)),
                                        plan=4.5, relief_max=0.35, rayon_biseau=16.0,
                                        flux=flux, masque_cheveux=formes["frange"].astype(np.float32)),
-                   ordre=4, squelette=sq, os_actifs={"tete"}, cellule=cellule),
+                   ordre=4, squelette=sq, ffd=GrilleFFD(BOITE_FRANGE, nx=4, ny=3, marge=30.0),
+                   os_actifs={"tete"}, cellule=cellule),
     ]
     return calques, sq
 
@@ -120,13 +126,23 @@ PARAMS = ParamsOmbrage(poids_sphere=0.0, spec_seuil=0.985, cheveux_seuil=0.997,
 INSTANTS = (0.0, 0.25, 0.46, 0.5, 0.75, 1.0)
 
 
-def rendre_images(ctx, calques, tl, instants=INSTANTS):
-    """Une image RGB par instant, dans un seul RenduNPR."""
+def simulations_cheveux(calques, sq, tl):
+    """Une simulation Verlet par calque de cheveux, attachée à l'os tête (repère de la tête)."""
+    return [ChevelureSimulee(c.ffd, sq, "tete", tl, epingle_ligne=0)
+            for c in calques if c.nom in CALQUES_CHEVEUX]
+
+
+def rendre_images(ctx, calques, tl, instants=INSTANTS, sims=None):
+    """Une image RGB par instant, dans un seul RenduNPR. Instants croissants (la physique avance)."""
+    if sims is None:
+        sims = simulations_cheveux(calques, squelette(), tl)
     rendu = RenduNPR(ctx, TAILLE, TAILLE, ombrage=PARAMS)
     rendu.definir_masque_cheveux(np.ones((1, 1), np.float32))
     images = []
     try:
         for t in instants:
+            for s in sims:
+                s.avancer(t)
             pose = tl.pose(t)
             rendu.dessiner_calques(calques, pose, projection=T.projection(TAILLE, TAILLE),
                                    tan_fov=T.tan_fov(TAILLE, TAILLE), centre_tete_vue=T.CENTRE_VUE,

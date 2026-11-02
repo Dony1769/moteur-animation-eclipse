@@ -65,14 +65,56 @@ Toutes les textures d'échantillonnage sont en `GL_NEAREST` et `GL_CLAMP_TO_EDGE
 Un calque (`relief.Calque`) est découpé en grille de sommets au repos par `calques_anim.construire` (cellules de 4 px par défaut ; seules les cellules touchant un pixel opaque sont gardées). À chaque pose, dans cet ordre :
 
 1. la grille FFD (`rig.GrilleFFD`) déforme les positions au repos (clignement, piste `cligne`) ;
-2. le squelette (`rig.Squelette`, os rigides 2D) déforme positions, normales et tangentes (skinning linéaire) ;
-3. chaque sommet garde la profondeur de son relief au repos et passe en coordonnées vue (`calques_anim.vers_vue`, même convention que l'ombrage).
+2. le squelette (`rig.Squelette`, os rigides 2D) déforme les positions (skinning linéaire) ;
+3. normales et tangentes sont poussées par la jacobienne de la déformation totale (section suivante) ;
+4. chaque sommet garde la profondeur de son relief au repos et passe en coordonnées vue (`calques_anim.vers_vue`, même convention que l'ombrage).
 
 Les sommets sont écrits dans un VBO dynamique par calque (`Maillage.mettre_a_jour`). `RenduNPR.dessiner_calques` trie les calques par profondeur moyenne (`trier_par_profondeur`), les dessine dans le G-buffer, et le z-buffer tranche pixel par pixel. La découpe se fait dans le shader de géométrie (`seuilAlpha` : un fragment dont l'alpha de texture est sous le seuil est retiré).
 
 Chaque calque n'est influencé que par ses `os_actifs` : un corps ne suit que son propre os, sans quoi ses bords se courbent quand la tête bouge (bug trouvé à la démo, corrigé et testé).
 
 Animation : `rig.Piste` (clés `(temps, valeur)`, interpolation `lineaire` ou `cubique`) et `rig.Timeline` (pistes nommées, `pose(t)`).
+
+### Normales sous déformation (`engine/npr/calques_anim.py`)
+
+Les normales ne sont plus tournées os par os. À chaque pose, elles sont recalculées à partir de la jacobienne `J` de la déformation totale (FFD puis squelette) :
+
+- `jacobiennes` : pour chaque triangle (topologie fixe), `J_t = [b1−b0, b2−b0] · [a1−a0, a2−a0]⁻¹`, où `a` sont les positions au repos et `b` les positions déformées. `J` est la moyenne par sommet des triangles voisins, pondérée par l'aire au repos. Un triangle dégénéré au repos ne compte pas.
+- `pousser_normales` : la hauteur implicite a pour gradient `g = (−n_x/n_z, n_y/n_z)` dans le repère image. Sous la déformation, `g' = J⁻ᵀ g` (règle de la chaîne inverse), et `n' ∝ (−g'_x, g'_y, 1)` en repère vue. La tangente (flux) suit `t' = J t`.
+- Rotation rigide : `J = R`, donc `g' = R g` et la normale tourne comme avant. Au repos, `J = I`.
+- Jacobienne dégénérée (déterminant ≤ 10⁻⁶) : la normale reste inchangée.
+- Sans déformation, les normales du repos sont renvoyées telles quelles, sans calcul.
+
+La profondeur des sommets reste celle du relief au repos (limite 15).
+
+### Calques réels et atlas (`engine/npr/chargeur.py`)
+
+Le chargeur lit le format `moteur-3.0/personnage-couches/2` : un JSON par vue, avec l'illustration de référence, le squelette à points-clés et les couches (polygones, ordre, chaîne d'os).
+
+- Masque d'une couche = polygone ∩ premier plan. Le fond est un pixel dont les trois canaux sont tous ≥ 245. Les couleurs viennent de la référence.
+- Atlas : une seule texture de 1024 px de large, sprites rangés par rangées, marge transparente de 2 px. Chaque couche a un rectangle dans l'atlas et une correspondance image → UV : `u = (x_atlas + (x − x0)) / L_atlas`. Avec `GL_NEAREST`, l'échantillonnage redonne le pixel source exactement.
+- Une seule texture GPU pour tous les calques d'un atlas (`RenduNPR._texture_du_calque`), uploadée une fois.
+- Données de Kaël : face (8 couches) et trois quarts (7 couches), 41 points-clés. Les couches sont tête, tunique, cape, bras, jambes et col. Les cheveux arrière, la frange, les yeux et le visage séparé ne sont pas dans les données : ils ne sont donc pas chargés.
+
+### Cheveux : Verlet sur la grille FFD (`engine/npr/physique.py`)
+
+- Une grille FFD de cheveux : la rangée du haut est épinglée au crâne, les autres points sont libres, reliés à leurs voisins horizontaux et verticaux à leur longueur au repos.
+- La simulation se fait dans le repère de la tête, avant skinning, car le FFD s'applique avant le squelette. La racine reste donc fixe dans ce repère et le mouvement de la tête entre comme forces d'inertie : `a_local = Rᵀ(g − a_pivot) − α ẑ×r + ω² r − 2ω ẑ×v`, avec `r` la position relative au pivot, `ω` et `α` la vitesse et l'accélération angulaires de la chaîne d'os, `v` la vitesse locale.
+- Intégration de Verlet à pas fixe (`dt = 1/240 s`) : `x_{n+1} = x_n + d·(x_n − x_{n−1}) + a·dt²`, avec `d = amortissement^(60·dt)` et `amortissement = 0,98` par image à 60 Hz.
+- Gravité : `g = (0, +540)` px/s², y vers le bas dans l'image. C'est l'équivalent de 0,15 px/image² à 60 Hz du document de conception, dont la formule était absente du texte fourni.
+- Contraintes de longueur corrigées en proportion des masses inverses : `Δ_i = w_i/(w_i + w_j) · corr`. Le document de conception n'appliquait que la moitié de la correction, ce qui laisse une racine épinglée glisser. C'est corrigé et testé.
+- Les décalages `x − repos` vont dans `GrilleFFD.decalages` ; le FFD déforme alors les calques de cheveux.
+
+### Vues multiples (`engine/npr/multivue.py`)
+
+- `poids_vues(angle, {0: "face", 45: "trois_quarts"})` : fondu linéaire entre les deux vues réelles qui encadrent l'angle, avec des poids positifs de somme 1.
+- Au-delà de la dernière vue réelle, la vue la plus proche est reprise sans fondu, et `hors_plage` vaut `True`. Un profil demandé ne produit donc rien d'inventé.
+- `fondre` mélange les images (CPU). `bascule` prend la vue de poids maximal, sans fondu.
+- Un fondu est un doublement de contours à mi-chemin, pas une rotation : les vues ne sont pas recalées entre elles.
+
+### Démo personnage (`engine/npr/demo_personnage.py`)
+
+Calques réels de Kaël, atlas, squelette de deux os (corps : bassin → cou ; tête : cou → sommet du crâne). Rendu de la face avec la tête inclinée, puis fondu face / trois quarts.
 
 ## Formules retenues
 
@@ -97,11 +139,21 @@ Animation : `rig.Piste` (clés `(temps, valeur)`, interpolation `lineaire` ou `c
 ### Formules du rig
 
 - Squelette : `G_os(pose) = G_parent · T(pivot) · R(θ) · T(−pivot)`, avec `G_os(repos) = I`.
-- Skinning : `p' = Σ_k w_k · G_k · p`. Normales et tangentes ne reçoivent que la partie rotation : `n' = normalize(Σ_k w_k · R_k · n)`, z inchangé. Le calcul se fait dans le repère image (y vers le bas) : un angle positif tourne dans le sens horaire à l'écran.
+- Skinning : `p' = Σ_k w_k · G_k · p`. Les normales ne sont pas tournées os par os : elles suivent la jacobienne de la déformation totale (section « Normales sous déformation »). Le calcul se fait dans le repère image (y vers le bas) : un angle positif tourne dans le sens horaire à l'écran.
 - Poids : `w_k ∝ exp(−d_k² / (2 σ_k²))`, où `d_k` est la distance au segment de l'os (pivot → extrémité), calculé en softmax (jamais de ligne nulle), restreint aux `os_actifs` du calque.
 - FFD (Sederberg-Parry, base de Bernstein) : `p' = p + Σ_ij B_i(s) · B_j(t) · d_ij`. Un champ de décalage linéaire est reproduit exactement.
 - Clignement : `d_y = −c · (y − y_milieu)`, donc `p'_y = (1 − c) · y + c · y_milieu`, x inchangé.
 - Piste cubique : interpolation de Hermite entre clés, tangentes de Catmull-Rom non uniformes (`(v_{k+1} − v_{k−1}) / (t_{k+1} − t_{k−1})`), bords en différence simple. La courbe passe par chaque clé et sa dérivée est continue.
+
+### Formules des nouveaux modules
+
+- Jacobienne d'un triangle : `J_t = [b1−b0, b2−b0] · [a1−a0, a2−a0]⁻¹`, moyennée par sommet et pondérée par l'aire au repos.
+- Normale poussée : `g = (−n_x/n_z, n_y/n_z)`, `g' = J⁻ᵀ g`, `n' ∝ (−g'_x, g'_y, 1)` ; tangente `t' = J t`.
+- Verlet : `x_{n+1} = x_n + d·(x_n − x_{n−1}) + a·dt²`, `d = amortissement^(60·dt)`.
+- Forces apparentes dans le repère de la tête : Euler `−α ẑ×r`, centrifuge `ω² r`, Coriolis `−2ω ẑ×v`, entraînement `Rᵀ(g − a_pivot)`.
+- Correction de contrainte : `Δ_i = w_i/(w_i + w_j) · (d − L)·(x_j − x_i)/d`, `Δ_j = −w_j/(w_i + w_j) · (d − L)·(x_j − x_i)/d`, avec `w = 1/masse`.
+- Marge FFD : décalage pondéré par `(1 − smoothstep(d/marge))` par axe, produit des deux axes, `d` = distance à la boîte.
+- Fondu : `I = (1 − s)·I_a + s·I_b`, `s = (angle − a_0)/(a_1 − a_0)`.
 
 ## Dépendances et environnement
 
@@ -112,7 +164,7 @@ Animation : `rig.Piste` (clés `(temps, valeur)`, interpolation `lineaire` ou `c
 - Une uniform que le GLSL n'utilise pas est éliminée à la compilation. Toute uniform passée depuis `rendu.py` doit donc être lue par son shader, sinon `KeyError`.
 - Sans libEGL ou sans contexte, les tests GL sont ignorés ; les tests numpy tournent toujours.
 
-## Tests (`tests/test_npr.py`, `tests/test_rig.py`)
+## Tests (`tests/test_npr.py`, `tests/test_rig.py`, `tests/test_personnage_reel.py`)
 
 - Rampe : bandes exactes (texels 89/90 pour 0,35 ; 179/180 pour 0,70).
 - Formules : bornes du demi-lambert, indice de rampe, spéculaire binaire, smoothstep, plan face caméra égal à la couleur la plus claire, fond vide.
@@ -146,7 +198,22 @@ Animation : `rig.Piste` (clés `(temps, valeur)`, interpolation `lineaire` ou `c
   - tangente nulle hors cheveux, sans NaN ;
   - création, mise à jour et libération répétées des calques.
 - Mutations vérifiées sur copies (sans toucher l'arbre de travail) : découpe alpha retirée (6 échecs), garde de tangente retirée (`test_tangente_nulle_hors_cheveux` échoue), test de profondeur désactivé (test d'ordre inverse échoue), rotation du squelette inversée (5 échecs).
-- Résultat : 25 tests NPR (dont 7 GL), 46 tests rig et calques (dont 8 GL), 90 tests au total dans le dépôt, tous verts.
+- Personnage réel, numpy (`tests/test_personnage_reel.py`) :
+  - chargeur : couches et ordre de Kaël, masque exclu du fond, boîtes dans la vue, points-clés présents, format inconnu, couche hors personnage, `poly` et `polys` ensemble : refus explicites ;
+  - atlas : rectangles disjoints et dans la texture ; pour 200 points par couche, la couleur de l'atlas à l'UV égale le pixel de la référence ; l'alpha de l'atlas égale le masque ;
+  - normales : jacobienne identité, mise à l'échelle, triangle dégénéré ; pente linéaire étirée donne `(−a/s, 0, 1)` ; normale égale à la dérivée numérique de `H' = h∘F⁻¹` (différences finies, sans formule de pousse) ; rotation rigide ; tangente poussée ; jacobienne singulière : repli sur la normale ; clignement FFD : normales des paupières changent, restent unitaires et face caméra ;
+  - forces apparentes : centrifuge, Euler (signe), Coriolis ;
+  - physique : racine épinglée immobile ; longueurs conservées à 1 % près ; pas de glissement sans mouvement de tête ; inertie : retard de la rangée basse en +x quand la tête accélère (α > 0) ; pivot porté par un parent : accélération `ω²·r` ; décalages alimentant la FFD ; retour arrière refusé ; paramètres invalides refusés ;
+  - FFD locale : la marge arrête la déformation hors de la boîte, et la décroissance est douce ;
+  - vues multiples : fondu, bornes, profil hors plage signalé, somme des poids à 1, `fondre` et `bascule`, poids non normalisés refusés ;
+  - GPU (1 test) : tous les calques d'un atlas partagent une seule texture, libérée proprement.
+- Mutations vérifiées sur copies (sans toucher l'arbre de travail) :
+  - normales non poussées : 2 échecs (`test_normales_tournent_avec_l_os`, `test_ffd_clignement_change_les_normales_des_yeux`) ;
+  - correction de contrainte à moitié (le défaut du document de conception) : `test_racine_epinglee_reste_au_repos` échoue ;
+  - signe d'Euler inversé : 2 échecs (`test_euler_signe`, `test_inertie_tete_decalage_oppose_au_mouvement`) ;
+  - marge FFD retirée : d'abord non détectée, puis 2 échecs après ajout des tests de marge ;
+  - atlas décalé d'un texel : `test_echantillon_atlas_egal_au_sprite` échoue.
+- Résultat : 25 tests NPR (dont 7 GL), 46 tests rig et calques (dont 8 GL), 42 tests du personnage réel (dont 1 GL), 132 tests au total dans le dépôt, tous verts.
 
 ## Images de test
 
@@ -158,9 +225,10 @@ Animation : `rig.Piste` (clés `(temps, valeur)`, interpolation `lineaire` ou `c
   - Écarts GPU/numpy : A ≈ 2·10⁻⁶, B, C et D ≈ 3·10⁻⁶.
   - Sur D, la calotte n'occupe qu'une bande fine en haut de la sphère, vue de biais : le reflet y est discret. Non ajusté (`CALOTTE_V` dans `tete_test.py`).
 - `python3 engine/npr/demo_calque.py` produit `out/npr/test_calque_npr.png` : deux calques procéduraux (visage, puis cheveux devant), A sans reflet, B avec le reflet anisotrope des mèches (flux radial depuis le haut du crâne).
-- `python3 engine/npr/demo_articule.py` produit `out/npr/test_articule_npr.png` : une planche de six instants (0 ; 0,25 ; 0,46 ; 0,5 ; 0,75 ; 1 s) d'un personnage à cinq calques (cheveux arrière, corps, visage, yeux, frange). Pistes : `tete` (inclinaison, cubique), `cligne` (linéaire, fermeture à 0,9), `meche` (balancement, cubique). Vérifiée à l'œil sur la planche : le corps reste rigide, la paupière se ferme en trait fin, la frange et les cheveux suivent la tête, la mèche se balance (jusqu'à environ 36 px en bout pour 0,25 rad). Démo complète : environ 0,6 s sur llvmpipe, contexte compris.
+- `python3 engine/npr/demo_articule.py` produit `out/npr/test_articule_npr.png` : une planche de six instants (0 ; 0,25 ; 0,46 ; 0,5 ; 0,75 ; 1 s) d'un personnage à cinq calques (cheveux arrière, corps, visage, yeux, frange). Pistes : `tete` (inclinaison, cubique), `cligne` (linéaire, fermeture à 0,9), `meche` (balancement, cubique). Vérifiée à l'œil sur la planche : le corps reste rigide, la paupière se ferme en trait fin, la frange et les cheveux suivent la tête avec un retard (Verlet), la mèche se balance (jusqu'à environ 36 px en bout pour 0,25 rad). La chevelure arrière et la frange ont désormais une grille FFD simulée par Verlet (`ChevelureSimulee`, racine épinglée au crâne) : elles suivent la tête avec un léger retard, à vérifier sur une séquence animée (la planche ne montre que six instants). Sur la planche, la paupière se ferme à 0,46 s. Le temps de rendu n'a pas été remesuré depuis l'ajout de la physique.
+- `python3 engine/npr/demo_personnage.py` produit `out/npr/test_personnage_kael.png` : personnage réel de Kaël, couches découpées et atlas. Rangée haute : face, tête inclinée de −0,12 ; 0 ; +0,12 rad. Rangée basse : fondu entre face et trois quarts à 0°, 22,5° et 45°. Vue à l'œil : les textures sont celles de la référence, la tête tourne autour du cou. Le fondu à 22,5° montre les contours doublés attendu. Le profil n'existe pas dans les données et n'est pas rendu. Les contours noirs sont épais : c'est le réglage par défaut du contour, non ajusté.
 
-La tête est une sphère avec une bosse gaussienne, et les calques sont des formes dessinées en code : ni l'une ni l'autre n'est un personnage du projet.
+La tête de test est une sphère avec une bosse gaussienne, et les calques de `demo_articule` sont des formes dessinées en code : ni l'une ni l'autre n'est un personnage du projet. `demo_personnage` est la seule démo qui utilise des calques réels.
 
 ## Limites
 
@@ -177,11 +245,20 @@ La tête est une sphère avec une bosse gaussienne, et les calques sont des form
 11. **Image de référence de b4414824 non jointe** : aucune comparaison faite.
 12. **Articulation 2D seulement.** Les os sont rigides dans le plan de l'image : « tourner la tête » est une inclinaison dans le plan (roulis), pas un lacet 3D. Une vraie rotation du visage demande une géométrie 3D.
 13. **Clignement linéaire.** La paupière est un écrasement vertical de la grille, sans forme courbe. À une fermeture de 1,0, les triangles s'écrasent en segments dégénérés et laissent des points parasites : la démo plafonne à 0,9.
-14. **FFD sans recalcul des normales.** La grille FFD déplace les positions, mais normales et tangentes ne suivent que le squelette.
+14. **Jacobienne moyennée par triangle.** Les normales sont poussées par la jacobienne moyenne des triangles voisins de chaque sommet. C'est exact pour une déformation affine par morceaux, approché là où la déformation est très courbe. Les tangentes suivent la même jacobienne.
 15. **Relief figé au repos.** La profondeur d'un sommet vient du relief au repos : une déformation ne recalcule pas le biseau. Les sommets sont échantillonnés au pixel le plus proche (cellules de 4 px).
 16. **Ordre de dessin et transparence.** Le tri par profondeur est fait sur le CPU ; le z-buffer assure la correction pixel par pixel. Il n'y a pas de transparence semi-translucide (découpe seulement, sans alpha blending).
-17. **Démo procédurale.** Les formes sont dessinées en code. Ce ne sont ni un personnage du projet ni un masque de cheveux peint.
+17. **Démo procédurale.** `demo_articule` dessine ses formes en code : ce n'est ni un personnage du projet ni un masque de cheveux peint. Le personnage réel est dans `demo_personnage` (limites 19 à 26).
 18. **Images, pas de vidéo.** La démo produit une planche de six instants ; aucun MP4 n'est rendu en continu. Le chemin 2.5D statique (`relief.composer`, limite 8) reste en CPU ; le chemin articulé est sur GPU.
+
+19. **Pas de yeux, cheveux ni frange séparés dans les données de Kaël.** Les couches sont tête, tunique, cape, bras, jambes et col. Le clignement et la physique des cheveux ne sont donc appliqués qu'à la démo procédurale, pas au personnage réel.
+20. **Pas de vue de profil.** Seules la face et le trois quarts existent. Au-delà de 45°, `poids_vues` signale `hors_plage` et l'image ne rend rien d'inventé.
+21. **Fondu, pas rotation.** Entre la face et le trois quarts, les contours se doublent à mi-chemin : les vues ne sont pas recalées entre elles.
+22. **Masques par polygones.** Les polygones débordent parfois (note du fichier de données). Le fond est exclu par seuil de couleur, pas par segmentation : un fond non blanc resterait dans le masque.
+23. **Squelette à deux os.** Le personnage réel est tourné par deux os (corps, tête) déduits des points-clés. Bras et jambes ne suivent aucun os.
+24. **Chevelure sans flexion ni collision.** Les liens sont structurels seulement (horizontaux et verticaux) : pas de rigidité de flexion, pas de collision avec le crâne ou le visage. La physique reste en deux dimensions.
+25. **Relief figé au repos (limite 15).** Le relief et la profondeur des sommets ne sont pas recalculés par la déformation ; seules les normales le sont.
+26. **Contour non réglé sur les calques réels.** Le trait noir est épais sur le personnage réel : c'est le réglage par défaut, pas une valeur choisie pour ce dessin.
 
 ## Fichiers
 
@@ -190,10 +267,14 @@ La tête est une sphère avec une bosse gaussienne, et les calques sont des form
 - `engine/npr/reference.py` : référence numpy ;
 - `engine/npr/rig.py` : squelette 2D, poids, grille FFD, pistes et timeline (numpy pur) ;
 - `engine/npr/calques_anim.py` : calques articulés, sommets à la pose, tri par profondeur ;
-- `engine/npr/demo_articule.py` : personnage à cinq calques et planche d'instants ;
+- `engine/npr/demo_articule.py` : personnage à cinq calques, chevelure en Verlet, planche d'instants ;
+- `engine/npr/chargeur.py` : chargeur de calques réels (format couches/2), masques, atlas et correspondance UV ;
+- `engine/npr/physique.py` : cheveux FFD simulés par Verlet, forces apparentes du repère de la tête ;
+- `engine/npr/multivue.py` : choix et fondu entre vues réelles, bascule, signalement des vues absentes ;
+- `engine/npr/demo_personnage.py` : personnage réel de Kaël, rangées de tête inclinée et de fondu entre vues ;
 - `engine/npr/rendu.py` : passes OpenGL (`RenduNPR` : `dessiner`, `dessiner_gbuffer`, `contour_sur`) ;
 - `engine/npr/relief.py` : calques 2.5D, relief, normales, composition ;
 - `engine/npr/shaders/*.vert|frag` : GLSL 330 ;
 - `engine/npr/tete_test.py` : banc d'essai (sphère, bosse, masques UV, calotte) ;
 - `engine/npr/demo_tete.py`, `engine/npr/demo_calque.py` : images de test ;
-- `tests/test_npr.py` : tests.
+- `tests/test_npr.py`, `tests/test_rig.py`, `tests/test_personnage_reel.py` : tests.

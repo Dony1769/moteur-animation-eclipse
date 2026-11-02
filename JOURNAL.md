@@ -72,3 +72,32 @@ Déblocage humain (hors autonomie) : dessins de Aiko et Darius. Sinon, la procha
 - Vérification : la planche a été regardée image par image (corps rigide, paupière en trait fin, mèches qui suivent la tête).
 - Limites : articulation 2D seulement (roulis, pas de lacet 3D) ; clignement linéaire ; normales non recalculées par la FFD ; relief figé au repos ; démo procédurale ; pas de vidéo rendue.
 - Commit local sur `autonome`, pas de push.
+
+## 2026-11-02 — Personnage réel : chargeur, atlas, normales sous FFD, cheveux Verlet, vues multiples
+- Demande : remplacer les formes procédurales par de vraies illustrations découpées (chargeur et atlas), recalculer normales et tangentes sous déformation, passer de la face au trois quarts selon l'angle, simuler les cheveux et la frange en Verlet sur la grille FFD, tester et documenter.
+- Données trouvées : le dépôt contient le personnage de Kaël (`universes/eclipse_royale/characters/kael`) : deux vues (face, trois quarts), couches par polygones au format `personnage-couches/2`, squelette à points-clés. Aucun profil. Aucune couche séparée pour les cheveux arrière, la frange, les yeux ou le visage.
+- Fait :
+  - `engine/npr/chargeur.py` : lecture du format, masque = polygone ∩ premier plan (fond = canaux ≥ 245), atlas 1024 px en rangées, correspondance image → UV par couche ;
+  - `engine/npr/calques_anim.py` : normales et tangentes poussées par la jacobienne de la déformation totale (`jacobiennes`, `pousser_normales`), à la place de la rotation par os ; `construire` accepte un atlas (`texture`, `uv_de`) ;
+  - `engine/npr/rig.py` : `GrilleFFD(marge=...)`, déformation localisée qui s'arrête hors de la boîte ;
+  - `engine/npr/physique.py` : `ChevelureSimulee`, Verlet sur grille FFD, racine épinglée, repère de la tête avec forces apparentes ;
+  - `engine/npr/multivue.py` : poids entre vues réelles, fondu, bascule, signalement du profil absent ;
+  - `engine/npr/demo_personnage.py` : personnage réel de Kaël, rangées tête inclinée et fondu ;
+  - `engine/npr/demo_articule.py` : grilles FFD sur la chevelure arrière et la frange, pilotées par Verlet ;
+  - `engine/npr/rendu.py` : une seule texture GPU par atlas, partagée entre calques, libérée proprement.
+- Défauts trouvés en cours de route, corrigés :
+  - la FFD déformait toute la boîte : fermer les yeux aurait écrasé toute la tête. Ajout de la marge (déformation qui décroît et s'arrête) ;
+  - le document de conception n'appliquait que la moitié de la correction des contraintes pour une racine épinglée : la racine glisse. Corrigé avec les masses inverses et testé ;
+  - sa formule de Verlet était absente du texte : la forme standard est utilisée et la gravité est exprimée en px/s² (y vers le bas) ;
+  - mutation « marge retirée » non détectée au premier passage : ajout de deux tests de marge, puis détection ;
+  - deux de mes assertions étaient fausses (bas de la tête à y = 169, pas 200 ; décroissance testée au-delà de la marge) : corrigées, le code était juste.
+- Tests : 42 nouveaux tests (`tests/test_personnage_reel.py`, dont 1 GL), 132 au total, tous verts. Mutations sur copies : normales non poussées (2 échecs), correction à moitié (1 échec), signe d'Euler (2), marge retirée (2 après ajout), atlas décalé d'un texel (1).
+- Vérification visuelle : planche Kaël et planche de cheveux regardées avec Read. Le clignement, l'inclinaison de la tête et le fondu s'y voient. La frange suit la tête avec un léger retard, non quantifié sur une séquence.
+- Limites :
+  - pas de profil : l'angle 90° est signalé « hors plage », rien n'est rendu ;
+  - pas de cheveux, frange ni yeux séparés dans les données : clignement et physique des cheveux ne tournent que sur la démo procédurale ;
+  - fondu entre face et trois quarts sans recalage : contours doublés à mi-chemin ;
+  - squelette réel à deux os seulement ; contour noir épais non réglé ;
+  - jacobienne moyennée par triangle ; relief figé au repos ;
+  - temps de rendu non remesuré après ajout de la physique.
+- Pas de push. Commit local sur `autonome`.

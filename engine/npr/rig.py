@@ -133,14 +133,19 @@ def _bernstein(s, n):
 class GrilleFFD:
     """Grille de contrôle nx x ny sur la boîte (x0, y0, x1, y1), déformation de Sederberg-Parry."""
 
-    def __init__(self, boite, nx, ny):
+    def __init__(self, boite, nx, ny, marge=None):
         if nx < 2 or ny < 2:
             raise ValueError("une grille FFD a au moins 2 x 2 points de contrôle")
         x0, y0, x1, y1 = boite
         if x1 <= x0 or y1 <= y0:
             raise ValueError("boîte FFD vide")
+        if marge is not None and marge <= 0:
+            raise ValueError("marge non positive")
         self.boite = (float(x0), float(y0), float(x1), float(y1))
         self.nx, self.ny = nx, ny
+        # marge : déformation localisée. Le décalage vaut plein dans la boîte, puis décroît
+        # en douceur sur `marge` pixels, et vaut zéro au-delà. Sans marge, la FFD est globale.
+        self.marge = None if marge is None else float(marge)
         self.repos = np.stack(np.meshgrid(np.linspace(x0, x1, nx), np.linspace(y0, y1, ny)), axis=-1)
         self.decalages = np.zeros((ny, nx, 2))
 
@@ -154,7 +159,19 @@ class GrilleFFD:
         Bx = _bernstein(s, self.nx)     # (N, nx)
         By = _bernstein(t, self.ny)     # (N, ny)
         deplacement = np.einsum("nj,ni,jic->nc", By, Bx, dec)
+        if self.marge is not None:
+            deplacement *= self._fenetre(P)[:, None]
         return P + deplacement
+
+    def _fenetre(self, P):
+        """Poids (N,) : 1 dans la boîte, décroissance lisse sur la marge, 0 au-delà."""
+        x0, y0, x1, y1 = self.boite
+
+        def axe(v, a, b):
+            d = np.maximum(np.maximum(a - v, v - b), 0.0) / self.marge
+            s = np.clip(d, 0.0, 1.0)
+            return 1.0 - (3 * s ** 2 - 2 * s ** 3)     # 1 - smoothstep(d)
+        return axe(P[:, 0], x0, x1) * axe(P[:, 1], y0, y1)
 
 
 def decalage_clignement(grille, cligne):
