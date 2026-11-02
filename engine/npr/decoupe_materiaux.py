@@ -152,37 +152,65 @@ def _combler_trous(carte, masque, passes=None):
     return carte
 
 
-def decouper(rgb, boite, points, k=6, graine=0):
+SEUIL_TRAIT = 0.08          # chapeau noir : un trait plus sombre que son voisinage d'au moins cette valeur
+NOYAU_TRAIT = 5             # largeur (px) au-delà de laquelle une zone sombre n'est plus un trait
+
+
+def lignes_encre(rgb, masque, noyau=NOYAU_TRAIT, seuil=SEUIL_TRAIT):
+    """Traits d'encre : bool (H, W), inclus dans le masque.
+
+    Chapeau noir = fermeture de la luminance moins la luminance. Un trait sombre plus fin que le noyau
+    ressort ; une zone sombre large (pantalon, veste) ne ressort pas. Ces traits séparent les zones
+    de même couleur (cheveux et veste sombres) avant le découpage en composantes connexes.
+    """
+    lum = (0.299 * rgb[..., 0] + 0.587 * rgb[..., 1] + 0.114 * rgb[..., 2]).astype(np.float32)
+    ferme = cv2.morphologyEx(lum, cv2.MORPH_CLOSE, np.ones((noyau, noyau), np.uint8))
+    return ((ferme - lum) > seuil) & masque
+
+
+def decouper(rgb, boite, points, k=6, graine=0, aire_min=0.002):
     """Vue (chargeur.Vue) à calques par matériau, depuis une illustration aplatie.
 
     rgb : image (H, W, 3) 0..1 ; boite : (x0, y0, x1, y1) du personnage dans l'image ;
     points : {nom: (x, y)} points-clés estimés à la main (cou, bassin, tete_haut...).
-    Les groupes trop petits (< 0,2 % de la boîte) sont fusionnés dans le plus proche voisin
-    de couleur, pour éviter des calques de quelques pixels.
+
+    Procédure : (1) k-moyennes sur les couleurs ; (2) retrait des traits d'encre (lignes_encre) ;
+    (3) chaque groupe de couleur est découpé en composantes connexes : deux zones de même couleur
+    séparées par un trait deviennent deux calques ; (4) composantes plus petites que aire_min de la
+    boîte retirées ; (5) les pixels restants, traits compris, reçoivent le voisin le plus proche.
     """
     masque = premier_plan_region(rgb, boite)
     labels, centres = regions_couleur(rgb, masque, k=k, graine=graine)
+    traits = lignes_encre(rgb, masque)
     surface = (boite[2] - boite[0]) * (boite[3] - boite[1])
-    seuil = 0.002 * surface
-    noms = [nommer(c) for c in centres]
-    # Carte des couches : chaque pixel du personnage appartient à exactement une couche. L'ouverture
-    # 3x3 retire les pixels isolés ; ils sont rendus au voisin le plus proche. Sans cela, ils restent
-    # des trous transparents, donc des silhouettes parasites au rendu.
+    seuil = aire_min * surface
     carte = np.full(masque.shape, -1, np.int32)
-    for i, nm in enumerate(noms):
-        m = labels == i
-        if not m.any() or m.sum() < seuil:
+    noms = []
+    for i in range(len(centres)):
+        m = (labels == i) & ~traits
+        if not m.any():
             continue
-        m = cv2.morphologyEx(m.astype(np.uint8), cv2.MORPH_OPEN, np.ones((3, 3), np.uint8)).astype(bool)
-        carte[m] = i
+        m = cv2.morphologyEx(m.astype(np.uint8), cv2.MORPH_OPEN, np.ones((3, 3), np.uint8))
+        n, etiquettes, stats, _ = cv2.connectedComponentsWithStats(m, connectivity=4)
+        for j in range(1, n):
+            if stats[j, cv2.CC_STAT_AREA] < seuil:
+                continue
+            comp = etiquettes == j
+            carte[comp] = len(noms)
+            noms.append(nommer(rgb[comp].mean(axis=0)))
     carte = _combler_trous(carte, masque)
+    # Repli : si aucune composante ne subsiste (motif très fin), les pixels restants forment une couche.
+    restant = masque & (carte < 0)
+    if restant.any():
+        carte[restant] = len(noms)
+        noms.append(nommer(rgb[restant].mean(axis=0)))
     couches = []
-    for i, nm in enumerate(noms):
-        m = carte == i
+    for idx, nm in enumerate(noms):
+        m = carte == idx
         if not m.any():
             continue
         mat = MATERIAUX[nm]
-        couches.append(Couche(id=f"{mat.nom}_{i}", ordre=mat.ordre, masque=m,
+        couches.append(Couche(id=f"{mat.nom}_{idx}", ordre=mat.ordre, masque=m,
                               chaine=(), ombre=True))
     couches.sort(key=lambda c: c.ordre)
     return Vue(nom="reference_materiaux", reference=rgb.astype(np.float32), couches=couches,

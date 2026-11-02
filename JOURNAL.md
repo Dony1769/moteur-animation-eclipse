@@ -119,3 +119,16 @@ Déblocage humain (hors autonomie) : dessins de Aiko et Darius. Sinon, la procha
 - Vérification visuelle : planches regardées avec Read (`planche_reference_v7.png`, dans le dossier de travail de la session).
 - Limites : la référence est un autre personnage, sa découpe est une approximation par couleur ; l'inclinaison de tête est à peine visible ; le spéculaire dur reste à régler dans la démo de Kaël ; l'encre interne reste fragmentaire.
 - Pas de push. Commit local sur `autonome`.
+
+## 2026-11-02 — Relief, spéculaire, tête, découpe connexe, séquence de test
+- Demande : corriger le relief inactif, amplifier l'inclinaison de tête, couper le spéculaire sur les tissus sombres, séparer cheveux et vêtements, produire une séquence de validation.
+- Relief : diagnostic. Les normales sont bien normalisées et atteignent la rampe ; `relief_max` ne règle que la profondeur, par conception. Pas de couplage (il changerait le rendu sans calibrage). Test GPU ajouté.
+- Tête : ±0,4 rad. La rotation est un os, pas la FFD : les poids FFD n'y changent rien.
+- Spéculaire : `spec_lum_min` = 0,35 sur la luminance de l'albédo (shader, référence numpy, uniform). La démo de référence n'a plus de réglage à part.
+- Découpe : traits d'encre retirés (chapeau noir), puis composantes connexes par couleur. 57 calques sur la référence (6 avant) : fragmentée, cheveux tous à l'ordre 0.
+- Kaël : encre fine dans la démo, bascule nette au lieu du fondu, écart de plans 0,15 > relief 0,10 (invariant testé).
+- Séquence : balayage monotone de 25 images, MP4 encre et Sobel, métrique de scintillement.
+- Résultat de la métrique : encre 5,2 %, Sobel 3,4 % de pixels sombres scintillants. Ce n'est PAS une réussite : l'encre scintille davantage. Pistes écartées, sans effet mesurable : lissage des entrées de l'encre, filtrage bilinéaire, écart de plans, retrait des arêtes internes, du spéculaire ou du rim light. Cause localisée aux frontières entre calques qui se chevauchent sous mouvement.
+- Démo de tête en boucle : mesure d'abord faussée par les demi-tours (corrigée par le balayage monotone).
+- Tests : 184 au total, tous verts.
+- Pas de push. Commit local sur `autonome`.

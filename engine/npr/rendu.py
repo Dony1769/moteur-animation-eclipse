@@ -282,6 +282,7 @@ class RenduNPR:
         u["rimColor"].value = tuple(float(x) for x in p.rim_couleur)
         u["specularThreshold"].value = float(p.spec_seuil)
         u["specularColor"].value = tuple(float(x) for x in p.spec_couleur)
+        u["specLumMin"].value = float(p.spec_lum_min)
         u["hairShift"].value = float(p.cheveux_decalage)
         u["hairThreshold"].value = float(p.cheveux_seuil)
         u["hairColor"].value = tuple(float(x) for x in p.cheveux_couleur)

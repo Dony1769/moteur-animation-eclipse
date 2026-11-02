@@ -97,7 +97,8 @@ def ombrage(albedo, normale, profondeur, uv_surface, rampe_f, p: ParamsOmbrage, 
 
     H_vec = normaliser(L + V)
     ndh = np.maximum(np.sum(n * H_vec, axis=-1, keepdims=True), 0.0)
-    spec = step(p.spec_seuil, ndh)
+    lum_albedo = (0.299 * albedo[..., 0] + 0.587 * albedo[..., 1] + 0.114 * albedo[..., 2])[..., None]
+    spec = step(p.spec_seuil, ndh) * step(p.spec_lum_min, lum_albedo)
     col = col + spec * np.asarray(p.spec_couleur, np.float32)
 
     if tangente is not None and masque_cheveux is not None:

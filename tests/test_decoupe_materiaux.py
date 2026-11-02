@@ -122,6 +122,34 @@ class TestDecouper:
         assert not masque[0, 0]
         assert not masque[5, 5]
 
+    def test_trait_fin_separe_deux_zones_de_meme_couleur(self):
+        # Deux zones de gris moyen, même couleur, séparées par un trait noir d'un pixel : aucune couche
+        # ne doit couvrir les deux zones à la fois.
+        gris = (0.25, 0.25, 0.25)
+        rgb = _image([(5, 5, 19, 35, gris), (21, 5, 35, 35, gris), (19, 5, 21, 35, (0.02, 0.02, 0.02))])
+        vue = DM.decouper(rgb, (0, 0, 40, 40), {}, k=2)
+        gauche = np.zeros((40, 40), bool)
+        gauche[5:35, 5:19] = True
+        droite = np.zeros((40, 40), bool)
+        droite[5:35, 21:35] = True
+        assert not any((c.masque & gauche).any() and (c.masque & droite).any() for c in vue.couches)
+        assert sum(bool((c.masque & gauche).any()) for c in vue.couches) >= 1
+        assert sum(bool((c.masque & droite).any()) for c in vue.couches) >= 1
+
+    def test_grande_zone_sombre_reste_une_couche(self):
+        rgb = _image([(5, 5, 35, 35, SOMBRE)])
+        vue = DM.decouper(rgb, (0, 0, 40, 40), {}, k=2)
+        sombres = [c for c in vue.couches if DM.materiau_de(c).nom == "sombre"]
+        assert len(sombres) == 1
+
+    def test_lignes_encre_ne_retient_que_le_trait_fin(self):
+        rgb = _image([(5, 5, 35, 35, (0.25, 0.25, 0.25))])
+        rgb[:, 20] = 0.02                         # trait vertical d'un pixel
+        masque = np.ones((40, 40), bool)
+        traits = DM.lignes_encre(rgb, masque)
+        assert traits[10:30, 20].all()
+        assert not traits[10:30, 8:17].any()   # zone sombre large : pas de trait
+
     def test_image_sans_personnage_refusee(self):
         rgb = np.ones((10, 10, 3), np.float32)
         try:

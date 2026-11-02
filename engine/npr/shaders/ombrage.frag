@@ -31,6 +31,7 @@ uniform float rimSmoothness;
 uniform vec3  rimColor;
 uniform float specularThreshold;
 uniform vec3  specularColor;
+uniform float specLumMin;        // luminance d'albédo sous laquelle le spéculaire est coupé (tissus sombres)
 
 uniform float hairShift;          // décalage de la tangente le long de la normale
 uniform float hairThreshold;      // seuil binaire sur sin(T', H)
@@ -78,7 +79,8 @@ void main() {
 
     // Spéculaire durci : step sur N·H.
     vec3 H = normalize(L + V);
-    float spec = step(specularThreshold, max(dot(n, H), 0.0));
+    float lumAlbedo = dot(albedo, vec3(0.299, 0.587, 0.114));
+    float spec = step(specularThreshold, max(dot(n, H), 0.0)) * step(specLumMin, lumAlbedo);
     col += spec * specularColor;
 
     // Cheveux : sin(T', H) élevé = tangente perpendiculaire au moitié-vecteur = reflet fin.

@@ -95,3 +95,11 @@
 - Reflets internes remplis seulement sous 1 % de la boîte. Raison : au-delà, la zone est du fond (espace entre bras et torse) ; un seuil unique ne distingue pas les deux cas, donc le seuil est une règle de taille, et ce choix est testé.
 - Spéculaire désactivé dans la démo de référence seulement. Raison : la référence n'a pas de reflets durs sur ses vêtements ; le réglage de Kaël n'est pas touché, son spéculaire reste à régler.
 - Découpe par couleur, sans annotation de parties. Raison : aucune donnée de parties pour cette illustration ; l'approximation est signalée comme telle dans la documentation.
+
+## Relief, spéculaire, séquence de test (2 novembre 2026, suite)
+- `relief_max` reste une profondeur, sans effet sur les normales. Raison : le coupler changerait le rendu de Kaël et de la référence, et demanderait un calibrage qu'on n'a pas. L'éclairage du relief se règle par `pente`.
+- Spéculaire coupé sous une luminance d'albédo de 0,35, et non désactivé. Raison : le reflet reste utile sur les parties claires (visage, cheveux clairs).
+- Rotation de tête par os, pas par FFD. Raison : la tête est un os rigide du squelette ; la FFD sert aux cheveux et aux paupières.
+- Écart de plans de 0,15 par rang, supérieur au relief. Raison : sans cela un calque arrière peut passer devant le calque avant à leur frontière. Ce n'est pas la cause du scintillement mesuré, mais c'est une condition de cohérence.
+- Métrique de scintillement sur balayage monotone uniquement. Raison : un aller-retour mêle les demi-tours au scintillement.
+- Scintillement non résolu, signalé comme tel. Raison : on ne maquille pas une métrique défavorable.

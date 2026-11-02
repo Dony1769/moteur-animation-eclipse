@@ -22,7 +22,8 @@ from npr import tete_test as T  # noqa: E402
 from npr.calques_anim import construire  # noqa: E402
 from npr.chargeur import charger_vue, construire_atlas, rgba_couche  # noqa: E402
 from npr.demo_articule import LUMIERE, PARAMS  # noqa: E402
-from npr.multivue import fondre, poids_vues  # noqa: E402
+from npr.encre import ParamsEncre  # noqa: E402
+from npr.multivue import vue_nette  # noqa: E402
 from npr.rendu import RenduNPR, creer_contexte  # noqa: E402
 from npr.rig import Os, Squelette, Timeline  # noqa: E402
 
@@ -30,7 +31,16 @@ RACINE = Path(__file__).resolve().parent.parent.parent
 KAEL = RACINE / "universes" / "eclipse_royale" / "characters" / "kael"
 FICHIERS = {0.0: "parts_v2_face_g.json", 45.0: "parts_v2_trois_quarts_g.json"}
 OS_DES_COUCHES = {"tete": {"tete"}, "col_cape": {"tete"}}     # les autres couches suivent le corps
-TILT = (-0.12, 0.0, 0.12)                                     # inclinaison de tête pour la planche
+TILT = (-0.4, 0.0, 0.4)                                       # inclinaison de tête (rad) pour la planche
+RELIEF_KAEL = 0.10             # relief_max des calques de Kaël
+ECART_PLANS = 0.15             # écart de plan entre deux rangs d'ordre ; doit dépasser RELIEF_KAEL
+                               # (sinon un calque arrière passe devant le calque avant à leur frontière,
+                               #  et les deux se disputent les pixels d'une image à l'autre : scintillement)
+
+
+def plan_de(ordre):
+    """Distance caméra du plan de base d'un calque d'ordre donné (plus grand = plus devant)."""
+    return 5.0 - ECART_PLANS * ordre
 
 
 def squelette(vue):
@@ -49,7 +59,7 @@ def construire_vue(vue, cellule=6.0):
     for c in vue.couches:
         rgba = rgba_couche(vue, c)
         # Plus la couche est en avant (ordre grand), plus son plan est proche : ordre de dessin = profondeur.
-        calque = RL.Calque(rgba=rgba, plan=5.0 - 0.06 * c.ordre, relief_max=0.10,
+        calque = RL.Calque(rgba=rgba, plan=plan_de(c.ordre), relief_max=RELIEF_KAEL,
                            rayon_biseau=12.0, flou=1.5)
         os_actifs = OS_DES_COUCHES.get(c.id, {"corps"})
         calques.append(construire(
@@ -59,10 +69,12 @@ def construire_vue(vue, cellule=6.0):
     return calques, atlas
 
 
-def rendre(ctx, vue, calques, tilt):
-    """Image RGB de la vue, tête inclinée de `tilt` radians."""
+def rendre(ctx, vue, calques, tilt, encre=ParamsEncre()):
+    """Image RGB de la vue, tête inclinée de `tilt` radians. encre=None : contour Sobel d'origine."""
     rendu = RenduNPR(ctx, vue.largeur, vue.hauteur, ombrage=PARAMS)
     rendu.definir_masque_cheveux(np.ones((1, 1), np.float32))
+    if encre is not None:
+        rendu.definir_encre(encre)
     try:
         rendu.dessiner_calques(calques, {"tete": tilt}, projection=T.projection(vue.largeur, vue.hauteur),
                                tan_fov=T.tan_fov(vue.largeur, vue.hauteur), centre_tete_vue=T.CENTRE_VUE,
@@ -102,19 +114,19 @@ def main():
     for a, v in vues.items():
         print(f"vue {v.nom} ({a:.0f}°) : {len(v.couches)} couches, atlas {construits[a][1].image.shape[:2]}")
 
-    # Rangée 1 : face, tête inclinée. Rangée 2 : fondu entre face et trois quarts (tête droite).
+    # Rangée 1 : face, tête inclinée. Rangée 2 : bascule nette entre face et trois quarts (sans fondu).
     face = {t: rendre(ctx, vues[0.0], construits[0.0][0], t) for t in TILT}
-    trois_quarts = rendre(ctx, vues[45.0], construits[45.0][0], 0.0)
-    images = {"face_g": face[0.0], "trois_quarts_g": trois_quarts}
-    rangee2 = []
-    for angle in (0.0, 22.5, 45.0):
-        poids, _ = poids_vues(angle, {0.0: "face_g", 45.0: "trois_quarts_g"})
-        rangee2.append(fondre(images, poids))
-    _, hors = poids_vues(90.0, {0.0: "face_g", 45.0: "trois_quarts_g"})
+    sprites = {"face_g": face[0.0], "trois_quarts_g": rendre(ctx, vues[45.0], construits[45.0][0], 0.0)}
+    vues_angle = {0.0: "face_g", 45.0: "trois_quarts_g"}
+    rangee2, titres2 = [], []
+    for angle in (0.0, 22.0, 45.0):
+        nom, hors = vue_nette(angle, vues_angle)
+        rangee2.append(sprites[nom])
+        titres2.append(f"bascule {angle:.1f}° : {nom.replace('_g', '')}")
+    _, hors = vue_nette(90.0, vues_angle)
     print("profil 90° hors plage :", hors)
     rangees = [[face[t] for t in TILT], rangee2]
-    titres = [[f"face, tete {t:+.2f} rad" for t in TILT],
-              ["fondu 0°", "fondu 22,5°", "fondu 45°"]]
+    titres = [[f"face, tete {t:+.2f} rad" for t in TILT], titres2]
     cv2.imwrite(str(sortie), planche(rangees, titres))
     print("planche :", sortie)
     return 0

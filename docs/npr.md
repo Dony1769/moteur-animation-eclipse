@@ -269,12 +269,21 @@ La tête de test est une sphère avec une bosse gaussienne, et les calques de `d
 
 27. **Référence = autre personnage.** L'illustration de référence n'est pas Kaël. Ses calques sont des groupes de couleur, pas des parties du corps : cheveux avant et arrière fusionnés, veste et pantalon sombres peuvent se mélanger. Les points-clés (cou, sommet du crâne, bassin) sont placés à l'œil, sans détection.
 28. **Mouvement de tête très faible dans la démo de référence.** L'inclinaison de ±0,12 rad est à peine visible sur la planche.
-29. **Spéculaire dur non résolu.** Le spéculaire est un `step` sur N·H (seuil 0,985) : il fait apparaître des traits blancs sur les calques sombres dès qu'il est actif. Il est désactivé dans la démo de référence, pas dans celle de Kaël.
-30. **Relief sans effet mesurable sur la planche de référence.** Un relief de 0 et de 0,04 donnent la même image. La cause n'est pas identifiée.
+29. **Spéculaire dur.** Le spéculaire reste un `step` sur N·H : il est coupé sous un albédo de luminance 0,35 (`spec_lum_min`), donc sur les tissus sombres, mais un reflet clair peut toujours s'allumer d'une image à l'autre.
+30. **Relief : profondeur seulement.** `relief_max` règle la profondeur des sommets, pas les normales : l'éclairage du relief se règle par `pente` et `rayon_biseau`. Le couplage a été écarté, car il changerait le rendu de Kaël (relief 0,10) et de la référence (0,04) sans calibrage.
 31. **Encre fragmentaire à l'intérieur.** Seule la silhouette est continue ; les arêtes internes restent interrompues sur les surfaces courbes.
+32. **Scintillement non résolu.** Sur un balayage monotone de 25 images (`engine/npr/sequence_kael.py`), 5,2 % des pixels sombres de Kaël scintillent avec l'encre, contre 3,4 % avec le Sobel d'origine. Le scintillement vient des frontières entre calques qui se chevauchent et bougent l'un par rapport à l'autre (mèche bleue sur la joue), pas des traits d'encre : sans arêtes internes, sans spéculaire et sans rim light, le chiffre ne baisse pas. Ni le lissage des entrées de l'encre, ni le filtrage bilinéaire de l'atlas, ni l'écart de plans n'ont réduit la mesure.
+33. **Découpe de référence fragmentée.** La découpe en composantes connexes donne 57 calques (6 avant). Tous les calques de cheveux ont l'ordre 0 : les mèches de devant ne passent pas devant le visage si elles sont séparées du reste par la couleur.
+
+## Relief, spéculaire, tête, découpe et séquence (2 novembre 2026, suite)
+- Relief : contrat vérifié, pas de changement de rendu. Les normales sont renormalisées dans la passe géométrie et dans l'ombrage, puis atteignent la rampe (test GPU `test_pente_atteint_la_rampe_gpu`). `relief_max` ne touche que la profondeur (test `test_relief_max_ne_change_que_la_profondeur`).
+- Spéculaire : coupé là où l'albédo a une luminance inférieure à `spec_lum_min` (0,35 par défaut), dans le shader, dans `reference.ombrage` et dans les uniforms. Raison : la référence n'a pas de reflets durs sur ses vêtements sombres. Le réglage s'applique aussi à Kaël. Tests : `tests/test_tissus_sombres.py` (8, GPU compris).
+- Tête : inclinaison de ±0,4 rad dans les deux démos. La rotation de la tête est un os du squelette, pas la grille FFD : changer les poids FFD n'aurait rien changé à l'inclinaison.
+- Kaël : la démo utilise l'encre fine, et la rangée de bascule remplace le fondu à 22,5° par une bascule nette (`vue_nette`). Les calques sont séparés en profondeur par 0,15 par rang d'ordre, au lieu de 0,06, pour dépasser le relief de 0,10 (test `test_ecart_de_plans_depasse_le_relief`).
+- Découpe : les traits d'encre (chapeau noir) sont retirés avant le découpage en composantes connexes ; deux zones de même couleur séparées par un trait deviennent deux calques. Repli si aucune composante ne subsiste. Tests : 16 au total dans `tests/test_decoupe_materiaux.py`.
+- Séquence : `engine/npr/sequence_kael.py <dossier> [n]` rend un balayage monotone de +0,4 à −0,4 rad, encode un MP4 par mode (encre, Sobel) et écrit `metriques.json`. Métrique : un pixel scintille s'il fait deux inversions rapides (écart de deux images au plus). Tests : `tests/test_sequence.py` (8).
 
 ## Fichiers
-
 - `engine/npr/parametres.py` : paramètres partagés (ombrage, cheveux, contour) ;
 - `engine/npr/rampe.py` : rampes toon ;
 - `engine/npr/reference.py` : référence numpy ;
@@ -295,3 +304,5 @@ La tête de test est une sphère avec une bosse gaussienne, et les calques de `d
 - `engine/npr/decoupe_materiaux.py` : découpe d'une illustration aplatie en couches par matériau (partition, nommage, masque froid/chaud) ;
 - `engine/npr/demo_reference.py` : planche à partir de l'illustration de référence (découpe par couleur, trois inclinaisons) ;
 - `tests/test_encre.py`, `tests/test_decoupe_materiaux.py` : tests de l'encre et de la découpe ;
+- `tests/test_tissus_sombres.py` : spéculaire coupé sur les tissus sombres, chaîne normale -> rampe ;
+- `engine/npr/sequence_kael.py`, `tests/test_sequence.py` : séquence de test et métrique de scintillement ;

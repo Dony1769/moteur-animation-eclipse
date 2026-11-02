@@ -10,7 +10,6 @@ Usage : python3 engine/npr/demo_reference.py [image.webp] [sortie.png]
 Par défaut, l'image est celle jointe à la conversation (chemin d'attachement) : passer le chemin
 en argument sur une autre machine.
 """
-import dataclasses
 import sys
 from pathlib import Path
 
@@ -24,7 +23,7 @@ from npr import tete_test as T  # noqa: E402
 from npr.calques_anim import construire  # noqa: E402
 from npr.chargeur import construire_atlas, rgba_couche  # noqa: E402
 from npr.decoupe_materiaux import decouper, materiau_de  # noqa: E402
-from npr.demo_articule import LUMIERE, PARAMS as PARAMS_KAEL  # noqa: E402
+from npr.demo_articule import LUMIERE, PARAMS  # noqa: E402
 from npr.encre import ParamsEncre  # noqa: E402
 from npr.rendu import RenduNPR, creer_contexte  # noqa: E402
 from npr.rig import Os, Squelette  # noqa: E402
@@ -35,10 +34,7 @@ BOITE = (0, 0, 296, 800)                 # gros plan de la première colonne (ex
 # Points-clés estimés à l'œil sur l'image (pas de détection) : cou, sommet du crâne, bassin.
 POINTS = {"cou": (119.0, 244.0), "tete_haut": (125.0, 31.0), "bassin": (125.0, 560.0)}
 SEUIL_TETE_Y = 250.0                     # calque dont le centre est au-dessus suit la tête
-TILTS = (-0.12, 0.0, 0.12)
-# La référence n'a pas de reflets durs sur ses vêtements : le spéculaire (step sur N·H, seuil 0,985)
-# produit des traits blancs sur les calques sombres. Désactivé ici seulement (réglages de Kaël inchangés).
-PARAMS = dataclasses.replace(PARAMS_KAEL, spec_seuil=1.5)
+TILTS = (-0.4, 0.0, 0.4)                 # rad (≈ ±23°) : inclinaison franche de la tête
 
 
 def squelette(points):
@@ -115,7 +111,7 @@ def main(argv):
         img = rendre(ctx, vue, calques, masque, t)[y0:y1, x0:x1]
         bgr_img = cv2.cvtColor(img, cv2.COLOR_RGB2BGR)
         cadres.append(cv2.resize(bgr_img, (296, 800), interpolation=cv2.INTER_AREA))
-    for c, nom in zip(cadres, ("référence", "tête -0,12", "tête 0", "tête +0,12")):
+    for c, nom in zip(cadres, ("référence", "tête -0,40", "tête 0", "tête +0,40")):
         cv2.putText(c, nom, (8, 24), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (30, 30, 30), 2, cv2.LINE_AA)
     cv2.imwrite(str(sortie), np.hstack(cadres))
     print("planche :", sortie)

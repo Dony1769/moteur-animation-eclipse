@@ -13,6 +13,7 @@ class ParamsOmbrage:
     rim_couleur: tuple = (0.9, 0.95, 1.0)
     spec_seuil: float = 0.95          # specularThreshold : step() sur N·H
     spec_couleur: tuple = (0.9, 0.9, 0.9)
+    spec_lum_min: float = 0.35        # specLumMin : pas de spéculaire là où l'albédo est plus sombre (tissus sombres)
     poids_sphere: float = 1.0         # sphereWeight, multiplie le masque de normales sphériques
     masque_visage: bool = False       # faceMaskEnabled : active le décalage de lumière + masque d'ombre
     biais_visage: float = 0.3         # faceBias : poids de headForward dans la lumière décalée
