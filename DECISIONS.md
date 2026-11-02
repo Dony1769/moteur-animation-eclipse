@@ -36,3 +36,10 @@
 
 ## Téléchargements (traçabilité)
 - Rhubarb Lip Sync v1.14.0 Linux : `https://github.com/DanielSWolf/rhubarb-lip-sync/releases/download/v1.14.0/Rhubarb-Lip-Sync-1.14.0-Linux.zip`, SHA-256 `a9a9074862cff47b2d59b8bf399a678a3b0b74f9452ad6ad94cb292913dd8667`. Empreinte calculée localement, non comparée à une somme publiée. Installé hors dépôt dans `/home/claude/outils/rhubarb/`.
+
+## Planches de base : découpe et manifestes (2 novembre 2026)
+- Découpe par cellules explicites (`engine/gen/decouper_grille.py`), pas de détection automatique. Corps : 4 colonnes égales. Têtes : 6 colonnes, rangées bornées à la main.
+- Repères magenta retirés par couleur franche (r > 200, b > 200, écart au vert ≥ 60) puis interpolation (`cv2.inpaint`). Seuil choisi pour ne pas toucher la peau ni le violet des vêtements. Résidu : ≈ 700 px magenta pâles dans 10 cellules sur 60, visible sur les têtes de Vorthaz. Consigné, non bloquant.
+- Vue « face » de chaque personnage = cellule « neutre » (pas de vue de face dédiée dans les planches).
+- Bouches alignées sur les yeux (DWPose) dans `tete_alignee/` ; échelles inter-oculaires dans 1 % d'écart entre formes.
+- Alaric : 3 rangées générées, seules les 2 premières sont utilisées.

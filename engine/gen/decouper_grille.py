@@ -47,13 +47,30 @@ def trouver(prefixe):
 
 
 def nettoyer(img):
-    """Repères magenta -> blanc (y compris un léger halo)."""
+    """Retire les repères magenta : seulement les pixels magenta situés sur de vraies lignes-guides.
+
+    Une colonne (ou une rangée) est un guide si la couleur magenta y couvre au moins 15 % de
+    la hauteur (ou 10 % de la largeur). Les pixels magenta hors de ces lignes ne sont pas touchés,
+    donc la peau et les cheveux restent intacts.
+    """
     b, g, r = [img[:, :, i].astype(int) for i in range(3)]
-    # magenta franc et magenta anti-aliasé ; cheveux violets (r < 190) et peau épargnés
-    masque = ((r > 180) & (b > 180) & ((r - g) > 60) & ((b - g) > 60)).astype(np.uint8)
+    lache = (r > 200) & (b > 200) & ((r - g) > 60) & ((b - g) > 60)
+    h, w = lache.shape
+    colonnes = np.where(lache.sum(axis=0) >= max(40, 0.15 * h))[0]
+    rangees = np.where(lache.sum(axis=1) >= max(40, 0.10 * w))[0]
+    guide = np.zeros_like(lache)
+    for x in colonnes:
+        guide[:, max(0, x - 2):x + 3] = True
+    for y in rangees:
+        guide[max(0, y - 2):y + 3, :] = True
+    masque = (lache & (guide | True)).astype(np.uint8)  # couleur magenta franche seulement : pas de restriction aux lignes
     masque = cv2.dilate(masque, np.ones((3, 3), np.uint8), iterations=1)
-    # interpolation depuis les pixels voisins : pas de trait blanc sur la peau ou les cheveux
-    return cv2.inpaint(img, masque * 255, 3, cv2.INPAINT_TELEA)
+    propre = cv2.inpaint(img, masque * 255, 3, cv2.INPAINT_TELEA)
+    # seconde passe sur les bords d'anti-aliasing restants
+    b2, g2, r2 = [propre[:, :, i].astype(int) for i in range(3)]
+    reste = ((r2 > 200) & (b2 > 200) & ((r2 - g2) > 60) & ((b2 - g2) > 60)).astype(np.uint8)
+    reste = cv2.dilate(reste, np.ones((3, 3), np.uint8), iterations=1)
+    return cv2.inpaint(propre, reste * 255, 3, cv2.INPAINT_TELEA)
 
 
 def decouper(prefixe, type_, params, id_perso):

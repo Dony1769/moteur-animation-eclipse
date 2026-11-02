@@ -23,12 +23,14 @@ class TestManifestKael(unittest.TestCase):
         self.assertTrue(any("fichier manquant" in e and "A" in e for e in erreurs))
 
 
-class TestManifestsIncomplets(unittest.TestCase):
-    def test_aiko_et_darius_sont_incomplets(self):
-        for nom in ("aiko_soryu", "darius_valen"):
-            with open(os.path.join(valider.RACINE, "personnages", nom + ".json"), encoding="utf-8") as f:
-                erreurs = valider.valider(json.load(f))
-            self.assertTrue(len(erreurs) >= 16, nom)
+class TestManifestsCompletsDesPlanches(unittest.TestCase):
+    """Aiko, Darius, Alaric, Vorthaz : manifestes construits à partir des planches de base."""
+
+    def test_chaque_personnage_passe(self):
+        for nom in ("aiko_soryu", "darius_valen", "alaric", "vorthaz"):
+            with self.subTest(personnage=nom):
+                with open(os.path.join(valider.RACINE, "personnages", nom + ".json"), encoding="utf-8") as f:
+                    self.assertEqual(valider.valider(json.load(f)), [])
 
 
 if __name__ == "__main__":

@@ -53,13 +53,16 @@ def fond_vers_gris(img):
     return out
 
 
-def aligner():
-    """Renvoie {forme: image BGR alignée}. Met le résultat en cache dans out/."""
-    os.makedirs(SORTIE, exist_ok=True)
+def aligner(dossier_entree=DESSINS, dossier_sortie=SORTIE):
+    """Renvoie {forme: image BGR alignée} et écrit bouche_<V>.png dans dossier_sortie.
+
+    dossier_entree doit contenir bouche_A.png ... bouche_U.png ; la référence est bouche_A.
+    """
+    os.makedirs(dossier_sortie, exist_ok=True)
     session = ort.InferenceSession(pose.MODELE, providers=["CPUExecutionProvider"])
     brutes, repères = {}, {}
     for v in FORMES:
-        img = cv2.imread(os.path.join(DESSINS, "bouche_%s.png" % v), cv2.IMREAD_COLOR)
+        img = cv2.imread(os.path.join(dossier_entree, "bouche_%s.png" % v), cv2.IMREAD_COLOR)
         assert img is not None, v
         pts, score = pose.detecter(cv2.cvtColor(img, cv2.COLOR_BGR2RGB), session)
         assert score[OEIL_D].min() > 0.3 and score[OEIL_G].min() > 0.3, "yeux non détectés : %s" % v
@@ -76,7 +79,7 @@ def aligner():
         aligne = cv2.warpAffine(brutes[v], M, (w, h), flags=cv2.INTER_CUBIC,
                                 borderMode=cv2.BORDER_CONSTANT, borderValue=(255, 255, 255))
         aligne = fond_vers_gris(aligne)
-        cv2.imwrite(os.path.join(SORTIE, "bouche_%s.png" % v), aligne)
+        cv2.imwrite(os.path.join(dossier_sortie, "bouche_%s.png" % v), aligne)
         sortie[v] = aligne
     return sortie, {v: (round(float(repères[v][1]), 1), round(float(ecart_ref / repères[v][1]), 3))
                     for v in FORMES}
