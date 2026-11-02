@@ -1,0 +1,14 @@
+{
+  "format": "monteur/personnage/1",
+  "id": "aiko_soryu",
+  "nom": "Aiko Soryu",
+  "description": "Cheveux violets, mèche décorée de fleurs, tenue violette et bottes noires à talon.",
+  "references_brutes": [
+    "/home/claude/references/eclipse_royale/aiko_soryu/couleur_expressions.png",
+    "/home/claude/references/eclipse_royale/aiko_soryu/couleur_poses.png"
+  ],
+  "vues": {},
+  "poses": {},
+  "expressions": {},
+  "bouche": {}
+}

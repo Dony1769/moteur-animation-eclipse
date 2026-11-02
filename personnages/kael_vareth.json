@@ -1,0 +1,31 @@
+{
+  "format": "monteur/personnage/1",
+  "id": "kael_vareth",
+  "nom": "Kael Vareth",
+  "description": "Cheveux bleu marine à mèches bleues, yeux bleus, cape bleu marine à col haut et fermoir doré, tunique bleu marine brodée d'or, ceinture brune à deux boucles dorées, manches blanches à poignets noirs, pantalon noir, bottes brunes.",
+  "vues": {
+    "face": "universes/eclipse_royale/characters/kael/vues/face_g.png",
+    "trois_quarts": "universes/eclipse_royale/characters/kael/vues/trois_quarts_g.png"
+  },
+  "poses": {
+    "marche_1": "universes/eclipse_royale/characters/kael/dessins/marche_1.png",
+    "marche_2": "universes/eclipse_royale/characters/kael/dessins/marche_2.png",
+    "marche_3": "universes/eclipse_royale/characters/kael/dessins/marche_3.png",
+    "marche_4": "universes/eclipse_royale/characters/kael/dessins/marche_4.png"
+  },
+  "expressions": {
+    "neutre": "universes/eclipse_royale/characters/kael/vues/face_g.png",
+    "joie": "universes/eclipse_royale/characters/kael/dessins/expr_joie.png",
+    "tristesse": "universes/eclipse_royale/characters/kael/dessins/expr_tristesse.png",
+    "colere": "universes/eclipse_royale/characters/kael/dessins/expr_colere.png",
+    "surprise": "universes/eclipse_royale/characters/kael/dessins/expr_surprise.png"
+  },
+  "bouche": {
+    "A": "universes/eclipse_royale/characters/kael/dessins/bouche_A.png",
+    "E": "universes/eclipse_royale/characters/kael/dessins/bouche_E.png",
+    "I": "universes/eclipse_royale/characters/kael/dessins/bouche_I.png",
+    "M": "universes/eclipse_royale/characters/kael/dessins/bouche_M.png",
+    "O": "universes/eclipse_royale/characters/kael/dessins/bouche_O.png",
+    "U": "universes/eclipse_royale/characters/kael/dessins/bouche_U.png"
+  }
+}

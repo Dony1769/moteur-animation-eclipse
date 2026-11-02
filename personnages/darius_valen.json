@@ -1,0 +1,13 @@
+{
+  "format": "monteur/personnage/1",
+  "id": "darius_valen",
+  "nom": "Darius Valen",
+  "description": "Cheveux rouges, longue cape bleu nuit et rouge à col haut, tenue sombre à ceinture.",
+  "references_brutes": [
+    "/home/claude/references/eclipse_royale/darius_valen/couleur_poses.png"
+  ],
+  "vues": {},
+  "poses": {},
+  "expressions": {},
+  "bouche": {}
+}
