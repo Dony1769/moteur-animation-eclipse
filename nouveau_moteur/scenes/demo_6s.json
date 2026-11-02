@@ -1,0 +1,45 @@
+{
+  "format": "moteur-animation/scene-2",
+  "personnage": "kael",
+  "fps": 24,
+  "palette": {"actif": true, "tons": 3},
+  "plans": [
+    {
+      "id": "P1",
+      "titre": "Immobile, mi-corps",
+      "duree_s": 2.0,
+      "camera": {"zoom": 1.4, "centre_sur": "cou"},
+      "sequence": [
+        {"dessin": "face", "frames": 48}
+      ],
+      "effets": []
+    },
+    {
+      "id": "P2",
+      "titre": "Attaque : anticipation tenue 3 frames, impact décalé, flash, secousse",
+      "duree_s": 2.0,
+      "camera": {"zoom": 1.4, "centre_sur": "cou"},
+      "sequence": [
+        {"dessin": "face", "frames": 3, "decalage": [-12, 0]},
+        {"dessin": "face", "frames": 2, "decalage": [24, 0]},
+        {"dessin": "face", "frames": 43, "decalage": [0, 0]}
+      ],
+      "effets": [
+        {"type": "flash_blanc", "frames": [3, 3]},
+        {"type": "smear", "frames": [3, 5], "direction": [1, 0], "longueur_px": 40},
+        {"type": "secousse", "frame_debut": 3, "duree": 25, "amplitude_px": 14, "amortissement": 0.6}
+      ]
+    },
+    {
+      "id": "P3",
+      "titre": "Plan de titre : dessin de référence, sans texte généré",
+      "duree_s": 2.0,
+      "camera": {"zoom": 1.0},
+      "sequence": [
+        {"dessin": "trois_quarts", "frames": 48}
+      ],
+      "effets": []
+    }
+  ],
+  "coupe": "seche"
+}

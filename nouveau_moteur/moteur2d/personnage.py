@@ -1,7 +1,6 @@
-"""Chargement d'un personnage depuis characters/<nom>/ : rig.json, dessins, squelettes.
+"""Chargement d'un personnage depuis characters/<nom>/ : rig.json, dessins fournis, squelettes.
 
-Chaque vue utilisée est un dessin fourni. Une vue déclarée absente (rig.json) ne peut pas être chargée.
-La vue 3/4 est recalée sur la face par son articulation du cou (pivot tiré du rig).
+Chaque vue utilisée est un dessin fourni. Une vue déclarée absente dans rig.json ne peut pas être chargée.
 """
 import json
 from dataclasses import dataclass
@@ -12,20 +11,19 @@ import numpy as np
 
 from .segmentation import garder_composante, premier_plan
 
-FORMAT_RIG = "moteur-animation/rig-1"
+FORMAT_RIG = "moteur-animation/rig-2"
 
 
 @dataclass
 class Vue:
     nom: str
-    rgb: np.ndarray        # (H, W, 3) float 0..1, dessin tel quel
-    fg: np.ndarray         # (H, W) bool, premier plan du dessin
+    rgb: np.ndarray        # (H, W, 3) float 0..1 : le dessin tel que fourni
+    fg: np.ndarray         # (H, W) bool : premier plan du dessin
     points: dict           # squelette {nom: (x, y)}
-    pivot_tete: tuple      # articulation du cou dans ce dessin (x, y)
 
     @property
     def premultiplie(self):
-        """(H, W, 4) float : couleurs multipliées par l'alpha (= le dessin, rien d'autre)."""
+        """(H, W, 4) float : couleurs du dessin multipliées par l'alpha. Aucun pixel n'est ajouté."""
         a = self.fg.astype(np.float32)[..., None]
         return np.concatenate([self.rgb * a, a], axis=2)
 
@@ -34,7 +32,6 @@ class Vue:
 class Personnage:
     nom: str
     vues: dict             # {'face': Vue, 'trois_quarts': Vue}
-    translation_34: tuple  # décalage de recalage de la vue 3/4 sur la face (dx, dy)
 
 
 def charger(dossier):
@@ -42,7 +39,6 @@ def charger(dossier):
     rig = json.loads((d / "rig.json").read_text(encoding="utf-8"))
     if rig.get("format") != FORMAT_RIG:
         raise ValueError(f"format de rig inattendu : {rig.get('format')!r}")
-    pivots = rig["pivots"]["tete"]
     vues = {}
     for nom in ("face", "trois_quarts"):
         decl = rig["vues"][nom]
@@ -54,9 +50,6 @@ def charger(dossier):
         rgb = cv2.cvtColor(bgr, cv2.COLOR_BGR2RGB).astype(np.float32) / 255.0
         squelette = json.loads((d / decl["squelette"]).read_text(encoding="utf-8"))
         points = {k: (float(v["x"]), float(v["y"])) for k, v in squelette.items()}
-        pivot = tuple(float(c) for c in pivots[nom])
-        fg = garder_composante(premier_plan(rgb), pivot)
-        vues[nom] = Vue(nom=nom, rgb=rgb, fg=fg, points=points, pivot_tete=pivot)
-    f, t = vues["face"].pivot_tete, vues["trois_quarts"].pivot_tete
-    translation = (f[0] - t[0], f[1] - t[1])
-    return Personnage(nom=rig["personnage"], vues=vues, translation_34=translation)
+        fg = garder_composante(premier_plan(rgb), points["cou"])
+        vues[nom] = Vue(nom=nom, rgb=rgb, fg=fg, points=points)
+    return Personnage(nom=rig["personnage"], vues=vues)
