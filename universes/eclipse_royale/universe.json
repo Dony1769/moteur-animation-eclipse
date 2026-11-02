@@ -1,0 +1,46 @@
+{
+ "format": "moteur-3.0/univers/1",
+ "slug": "eclipse_royale",
+ "titre": "Éclipse Royale",
+ "style": {
+  "rendu": "anime illustration, cel shading with hard shadows, clean ink lines, painterly background, cinematic lighting",
+  "palette": "deep navy, midnight blue, muted gold accents, cold moonlight with warm torch light",
+  "prefixe_prompt": "anime fantasy background illustration, anime style, cel shading, clean ink lines, cinematic lighting, no characters, no people, no text",
+  "a_eviter": "text, watermark, signature, people, characters, blurry, low resolution, photorealistic, 3d render"
+ },
+ "format_image": "16:9",
+ "lieux": [
+  {
+   "id": "salle_du_trone",
+   "nom": "Salle du trône",
+   "prompt": "vast gothic throne room of a fallen kingdom, tall stone columns, an empty black iron throne on a raised dais, torches in brackets, a broken stained glass window showing an eclipsed moon, long red carpet",
+   "lumiere": "cold moonlight from the window, warm torch light from the sides",
+   "statut": "genere",
+   "image": "locations/salle_du_trone.png"
+  },
+  {
+   "id": "ruines_sous_la_lune",
+   "nom": "Ruines sous la lune",
+   "prompt": "ruined stone city at night under a giant eclipsed moon, broken columns, dry grass, distant hills, a single lantern light",
+   "lumiere": "blue moonlight, warm lantern glow",
+   "statut": "a_generer",
+   "image": null
+  },
+  {
+   "id": "foret_crepusculaire",
+   "nom": "Forêt crépusculaire",
+   "prompt": "dark ancient forest at dusk, tall trees, mist between trunks, a narrow path, faint violet sky",
+   "lumiere": "violet dusk, soft mist light",
+   "statut": "a_generer",
+   "image": null
+  }
+ ],
+ "personnages": [
+  "kael",
+  "aiko",
+  "darius",
+  "alaric",
+  "vorthaz"
+ ],
+ "objets": []
+}
