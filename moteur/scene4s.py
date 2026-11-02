@@ -14,10 +14,11 @@ Aucune image importée. Aucun dessin à la main. Les formes du décor ne sont vi
 import math
 import random
 
+import bmesh
 import bpy
 from mathutils import Vector
 
-from moteur import personnage
+from moteur import costume, personnage, sabre
 
 FPS = 24
 NB_IMAGES = 96          # 4 s
@@ -48,78 +49,95 @@ def _doigts(arm, cote, angle, frame):
             _cle(_os(arm, f"{d}{i:02d}_{cote}"), frame, rot=(angle, 0.0, 0.0))
 
 
+def poser_repos(arm):
+    """Repos : bras le long du corps (les épaules sont en T dans le rig, on les abaisse de 1,0 rad),
+    coudes et doigts détendus. Sens validés sur des rendus de contrôle : pour le bras droit, rotation
+    Z positive abaisse le bras ; la flexion du coude est positive (avant-bras vers l'avant)."""
+    for nom in ("upperarm_R", "lowerarm_R", "upperarm_L", "lowerarm_L", "spine01", "spine02"):
+        pb = _os(arm, nom)
+        if pb is not None:
+            pb.rotation_mode = "XYZ"
+            pb.rotation_euler = (0.0, 0.0, 0.0)
+    _os(arm, "upperarm_R").rotation_euler = (0.0, 0.0, 1.0)
+    _os(arm, "upperarm_L").rotation_euler = (0.0, 0.0, -1.0)
+
+
 def animer(arm, racine):
-    """Pose les clés des 96 images. racine = objet armature (déplacement global)."""
+    """Pose les clés des 96 images. racine = objet armature (déplacement global).
+
+    Sens des angles (validés par rendus de contrôle) : épaule X positif = bras vers l'avant ;
+    coude X positif = avant-bras vers l'avant ; doigts X positif = flexion (poing)."""
     bpy.context.view_layer.objects.active = arm
     bpy.ops.object.mode_set(mode="POSE")
+    poser_repos(arm)
     for f in range(1, NB_IMAGES + 1):
-        t = (f - 1) / FPS                       # secondes
-        # --- course 0 à 1,5 s : cycle de 0,75 s (18 images) ---
+        t = (f - 1) / FPS
         if t < 1.5:
+            # course : cycle de 0,75 s, bras pliés vers l'avant, poing serré
             ph = 2 * math.pi * (f - 1) / 18.0
             s, c = math.sin(ph), math.cos(ph)
-            _cle(_os(arm, "thigh_R"), f, rot=(0.55 * s, 0.0, 0.0))
-            _cle(_os(arm, "thigh_L"), f, rot=(-0.55 * s, 0.0, 0.0))
-            _cle(_os(arm, "calf_R"), f, rot=(-0.9 * max(0.0, -s), 0.0, 0.0))
-            _cle(_os(arm, "calf_L"), f, rot=(-0.9 * max(0.0, s), 0.0, 0.0))
-            _cle(_os(arm, "upperarm_R"), f, rot=(-0.6 * s, 0.0, 0.0))
-            _cle(_os(arm, "upperarm_L"), f, rot=(0.6 * s, 0.0, 0.0))
-            _cle(_os(arm, "lowerarm_R"), f, rot=(-0.7, 0.0, 0.0))
-            _cle(_os(arm, "lowerarm_L"), f, rot=(-0.7, 0.0, 0.0))
+            _cle(_os(arm, "thigh_R"), f, rot=(0.5 * s, 0.0, 0.0))
+            _cle(_os(arm, "thigh_L"), f, rot=(-0.5 * s, 0.0, 0.0))
+            _cle(_os(arm, "calf_R"), f, rot=(0.8 * max(0.0, -s), 0.0, 0.0))
+            _cle(_os(arm, "calf_L"), f, rot=(0.8 * max(0.0, s), 0.0, 0.0))
+            _cle(_os(arm, "upperarm_R"), f, rot=(0.5 * s, 0.0, 1.0))
+            _cle(_os(arm, "upperarm_L"), f, rot=(-0.5 * s, 0.0, -1.0))
+            _cle(_os(arm, "lowerarm_R"), f, rot=(1.0, 0.0, 0.0))
+            _cle(_os(arm, "lowerarm_L"), f, rot=(1.0, 0.0, 0.0))
             _cle(_os(arm, "spine01"), f, rot=(0.12, 0.0, 0.0))
-            _doigts(arm, "R", 0.9 * (0.5 + 0.5 * s), f)
-            _doigts(arm, "L", 0.9 * (0.5 - 0.5 * s), f)
-        # --- saut 1,5 à 2,5 s ---
+            _doigts(arm, "R", 1.1, f)
+            _doigts(arm, "L", 1.1, f)
         elif t < 2.5:
+            # saut : jambes et bras repliés, hauteur sinusoïdale
             k = (t - 1.5) / 1.0
-            hauteur = 0.45 * math.sin(math.pi * k)
+            hauteur = 0.22 * math.sin(math.pi * k)
             racine.location.z = hauteur
             racine.keyframe_insert("location", index=2, frame=f)
-            _cle(_os(arm, "thigh_R"), f, rot=(-0.9 * math.sin(math.pi * k), 0.0, 0.0))
-            _cle(_os(arm, "thigh_L"), f, rot=(-0.9 * math.sin(math.pi * k), 0.0, 0.0))
-            _cle(_os(arm, "calf_R"), f, rot=(-1.0 * math.sin(math.pi * k), 0.0, 0.0))
-            _cle(_os(arm, "calf_L"), f, rot=(-1.0 * math.sin(math.pi * k), 0.0, 0.0))
-            _cle(_os(arm, "upperarm_R"), f, rot=(-2.4 * math.sin(math.pi * k), 0.0, 0.0))
-            _cle(_os(arm, "upperarm_L"), f, rot=(-2.4 * math.sin(math.pi * k), 0.0, 0.0))
-            _doigts(arm, "R", 0.2, f)
-            _doigts(arm, "L", 0.2, f)
-        # --- coup 2,5 à 3 s : l'épée (main droite) fend l'air ---
+            # jambes repliées vers l'avant (cuisse) et le tibia relevé vers l'arrière
+            _cle(_os(arm, "thigh_R"), f, rot=(-0.6 * math.sin(math.pi * k), 0.0, 0.0))
+            _cle(_os(arm, "thigh_L"), f, rot=(-0.6 * math.sin(math.pi * k), 0.0, 0.0))
+            _cle(_os(arm, "calf_R"), f, rot=(1.1 * math.sin(math.pi * k), 0.0, 0.0))
+            _cle(_os(arm, "calf_L"), f, rot=(1.1 * math.sin(math.pi * k), 0.0, 0.0))
+            _cle(_os(arm, "upperarm_R"), f, rot=(1.2 * math.sin(math.pi * k), 0.0, 1.0))
+            _cle(_os(arm, "upperarm_L"), f, rot=(1.2 * math.sin(math.pi * k), 0.0, -1.0))
+            _cle(_os(arm, "lowerarm_R"), f, rot=(0.8, 0.0, 0.0))
+            _cle(_os(arm, "lowerarm_L"), f, rot=(0.8, 0.0, 0.0))
+            _doigts(arm, "R", 0.6, f)
+            _doigts(arm, "L", 0.6, f)
         elif t < 3.0:
+            # coup : le bras droit (tenant l'épée) part vers l'avant, poing serré, avant-bras tendu
             k = (t - 2.5) / 0.5
-            _cle(_os(arm, "upperarm_R"), f, rot=(-2.6 + 3.8 * k, 0.0, 0.0))
-            _cle(_os(arm, "lowerarm_R"), f, rot=(-0.4 - 0.6 * math.sin(math.pi * k), 0.0, 0.0))
-            _cle(_os(arm, "spine01"), f, rot=(0.0, 0.0, -0.2 * k))
-            _cle(_os(arm, "spine02"), f, rot=(0.0, 0.0, 0.25 * k))
-            _doigts(arm, "R", 1.0 - 0.5 * k, f)
-        # --- retour 3 à 4 s : posture de repos ---
+            racine.location.z = 0.0
+            racine.keyframe_insert("location", index=2, frame=f)
+            _cle(_os(arm, "upperarm_R"), f, rot=(1.5 * k, 0.0, 1.0 - 0.3 * k))
+            _cle(_os(arm, "lowerarm_R"), f, rot=(0.4 + 0.5 * k, 0.0, 0.0))
+            _cle(_os(arm, "spine01"), f, rot=(0.25 * k, 0.0, 0.0))
+            _doigts(arm, "R", 1.2, f)
         else:
+            # retour à la posture de repos
             k = min(1.0, (t - 3.0) / 0.6)
-            _cle(_os(arm, "upperarm_R"), f, rot=(1.2 * (1 - k), 0.0, 0.0))
-            _cle(_os(arm, "lowerarm_R"), f, rot=(-0.2 * (1 - k), 0.0, 0.0))
+            _cle(_os(arm, "upperarm_R"), f, rot=(1.5 * (1 - k), 0.0, 1.0 * (0.7 + 0.3 * (1 - k))))
+            _cle(_os(arm, "lowerarm_R"), f, rot=(0.9 * (1 - k), 0.0, 0.0))
+            _cle(_os(arm, "spine01"), f, rot=(0.0, 0.0, 0.0))
             _cle(_os(arm, "spine02"), f, rot=(0.0, 0.0, 0.0))
-            _doigts(arm, "R", 0.0, f)
-            _doigts(arm, "L", 0.0, f)
             _cle(_os(arm, "thigh_R"), f, rot=(0.0, 0.0, 0.0))
             _cle(_os(arm, "thigh_L"), f, rot=(0.0, 0.0, 0.0))
             _cle(_os(arm, "calf_R"), f, rot=(0.0, 0.0, 0.0))
             _cle(_os(arm, "calf_L"), f, rot=(0.0, 0.0, 0.0))
-            _cle(_os(arm, "upperarm_L"), f, rot=(0.0, 0.0, 0.0))
+            _cle(_os(arm, "upperarm_L"), f, rot=(0.0, 0.0, -1.0))
             _cle(_os(arm, "lowerarm_L"), f, rot=(0.0, 0.0, 0.0))
-            _cle(_os(arm, "spine01"), f, rot=(0.0, 0.0, 0.0))
+            _doigts(arm, "R", 0.0, f)
+            _doigts(arm, "L", 0.0, f)
     bpy.ops.object.mode_set(mode="OBJECT")
 
 
 def deplacer(racine):
-    """Déplacement de l'ensemble : course vers la gauche de l'écran pendant la course."""
+    """Déplacement de l'ensemble : course latérale (axe Y, de droite à gauche de l'écran) pendant 1,5 s."""
     for f in range(1, NB_IMAGES + 1):
         t = (f - 1) / FPS
-        x = 0.0
-        if t < 1.5:
-            x = -0.5 * t
-        else:
-            x = -0.75
-        racine.location = (x, 0.0, racine.location.z)
-        racine.keyframe_insert("location", index=0, frame=f)
+        y = -0.6 * min(t, 1.5)                 # course latérale, sur l'écran
+        racine.location.y = y
+        racine.keyframe_insert("location", index=1, frame=f)
 
 
 # ---------- décor ----------
@@ -171,8 +189,6 @@ def _mat_deux_tons(nom, clair, ombre, emission=False):
 
 
 def appliquer_materiaux(corps, sol):
-    corps.data.materials.clear()
-    corps.data.materials.append(_mat_deux_tons("PeauDeuxTons", (0.93, 0.78, 0.66), (0.42, 0.30, 0.26)))
     sol.data.materials.clear()
     sol.data.materials.append(_mat_deux_tons("SolDeuxTons", (0.62, 0.70, 0.58), (0.38, 0.45, 0.36)))
     for o in bpy.data.objects:
@@ -210,22 +226,24 @@ def camera(scene, objet_cible):
     cam_data = bpy.data.cameras.new("Cam")
     cam = bpy.data.objects.new("Cam", cam_data)
     scene.collection.objects.link(cam)
-    cam.location = (4.6, 0.0, 0.95)
+    cam.location = (4.6, 0.0, 1.15)
     cam.rotation_euler = (math.radians(90), 0.0, math.radians(90))   # regarde -X, vue de profil
-    cam_data.lens = 50
+    cam_data.lens = 42
     scene.camera = cam
     return cam
 
 
 def secousse(cam, frame_depart=72, amplitude=0.07, amortissement=0.35):
-    """Secousse amortie après le coup (sur l'axe Y, alternance de signe)."""
+    """Caméra : suit la course sur l'axe Y (moitié du déplacement), puis secousse amortie après le coup."""
     base = cam.location.copy()
     for f in range(1, NB_IMAGES + 1):
+        t = (f - 1) / FPS
+        suivi = -0.3 * min(t, 1.5)
         n = f - frame_depart
         dy = 0.0
         if n >= 0:
             dy = amplitude * math.exp(-amortissement * n) * (1 if n % 2 == 0 else -1)
-        cam.location = (base.x, base.y + dy, base.z)
+        cam.location = (base.x, base.y + suivi + dy, base.z)
         cam.keyframe_insert("location", frame=f)
     cam.location = base
 
@@ -238,14 +256,50 @@ def flash(corps, frame=72):
     copie.parent = corps.parent
     blanc = _mat_deux_tons("FlashBlanc", (1.0, 1.0, 1.0), (1.0, 1.0, 1.0), emission=True)
     copie.data = corps.data
-    copie.material_slots[0].link = "OBJECT"
-    copie.material_slots[0].material = blanc
+    for slot in copie.material_slots:
+        slot.link = "OBJECT"
+        slot.material = blanc
     for f in range(1, NB_IMAGES + 1):
         copie.hide_render = f != frame
         copie.keyframe_insert("hide_render", frame=f)
         corps.hide_render = f == frame
         corps.keyframe_insert("hide_render", frame=f)
     return copie
+
+
+def traits_vitesse(scene, nb=6, graine=GRAINE):
+    """Traits de vitesse : rubans effilés derrière la course (côté +Y), visibles pendant 1,5 s."""
+    rnd = random.Random(graine)
+    traits = []
+    for i in range(nb):
+        y0 = rnd.uniform(0.35, 0.7)
+        z = rnd.uniform(0.35, 1.45)
+        longueur = rnd.uniform(0.5, 0.9)
+        largeur = rnd.uniform(0.012, 0.022)
+        bm = bmesh.new()
+        n = 8
+        gauche, droite = [], []
+        for k in range(n + 1):
+            s = k / n
+            y = y0 + longueur * s
+            zz = z + 0.03 * math.sin(math.pi * s)
+            w = largeur * (1.0 - s) ** 0.8
+            gauche.append(bm.verts.new((0.0, y, zz + w)))
+            droite.append(bm.verts.new((0.0, y, zz - w)))
+        bm.verts.ensure_lookup_table()
+        for k in range(n):
+            bm.faces.new((gauche[k], gauche[k + 1], droite[k + 1], droite[k]))
+        mesh = bpy.data.meshes.new(f"TraitVitesse{i}")
+        bm.to_mesh(mesh)
+        bm.free()
+        obj = bpy.data.objects.new(f"TraitVitesse{i}", mesh)
+        scene.collection.objects.link(obj)
+        obj.data.materials.append(costume._mat("TraitNoir", (0.05, 0.05, 0.08), (0.02, 0.02, 0.03)))
+        for f in range(1, NB_IMAGES + 1):
+            obj.hide_render = not (f <= 36)
+            obj.keyframe_insert("hide_render", frame=f)
+        traits.append(obj)
+    return traits
 
 
 # ---------- assemblage ----------
@@ -255,6 +309,10 @@ def construire(scene):
     scene.frame_end = NB_IMAGES
     scene.render.fps = FPS
     corps, arm = personnage.creer()
+    costume.appliquer_costume(corps)
+    costume.ajouter_cheveux(arm)
+    costume.ajouter_yeux(arm)
+    sabre.creer(arm)
     racine = bpy.data.objects.new("Racine", None)
     scene.collection.objects.link(racine)
     corps.parent = racine
@@ -266,5 +324,6 @@ def construire(scene):
     cam = camera(scene, corps)
     secousse(cam)
     flash(corps)
+    traits_vitesse(scene)
     tracés(scene)
     return corps, arm, cam

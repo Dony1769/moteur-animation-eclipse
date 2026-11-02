@@ -33,13 +33,28 @@ Tests Blender (doigts, pose) :
 | Jalon | Contenu | État |
 |---|---|---|
 | 1 | Archive et nettoyage de main | fait |
-| 2 | Squelette, configuration, commande de rendu | fait : scène vide, pas de forme visible |
-| 3 | Personnage MB-Lab, rig avec doigts | partiel : corps m_an01 (non Kaël), 71 os dont 5 doigts par main, test de pose vert ; traits de Kaël à faire |
-| 4 | Mouvement : course, saut, coup | à faire |
-| 5 | Extraction des tracés (Line Art) | à faire |
-| 6 | Décor procédural | à faire |
-| 7 | Caméra et effets | à faire |
-| 8 | Scène de 4 s en MP4 | à faire |
+| 2 | Squelette, configuration, commande de rendu | fait |
+| 3 | Personnage MB-Lab m_an01, rig avec doigts, costume (chemise, pantalon, ceinture, bottes), cheveux noir-bleu à pointes bleues, yeux bleus, épée | fait en partie : pas de cape, pas de broche |
+| 4 | Mouvement : course, saut, coup, retour (angles en code) | fait ; sens des articulations validés sur rendus de contrôle |
+| 5 | Tracés | fait avec Freestyle au lieu de Line Art (voir Choix) |
+| 6 | Décor procédural | fait en partie : sol et buissons, sans végétation fine |
+| 7 | Caméra et effets | fait : secousse, flash une image, traits de vitesse |
+| 8 | Scène de 4 s en MP4 | fait : `out/final/scene_4s.mp4` (rendu local, non versionné) |
+
+## Sens des articulations (rig MB-Lab)
+
+Validés par rendus de contrôle, pas supposés :
+- Repos : les épaules sont en T dans le rig ; une rotation Z de +1,0 rad abaisse le bras droit (−1,0 pour le gauche).
+- Épaule X positif : bras vers l'avant. Coude X positif : avant-bras vers l'avant.
+- Doigts X positif : flexion (poing). Négatif : hyperextension (c'était l'erreur précédente).
+
+## Choix
+
+- Blender 4.5.15 LTS. Le Line Art Grease Pencil rendait noir en headless (Workbench et EEVEE testés) : on utilise Freestyle (Cycles CPU), dont les contours sont mesurés et propres.
+- Le corps est en aplats à deux tons ; seuls les contours Freestyle sont tracés.
+- Caméra de profil, objectif 42 mm, suivi partiel sur l'axe Y.
+- FFmpeg 6.1.1 (paquet système) pour l'encodage H.264.
+- Mocap CMU non utilisée : licence non vérifiée. Mouvement écrit en code.
 
 ## Mesures
 
@@ -47,15 +62,12 @@ Machine : 2 CPU, 7 Go de RAM, pas de GPU. Blender 4.5.15 LTS.
 
 | Mesure | Valeur |
 |---|---|
-| Blender Workbench, 960×540, première image (démarrage compris) | environ 4,4 s |
-| Blender Cycles CPU, 32 échantillons, 960×540, par image | environ 10,4 s |
-| Scène vide de 1 s (24 images) de bout en bout, dont FFmpeg | 7,5 s |
-| Ligne Art Grease Pencil, par image | à mesurer au jalon 5 |
-| Simulation de cape, coût | à mesurer au jalon 4 |
-| Estimation 15 min à 24 i/s, Cycles 32 échantillons | 21 600 images × 10,4 s ≈ 62 h (à réduire) |
+| Workbench, 960×540, première image (démarrage compris) | environ 4,4 s |
+| Cycles CPU, 32 échantillons, 960×540, scène vide | environ 10,4 s |
+| Scène 4 s, 960×540, 2 échantillons + débruitage, avec Freestyle | environ 18 s par image |
+| Scène 4 s, même réglage, sans Freestyle | environ 4,8 s par image |
+| Scène 4 s, 2 échantillons contre 4 | pratiquement le même temps : le goulot est Freestyle |
+| Rendu 4 s complet (96 images) | à relever dans le journal du rendu final |
+| Épisode de 15 min à 24 i/s, même réglage | 21 600 images × 18 s ≈ 108 h (à réduire) |
 
-## Choix
-
-- Blender 4.5.15 LTS : le Line Art de Grease Pencil v3 est disponible (`GreasePencilLineartModifier`).
-- FFmpeg 6.1.1 (paquet système) : suffisant pour l'encodage H.264.
-- MB-Lab (personnage) : prévu au jalon 3, version 1.8.1, code sous GPL-3.0 (voir `CREDITS.md`).
+Optimisations possibles, non faites : réduire la résolution de calcul de Freestyle, ou n'activer Freestyle que sur les images vues.

@@ -23,6 +23,8 @@ def _args():
     p.add_argument("--image", type=int, default=0)
     p.add_argument("--samples", type=int, default=4)
     p.add_argument("--res", default="960x540")
+    p.add_argument("--debruitage", action="store_true", default=True)
+    p.add_argument("--sans-traces", action="store_true")
     p.add_argument("--debut", type=int, default=1)
     p.add_argument("--fin", type=int, default=scene4s.NB_IMAGES)
     p.add_argument("--mp4-seulement", action="store_true")
@@ -38,6 +40,10 @@ def main():
     sc.render.engine = "CYCLES"
     sc.cycles.device = "CPU"
     sc.cycles.samples = a.samples
+    sc.cycles.use_denoising = a.debruitage
+    sc.cycles.denoiser = "OPENIMAGEDENOISE"
+    if a.sans_traces:
+        sc.render.use_freestyle = False
     sc.render.resolution_x, sc.render.resolution_y = lx, ly
     sc.render.resolution_percentage = 100
     sc.render.image_settings.file_format = "PNG"
