@@ -101,3 +101,21 @@ Déblocage humain (hors autonomie) : dessins de Aiko et Darius. Sinon, la procha
   - jacobienne moyennée par triangle ; relief figé au repos ;
   - temps de rendu non remesuré après ajout de la physique.
 - Pas de push. Commit local sur `autonome`.
+
+## 2026-11-02 — Encre fine, bascule nette, rampes teintées, découpe par matériaux
+- Demande : supprimer l'aspect brouillon (traits épais, fondu à 22,5°, illustration remplacée par des formes) et se rapprocher de l'illustration de référence.
+- Fait :
+  - `engine/npr/encre.py` : silhouette continue 1/2/3 px selon l'éclairage ; arêtes internes amincies (non-maxima, hystérésis) ;
+  - `multivue.vue_nette` et `appliquer_transition` : bascule nette au point médian, cisaillement FFD nul aux bornes ; le fondu est conservé pour comparaison ;
+  - `rampe_chaude` / `rampe_froide` et `masqueMateriau` : rampe choisie par pixel dans `ombrage.frag` ;
+  - `engine/npr/decoupe_materiaux.py` : découpe par couleur, en partition complète (trous comblés par le voisin, reflets clairs internes remplis sous 1 % de la boîte) ;
+  - `engine/npr/demo_reference.py` : planche de l'illustration de référence.
+- Défauts trouvés en cours de route, corrigés :
+  - des trous transparents dans le personnage créaient une silhouette à chaque trou (points noirs). Corrigé par la partition complète ;
+  - des reflets clairs de la référence sortaient du masque et laissaient voir le fond. Corrigé par le remplissage des petites zones fermées ; un premier remplissage sans seuil comblait l'espace entre bras et torse, donc il a été limité en taille ;
+  - le spéculaire dur de la démo (`step` sur N·H) produisait des traits blancs sur les calques sombres. Désactivé dans la démo de référence seulement ;
+  - hypothèses écartées : le relief (même image à 0 et 0,04) et les marches de profondeur entre couches (même image avec un plan commun).
+- Tests : 165 au total, tous verts (dont 10 encre, 13 découpe, 8 bascule, 3 rampes).
+- Vérification visuelle : planches regardées avec Read (`planche_reference_v7.png`, dans le dossier de travail de la session).
+- Limites : la référence est un autre personnage, sa découpe est une approximation par couleur ; l'inclinaison de tête est à peine visible ; le spéculaire dur reste à régler dans la démo de Kaël ; l'encre interne reste fragmentaire.
+- Pas de push. Commit local sur `autonome`.

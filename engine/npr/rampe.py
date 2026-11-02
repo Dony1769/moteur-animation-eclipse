@@ -29,6 +29,22 @@ def rampe_par_defaut(n=256):
     return rampe(SEUILS_TOON, COULEURS_TOON, n)
 
 
+# Matériaux teintés (ambiance chaude / froide de l'image cible) : même structure à trois bandes.
+# Peau : ombre rosée, demi-teinte chaude, lumière crème. Vêtements sombres : ombre bleu-violet froid.
+COULEURS_CHAUDES = ((0.42, 0.24, 0.26), (0.74, 0.50, 0.44), (1.00, 0.93, 0.84))
+COULEURS_FROIDES = ((0.20, 0.24, 0.38), (0.40, 0.46, 0.60), (0.86, 0.92, 0.99))
+
+
+def rampe_chaude(n=256):
+    """Rampe des matériaux chauds (peau) : ombre rosée, lumière crème."""
+    return rampe(SEUILS_TOON, COULEURS_CHAUDES, n)
+
+
+def rampe_froide(n=256):
+    """Rampe des matériaux froids (vêtements sombres) : ombre bleutée."""
+    return rampe(SEUILS_TOON, COULEURS_FROIDES, n)
+
+
 def vers_flottant(rampe_u8):
     """Conversion identique à celle de OpenGL pour une texture uint8 normalisée."""
     return rampe_u8.astype(np.float32) / 255.0

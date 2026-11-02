@@ -85,3 +85,13 @@
 - Gravité 540 px/s² (équivalent à 0,15 px/image² à 60 Hz). Raison : le document donnait une valeur par image, sans durée d'image.
 - Vues multiples par fondu entre vues réelles, sans invention de profil. Raison : seules la face et le trois quarts existent ; un profil généré serait une fausse donnée. Un fondu n'est pas une rotation et le dit.
 - Pas de géométrie 3D ajoutée. Raison : les données de Kaël sont des images découpées en 2D ; une rotation 3D relèverait d'un autre chantier.
+
+## Encre fine, bascule nette, rampes teintées, découpe par matériaux (2 novembre 2026)
+- Silhouette tirée du bord du masque de profondeur, et non du Sobel. Raison : un seuil sur le gradient laisse des trous ; le bord du masque est continu par construction.
+- Épaisseur du trait selon la luminance (1/2/3 px). Raison : c'est la modulation demandée, et elle se lit sans texture supplémentaire.
+- Bascule nette au point médian, et non fondu. Raison : un fondu entre deux vues non recalées dessine deux personnages superposés.
+- Rampe par pixel via un masque sur l'atlas, et non par calque. Raison : une même couche peut mélanger peau et tissu ; un masque suit la découpe réelle.
+- Découpe en partition complète, et non en calques bruts. Raison : un pixel sans couche devient un trou transparent, et chaque trou crée une silhouette parasite.
+- Reflets internes remplis seulement sous 1 % de la boîte. Raison : au-delà, la zone est du fond (espace entre bras et torse) ; un seuil unique ne distingue pas les deux cas, donc le seuil est une règle de taille, et ce choix est testé.
+- Spéculaire désactivé dans la démo de référence seulement. Raison : la référence n'a pas de reflets durs sur ses vêtements ; le réglage de Kaël n'est pas touché, son spéculaire reste à régler.
+- Découpe par couleur, sans annotation de parties. Raison : aucune donnée de parties pour cette illustration ; l'approximation est signalée comme telle dans la documentation.

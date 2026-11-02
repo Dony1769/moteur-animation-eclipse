@@ -230,6 +230,13 @@ Calques réels de Kaël, atlas, squelette de deux os (corps : bassin → cou ; t
 
 La tête de test est une sphère avec une bosse gaussienne, et les calques de `demo_articule` sont des formes dessinées en code : ni l'une ni l'autre n'est un personnage du projet. `demo_personnage` est la seule démo qui utilise des calques réels.
 
+## Encre fine, bascule nette, rampes teintées, découpe par matériaux (2 novembre 2026)
+- Encre : `engine/npr/encre.py` remplace le Sobel épais de la passe contour. La silhouette est la frontière intérieure continue du masque de profondeur, large de 1 px sur la face éclairée, 2 px au milieu, 3 px sur la face ombrée (luminance). Les arêtes internes passent par Sobel sur normales et log-profondeur, suppression des non-maxima, hystérésis et retrait des composantes courtes. Raison : un trait épais et une silhouette percée (points noirs) rendaient le dessin brouillon. Tests : `tests/test_encre.py` (10, CPU).
+- Multi-vues : `multivue.vue_nette` bascule nettement sur la vue réelle la plus proche, au point médian entre deux angles ; `appliquer_transition` ajoute un cisaillement FFD qui est nul aux bornes. Le fondu (`poids_vues`, `fondre`) reste dans le module, pour comparaison seulement. Tests : `TestBasculeNette` (8).
+- Rampes : `rampe_chaude` (peau) et `rampe_froide` (vêtements sombres). Le masque `masqueMateriau`, sur l'atlas, choisit la rampe par pixel dans `ombrage.frag`. Tests : `TestRampesTeintees` (3), dont un test GPU qui compare la dominante bleue des zones froides et chaudes.
+- Découpe par matériaux (`decoupe_materiaux.py`) : k-moyennes sur les couleurs RGB, filtre médian des étiquettes, nom de matériau par heuristique de couleur. La carte de couches est une partition : chaque pixel du personnage appartient à exactement une couche (les trous créés par l'ouverture morphologique sont rendus au voisin le plus proche). Les reflets clairs enfermés dans la silhouette sont remplis s'ils font moins de 1 % de la boîte ; une grande zone claire enfermée (l'espace entre bras et torse) reste du fond. Tests : `tests/test_decoupe_materiaux.py` (13).
+- Démo de référence (`demo_reference.py`) : planche à partir de l'illustration jointe, avec trois inclinaisons de tête. Le spéculaire dur est désactivé dans cette démo seulement (`spec_seuil=1.5`), car il produisait des traits blancs sur les vêtements sombres.
+
 ## Limites
 
 1. **Pas de géométrie dans le moteur 2D.** Les planches n'ont ni normales ni profondeur. Le module ne sert à une planche qu'avec une profondeur estimée (par exemple Depth-Anything-V2, déjà dans le pipeline) dont on dérive les normales.
@@ -260,6 +267,12 @@ La tête de test est une sphère avec une bosse gaussienne, et les calques de `d
 25. **Relief figé au repos (limite 15).** Le relief et la profondeur des sommets ne sont pas recalculés par la déformation ; seules les normales le sont.
 26. **Contour non réglé sur les calques réels.** Le trait noir est épais sur le personnage réel : c'est le réglage par défaut, pas une valeur choisie pour ce dessin.
 
+27. **Référence = autre personnage.** L'illustration de référence n'est pas Kaël. Ses calques sont des groupes de couleur, pas des parties du corps : cheveux avant et arrière fusionnés, veste et pantalon sombres peuvent se mélanger. Les points-clés (cou, sommet du crâne, bassin) sont placés à l'œil, sans détection.
+28. **Mouvement de tête très faible dans la démo de référence.** L'inclinaison de ±0,12 rad est à peine visible sur la planche.
+29. **Spéculaire dur non résolu.** Le spéculaire est un `step` sur N·H (seuil 0,985) : il fait apparaître des traits blancs sur les calques sombres dès qu'il est actif. Il est désactivé dans la démo de référence, pas dans celle de Kaël.
+30. **Relief sans effet mesurable sur la planche de référence.** Un relief de 0 et de 0,04 donnent la même image. La cause n'est pas identifiée.
+31. **Encre fragmentaire à l'intérieur.** Seule la silhouette est continue ; les arêtes internes restent interrompues sur les surfaces courbes.
+
 ## Fichiers
 
 - `engine/npr/parametres.py` : paramètres partagés (ombrage, cheveux, contour) ;
@@ -278,3 +291,7 @@ La tête de test est une sphère avec une bosse gaussienne, et les calques de `d
 - `engine/npr/tete_test.py` : banc d'essai (sphère, bosse, masques UV, calotte) ;
 - `engine/npr/demo_tete.py`, `engine/npr/demo_calque.py` : images de test ;
 - `tests/test_npr.py`, `tests/test_rig.py`, `tests/test_personnage_reel.py` : tests.
+- `engine/npr/encre.py` : encre fine (silhouette continue, épaisseur selon l'éclairage, arêtes internes minces) ;
+- `engine/npr/decoupe_materiaux.py` : découpe d'une illustration aplatie en couches par matériau (partition, nommage, masque froid/chaud) ;
+- `engine/npr/demo_reference.py` : planche à partir de l'illustration de référence (découpe par couleur, trois inclinaisons) ;
+- `tests/test_encre.py`, `tests/test_decoupe_materiaux.py` : tests de l'encre et de la découpe ;

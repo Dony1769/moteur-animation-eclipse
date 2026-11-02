@@ -448,3 +448,101 @@ class TestPersonnageGPU(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class TestBasculeNette(unittest.TestCase):
+    """Bascule de sprites au seuil d'angle, et transition FFD courte (multivue.py)."""
+    VUES = {0.0: "face", 45.0: "trois_quarts"}
+
+    def test_pas_de_fondu(self):
+        from npr.multivue import vue_nette
+        for a in np.linspace(0, 45, 19):
+            nom, _ = vue_nette(a, self.VUES)
+            self.assertIn(nom, ("face", "trois_quarts"))
+
+    def test_seuil_au_point_median(self):
+        from npr.multivue import vue_nette
+        self.assertEqual(vue_nette(22.0, self.VUES), ("face", False))
+        self.assertEqual(vue_nette(23.0, self.VUES), ("trois_quarts", False))
+
+    def test_profil_hors_plage(self):
+        from npr.multivue import vue_nette
+        nom, hors = vue_nette(90.0, self.VUES)
+        self.assertEqual(nom, "trois_quarts")
+        self.assertTrue(hors)
+
+    def test_transition_nulle_aux_bornes(self):
+        from npr.multivue import decalage_transition
+        self.assertAlmostEqual(decalage_transition(0.0, 6.0), 0.0, places=12)
+        self.assertAlmostEqual(decalage_transition(1.0, 6.0), 0.0, places=12)
+        self.assertAlmostEqual(decalage_transition(0.5, 6.0), 6.0, places=12)
+
+    def test_transition_bornee_par_l_amplitude(self):
+        from npr.multivue import appliquer_transition
+        g = GrilleFFD((0.0, 0.0, 100.0, 200.0), nx=3, ny=4)
+        for s in np.linspace(0, 1, 11):
+            appliquer_transition([g], s, 5.0)
+            self.assertLessEqual(np.abs(g.decalages).max(), 5.0 + 1e-9)
+
+    def test_transition_cisaille_du_haut_vers_le_bas(self):
+        from npr.multivue import appliquer_transition
+        g = GrilleFFD((0.0, 0.0, 100.0, 200.0), nx=3, ny=4)
+        appliquer_transition([g], 0.5, 5.0)
+        self.assertAlmostEqual(g.decalages[0, 0, 0], -5.0, places=9)   # haut
+        self.assertAlmostEqual(g.decalages[-1, 0, 0], 5.0, places=9)   # bas
+        self.assertTrue(np.allclose(g.decalages[..., 1], 0.0))
+
+    def test_transition_phase_invalide_refusee(self):
+        from npr.multivue import decalage_transition
+        with self.assertRaises(ValueError):
+            decalage_transition(1.5, 5.0)
+
+
+class TestRampesTeintees(unittest.TestCase):
+    """Rampes toon chaude (peau) et froide (vêtements sombres), choisies par un masque matériau."""
+
+    def test_rampes_extremes(self):
+        from npr import rampe as R
+        c = R.rampe_chaude()
+        f = R.rampe_froide()
+        self.assertEqual(c.shape, (256, 3))
+        self.assertEqual(f.shape, (256, 3))
+        np.testing.assert_array_equal(c[0], np.round(np.array(R.COULEURS_CHAUDES[0]) * 255).astype(np.uint8))
+        np.testing.assert_array_equal(f[0], np.round(np.array(R.COULEURS_FROIDES[0]) * 255).astype(np.uint8))
+
+    def test_ombre_chaude_et_froide(self):
+        from npr import rampe as R
+        c = R.rampe_chaude()[0].astype(int)
+        f = R.rampe_froide()[0].astype(int)
+        self.assertGreater(c[0] - c[2], 0)    # chaude : rouge > bleu dans l'ombre
+        self.assertGreater(f[2] - f[0], 0)    # froide : bleu > rouge dans l'ombre
+
+    def test_masque_materiau_change_la_teinte_gpu(self):
+        ctx = creer_contexte()
+        if ctx is None:
+            raise unittest.SkipTest("pas de contexte OpenGL 3.3 disponible")
+        from npr import rampe as R
+        taille = 64
+        rgba = np.zeros((taille, taille, 4), np.float32)
+        yy, xx = np.mgrid[0:taille, 0:taille].astype(np.float32)
+        disque = ((xx - 31.5) ** 2 + (yy - 31.5) ** 2) <= 22 ** 2
+        rgba[..., :3] = 1.0                       # albédo blanc : la couleur vient de la rampe
+        rgba[..., 3] = disque
+        calque = RL.Calque(rgba, plan=5.0, relief_max=0.3, rayon_biseau=10.0, flou=0.0)
+        calques = [CA.construire("disque", calque, cellule=2.0)]
+        mesures = {}
+        for nom, masque in (("chaud", np.zeros((taille, taille), np.float32)),
+                            ("froid", np.ones((taille, taille), np.float32))):
+            rendu = RenduNPR(ctx, taille, taille, ombrage=ParamsOmbrage(poids_sphere=0.0),
+                             rampe_froide_u8=R.rampe_froide())
+            try:
+                rendu.definir_materiaux(masque)
+                rendu.dessiner_calques(calques, {}, projection=T.projection(taille, taille),
+                                       tan_fov=T.tan_fov(taille, taille), centre_tete_vue=T.CENTRE_VUE,
+                                       lumiere_vue=T.LUMIERE_VUE, avant_tete_vue=T.AVANT_VUE)
+                img = rendu.image_finale()[..., :3].astype(float)
+            finally:
+                rendu.liberer()
+            centre = img[20:44, 20:44]           # intérieur du disque, loin du contour
+            mesures[nom] = float(np.mean(centre[..., 2] - centre[..., 0]))
+        self.assertGreater(mesures["froid"], mesures["chaud"] + 20.0)   # en valeurs 0..255

@@ -132,11 +132,15 @@ def simulations_cheveux(calques, sq, tl):
             for c in calques if c.nom in CALQUES_CHEVEUX]
 
 
-def rendre_images(ctx, calques, tl, instants=INSTANTS, sims=None):
-    """Une image RGB par instant, dans un seul RenduNPR. Instants croissants (la physique avance)."""
+def rendre_images(ctx, calques, tl, instants=INSTANTS, sims=None, encre=None):
+    """Une image RGB par instant, dans un seul RenduNPR. Instants croissants (la physique avance).
+
+    encre : ParamsEncre pour le contour fin ; None = contour Sobel GPU d'origine.
+    """
     if sims is None:
         sims = simulations_cheveux(calques, squelette(), tl)
     rendu = RenduNPR(ctx, TAILLE, TAILLE, ombrage=PARAMS)
+    rendu.definir_encre(encre)
     rendu.definir_masque_cheveux(np.ones((1, 1), np.float32))
     images = []
     try:

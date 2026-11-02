@@ -18,6 +18,7 @@ from pathlib import Path
 import numpy as np
 import moderngl
 
+from . import encre as EN
 from . import relief as RL
 from .calques_anim import trier_par_profondeur
 from .parametres import ParamsContour, ParamsOmbrage
@@ -123,12 +124,13 @@ class Maillage:
 class RenduNPR:
     """Chaîne NPR sur des cibles hors écran de taille fixe."""
 
-    def __init__(self, ctx, largeur, hauteur, rampe_u8=None, ombrage=None, contour=None):
+    def __init__(self, ctx, largeur, hauteur, rampe_u8=None, ombrage=None, contour=None, rampe_froide_u8=None):
         self.ctx = ctx
         self.largeur = largeur
         self.hauteur = hauteur
         self.p_ombrage = ombrage or ParamsOmbrage()
         self.p_contour = contour or ParamsContour()
+        self.p_encre = None                            # encre fine (encre.py) ; None = Sobel GPU
         dims = (largeur, hauteur)
 
         def cible(composantes=4, dtype="f4"):
@@ -160,6 +162,14 @@ class RenduNPR:
         self.t_rampe.filter = (moderngl.NEAREST, moderngl.NEAREST)
         self.t_rampe.repeat_x = False
         self.t_rampe.repeat_y = False
+        # Rampe froide : même texture par défaut (aucun changement tant que le masque matériau vaut 0).
+        self.t_rampe_froide = self.t_rampe if rampe_froide_u8 is None else ctx.texture(
+            (rampe_froide_u8.shape[0], 1), 3,
+            data=np.ascontiguousarray(rampe_froide_u8, np.uint8).tobytes(), dtype="f1")
+        if rampe_froide_u8 is not None:
+            self.t_rampe_froide.filter = (moderngl.NEAREST, moderngl.NEAREST)
+            self.t_rampe_froide.repeat_x = False
+            self.t_rampe_froide.repeat_y = False
 
         self.albedo_defaut = ctx.texture((1, 1), 4, data=b"\xff" * 4, dtype="f1")
         self.albedo_defaut.filter = (moderngl.NEAREST, moderngl.NEAREST)
@@ -170,6 +180,7 @@ class RenduNPR:
         self.t_masque_sphere = self.masque_defaut
         self.t_masque_ombre = self.masque_defaut
         self.t_masque_cheveux = self.masque_zero       # pas de reflet tant qu'on n'en définit pas
+        self.t_masque_materiau = self.masque_zero      # 0 = rampe chaude partout tant qu'on n'en définit pas
         self._calques_gpu = {}                         # nom -> (Maillage, texture) des calques articulés
         self._textures_partagees = {}                  # id(source) -> (source, texture) : atlas uploadés une fois
 
@@ -224,6 +235,13 @@ class RenduNPR:
         self.t_masque_sphere = self.masque_defaut if masque_sphere is None else self._texture_masque(masque_sphere)
         self.t_masque_ombre = self.masque_defaut if masque_ombre is None else self._texture_masque(masque_ombre)
 
+    def definir_materiaux(self, masque=None):
+        """Masque matériau (tableau [v, u], 0..1) : 0 = rampe chaude (peau), 1 = rampe froide (vêtements sombres).
+
+        None = rampe chaude partout (comportement d'origine).
+        """
+        self.t_masque_materiau = self.masque_zero if masque is None else self._texture_masque(masque)
+
     def definir_masque_cheveux(self, masque=None):
         """Masque des cheveux (tableau [v, u], 0..1). None = aucun reflet de cheveux."""
         self.t_masque_cheveux = self.masque_zero if masque is None else self._texture_masque(masque)
@@ -244,10 +262,12 @@ class RenduNPR:
         self.t_masque_ombre.use(location=5)
         self.t_tangente.use(location=6)
         self.t_masque_cheveux.use(location=7)
+        self.t_rampe_froide.use(location=8)
+        self.t_masque_materiau.use(location=9)
         u = self.prog_ombrage
         for nom, unite in (("gAlbedo", 0), ("gNormal", 1), ("gDepth", 2), ("toonRampTex", 3),
                            ("masqueSphere", 4), ("masqueOmbre", 5), ("gTangente", 6),
-                           ("masqueCheveux", 7)):
+                           ("masqueCheveux", 7), ("toonRampFroide", 8), ("masqueMateriau", 9)):
             u[nom].value = unite
         p = self.p_ombrage
         u["tanFov"].value = tuple(float(x) for x in tan_fov)
@@ -266,6 +286,28 @@ class RenduNPR:
         u["hairThreshold"].value = float(p.cheveux_seuil)
         u["hairColor"].value = tuple(float(x) for x in p.cheveux_couleur)
         self.vao_ombrage.render(moderngl.TRIANGLE_STRIP)
+
+    def definir_encre(self, params=None):
+        """Contour en encre fine (encre.py) à la place du Sobel GPU ; None = contour GPU d'origine."""
+        self.p_encre = params
+
+    def _contour_final(self, pc, t_couleur, t_normale, t_profondeur):
+        """Passe de contour finale : Sobel GPU, ou encre fine relue sur le CPU si définie."""
+        if self.p_encre is None:
+            self._passe_contour(self.fbo_final, pc, t_couleur, t_normale, t_profondeur)
+            return
+        H, W = self.hauteur, self.largeur
+
+        def lire(tex):
+            arr = np.frombuffer(tex.read(), np.float32).reshape(H, W, tex.components)
+            return arr[::-1].astype(np.float64)          # ligne 0 en haut, comme l'image
+        couleur = lire(t_couleur)[..., :3]
+        normale = lire(t_normale)[..., :3]
+        profondeur = lire(t_profondeur)[..., 0]
+        out = EN.appliquer(couleur, normale, profondeur, self.p_encre)
+        u8 = (np.clip(out, 0.0, 1.0) * 255.0 + 0.5).astype(np.uint8)
+        rgba = np.concatenate([u8, np.full((H, W, 1), 255, np.uint8)], axis=2)
+        self.t_final.write(np.ascontiguousarray(rgba[::-1]).tobytes())
 
     def _passe_contour(self, fbo, pc, t_couleur, t_normale, t_profondeur):
         """Passe contour : fbo <- Sobel(normales, log profondeur) appliqué à t_couleur."""
@@ -302,8 +344,7 @@ class RenduNPR:
         maillage.vao.render()
 
         self._ombrer(tan_fov, centre_tete_vue, lumiere_vue, avant_tete_vue)
-        self._passe_contour(self.fbo_final, self.p_contour,
-                            self.t_ombrage, self.t_normale, self.t_profondeur)
+        self._contour_final(self.p_contour, self.t_ombrage, self.t_normale, self.t_profondeur)
 
     def dessiner_calques(self, calques, pose, *, projection, tan_fov, centre_tete_vue,
                          lumiere_vue, avant_tete_vue):
@@ -341,8 +382,7 @@ class RenduNPR:
             maillage.vao.render()
 
         self._ombrer(tan_fov, centre_tete_vue, lumiere_vue, avant_tete_vue)
-        self._passe_contour(self.fbo_final, self.p_contour,
-                            self.t_ombrage, self.t_normale, self.t_profondeur)
+        self._contour_final(self.p_contour, self.t_ombrage, self.t_normale, self.t_profondeur)
         return sommets
 
     def dessiner_gbuffer(self, gbuf, *, tan_fov, centre_tete_vue, lumiere_vue, avant_tete_vue):
@@ -358,8 +398,7 @@ class RenduNPR:
         self.t_tangente.write(_vers_rgba(gbuf["tangente"]))
 
         self._ombrer(tan_fov, centre_tete_vue, lumiere_vue, avant_tete_vue)
-        self._passe_contour(self.fbo_final, self.p_contour,
-                            self.t_ombrage, self.t_normale, self.t_profondeur)
+        self._contour_final(self.p_contour, self.t_ombrage, self.t_normale, self.t_profondeur)
 
     def contour_sur(self, couleur, normale, profondeur, p_contour=None):
         """Passe contour seule sur un G-buffer fourni (tableaux [y, x], ligne 0 en bas).
@@ -440,6 +479,8 @@ class RenduNPR:
 
     def liberer(self):
         self.liberer_calques()
+        if self.t_rampe_froide is not self.t_rampe:
+            self.t_rampe_froide.release()
         for ressource in (self.t_albedo, self.t_normale, self.t_profondeur, self.t_tangente,
                           self.t_ombrage, self.t_final, self.tampon_z, self.fbo_geo,
                           self.fbo_ombrage, self.fbo_final, self.t_rampe, self.albedo_defaut,

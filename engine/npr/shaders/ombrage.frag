@@ -1,5 +1,6 @@
 #version 330 core
-// Passe d'ombrage : relit le G-buffer et applique la rampe toon, la normale sphérique
+// Passe d'ombrage : relit le G-buffer et applique la rampe toon (chaude ou froide selon le matériau),
+// la normale sphérique
 // masquée, le masque d'ombre du visage, le rim light, le spéculaire durci et
 // l'anisotropie des cheveux (Kajiya-Kay sur le moitié-vecteur, seuil binaire).
 // Tout est calculé en espace vue. Référence numpy : reference.ombrage.
@@ -14,6 +15,8 @@ uniform sampler2D masqueSphere;   // UV de surface ; 1 = normale sphérique, 0 =
 uniform sampler2D masqueOmbre;    // UV de surface ; 1 = l'ombre de la rampe est autorisée (visage)
 uniform sampler2D gTangente;      // tangente vue unitaire (zéro = pas de cheveux)
 uniform sampler2D masqueCheveux;  // UV de surface ; 0 = pas de reflet de cheveux (défaut)
+uniform sampler2D toonRampFroide; // rampe 256 x 1 pour les matériaux froids (vêtements sombres)
+uniform sampler2D masqueMateriau; // UV de surface ; 0 = rampe chaude (peau, défaut), 1 = rampe froide
 
 uniform vec2 tanFov;              // (tan(fovy/2) * aspect, tan(fovy/2))
 uniform vec3 headCenter;          // centre de la tête, espace vue
@@ -61,7 +64,9 @@ void main() {
         float m = texture(masqueOmbre, uvS).r;
         u = mix(1.0, ndlb, m);            // hors masque : pleine lumière
     }
-    vec3 shade = texture(toonRampTex, vec2(clamp(u, 0.0, 1.0), 0.5)).rgb;
+    float mm = texture(masqueMateriau, uvS).r;
+    vec2 uvRampe = vec2(clamp(u, 0.0, 1.0), 0.5);
+    vec3 shade = mix(texture(toonRampTex, uvRampe).rgb, texture(toonRampFroide, uvRampe).rgb, mm);
     vec3 col = albedo * shade;
 
     // Rim light hybride : Fresnel x éclairage direct, seuil lissé.
