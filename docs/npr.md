@@ -306,3 +306,19 @@ La tête de test est une sphère avec une bosse gaussienne, et les calques de `d
 - `tests/test_encre.py`, `tests/test_decoupe_materiaux.py` : tests de l'encre et de la découpe ;
 - `tests/test_tissus_sombres.py` : spéculaire coupé sur les tissus sombres, chaîne normale -> rampe ;
 - `engine/npr/sequence_kael.py`, `tests/test_sequence.py` : séquence de test et métrique de scintillement ;
+
+## Pipeline 3D hybride (prototype)
+
+Modules : `maillage3d.py` (import OBJ, normales, tangentes, UV planaires, squelette 3D, poids par proximité,
+skinning linéaire), `buste.py` (proxy low-poly généré, 3 os : torse, cou, tête), `rendu3d.py` (`Avatar3D` :
+skinning CPU puis chemin maillage de `rendu.py`, mêmes rampes, rim, spéculaire et contour que le 2.5D),
+`demo_buste3d.py` (planche), `sequence_3d.py` (balayages yaw ±45° et tête ±0,4 rad, MP4, métriques).
+
+Limites, à lire avant toute conclusion :
+- Le buste est un **proxy généré**, pas Kaël. Aucun modèle 3D du personnage n'existe dans le dépôt.
+- Import OBJ seulement ; le glTF n'est pas implanté.
+- UV planaires depuis la face : de face, la texture est juste ; à ±45° elle s'étire et le fond clair du
+  recadrage apparaît sur les flancs. Corriger demande des UV peints ou une projection multi-vues.
+- Scintillement mesuré sur le balayage yaw : 24 % des pixels sombres (sans encre fine : 23 %). L'encre n'en est
+  pas la cause. Hypothèse non vérifiée : échantillonnage de la texture sur les UV étirés.
+- Tête (tilt) : 7 % de scintillement, régularité du mouvement 1,04 (un à-coup donnerait un rapport élevé).

@@ -132,3 +132,10 @@ Déblocage humain (hors autonomie) : dessins de Aiko et Darius. Sinon, la procha
 - Démo de tête en boucle : mesure d'abord faussée par les demi-tours (corrigée par le balayage monotone).
 - Tests : 184 au total, tous verts.
 - Pas de push. Commit local sur `autonome`.
+
+## 2026-11-02 — Prototype 3D hybride
+
+- Importeur OBJ, squelette 3D et LBS, proxy de buste, rendu NPR via le chemin maillage : fonctionnels.
+- Tests : `tests/test_maillage3d.py` (17 tests : OBJ, squelette, poids, rendu GPU). Suite complète : 185 OK.
+- Séquences : yaw régulier (1,10) mais scintillant (24 %) ; tête régulière (1,04), scintillement 7 %.
+- Constaté à +45° : fond clair du recadrage projeté sur les flancs. Non corrigé.

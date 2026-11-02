@@ -103,3 +103,9 @@
 - Écart de plans de 0,15 par rang, supérieur au relief. Raison : sans cela un calque arrière peut passer devant le calque avant à leur frontière. Ce n'est pas la cause du scintillement mesuré, mais c'est une condition de cohérence.
 - Métrique de scintillement sur balayage monotone uniquement. Raison : un aller-retour mêle les demi-tours au scintillement.
 - Scintillement non résolu, signalé comme tel. Raison : on ne maquille pas une métrique défavorable.
+
+## 2026-11-02 — Pipeline 3D : proxy généré et UV planaires provisoires
+
+- Décision : valider la chaîne 3D sur un proxy généré avant de modéliser Kaël.
+- Décision : UV planaires depuis la face, acceptées comme limite connue ; les UV peints ou multi-vues sont reportés.
+- Conséquence : les conclusions sur le rendu de profil ne valent pas pour le personnage réel.
