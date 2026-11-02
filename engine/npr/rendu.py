@@ -1,13 +1,15 @@
 """Passes OpenGL 3.3 du rendu NPR (moderngl).
 
-Enchaînement :
-  1. géométrie -> G-buffer MRT : albédo ; normale vue (raw) ; profondeur linéaire + UV de surface ;
-  2. ombrage   -> rampe toon, normales sphériques masquées, masque d'ombre visage,
-                  rim light hybride, spéculaire durci ;
-  3. contour   -> Sobel sur normales et sur log(profondeur), trait encré.
+Deux chemins, même ombrage et même contour :
+  1. maillage : geometrie -> G-buffer MRT -> ombrage -> contour -> image ;
+  2. 2.5D     : G-buffer déjà calculé (relief.composer) -> ombrage -> contour -> image.
 
-Les textures du G-buffer sont en RGBA32F et lues en GL_NEAREST. La référence CPU
-est dans reference.py ; tests/test_npr.py compare les deux.
+G-buffer (quatre sorties MRT, RGBA32F, GL_NEAREST et GL_CLAMP_TO_EDGE) :
+  albedo     : RGB ;
+  normale    : xyz vue, brute (fond = 0) ;
+  profondeur : r = d linéaire (fond = 0), g,b = UV de surface ;
+  tangente   : xyz vue unitaire (zéro = pas de cheveux).
+Les tableaux passés à dessiner_gbuffer() sont en ordre OpenGL : ligne 0 en bas.
 """
 from pathlib import Path
 
@@ -27,6 +29,17 @@ def _lire(nom):
 def _unitaire(v):
     v = np.asarray(v, np.float32)
     return tuple(v / np.linalg.norm(v))
+
+
+def _vers_rgba(arr):
+    """Tableau (H, W) ou (H, W, k <= 4) -> octets RGBA32F (complétés par 0)."""
+    arr = np.asarray(arr, np.float32)
+    if arr.ndim == 2:
+        arr = arr[..., None]
+    H, W, k = arr.shape
+    out = np.zeros((H, W, 4), np.float32)
+    out[..., :k] = arr
+    return np.ascontiguousarray(out).tobytes()
 
 
 def creer_contexte():
@@ -68,21 +81,21 @@ def _octets_mat(m):
 
 
 class Maillage:
-    """Maillage indexé (sommets, normales, UV, triangles) envoyé sur le GPU."""
+    """Maillage indexé (sommets, normales, UV, tangentes, triangles) envoyé sur le GPU."""
 
-    def __init__(self, ctx, programme, sommets, normales, uv, triangles):
-        donnees = np.hstack([sommets, normales, uv]).astype(np.float32)
+    def __init__(self, ctx, programme, sommets, normales, uv, tangentes, triangles):
+        donnees = np.hstack([sommets, normales, uv, tangentes]).astype(np.float32)
         self.vbo = ctx.buffer(donnees.tobytes())
         self.ibo = ctx.buffer(np.asarray(triangles, np.uint32).tobytes())
         self.vao = ctx.vertex_array(
             programme,
-            [(self.vbo, "3f 3f 2f", "in_position", "in_normal", "in_uv")],
+            [(self.vbo, "3f 3f 2f 3f", "in_position", "in_normal", "in_uv", "in_tangent")],
             self.ibo,
         )
 
 
 class RenduNPR:
-    """Chaîne NPR complète sur des cibles hors écran de taille fixe."""
+    """Chaîne NPR sur des cibles hors écran de taille fixe."""
 
     def __init__(self, ctx, largeur, hauteur, rampe_u8=None, ombrage=None, contour=None):
         self.ctx = ctx
@@ -99,15 +112,15 @@ class RenduNPR:
             t.repeat_y = False
             return t
 
-        # G-buffer : albédo, normale (raw), profondeur + UV de surface.
         self.t_albedo = cible()
         self.t_normale = cible()
         self.t_profondeur = cible()
+        self.t_tangente = cible()
         self.t_ombrage = cible()
         self.t_final = cible(4, "f1")
         self.tampon_z = ctx.depth_renderbuffer(dims)
         self.fbo_geo = ctx.framebuffer(
-            color_attachments=[self.t_albedo, self.t_normale, self.t_profondeur],
+            color_attachments=[self.t_albedo, self.t_normale, self.t_profondeur, self.t_tangente],
             depth_attachment=self.tampon_z,
         )
         self.fbo_ombrage = ctx.framebuffer(color_attachments=[self.t_ombrage])
@@ -126,9 +139,11 @@ class RenduNPR:
         self.albedo_defaut.filter = (moderngl.NEAREST, moderngl.NEAREST)
         self.albedo_defaut.repeat_x = False
         self.albedo_defaut.repeat_y = False
-        self.masque_defaut = self._texture_masque(np.ones((1, 1), np.float32))
+        self.masque_defaut = self._texture_masque(np.ones((1, 1), np.float32))   # valeur 1
+        self.masque_zero = self._texture_masque(np.zeros((1, 1), np.float32))    # valeur 0
         self.t_masque_sphere = self.masque_defaut
         self.t_masque_ombre = self.masque_defaut
+        self.t_masque_cheveux = self.masque_zero       # pas de reflet tant qu'on n'en définit pas
 
         self.prog_geo = ctx.program(vertex_shader=_lire("geometrie.vert"),
                                     fragment_shader=_lire("geometrie.frag"))
@@ -141,6 +156,8 @@ class RenduNPR:
         self.vao_ombrage = ctx.vertex_array(self.prog_ombrage, [(quad, "2f", "in_position")])
         self.vao_contour = ctx.vertex_array(self.prog_contour, [(quad, "2f", "in_position")])
 
+    # ---- textures et masques -------------------------------------------------
+
     def _texture_masque(self, masque):
         h, w = masque.shape
         t = self.ctx.texture((w, h), 1,
@@ -150,50 +167,51 @@ class RenduNPR:
         t.repeat_y = False
         return t
 
-    def definir_masques(self, masque_sphere=None, masque_ombre=None):
-        """Masques peints en UV de surface, tableaux [v, u] de floats 0..1.
+    def texture_rgb(self, rgb):
+        """Texture d'albédo RGB (hauteur, largeur, 3), lue en UV."""
+        h, w = rgb.shape[:2]
+        t = self.ctx.texture((w, h), 3,
+                             data=np.ascontiguousarray(rgb, np.float32).tobytes(), dtype="f4")
+        t.filter = (moderngl.NEAREST, moderngl.NEAREST)
+        t.repeat_x = False
+        t.repeat_y = False
+        return t
 
-        None = valeur 1 partout. masque_sphere : 1 = normale sphérique, 0 = normale réelle.
-        masque_ombre : 1 = l'ombre de la rampe est autorisée (utilisé si masque_visage est actif).
+    def definir_masques(self, masque_sphere=None, masque_ombre=None):
+        """Masques UV ou écran (tableaux [v, u] de floats 0..1). None = valeur 1 partout.
+
+        masque_sphere : 1 = normale sphérique, 0 = normale réelle (autour du nez).
+        masque_ombre  : 1 = l'ombre de la rampe est autorisée (si masque_visage est actif).
         """
         self.t_masque_sphere = self.masque_defaut if masque_sphere is None else self._texture_masque(masque_sphere)
         self.t_masque_ombre = self.masque_defaut if masque_ombre is None else self._texture_masque(masque_ombre)
 
-    def dessiner(self, maillage, *, modele_vue, projection, centre_tete_vue, lumiere_vue,
-                 avant_tete_vue, tan_fov, couleur_albedo=(1.0, 1.0, 1.0), albedo=None):
-        """Rend le maillage puis les passes d'ombrage et de contour. Lire avec image_finale()."""
+    def definir_masque_cheveux(self, masque=None):
+        """Masque des cheveux (tableau [v, u], 0..1). None = aucun reflet de cheveux."""
+        self.t_masque_cheveux = self.masque_zero if masque is None else self._texture_masque(masque)
+
+    # ---- passes ------------------------------------------------------------
+
+    def _ombrer(self, tan_fov, centre_tete_vue, lumiere_vue, avant_tete_vue):
+        """Passe d'ombrage : lit le G-buffer, écrit t_ombrage (RGBA32F)."""
         ctx = self.ctx
-        W, H = self.largeur, self.hauteur
-
-        # 1. Géométrie -> G-buffer.
-        self.fbo_geo.use()
-        self.fbo_geo.clear(0.0, 0.0, 0.0, 0.0, depth=1.0)
-        ctx.enable(moderngl.DEPTH_TEST)
-        self.prog_geo["modelView"].write(_octets_mat(modele_vue))
-        self.prog_geo["projection"].write(_octets_mat(projection))
-        self.prog_geo["albedoColor"].value = tuple(couleur_albedo)
-        self.prog_geo["albedoTex"].value = 0
-        (albedo or self.albedo_defaut).use(location=0)
-        maillage.vao.render()
-
-        # 2. Ombrage (lit le G-buffer, écrit une image flottante).
         ctx.disable(moderngl.DEPTH_TEST)
         self.fbo_ombrage.use()
         self.fbo_ombrage.clear(0.0, 0.0, 0.0, 0.0)
-        p = self.p_ombrage
         self.t_albedo.use(location=0)
         self.t_normale.use(location=1)
         self.t_profondeur.use(location=2)
         self.t_rampe.use(location=3)
         self.t_masque_sphere.use(location=4)
         self.t_masque_ombre.use(location=5)
+        self.t_tangente.use(location=6)
+        self.t_masque_cheveux.use(location=7)
         u = self.prog_ombrage
-        u["gAlbedo"].value = 0
-        u["gNormal"].value = 1
-        u["gDepth"].value = 2
-        u["toonRampTex"].value = 3
-        u["masqueSphere"].value = 4
-        u["masqueOmbre"].value = 5
+        for nom, unite in (("gAlbedo", 0), ("gNormal", 1), ("gDepth", 2), ("toonRampTex", 3),
+                           ("masqueSphere", 4), ("masqueOmbre", 5), ("gTangente", 6),
+                           ("masqueCheveux", 7)):
+            u[nom].value = unite
+        p = self.p_ombrage
         u["tanFov"].value = tuple(float(x) for x in tan_fov)
         u["headCenter"].value = tuple(float(x) for x in centre_tete_vue)
         u["lightDir"].value = _unitaire(lumiere_vue)
@@ -206,11 +224,10 @@ class RenduNPR:
         u["rimColor"].value = tuple(float(x) for x in p.rim_couleur)
         u["specularThreshold"].value = float(p.spec_seuil)
         u["specularColor"].value = tuple(float(x) for x in p.spec_couleur)
+        u["hairShift"].value = float(p.cheveux_decalage)
+        u["hairThreshold"].value = float(p.cheveux_seuil)
+        u["hairColor"].value = tuple(float(x) for x in p.cheveux_couleur)
         self.vao_ombrage.render(moderngl.TRIANGLE_STRIP)
-
-        # 3. Contour (Sobel sur G-buffer) -> image finale.
-        self._passe_contour(self.fbo_final, self.p_contour,
-                            self.t_ombrage, self.t_normale, self.t_profondeur)
 
     def _passe_contour(self, fbo, pc, t_couleur, t_normale, t_profondeur):
         """Passe contour : fbo <- Sobel(normales, log profondeur) appliqué à t_couleur."""
@@ -232,11 +249,43 @@ class RenduNPR:
         c["backgroundColor"].value = tuple(float(x) for x in pc.couleur_fond)
         self.vao_contour.render(moderngl.TRIANGLE_STRIP)
 
+    def dessiner(self, maillage, *, modele_vue, projection, centre_tete_vue, lumiere_vue,
+                 avant_tete_vue, tan_fov, couleur_albedo=(1.0, 1.0, 1.0), albedo=None):
+        """Chemin maillage : géométrie -> G-buffer -> ombrage -> contour. Lire avec image_finale()."""
+        self.fbo_geo.use()
+        self.fbo_geo.clear(0.0, 0.0, 0.0, 0.0, depth=1.0)
+        self.ctx.enable(moderngl.DEPTH_TEST)
+        self.prog_geo["modelView"].write(_octets_mat(modele_vue))
+        self.prog_geo["projection"].write(_octets_mat(projection))
+        self.prog_geo["albedoColor"].value = tuple(float(x) for x in couleur_albedo)
+        self.prog_geo["albedoTex"].value = 0
+        (albedo or self.albedo_defaut).use(location=0)
+        maillage.vao.render()
+
+        self._ombrer(tan_fov, centre_tete_vue, lumiere_vue, avant_tete_vue)
+        self._passe_contour(self.fbo_final, self.p_contour,
+                            self.t_ombrage, self.t_normale, self.t_profondeur)
+
+    def dessiner_gbuffer(self, gbuf, *, tan_fov, centre_tete_vue, lumiere_vue, avant_tete_vue):
+        """Chemin 2.5D : G-buffer déjà calculé (dict de relief.composer) -> ombrage -> contour.
+
+        Les masques doivent être définis avant l'appel (definir_masques, definir_masque_cheveux),
+        sur la même grille que l'écran, en ordre OpenGL.
+        """
+        self.t_albedo.write(_vers_rgba(gbuf["albedo"][..., :3]))
+        self.t_normale.write(_vers_rgba(gbuf["normale"]))
+        prof = np.stack([gbuf["profondeur"], gbuf["uv"][..., 0], gbuf["uv"][..., 1]], axis=-1)
+        self.t_profondeur.write(_vers_rgba(prof))
+        self.t_tangente.write(_vers_rgba(gbuf["tangente"]))
+
+        self._ombrer(tan_fov, centre_tete_vue, lumiere_vue, avant_tete_vue)
+        self._passe_contour(self.fbo_final, self.p_contour,
+                            self.t_ombrage, self.t_normale, self.t_profondeur)
+
     def contour_sur(self, couleur, normale, profondeur, p_contour=None):
         """Passe contour seule sur un G-buffer fourni (tableaux [y, x], ligne 0 en bas).
 
-        Utile pour les tests et pour une profondeur venue d'ailleurs (ex. estimation
-        monoculaire). Renvoie RGBA float32 (H, W, 4), ligne 0 en bas.
+        Renvoie RGBA float32 (H, W, 4), ligne 0 en bas.
         """
         ctx = self.ctx
         H, W = self.hauteur, self.largeur
@@ -265,8 +314,10 @@ class RenduNPR:
             ressource.release()
         return out
 
+    # ---- lecture -----------------------------------------------------------
+
     def lire_gbuffer(self):
-        """G-buffer après dessiner(), en ordre OpenGL (ligne 0 en bas)."""
+        """G-buffer après dessiner() ou dessiner_gbuffer(), en ordre OpenGL (ligne 0 en bas)."""
         H, W = self.hauteur, self.largeur
 
         def lire(t):
@@ -274,10 +325,11 @@ class RenduNPR:
 
         prof = lire(self.t_profondeur)
         return {
-            "albedo": lire(self.t_albedo),
+            "albedo": lire(self.t_albedo)[..., :3].copy(),
             "normale": lire(self.t_normale)[..., :3].copy(),
             "profondeur": prof[..., 0].copy(),
             "uv": prof[..., 1:3].copy(),
+            "tangente": lire(self.t_tangente)[..., :3].copy(),
         }
 
     def lire_ombrage(self):
@@ -290,7 +342,8 @@ class RenduNPR:
         return arr[::-1].copy()
 
     def liberer(self):
-        for ressource in (self.t_albedo, self.t_normale, self.t_profondeur, self.t_ombrage,
-                          self.t_final, self.tampon_z, self.fbo_geo, self.fbo_ombrage,
-                          self.fbo_final, self.t_rampe):
+        for ressource in (self.t_albedo, self.t_normale, self.t_profondeur, self.t_tangente,
+                          self.t_ombrage, self.t_final, self.tampon_z, self.fbo_geo,
+                          self.fbo_ombrage, self.fbo_final, self.t_rampe, self.albedo_defaut,
+                          self.masque_defaut, self.masque_zero):
             ressource.release()

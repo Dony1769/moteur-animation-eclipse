@@ -5,7 +5,8 @@ le résultat GPU pixel par pixel sur un même G-buffer (tests GL).
 
 Conventions (identiques aux shaders) :
 - espace vue : caméra à l'origine, regarde vers -Z ; profondeur linéaire d = -z > 0 ;
-- G-buffer : albédo RGBA, normale vue RAW (non encodée, fond = 0), profondeur d (fond = 0) ;
+- G-buffer : albédo RGB, normale vue RAW (fond = 0), profondeur d (fond = 0),
+  UV de surface, tangente vue unitaire (zéro = pas de cheveux) ;
 - tableaux indexés [y, x] avec y = 0 en bas (ordre de lecture OpenGL) ;
 - le texel (x, y) est échantillonné en uv = ((x + 0.5) / W, (y + 0.5) / H).
 """
@@ -47,12 +48,14 @@ def echantillon_masque(masque, uv):
 
 
 def ombrage(albedo, normale, profondeur, uv_surface, rampe_f, p: ParamsOmbrage, tan_fov,
-            centre_tete, lumiere, avant_tete, masque_sphere=None, masque_ombre=None):
+            centre_tete, lumiere, avant_tete, masque_sphere=None, masque_ombre=None,
+            tangente=None, masque_cheveux=None):
     """Passe d'ombrage. Renvoie RGBA float32 (H, W, 4) ; le fond vaut 0.
 
     uv_surface : UV de surface du G-buffer (H, W, 2), utilisées pour lire les masques.
     tan_fov : (tan(fovy/2) * aspect, tan(fovy/2)) ; centre_tete, lumiere, avant_tete :
     vecteurs 3D en espace vue ; lumiere et avant_tete doivent être unitaires.
+    tangente, masque_cheveux : sans l'un des deux, pas de reflet de cheveux.
     """
     H, W = profondeur.shape
     ys, xs = np.mgrid[0:H, 0:W]
@@ -96,6 +99,16 @@ def ombrage(albedo, normale, profondeur, uv_surface, rampe_f, p: ParamsOmbrage, 
     ndh = np.maximum(np.sum(n * H_vec, axis=-1, keepdims=True), 0.0)
     spec = step(p.spec_seuil, ndh)
     col = col + spec * np.asarray(p.spec_couleur, np.float32)
+
+    if tangente is not None and masque_cheveux is not None:
+        T = tangente.astype(np.float32)
+        valide = (np.linalg.norm(T, axis=-1) > 0.5).astype(np.float32)
+        mh = echantillon_masque(masque_cheveux, uv_surface) * valide
+        Ts = normaliser(T + n * p.cheveux_decalage)
+        th = np.sum(Ts * H_vec, axis=-1)
+        sin_th = np.sqrt(np.maximum(0.0, 1.0 - th * th))
+        hair = step(p.cheveux_seuil, sin_th) * mh
+        col = col + hair[..., None] * np.asarray(p.cheveux_couleur, np.float32)
 
     col = np.clip(col, 0.0, 1.0)
     fond = profondeur <= 0.0

@@ -51,3 +51,14 @@ Déblocage humain (hors autonomie) : dessins de Aiko et Darius. Sinon, la procha
 - Limite constatée : l'ombre de nez du masque visage est très petite sur la tête de test, car le masque n'ajoute pas d'ombre. Consigné dans docs/npr.md.
 - Non fait : coque inversée, anisotropie des cheveux, mesure de performance GPU, application aux planches 2D (il faut une profondeur et des normales).
 - Compétence : proposition de skill « moteur-rendu-anime-npr » à enregistrer par l'utilisateur.
+
+## 2026-11-02 — NPR, suite : cheveux, 2.5D, corrections du second lot
+- Demande : appliquer trois pièces jointes (kit correctif, relief de sprite, boucle C++), mettre à jour tests et documentation, proposer la mise à jour de la compétence.
+- Fait : reflet anisotrope des cheveux (tangente en sortie 3 du G-buffer, Kajiya-Kay sur le demi-vecteur) ; chemin 2.5D (`engine/npr/relief.py` : calques, relief, normales, composition z-buffer) ; démo `demo_calque.py` ; banc `demo_tete.py` à quatre panneaux.
+- Corrigé dans les pièces : formule de reflet fausse (elle ne bougeait pas avec la caméra), gradient décalé et flou annoncé mais absent dans le relief, boucle C++ non applicable (langage différent, appels invalides).
+- Défauts trouvés en cours de route, corrigés : relief quasi plat (hauteur en unités de profondeur au lieu de pixels) ; dents au menton (alpha binaire, d'où le flou) ; reflet saturé en blanc sur la démo (mèches verticales, couleur trop vive).
+- Erreur de mon test (pas du moteur) : un test lisait la texture après libération. Corrigé.
+- Tests : 25 NPR (dont 7 GL), 44 au total dans le dépôt, tous verts. Mutations faites sur des copies : CLAMP remis en REPEAT détecté ; `th*th` remplacé par `th` détecté.
+- Limites : relief estimé (intérieur plat) ; démo avec formes procédurales ; calotte du panneau D fine et vue de biais, non ajustée ; mémoire GPU non mesurée ; pas d'image de référence pour b4414824 (non jointe).
+- Commit local sur `autonome`, pas de push.
+- Compétence : proposition de mise à jour « moteur-rendu-anime-npr » soumise à l'utilisateur ; non enregistrée tant qu'il ne la sauve pas.

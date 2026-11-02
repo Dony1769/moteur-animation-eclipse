@@ -1,8 +1,10 @@
 # Rendu animé non photoréaliste (NPR)
 
-Module `engine/npr/` : chaîne OpenGL 3.3 (G-buffer MRT, ombrage toon, contour Sobel), référence numpy et tests. Ce module ne rend pas encore les planches 2D du projet : il lui faut une géométrie, ou au moins une profondeur et des normales (voir « Limites »).
+Module `engine/npr/` : chaîne OpenGL 3.3 (G-buffer MRT, ombrage toon, reflet anisotrope des cheveux, contour Sobel), chemin 2.5D (calques → relief → G-buffer), référence numpy et tests. Ce module ne rend pas encore les planches 2D du projet : il lui faut une géométrie, ou un relief, et ce relief reste une estimation (voir « Limites »).
 
-## Vérification des six pièces jointes
+## Vérification des pièces jointes
+
+### Premier lot (six pièces)
 
 | Pièce | Affirmation | Verdict | Traitement dans le code |
 |---|---|---|---|
@@ -12,24 +14,50 @@ Module `engine/npr/` : chaîne OpenGL 3.3 (G-buffer MRT, ombrage toon, contour S
 | Sobel G-buffer (950751dc) | Sobel sur normales et profondeur, seuils | Principe valide, trois corrections | Gx/Gy inversés dans la pièce (sans effet sur la magnitude). Normales lues sans décodage. Seuil de profondeur absolu : il dépend de la distance. Corrigé : Sobel sur `log(profondeur)`, fond substitué par `profondeur_fond`. |
 | Normales sphériques (4959cb8a) | `normalize(FragPos − HeadCenter)` mélangé à la normale réelle | Formule valide, deux erreurs | `HeadCenter` déclaré `in` dans le fragment shader : invalide. Corrigé en uniform en espace vue. Mélange 100 % sphérique : l'ombre du nez disparaît. Corrigé par `masque_sphere` (0 autour du nez). Le « Data Transfer » de Blender n'a pas d'équivalent ici. |
 | Masque d'ombre visage (fb41840d) | `mix(1, rampe, masque)` avec décalage `L + avant·0,3` | Valide comme contrôle artistique, mais il ne crée pas d'ombre | Le masque autorise la rampe à agir ; l'ombre vient de la normale. Hors masque = pleine lumière : opt-in (`masque_visage`), sinon tout le corps serait éclairé. Décalage = choix artistique, non une loi physique. |
-| Rim light et spéculaire (0998e796) | Fresnel × N·L, seuil lissé ; Blinn-Phong durci par `step` | Valide | `rimSmoothness = 0` rend `smoothstep` indéfini : borné à 1e-4. Anisotropie des cheveux non faite (demande des tangentes). |
+| Rim light et spéculaire (0998e796) | Fresnel × N·L, seuil lissé ; Blinn-Phong durci par `step` | Valide | `rimSmoothness = 0` rend `smoothstep` indéfini : borné à 1e-4. Reflet des cheveux : faite depuis, voir « Formules ». |
+
+### Second lot (trois pièces : b4414824, 7ed982b8, 284b0bf5)
+
+| Pièce | Affirmation | Verdict | Traitement dans le code |
+|---|---|---|---|
+| Kit correctif (b4414824) : `GL_CLAMP_TO_EDGE` | Les textures du G-buffer doivent être en CLAMP | Valide | Appliqué à toutes les textures échantillonnées (G-buffer, contour, albédo par défaut). Régression testée : `test_bord_clamp_regression` (mutation REPEAT détectée). |
+| Kit correctif (b4414824) : Kajiya-Kay | Le reflet ne dépend que de `T·L` | Faux pour un reflet de cheveux : il ne bouge pas avec la caméra. `tDotV` inutilisé, `pow()` sur une base possiblement négative | Remplacé par la forme sur le demi-vecteur `H` (voir « Formules »). `pow()` remplacé par `th*th`. `tDotV` non repris. |
+| Kit correctif (b4414824) : image de référence | Comparaison avec une image cible | Non vérifiable : l'image n'était pas jointe au message | Aucune comparaison faite. |
+| Hauteur depuis alpha et luminance (7ed982b8) | Relief en quart de cercle depuis le bord de l'alpha, mélangé à la luminance | Principe utile, relief estimé | Implémenté dans `relief.py` (`Calque`, `relief`). L'intérieur d'un aplat reste plat : ce n'est pas du volume interne, c'est documenté. |
+| Pente du sprite (7ed982b8) | Gradient par différence avec le voisin de droite ; flou annoncé | Erreurs : gradient décalé, flou absent | Remplacé par un Sobel centré (`cv2.Sobel`), flou gaussien `flou` (3 px par défaut) avant les pentes. Sans ce flou, le bord du menton présentait des dents (alpha binaire en escalier). |
+| MRT du sprite (7ed982b8) | Sorties de profondeur et de tangente | Valide | Intégré au G-buffer : quatre sorties, la tangente en sortie 3. |
+| Boucle C++ multi-passes (284b0bf5) | G-buffer, ombrage, Sobel, composition, tri des sprites | Non applicable tel quel : le moteur est en Python/moderngl. Appels invalides : texture passée à `setUniform`, sortie d'éclairage non stockée, pas de tampon de profondeur, pas de tri | Intention reprise en Python : passes de `dessiner_gbuffer`, composition par z-buffer dans `composer` (tri par profondeur). |
+| Test de mémoire GPU (284b0bf5) | Vérifier la libération des ressources | Partiel : Python ne mesure pas la mémoire GPU | `test_cycles_creation_liberation` : création et libération répétées sans erreur. Le test ne voit que les erreurs. |
 
 Affirmations non vérifiées et non utilisées : pipelines de Chainsaw Man, Genshin, Guilty Gear, Cygames. La pièce 2ba4a70b cite « Claude 3.5 Haiku » sans rapport avec le sujet.
 
 ## Architecture
 
-Trois passes, toutes en espace vue (caméra à l'origine, regard vers −Z, profondeur `d = −z > 0`).
+Deux entrées, une même chaîne. Tout est en espace vue (caméra à l'origine, regard vers −Z, profondeur `d = −z > 0`).
+
+- **Entrée 3D** : `RenduNPR.dessiner(maillage, …)` rend un maillage, puis `lire_gbuffer()`.
+- **Entrée 2.5D** : `relief.composer(calques, …)` produit le même G-buffer à partir de calques 2D, puis `RenduNPR.dessiner_gbuffer(gbuf, …)`.
+
+Passes :
 
 1. **Géométrie** (`shaders/geometrie.vert|frag`) : MRT dans un FBO et un tampon de profondeur matériel.
    - sortie 0 : albédo RGBA32F ;
    - sortie 1 : normale vue, **brute**, non encodée (fond = 0) ;
-   - sortie 2 : `r` = profondeur linéaire, `g,b` = UV de surface (fond = 0).
-2. **Ombrage** (`shaders/ombrage.frag`, plein écran) : lit le G-buffer, applique la rampe, les normales sphériques masquées, le masque visage, le rim et le spéculaire. Sortie RGBA32F.
+   - sortie 2 : `r` = profondeur linéaire, `g,b` = UV de surface (fond = 0) ;
+   - sortie 3 : tangente vue unitaire des mèches (zéro = pas de cheveux). Attribut `in_tangent` du maillage.
+2. **Ombrage** (`shaders/ombrage.frag`, plein écran) : lit le G-buffer et applique la rampe, les normales sphériques masquées, le masque visage, le rim, le spéculaire et le reflet des cheveux. Sortie RGBA32F.
 3. **Contour** (`shaders/contour.frag`, plein écran) : Sobel 3×3 sur les normales (`|Gx|+|Gy|` en longueur vectorielle) et sur `log(profondeur)`. Trait noir si l'un des deux seuils est dépassé. Sortie RGBA8.
 
-Les masques sont peints en **UV de surface** (lus via `g,b` du G-buffer), jamais en coordonnées d'écran : ils suivent la tête quand elle tourne.
+Les masques sont peints en **UV de surface** (lus via `g,b`), jamais en coordonnées d'écran : ils suivent la tête quand elle tourne. Dans le chemin 2.5D, il n'y a pas d'UV de surface : l'UV est la position normalisée du pixel à l'écran, et le masque de cheveux du calque est dans ce même repère.
 
 Toutes les textures d'échantillonnage sont en `GL_NEAREST` et `GL_CLAMP_TO_EDGE`. Le Sobel lit au-delà du bord ; avec le mode `REPEAT` par défaut, le bord gauche recevait la valeur du bord droit (bug trouvé par les tests GPU/numpy et corrigé).
+
+### Chemin 2.5D (`engine/npr/relief.py`)
+
+- `Calque` : RGBA en ordre image, plan de base, `relief_max`, `rayon_biseau`, `pente`, `poids_luminance`, `flou`, et en option `flux` (direction des mèches) et `masque_cheveux`.
+- `relief(calque)` : hauteur 0..1 en quart de cercle depuis le bord de l'alpha, mélangée à la luminance si `poids_luminance > 0`, puis floutée.
+- `normales(h, pente)` : pentes par Sobel sur la hauteur.
+- `composer(calques, largeur, hauteur)` : z-buffer CPU ; le calque le plus proche gagne, les pixels sans calque opaque sont du fond. Renvoie le G-buffer en ordre OpenGL (ligne 0 en bas).
 
 ## Formules retenues
 
@@ -38,6 +66,17 @@ Toutes les textures d'échantillonnage sont en `GL_NEAREST` et `GL_CLAMP_TO_EDGE
 - Masque d'ombre visage (si `masque_visage`) : `u = mix(1, demi_lambert(N, normalize(L + avant·0,3)), masque_ombre(UV))`.
 - Rim : `f = 1 − max(N·V, 0)`, `r = f · max(N·L, 0)`, `rim = smoothstep(seuil − s, seuil + s, r)` avec `s = max(douceur, 1e-4)`.
 - Spéculaire durci : `step(seuil, max(N·H, 0))`, `H = normalize(L + V)`.
+- Reflet des cheveux (Kajiya-Kay sur le demi-vecteur) :
+  - `T' = normalize(T + N·hairShift)` (décalage le long de la normale : déplace la bande de reflet le long de la mèche) ;
+  - `sinTH = sqrt(max(0, 1 − (T'·H)²))` ;
+  - `reflet = step(hairThreshold, sinTH) · masque_cheveux(UV) · hairColor`, seulement si `masque_cheveux > 0` et `|T| > 0,5`.
+  - Le reflet bouge avec la caméra par `V` (via `H`). Un seuil élevé (0,97 à 0,997) le réduit à une bande fine.
+- Relief (2.5D) :
+  - `h_alpha = sqrt(1 − (1 − t)²)` avec `t = min(d / rayon_biseau, 1)`, `d` = distance au bord de l'alpha (masque alpha ≥ 0,1) ;
+  - `h = (1 − w)·h_alpha + w·lum·masque` (`w = poids_luminance`), puis flou gaussien `flou` ;
+  - `n = normalize(−pente·∂h/∂x, +pente·∂h/∂y_image, 1)`, avec `h` en pixels (`h · rayon_biseau`), car les pentes sont en pixels ;
+  - profondeur `d = plan − relief_max · h`.
+- Tangente depuis le flux : `T = normalize(dx, −dy_image, 0)`.
 - Contour : `edN = |Gx_N| + |Gy_N| > seuil_normale` ou `edD = |Gx_log| + |Gy_log| > seuil_profondeur`. Fond : couleur de fond, sans trait.
 
 ## Dépendances et environnement
@@ -53,41 +92,58 @@ Toutes les textures d'échantillonnage sont en `GL_NEAREST` et `GL_CLAMP_TO_EDGE
 
 - Rampe : bandes exactes (texels 89/90 pour 0,35 ; 179/180 pour 0,70).
 - Formules : bornes du demi-lambert, indice de rampe, spéculaire binaire, smoothstep, plan face caméra égal à la couleur la plus claire, fond vide.
+- Cheveux (numpy) : reflet quand la tangente est perpendiculaire au demi-vecteur ; pas de reflet quand elle lui est parallèle ; pas de reflet sans masque ni tangente.
+- Relief et composition (numpy) : normales sortantes sur les quatre flancs du biseau ; ordre OpenGL et fond ; un calque avant gagne dans le recouvrement ; alpha sous le seuil = fond ; convention du flux.
 - Contour (numpy) : trait exactement aux colonnes 9 et 10 sur un saut de profondeur ; silhouette contre le fond.
 - GL :
-  - compilation des trois programmes ;
-  - ombrage GPU = référence numpy (écart mesuré ≈ 3·10⁻⁶) ;
+  - ombrage GPU = référence numpy (écart ≈ 3·10⁻⁶) ;
   - contour GPU = référence sur la tête de test ;
-  - chaque terme du Sobel isolé (saut de profondeur ou de normale, vertical ou horizontal) : GPU = référence, et traits exactement aux bonnes lignes ou colonnes.
-- Mutations vérifiées : retirer la composante `gy` du Sobel de profondeur, ou celle du Sobel de normales, fait échouer le test isolé correspondant.
-- Résultat : 13 tests NPR et 32 tests au total dans le dépôt, tous verts.
+  - chaque terme du Sobel isolé (saut de profondeur ou de normale, vertical ou horizontal) : GPU = référence, et traits exactement aux bonnes lignes ou colonnes ;
+  - bord CLAMP : un saut au bord droit ne crée pas de trait au bord gauche ;
+  - reflet des cheveux GPU = référence, et le reflet est bien présent ;
+  - chemin 2.5D GPU = référence sur le même G-buffer ;
+  - création et libération répétées de `RenduNPR` : aucune erreur. Python ne mesure pas la mémoire GPU : le test ne détecte que les erreurs visibles.
+- Mutations vérifiées (sur des copies, pas sur l'arbre de travail) :
+  - retirer la composante `gy` du Sobel de profondeur, ou celle du Sobel de normales : le test isolé correspondant échoue ;
+  - remplacer CLAMP par REPEAT : `test_bord_clamp_regression` échoue ;
+  - remplacer `th*th` par `th` dans le GLSL des cheveux : `test_cheveux_gpu_egal_reference` échoue.
+- Résultat : 25 tests NPR (dont 7 GL) et 44 tests au total dans le dépôt, tous verts.
 
-## Image de test
+## Images de test
 
-`python3 engine/npr/demo_tete.py` produit `out/npr/test_tete_npr.png` (dossier ignoré par git), avec trois réglages sur une tête de banc d'essai :
-- A : normales réelles (le relief du nez se lit) ;
-- B : normales sphériques (ombrage plat, le nez disparaît) ;
-- C : hybride, masque visage et contour.
+- `python3 engine/npr/demo_tete.py` produit `out/npr/test_tete_npr.png` (dossier ignoré par git), avec quatre panneaux sur une tête de banc d'essai :
+  - A : normales réelles (le relief du nez se lit) ;
+  - B : normales sphériques (ombrage plat, le nez disparaît) ;
+  - C : hybride, masque visage et contour ;
+  - D : comme C, plus la calotte de cheveux.
+  - Écarts GPU/numpy : A ≈ 2·10⁻⁶, B, C et D ≈ 3·10⁻⁶.
+  - Sur D, la calotte n'occupe qu'une bande fine en haut de la sphère, vue de biais : le reflet y est discret. Non ajusté (`CALOTTE_V` dans `tete_test.py`).
+- `python3 engine/npr/demo_calque.py` produit `out/npr/test_calque_npr.png` : deux calques procéduraux (visage, puis cheveux devant), A sans reflet, B avec le reflet anisotrope des mèches (flux radial depuis le haut du crâne).
 
-La tête est une sphère avec une bosse gaussienne, pas un personnage.
+La tête est une sphère avec une bosse gaussienne, et les calques sont des formes dessinées en code : ni l'une ni l'autre n'est un personnage du projet.
 
 ## Limites
 
 1. **Pas de géométrie dans le moteur 2D.** Les planches n'ont ni normales ni profondeur. Le module ne sert à une planche qu'avec une profondeur estimée (par exemple Depth-Anything-V2, déjà dans le pipeline) dont on dérive les normales.
-2. **Le masque d'ombre ne crée pas d'ombre.** L'ombre sous le nez vient de la normale. Sur la tête de test, elle reste très petite (image C). Pour des planches, l'approche pratique serait un masque peint qui sélectionne directement la bande d'ombre : non fait.
-3. **Liseré à la frontière des normales.** Entre normales réelles et sphériques, le spéculaire présente un léger artefact au bord du masque.
-4. **Masques en `GL_NEAREST`.** Un masque peint à basse résolution donne des contours en escalier.
-5. **Non implémenté :** coque inversée, anisotropie des cheveux (tangentes), transfert de normales Blender, épaisseur de trait qui varie avec la distance (Sobel multi-échelle).
-6. **Épaisseur de trait fixe** en texels entiers.
-7. **Pas de mesure de performance GPU** : tout tourne sur llvmpipe, CPU.
+2. **Le relief 2.5D est une estimation artistique.** Le volume n'apparaît qu'au bord de chaque aplat (biseau). L'intérieur reste plat ; le volume interne demande une profondeur estimée, hors de ce module.
+3. **Le masque d'ombre ne crée pas d'ombre.** L'ombre sous le nez vient de la normale. Sur la tête de test, elle reste très petite (panneau C). Pour des planches, l'approche pratique serait un masque peint qui sélectionne directement la bande d'ombre : non fait.
+4. **Liseré à la frontière des normales.** Entre normales réelles et sphériques, le spéculaire présente un léger artefact au bord du masque.
+5. **Masques en `GL_NEAREST`.** Un masque peint à basse résolution donne des contours en escalier.
+6. **Non implémenté :** coque inversée, transfert de normales Blender, épaisseur de trait qui varie avec la distance (Sobel multi-échelle).
+7. **Cheveux dessinés à la main.** Les mèches (`flux`) et le masque de cheveux sont fixés dans la démo. Aucune détection de cheveux sur une image réelle.
+8. **Composition des calques en CPU.** `composer` est un z-buffer Python, sans tri GPU : acceptable pour quelques calques, à revoir pour une scène chargée.
+9. **Épaisseur de trait fixe** en texels entiers.
+10. **Pas de mesure de performance GPU** : tout tourne sur llvmpipe, CPU.
+11. **Image de référence de b4414824 non jointe** : aucune comparaison faite.
 
 ## Fichiers
 
-- `engine/npr/parametres.py` : paramètres partagés ;
+- `engine/npr/parametres.py` : paramètres partagés (ombrage, cheveux, contour) ;
 - `engine/npr/rampe.py` : rampes toon ;
 - `engine/npr/reference.py` : référence numpy ;
-- `engine/npr/rendu.py` : passes OpenGL ;
+- `engine/npr/rendu.py` : passes OpenGL (`RenduNPR` : `dessiner`, `dessiner_gbuffer`, `contour_sur`) ;
+- `engine/npr/relief.py` : calques 2.5D, relief, normales, composition ;
 - `engine/npr/shaders/*.vert|frag` : GLSL 330 ;
-- `engine/npr/tete_test.py` : banc d'essai (sphère, bosse, masques UV) ;
-- `engine/npr/demo_tete.py` : image de test ;
+- `engine/npr/tete_test.py` : banc d'essai (sphère, bosse, masques UV, calotte) ;
+- `engine/npr/demo_tete.py`, `engine/npr/demo_calque.py` : images de test ;
 - `tests/test_npr.py` : tests.

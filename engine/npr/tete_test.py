@@ -1,9 +1,10 @@
 """Tête de test pour le rendu NPR.
 
 Sphère UV (rayon 1) avec une bosse gaussienne vers l'avant : c'est le « nez ».
-Les masques sont analytiques en UV (fonction de la direction sur la sphère), donc
-reproductibles sans fichier externe. Ce n'est pas un personnage : c'est un banc d'essai
-pour vérifier les formules sur une géométrie connue.
+Une calotte de cheveux occupe le sommet du crâne ; ses mèches suivent les méridiens
+(tangente = dP/dv, du sommet vers le bas). Les masques et l'albédo sont analytiques en UV,
+donc reproductibles sans fichier externe. Ce n'est pas un personnage : c'est un banc
+d'essai pour vérifier les formules sur une géométrie connue.
 """
 import numpy as np
 
@@ -14,6 +15,7 @@ CENTRE_VUE = np.array([0.0, 0.0, -DISTANCE], np.float32)
 AVANT_VUE = np.array([0.0, 0.0, 1.0], np.float32)
 FOVY = 30.0
 PRES, LOIN = 0.1, 100.0
+CALOTTE_V = 0.22          # limite en v de la calotte de cheveux (v = 0 au sommet)
 
 
 def _unitaire(v):
@@ -40,13 +42,14 @@ def direction_uv(u, v):
 
 
 def sphere_nez(nu=160, nv=120, bosse=0.18, sigma=0.26):
-    """Sphère avec bosse. Renvoie (sommets, normales, uv, triangles)."""
+    """Sphère avec bosse. Renvoie (sommets, normales, uv, tangentes, triangles)."""
     iu = np.arange(nu + 1) / nu
     iv = np.arange(nv + 1) / nv
     U, V = np.meshgrid(iu, iv)
     d = direction_uv(U, V)
     b = bosse * np.exp(-np.sum((d - NEZ) ** 2, axis=-1) / (2.0 * sigma ** 2))
-    P = (d * (1.0 + b)[..., None]).reshape(-1, 3)
+    P2 = d * (1.0 + b)[..., None]                     # (nv+1, nu+1, 3)
+    P = P2.reshape(-1, 3)
     uv = np.stack([U, V], axis=-1).reshape(-1, 2)
 
     a = (np.arange(nv)[:, None] * (nu + 1) + np.arange(nu)[None, :]).ravel()
@@ -59,10 +62,18 @@ def sphere_nez(nu=160, nv=120, bosse=0.18, sigma=0.26):
     N = np.zeros_like(P)
     for k in range(3):
         np.add.at(N, tri[:, k], fn)
-    if np.mean(np.sum(N * P, axis=-1)) < 0.0:   # orientation vers l'extérieur
+    if np.mean(np.sum(N * P, axis=-1)) < 0.0:         # orientation vers l'extérieur
         N = -N
     N = N / np.maximum(np.linalg.norm(N, axis=-1, keepdims=True), 1e-12)
-    return P.astype(np.float32), N.astype(np.float32), uv.astype(np.float32), tri.astype(np.uint32)
+
+    # Tangente : dP/dv (méridien, du sommet vers le bas), orthogonalisée sur la normale.
+    T = np.gradient(P2, axis=0).reshape(-1, 3)
+    T = T - N * np.sum(T * N, axis=-1, keepdims=True)
+    norme = np.linalg.norm(T, axis=-1, keepdims=True)
+    T = np.where(norme > 1e-6, T / np.maximum(norme, 1e-12), np.array([1.0, 0.0, 0.0]))
+
+    return (P.astype(np.float32), N.astype(np.float32), uv.astype(np.float32),
+            T.astype(np.float32), tri.astype(np.uint32))
 
 
 def masques(largeur, hauteur):
@@ -80,6 +91,21 @@ def masques(largeur, hauteur):
     return m_sphere.astype(np.float32), m_ombre.astype(np.float32)
 
 
+def masque_cheveux(largeur, hauteur):
+    """Calotte de cheveux en UV : 1 pour v < CALOTTE_V, transition sur 0,03."""
+    v = (np.arange(hauteur) + 0.5) / hauteur
+    m = np.clip((CALOTTE_V - v) / 0.03, 0.0, 1.0)
+    return np.repeat(m[:, None], largeur, axis=1).astype(np.float32)
+
+
+def albedo_tete(largeur, hauteur):
+    """Multiplicateur d'albédo en UV : peau = 1, cheveux = brun (multiplié par la couleur de peau)."""
+    m = masque_cheveux(largeur, hauteur)[..., None]
+    peau = np.array([1.0, 1.0, 1.0], np.float32)
+    cheveux = np.array([0.42, 0.26, 0.20], np.float32)
+    return (peau * (1.0 - m) + cheveux * m).astype(np.float32)
+
+
 def modele_vue():
     return translation(0.0, 0.0, -DISTANCE)
 
@@ -90,5 +116,5 @@ def projection(largeur, hauteur):
 
 def charger(ctx, programme_geo):
     """Maillage de la tête sur le GPU (programme géométrie du RenduNPR)."""
-    P, N, uv, tri = sphere_nez()
-    return Maillage(ctx, programme_geo, P, N, uv, tri)
+    P, N, uv, T, tri = sphere_nez()
+    return Maillage(ctx, programme_geo, P, N, uv, T, tri)

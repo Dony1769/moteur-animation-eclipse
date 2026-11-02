@@ -55,3 +55,12 @@
 - `HeadCenter` en uniform, espace vue. La pièce jointe le déclarait `in` dans le fragment shader, ce qui est invalide.
 - Non implémenté : coque inversée (pas de maillage à contourner, pseudo-code non exécutable), anisotropie des cheveux (tangentes absentes), transfert de normales Blender (pas d'outil de ce type dans le dépôt).
 - Banc d'essai : sphère avec bosse analytique, pas un personnage. Raison : vérifier les formules sur une géométrie connue, sans attendre un modèle 3D.
+
+## NPR, suite — cheveux, 2.5D, corrections (2 novembre 2026)
+- Reflet des cheveux : Kajiya-Kay sur le demi-vecteur (`T'·H`), seuil binaire. Raison : la forme de la pièce (`T·L`) ne bouge pas avec la caméra, le demi-vecteur oui.
+- Tangente en sortie 3 du G-buffer, zéro = pas de cheveux. Raison : une sortie séparée ; la normale brute doit rester exacte pour le Sobel, donc elle ne porte pas la tangente.
+- Décalage `T + N·hairShift` : déplace la bande de reflet le long de la mèche (technique de Kajiya-Kay décalé). Valeur par défaut 0,1.
+- Relief 2.5D : pentes calculées en pixels (`h · rayon_biseau`), Sobel centré, flou avant les pentes. Raison : un relief en unités de profondeur donne des normales quasi plates, et l'alpha binaire crée des dents sans flou.
+- Composition des calques en CPU (z-buffer dans `composer`), pas en GPU. Raison : quelques calques, lisibilité, référence simple à tester. Un tri GPU viendra si la scène grossit.
+- Test mémoire GPU : création et libération répétées, sans mesure de mémoire. Raison : Python ne lit pas la mémoire GPU sur llvmpipe ; le test ne détecte que les erreurs.
+- Démos gardées comme bancs d'essai (tête à quatre panneaux, calques procéduraux). Raison : aucun personnage du projet n'est utilisable en 3D pour l'instant.

@@ -16,6 +16,9 @@ class ParamsOmbrage:
     poids_sphere: float = 1.0         # sphereWeight, multiplie le masque de normales sphériques
     masque_visage: bool = False       # faceMaskEnabled : active le décalage de lumière + masque d'ombre
     biais_visage: float = 0.3         # faceBias : poids de headForward dans la lumière décalée
+    cheveux_decalage: float = 0.1     # hairShift : décalage de la tangente le long de la normale
+    cheveux_seuil: float = 0.98       # hairThreshold : seuil binaire sur sin(T', H)
+    cheveux_couleur: tuple = (0.95, 0.9, 0.95)   # reflet des cheveux, ajouté là où le masque vaut 1
 
 
 @dataclass
