@@ -322,3 +322,18 @@ Limites, à lire avant toute conclusion :
 - Scintillement mesuré sur le balayage yaw : 24 % des pixels sombres (sans encre fine : 23 %). L'encre n'en est
   pas la cause. Hypothèse non vérifiée : échantillonnage de la texture sur les UV étirés.
 - Tête (tilt) : 7 % de scintillement, régularité du mouvement 1,04 (un à-coup donnerait un rapport élevé).
+
+## Multi-vues, détourage et anti-aliasing (2e itération)
+
+- Chaque vue réelle (face 0°, trois-quarts 45°) a sa texture et ses UV, projetés depuis son angle
+  (`demo_buste3d.uv_vue`), à l'échelle de la face. La vue la plus proche est dessinée (bascule au point
+  médian), ou fondue sur 12° (`Avatar3D.rendre(fondu_deg=12)`).
+- Détourage : alpha = premier plan de la référence, seuil 0,5 dans le shader (`seuil_alpha`).
+- Mipmaps trilinéaires et filtrage anisotrope 8× sur les albédos (si le pilote l'accepte).
+- Mesures (balayage yaw, 25 images) : aplats blancs à −45/0/+45 : avant 3722/3470/4433 pixels, après
+  3592/1562/1631. Scintillement yaw : 24 % → 21 % (fondu) : **non résolu**. Les mipmaps ne règlent pas
+  l'aliasing ; la cause est à chercher ailleurs (contour ou ombrage sur les bords).
+- Régularité yaw : 1,76 en bascule nette, 1,10 avec fondu 12°.
+- Limites : pas de vue de profil réelle (au-delà de 45°, la vue trois-quarts est répétée) ; à −45°, la
+  face étirée sur le côté reste visible ; le haut de la tête trois-quarts est tronqué par la référence ;
+  le fondu superpose deux silhouettes non recalées.

@@ -161,5 +161,34 @@ class TestRenduNPR(unittest.TestCase):
         self.assertGreater(rouge.sum(), 200)
 
 
+class TestMultivue(unittest.TestCase):
+    """Sélection de vue, UV par vue et fondu : logique CPU, sans GPU."""
+
+    def test_uv_de_face_egale_la_projection_planaire(self):
+        from npr import demo_buste3d as DB
+        m = B.buste_proxy()
+        uv0 = DB.uv_vue(m, 0.0).uv
+        self.assertTrue(np.allclose(uv0, M.uv_planaires(m.sommets), atol=1e-9))
+
+    def test_uv_trois_quarts_different_de_la_face(self):
+        from npr import demo_buste3d as DB
+        m = B.buste_proxy()
+        self.assertFalse(np.allclose(DB.uv_vue(m, DB.ANGLE_34).uv, DB.uv_vue(m, 0.0).uv))
+
+    def test_recadrages_trois_quarts_dans_l_image(self):
+        from npr import demo_buste3d as DB
+        x0, y0, x1, y1 = DB.RECADRAGE_34
+        self.assertTrue(0 <= x0 < x1 <= 900 and 0 <= y0 < y1 <= 856)
+
+    def test_vue_la_plus_proche(self):
+        from npr import rendu3d as R
+        av = R.Avatar3D.__new__(R.Avatar3D)
+        av.angles = [0.0, float(np.radians(45.0))]
+        i, _ = R.Avatar3D.vue_pour(av, 0.1)
+        self.assertEqual(i, 0)
+        i, _ = R.Avatar3D.vue_pour(av, 0.7)
+        self.assertEqual(i, 1)
+
+
 if __name__ == "__main__":
     unittest.main()

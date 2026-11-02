@@ -22,13 +22,11 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from npr import demo_buste3d as DB  # noqa: E402
 from npr import rendu3d as R  # noqa: E402
 from npr import sequence_kael as SQ  # noqa: E402
-from npr.chargeur import charger_vue  # noqa: E402
-from npr import demo_personnage as DP  # noqa: E402
-from npr.encre import ParamsEncre  # noqa: E402
 from npr.rendu import creer_contexte  # noqa: E402
 
 FPS = 12
 YAW_MAX = np.pi / 4
+FONDU_DEG = 12.0   # fondu entre face et trois-quarts (la bascule nette donne un saut de mouvement)
 
 
 def balayages(n):
@@ -64,10 +62,7 @@ def main(argv):
         print("Aucun contexte OpenGL disponible.")
         return 1
     print("OpenGL :", ctx.info["GL_RENDERER"])
-    vue = charger_vue(DP.KAEL / DP.FICHIERS[0.0])
-    tex = DB.texture_kael(vue)
-    modele, sq = DB.charger_buste()
-    av = R.Avatar3D(ctx, modele, sq, 360, 480, texture_rgba=tex, encre=ParamsEncre())
+    av = DB.construire_avatar(ctx, multivue=True, encre=True)
     resultats = {}
     try:
         for nom, etapes in balayages(n):
@@ -75,7 +70,7 @@ def main(argv):
             dossier.mkdir(parents=True, exist_ok=True)
             images = []
             for i, (yaw, pose) in enumerate(etapes):
-                img = av.rendre(pose, yaw)
+                img = av.rendre(pose, yaw, fondu_deg=FONDU_DEG)
                 cv2.imwrite(str(dossier / f"{i:03d}.png"), cv2.cvtColor(img, cv2.COLOR_RGB2BGR))
                 images.append(SQ.luminance(img))
             lums = np.stack(images)

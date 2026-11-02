@@ -331,8 +331,11 @@ class RenduNPR:
         self.vao_contour.render(moderngl.TRIANGLE_STRIP)
 
     def dessiner(self, maillage, *, modele_vue, projection, centre_tete_vue, lumiere_vue,
-                 avant_tete_vue, tan_fov, couleur_albedo=(1.0, 1.0, 1.0), albedo=None):
-        """Chemin maillage : géométrie -> G-buffer -> ombrage -> contour. Lire avec image_finale()."""
+                 avant_tete_vue, tan_fov, couleur_albedo=(1.0, 1.0, 1.0), albedo=None, seuil_alpha=0.0):
+        """Chemin maillage : géométrie -> G-buffer -> ombrage -> contour. Lire avec image_finale().
+
+        seuil_alpha > 0 : les fragments dont l'alpha de l'albédo est sous ce seuil sont retirés (détourage).
+        """
         self.fbo_geo.use()
         self.fbo_geo.clear(0.0, 0.0, 0.0, 0.0, depth=1.0)
         self.ctx.enable(moderngl.DEPTH_TEST)
@@ -340,7 +343,7 @@ class RenduNPR:
         self.prog_geo["projection"].write(_octets_mat(projection))
         self.prog_geo["albedoColor"].value = tuple(float(x) for x in couleur_albedo)
         self.prog_geo["albedoTex"].value = 0
-        self.prog_geo["seuilAlpha"].value = 0.0      # pas de découpe pour un maillage plein
+        self.prog_geo["seuilAlpha"].value = float(seuil_alpha)   # 0 : pas de découpe
         (albedo or self.albedo_defaut).use(location=0)
         maillage.vao.render()
 
