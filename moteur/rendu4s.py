@@ -23,6 +23,9 @@ def _args():
     p.add_argument("--image", type=int, default=0)
     p.add_argument("--samples", type=int, default=4)
     p.add_argument("--res", default="960x540")
+    p.add_argument("--debut", type=int, default=1)
+    p.add_argument("--fin", type=int, default=scene4s.NB_IMAGES)
+    p.add_argument("--mp4-seulement", action="store_true")
     return p.parse_args(argv)
 
 
@@ -55,9 +58,11 @@ def main():
         print("TEMPS_IMAGE_S", round(time.time() - t, 2))
         return
     sc.render.filepath = str(sortie / "img_")
-    t = time.time()
-    bpy.ops.render.render(animation=True)
-    print("TEMPS_TOTAL_S", round(time.time() - t, 1))
+    if not a.mp4_seulement:
+        sc.frame_start, sc.frame_end = a.debut, a.fin
+        t = time.time()
+        bpy.ops.render.render(animation=True)
+        print("TEMPS_TOTAL_S", round(time.time() - t, 1))
     images = sorted(sortie.glob("img_*.png"))
     if len(images) != scene4s.NB_IMAGES:
         raise RuntimeError(f"{len(images)} images, {scene4s.NB_IMAGES} attendues")
