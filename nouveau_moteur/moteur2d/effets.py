@@ -1,10 +1,9 @@
-"""Effets de compositing. Chaque effet ne déplace ou ne mélange que des pixels existants (dessins).
+"""Effets de compositing. Ne créent aucune couleur : elles viennent toutes des dessins fournis.
 
 - décalage et zoom : transformations affines d'un calque ;
-- smear : copies décalées du calque du personnage, mélangées au calque (traînée, pixels du dessin seulement) ;
-- secousse : décalage amorti de l'image entière (caméra) ;
-- flash : image blanche sur les frames indiquées ;
-- palette : quantification à N tons, couleurs tirées des dessins (k-means), appliquée à toutes les frames.
+- smear : flou directionnel du calque du personnage, avec son alpha d'origine (pas de halo hors silhouette) ;
+- secousse : décalage amorti de l'image entière (caméra), bord découvert blanc ;
+- palette : N tons pris parmi les couleurs réelles des dessins ; le blanc du fond reste blanc.
 """
 import cv2
 import numpy as np
@@ -28,15 +27,27 @@ def zoom(calque, facteur, centre):
 
 
 def smear(calque, direction, longueur_px, pas=6):
-    """Traînée directionnelle : moyenne de copies décalées en arrière du mouvement, mélangée au calque (50/50)."""
+    """Flou directionnel du calque (premultiplié RGBA) : moyenne des couleurs du personnage le long de la trajectoire.
+
+    Seules les couleurs du personnage sont moyennées (le fond n'entre pas). L'alpha reste celui du calque :
+    la traînée ne déborde pas de la silhouette.
+    """
     dx, dy = float(direction[0]), float(direction[1])
     norme = max(np.hypot(dx, dy), 1e-9)
     dx, dy = dx / norme, dy / norme
-    acc = np.zeros_like(calque)
+    num = np.zeros(calque.shape[:2] + (3,), np.float32)
+    den = np.zeros(calque.shape[:2], np.float32)
     for i in range(pas):
         s = longueur_px * i / max(pas - 1, 1)
-        acc += decalage(calque, -dx * s, -dy * s)
-    return 0.5 * calque + 0.5 * (acc / pas)
+        decale = decalage(calque, -dx * s, -dy * s)
+        num += decale[..., :3]
+        den += decale[..., 3]
+    couleur = num / np.maximum(den, 1e-6)[..., None]
+    sortie = np.empty_like(calque)
+    alpha = calque[..., 3]
+    sortie[..., :3] = couleur * alpha[..., None]
+    sortie[..., 3] = alpha
+    return sortie
 
 
 def secousse(n, amplitude_px, amortissement):
@@ -54,27 +65,32 @@ def decaler_image(rgb, dx, dy):
                           borderValue=(255, 255, 255))
 
 
-def ajuster_palette(images, tons, n_pixels=40000, graine=0):
-    """`tons` couleurs du personnage (k-means sur les pixels non blancs de l'ensemble des frames).
+def couleurs_uniques(tableaux):
+    """Couleurs RGB uint8 distinctes présentes dans une liste de tableaux (N, 3)."""
+    pile = np.concatenate([t.reshape(-1, 3) for t in tableaux]).astype(np.uint8)
+    return np.unique(pile, axis=0)
 
-    Le blanc du fond n'entre pas dans le calcul : il reste blanc, en plus des `tons` couleurs.
-    """
-    rng = np.random.RandomState(graine)
-    pixels = np.concatenate([im.reshape(-1, 3) for im in images])
-    pixels = pixels[pixels.min(axis=1) < SEUIL_BLANC]
-    choix = rng.choice(len(pixels), size=min(n_pixels, len(pixels)), replace=False)
-    donnees = pixels[choix].astype(np.float32)
+
+def ajuster_palette(couleurs, tons, graine=0):
+    """`tons` couleurs choisies PARMI les couleurs réelles des dessins (k-means, puis ramenées à la couleur existante la plus proche)."""
+    donnees = couleurs.astype(np.float32)
+    if len(donnees) <= tons:
+        return couleurs.copy()
     criteres = (cv2.TERM_CRITERIA_EPS + cv2.TERM_CRITERIA_MAX_ITER, 50, 0.5)
-    _, _, centres = cv2.kmeans(donnees, int(tons), None, criteres, 3, cv2.KMEANS_PP_CENTERS)
-    return np.clip(centres, 0, 255).astype(np.float32)
+    cv2.setRNGSeed(graine)
+    _, _, centres = cv2.kmeans(donnees, int(tons), None, criteres, 5, cv2.KMEANS_PP_CENTERS)
+    d = ((centres[:, None, :] - donnees[None, :, :]) ** 2).sum(axis=2)
+    choisies = np.unique(couleurs[d.argmin(axis=1)], axis=0)
+    return choisies
 
 
-def quantifier(rgb, centres):
-    """Chaque pixel non blanc prend la couleur du ton le plus proche ; le blanc reste blanc."""
+def quantifier(rgb, palette):
+    """Chaque pixel non blanc prend la couleur de la palette la plus proche ; le blanc reste blanc."""
     h, w = rgb.shape[:2]
     plat = rgb.reshape(-1, 3).astype(np.float32)
-    d = ((plat[:, None, :] - centres[None, :, :]) ** 2).sum(axis=2)
-    proche = centres[d.argmin(axis=1)]
+    p = palette.astype(np.float32)
+    d = ((plat[:, None, :] - p[None, :, :]) ** 2).sum(axis=2)
+    proche = palette[d.argmin(axis=1)].copy()
     blanc = plat.min(axis=1) >= SEUIL_BLANC
-    proche[blanc] = 255.0
-    return proche.reshape(h, w, 3).astype(np.uint8)
+    proche[blanc] = 255
+    return proche.reshape(h, w, 3)

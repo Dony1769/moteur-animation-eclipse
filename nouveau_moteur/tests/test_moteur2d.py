@@ -57,21 +57,27 @@ class TestEffets(unittest.TestCase):
         self.assertGreater(amps[0], amps[-1])
         self.assertLess(amps[-1], 1.0)
 
-    def test_quantifier_garde_le_blanc_et_limite_les_tons(self):
-        img = np.full((20, 20, 3), 255, np.uint8)
-        img[:10] = (30, 40, 90)
-        img[10:] = (200, 180, 120)
-        img[:, 19] = 255                                        # une colonne de fond blanc
-        centres = E.ajuster_palette([img], tons=2)
-        q = E.quantifier(img, centres)
-        self.assertTrue((q[:, 19] == 255).all())                # blanc inchangé
-        self.assertLessEqual(len(np.unique(q[:10, :19].reshape(-1, 3), axis=0)), 1)
+    def test_palette_prise_dans_les_dessins(self):
+        couleurs = np.array([[30, 40, 90], [200, 180, 120], [250, 250, 250], [10, 10, 10]], np.uint8)
+        pal = E.ajuster_palette(couleurs, tons=2)
+        self.assertTrue(all(tuple(c) in {tuple(x) for x in couleurs} for c in pal))
 
-    def test_smear_ne_cree_que_du_contenu_existant(self):
+    def test_quantifier_garde_le_blanc(self):
+        img = np.full((20, 20, 3), 255, np.uint8)
+        img[:, :10] = (30, 40, 90)
+        q = E.quantifier(img, np.array([[30, 40, 90], [200, 180, 120]], np.uint8))
+        self.assertTrue((q[:, 15] == 255).all())
+        self.assertTrue((q[:, :10] == (30, 40, 90)).all())
+
+    def test_smear_garde_alpha_et_ne_melange_pas_le_blanc(self):
         calque = np.zeros((30, 30, 4), np.float32)
-        calque[10:20, 10:20] = 1.0
+        calque[10:20, 10:20, :3] = np.array([0.1, 0.2, 0.4])
+        calque[10:20, 10:20, 3] = 1.0
         out = E.smear(calque, (1, 0), 8)
-        self.assertFalse(((out[..., 3] > 0) & (calque[..., 3] == 0) & (np.arange(30)[None, :] > 20)).any())
+        self.assertTrue(np.allclose(out[..., 3], calque[..., 3]))           # alpha d'origine
+        self.assertEqual(float(out[..., :3][calque[..., 3] == 0].sum()), 0.0)  # rien hors silhouette
+        couleur = out[10:20, 10:20, :3] / np.maximum(out[10:20, 10:20, 3:4], 1e-6)
+        self.assertTrue(np.allclose(couleur, [0.1, 0.2, 0.4], atol=1e-4))   # couleur du personnage seulement
 
 
 class TestSequenceur(unittest.TestCase):
@@ -79,22 +85,32 @@ class TestSequenceur(unittest.TestCase):
     def setUpClass(cls):
         cls.p = P.charger(KAEL)
         cls.scene = S.charger_scene(SCENE)
+        cls.seq = S.Sequenceur(cls.p, cls.scene, RACINE)
+        cls.images, cls.masques, cls.flashs = cls.seq.rendre()
 
-    def test_duree_et_flash_blanc(self):
-        images, masques = S.Sequenceur(self.p, self.scene).rendre()
-        self.assertEqual(len(images), 144)                      # 6 s à 24 i/s
-        self.assertEqual(int(sum(m.sum() == 0 for m in masques)), 1)   # une seule frame de flash
-        flash = [i for i, m in enumerate(masques) if m.sum() == 0][0]
-        self.assertTrue((images[flash] == 255).all())
+    def test_duree_et_flash_silhouette(self):
+        self.assertEqual(len(self.images), 144)                     # 6 s à 24 i/s
+        self.assertEqual(sum(self.flashs), 1)                       # une seule frame de flash
+        k = self.flashs.index(True)
+        self.assertGreater(self.masques[k].sum(), 0)                # la silhouette existe (vient du calque)
+        self.assertTrue((self.images[k] == 255).all())              # et elle est blanche
 
-    def test_contenu_seulement_des_dessins(self):
-        images, masques = S.Sequenceur(self.p, self.scene).rendre()
-        for im, ma in zip(images, masques):
-            if ma.sum() == 0:
-                continue
+    def test_aucune_couleur_hors_des_dessins(self):
+        """Contrôle à chaque commit : toute couleur visible vient d'un dessin fourni, ou est le blanc."""
+        self.assertEqual(S.couleurs_hors(self.images, self.seq.sources), set())
+
+    def test_aucun_pixel_hors_silhouette(self):
+        for im, ma in zip(self.images, self.masques):
             zone = cv2.dilate(ma.astype(np.uint8), np.ones((9, 9), np.uint8)).astype(bool)
             non_blanc = im.min(axis=2) < 200
             self.assertFalse((non_blanc & ~zone).any())
+
+    def test_calque_trait_vide_sans_effet(self):
+        rgb, alpha = S._charger_png(RACINE / "effets_calques" / "traits_vitesse.png")
+        self.assertEqual(float(alpha.sum()), 0.0)
+
+    def test_plan_d_attaque_marque_placeholder(self):
+        self.assertTrue(self.scene["plans"][1]["placeholder"])
 
     def test_duree_incoherente_refusee(self):
         with tempfile.TemporaryDirectory() as d:

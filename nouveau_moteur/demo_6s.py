@@ -36,7 +36,8 @@ def main(argv):
     sortie.mkdir(parents=True, exist_ok=True)
     perso = P.charger(HERE / "characters" / "kael")
     scene = S.charger_scene(HERE / "scenes" / "demo_6s.json")
-    images, masques = S.Sequenceur(perso, scene).rendre()
+    seq = S.Sequenceur(perso, scene, HERE)
+    images, masques, flashs = seq.rendre()
 
     for i, im in enumerate(images):
         cv2.imwrite(str(sortie / f"{i:03d}.png"), cv2.cvtColor(im, cv2.COLOR_RGB2BGR))
@@ -46,23 +47,25 @@ def main(argv):
                     str(video)], check=True)
     planche(images, [0, 47, 48, 50, 51, 52, 53, 54, 60, 95, 120, 143], sortie / "planche_cles.png")
 
-    # contrôle : hors des frames flash, le non-blanc ne doit pas dépasser le contenu des dessins
+    # contrôle 1 : aucun pixel visible hors de la silhouette des calques (flou et secousse compris)
     hors = []
     for im, ma in zip(images, masques):
-        if ma.sum() == 0:
-            continue                                  # frame de flash
         zone = cv2.dilate(ma.astype(np.uint8), np.ones((9, 9), np.uint8)).astype(bool)
         non_blanc = im.min(axis=2) < 200
         if non_blanc.sum():
             hors.append(float((non_blanc & ~zone).sum() / non_blanc.sum()))
+    # contrôle 2 : aucune couleur qui ne vient des dessins fournis (ou du blanc)
+    couleurs = S.couleurs_hors(images, seq.sources)
     tons = [len(np.unique(im.reshape(-1, 3), axis=0)) for im in images]
     metriques = {
         "frames": len(images),
         "duree_s": round(len(images) / scene["fps"], 3),
-        "frames_flash": int(sum(1 for m in masques if m.sum() == 0)),
-        "fraction_non_blanc_hors_dessins_max": round(max(hors), 5) if hors else 0.0,
+        "frames_flash": int(sum(flashs)),
+        "fraction_non_blanc_hors_silhouette_max": round(max(hors), 5) if hors else 0.0,
+        "couleurs_hors_dessins": len(couleurs),
         "tons_max_par_frame": int(max(tons)),
         "palette_tons": scene["palette"]["tons"],
+        "plans_placeholder": [pl["id"] for pl in scene["plans"] if pl.get("placeholder")],
     }
     (sortie / "metriques.json").write_text(json.dumps(metriques, indent=2), encoding="utf-8")
     print(json.dumps(metriques, indent=2))

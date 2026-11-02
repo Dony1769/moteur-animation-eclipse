@@ -1,41 +1,70 @@
-# Plan de production : épisode test de 30 s, Kaël seul
+# Plan de production : épisode test d'environ 30 secondes, Kaël seul
 
-Ce plan liste les dessins-clés nécessaires, plan par plan. Il sert à décider comment les obtenir :
-dessins faits à la main, ou générés puis sélectionnés. Le moteur ne fabrique aucune pose : il ne fait
-que séquencer, décaler, zoomer et composer les dessins fournis.
+Ce plan liste les dessins-clés nécessaires, plan par plan. Le moteur ne fabrique aucune pose : il séquence,
+décale, zoome et compose les dessins fournis. Aucune couleur n'est ajoutée par le code.
 
-Règles du plan :
-- cadence : 12 dessins/s (un dessin tenu 2 frames) pour l'action ; 8 dessins/s (3 frames) pour l'idle et les anticipations ;
-- pas d'intermédiaire généré : on passe d'un dessin au suivant, ou on tient un dessin ;
-- pas de rotation ni de déformation de la tête : chaque angle de tête est un dessin ;
-- mouvement secondaire (cape, cheveux) seulement sur des calques découpés dans les dessins, ou dessiné ;
-- effets : flash blanc, traînée (smear) et secousse de caméra, sur les pixels des dessins uniquement.
+Cadences : **sur deux** = un dessin tenu 2 frames (12 dessins/s) ; **sur trois** = un dessin tenu 3 frames (8 dessins/s).
+Statut : **existant** = déjà dans le dépôt (à recaler au besoin) ; **à obtenir** = à dessiner ou à générer.
+Le choix de la source est une décision de l'utilisateur (voir plus bas).
 
 ## Plans
 
-| # | Durée | Contenu | Dessins-clés à obtenir | Nb | Cadence | Effets | Déjà disponible |
-|---|---|---|---|---|---|---|---|
-| P1 | 4 s | Ouverture : Kaël immobile, mi-corps, respiration | Vue face, 2 poses de torse (inspiration / expiration) | 2 | 8/s | aucun | face (oui) ; torse séparé (à faire) |
-| P2 | 4 s | Marche vers la caméra, vue 3/4 | Cycle de marche 3/4, 8 dessins par cycle, 2 cycles | 8 | 12/s | aucun | 3/4 (oui, pose statique) ; poses de marche (à faire) |
-| P3 | 2 s | Gros plan visage : doute, puis résolution | Expressions joie, colère, neutre | 3 | 6/s | aucun | `expr_*.png` et `bouche_*.png` (oui, à recaler) |
-| P4 | 1 s | Anticipation de l'attaque : Kaël lève l'épée | Pose de préparation, 3 dessins | 3 | 8/s | aucun | aucun (à faire) |
-| P5 | 2 s | Attaque : arc de l'épée, impact | Arc d'attaque, 6 dessins ; impact 2 frames | 6 | 12/s | flash 1 frame, traînée, secousse | aucun (références : arcs d'épée fournis) |
-| P6 | 3 s | Réaction après l'impact, Kaël se redresse | Pose de retour, 4 dessins | 4 | 8/s | secousse amortie | aucun (à faire) |
-| P7 | 4 s | Plan moyen : Kaël regarde l'horizon | Vue 3/4 et face, 2 dessins alternés | 2 | 4/s | aucun | 3/4 et face (oui) |
-| P8 | 4 s | Dialogue : Kaël parle | 6 visèmes de bouche (A, E, I, M, O, U), face | 6 | 12/s | aucun | `bouche_*.png` (oui, à recaler sur la face) |
-| P9 | 4 s | Plan de titre | Dessin de référence, sans texte généré | 1 | — | aucun | 3/4 (oui) |
-| | 30 s | | | | | | |
+| # | Durée | Contenu | Vue | Dessins-clés | Nb | Cadence | Statut des dessins | Effets |
+|---|---|---|---|---|---|---|---|---|
+| P1 | 4 s | Ouverture : Kaël immobile, respire | face | neutre ; inspiration | 2 | sur trois | neutre existant ; inspiration à obtenir | aucun |
+| P2 | 4 s | Marche vers la caméra | 3/4 | cycle de marche, 8 poses, 2 cycles | 8 | sur deux | 4 existants (`marche_1` à `marche_4`, vue à vérifier) ; 4 à obtenir | aucun |
+| P3 | 2 s | Gros plan : doute puis résolution | face | neutre, joie, colère | 3 | sur trois | 3 existants : neutre (face), `expr_joie.png`, `expr_colere.png` | aucun |
+| P4 | 1 s | Anticipation : Kaël lève l'épée | face | préparation | 3 | sur trois | 3 à obtenir | aucun |
+| P5 | 2 s | Attaque : arc de l'épée, impact | face | arc, 6 poses dont l'impact | 6 | sur deux | 6 à obtenir | flash (silhouette, 1 frame), traînée, secousse, traits de vitesse (calque fourni, à obtenir) |
+| P6 | 3 s | Réaction, Kaël se redresse | face | retour, 4 poses | 4 | sur trois | 4 à obtenir | secousse amortie |
+| P7 | 4 s | Plan moyen : Kaël regarde l'horizon | face puis 3/4 | 2 vues en alternance | 2 | sur trois | 2 existants (bascule nette, sans fondu) | aucun |
+| P8 | 4 s | Dialogue | face | visèmes A, E, I, M, O, U | 6 | sur deux | 6 existants (`bouche_A.png` à `bouche_U.png`) | aucun |
+| P9 | 4 s | Titre : dessin de référence, sans texte | 3/4 | 1 | 1 | — | 1 existant | aucun |
+| P10 | 2 s | Sortie : Kaël quitte le cadre | 3/4 | réutilise les poses de marche de P2 | 0 | sur deux | 0 nouveau | aucun |
+| | **30 s** | | | | | | | |
 
-Total de dessins à produire : environ 25 (P1 : 1 ; P2 : 6 sans les poses déjà prêtes ; P3 : 3 ; P4 : 3 ; P5 : 6 ; P6 : 4 ; P8 : 0 si les visèmes existent).
+## Totaux par catégorie
 
-## Coupes
+| Catégorie | Nombre | Détail |
+|---|---|---|
+| Dessins existants (à recaler) | 17 | P1 : 1 ; P2 : 4 ; P3 : 3 ; P7 : 2 ; P8 : 6 ; P9 : 1 |
+| Dessins à obtenir (dessin ou génération) | 18 | P1 : 1 ; P2 : 4 ; P4 : 3 ; P5 : 6 ; P6 : 4 |
+| Calques d'effets à obtenir | 1 | traits de vitesse (P5), PNG transparent, emplacement `effets_calques/traits_vitesse.png` |
+| Effets automatiques (0 dessin) | 4 | flash, traînée, secousse, coupe sèche |
 
-- Coupes sèches entre tous les plans (pas de fondu, pas de transition générée).
-- P4 vers P5 : coupe sèche sur le geste, avec le flash sur le premier frame d'impact.
+Volume : 35 dessins au total, dont 18 à obtenir. Sources : `universes/eclipse_royale/characters/kael/dessins/`. Cadence la plus lourde : P2 et P5, en sur deux.
 
-## Choses à décider par l'utilisateur
+## Effets
 
-- Source des dessins à produire : dessin à la main, ou génération (ComfyUI, Colab ou Krita) puis sélection.
-- Vues : sans profil ni dos découpés, les plans de marche et de combat restent en 3/4 et face.
-- Calques : découper cape et cheveux dans chaque dessin pour le mouvement secondaire, ou les redessiner.
-- Traits de vitesse radiaux : ils seraient dessinés par code, ce qui contredit la règle ; à dessiner à la main si voulus.
+- **Flash** : la silhouette du personnage passe en blanc sur 1 frame. Sur fond blanc, le résultat est
+  un instant blanc : la silhouette disparaît. Un flash visible sur fond sombre demande un fond fourni (voir options).
+- **Traînée** : flou directionnel du calque, avec son alpha d'origine. Aucun halo.
+- **Secousse** : décalage amorti de la caméra, sans effet sur les dessins.
+- **Traits de vitesse** : aucun trait n'est généré. À dessiner à la main (PNG transparent) et à placer dans
+  `effets_calques/traits_vitesse.png`. Tant que le fichier est vide, l'effet ne fait rien.
+- **Coupes** : sèches, entre tous les plans.
+
+## Placeholder (à ne pas présenter comme une attaque)
+
+Dans la démo 6 s (`scenes/demo_6s.json`), le plan d'attaque est **P2**, marqué `placeholder` : il utilise le dessin
+de face décalé, car aucune pose d'attaque n'existe. Il teste les effets, pas le mouvement.
+Dans ce plan de 30 s, le même plan d'attaque est **P5**.
+
+## Options pour obtenir les dessins (décision de l'utilisateur)
+
+| Option | Principe | Contraintes |
+|---|---|---|
+| Dessin à la main | Un dessinateur produit les poses à partir des planches de référence (sprite sheets, arcs d'épée, poses de course) | Temps de travail ; garder la même échelle, le même pied et la même palette que les dessins existants |
+| Génération gratuite | ComfyUI avec un modèle anime, IP-Adapter pour garder le personnage ; ou Google Colab (GPU limité) ; ou Krita et son plugin AI Diffusion | Demande un GPU (local ou Colab) ; vérifier la licence du modèle ; les pixels générés doivent être nettoyés et recalés |
+| Mélange | Génération des poses, sélection et retouche à la main | Même contraintes que la génération ; la retouche prend du temps |
+
+Dans les trois cas, chaque dessin doit :
+- avoir la même échelle et le même pied que la face existante ;
+- rester dans la palette de Kaël (les couleurs visibles sont celles des dessins fournis) ;
+- être découpé sur fond blanc, sans contour ajouté par le code.
+
+## Limites connues du moteur
+
+- Pas de rotation de tête : chaque angle est un dessin.
+- Pas de profil ni de dos découpés : les plans de marche restent en 3/4 et face.
+- Le mouvement secondaire (cape, cheveux) n'est pas appliqué tant que les calques ne sont pas découpés.
