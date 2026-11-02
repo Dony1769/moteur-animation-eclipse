@@ -1,5 +1,0 @@
-# Dépendances du moteur, versions installées et testées (pip install --break-system-packages -r requirements.txt)
-numpy==2.5.3
-opencv-python-headless==5.0.0.93
-moderngl==5.13.0
-pytest==9.1.1
