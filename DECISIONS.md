@@ -64,3 +64,14 @@
 - Composition des calques en CPU (z-buffer dans `composer`), pas en GPU. Raison : quelques calques, lisibilité, référence simple à tester. Un tri GPU viendra si la scène grossit.
 - Test mémoire GPU : création et libération répétées, sans mesure de mémoire. Raison : Python ne lit pas la mémoire GPU sur llvmpipe ; le test ne détecte que les erreurs.
 - Démos gardées comme bancs d'essai (tête à quatre panneaux, calques procéduraux). Raison : aucun personnage du projet n'est utilisable en 3D pour l'instant.
+
+## Calques articulés 2.5D (2 novembre 2026)
+- Deux outils de déformation : squelette 2D rigide pour les rotations (tête, mèche), grille FFD pour le clignement. Raison : une FFD seule ne fait pas tourner une pièce rigide sans l'écraser ; un squelette seul ne donne pas un clignement propre.
+- Poids par distance gaussienne au segment de chaque os, en softmax, restreints aux `os_actifs` de chaque calque. Raison : un calque ne doit suivre que ses os ; sans cela la tête déforme le corps.
+- Sommets en coordonnées image, profondeur par sommet tirée du relief au repos, projection avec la même convention que l'ombrage. Raison : cohérence avec le chemin 2.5D et test de profondeur GPU = `relief.composer`.
+- VBO dynamiques réécrits en entier à chaque image, topologie fixe. Raison : simple, et suffisant pour quelques milliers de sommets ; une écriture partielle n'apporte rien à cette taille.
+- Tri par profondeur moyenne sur le CPU, z-buffer matériel pour l'image. Raison : le tri rend l'ordre explicite et réduit le travail ; c'est le z-buffer qui garantit l'image (test : ordre inversé = même image).
+- Découpe alpha dans le shader de géométrie (`seuilAlpha`) plutôt que triangles découpés sur le CPU. Raison : exacte au pixel près, sans recalcul du maillage quand la forme change.
+- Clignement = écrasement linéaire, fermeture plafonnée à 0,9. Raison : à 1,0 les triangles s'écrasent en segments dégénérés et laissent des points parasites.
+- Piste cubique = interpolation de Hermite à tangentes de Catmull-Rom. Raison : elle passe par les clés et sa dérivée est continue.
+- Rotation 2D seulement, pas de lacet 3D. Raison : les personnages du projet n'ont pas de géométrie 3D ; une rotation de visage en 3D relèverait d'un autre chantier.

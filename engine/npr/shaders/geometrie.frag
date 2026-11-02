@@ -17,10 +17,16 @@ layout(location = 3) out vec4 g_tangente;
 
 uniform sampler2D albedoTex;
 uniform vec3 albedoColor;
+uniform float seuilAlpha;      // découpe des calques : alpha de albedoTex < seuil -> fragment retiré (0 = aucune)
 
 void main() {
-    g_albedo = vec4(texture(albedoTex, v_uv).rgb * albedoColor, 1.0);
+    vec4 tex = texture(albedoTex, v_uv);
+    if (tex.a < seuilAlpha) {
+        discard;                   // hors de l'aplat : pas d'écriture, ni couleur ni profondeur
+    }
+    g_albedo = vec4(tex.rgb * albedoColor, 1.0);
     g_normale = vec4(normalize(v_normale_vue), 0.0);
     g_profondeur = vec4(-v_pos_vue.z, v_uv, 1.0);
-    g_tangente = vec4(normalize(v_tangente_vue), 0.0);
+    // Tangente nulle = pas de cheveux : normalize(0) donnerait NaN, on écrit zéro à la place.
+    g_tangente = vec4(length(v_tangente_vue) > 1e-6 ? normalize(v_tangente_vue) : vec3(0.0), 0.0);
 }

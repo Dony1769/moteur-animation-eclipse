@@ -62,3 +62,13 @@ Déblocage humain (hors autonomie) : dessins de Aiko et Darius. Sinon, la procha
 - Limites : relief estimé (intérieur plat) ; démo avec formes procédurales ; calotte du panneau D fine et vue de biais, non ajustée ; mémoire GPU non mesurée ; pas d'image de référence pour b4414824 (non jointe).
 - Commit local sur `autonome`, pas de push.
 - Compétence : proposition de mise à jour « moteur-rendu-anime-npr » soumise à l'utilisateur ; non enregistrée tant qu'il ne la sauve pas.
+
+## 2026-11-02 — Calques articulés 2.5D : squelette, FFD, animation, VBO dynamiques
+- Demande : pipeline de calques articulés (ordre et tri des calques, déformation par FFD et squelette avec poids, interpolation temporelle, VBO dynamiques avant les shaders NPR, tests).
+- Fait : `engine/npr/rig.py` (squelette 2D rigide, skinning linéaire, poids par distance avec os actifs, grille FFD de Bernstein, pistes linéaires et cubiques, timeline) ; `engine/npr/calques_anim.py` (calque découpé en grille, sommets à la pose, tri par profondeur) ; `RenduNPR.dessiner_calques` (VBO dynamiques, z-buffer) ; `Maillage.mettre_a_jour` ; démo `engine/npr/demo_articule.py` (cinq calques, planche de six instants).
+- Shader de géométrie : découpe alpha (`seuilAlpha`) et tangente nulle écrite sans NaN. Le comportement de la sphère ne change pas (suite existante verte).
+- Défauts trouvés à la démo, corrigés : le corps se courbait quand la tête bougeait (os trop larges : ensembles d'os actifs par calque, avec test de régression) ; points parasites à fermeture complète des paupières (fermeture plafonnée à 0,9) ; frange en coupe droite, effet casque (bord en arc).
+- Tests : 46 pour le rig et les calques (dont 8 GL), 90 au total, tous verts. Mutations faites sur copies : découpe alpha retirée (6 échecs), garde de tangente retirée (1 échec), test de profondeur désactivé (1 échec), rotation du squelette inversée (5 échecs).
+- Vérification : la planche a été regardée image par image (corps rigide, paupière en trait fin, mèches qui suivent la tête).
+- Limites : articulation 2D seulement (roulis, pas de lacet 3D) ; clignement linéaire ; normales non recalculées par la FFD ; relief figé au repos ; démo procédurale ; pas de vidéo rendue.
+- Commit local sur `autonome`, pas de push.

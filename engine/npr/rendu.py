@@ -2,7 +2,9 @@
 
 Deux chemins, même ombrage et même contour :
   1. maillage : geometrie -> G-buffer MRT -> ombrage -> contour -> image ;
-  2. 2.5D     : G-buffer déjà calculé (relief.composer) -> ombrage -> contour -> image.
+  2. 2.5D     : G-buffer déjà calculé (relief.composer) -> ombrage -> contour -> image ;
+  3. calques articulés : sommets recalculés à chaque pose (calques_anim), VBO dynamiques,
+     ordre de dessin trié par profondeur, z-buffer matériel -> ombrage -> contour -> image.
 
 G-buffer (quatre sorties MRT, RGBA32F, GL_NEAREST et GL_CLAMP_TO_EDGE) :
   albedo     : RGB ;
@@ -16,6 +18,8 @@ from pathlib import Path
 import numpy as np
 import moderngl
 
+from . import relief as RL
+from .calques_anim import trier_par_profondeur
 from .parametres import ParamsContour, ParamsOmbrage
 from .rampe import rampe_par_defaut
 
@@ -84,14 +88,36 @@ class Maillage:
     """Maillage indexé (sommets, normales, UV, tangentes, triangles) envoyé sur le GPU."""
 
     def __init__(self, ctx, programme, sommets, normales, uv, tangentes, triangles):
-        donnees = np.hstack([sommets, normales, uv, tangentes]).astype(np.float32)
-        self.vbo = ctx.buffer(donnees.tobytes())
+        # Mise en page du VBO : positions 0-2, normales 3-5, UV 6-7, tangentes 8-10.
+        self.donnees = np.hstack([sommets, normales, uv, tangentes]).astype(np.float32)
+        self.vbo = ctx.buffer(self.donnees.tobytes(), dynamic=True)
         self.ibo = ctx.buffer(np.asarray(triangles, np.uint32).tobytes())
         self.vao = ctx.vertex_array(
             programme,
             [(self.vbo, "3f 3f 2f 3f", "in_position", "in_normal", "in_uv", "in_tangent")],
             self.ibo,
         )
+
+    def mettre_a_jour(self, sommets=None, normales=None, tangentes=None):
+        """Réécrit le VBO dynamique. Les UV et la topologie ne changent pas.
+
+        Chaque tableau, s'il est donné, a le même nombre de lignes que le maillage.
+        """
+        n = len(self.donnees)
+        for nom, tab in (("sommets", sommets), ("normales", normales), ("tangentes", tangentes)):
+            if tab is not None and np.shape(tab) != (n, 3):
+                raise ValueError(f"{nom} : attendu ({n}, 3), reçu {np.shape(tab)}")
+        if sommets is not None:
+            self.donnees[:, 0:3] = sommets
+        if normales is not None:
+            self.donnees[:, 3:6] = normales
+        if tangentes is not None:
+            self.donnees[:, 8:11] = tangentes
+        self.vbo.write(np.ascontiguousarray(self.donnees, np.float32).tobytes())
+
+    def lire_sommets(self):
+        """Contenu courant du VBO relu sur le GPU, (N, 11) float32 (pour les tests)."""
+        return np.frombuffer(self.vbo.read(), np.float32).reshape(-1, 11)
 
 
 class RenduNPR:
@@ -144,6 +170,7 @@ class RenduNPR:
         self.t_masque_sphere = self.masque_defaut
         self.t_masque_ombre = self.masque_defaut
         self.t_masque_cheveux = self.masque_zero       # pas de reflet tant qu'on n'en définit pas
+        self._calques_gpu = {}                         # nom -> (Maillage, texture) des calques articulés
 
         self.prog_geo = ctx.program(vertex_shader=_lire("geometrie.vert"),
                                     fragment_shader=_lire("geometrie.frag"))
@@ -172,6 +199,16 @@ class RenduNPR:
         h, w = rgb.shape[:2]
         t = self.ctx.texture((w, h), 3,
                              data=np.ascontiguousarray(rgb, np.float32).tobytes(), dtype="f4")
+        t.filter = (moderngl.NEAREST, moderngl.NEAREST)
+        t.repeat_x = False
+        t.repeat_y = False
+        return t
+
+    def texture_rgba(self, rgba):
+        """Texture RGBA (hauteur, largeur, 4), lue en UV. L'alpha sert à la découpe des calques."""
+        h, w = rgba.shape[:2]
+        t = self.ctx.texture((w, h), 4,
+                             data=np.ascontiguousarray(rgba, np.float32).tobytes(), dtype="f4")
         t.filter = (moderngl.NEAREST, moderngl.NEAREST)
         t.repeat_x = False
         t.repeat_y = False
@@ -259,12 +296,53 @@ class RenduNPR:
         self.prog_geo["projection"].write(_octets_mat(projection))
         self.prog_geo["albedoColor"].value = tuple(float(x) for x in couleur_albedo)
         self.prog_geo["albedoTex"].value = 0
+        self.prog_geo["seuilAlpha"].value = 0.0      # pas de découpe pour un maillage plein
         (albedo or self.albedo_defaut).use(location=0)
         maillage.vao.render()
 
         self._ombrer(tan_fov, centre_tete_vue, lumiere_vue, avant_tete_vue)
         self._passe_contour(self.fbo_final, self.p_contour,
                             self.t_ombrage, self.t_normale, self.t_profondeur)
+
+    def dessiner_calques(self, calques, pose, *, projection, tan_fov, centre_tete_vue,
+                         lumiere_vue, avant_tete_vue):
+        """Chemin calques articulés (calques_anim) : sommets à la pose -> VBO -> G-buffer -> ombrage -> contour.
+
+        - Les sommets de chaque calque sont recalculés à la pose et écrits dans son VBO dynamique.
+        - L'ordre de dessin est trié par profondeur moyenne ; le z-buffer tranche pixel par pixel.
+        - La découpe se fait par l'alpha de la texture (géométrie : seuilAlpha).
+        - Pour un reflet de cheveux, définir un masque uniforme : definir_masque_cheveux(np.ones((1, 1))).
+          Seuls les calques avec tangente non nulle (flux) reflètent.
+        - projection doit correspondre à tan_fov (même champ de vue, même rapport d'aspect).
+        Noms de calques uniques pour une même instance de RenduNPR (cache GPU par nom).
+        Renvoie {nom: sommets} à la pose.
+        """
+        pose = pose or {}
+        sommets = {c.nom: c.sommets(pose, tan_fov) for c in calques}
+        ordre = trier_par_profondeur(calques, sommets)
+        self.fbo_geo.use()
+        self.fbo_geo.clear(0.0, 0.0, 0.0, 0.0, depth=1.0)
+        self.ctx.enable(moderngl.DEPTH_TEST)
+        self.prog_geo["modelView"].write(_octets_mat(np.eye(4, dtype=np.float32)))
+        self.prog_geo["projection"].write(_octets_mat(projection))
+        self.prog_geo["albedoColor"].value = (1.0, 1.0, 1.0)
+        self.prog_geo["albedoTex"].value = 0
+        self.prog_geo["seuilAlpha"].value = float(RL.SEUIL_ALPHA)
+        for c in ordre:
+            s = sommets[c.nom]
+            if c.nom not in self._calques_gpu:
+                maillage = Maillage(self.ctx, self.prog_geo, s["vue"], s["normales"],
+                                    s["uv"], s["tangentes"], c.triangles)
+                self._calques_gpu[c.nom] = (maillage, self.texture_rgba(c.calque.rgba))
+            maillage, texture = self._calques_gpu[c.nom]
+            maillage.mettre_a_jour(sommets=s["vue"], normales=s["normales"], tangentes=s["tangentes"])
+            texture.use(location=0)
+            maillage.vao.render()
+
+        self._ombrer(tan_fov, centre_tete_vue, lumiere_vue, avant_tete_vue)
+        self._passe_contour(self.fbo_final, self.p_contour,
+                            self.t_ombrage, self.t_normale, self.t_profondeur)
+        return sommets
 
     def dessiner_gbuffer(self, gbuf, *, tan_fov, centre_tete_vue, lumiere_vue, avant_tete_vue):
         """Chemin 2.5D : G-buffer déjà calculé (dict de relief.composer) -> ombrage -> contour.
@@ -341,7 +419,15 @@ class RenduNPR:
         arr = np.frombuffer(self.t_final.read(), np.uint8).reshape(self.hauteur, self.largeur, 4)
         return arr[::-1].copy()
 
+    def liberer_calques(self):
+        """Libère les VBO, IBO, VAO et textures des calques articulés."""
+        for maillage, texture in self._calques_gpu.values():
+            for ressource in (maillage.vao, maillage.vbo, maillage.ibo, texture):
+                ressource.release()
+        self._calques_gpu = {}
+
     def liberer(self):
+        self.liberer_calques()
         for ressource in (self.t_albedo, self.t_normale, self.t_profondeur, self.t_tangente,
                           self.t_ombrage, self.t_final, self.tampon_z, self.fbo_geo,
                           self.fbo_ombrage, self.fbo_final, self.t_rampe, self.albedo_defaut,

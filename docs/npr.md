@@ -1,6 +1,6 @@
 # Rendu animé non photoréaliste (NPR)
 
-Module `engine/npr/` : chaîne OpenGL 3.3 (G-buffer MRT, ombrage toon, reflet anisotrope des cheveux, contour Sobel), chemin 2.5D (calques → relief → G-buffer), référence numpy et tests. Ce module ne rend pas encore les planches 2D du projet : il lui faut une géométrie, ou un relief, et ce relief reste une estimation (voir « Limites »).
+Module `engine/npr/` : chaîne OpenGL 3.3 (G-buffer MRT, ombrage toon, reflet anisotrope des cheveux, contour Sobel), chemin 2.5D (calques → relief → G-buffer), calques articulés (squelette 2D, FFD, animation par clés, VBO dynamiques), référence numpy et tests. Ce module ne rend pas encore les planches 2D du projet : il lui faut une géométrie, ou un relief, et ce relief reste une estimation (voir « Limites »).
 
 ## Vérification des pièces jointes
 
@@ -37,6 +37,7 @@ Deux entrées, une même chaîne. Tout est en espace vue (caméra à l'origine, 
 
 - **Entrée 3D** : `RenduNPR.dessiner(maillage, …)` rend un maillage, puis `lire_gbuffer()`.
 - **Entrée 2.5D** : `relief.composer(calques, …)` produit le même G-buffer à partir de calques 2D, puis `RenduNPR.dessiner_gbuffer(gbuf, …)`.
+- **Entrée calques articulés** : `RenduNPR.dessiner_calques(calques, pose, …)` recalcule les sommets de chaque calque à la pose, les écrit dans son VBO dynamique, puis dessine dans le même G-buffer (voir « Calques articulés »).
 
 Passes :
 
@@ -59,6 +60,20 @@ Toutes les textures d'échantillonnage sont en `GL_NEAREST` et `GL_CLAMP_TO_EDGE
 - `normales(h, pente)` : pentes par Sobel sur la hauteur.
 - `composer(calques, largeur, hauteur)` : z-buffer CPU ; le calque le plus proche gagne, les pixels sans calque opaque sont du fond. Renvoie le G-buffer en ordre OpenGL (ligne 0 en bas).
 
+### Calques articulés (`engine/npr/rig.py`, `engine/npr/calques_anim.py`)
+
+Un calque (`relief.Calque`) est découpé en grille de sommets au repos par `calques_anim.construire` (cellules de 4 px par défaut ; seules les cellules touchant un pixel opaque sont gardées). À chaque pose, dans cet ordre :
+
+1. la grille FFD (`rig.GrilleFFD`) déforme les positions au repos (clignement, piste `cligne`) ;
+2. le squelette (`rig.Squelette`, os rigides 2D) déforme positions, normales et tangentes (skinning linéaire) ;
+3. chaque sommet garde la profondeur de son relief au repos et passe en coordonnées vue (`calques_anim.vers_vue`, même convention que l'ombrage).
+
+Les sommets sont écrits dans un VBO dynamique par calque (`Maillage.mettre_a_jour`). `RenduNPR.dessiner_calques` trie les calques par profondeur moyenne (`trier_par_profondeur`), les dessine dans le G-buffer, et le z-buffer tranche pixel par pixel. La découpe se fait dans le shader de géométrie (`seuilAlpha` : un fragment dont l'alpha de texture est sous le seuil est retiré).
+
+Chaque calque n'est influencé que par ses `os_actifs` : un corps ne suit que son propre os, sans quoi ses bords se courbent quand la tête bouge (bug trouvé à la démo, corrigé et testé).
+
+Animation : `rig.Piste` (clés `(temps, valeur)`, interpolation `lineaire` ou `cubique`) et `rig.Timeline` (pistes nommées, `pose(t)`).
+
 ## Formules retenues
 
 - Demi-lambert : `u = N·L · 0,5 + 0,5`, couleur = `rampe[floor(u·256)]`.
@@ -79,6 +94,15 @@ Toutes les textures d'échantillonnage sont en `GL_NEAREST` et `GL_CLAMP_TO_EDGE
 - Tangente depuis le flux : `T = normalize(dx, −dy_image, 0)`.
 - Contour : `edN = |Gx_N| + |Gy_N| > seuil_normale` ou `edD = |Gx_log| + |Gy_log| > seuil_profondeur`. Fond : couleur de fond, sans trait.
 
+### Formules du rig
+
+- Squelette : `G_os(pose) = G_parent · T(pivot) · R(θ) · T(−pivot)`, avec `G_os(repos) = I`.
+- Skinning : `p' = Σ_k w_k · G_k · p`. Normales et tangentes ne reçoivent que la partie rotation : `n' = normalize(Σ_k w_k · R_k · n)`, z inchangé. Le calcul se fait dans le repère image (y vers le bas) : un angle positif tourne dans le sens horaire à l'écran.
+- Poids : `w_k ∝ exp(−d_k² / (2 σ_k²))`, où `d_k` est la distance au segment de l'os (pivot → extrémité), calculé en softmax (jamais de ligne nulle), restreint aux `os_actifs` du calque.
+- FFD (Sederberg-Parry, base de Bernstein) : `p' = p + Σ_ij B_i(s) · B_j(t) · d_ij`. Un champ de décalage linéaire est reproduit exactement.
+- Clignement : `d_y = −c · (y − y_milieu)`, donc `p'_y = (1 − c) · y + c · y_milieu`, x inchangé.
+- Piste cubique : interpolation de Hermite entre clés, tangentes de Catmull-Rom non uniformes (`(v_{k+1} − v_{k−1}) / (t_{k+1} − t_{k−1})`), bords en différence simple. La courbe passe par chaque clé et sa dérivée est continue.
+
 ## Dépendances et environnement
 
 - Python 3.13, numpy 2.5.3, OpenCV 5.0.0 (headless), moderngl 5.13.0, pytest 9.1.1. Versions dans `requirements.txt`.
@@ -88,7 +112,7 @@ Toutes les textures d'échantillonnage sont en `GL_NEAREST` et `GL_CLAMP_TO_EDGE
 - Une uniform que le GLSL n'utilise pas est éliminée à la compilation. Toute uniform passée depuis `rendu.py` doit donc être lue par son shader, sinon `KeyError`.
 - Sans libEGL ou sans contexte, les tests GL sont ignorés ; les tests numpy tournent toujours.
 
-## Tests (`tests/test_npr.py`)
+## Tests (`tests/test_npr.py`, `tests/test_rig.py`)
 
 - Rampe : bandes exactes (texels 89/90 pour 0,35 ; 179/180 pour 0,70).
 - Formules : bornes du demi-lambert, indice de rampe, spéculaire binaire, smoothstep, plan face caméra égal à la couleur la plus claire, fond vide.
@@ -107,7 +131,22 @@ Toutes les textures d'échantillonnage sont en `GL_NEAREST` et `GL_CLAMP_TO_EDGE
   - retirer la composante `gy` du Sobel de profondeur, ou celle du Sobel de normales : le test isolé correspondant échoue ;
   - remplacer CLAMP par REPEAT : `test_bord_clamp_regression` échoue ;
   - remplacer `th*th` par `th` dans le GLSL des cheveux : `test_cheveux_gpu_egal_reference` échoue.
-- Résultat : 25 tests NPR (dont 7 GL) et 44 tests au total dans le dépôt, tous verts.
+- Rig et calques (`tests/test_rig.py`), numpy :
+  - squelette : repos = identité, rotation autour du pivot (distance et angle conservés), enfant qui suit le parent, normales qui gardent leur norme ;
+  - poids : sommes à 1, os le plus proche dominant, pas de ligne nulle loin des os, masque `os_actifs` (et refus d'un nom inconnu) ;
+  - FFD : identité, translation uniforme exacte, clignement linéaire exact, fermeture complète sur la médiane ;
+  - pistes : passage par les clés (linéaire et cubique), droite reproduite par la cubique, continuité de la dérivée, clamp hors plage, erreurs de saisie ;
+  - calques : convention `vers_vue`, profondeur du plateau = plan − relief, normales qui tournent avec l'os, FFD sur les yeux seulement, tri par profondeur et départage par ordre, corps qui ne suit que son os (régression), pose neutre inchangée.
+- Rig et calques, GPU (même fichier) :
+  - VBO réécrit puis relu sur le GPU ; forme incorrecte refusée ;
+  - profondeur du chemin articulé = `relief.composer` au plateau (écart < 10⁻⁴) ;
+  - couverture GPU = alpha (désaccord < 2 %) ;
+  - rotation GPU d'un calque = `cv2.warpAffine` de son alpha (IoU > 0,9) ;
+  - ordre de dessin inversé : même G-buffer (le z-buffer tranche), et le premier plan gagne au recouvrement ;
+  - tangente nulle hors cheveux, sans NaN ;
+  - création, mise à jour et libération répétées des calques.
+- Mutations vérifiées sur copies (sans toucher l'arbre de travail) : découpe alpha retirée (6 échecs), garde de tangente retirée (`test_tangente_nulle_hors_cheveux` échoue), test de profondeur désactivé (test d'ordre inverse échoue), rotation du squelette inversée (5 échecs).
+- Résultat : 25 tests NPR (dont 7 GL), 46 tests rig et calques (dont 8 GL), 90 tests au total dans le dépôt, tous verts.
 
 ## Images de test
 
@@ -119,6 +158,7 @@ Toutes les textures d'échantillonnage sont en `GL_NEAREST` et `GL_CLAMP_TO_EDGE
   - Écarts GPU/numpy : A ≈ 2·10⁻⁶, B, C et D ≈ 3·10⁻⁶.
   - Sur D, la calotte n'occupe qu'une bande fine en haut de la sphère, vue de biais : le reflet y est discret. Non ajusté (`CALOTTE_V` dans `tete_test.py`).
 - `python3 engine/npr/demo_calque.py` produit `out/npr/test_calque_npr.png` : deux calques procéduraux (visage, puis cheveux devant), A sans reflet, B avec le reflet anisotrope des mèches (flux radial depuis le haut du crâne).
+- `python3 engine/npr/demo_articule.py` produit `out/npr/test_articule_npr.png` : une planche de six instants (0 ; 0,25 ; 0,46 ; 0,5 ; 0,75 ; 1 s) d'un personnage à cinq calques (cheveux arrière, corps, visage, yeux, frange). Pistes : `tete` (inclinaison, cubique), `cligne` (linéaire, fermeture à 0,9), `meche` (balancement, cubique). Vérifiée à l'œil sur la planche : le corps reste rigide, la paupière se ferme en trait fin, la frange et les cheveux suivent la tête, la mèche se balance (jusqu'à environ 36 px en bout pour 0,25 rad). Démo complète : environ 0,6 s sur llvmpipe, contexte compris.
 
 La tête est une sphère avec une bosse gaussienne, et les calques sont des formes dessinées en code : ni l'une ni l'autre n'est un personnage du projet.
 
@@ -135,12 +175,22 @@ La tête est une sphère avec une bosse gaussienne, et les calques sont des form
 9. **Épaisseur de trait fixe** en texels entiers.
 10. **Pas de mesure de performance GPU** : tout tourne sur llvmpipe, CPU.
 11. **Image de référence de b4414824 non jointe** : aucune comparaison faite.
+12. **Articulation 2D seulement.** Les os sont rigides dans le plan de l'image : « tourner la tête » est une inclinaison dans le plan (roulis), pas un lacet 3D. Une vraie rotation du visage demande une géométrie 3D.
+13. **Clignement linéaire.** La paupière est un écrasement vertical de la grille, sans forme courbe. À une fermeture de 1,0, les triangles s'écrasent en segments dégénérés et laissent des points parasites : la démo plafonne à 0,9.
+14. **FFD sans recalcul des normales.** La grille FFD déplace les positions, mais normales et tangentes ne suivent que le squelette.
+15. **Relief figé au repos.** La profondeur d'un sommet vient du relief au repos : une déformation ne recalcule pas le biseau. Les sommets sont échantillonnés au pixel le plus proche (cellules de 4 px).
+16. **Ordre de dessin et transparence.** Le tri par profondeur est fait sur le CPU ; le z-buffer assure la correction pixel par pixel. Il n'y a pas de transparence semi-translucide (découpe seulement, sans alpha blending).
+17. **Démo procédurale.** Les formes sont dessinées en code. Ce ne sont ni un personnage du projet ni un masque de cheveux peint.
+18. **Images, pas de vidéo.** La démo produit une planche de six instants ; aucun MP4 n'est rendu en continu. Le chemin 2.5D statique (`relief.composer`, limite 8) reste en CPU ; le chemin articulé est sur GPU.
 
 ## Fichiers
 
 - `engine/npr/parametres.py` : paramètres partagés (ombrage, cheveux, contour) ;
 - `engine/npr/rampe.py` : rampes toon ;
 - `engine/npr/reference.py` : référence numpy ;
+- `engine/npr/rig.py` : squelette 2D, poids, grille FFD, pistes et timeline (numpy pur) ;
+- `engine/npr/calques_anim.py` : calques articulés, sommets à la pose, tri par profondeur ;
+- `engine/npr/demo_articule.py` : personnage à cinq calques et planche d'instants ;
 - `engine/npr/rendu.py` : passes OpenGL (`RenduNPR` : `dessiner`, `dessiner_gbuffer`, `contour_sur`) ;
 - `engine/npr/relief.py` : calques 2.5D, relief, normales, composition ;
 - `engine/npr/shaders/*.vert|frag` : GLSL 330 ;
