@@ -71,5 +71,30 @@ class TestFountain(unittest.TestCase):
         self.assertTrue(any("sans personnage" in e for e in schema.valider(casse)))
 
 
+class TestFormesFortes(unittest.TestCase):
+    """Formes du standard Fountain non présentes dans le script de test."""
+
+    def test_prefixes_de_scene(self):
+        texte = "EST. SALLE\n\nI/E PONT - NUIT\n\nINT./EXT. HALL\n\n.PLAN FORCE\n"
+        plan = fountain.parser(texte)
+        types = [(s["type"], s["lieu"]) for s in plan["scenes"]]
+        self.assertEqual(types, [("EST", "SALLE"), ("I/E", "PONT"), ("INT./EXT", "HALL"), ("", "PLAN FORCE")])
+
+    def test_numero_de_scene_retire(self):
+        plan = fountain.parser("INT. CAVE - NUIT #12A#\n")
+        self.assertEqual(plan["scenes"][0]["lieu"], "CAVE")
+
+    def test_transition_forcee_et_personnage_force(self):
+        texte = "> FONDU AU NOIR\n\n@mcCoy\nBonjour.\n"
+        plan = fountain.parser(texte)
+        self.assertEqual(plan["transitions_debut"], [{"type": "transition", "texte": "FONDU AU NOIR"}])
+        dial = plan["scenes"][0]["elements"][0]
+        self.assertEqual((dial["personnage"], dial["texte"]), ("mcCoy", "Bonjour."))
+
+    def test_fade_out_reste_une_transition(self):
+        plan = fountain.parser("INT. A - JOUR\n\nAction.\n\nFADE OUT.\n")
+        self.assertEqual(plan["scenes"][0]["elements"][-1], {"type": "transition", "texte": "FADE OUT."})
+
+
 if __name__ == "__main__":
     unittest.main()

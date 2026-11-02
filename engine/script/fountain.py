@@ -1,8 +1,16 @@
 """Parseur Fountain (sous-ensemble) vers un JSON de plan.
 
-Gère : titre, en-têtes de scène (INT./EXT.), actions, personnages (ligne en MAJUSCULES),
-parenthèses, dialogues, transitions (lignes en MAJUSCULES finissant par ':' ou « FADE »),
-commentaires /* */ et [[ ]].
+Règles suivies (spécification officielle, https://fountain.io/syntax) :
+- en-têtes de scène : INT, EXT, EST, I/E, INT./EXT, INT/EXT, EXT./INT, séparateur '.' ou espace,
+  forçage par '.' en tête, numéro de scène entre '#', tiret séparant lieu et moment ;
+- personnages : ligne en majuscules avec au moins une lettre, extension entre parenthèses,
+  forçage par '@' en tête ;
+- parenthèses dans un dialogue ; notes [[ ]] et commentaires /* */ retirés ;
+- transitions forcées par '>' en tête ; métadonnée Title: en tête.
+
+Écarts volontaires (lecture plus souple) : une ligne en majuscules finissant par ':'
+(ex. « FADE IN: ») est une transition même sans « TO: ». Les lignes continuées de la
+page de titre (indentées) ne sont pas lues.
 
 Usage : python3 engine/script/fountain.py <script.fountain> <sortie.json>
 """
@@ -10,9 +18,10 @@ import json
 import re
 import sys
 
-RE_SCENE = re.compile(r"^(INT\.|EXT\.|INT\./EXT\.|EXT\./INT\.|I/E\.)\s+(.+?)(?:\s*-\s*(.+))?$")
-RE_TRANSITION = re.compile(r"^[A-Z ]+(TO|IN|OUT|FADE)[A-Z ]*:?$|^FADE (IN|OUT)\.?$|^CUT TO:$")
-RE_PERSONNAGE = re.compile(r"^[A-ZÀ-ÖØ-Þ][A-ZÀ-ÖØ-Þ .'\-]+(\s*\(.*\))?$")
+RE_ENTETE = re.compile(r"^(INT\./EXT|INT/EXT|EXT\./INT|I/E|INT|EXT|EST)(\.|\s)\s*(.+)$", re.I)
+RE_NUMERO = re.compile(r"\s*#[^#]+#\s*$")
+RE_TRANSITION = re.compile(r"^[A-Z0-9 .'\-/]+:$|^FADE (IN|OUT)\.?$|^CUT TO:$")
+RE_PERSONNAGE = re.compile(r"^[A-ZÀ-ÖØ-Þ0-9][A-ZÀ-ÖØ-Þ0-9 .'\-]*[A-ZÀ-ÖØ-Þ][A-ZÀ-ÖØ-Þ0-9 .'\-]*(\s*\(.*\))?$")
 RE_PARENTHESE = re.compile(r"^\(.*\)$")
 
 
@@ -22,56 +31,84 @@ def _nettoyer(texte):
     return texte
 
 
+def _entete_scene(ligne):
+    """Renvoie (type, lieu, moment) si la ligne est un en-tête de scène, sinon None."""
+    forcee = ligne.startswith(".") and not ligne.startswith("..")
+    if forcee:
+        ligne = ligne[1:]
+    ligne = RE_NUMERO.sub("", ligne).strip()
+    m = RE_ENTETE.match(ligne)
+    if not m and not forcee:
+        return None
+    if m:
+        type_, reste = m.group(1).upper(), m.group(3)
+    else:
+        type_, reste = "", ligne
+    lieu, _, moment = reste.partition(" - ")
+    return type_, lieu.strip(), moment.strip()
+
+
 def parser(texte):
-    texte = _nettoyer(texte)
-    lignes = [l.rstrip() for l in texte.splitlines()]
+    lignes = [l.rstrip() for l in _nettoyer(texte).splitlines()]
     titre = None
     scenes = []
     scene = None
+    transitions_debut = []
     i = 0
-    # métadonnées de tête
     while i < len(lignes) and re.match(r"^[A-Za-z ]+:\s*", lignes[i]):
         cle, _, val = lignes[i].partition(":")
         if cle.strip().lower() == "title":
             titre = val.strip()
         i += 1
     dernier_perso = None
-    transitions_debut = []
+
+    def scene_courante():
+        nonlocal scene
+        if scene is None:
+            scene = {"id": "s00", "type": "", "lieu": "", "moment": "", "elements": []}
+            scenes.append(scene)
+        return scene
+
     while i < len(lignes):
         l = lignes[i].strip()
         i += 1
         if not l:
             dernier_perso = None
             continue
-        m = RE_SCENE.match(l)
-        if m:
-            scene = {"id": "s%02d" % (len(scenes) + 1), "type": m.group(1).rstrip("."),
-                     "lieu": m.group(2).strip(), "moment": (m.group(3) or "").strip(),
-                     "elements": []}
+        entete = _entete_scene(l)
+        if entete is not None:
+            type_, lieu, moment = entete
+            scene = {"id": "s%02d" % (len(scenes) + 1), "type": type_, "lieu": lieu,
+                     "moment": moment, "elements": []}
             scenes.append(scene)
             dernier_perso = None
             continue
-        if RE_TRANSITION.match(l) and l.isupper():
-            cible = scene["elements"] if scene is not None else transitions_debut
+        if l.startswith(">"):
+            cible = scene_courante()["elements"] if scene is not None else transitions_debut
+            cible.append({"type": "transition", "texte": l[1:].strip()})
+            dernier_perso = None
+            continue
+        if dernier_perso is None and l.isupper() and RE_TRANSITION.match(l):
+            cible = scene_courante()["elements"] if scene is not None else transitions_debut
             cible.append({"type": "transition", "texte": l})
-            dernier_perso = None
             continue
-        if scene is None:
-            scene = {"id": "s00", "type": "", "lieu": "", "moment": "", "elements": []}
-            scenes.append(scene)
-        if dernier_perso is None and RE_PERSONNAGE.match(l) and l.isupper():
-            nom = re.sub(r"\s*\(.*\)$", "", l).strip()
-            dernier_perso = {"type": "dialogue", "personnage": nom, "parentheses": [], "texte": []}
-            scene["elements"].append(dernier_perso)
-            continue
+        if dernier_perso is None:
+            nom = None
+            if l.startswith("@"):                       # personnage forcé, casse conservée
+                nom = re.sub(r"\s*\(.*\)$", "", l[1:]).strip()
+            elif l.isupper() and RE_PERSONNAGE.match(l):
+                nom = re.sub(r"\s*\(.*\)$", "", l).strip()
+            if nom:
+                dernier_perso = {"type": "dialogue", "personnage": nom, "parentheses": [], "texte": []}
+                scene_courante()["elements"].append(dernier_perso)
+                continue
         if dernier_perso is not None:
             if RE_PARENTHESE.match(l):
                 dernier_perso["parentheses"].append(l.strip("()"))
             else:
                 dernier_perso["texte"].append(l)
             continue
-        scene["elements"].append({"type": "action", "texte": l})
-    # mise en forme finale des dialogues
+        scene_courante()["elements"].append({"type": "action", "texte": l})
     for s in scenes:
         for e in s["elements"]:
             if e["type"] == "dialogue":

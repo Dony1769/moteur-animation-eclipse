@@ -43,6 +43,17 @@ Le validateur `engine/script/schema.py` (`valider(plan)`) renvoie la liste des e
 | `dialogue.texte` | Obligatoire, lignes de la réplique réunies par un espace. |
 | `action.texte`, `transition.texte` | Obligatoires. |
 
+## Formes lues
+
+- En-têtes : `INT`, `EXT`, `EST`, `I/E`, `INT./EXT`, `INT/EXT`, `EXT./INT` ; forçage par `.` en tête ; numéro `#12A#` retiré.
+- Personnage forcé par `@` (casse conservée) ; transition forcée par `>`.
+- Notes `[[ ]]` et commentaires `/* */` retirés.
+
+## Écarts volontaires avec la spécification
+
+- Une ligne en majuscules finissant par `:` (ex. `FADE IN:`) est une transition même sans `TO:`.
+- `FADE OUT.` est lu comme transition (le standard le lit comme action).
+
 ## Non géré (pour l'instant)
 
-Notes `[[ ]]` et commentaires `/* */` sont retirés. Pas de double dialogue, pas de dialogue en retour de ligne après parenthèses multiples, pas de sections `=`, pas de synopsis `=`. Les éléments inconnus restent des `action`.
+Lignes continuées de la page de titre (indentées), double dialogue, sections `=`, synopsis `=`, numéros de page. Les éléments inconnus restent des `action`.
