@@ -2,8 +2,8 @@
 
 ## Réseau
 - blender.org : accessible (HTTPS 200).
-- mocap.cs.cmu.edu : HTTP 200, mais le tunnel HTTPS échoue au proxy. Conséquence : étape 6 utilise des
-  images-clés en code sur le squelette Rigify, pas de capture CMU, tant que le domaine n'est pas accessible.
+- mocap.cs.cmu.edu : tunnel HTTPS en échec depuis le proxy, mais les clips utiles sont déjà sur la machine
+  (run/09_01, jump/13_11, sword/02_09 et l'archive cmubvh). L'étape 6 n'est donc plus bloquée par le réseau.
 
 ## Dépend de l'utilisateur
 - Fichiers Mixamo (Default Character FBX avec peau, puis Idle, Running, Jump, Sword Slash, Hit Reaction sans
