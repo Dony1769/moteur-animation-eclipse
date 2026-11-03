@@ -483,3 +483,8 @@ Ce qui est mesuré (HBM, corps 1,69 m) :
 - Vérification : le calcul explicite LBS reproduit le modificateur Blender à 0,0005 mm.
 
 Erreurs commises pendant cette étape et règle à retenir (voir docs/erreurs_apprises.md).
+
+## 21. Os d'aide à l'épaule (répartition de rotation), mesuré
+
+Méthode combinée : distribuer la rotation du bras sur un os d'aide (idée des os de torsion lue dans le guide DCC) + contrainte Copy Rotation de Blender à influence 0,5, puis recalcul des poids par chaleur.
+Mesure LBS sans clé, bras gauche seul : 90° 24 -> 12 replis ; 120° 31 -> 19 ; 479 sommets pondérés sur l'os d'aide (max 0,5). Rapports : docs/rapports/hbm_os_aide_epaule.json et hbm_os_aide_temoin.json.

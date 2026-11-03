@@ -1,0 +1,19 @@
+{
+  "variante": "sans",
+  "replis_lbs": {
+    "60": 6,
+    "90": 24,
+    "105": 25,
+    "120": 31
+  },
+  "poids_os_aide": {
+    "sommets_avec_poids": 0,
+    "poids_max": 0.0
+  },
+  "audit": {
+    "sommets_sans_poids": 0,
+    "sommets_poids_non_normalises": 0,
+    "max_influences_par_sommet": 4,
+    "groupes": 19
+  }
+}

@@ -88,3 +88,11 @@ Bilan : les corrections à 90° se combinent sans créer de replis nouveaux dans
 
 - Seconde clé, calibrée à 120° par-dessus la première, valeur `clamp((angle − 90) / 30)` (`engine/skinning/construit_seconde_pose.py`, rapport `docs/rapports/hbm_seconde_pose.json`) : avant-bras 6 → 0 et 2 → 0 à 120° ; jambes 10 → 3 et 8 → 5 ; bras gauche 22 → 20 (plafond de 40 mm atteint). Le bras reste le point faible.
 - DQS (Preserve Volume), testé avec les clés (`engine/skinning/test_dqs_cles.py`, rapport `docs/rapports/hbm_dqs_cles.json`) : bras gauche 105° : 18 → 8 ; jambes 105° : 3 → 0 ; 120° : 20 → 17. Le gonflement du DQS n'est pas encore mesuré : le DQS n'est pas adopté.
+
+## Pipeline final : os d'aide + clés (mesuré)
+
+Script : `engine/skinning/construit_final.py`. Rapport : `docs/rapports/hbm_final_epaule_cles.json`. 21 os, 0 sommet sans poids, 4 influences au plus.
+
+Replis LBS, bras gauche : 60° : 0 ; 90° : 2 ; 105° : 6 ; 120° : 13. Combinaison des deux méthodes plus efficace que chacune seule (clés seules : 3 / 18 / 20 ; os d'aide seul : 12 / 17 / 19).
+
+Limite : le champ `deplacement_max_120_mm` du rapport ne mesure pas le gonflement (voir erreur 21). Un contrôle de gonflement n'est pas encore implémenté.
