@@ -1,0 +1,209 @@
+{
+  "variante": "avec_cles",
+  "angles": [
+    0,
+    60,
+    90,
+    105,
+    120
+  ],
+  "modes": {
+    "LBS": {
+      "LeftArm": {
+        "0": {
+          "ratio_volume": 1.0,
+          "etirement_max": 1.0003,
+          "etirement_min": 0.999,
+          "ecart_p99": 0.0001
+        },
+        "60": {
+          "ratio_volume": 0.9708,
+          "etirement_max": 1.9065,
+          "etirement_min": 0.2811,
+          "ecart_p99": 0.1687
+        },
+        "90": {
+          "ratio_volume": 0.9631,
+          "etirement_max": 2.6293,
+          "etirement_min": 0.2249,
+          "ecart_p99": 0.2785
+        },
+        "105": {
+          "ratio_volume": 0.9581,
+          "etirement_max": 2.9967,
+          "etirement_min": 0.0637,
+          "ecart_p99": 0.3306
+        },
+        "120": {
+          "ratio_volume": 0.9549,
+          "etirement_max": 3.3584,
+          "etirement_min": 0.1704,
+          "ecart_p99": 0.3733
+        }
+      },
+      "LeftForeArm": {
+        "0": {
+          "ratio_volume": 1.0,
+          "etirement_max": 1.0003,
+          "etirement_min": 0.999,
+          "ecart_p99": 0.0001
+        },
+        "60": {
+          "ratio_volume": 0.9989,
+          "etirement_max": 1.5876,
+          "etirement_min": 0.2519,
+          "ecart_p99": 0.0206
+        },
+        "90": {
+          "ratio_volume": 0.9982,
+          "etirement_max": 1.7414,
+          "etirement_min": 0.0976,
+          "ecart_p99": 0.0332
+        },
+        "105": {
+          "ratio_volume": 0.9973,
+          "etirement_max": 1.7762,
+          "etirement_min": 0.1172,
+          "ecart_p99": 0.0624
+        },
+        "120": {
+          "ratio_volume": 0.9965,
+          "etirement_max": 1.782,
+          "etirement_min": 0.131,
+          "ecart_p99": 0.0814
+        }
+      },
+      "LeftLeg": {
+        "0": {
+          "ratio_volume": 1.0,
+          "etirement_max": 1.0003,
+          "etirement_min": 0.999,
+          "ecart_p99": 0.0001
+        },
+        "60": {
+          "ratio_volume": 0.9915,
+          "etirement_max": 1.1364,
+          "etirement_min": 0.4308,
+          "ecart_p99": 0.0544
+        },
+        "90": {
+          "ratio_volume": 0.988,
+          "etirement_max": 1.1955,
+          "etirement_min": 0.3359,
+          "ecart_p99": 0.0737
+        },
+        "105": {
+          "ratio_volume": 0.9854,
+          "etirement_max": 1.2293,
+          "etirement_min": 0.3703,
+          "ecart_p99": 0.0993
+        },
+        "120": {
+          "ratio_volume": 0.9834,
+          "etirement_max": 1.2897,
+          "etirement_min": 0.3768,
+          "ecart_p99": 0.1305
+        }
+      }
+    },
+    "DQS": {
+      "LeftArm": {
+        "0": {
+          "ratio_volume": 1.0,
+          "etirement_max": 1.0003,
+          "etirement_min": 0.999,
+          "ecart_p99": 0.0001
+        },
+        "60": {
+          "ratio_volume": 0.9684,
+          "etirement_max": 1.8454,
+          "etirement_min": 0.339,
+          "ecart_p99": 0.1555
+        },
+        "90": {
+          "ratio_volume": 0.9546,
+          "etirement_max": 2.5586,
+          "etirement_min": 0.2444,
+          "ecart_p99": 0.2391
+        },
+        "105": {
+          "ratio_volume": 0.9449,
+          "etirement_max": 2.9419,
+          "etirement_min": 0.1133,
+          "ecart_p99": 0.2686
+        },
+        "120": {
+          "ratio_volume": 0.9365,
+          "etirement_max": 3.3337,
+          "etirement_min": 0.1211,
+          "ecart_p99": 0.313
+        }
+      },
+      "LeftForeArm": {
+        "0": {
+          "ratio_volume": 1.0,
+          "etirement_max": 1.0003,
+          "etirement_min": 0.999,
+          "ecart_p99": 0.0001
+        },
+        "60": {
+          "ratio_volume": 0.9995,
+          "etirement_max": 1.732,
+          "etirement_min": 0.3257,
+          "ecart_p99": 0.0105
+        },
+        "90": {
+          "ratio_volume": 0.9993,
+          "etirement_max": 2.1089,
+          "etirement_min": 0.1,
+          "ecart_p99": 0.0148
+        },
+        "105": {
+          "ratio_volume": 0.9986,
+          "etirement_max": 2.3018,
+          "etirement_min": 0.1128,
+          "ecart_p99": 0.0277
+        },
+        "120": {
+          "ratio_volume": 0.998,
+          "etirement_max": 2.4983,
+          "etirement_min": 0.1458,
+          "ecart_p99": 0.0445
+        }
+      },
+      "LeftLeg": {
+        "0": {
+          "ratio_volume": 1.0,
+          "etirement_max": 1.0003,
+          "etirement_min": 0.999,
+          "ecart_p99": 0.0001
+        },
+        "60": {
+          "ratio_volume": 0.9933,
+          "etirement_max": 1.1912,
+          "etirement_min": 0.4501,
+          "ecart_p99": 0.0582
+        },
+        "90": {
+          "ratio_volume": 0.9906,
+          "etirement_max": 1.2768,
+          "etirement_min": 0.4015,
+          "ecart_p99": 0.0783
+        },
+        "105": {
+          "ratio_volume": 0.9877,
+          "etirement_max": 1.3167,
+          "etirement_min": 0.4365,
+          "ecart_p99": 0.0931
+        },
+        "120": {
+          "ratio_volume": 0.9852,
+          "etirement_max": 1.3544,
+          "etirement_min": 0.4849,
+          "ecart_p99": 0.0993
+        }
+      }
+    }
+  },
+  "volume_repos": 0.067238
+}

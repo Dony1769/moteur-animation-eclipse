@@ -116,3 +116,5 @@ Lecture :
 - Défaut connu ouvert : étirement de 5,9 à 120° pour le bras. À traiter avant toute animation.
 
 Rapports : `docs/rapports/gonflement_avec_cles.json`, `gonflement_sans_cles.json`, `gonflement_lissage1_200it.json`, `final_lissage1_200it.json`, `final_lissage1_80it.json`.
+
+Contrainte de gradient (kappa) sur le décalage : bras à 120° étirement 3,36 contre 5,90, mais replis 19 contre 13. Même compromis que le lissage ; option désactivée par défaut. Voir docs/erreurs_apprises.md, entrée 25. Rapports : docs/rapports/final_kappa015.json, final_kappa030.json, gonflement_kappa015.json, gonflement_kappa030.json.
