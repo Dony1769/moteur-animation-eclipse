@@ -301,3 +301,34 @@ Règle : « lu » = texte de la méthode obtenu. Tout ce qui suit n'est PAS test
 - Voix de personnage (synthèse, clonage) : pas de source de méthode lue.
 - Effets magiques volumétriques, grain et flou de mouvement : non lus.
 - Étalonnage LUT détaillé : résultats de liens seulement.
+
+## 17. Voix, flou de mouvement, LUT, volumes : statut après lecture (à TESTER après le MP4)
+
+### 17.1 Clonage de voix zero-shot (MiniMax-Speech, arXiv 2505.07916) : lu en partie
+- Entrée : un extrait audio de référence, sans transcription, de longueur variable (durée non précisée).
+- Speaker encoder : transforme la référence en un vecteur de taille fixe qui conditionne le Transformer ; capte timbre et prosodie.
+- Entraînement : l'encodeur est entraîné avec le Transformer (pas pré-entraîné).
+- Règle : la référence doit être différente de la cible (sinon fuite sémantique).
+- Inférence : tokens audio à 25 tokens/s, conditionnés par le vecteur ; mode one-shot optionnel avec une paire texte-audio.
+- Chiffres du texte : 32 langues ; test 24 langues × 100 phrases ; compression PCA à 128 dimensions.
+- Non dit : dimension du vecteur, nombre de paramètres, volume total des données.
+- Statut : méthode lue ; valeurs d'entraînement NON LUES.
+
+### 17.2 Flou de mouvement (angle d'obturation, Insta360) : lu, avec valeurs
+- Vitesse d'obturation = 1 ÷ (cadence × angle/360).
+- 180° : standard ; 24 i/s → 1/48 s ; 25 i/s → 1/50 s ; 30 i/s → 1/60 s ; 60 i/s → 1/120 s.
+- 90° : flou réduit, mouvement plus saccadé ; 270° : flou plus marqué.
+- Angle 45–90° pour l'action, au-delà de 180° pour les ambiances.
+- Statut : lu avec valeurs. Le grain (intensité) reste NON LU.
+
+### 17.3 LUT (méthode d'étalonnage, Pixflow) : lu, avec valeurs
+- Types : calibration, transform (LOG vers Rec.709), creative.
+- 1D : luminance seule ; 3D : cube RGB, teinte, saturation et luminance ensemble (le standard cinéma).
+- Grilles : 17, 33 (standard pro), 65. Format .cube (3D presque toujours).
+- Ordre : scopes → correction de base → LUT de transformation → corrections secondaires → LUT créative → finitions.
+- Valeurs : opacité de la LUT créative 60 à 80 %. Luminance 100 = surexposition, 0 = noir pur.
+- Statut : lu avec valeurs. Les espaces AgX et Filmic dans Blender : NON LUS (seulement des commits de code).
+
+### 17.4 Volumes et brouillard lumineux (Blender) : NON LU
+- La page du manuel Blender renvoie seulement la navigation ; pas de texte sur Density, Anisotropy, Absorption, Scatter, Emission.
+- Statut : NON LU. À chercher ailleurs (article de blog ou thread de forum avec valeurs).
