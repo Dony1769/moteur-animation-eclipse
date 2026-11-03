@@ -49,7 +49,7 @@ Méthode : inventaire réel du dépôt (fichiers, lignes, commits, registre), sa
 - Le seul pipeline complet est une scène de combat écrite à la main (425 lignes). Les paramètres (positions, durées, caméras) sont codés en dur.
 - Les modules `engine/` ne sont pas testés automatiquement : les vérifications sont des scripts ponctuels.
 - Les fichiers `scenes/chase_*.py` et `combat_2maria.py` sont des versions antérieures non maintenues.
-- Le second personnage FBX « sans skinning » demandé par la mission n'est pas dans `assets/`. Le seul candidat présent est un maillage Human Base Meshes (`assets/hbm`) : à confirmer avec toi avant de le tenir pour le test B.
+- Le second personnage FBX « sans skinning » demandé par la mission n'est pas dans `assets/`. Le fichier Human Base Meshes (`assets/hbm`) a été diagnostiqué : c'est une bibliothèque de 382 pièces séparées (yeux, pieds, bras, variantes), sans armature et sans personnage complet. Il ne peut donc pas servir de test B tel quel. Il faut un FBX de personnage complet, ou assembler les pièces, ce qui est une étape à part.
 
 ## 5. Plan priorisé (étapes validées une à une)
 
@@ -63,3 +63,10 @@ Méthode : inventaire réel du dépôt (fichiers, lignes, commits, registre), sa
 8. **VFX paramétrique** et **scène** (environnement, caméra, lumière), puis **rendu** et **export**.
 
 Chaque étape : code, test automatique, rapport, commit. Une étape non testée n'est pas marquée comme faite.
+
+## 6. Résultats de l'étape 1 (importeur et diagnostic)
+
+- `engine/importer/diagnostic.py` : lit un FBX ou un .blend, produit un rapport JSON, sans modifier la source.
+- Maria (`docs/rapports/maria.json`) : type `armature_et_poids`, hauteur 1,75 m, 65 os Mixamo (convention reconnue), 8 094 sommets, 4 influences au maximum par sommet, poids normalisés, 0 anomalie. L'épée est un maillage séparé (`Maria_sword`, 42 sommets, 1 groupe), utile pour le retrait de la main.
+- HBM (`assets/hbm`) : type `sans_armature`, 382 pièces, 7 signalements (n-gones sur des pièces de visage et de pied). Pas un personnage complet.
+- Limite : le diagnostic lit seulement ; aucune correction n'est faite. Le test sur un FBX de personnage complet sans skinning reste à fournir.

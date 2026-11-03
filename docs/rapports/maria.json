@@ -1,0 +1,83 @@
+{
+  "fichier": "/home/claude/moteur3d/assets/mixamo/Personnage_Maria.fbx",
+  "type": "armature_et_poids",
+  "objets": [
+    "Armature",
+    "Maria_J_J_Ong",
+    "Maria_sword"
+  ],
+  "meshes": [
+    {
+      "nom": "Maria_J_J_Ong",
+      "sommets": 8094,
+      "faces": 14566,
+      "triangles": 14566,
+      "quads": 0,
+      "ngones": 0,
+      "uv_calques": [
+        "UVSet0"
+      ],
+      "materiaux": [
+        "MariaMat"
+      ],
+      "modificateur_armature": "Armature",
+      "parent": "Armature",
+      "poids": {
+        "sommets": 8094,
+        "sommets_sans_poids": 0,
+        "max_influences_par_sommet": 4,
+        "sommets_poids_non_normalises": 0,
+        "groupes_de_sommets": 52
+      }
+    },
+    {
+      "nom": "Maria_sword",
+      "sommets": 42,
+      "faces": 80,
+      "triangles": 80,
+      "quads": 0,
+      "ngones": 0,
+      "uv_calques": [
+        "map1"
+      ],
+      "materiaux": [
+        "MariaMat"
+      ],
+      "modificateur_armature": "Armature",
+      "parent": "Armature",
+      "poids": {
+        "sommets": 42,
+        "sommets_sans_poids": 0,
+        "max_influences_par_sommet": 1,
+        "sommets_poids_non_normalises": 0,
+        "groupes_de_sommets": 1
+      }
+    }
+  ],
+  "armatures": [
+    {
+      "nom": "Armature",
+      "os": 65,
+      "os_mixamo": 65,
+      "convention": "mixamo",
+      "racine": [
+        "mixamorig:Hips"
+      ],
+      "echelle": [
+        0.01,
+        0.01,
+        0.01
+      ],
+      "rotation_base_deg": [
+        90.0,
+        -0.0,
+        0.0
+      ]
+    }
+  ],
+  "actions": [
+    "Armature|mixamo.com|Layer0"
+  ],
+  "hauteur_m": 1.7526,
+  "anomalies": []
+}
