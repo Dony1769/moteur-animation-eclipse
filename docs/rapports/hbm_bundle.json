@@ -1,0 +1,6157 @@
+{
+  "fichier": "/home/claude/moteur3d/assets/hbm/human-base-meshes-bundle-v1.4.1/human_base_meshes_bundle.blend",
+  "type": "sans_armature",
+  "objets": [
+    "Eye - Realistic",
+    "Eye - Stylized",
+    "Foot - Realistic",
+    "Foot - Stylized ",
+    "GEO-arm_lower_female_primitive_stylized.L",
+    "GEO-arm_lower_female_primitive_stylized.R",
+    "GEO-arm_lower_male_primitive_realistic.L",
+    "GEO-arm_lower_male_primitive_realistic.R",
+    "GEO-arm_lower_male_primitive_stylized.L",
+    "GEO-arm_lower_male_primitive_stylized.R",
+    "GEO-arm_lower_primitive_female_realistic.L",
+    "GEO-arm_lower_primitive_female_realistic.R",
+    "GEO-arm_upper_female_primitive_stylized.L",
+    "GEO-arm_upper_female_primitive_stylized.R",
+    "GEO-arm_upper_male_primitive_realistic.L",
+    "GEO-arm_upper_male_primitive_realistic.R",
+    "GEO-arm_upper_male_primitive_stylized.L",
+    "GEO-arm_upper_male_primitive_stylized.R",
+    "GEO-arm_upper_primitive_female_realistic.L",
+    "GEO-arm_upper_primitive_female_realistic.R",
+    "GEO-belly_female_primitive_stylized",
+    "GEO-belly_male_primitive_realistic",
+    "GEO-belly_male_primitive_stylized",
+    "GEO-belly_primitive_female_realistic",
+    "GEO-body_female_realistic",
+    "GEO-body_female_realistic.eye.L",
+    "GEO-body_female_realistic.eye.R",
+    "GEO-body_female_stylized",
+    "GEO-body_female_stylized.eye.L",
+    "GEO-body_female_stylized.eye.R",
+    "GEO-body_male_realistic",
+    "GEO-body_male_realistic.eye.L",
+    "GEO-body_male_realistic.eye.R",
+    "GEO-body_male_stylized",
+    "GEO-body_male_stylized.eye.L",
+    "GEO-body_male_stylized.eye.R",
+    "GEO-breast_female_primitive_stylized.L",
+    "GEO-breast_female_primitive_stylized.R",
+    "GEO-breasts_primitive_female_realistic",
+    "GEO-chest_female_primitive_stylized",
+    "GEO-chest_male_primitive_realistic",
+    "GEO-chest_male_primitive_stylized",
+    "GEO-chest_primitive_female_realistic",
+    "GEO-ear_female_primitive_stylized.L",
+    "GEO-ear_female_primitive_stylized.R",
+    "GEO-ear_male_primitive_realistic.L",
+    "GEO-ear_male_primitive_realistic.R",
+    "GEO-ear_male_primitive_stylized.L",
+    "GEO-ear_male_primitive_stylized.R",
+    "GEO-ear_primitve.L",
+    "GEO-ear_primitve.R",
+    "GEO-ear_primitve_female_realistic.L",
+    "GEO-ear_primitve_female_realistic.R",
+    "GEO-eye_female_primitive_stylized.L",
+    "GEO-eye_female_primitive_stylized.R",
+    "GEO-eye_male_primitive_realistic.L",
+    "GEO-eye_male_primitive_realistic.R",
+    "GEO-eye_male_primitive_stylized.L",
+    "GEO-eye_male_primitive_stylized.R",
+    "GEO-eye_primitve.L",
+    "GEO-eye_primitve.R",
+    "GEO-eye_primitve_female_realistic.L",
+    "GEO-eye_primitve_female_realistic.R",
+    "GEO-eyelid_lower_female_primitive_stylized.L",
+    "GEO-eyelid_lower_female_primitive_stylized.R",
+    "GEO-eyelid_lower_male_primitive_realistic.L",
+    "GEO-eyelid_lower_male_primitive_realistic.R",
+    "GEO-eyelid_lower_male_primitive_stylized.L",
+    "GEO-eyelid_lower_male_primitive_stylized.R",
+    "GEO-eyelid_lower_primitve.L",
+    "GEO-eyelid_lower_primitve.R",
+    "GEO-eyelid_lower_primitve_female_realistic.L",
+    "GEO-eyelid_lower_primitve_female_realistic.R",
+    "GEO-eyelid_upper_female_primitive_stylized.L",
+    "GEO-eyelid_upper_female_primitive_stylized.R",
+    "GEO-eyelid_upper_male_primitive_realistic.L",
+    "GEO-eyelid_upper_male_primitive_realistic.R",
+    "GEO-eyelid_upper_male_primitive_stylized.L",
+    "GEO-eyelid_upper_male_primitive_stylized.R",
+    "GEO-eyelid_upper_primitve.L",
+    "GEO-eyelid_upper_primitve.R",
+    "GEO-eyelid_upper_primitve_female_realistic.L",
+    "GEO-eyelid_upper_primitve_female_realistic.R",
+    "GEO-finger_index_female_primitive_stylized.L",
+    "GEO-finger_index_female_primitive_stylized.R",
+    "GEO-finger_index_male_primitive_realistic.L",
+    "GEO-finger_index_male_primitive_realistic.R",
+    "GEO-finger_index_male_primitive_stylized.L",
+    "GEO-finger_index_male_primitive_stylized.R",
+    "GEO-finger_index_primitive_female_realistic.L",
+    "GEO-finger_index_primitive_female_realistic.R",
+    "GEO-finger_middle_female_primitive_stylized.L",
+    "GEO-finger_middle_female_primitive_stylized.R",
+    "GEO-finger_middle_male_primitive_realistic.L",
+    "GEO-finger_middle_male_primitive_realistic.R",
+    "GEO-finger_middle_male_primitive_stylized.L",
+    "GEO-finger_middle_male_primitive_stylized.R",
+    "GEO-finger_middle_primitive_female_realistic.L",
+    "GEO-finger_middle_primitive_female_realistic.R",
+    "GEO-finger_pinky_female_primitive_stylized.L",
+    "GEO-finger_pinky_female_primitive_stylized.R",
+    "GEO-finger_pinky_male_primitive_realistic.L",
+    "GEO-finger_pinky_male_primitive_realistic.R",
+    "GEO-finger_pinky_male_primitive_stylized.L",
+    "GEO-finger_pinky_male_primitive_stylized.R",
+    "GEO-finger_pinky_primitive_female_realistic.L",
+    "GEO-finger_pinky_primitive_female_realistic.R",
+    "GEO-finger_ring_female_primitive_stylized.L",
+    "GEO-finger_ring_female_primitive_stylized.R",
+    "GEO-finger_ring_male_primitive_realistic.L",
+    "GEO-finger_ring_male_primitive_realistic.R",
+    "GEO-finger_ring_male_primitive_stylized.L",
+    "GEO-finger_ring_male_primitive_stylized.R",
+    "GEO-finger_ring_primitive_female_realistic.L",
+    "GEO-finger_ring_primitive_female_realistic.R",
+    "GEO-foot.005_male_primitive_realistic.L",
+    "GEO-foot.005_male_primitive_realistic.R",
+    "GEO-foot_female_primitive_stylized.L",
+    "GEO-foot_female_primitive_stylized.R",
+    "GEO-foot_male_primitive_stylized.L",
+    "GEO-foot_male_primitive_stylized.R",
+    "GEO-foot_primitive_female_realistic.L",
+    "GEO-foot_primitive_female_realistic.R",
+    "GEO-hand_female_primitive_stylized.L",
+    "GEO-hand_female_primitive_stylized.R",
+    "GEO-hand_male_primitive_realistic.L",
+    "GEO-hand_male_primitive_realistic.R",
+    "GEO-hand_male_primitive_stylized.L",
+    "GEO-hand_male_primitive_stylized.R",
+    "GEO-hand_primitive_female_realistic.L",
+    "GEO-hand_primitive_female_realistic.R",
+    "GEO-head_animation_realistic",
+    "GEO-head_animation_realistic.iris.L",
+    "GEO-head_animation_realistic.iris.R",
+    "GEO-head_animation_realistic.sclera.L",
+    "GEO-head_animation_realistic.sclera.R",
+    "GEO-head_female_primitive_stylized",
+    "GEO-head_male_primitive_realistic",
+    "GEO-head_male_primitive_stylized",
+    "GEO-head_primitive_female_realistic",
+    "GEO-head_primitve",
+    "GEO-head_sculpting_realistic",
+    "GEO-head_sculpting_realistic.iris.L",
+    "GEO-head_sculpting_realistic.iris.R",
+    "GEO-head_sculpting_realistic.sclera.L",
+    "GEO-head_sculpting_realistic.sclera.R",
+    "GEO-head_stylized",
+    "GEO-head_stylized.eye.L",
+    "GEO-head_stylized.eye.R",
+    "GEO-leg_lower_female_primitive_stylized.L",
+    "GEO-leg_lower_female_primitive_stylized.R",
+    "GEO-leg_lower_male_primitive_realistic.L",
+    "GEO-leg_lower_male_primitive_realistic.R",
+    "GEO-leg_lower_male_primitive_stylized.L",
+    "GEO-leg_lower_male_primitive_stylized.R",
+    "GEO-leg_lower_primitive_female_realistic.L",
+    "GEO-leg_lower_primitive_female_realistic.R",
+    "GEO-leg_upper_female_primitive_stylized.L",
+    "GEO-leg_upper_female_primitive_stylized.R",
+    "GEO-leg_upper_male_primitive_realistic.L",
+    "GEO-leg_upper_male_primitive_realistic.R",
+    "GEO-leg_upper_male_primitive_stylized.L",
+    "GEO-leg_upper_male_primitive_stylized.R",
+    "GEO-leg_upper_primitive_female_realistic.L",
+    "GEO-leg_upper_primitive_female_realistic.R",
+    "GEO-neck_female_primitive_stylized",
+    "GEO-neck_male_primitive_realistic",
+    "GEO-neck_male_primitive_stylized",
+    "GEO-neck_primitive_female_realistic",
+    "GEO-nose_bridge_female_primitive_stylized",
+    "GEO-nose_bridge_male_primitive_realistic",
+    "GEO-nose_bridge_male_primitive_stylized",
+    "GEO-nose_bridge_primitve",
+    "GEO-nose_bridge_primitve_female_realistic",
+    "GEO-nose_female_primitive_stylized",
+    "GEO-nose_male_primitive_realistic",
+    "GEO-nose_male_primitive_stylized",
+    "GEO-nose_primitve",
+    "GEO-nose_primitve_female_realistic",
+    "GEO-pelvis_female_primitive_realistic",
+    "GEO-pelvis_female_primitive_stylized",
+    "GEO-pelvis_male_primitive_realistic",
+    "GEO-pelvis_male_primitive_stylized",
+    "GEO-shoulder_female_primitive_stylized.L",
+    "GEO-shoulder_female_primitive_stylized.R",
+    "GEO-shoulder_male_primitive_realistic.L",
+    "GEO-shoulder_male_primitive_realistic.R",
+    "GEO-shoulder_male_primitive_stylized.L",
+    "GEO-shoulder_male_primitive_stylized.R",
+    "GEO-shoulder_primitive_female_realistic.L",
+    "GEO-shoulder_primitive_female_realistic.R",
+    "GEO-skeletion.arm_humerus.L",
+    "GEO-skeletion.arm_humerus.R",
+    "GEO-skeletion.arm_radius.L",
+    "GEO-skeletion.arm_radius.R",
+    "GEO-skeletion.arm_ulna.L",
+    "GEO-skeletion.arm_ulna.R",
+    "GEO-skeletion.clavicle.L",
+    "GEO-skeletion.clavicle.R",
+    "GEO-skeletion.coccygeal",
+    "GEO-skeletion.distal.1.L",
+    "GEO-skeletion.distal.1.R",
+    "GEO-skeletion.distal.2.L",
+    "GEO-skeletion.distal.2.R",
+    "GEO-skeletion.distal.3.L",
+    "GEO-skeletion.distal.3.R",
+    "GEO-skeletion.distal.4.L",
+    "GEO-skeletion.distal.4.R",
+    "GEO-skeletion.distal.5.L",
+    "GEO-skeletion.distal.5.R",
+    "GEO-skeletion.distal.index.L",
+    "GEO-skeletion.distal.index.R",
+    "GEO-skeletion.distal.little.L",
+    "GEO-skeletion.distal.little.R",
+    "GEO-skeletion.distal.middle.L",
+    "GEO-skeletion.distal.middle.R",
+    "GEO-skeletion.distal.ring.L",
+    "GEO-skeletion.distal.ring.R",
+    "GEO-skeletion.distal.thumb.L",
+    "GEO-skeletion.distal.thumb.R",
+    "GEO-skeletion.foot_calcaneus.L",
+    "GEO-skeletion.foot_calcaneus.R",
+    "GEO-skeletion.foot_center.L",
+    "GEO-skeletion.foot_center.R",
+    "GEO-skeletion.foot_talus.L",
+    "GEO-skeletion.foot_talus.R",
+    "GEO-skeletion.hand_center.L",
+    "GEO-skeletion.hand_center.R",
+    "GEO-skeletion.hip",
+    "GEO-skeletion.leg_femur.L",
+    "GEO-skeletion.leg_femur.R",
+    "GEO-skeletion.leg_fibula.L",
+    "GEO-skeletion.leg_fibula.R",
+    "GEO-skeletion.leg_patella.L",
+    "GEO-skeletion.leg_patella.R",
+    "GEO-skeletion.leg_tibula.L",
+    "GEO-skeletion.leg_tibula.R",
+    "GEO-skeletion.metacarpal.index.L",
+    "GEO-skeletion.metacarpal.index.R",
+    "GEO-skeletion.metacarpal.little.L",
+    "GEO-skeletion.metacarpal.little.R",
+    "GEO-skeletion.metacarpal.middle.L",
+    "GEO-skeletion.metacarpal.middle.R",
+    "GEO-skeletion.metacarpal.ring.L",
+    "GEO-skeletion.metacarpal.ring.R",
+    "GEO-skeletion.metacarpal.thumb.L",
+    "GEO-skeletion.metacarpal.thumb.R",
+    "GEO-skeletion.metatarsal.1.L",
+    "GEO-skeletion.metatarsal.1.R",
+    "GEO-skeletion.metatarsal.2.L",
+    "GEO-skeletion.metatarsal.2.R",
+    "GEO-skeletion.metatarsal.3.L",
+    "GEO-skeletion.metatarsal.3.R",
+    "GEO-skeletion.metatarsal.4.L",
+    "GEO-skeletion.metatarsal.4.R",
+    "GEO-skeletion.metatarsal.5.L",
+    "GEO-skeletion.metatarsal.5.R",
+    "GEO-skeletion.middle.2.L",
+    "GEO-skeletion.middle.2.R",
+    "GEO-skeletion.middle.3.L",
+    "GEO-skeletion.middle.3.R",
+    "GEO-skeletion.middle.4.L",
+    "GEO-skeletion.middle.4.R",
+    "GEO-skeletion.middle.5.L",
+    "GEO-skeletion.middle.5.R",
+    "GEO-skeletion.middle.index.L",
+    "GEO-skeletion.middle.index.R",
+    "GEO-skeletion.middle.little.L",
+    "GEO-skeletion.middle.little.R",
+    "GEO-skeletion.middle.middle.L",
+    "GEO-skeletion.middle.middle.R",
+    "GEO-skeletion.middle.ring.L",
+    "GEO-skeletion.middle.ring.R",
+    "GEO-skeletion.proximal.1.L",
+    "GEO-skeletion.proximal.1.R",
+    "GEO-skeletion.proximal.2.L",
+    "GEO-skeletion.proximal.2.R",
+    "GEO-skeletion.proximal.3.L",
+    "GEO-skeletion.proximal.3.R",
+    "GEO-skeletion.proximal.4.L",
+    "GEO-skeletion.proximal.4.R",
+    "GEO-skeletion.proximal.5.L",
+    "GEO-skeletion.proximal.5.R",
+    "GEO-skeletion.proximal.index.L",
+    "GEO-skeletion.proximal.index.R",
+    "GEO-skeletion.proximal.little.L",
+    "GEO-skeletion.proximal.little.R",
+    "GEO-skeletion.proximal.middle.L",
+    "GEO-skeletion.proximal.middle.R",
+    "GEO-skeletion.proximal.ring.L",
+    "GEO-skeletion.proximal.ring.R",
+    "GEO-skeletion.proximal.thumb.L",
+    "GEO-skeletion.proximal.thumb.R",
+    "GEO-skeletion.ripcage",
+    "GEO-skeletion.sacral",
+    "GEO-skeletion.shoulder_scapula.L",
+    "GEO-skeletion.shoulder_scapula.R",
+    "GEO-skeletion.skull",
+    "GEO-skeletion.spine_cervical_c1",
+    "GEO-skeletion.spine_cervical_c2",
+    "GEO-skeletion.spine_cervical_c3",
+    "GEO-skeletion.spine_cervical_c4",
+    "GEO-skeletion.spine_cervical_c5",
+    "GEO-skeletion.spine_cervical_c6",
+    "GEO-skeletion.spine_cervical_c7",
+    "GEO-skeletion.spine_lumbar_l1",
+    "GEO-skeletion.spine_lumbar_l1.5",
+    "GEO-skeletion.spine_lumbar_l2",
+    "GEO-skeletion.spine_lumbar_l2.5",
+    "GEO-skeletion.spine_lumbar_l3",
+    "GEO-skeletion.spine_lumbar_l3.5",
+    "GEO-skeletion.spine_lumbar_l4",
+    "GEO-skeletion.spine_lumbar_l4.5",
+    "GEO-skeletion.spine_lumbar_l5",
+    "GEO-skeletion.spine_thoracic_10",
+    "GEO-skeletion.spine_thoracic_2",
+    "GEO-skeletion.spine_thoracic_4",
+    "GEO-skeletion.spine_thoracic_5",
+    "GEO-skeletion.spine_thoracic_6",
+    "GEO-skeletion.spine_thoracic_7",
+    "GEO-skeletion.spine_thoracic_8",
+    "GEO-skeletion.spine_thoracic_9",
+    "GEO-skeletion.spine_thoracic_t1",
+    "GEO-skeletion.spine_thoracic_t11",
+    "GEO-skeletion.spine_thoracic_t12",
+    "GEO-skeletion.spine_thoracic_t3",
+    "GEO-teo_big_male_primitive_realistic.L",
+    "GEO-teo_big_male_primitive_realistic.R",
+    "GEO-thumb_female_primitive_stylized.L",
+    "GEO-thumb_female_primitive_stylized.R",
+    "GEO-thumb_male_primitive_realistic.L",
+    "GEO-thumb_male_primitive_realistic.R",
+    "GEO-thumb_male_primitive_stylized.L",
+    "GEO-thumb_male_primitive_stylized.R",
+    "GEO-thumb_primitive_female_realistic.L",
+    "GEO-thumb_primitive_female_realistic.R",
+    "GEO-toe_big_female_primitive_stylized.L",
+    "GEO-toe_big_female_primitive_stylized.R",
+    "GEO-toe_big_male_primitive_stylized.L",
+    "GEO-toe_big_male_primitive_stylized.R",
+    "GEO-toe_big_primitive_female_realistic.L",
+    "GEO-toe_big_primitive_female_realistic.R",
+    "GEO-toe_index_female_primitive_stylized.L",
+    "GEO-toe_index_female_primitive_stylized.R",
+    "GEO-toe_index_male_primitive_realistic.L",
+    "GEO-toe_index_male_primitive_realistic.R",
+    "GEO-toe_index_male_primitive_stylized.L",
+    "GEO-toe_index_male_primitive_stylized.R",
+    "GEO-toe_index_primitive_female_realistic.L",
+    "GEO-toe_index_primitive_female_realistic.R",
+    "GEO-toe_middle_female_primitive_stylized.L",
+    "GEO-toe_middle_female_primitive_stylized.R",
+    "GEO-toe_middle_male_primitive_realistic.L",
+    "GEO-toe_middle_male_primitive_realistic.R",
+    "GEO-toe_middle_male_primitive_stylized.L",
+    "GEO-toe_middle_male_primitive_stylized.R",
+    "GEO-toe_middle_primitive_female_realistic.L",
+    "GEO-toe_middle_primitive_female_realistic.R",
+    "GEO-toe_pinky_female_primitive_stylized.L",
+    "GEO-toe_pinky_female_primitive_stylized.R",
+    "GEO-toe_pinky_male_primitive_realistic.L",
+    "GEO-toe_pinky_male_primitive_realistic.R",
+    "GEO-toe_pinky_male_primitive_stylized.L",
+    "GEO-toe_pinky_male_primitive_stylized.R",
+    "GEO-toe_pinky_primitive_female_realistic.L",
+    "GEO-toe_pinky_primitive_female_realistic.R",
+    "GEO-toe_ring_female_primitive_stylized.L",
+    "GEO-toe_ring_female_primitive_stylized.R",
+    "GEO-toe_ring_male_primitive_realistic.L",
+    "GEO-toe_ring_male_primitive_realistic.R",
+    "GEO-toe_ring_male_primitive_stylized.L",
+    "GEO-toe_ring_male_primitive_stylized.R",
+    "GEO-toe_ring_primitive_female_realistic.L",
+    "GEO-toe_ring_primitive_female_realistic.R",
+    "Hand  - Realistic",
+    "Hand - Stylized ",
+    "Head - Generic Topology",
+    "Head - Planar",
+    "Jaw - Realistic",
+    "Jaw - Stylized ",
+    "planar_head",
+    "planar_skull",
+    "primitive_body_female_realistic",
+    "primitive_body_female_stylized",
+    "primitive_body_male_realistic",
+    "primitive_body_male_stylized",
+    "primitive_head_generic",
+    "primitive_head_realistic",
+    "realisitc_skeleton",
+    "realistic_body_emale",
+    "realistic_body_male",
+    "realistic_eye",
+    "realistic_foot",
+    "realistic_hand",
+    "realistic_head_animation",
+    "realistic_head_sculpting",
+    "realistic_jaw",
+    "realistic_skull",
+    "Skull - Planar",
+    "Skull - Realistic",
+    "stylized_body_female",
+    "stylized_body_male",
+    "stylized_eye",
+    "stylized_foot",
+    "stylized_hand",
+    "stylized_head",
+    "stylized_jaw"
+  ],
+  "meshes": [
+    {
+      "nom": "Eye - Realistic",
+      "sommets": 946,
+      "faces": 944,
+      "triangles": 0,
+      "quads": 944,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": null,
+      "poids": null
+    },
+    {
+      "nom": "Eye - Stylized",
+      "sommets": 802,
+      "faces": 832,
+      "triangles": 64,
+      "quads": 768,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": null,
+      "poids": null
+    },
+    {
+      "nom": "Foot - Realistic",
+      "sommets": 1497,
+      "faces": 1481,
+      "triangles": 0,
+      "quads": 1480,
+      "ngones": 1,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": null,
+      "poids": null
+    },
+    {
+      "nom": "Foot - Stylized ",
+      "sommets": 786,
+      "faces": 798,
+      "triangles": 28,
+      "quads": 770,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": null,
+      "poids": null
+    },
+    {
+      "nom": "GEO-arm_lower_female_primitive_stylized.L",
+      "sommets": 58,
+      "faces": 56,
+      "triangles": 0,
+      "quads": 56,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-arm_upper_female_primitive_stylized.L",
+      "poids": null
+    },
+    {
+      "nom": "GEO-arm_lower_female_primitive_stylized.R",
+      "sommets": 58,
+      "faces": 56,
+      "triangles": 0,
+      "quads": 56,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-arm_upper_female_primitive_stylized.R",
+      "poids": null
+    },
+    {
+      "nom": "GEO-arm_lower_male_primitive_realistic.L",
+      "sommets": 58,
+      "faces": 56,
+      "triangles": 0,
+      "quads": 56,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-arm_upper_male_primitive_realistic.L",
+      "poids": null
+    },
+    {
+      "nom": "GEO-arm_lower_male_primitive_realistic.R",
+      "sommets": 58,
+      "faces": 56,
+      "triangles": 0,
+      "quads": 56,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-arm_upper_male_primitive_realistic.R",
+      "poids": null
+    },
+    {
+      "nom": "GEO-arm_lower_male_primitive_stylized.L",
+      "sommets": 42,
+      "faces": 40,
+      "triangles": 0,
+      "quads": 40,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-arm_upper_male_primitive_stylized.L",
+      "poids": null
+    },
+    {
+      "nom": "GEO-arm_lower_male_primitive_stylized.R",
+      "sommets": 42,
+      "faces": 40,
+      "triangles": 0,
+      "quads": 40,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-arm_upper_male_primitive_stylized.R",
+      "poids": null
+    },
+    {
+      "nom": "GEO-arm_lower_primitive_female_realistic.L",
+      "sommets": 58,
+      "faces": 56,
+      "triangles": 0,
+      "quads": 56,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-arm_upper_primitive_female_realistic.L",
+      "poids": null
+    },
+    {
+      "nom": "GEO-arm_lower_primitive_female_realistic.R",
+      "sommets": 58,
+      "faces": 56,
+      "triangles": 0,
+      "quads": 56,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-arm_upper_primitive_female_realistic.R",
+      "poids": null
+    },
+    {
+      "nom": "GEO-arm_upper_female_primitive_stylized.L",
+      "sommets": 50,
+      "faces": 48,
+      "triangles": 0,
+      "quads": 48,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-shoulder_female_primitive_stylized.L",
+      "poids": null
+    },
+    {
+      "nom": "GEO-arm_upper_female_primitive_stylized.R",
+      "sommets": 50,
+      "faces": 48,
+      "triangles": 0,
+      "quads": 48,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-shoulder_female_primitive_stylized.R",
+      "poids": null
+    },
+    {
+      "nom": "GEO-arm_upper_male_primitive_realistic.L",
+      "sommets": 50,
+      "faces": 48,
+      "triangles": 0,
+      "quads": 48,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-shoulder_male_primitive_realistic.L",
+      "poids": null
+    },
+    {
+      "nom": "GEO-arm_upper_male_primitive_realistic.R",
+      "sommets": 50,
+      "faces": 48,
+      "triangles": 0,
+      "quads": 48,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-shoulder_male_primitive_realistic.R",
+      "poids": null
+    },
+    {
+      "nom": "GEO-arm_upper_male_primitive_stylized.L",
+      "sommets": 34,
+      "faces": 32,
+      "triangles": 0,
+      "quads": 32,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-shoulder_male_primitive_stylized.L",
+      "poids": null
+    },
+    {
+      "nom": "GEO-arm_upper_male_primitive_stylized.R",
+      "sommets": 34,
+      "faces": 32,
+      "triangles": 0,
+      "quads": 32,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-shoulder_male_primitive_stylized.R",
+      "poids": null
+    },
+    {
+      "nom": "GEO-arm_upper_primitive_female_realistic.L",
+      "sommets": 50,
+      "faces": 48,
+      "triangles": 0,
+      "quads": 48,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-shoulder_primitive_female_realistic.L",
+      "poids": null
+    },
+    {
+      "nom": "GEO-arm_upper_primitive_female_realistic.R",
+      "sommets": 50,
+      "faces": 48,
+      "triangles": 0,
+      "quads": 48,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-shoulder_primitive_female_realistic.R",
+      "poids": null
+    },
+    {
+      "nom": "GEO-belly_female_primitive_stylized",
+      "sommets": 182,
+      "faces": 180,
+      "triangles": 0,
+      "quads": 180,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-pelvis_female_primitive_stylized",
+      "poids": null
+    },
+    {
+      "nom": "GEO-belly_male_primitive_realistic",
+      "sommets": 182,
+      "faces": 180,
+      "triangles": 0,
+      "quads": 180,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-pelvis_male_primitive_realistic",
+      "poids": null
+    },
+    {
+      "nom": "GEO-belly_male_primitive_stylized",
+      "sommets": 78,
+      "faces": 76,
+      "triangles": 0,
+      "quads": 76,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-pelvis_male_primitive_stylized",
+      "poids": null
+    },
+    {
+      "nom": "GEO-belly_primitive_female_realistic",
+      "sommets": 182,
+      "faces": 180,
+      "triangles": 0,
+      "quads": 180,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-pelvis_female_primitive_realistic",
+      "poids": null
+    },
+    {
+      "nom": "GEO-body_female_realistic",
+      "sommets": 10582,
+      "faces": 10590,
+      "triangles": 20,
+      "quads": 10570,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": null,
+      "poids": null
+    },
+    {
+      "nom": "GEO-body_female_realistic.eye.L",
+      "sommets": 546,
+      "faces": 544,
+      "triangles": 0,
+      "quads": 544,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-body_female_realistic",
+      "poids": null
+    },
+    {
+      "nom": "GEO-body_female_realistic.eye.R",
+      "sommets": 546,
+      "faces": 544,
+      "triangles": 0,
+      "quads": 544,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-body_female_realistic",
+      "poids": null
+    },
+    {
+      "nom": "GEO-body_female_stylized",
+      "sommets": 12502,
+      "faces": 12500,
+      "triangles": 0,
+      "quads": 12500,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": null,
+      "poids": null
+    },
+    {
+      "nom": "GEO-body_female_stylized.eye.L",
+      "sommets": 802,
+      "faces": 832,
+      "triangles": 64,
+      "quads": 768,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-body_female_stylized",
+      "poids": null
+    },
+    {
+      "nom": "GEO-body_female_stylized.eye.R",
+      "sommets": 802,
+      "faces": 832,
+      "triangles": 64,
+      "quads": 768,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-body_female_stylized",
+      "poids": null
+    },
+    {
+      "nom": "GEO-body_male_realistic",
+      "sommets": 10582,
+      "faces": 10590,
+      "triangles": 20,
+      "quads": 10570,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": null,
+      "poids": null
+    },
+    {
+      "nom": "GEO-body_male_realistic.eye.L",
+      "sommets": 546,
+      "faces": 544,
+      "triangles": 0,
+      "quads": 544,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-body_male_realistic",
+      "poids": null
+    },
+    {
+      "nom": "GEO-body_male_realistic.eye.R",
+      "sommets": 546,
+      "faces": 544,
+      "triangles": 0,
+      "quads": 544,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-body_male_realistic",
+      "poids": null
+    },
+    {
+      "nom": "GEO-body_male_stylized",
+      "sommets": 12502,
+      "faces": 12500,
+      "triangles": 0,
+      "quads": 12500,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": null,
+      "poids": null
+    },
+    {
+      "nom": "GEO-body_male_stylized.eye.L",
+      "sommets": 802,
+      "faces": 832,
+      "triangles": 64,
+      "quads": 768,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-body_male_stylized",
+      "poids": null
+    },
+    {
+      "nom": "GEO-body_male_stylized.eye.R",
+      "sommets": 802,
+      "faces": 832,
+      "triangles": 64,
+      "quads": 768,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-body_male_stylized",
+      "poids": null
+    },
+    {
+      "nom": "GEO-breast_female_primitive_stylized.L",
+      "sommets": 52,
+      "faces": 50,
+      "triangles": 0,
+      "quads": 50,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-chest_female_primitive_stylized",
+      "poids": null
+    },
+    {
+      "nom": "GEO-breast_female_primitive_stylized.R",
+      "sommets": 52,
+      "faces": 50,
+      "triangles": 0,
+      "quads": 50,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-chest_female_primitive_stylized",
+      "poids": null
+    },
+    {
+      "nom": "GEO-breasts_primitive_female_realistic",
+      "sommets": 104,
+      "faces": 100,
+      "triangles": 0,
+      "quads": 100,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-chest_primitive_female_realistic",
+      "poids": null
+    },
+    {
+      "nom": "GEO-chest_female_primitive_stylized",
+      "sommets": 194,
+      "faces": 192,
+      "triangles": 0,
+      "quads": 192,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-belly_female_primitive_stylized",
+      "poids": null
+    },
+    {
+      "nom": "GEO-chest_male_primitive_realistic",
+      "sommets": 194,
+      "faces": 192,
+      "triangles": 0,
+      "quads": 192,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-belly_male_primitive_realistic",
+      "poids": null
+    },
+    {
+      "nom": "GEO-chest_male_primitive_stylized",
+      "sommets": 194,
+      "faces": 192,
+      "triangles": 0,
+      "quads": 192,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-belly_male_primitive_stylized",
+      "poids": null
+    },
+    {
+      "nom": "GEO-chest_primitive_female_realistic",
+      "sommets": 194,
+      "faces": 192,
+      "triangles": 0,
+      "quads": 192,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-belly_primitive_female_realistic",
+      "poids": null
+    },
+    {
+      "nom": "GEO-ear_female_primitive_stylized.L",
+      "sommets": 96,
+      "faces": 94,
+      "triangles": 0,
+      "quads": 94,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-head_female_primitive_stylized",
+      "poids": null
+    },
+    {
+      "nom": "GEO-ear_female_primitive_stylized.R",
+      "sommets": 96,
+      "faces": 94,
+      "triangles": 0,
+      "quads": 94,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-head_female_primitive_stylized",
+      "poids": null
+    },
+    {
+      "nom": "GEO-ear_male_primitive_realistic.L",
+      "sommets": 96,
+      "faces": 94,
+      "triangles": 0,
+      "quads": 94,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-head_male_primitive_realistic",
+      "poids": null
+    },
+    {
+      "nom": "GEO-ear_male_primitive_realistic.R",
+      "sommets": 96,
+      "faces": 94,
+      "triangles": 0,
+      "quads": 94,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-head_male_primitive_realistic",
+      "poids": null
+    },
+    {
+      "nom": "GEO-ear_male_primitive_stylized.L",
+      "sommets": 96,
+      "faces": 94,
+      "triangles": 0,
+      "quads": 94,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-head_male_primitive_stylized",
+      "poids": null
+    },
+    {
+      "nom": "GEO-ear_male_primitive_stylized.R",
+      "sommets": 96,
+      "faces": 94,
+      "triangles": 0,
+      "quads": 94,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-head_male_primitive_stylized",
+      "poids": null
+    },
+    {
+      "nom": "GEO-ear_primitve.L",
+      "sommets": 96,
+      "faces": 94,
+      "triangles": 0,
+      "quads": 94,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-head_primitve",
+      "poids": null
+    },
+    {
+      "nom": "GEO-ear_primitve.R",
+      "sommets": 96,
+      "faces": 94,
+      "triangles": 0,
+      "quads": 94,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-head_primitve",
+      "poids": null
+    },
+    {
+      "nom": "GEO-ear_primitve_female_realistic.L",
+      "sommets": 96,
+      "faces": 94,
+      "triangles": 0,
+      "quads": 94,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-head_primitive_female_realistic",
+      "poids": null
+    },
+    {
+      "nom": "GEO-ear_primitve_female_realistic.R",
+      "sommets": 96,
+      "faces": 94,
+      "triangles": 0,
+      "quads": 94,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-head_primitive_female_realistic",
+      "poids": null
+    },
+    {
+      "nom": "GEO-eye_female_primitive_stylized.L",
+      "sommets": 162,
+      "faces": 176,
+      "triangles": 32,
+      "quads": 144,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-head_female_primitive_stylized",
+      "poids": null
+    },
+    {
+      "nom": "GEO-eye_female_primitive_stylized.R",
+      "sommets": 162,
+      "faces": 176,
+      "triangles": 32,
+      "quads": 144,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-head_female_primitive_stylized",
+      "poids": null
+    },
+    {
+      "nom": "GEO-eye_male_primitive_realistic.L",
+      "sommets": 162,
+      "faces": 176,
+      "triangles": 32,
+      "quads": 144,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-head_male_primitive_realistic",
+      "poids": null
+    },
+    {
+      "nom": "GEO-eye_male_primitive_realistic.R",
+      "sommets": 162,
+      "faces": 176,
+      "triangles": 32,
+      "quads": 144,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-head_male_primitive_realistic",
+      "poids": null
+    },
+    {
+      "nom": "GEO-eye_male_primitive_stylized.L",
+      "sommets": 162,
+      "faces": 176,
+      "triangles": 32,
+      "quads": 144,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-head_male_primitive_stylized",
+      "poids": null
+    },
+    {
+      "nom": "GEO-eye_male_primitive_stylized.R",
+      "sommets": 162,
+      "faces": 176,
+      "triangles": 32,
+      "quads": 144,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-head_male_primitive_stylized",
+      "poids": null
+    },
+    {
+      "nom": "GEO-eye_primitve.L",
+      "sommets": 162,
+      "faces": 176,
+      "triangles": 32,
+      "quads": 144,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-head_primitve",
+      "poids": null
+    },
+    {
+      "nom": "GEO-eye_primitve.R",
+      "sommets": 162,
+      "faces": 176,
+      "triangles": 32,
+      "quads": 144,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-head_primitve",
+      "poids": null
+    },
+    {
+      "nom": "GEO-eye_primitve_female_realistic.L",
+      "sommets": 162,
+      "faces": 176,
+      "triangles": 32,
+      "quads": 144,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-head_primitive_female_realistic",
+      "poids": null
+    },
+    {
+      "nom": "GEO-eye_primitve_female_realistic.R",
+      "sommets": 162,
+      "faces": 176,
+      "triangles": 32,
+      "quads": 144,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-head_primitive_female_realistic",
+      "poids": null
+    },
+    {
+      "nom": "GEO-eyelid_lower_female_primitive_stylized.L",
+      "sommets": 98,
+      "faces": 96,
+      "triangles": 0,
+      "quads": 96,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-eye_female_primitive_stylized.L",
+      "poids": null
+    },
+    {
+      "nom": "GEO-eyelid_lower_female_primitive_stylized.R",
+      "sommets": 98,
+      "faces": 96,
+      "triangles": 0,
+      "quads": 96,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-eye_female_primitive_stylized.R",
+      "poids": null
+    },
+    {
+      "nom": "GEO-eyelid_lower_male_primitive_realistic.L",
+      "sommets": 98,
+      "faces": 96,
+      "triangles": 0,
+      "quads": 96,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-head_male_primitive_realistic",
+      "poids": null
+    },
+    {
+      "nom": "GEO-eyelid_lower_male_primitive_realistic.R",
+      "sommets": 98,
+      "faces": 96,
+      "triangles": 0,
+      "quads": 96,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-head_male_primitive_realistic",
+      "poids": null
+    },
+    {
+      "nom": "GEO-eyelid_lower_male_primitive_stylized.L",
+      "sommets": 98,
+      "faces": 96,
+      "triangles": 0,
+      "quads": 96,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-eye_male_primitive_stylized.L",
+      "poids": null
+    },
+    {
+      "nom": "GEO-eyelid_lower_male_primitive_stylized.R",
+      "sommets": 98,
+      "faces": 96,
+      "triangles": 0,
+      "quads": 96,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-eye_male_primitive_stylized.R",
+      "poids": null
+    },
+    {
+      "nom": "GEO-eyelid_lower_primitve.L",
+      "sommets": 98,
+      "faces": 96,
+      "triangles": 0,
+      "quads": 96,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-eye_primitve.L",
+      "poids": null
+    },
+    {
+      "nom": "GEO-eyelid_lower_primitve.R",
+      "sommets": 98,
+      "faces": 96,
+      "triangles": 0,
+      "quads": 96,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-eye_primitve.R",
+      "poids": null
+    },
+    {
+      "nom": "GEO-eyelid_lower_primitve_female_realistic.L",
+      "sommets": 98,
+      "faces": 96,
+      "triangles": 0,
+      "quads": 96,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-head_primitive_female_realistic",
+      "poids": null
+    },
+    {
+      "nom": "GEO-eyelid_lower_primitve_female_realistic.R",
+      "sommets": 98,
+      "faces": 96,
+      "triangles": 0,
+      "quads": 96,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-head_primitive_female_realistic",
+      "poids": null
+    },
+    {
+      "nom": "GEO-eyelid_upper_female_primitive_stylized.L",
+      "sommets": 131,
+      "faces": 129,
+      "triangles": 0,
+      "quads": 129,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-eye_female_primitive_stylized.L",
+      "poids": null
+    },
+    {
+      "nom": "GEO-eyelid_upper_female_primitive_stylized.R",
+      "sommets": 131,
+      "faces": 129,
+      "triangles": 0,
+      "quads": 129,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-eye_female_primitive_stylized.R",
+      "poids": null
+    },
+    {
+      "nom": "GEO-eyelid_upper_male_primitive_realistic.L",
+      "sommets": 131,
+      "faces": 129,
+      "triangles": 0,
+      "quads": 129,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-head_male_primitive_realistic",
+      "poids": null
+    },
+    {
+      "nom": "GEO-eyelid_upper_male_primitive_realistic.R",
+      "sommets": 131,
+      "faces": 129,
+      "triangles": 0,
+      "quads": 129,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-head_male_primitive_realistic",
+      "poids": null
+    },
+    {
+      "nom": "GEO-eyelid_upper_male_primitive_stylized.L",
+      "sommets": 131,
+      "faces": 129,
+      "triangles": 0,
+      "quads": 129,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-eye_male_primitive_stylized.L",
+      "poids": null
+    },
+    {
+      "nom": "GEO-eyelid_upper_male_primitive_stylized.R",
+      "sommets": 131,
+      "faces": 129,
+      "triangles": 0,
+      "quads": 129,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-eye_male_primitive_stylized.R",
+      "poids": null
+    },
+    {
+      "nom": "GEO-eyelid_upper_primitve.L",
+      "sommets": 131,
+      "faces": 129,
+      "triangles": 0,
+      "quads": 129,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-eye_primitve.L",
+      "poids": null
+    },
+    {
+      "nom": "GEO-eyelid_upper_primitve.R",
+      "sommets": 131,
+      "faces": 129,
+      "triangles": 0,
+      "quads": 129,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-eye_primitve.R",
+      "poids": null
+    },
+    {
+      "nom": "GEO-eyelid_upper_primitve_female_realistic.L",
+      "sommets": 131,
+      "faces": 129,
+      "triangles": 0,
+      "quads": 129,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-head_primitive_female_realistic",
+      "poids": null
+    },
+    {
+      "nom": "GEO-eyelid_upper_primitve_female_realistic.R",
+      "sommets": 131,
+      "faces": 129,
+      "triangles": 0,
+      "quads": 129,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-head_primitive_female_realistic",
+      "poids": null
+    },
+    {
+      "nom": "GEO-finger_index_female_primitive_stylized.L",
+      "sommets": 74,
+      "faces": 72,
+      "triangles": 0,
+      "quads": 72,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-hand_female_primitive_stylized.L",
+      "poids": null
+    },
+    {
+      "nom": "GEO-finger_index_female_primitive_stylized.R",
+      "sommets": 74,
+      "faces": 72,
+      "triangles": 0,
+      "quads": 72,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-hand_female_primitive_stylized.R",
+      "poids": null
+    },
+    {
+      "nom": "GEO-finger_index_male_primitive_realistic.L",
+      "sommets": 82,
+      "faces": 80,
+      "triangles": 0,
+      "quads": 80,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-hand_male_primitive_realistic.L",
+      "poids": null
+    },
+    {
+      "nom": "GEO-finger_index_male_primitive_realistic.R",
+      "sommets": 82,
+      "faces": 80,
+      "triangles": 0,
+      "quads": 80,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-hand_male_primitive_realistic.R",
+      "poids": null
+    },
+    {
+      "nom": "GEO-finger_index_male_primitive_stylized.L",
+      "sommets": 74,
+      "faces": 72,
+      "triangles": 0,
+      "quads": 72,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-hand_male_primitive_stylized.L",
+      "poids": null
+    },
+    {
+      "nom": "GEO-finger_index_male_primitive_stylized.R",
+      "sommets": 74,
+      "faces": 72,
+      "triangles": 0,
+      "quads": 72,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-hand_male_primitive_stylized.R",
+      "poids": null
+    },
+    {
+      "nom": "GEO-finger_index_primitive_female_realistic.L",
+      "sommets": 82,
+      "faces": 80,
+      "triangles": 0,
+      "quads": 80,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-hand_primitive_female_realistic.L",
+      "poids": null
+    },
+    {
+      "nom": "GEO-finger_index_primitive_female_realistic.R",
+      "sommets": 82,
+      "faces": 80,
+      "triangles": 0,
+      "quads": 80,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-hand_primitive_female_realistic.R",
+      "poids": null
+    },
+    {
+      "nom": "GEO-finger_middle_female_primitive_stylized.L",
+      "sommets": 74,
+      "faces": 72,
+      "triangles": 0,
+      "quads": 72,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-hand_female_primitive_stylized.L",
+      "poids": null
+    },
+    {
+      "nom": "GEO-finger_middle_female_primitive_stylized.R",
+      "sommets": 74,
+      "faces": 72,
+      "triangles": 0,
+      "quads": 72,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-hand_female_primitive_stylized.R",
+      "poids": null
+    },
+    {
+      "nom": "GEO-finger_middle_male_primitive_realistic.L",
+      "sommets": 82,
+      "faces": 80,
+      "triangles": 0,
+      "quads": 80,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-hand_male_primitive_realistic.L",
+      "poids": null
+    },
+    {
+      "nom": "GEO-finger_middle_male_primitive_realistic.R",
+      "sommets": 82,
+      "faces": 80,
+      "triangles": 0,
+      "quads": 80,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-hand_male_primitive_realistic.R",
+      "poids": null
+    },
+    {
+      "nom": "GEO-finger_middle_male_primitive_stylized.L",
+      "sommets": 74,
+      "faces": 72,
+      "triangles": 0,
+      "quads": 72,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-hand_male_primitive_stylized.L",
+      "poids": null
+    },
+    {
+      "nom": "GEO-finger_middle_male_primitive_stylized.R",
+      "sommets": 74,
+      "faces": 72,
+      "triangles": 0,
+      "quads": 72,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-hand_male_primitive_stylized.R",
+      "poids": null
+    },
+    {
+      "nom": "GEO-finger_middle_primitive_female_realistic.L",
+      "sommets": 82,
+      "faces": 80,
+      "triangles": 0,
+      "quads": 80,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-hand_primitive_female_realistic.L",
+      "poids": null
+    },
+    {
+      "nom": "GEO-finger_middle_primitive_female_realistic.R",
+      "sommets": 82,
+      "faces": 80,
+      "triangles": 0,
+      "quads": 80,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-hand_primitive_female_realistic.R",
+      "poids": null
+    },
+    {
+      "nom": "GEO-finger_pinky_female_primitive_stylized.L",
+      "sommets": 74,
+      "faces": 72,
+      "triangles": 0,
+      "quads": 72,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-hand_female_primitive_stylized.L",
+      "poids": null
+    },
+    {
+      "nom": "GEO-finger_pinky_female_primitive_stylized.R",
+      "sommets": 74,
+      "faces": 72,
+      "triangles": 0,
+      "quads": 72,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-hand_female_primitive_stylized.R",
+      "poids": null
+    },
+    {
+      "nom": "GEO-finger_pinky_male_primitive_realistic.L",
+      "sommets": 82,
+      "faces": 80,
+      "triangles": 0,
+      "quads": 80,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-hand_male_primitive_realistic.L",
+      "poids": null
+    },
+    {
+      "nom": "GEO-finger_pinky_male_primitive_realistic.R",
+      "sommets": 82,
+      "faces": 80,
+      "triangles": 0,
+      "quads": 80,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-hand_male_primitive_realistic.R",
+      "poids": null
+    },
+    {
+      "nom": "GEO-finger_pinky_male_primitive_stylized.L",
+      "sommets": 74,
+      "faces": 72,
+      "triangles": 0,
+      "quads": 72,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-hand_male_primitive_stylized.L",
+      "poids": null
+    },
+    {
+      "nom": "GEO-finger_pinky_male_primitive_stylized.R",
+      "sommets": 74,
+      "faces": 72,
+      "triangles": 0,
+      "quads": 72,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-hand_male_primitive_stylized.R",
+      "poids": null
+    },
+    {
+      "nom": "GEO-finger_pinky_primitive_female_realistic.L",
+      "sommets": 82,
+      "faces": 80,
+      "triangles": 0,
+      "quads": 80,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-hand_primitive_female_realistic.L",
+      "poids": null
+    },
+    {
+      "nom": "GEO-finger_pinky_primitive_female_realistic.R",
+      "sommets": 82,
+      "faces": 80,
+      "triangles": 0,
+      "quads": 80,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-hand_primitive_female_realistic.R",
+      "poids": null
+    },
+    {
+      "nom": "GEO-finger_ring_female_primitive_stylized.L",
+      "sommets": 74,
+      "faces": 72,
+      "triangles": 0,
+      "quads": 72,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-hand_female_primitive_stylized.L",
+      "poids": null
+    },
+    {
+      "nom": "GEO-finger_ring_female_primitive_stylized.R",
+      "sommets": 74,
+      "faces": 72,
+      "triangles": 0,
+      "quads": 72,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-hand_female_primitive_stylized.R",
+      "poids": null
+    },
+    {
+      "nom": "GEO-finger_ring_male_primitive_realistic.L",
+      "sommets": 82,
+      "faces": 80,
+      "triangles": 0,
+      "quads": 80,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-hand_male_primitive_realistic.L",
+      "poids": null
+    },
+    {
+      "nom": "GEO-finger_ring_male_primitive_realistic.R",
+      "sommets": 82,
+      "faces": 80,
+      "triangles": 0,
+      "quads": 80,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-hand_male_primitive_realistic.R",
+      "poids": null
+    },
+    {
+      "nom": "GEO-finger_ring_male_primitive_stylized.L",
+      "sommets": 74,
+      "faces": 72,
+      "triangles": 0,
+      "quads": 72,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-hand_male_primitive_stylized.L",
+      "poids": null
+    },
+    {
+      "nom": "GEO-finger_ring_male_primitive_stylized.R",
+      "sommets": 74,
+      "faces": 72,
+      "triangles": 0,
+      "quads": 72,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-hand_male_primitive_stylized.R",
+      "poids": null
+    },
+    {
+      "nom": "GEO-finger_ring_primitive_female_realistic.L",
+      "sommets": 82,
+      "faces": 80,
+      "triangles": 0,
+      "quads": 80,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-hand_primitive_female_realistic.L",
+      "poids": null
+    },
+    {
+      "nom": "GEO-finger_ring_primitive_female_realistic.R",
+      "sommets": 82,
+      "faces": 80,
+      "triangles": 0,
+      "quads": 80,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-hand_primitive_female_realistic.R",
+      "poids": null
+    },
+    {
+      "nom": "GEO-foot.005_male_primitive_realistic.L",
+      "sommets": 121,
+      "faces": 119,
+      "triangles": 0,
+      "quads": 119,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-leg_lower_male_primitive_realistic.L",
+      "poids": null
+    },
+    {
+      "nom": "GEO-foot.005_male_primitive_realistic.R",
+      "sommets": 121,
+      "faces": 119,
+      "triangles": 0,
+      "quads": 119,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-leg_lower_male_primitive_realistic.R",
+      "poids": null
+    },
+    {
+      "nom": "GEO-foot_female_primitive_stylized.L",
+      "sommets": 121,
+      "faces": 119,
+      "triangles": 0,
+      "quads": 119,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-leg_lower_female_primitive_stylized.L",
+      "poids": null
+    },
+    {
+      "nom": "GEO-foot_female_primitive_stylized.R",
+      "sommets": 121,
+      "faces": 119,
+      "triangles": 0,
+      "quads": 119,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-leg_lower_female_primitive_stylized.R",
+      "poids": null
+    },
+    {
+      "nom": "GEO-foot_male_primitive_stylized.L",
+      "sommets": 121,
+      "faces": 119,
+      "triangles": 0,
+      "quads": 119,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-leg_lower_male_primitive_stylized.L",
+      "poids": null
+    },
+    {
+      "nom": "GEO-foot_male_primitive_stylized.R",
+      "sommets": 121,
+      "faces": 119,
+      "triangles": 0,
+      "quads": 119,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-leg_lower_male_primitive_stylized.R",
+      "poids": null
+    },
+    {
+      "nom": "GEO-foot_primitive_female_realistic.L",
+      "sommets": 121,
+      "faces": 119,
+      "triangles": 0,
+      "quads": 119,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-leg_lower_primitive_female_realistic.L",
+      "poids": null
+    },
+    {
+      "nom": "GEO-foot_primitive_female_realistic.R",
+      "sommets": 121,
+      "faces": 119,
+      "triangles": 0,
+      "quads": 119,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-leg_lower_primitive_female_realistic.R",
+      "poids": null
+    },
+    {
+      "nom": "GEO-hand_female_primitive_stylized.L",
+      "sommets": 113,
+      "faces": 111,
+      "triangles": 0,
+      "quads": 111,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-arm_lower_female_primitive_stylized.L",
+      "poids": null
+    },
+    {
+      "nom": "GEO-hand_female_primitive_stylized.R",
+      "sommets": 113,
+      "faces": 111,
+      "triangles": 0,
+      "quads": 111,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-arm_lower_female_primitive_stylized.R",
+      "poids": null
+    },
+    {
+      "nom": "GEO-hand_male_primitive_realistic.L",
+      "sommets": 113,
+      "faces": 111,
+      "triangles": 0,
+      "quads": 111,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-arm_lower_male_primitive_realistic.L",
+      "poids": null
+    },
+    {
+      "nom": "GEO-hand_male_primitive_realistic.R",
+      "sommets": 113,
+      "faces": 111,
+      "triangles": 0,
+      "quads": 111,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-arm_lower_male_primitive_realistic.R",
+      "poids": null
+    },
+    {
+      "nom": "GEO-hand_male_primitive_stylized.L",
+      "sommets": 113,
+      "faces": 111,
+      "triangles": 0,
+      "quads": 111,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-arm_lower_male_primitive_stylized.L",
+      "poids": null
+    },
+    {
+      "nom": "GEO-hand_male_primitive_stylized.R",
+      "sommets": 113,
+      "faces": 111,
+      "triangles": 0,
+      "quads": 111,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-arm_lower_male_primitive_stylized.R",
+      "poids": null
+    },
+    {
+      "nom": "GEO-hand_primitive_female_realistic.L",
+      "sommets": 113,
+      "faces": 111,
+      "triangles": 0,
+      "quads": 111,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-arm_lower_primitive_female_realistic.L",
+      "poids": null
+    },
+    {
+      "nom": "GEO-hand_primitive_female_realistic.R",
+      "sommets": 113,
+      "faces": 111,
+      "triangles": 0,
+      "quads": 111,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-arm_lower_primitive_female_realistic.R",
+      "poids": null
+    },
+    {
+      "nom": "GEO-head_animation_realistic",
+      "sommets": 3242,
+      "faces": 3234,
+      "triangles": 18,
+      "quads": 3206,
+      "ngones": 10,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": null,
+      "poids": null
+    },
+    {
+      "nom": "GEO-head_animation_realistic.iris.L",
+      "sommets": 400,
+      "faces": 400,
+      "triangles": 0,
+      "quads": 400,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-head_animation_realistic.sclera.L",
+      "poids": null
+    },
+    {
+      "nom": "GEO-head_animation_realistic.iris.R",
+      "sommets": 400,
+      "faces": 400,
+      "triangles": 0,
+      "quads": 400,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-head_animation_realistic.sclera.R",
+      "poids": null
+    },
+    {
+      "nom": "GEO-head_animation_realistic.sclera.L",
+      "sommets": 546,
+      "faces": 544,
+      "triangles": 0,
+      "quads": 544,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-head_animation_realistic",
+      "poids": null
+    },
+    {
+      "nom": "GEO-head_animation_realistic.sclera.R",
+      "sommets": 546,
+      "faces": 544,
+      "triangles": 0,
+      "quads": 544,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-head_animation_realistic",
+      "poids": null
+    },
+    {
+      "nom": "GEO-head_female_primitive_stylized",
+      "sommets": 266,
+      "faces": 264,
+      "triangles": 0,
+      "quads": 264,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-neck_female_primitive_stylized",
+      "poids": null
+    },
+    {
+      "nom": "GEO-head_male_primitive_realistic",
+      "sommets": 266,
+      "faces": 264,
+      "triangles": 0,
+      "quads": 264,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-neck_male_primitive_realistic",
+      "poids": null
+    },
+    {
+      "nom": "GEO-head_male_primitive_stylized",
+      "sommets": 266,
+      "faces": 264,
+      "triangles": 0,
+      "quads": 264,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-neck_male_primitive_stylized",
+      "poids": null
+    },
+    {
+      "nom": "GEO-head_primitive_female_realistic",
+      "sommets": 266,
+      "faces": 264,
+      "triangles": 0,
+      "quads": 264,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-neck_primitive_female_realistic",
+      "poids": null
+    },
+    {
+      "nom": "GEO-head_primitve",
+      "sommets": 266,
+      "faces": 264,
+      "triangles": 0,
+      "quads": 264,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": null,
+      "poids": null
+    },
+    {
+      "nom": "GEO-head_sculpting_realistic",
+      "sommets": 3307,
+      "faces": 3300,
+      "triangles": 20,
+      "quads": 3268,
+      "ngones": 12,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": null,
+      "poids": null
+    },
+    {
+      "nom": "GEO-head_sculpting_realistic.iris.L",
+      "sommets": 400,
+      "faces": 400,
+      "triangles": 0,
+      "quads": 400,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-head_sculpting_realistic.sclera.L",
+      "poids": null
+    },
+    {
+      "nom": "GEO-head_sculpting_realistic.iris.R",
+      "sommets": 400,
+      "faces": 400,
+      "triangles": 0,
+      "quads": 400,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-head_sculpting_realistic.sclera.R",
+      "poids": null
+    },
+    {
+      "nom": "GEO-head_sculpting_realistic.sclera.L",
+      "sommets": 546,
+      "faces": 544,
+      "triangles": 0,
+      "quads": 544,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-head_sculpting_realistic",
+      "poids": null
+    },
+    {
+      "nom": "GEO-head_sculpting_realistic.sclera.R",
+      "sommets": 546,
+      "faces": 544,
+      "triangles": 0,
+      "quads": 544,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-head_sculpting_realistic",
+      "poids": null
+    },
+    {
+      "nom": "GEO-head_stylized",
+      "sommets": 4118,
+      "faces": 4134,
+      "triangles": 36,
+      "quads": 4098,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": null,
+      "poids": null
+    },
+    {
+      "nom": "GEO-head_stylized.eye.L",
+      "sommets": 802,
+      "faces": 832,
+      "triangles": 64,
+      "quads": 768,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-head_stylized",
+      "poids": null
+    },
+    {
+      "nom": "GEO-head_stylized.eye.R",
+      "sommets": 802,
+      "faces": 832,
+      "triangles": 64,
+      "quads": 768,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-head_stylized",
+      "poids": null
+    },
+    {
+      "nom": "GEO-leg_lower_female_primitive_stylized.L",
+      "sommets": 74,
+      "faces": 72,
+      "triangles": 0,
+      "quads": 72,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-leg_upper_female_primitive_stylized.L",
+      "poids": null
+    },
+    {
+      "nom": "GEO-leg_lower_female_primitive_stylized.R",
+      "sommets": 74,
+      "faces": 72,
+      "triangles": 0,
+      "quads": 72,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-leg_upper_female_primitive_stylized.R",
+      "poids": null
+    },
+    {
+      "nom": "GEO-leg_lower_male_primitive_realistic.L",
+      "sommets": 74,
+      "faces": 72,
+      "triangles": 0,
+      "quads": 72,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-leg_upper_male_primitive_realistic.L",
+      "poids": null
+    },
+    {
+      "nom": "GEO-leg_lower_male_primitive_realistic.R",
+      "sommets": 74,
+      "faces": 72,
+      "triangles": 0,
+      "quads": 72,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-leg_upper_male_primitive_realistic.R",
+      "poids": null
+    },
+    {
+      "nom": "GEO-leg_lower_male_primitive_stylized.L",
+      "sommets": 82,
+      "faces": 80,
+      "triangles": 0,
+      "quads": 80,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-leg_upper_male_primitive_stylized.L",
+      "poids": null
+    },
+    {
+      "nom": "GEO-leg_lower_male_primitive_stylized.R",
+      "sommets": 82,
+      "faces": 80,
+      "triangles": 0,
+      "quads": 80,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-leg_upper_male_primitive_stylized.R",
+      "poids": null
+    },
+    {
+      "nom": "GEO-leg_lower_primitive_female_realistic.L",
+      "sommets": 74,
+      "faces": 72,
+      "triangles": 0,
+      "quads": 72,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-leg_upper_primitive_female_realistic.L",
+      "poids": null
+    },
+    {
+      "nom": "GEO-leg_lower_primitive_female_realistic.R",
+      "sommets": 74,
+      "faces": 72,
+      "triangles": 0,
+      "quads": 72,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-leg_upper_primitive_female_realistic.R",
+      "poids": null
+    },
+    {
+      "nom": "GEO-leg_upper_female_primitive_stylized.L",
+      "sommets": 74,
+      "faces": 72,
+      "triangles": 0,
+      "quads": 72,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-pelvis_female_primitive_stylized",
+      "poids": null
+    },
+    {
+      "nom": "GEO-leg_upper_female_primitive_stylized.R",
+      "sommets": 74,
+      "faces": 72,
+      "triangles": 0,
+      "quads": 72,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-pelvis_female_primitive_stylized",
+      "poids": null
+    },
+    {
+      "nom": "GEO-leg_upper_male_primitive_realistic.L",
+      "sommets": 74,
+      "faces": 72,
+      "triangles": 0,
+      "quads": 72,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-pelvis_male_primitive_realistic",
+      "poids": null
+    },
+    {
+      "nom": "GEO-leg_upper_male_primitive_realistic.R",
+      "sommets": 74,
+      "faces": 72,
+      "triangles": 0,
+      "quads": 72,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-pelvis_male_primitive_realistic",
+      "poids": null
+    },
+    {
+      "nom": "GEO-leg_upper_male_primitive_stylized.L",
+      "sommets": 66,
+      "faces": 64,
+      "triangles": 0,
+      "quads": 64,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-pelvis_male_primitive_stylized",
+      "poids": null
+    },
+    {
+      "nom": "GEO-leg_upper_male_primitive_stylized.R",
+      "sommets": 66,
+      "faces": 64,
+      "triangles": 0,
+      "quads": 64,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-pelvis_male_primitive_stylized",
+      "poids": null
+    },
+    {
+      "nom": "GEO-leg_upper_primitive_female_realistic.L",
+      "sommets": 74,
+      "faces": 72,
+      "triangles": 0,
+      "quads": 72,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-pelvis_female_primitive_realistic",
+      "poids": null
+    },
+    {
+      "nom": "GEO-leg_upper_primitive_female_realistic.R",
+      "sommets": 74,
+      "faces": 72,
+      "triangles": 0,
+      "quads": 72,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-pelvis_female_primitive_realistic",
+      "poids": null
+    },
+    {
+      "nom": "GEO-neck_female_primitive_stylized",
+      "sommets": 50,
+      "faces": 48,
+      "triangles": 0,
+      "quads": 48,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-chest_female_primitive_stylized",
+      "poids": null
+    },
+    {
+      "nom": "GEO-neck_male_primitive_realistic",
+      "sommets": 50,
+      "faces": 48,
+      "triangles": 0,
+      "quads": 48,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-chest_male_primitive_realistic",
+      "poids": null
+    },
+    {
+      "nom": "GEO-neck_male_primitive_stylized",
+      "sommets": 50,
+      "faces": 48,
+      "triangles": 0,
+      "quads": 48,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-chest_male_primitive_stylized",
+      "poids": null
+    },
+    {
+      "nom": "GEO-neck_primitive_female_realistic",
+      "sommets": 50,
+      "faces": 48,
+      "triangles": 0,
+      "quads": 48,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-chest_primitive_female_realistic",
+      "poids": null
+    },
+    {
+      "nom": "GEO-nose_bridge_female_primitive_stylized",
+      "sommets": 54,
+      "faces": 52,
+      "triangles": 0,
+      "quads": 52,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-head_female_primitive_stylized",
+      "poids": null
+    },
+    {
+      "nom": "GEO-nose_bridge_male_primitive_realistic",
+      "sommets": 110,
+      "faces": 108,
+      "triangles": 0,
+      "quads": 108,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-head_male_primitive_realistic",
+      "poids": null
+    },
+    {
+      "nom": "GEO-nose_bridge_male_primitive_stylized",
+      "sommets": 110,
+      "faces": 108,
+      "triangles": 0,
+      "quads": 108,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-head_male_primitive_stylized",
+      "poids": null
+    },
+    {
+      "nom": "GEO-nose_bridge_primitve",
+      "sommets": 110,
+      "faces": 108,
+      "triangles": 0,
+      "quads": 108,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-head_primitve",
+      "poids": null
+    },
+    {
+      "nom": "GEO-nose_bridge_primitve_female_realistic",
+      "sommets": 110,
+      "faces": 108,
+      "triangles": 0,
+      "quads": 108,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-head_primitive_female_realistic",
+      "poids": null
+    },
+    {
+      "nom": "GEO-nose_female_primitive_stylized",
+      "sommets": 192,
+      "faces": 190,
+      "triangles": 0,
+      "quads": 190,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-head_female_primitive_stylized",
+      "poids": null
+    },
+    {
+      "nom": "GEO-nose_male_primitive_realistic",
+      "sommets": 192,
+      "faces": 190,
+      "triangles": 0,
+      "quads": 190,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-head_male_primitive_realistic",
+      "poids": null
+    },
+    {
+      "nom": "GEO-nose_male_primitive_stylized",
+      "sommets": 197,
+      "faces": 196,
+      "triangles": 4,
+      "quads": 190,
+      "ngones": 2,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-head_male_primitive_stylized",
+      "poids": null
+    },
+    {
+      "nom": "GEO-nose_primitve",
+      "sommets": 192,
+      "faces": 190,
+      "triangles": 0,
+      "quads": 190,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-head_primitve",
+      "poids": null
+    },
+    {
+      "nom": "GEO-nose_primitve_female_realistic",
+      "sommets": 192,
+      "faces": 190,
+      "triangles": 0,
+      "quads": 190,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-head_primitive_female_realistic",
+      "poids": null
+    },
+    {
+      "nom": "GEO-pelvis_female_primitive_realistic",
+      "sommets": 182,
+      "faces": 180,
+      "triangles": 0,
+      "quads": 180,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": null,
+      "poids": null
+    },
+    {
+      "nom": "GEO-pelvis_female_primitive_stylized",
+      "sommets": 182,
+      "faces": 180,
+      "triangles": 0,
+      "quads": 180,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": null,
+      "poids": null
+    },
+    {
+      "nom": "GEO-pelvis_male_primitive_realistic",
+      "sommets": 182,
+      "faces": 180,
+      "triangles": 0,
+      "quads": 180,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": null,
+      "poids": null
+    },
+    {
+      "nom": "GEO-pelvis_male_primitive_stylized",
+      "sommets": 78,
+      "faces": 76,
+      "triangles": 0,
+      "quads": 76,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": null,
+      "poids": null
+    },
+    {
+      "nom": "GEO-shoulder_female_primitive_stylized.L",
+      "sommets": 44,
+      "faces": 42,
+      "triangles": 0,
+      "quads": 42,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-chest_female_primitive_stylized",
+      "poids": null
+    },
+    {
+      "nom": "GEO-shoulder_female_primitive_stylized.R",
+      "sommets": 44,
+      "faces": 42,
+      "triangles": 0,
+      "quads": 42,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-chest_female_primitive_stylized",
+      "poids": null
+    },
+    {
+      "nom": "GEO-shoulder_male_primitive_realistic.L",
+      "sommets": 44,
+      "faces": 42,
+      "triangles": 0,
+      "quads": 42,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-chest_male_primitive_realistic",
+      "poids": null
+    },
+    {
+      "nom": "GEO-shoulder_male_primitive_realistic.R",
+      "sommets": 44,
+      "faces": 42,
+      "triangles": 0,
+      "quads": 42,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-chest_male_primitive_realistic",
+      "poids": null
+    },
+    {
+      "nom": "GEO-shoulder_male_primitive_stylized.L",
+      "sommets": 34,
+      "faces": 32,
+      "triangles": 0,
+      "quads": 32,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-chest_male_primitive_stylized",
+      "poids": null
+    },
+    {
+      "nom": "GEO-shoulder_male_primitive_stylized.R",
+      "sommets": 34,
+      "faces": 32,
+      "triangles": 0,
+      "quads": 32,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-chest_male_primitive_stylized",
+      "poids": null
+    },
+    {
+      "nom": "GEO-shoulder_primitive_female_realistic.L",
+      "sommets": 44,
+      "faces": 42,
+      "triangles": 0,
+      "quads": 42,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-chest_primitive_female_realistic",
+      "poids": null
+    },
+    {
+      "nom": "GEO-shoulder_primitive_female_realistic.R",
+      "sommets": 44,
+      "faces": 42,
+      "triangles": 0,
+      "quads": 42,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-chest_primitive_female_realistic",
+      "poids": null
+    },
+    {
+      "nom": "GEO-skeletion.arm_humerus.L",
+      "sommets": 337,
+      "faces": 335,
+      "triangles": 0,
+      "quads": 335,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-skeletion.shoulder_scapula.L",
+      "poids": null
+    },
+    {
+      "nom": "GEO-skeletion.arm_humerus.R",
+      "sommets": 337,
+      "faces": 335,
+      "triangles": 0,
+      "quads": 335,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-skeletion.shoulder_scapula.R",
+      "poids": null
+    },
+    {
+      "nom": "GEO-skeletion.arm_radius.L",
+      "sommets": 178,
+      "faces": 176,
+      "triangles": 0,
+      "quads": 176,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-skeletion.arm_humerus.L",
+      "poids": null
+    },
+    {
+      "nom": "GEO-skeletion.arm_radius.R",
+      "sommets": 178,
+      "faces": 176,
+      "triangles": 0,
+      "quads": 176,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-skeletion.arm_humerus.R",
+      "poids": null
+    },
+    {
+      "nom": "GEO-skeletion.arm_ulna.L",
+      "sommets": 204,
+      "faces": 202,
+      "triangles": 0,
+      "quads": 202,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-skeletion.arm_humerus.L",
+      "poids": null
+    },
+    {
+      "nom": "GEO-skeletion.arm_ulna.R",
+      "sommets": 204,
+      "faces": 202,
+      "triangles": 0,
+      "quads": 202,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-skeletion.arm_humerus.R",
+      "poids": null
+    },
+    {
+      "nom": "GEO-skeletion.clavicle.L",
+      "sommets": 78,
+      "faces": 76,
+      "triangles": 0,
+      "quads": 76,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-skeletion.ripcage",
+      "poids": null
+    },
+    {
+      "nom": "GEO-skeletion.clavicle.R",
+      "sommets": 78,
+      "faces": 76,
+      "triangles": 0,
+      "quads": 76,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-skeletion.ripcage",
+      "poids": null
+    },
+    {
+      "nom": "GEO-skeletion.coccygeal",
+      "sommets": 75,
+      "faces": 63,
+      "triangles": 0,
+      "quads": 63,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-skeletion.sacral",
+      "poids": null
+    },
+    {
+      "nom": "GEO-skeletion.distal.1.L",
+      "sommets": 64,
+      "faces": 62,
+      "triangles": 0,
+      "quads": 62,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-skeletion.proximal.1.L",
+      "poids": null
+    },
+    {
+      "nom": "GEO-skeletion.distal.1.R",
+      "sommets": 64,
+      "faces": 62,
+      "triangles": 0,
+      "quads": 62,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-skeletion.proximal.1.R",
+      "poids": null
+    },
+    {
+      "nom": "GEO-skeletion.distal.2.L",
+      "sommets": 64,
+      "faces": 62,
+      "triangles": 0,
+      "quads": 62,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-skeletion.middle.2.L",
+      "poids": null
+    },
+    {
+      "nom": "GEO-skeletion.distal.2.R",
+      "sommets": 64,
+      "faces": 62,
+      "triangles": 0,
+      "quads": 62,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-skeletion.middle.2.R",
+      "poids": null
+    },
+    {
+      "nom": "GEO-skeletion.distal.3.L",
+      "sommets": 64,
+      "faces": 62,
+      "triangles": 0,
+      "quads": 62,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-skeletion.middle.3.L",
+      "poids": null
+    },
+    {
+      "nom": "GEO-skeletion.distal.3.R",
+      "sommets": 64,
+      "faces": 62,
+      "triangles": 0,
+      "quads": 62,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-skeletion.middle.3.R",
+      "poids": null
+    },
+    {
+      "nom": "GEO-skeletion.distal.4.L",
+      "sommets": 64,
+      "faces": 62,
+      "triangles": 0,
+      "quads": 62,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-skeletion.middle.4.L",
+      "poids": null
+    },
+    {
+      "nom": "GEO-skeletion.distal.4.R",
+      "sommets": 64,
+      "faces": 62,
+      "triangles": 0,
+      "quads": 62,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-skeletion.middle.4.R",
+      "poids": null
+    },
+    {
+      "nom": "GEO-skeletion.distal.5.L",
+      "sommets": 64,
+      "faces": 62,
+      "triangles": 0,
+      "quads": 62,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-skeletion.middle.5.L",
+      "poids": null
+    },
+    {
+      "nom": "GEO-skeletion.distal.5.R",
+      "sommets": 64,
+      "faces": 62,
+      "triangles": 0,
+      "quads": 62,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-skeletion.middle.5.R",
+      "poids": null
+    },
+    {
+      "nom": "GEO-skeletion.distal.index.L",
+      "sommets": 66,
+      "faces": 64,
+      "triangles": 0,
+      "quads": 64,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-skeletion.middle.index.L",
+      "poids": null
+    },
+    {
+      "nom": "GEO-skeletion.distal.index.R",
+      "sommets": 66,
+      "faces": 64,
+      "triangles": 0,
+      "quads": 64,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-skeletion.middle.index.R",
+      "poids": null
+    },
+    {
+      "nom": "GEO-skeletion.distal.little.L",
+      "sommets": 66,
+      "faces": 64,
+      "triangles": 0,
+      "quads": 64,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-skeletion.middle.little.L",
+      "poids": null
+    },
+    {
+      "nom": "GEO-skeletion.distal.little.R",
+      "sommets": 66,
+      "faces": 64,
+      "triangles": 0,
+      "quads": 64,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-skeletion.middle.little.R",
+      "poids": null
+    },
+    {
+      "nom": "GEO-skeletion.distal.middle.L",
+      "sommets": 66,
+      "faces": 64,
+      "triangles": 0,
+      "quads": 64,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-skeletion.middle.middle.L",
+      "poids": null
+    },
+    {
+      "nom": "GEO-skeletion.distal.middle.R",
+      "sommets": 66,
+      "faces": 64,
+      "triangles": 0,
+      "quads": 64,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-skeletion.middle.middle.R",
+      "poids": null
+    },
+    {
+      "nom": "GEO-skeletion.distal.ring.L",
+      "sommets": 66,
+      "faces": 64,
+      "triangles": 0,
+      "quads": 64,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-skeletion.middle.ring.L",
+      "poids": null
+    },
+    {
+      "nom": "GEO-skeletion.distal.ring.R",
+      "sommets": 66,
+      "faces": 64,
+      "triangles": 0,
+      "quads": 64,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-skeletion.middle.ring.R",
+      "poids": null
+    },
+    {
+      "nom": "GEO-skeletion.distal.thumb.L",
+      "sommets": 66,
+      "faces": 64,
+      "triangles": 0,
+      "quads": 64,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-skeletion.proximal.thumb.L",
+      "poids": null
+    },
+    {
+      "nom": "GEO-skeletion.distal.thumb.R",
+      "sommets": 66,
+      "faces": 64,
+      "triangles": 0,
+      "quads": 64,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-skeletion.proximal.thumb.R",
+      "poids": null
+    },
+    {
+      "nom": "GEO-skeletion.foot_calcaneus.L",
+      "sommets": 85,
+      "faces": 83,
+      "triangles": 0,
+      "quads": 83,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-skeletion.foot_talus.L",
+      "poids": null
+    },
+    {
+      "nom": "GEO-skeletion.foot_calcaneus.R",
+      "sommets": 85,
+      "faces": 83,
+      "triangles": 0,
+      "quads": 83,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-skeletion.foot_talus.R",
+      "poids": null
+    },
+    {
+      "nom": "GEO-skeletion.foot_center.L",
+      "sommets": 255,
+      "faces": 245,
+      "triangles": 0,
+      "quads": 245,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-skeletion.foot_talus.L",
+      "poids": null
+    },
+    {
+      "nom": "GEO-skeletion.foot_center.R",
+      "sommets": 255,
+      "faces": 245,
+      "triangles": 0,
+      "quads": 245,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-skeletion.foot_talus.R",
+      "poids": null
+    },
+    {
+      "nom": "GEO-skeletion.foot_talus.L",
+      "sommets": 139,
+      "faces": 137,
+      "triangles": 0,
+      "quads": 137,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-skeletion.leg_tibula.L",
+      "poids": null
+    },
+    {
+      "nom": "GEO-skeletion.foot_talus.R",
+      "sommets": 139,
+      "faces": 137,
+      "triangles": 0,
+      "quads": 137,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-skeletion.leg_tibula.R",
+      "poids": null
+    },
+    {
+      "nom": "GEO-skeletion.hand_center.L",
+      "sommets": 530,
+      "faces": 516,
+      "triangles": 0,
+      "quads": 516,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-skeletion.arm_radius.L",
+      "poids": null
+    },
+    {
+      "nom": "GEO-skeletion.hand_center.R",
+      "sommets": 530,
+      "faces": 516,
+      "triangles": 0,
+      "quads": 516,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-skeletion.arm_radius.R",
+      "poids": null
+    },
+    {
+      "nom": "GEO-skeletion.hip",
+      "sommets": 648,
+      "faces": 648,
+      "triangles": 0,
+      "quads": 648,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": null,
+      "poids": null
+    },
+    {
+      "nom": "GEO-skeletion.leg_femur.L",
+      "sommets": 291,
+      "faces": 289,
+      "triangles": 0,
+      "quads": 289,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-skeletion.hip",
+      "poids": null
+    },
+    {
+      "nom": "GEO-skeletion.leg_femur.R",
+      "sommets": 291,
+      "faces": 289,
+      "triangles": 0,
+      "quads": 289,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-skeletion.hip",
+      "poids": null
+    },
+    {
+      "nom": "GEO-skeletion.leg_fibula.L",
+      "sommets": 102,
+      "faces": 100,
+      "triangles": 0,
+      "quads": 100,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-skeletion.leg_tibula.L",
+      "poids": null
+    },
+    {
+      "nom": "GEO-skeletion.leg_fibula.R",
+      "sommets": 102,
+      "faces": 100,
+      "triangles": 0,
+      "quads": 100,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-skeletion.leg_tibula.R",
+      "poids": null
+    },
+    {
+      "nom": "GEO-skeletion.leg_patella.L",
+      "sommets": 35,
+      "faces": 33,
+      "triangles": 0,
+      "quads": 33,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-skeletion.leg_tibula.L",
+      "poids": null
+    },
+    {
+      "nom": "GEO-skeletion.leg_patella.R",
+      "sommets": 35,
+      "faces": 33,
+      "triangles": 0,
+      "quads": 33,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-skeletion.leg_tibula.R",
+      "poids": null
+    },
+    {
+      "nom": "GEO-skeletion.leg_tibula.L",
+      "sommets": 242,
+      "faces": 240,
+      "triangles": 0,
+      "quads": 240,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-skeletion.leg_femur.L",
+      "poids": null
+    },
+    {
+      "nom": "GEO-skeletion.leg_tibula.R",
+      "sommets": 242,
+      "faces": 240,
+      "triangles": 0,
+      "quads": 240,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-skeletion.leg_femur.R",
+      "poids": null
+    },
+    {
+      "nom": "GEO-skeletion.metacarpal.index.L",
+      "sommets": 86,
+      "faces": 84,
+      "triangles": 0,
+      "quads": 84,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-skeletion.hand_center.L",
+      "poids": null
+    },
+    {
+      "nom": "GEO-skeletion.metacarpal.index.R",
+      "sommets": 86,
+      "faces": 84,
+      "triangles": 0,
+      "quads": 84,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-skeletion.hand_center.R",
+      "poids": null
+    },
+    {
+      "nom": "GEO-skeletion.metacarpal.little.L",
+      "sommets": 86,
+      "faces": 84,
+      "triangles": 0,
+      "quads": 84,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-skeletion.hand_center.L",
+      "poids": null
+    },
+    {
+      "nom": "GEO-skeletion.metacarpal.little.R",
+      "sommets": 86,
+      "faces": 84,
+      "triangles": 0,
+      "quads": 84,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-skeletion.hand_center.R",
+      "poids": null
+    },
+    {
+      "nom": "GEO-skeletion.metacarpal.middle.L",
+      "sommets": 86,
+      "faces": 84,
+      "triangles": 0,
+      "quads": 84,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-skeletion.hand_center.L",
+      "poids": null
+    },
+    {
+      "nom": "GEO-skeletion.metacarpal.middle.R",
+      "sommets": 86,
+      "faces": 84,
+      "triangles": 0,
+      "quads": 84,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-skeletion.hand_center.R",
+      "poids": null
+    },
+    {
+      "nom": "GEO-skeletion.metacarpal.ring.L",
+      "sommets": 86,
+      "faces": 84,
+      "triangles": 0,
+      "quads": 84,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-skeletion.hand_center.L",
+      "poids": null
+    },
+    {
+      "nom": "GEO-skeletion.metacarpal.ring.R",
+      "sommets": 86,
+      "faces": 84,
+      "triangles": 0,
+      "quads": 84,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-skeletion.hand_center.R",
+      "poids": null
+    },
+    {
+      "nom": "GEO-skeletion.metacarpal.thumb.L",
+      "sommets": 100,
+      "faces": 98,
+      "triangles": 0,
+      "quads": 98,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-skeletion.hand_center.L",
+      "poids": null
+    },
+    {
+      "nom": "GEO-skeletion.metacarpal.thumb.R",
+      "sommets": 100,
+      "faces": 98,
+      "triangles": 0,
+      "quads": 98,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-skeletion.hand_center.R",
+      "poids": null
+    },
+    {
+      "nom": "GEO-skeletion.metatarsal.1.L",
+      "sommets": 142,
+      "faces": 140,
+      "triangles": 0,
+      "quads": 140,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-skeletion.foot_center.L",
+      "poids": null
+    },
+    {
+      "nom": "GEO-skeletion.metatarsal.1.R",
+      "sommets": 142,
+      "faces": 140,
+      "triangles": 0,
+      "quads": 140,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-skeletion.foot_center.R",
+      "poids": null
+    },
+    {
+      "nom": "GEO-skeletion.metatarsal.2.L",
+      "sommets": 107,
+      "faces": 105,
+      "triangles": 0,
+      "quads": 105,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-skeletion.foot_center.L",
+      "poids": null
+    },
+    {
+      "nom": "GEO-skeletion.metatarsal.2.R",
+      "sommets": 107,
+      "faces": 105,
+      "triangles": 0,
+      "quads": 105,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-skeletion.foot_center.R",
+      "poids": null
+    },
+    {
+      "nom": "GEO-skeletion.metatarsal.3.L",
+      "sommets": 107,
+      "faces": 105,
+      "triangles": 0,
+      "quads": 105,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-skeletion.foot_center.L",
+      "poids": null
+    },
+    {
+      "nom": "GEO-skeletion.metatarsal.3.R",
+      "sommets": 107,
+      "faces": 105,
+      "triangles": 0,
+      "quads": 105,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-skeletion.foot_center.R",
+      "poids": null
+    },
+    {
+      "nom": "GEO-skeletion.metatarsal.4.L",
+      "sommets": 107,
+      "faces": 105,
+      "triangles": 0,
+      "quads": 105,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-skeletion.foot_center.L",
+      "poids": null
+    },
+    {
+      "nom": "GEO-skeletion.metatarsal.4.R",
+      "sommets": 107,
+      "faces": 105,
+      "triangles": 0,
+      "quads": 105,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-skeletion.foot_center.R",
+      "poids": null
+    },
+    {
+      "nom": "GEO-skeletion.metatarsal.5.L",
+      "sommets": 99,
+      "faces": 97,
+      "triangles": 0,
+      "quads": 97,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-skeletion.foot_center.L",
+      "poids": null
+    },
+    {
+      "nom": "GEO-skeletion.metatarsal.5.R",
+      "sommets": 99,
+      "faces": 97,
+      "triangles": 0,
+      "quads": 97,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-skeletion.foot_center.R",
+      "poids": null
+    },
+    {
+      "nom": "GEO-skeletion.middle.2.L",
+      "sommets": 74,
+      "faces": 72,
+      "triangles": 0,
+      "quads": 72,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-skeletion.proximal.2.L",
+      "poids": null
+    },
+    {
+      "nom": "GEO-skeletion.middle.2.R",
+      "sommets": 74,
+      "faces": 72,
+      "triangles": 0,
+      "quads": 72,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-skeletion.proximal.2.R",
+      "poids": null
+    },
+    {
+      "nom": "GEO-skeletion.middle.3.L",
+      "sommets": 74,
+      "faces": 72,
+      "triangles": 0,
+      "quads": 72,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-skeletion.proximal.3.L",
+      "poids": null
+    },
+    {
+      "nom": "GEO-skeletion.middle.3.R",
+      "sommets": 74,
+      "faces": 72,
+      "triangles": 0,
+      "quads": 72,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-skeletion.proximal.3.R",
+      "poids": null
+    },
+    {
+      "nom": "GEO-skeletion.middle.4.L",
+      "sommets": 74,
+      "faces": 72,
+      "triangles": 0,
+      "quads": 72,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-skeletion.proximal.4.L",
+      "poids": null
+    },
+    {
+      "nom": "GEO-skeletion.middle.4.R",
+      "sommets": 74,
+      "faces": 72,
+      "triangles": 0,
+      "quads": 72,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-skeletion.proximal.4.R",
+      "poids": null
+    },
+    {
+      "nom": "GEO-skeletion.middle.5.L",
+      "sommets": 54,
+      "faces": 52,
+      "triangles": 0,
+      "quads": 52,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-skeletion.proximal.5.L",
+      "poids": null
+    },
+    {
+      "nom": "GEO-skeletion.middle.5.R",
+      "sommets": 54,
+      "faces": 52,
+      "triangles": 0,
+      "quads": 52,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-skeletion.proximal.5.R",
+      "poids": null
+    },
+    {
+      "nom": "GEO-skeletion.middle.index.L",
+      "sommets": 102,
+      "faces": 100,
+      "triangles": 0,
+      "quads": 100,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-skeletion.proximal.index.L",
+      "poids": null
+    },
+    {
+      "nom": "GEO-skeletion.middle.index.R",
+      "sommets": 102,
+      "faces": 100,
+      "triangles": 0,
+      "quads": 100,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-skeletion.proximal.index.R",
+      "poids": null
+    },
+    {
+      "nom": "GEO-skeletion.middle.little.L",
+      "sommets": 102,
+      "faces": 100,
+      "triangles": 0,
+      "quads": 100,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-skeletion.proximal.little.L",
+      "poids": null
+    },
+    {
+      "nom": "GEO-skeletion.middle.little.R",
+      "sommets": 102,
+      "faces": 100,
+      "triangles": 0,
+      "quads": 100,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-skeletion.proximal.little.R",
+      "poids": null
+    },
+    {
+      "nom": "GEO-skeletion.middle.middle.L",
+      "sommets": 102,
+      "faces": 100,
+      "triangles": 0,
+      "quads": 100,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-skeletion.proximal.middle.L",
+      "poids": null
+    },
+    {
+      "nom": "GEO-skeletion.middle.middle.R",
+      "sommets": 102,
+      "faces": 100,
+      "triangles": 0,
+      "quads": 100,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-skeletion.proximal.middle.R",
+      "poids": null
+    },
+    {
+      "nom": "GEO-skeletion.middle.ring.L",
+      "sommets": 102,
+      "faces": 100,
+      "triangles": 0,
+      "quads": 100,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-skeletion.proximal.ring.L",
+      "poids": null
+    },
+    {
+      "nom": "GEO-skeletion.middle.ring.R",
+      "sommets": 102,
+      "faces": 100,
+      "triangles": 0,
+      "quads": 100,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-skeletion.proximal.ring.R",
+      "poids": null
+    },
+    {
+      "nom": "GEO-skeletion.proximal.1.L",
+      "sommets": 94,
+      "faces": 92,
+      "triangles": 0,
+      "quads": 92,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-skeletion.metatarsal.1.L",
+      "poids": null
+    },
+    {
+      "nom": "GEO-skeletion.proximal.1.R",
+      "sommets": 94,
+      "faces": 92,
+      "triangles": 0,
+      "quads": 92,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-skeletion.metatarsal.1.R",
+      "poids": null
+    },
+    {
+      "nom": "GEO-skeletion.proximal.2.L",
+      "sommets": 74,
+      "faces": 72,
+      "triangles": 0,
+      "quads": 72,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-skeletion.metatarsal.2.L",
+      "poids": null
+    },
+    {
+      "nom": "GEO-skeletion.proximal.2.R",
+      "sommets": 74,
+      "faces": 72,
+      "triangles": 0,
+      "quads": 72,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-skeletion.metatarsal.2.R",
+      "poids": null
+    },
+    {
+      "nom": "GEO-skeletion.proximal.3.L",
+      "sommets": 74,
+      "faces": 72,
+      "triangles": 0,
+      "quads": 72,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-skeletion.metatarsal.3.L",
+      "poids": null
+    },
+    {
+      "nom": "GEO-skeletion.proximal.3.R",
+      "sommets": 74,
+      "faces": 72,
+      "triangles": 0,
+      "quads": 72,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-skeletion.metatarsal.3.R",
+      "poids": null
+    },
+    {
+      "nom": "GEO-skeletion.proximal.4.L",
+      "sommets": 74,
+      "faces": 72,
+      "triangles": 0,
+      "quads": 72,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-skeletion.metatarsal.4.L",
+      "poids": null
+    },
+    {
+      "nom": "GEO-skeletion.proximal.4.R",
+      "sommets": 74,
+      "faces": 72,
+      "triangles": 0,
+      "quads": 72,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-skeletion.metatarsal.4.R",
+      "poids": null
+    },
+    {
+      "nom": "GEO-skeletion.proximal.5.L",
+      "sommets": 74,
+      "faces": 72,
+      "triangles": 0,
+      "quads": 72,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-skeletion.metatarsal.5.L",
+      "poids": null
+    },
+    {
+      "nom": "GEO-skeletion.proximal.5.R",
+      "sommets": 74,
+      "faces": 72,
+      "triangles": 0,
+      "quads": 72,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-skeletion.metatarsal.5.R",
+      "poids": null
+    },
+    {
+      "nom": "GEO-skeletion.proximal.index.L",
+      "sommets": 82,
+      "faces": 80,
+      "triangles": 0,
+      "quads": 80,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-skeletion.metacarpal.index.L",
+      "poids": null
+    },
+    {
+      "nom": "GEO-skeletion.proximal.index.R",
+      "sommets": 82,
+      "faces": 80,
+      "triangles": 0,
+      "quads": 80,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-skeletion.metacarpal.index.R",
+      "poids": null
+    },
+    {
+      "nom": "GEO-skeletion.proximal.little.L",
+      "sommets": 82,
+      "faces": 80,
+      "triangles": 0,
+      "quads": 80,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-skeletion.metacarpal.little.L",
+      "poids": null
+    },
+    {
+      "nom": "GEO-skeletion.proximal.little.R",
+      "sommets": 82,
+      "faces": 80,
+      "triangles": 0,
+      "quads": 80,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-skeletion.metacarpal.little.R",
+      "poids": null
+    },
+    {
+      "nom": "GEO-skeletion.proximal.middle.L",
+      "sommets": 82,
+      "faces": 80,
+      "triangles": 0,
+      "quads": 80,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-skeletion.metacarpal.middle.L",
+      "poids": null
+    },
+    {
+      "nom": "GEO-skeletion.proximal.middle.R",
+      "sommets": 82,
+      "faces": 80,
+      "triangles": 0,
+      "quads": 80,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-skeletion.metacarpal.middle.R",
+      "poids": null
+    },
+    {
+      "nom": "GEO-skeletion.proximal.ring.L",
+      "sommets": 82,
+      "faces": 80,
+      "triangles": 0,
+      "quads": 80,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-skeletion.metacarpal.ring.L",
+      "poids": null
+    },
+    {
+      "nom": "GEO-skeletion.proximal.ring.R",
+      "sommets": 82,
+      "faces": 80,
+      "triangles": 0,
+      "quads": 80,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-skeletion.metacarpal.ring.R",
+      "poids": null
+    },
+    {
+      "nom": "GEO-skeletion.proximal.thumb.L",
+      "sommets": 82,
+      "faces": 80,
+      "triangles": 0,
+      "quads": 80,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-skeletion.metacarpal.thumb.L",
+      "poids": null
+    },
+    {
+      "nom": "GEO-skeletion.proximal.thumb.R",
+      "sommets": 82,
+      "faces": 80,
+      "triangles": 0,
+      "quads": 80,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-skeletion.metacarpal.thumb.R",
+      "poids": null
+    },
+    {
+      "nom": "GEO-skeletion.ripcage",
+      "sommets": 2135,
+      "faces": 2084,
+      "triangles": 0,
+      "quads": 2084,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-skeletion.hip",
+      "poids": null
+    },
+    {
+      "nom": "GEO-skeletion.sacral",
+      "sommets": 590,
+      "faces": 569,
+      "triangles": 0,
+      "quads": 569,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-skeletion.hip",
+      "poids": null
+    },
+    {
+      "nom": "GEO-skeletion.shoulder_scapula.L",
+      "sommets": 384,
+      "faces": 382,
+      "triangles": 0,
+      "quads": 382,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-skeletion.ripcage",
+      "poids": null
+    },
+    {
+      "nom": "GEO-skeletion.shoulder_scapula.R",
+      "sommets": 384,
+      "faces": 382,
+      "triangles": 0,
+      "quads": 382,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-skeletion.ripcage",
+      "poids": null
+    },
+    {
+      "nom": "GEO-skeletion.skull",
+      "sommets": 11684,
+      "faces": 11634,
+      "triangles": 0,
+      "quads": 11634,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-skeletion.spine_cervical_c1",
+      "poids": null
+    },
+    {
+      "nom": "GEO-skeletion.spine_cervical_c1",
+      "sommets": 179,
+      "faces": 172,
+      "triangles": 0,
+      "quads": 172,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-skeletion.spine_cervical_c2",
+      "poids": null
+    },
+    {
+      "nom": "GEO-skeletion.spine_cervical_c2",
+      "sommets": 297,
+      "faces": 279,
+      "triangles": 0,
+      "quads": 279,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-skeletion.spine_cervical_c3",
+      "poids": null
+    },
+    {
+      "nom": "GEO-skeletion.spine_cervical_c3",
+      "sommets": 306,
+      "faces": 289,
+      "triangles": 0,
+      "quads": 289,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-skeletion.spine_cervical_c4",
+      "poids": null
+    },
+    {
+      "nom": "GEO-skeletion.spine_cervical_c4",
+      "sommets": 306,
+      "faces": 289,
+      "triangles": 0,
+      "quads": 289,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-skeletion.spine_cervical_c5",
+      "poids": null
+    },
+    {
+      "nom": "GEO-skeletion.spine_cervical_c5",
+      "sommets": 306,
+      "faces": 289,
+      "triangles": 0,
+      "quads": 289,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-skeletion.spine_cervical_c6",
+      "poids": null
+    },
+    {
+      "nom": "GEO-skeletion.spine_cervical_c6",
+      "sommets": 306,
+      "faces": 289,
+      "triangles": 0,
+      "quads": 289,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-skeletion.spine_cervical_c7",
+      "poids": null
+    },
+    {
+      "nom": "GEO-skeletion.spine_cervical_c7",
+      "sommets": 306,
+      "faces": 289,
+      "triangles": 0,
+      "quads": 289,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-skeletion.spine_thoracic_t1",
+      "poids": null
+    },
+    {
+      "nom": "GEO-skeletion.spine_lumbar_l1",
+      "sommets": 256,
+      "faces": 238,
+      "triangles": 0,
+      "quads": 238,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-skeletion.spine_lumbar_l1.5",
+      "poids": null
+    },
+    {
+      "nom": "GEO-skeletion.spine_lumbar_l1.5",
+      "sommets": 58,
+      "faces": 50,
+      "triangles": 0,
+      "quads": 50,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-skeletion.spine_lumbar_l2",
+      "poids": null
+    },
+    {
+      "nom": "GEO-skeletion.spine_lumbar_l2",
+      "sommets": 256,
+      "faces": 238,
+      "triangles": 0,
+      "quads": 238,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-skeletion.spine_lumbar_l2.5",
+      "poids": null
+    },
+    {
+      "nom": "GEO-skeletion.spine_lumbar_l2.5",
+      "sommets": 58,
+      "faces": 50,
+      "triangles": 0,
+      "quads": 50,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-skeletion.spine_lumbar_l3",
+      "poids": null
+    },
+    {
+      "nom": "GEO-skeletion.spine_lumbar_l3",
+      "sommets": 256,
+      "faces": 238,
+      "triangles": 0,
+      "quads": 238,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-skeletion.spine_lumbar_l3.5",
+      "poids": null
+    },
+    {
+      "nom": "GEO-skeletion.spine_lumbar_l3.5",
+      "sommets": 58,
+      "faces": 50,
+      "triangles": 0,
+      "quads": 50,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-skeletion.spine_lumbar_l4",
+      "poids": null
+    },
+    {
+      "nom": "GEO-skeletion.spine_lumbar_l4",
+      "sommets": 256,
+      "faces": 238,
+      "triangles": 0,
+      "quads": 238,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-skeletion.spine_lumbar_l4.5",
+      "poids": null
+    },
+    {
+      "nom": "GEO-skeletion.spine_lumbar_l4.5",
+      "sommets": 58,
+      "faces": 50,
+      "triangles": 0,
+      "quads": 50,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-skeletion.spine_lumbar_l5",
+      "poids": null
+    },
+    {
+      "nom": "GEO-skeletion.spine_lumbar_l5",
+      "sommets": 259,
+      "faces": 241,
+      "triangles": 0,
+      "quads": 241,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-skeletion.sacral",
+      "poids": null
+    },
+    {
+      "nom": "GEO-skeletion.spine_thoracic_10",
+      "sommets": 266,
+      "faces": 247,
+      "triangles": 0,
+      "quads": 247,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-skeletion.spine_thoracic_t11",
+      "poids": null
+    },
+    {
+      "nom": "GEO-skeletion.spine_thoracic_2",
+      "sommets": 274,
+      "faces": 254,
+      "triangles": 0,
+      "quads": 254,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-skeletion.spine_thoracic_t3",
+      "poids": null
+    },
+    {
+      "nom": "GEO-skeletion.spine_thoracic_4",
+      "sommets": 274,
+      "faces": 254,
+      "triangles": 0,
+      "quads": 254,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-skeletion.spine_thoracic_5",
+      "poids": null
+    },
+    {
+      "nom": "GEO-skeletion.spine_thoracic_5",
+      "sommets": 274,
+      "faces": 254,
+      "triangles": 0,
+      "quads": 254,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-skeletion.spine_thoracic_6",
+      "poids": null
+    },
+    {
+      "nom": "GEO-skeletion.spine_thoracic_6",
+      "sommets": 266,
+      "faces": 247,
+      "triangles": 0,
+      "quads": 247,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-skeletion.spine_thoracic_7",
+      "poids": null
+    },
+    {
+      "nom": "GEO-skeletion.spine_thoracic_7",
+      "sommets": 266,
+      "faces": 247,
+      "triangles": 0,
+      "quads": 247,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-skeletion.spine_thoracic_8",
+      "poids": null
+    },
+    {
+      "nom": "GEO-skeletion.spine_thoracic_8",
+      "sommets": 266,
+      "faces": 247,
+      "triangles": 0,
+      "quads": 247,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-skeletion.spine_thoracic_9",
+      "poids": null
+    },
+    {
+      "nom": "GEO-skeletion.spine_thoracic_9",
+      "sommets": 266,
+      "faces": 247,
+      "triangles": 0,
+      "quads": 247,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-skeletion.spine_thoracic_10",
+      "poids": null
+    },
+    {
+      "nom": "GEO-skeletion.spine_thoracic_t1",
+      "sommets": 274,
+      "faces": 254,
+      "triangles": 0,
+      "quads": 254,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-skeletion.spine_thoracic_2",
+      "poids": null
+    },
+    {
+      "nom": "GEO-skeletion.spine_thoracic_t11",
+      "sommets": 266,
+      "faces": 247,
+      "triangles": 0,
+      "quads": 247,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-skeletion.spine_thoracic_t12",
+      "poids": null
+    },
+    {
+      "nom": "GEO-skeletion.spine_thoracic_t12",
+      "sommets": 266,
+      "faces": 247,
+      "triangles": 0,
+      "quads": 247,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-skeletion.spine_lumbar_l1",
+      "poids": null
+    },
+    {
+      "nom": "GEO-skeletion.spine_thoracic_t3",
+      "sommets": 274,
+      "faces": 254,
+      "triangles": 0,
+      "quads": 254,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-skeletion.spine_thoracic_4",
+      "poids": null
+    },
+    {
+      "nom": "GEO-teo_big_male_primitive_realistic.L",
+      "sommets": 50,
+      "faces": 48,
+      "triangles": 0,
+      "quads": 48,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-foot.005_male_primitive_realistic.L",
+      "poids": null
+    },
+    {
+      "nom": "GEO-teo_big_male_primitive_realistic.R",
+      "sommets": 50,
+      "faces": 48,
+      "triangles": 0,
+      "quads": 48,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-foot.005_male_primitive_realistic.R",
+      "poids": null
+    },
+    {
+      "nom": "GEO-thumb_female_primitive_stylized.L",
+      "sommets": 59,
+      "faces": 58,
+      "triangles": 2,
+      "quads": 56,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-hand_female_primitive_stylized.L",
+      "poids": null
+    },
+    {
+      "nom": "GEO-thumb_female_primitive_stylized.R",
+      "sommets": 59,
+      "faces": 58,
+      "triangles": 2,
+      "quads": 56,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-hand_female_primitive_stylized.R",
+      "poids": null
+    },
+    {
+      "nom": "GEO-thumb_male_primitive_realistic.L",
+      "sommets": 66,
+      "faces": 64,
+      "triangles": 0,
+      "quads": 64,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-hand_male_primitive_realistic.L",
+      "poids": null
+    },
+    {
+      "nom": "GEO-thumb_male_primitive_realistic.R",
+      "sommets": 66,
+      "faces": 64,
+      "triangles": 0,
+      "quads": 64,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-hand_male_primitive_realistic.R",
+      "poids": null
+    },
+    {
+      "nom": "GEO-thumb_male_primitive_stylized.L",
+      "sommets": 58,
+      "faces": 56,
+      "triangles": 0,
+      "quads": 56,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-hand_male_primitive_stylized.L",
+      "poids": null
+    },
+    {
+      "nom": "GEO-thumb_male_primitive_stylized.R",
+      "sommets": 58,
+      "faces": 56,
+      "triangles": 0,
+      "quads": 56,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-hand_male_primitive_stylized.R",
+      "poids": null
+    },
+    {
+      "nom": "GEO-thumb_primitive_female_realistic.L",
+      "sommets": 66,
+      "faces": 64,
+      "triangles": 0,
+      "quads": 64,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-hand_primitive_female_realistic.L",
+      "poids": null
+    },
+    {
+      "nom": "GEO-thumb_primitive_female_realistic.R",
+      "sommets": 66,
+      "faces": 64,
+      "triangles": 0,
+      "quads": 64,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-hand_primitive_female_realistic.R",
+      "poids": null
+    },
+    {
+      "nom": "GEO-toe_big_female_primitive_stylized.L",
+      "sommets": 42,
+      "faces": 40,
+      "triangles": 0,
+      "quads": 40,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-foot_female_primitive_stylized.L",
+      "poids": null
+    },
+    {
+      "nom": "GEO-toe_big_female_primitive_stylized.R",
+      "sommets": 42,
+      "faces": 40,
+      "triangles": 0,
+      "quads": 40,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-foot_female_primitive_stylized.R",
+      "poids": null
+    },
+    {
+      "nom": "GEO-toe_big_male_primitive_stylized.L",
+      "sommets": 42,
+      "faces": 40,
+      "triangles": 0,
+      "quads": 40,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-foot_male_primitive_stylized.L",
+      "poids": null
+    },
+    {
+      "nom": "GEO-toe_big_male_primitive_stylized.R",
+      "sommets": 42,
+      "faces": 40,
+      "triangles": 0,
+      "quads": 40,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-foot_male_primitive_stylized.R",
+      "poids": null
+    },
+    {
+      "nom": "GEO-toe_big_primitive_female_realistic.L",
+      "sommets": 50,
+      "faces": 48,
+      "triangles": 0,
+      "quads": 48,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-foot_primitive_female_realistic.L",
+      "poids": null
+    },
+    {
+      "nom": "GEO-toe_big_primitive_female_realistic.R",
+      "sommets": 50,
+      "faces": 48,
+      "triangles": 0,
+      "quads": 48,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-foot_primitive_female_realistic.R",
+      "poids": null
+    },
+    {
+      "nom": "GEO-toe_index_female_primitive_stylized.L",
+      "sommets": 42,
+      "faces": 40,
+      "triangles": 0,
+      "quads": 40,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-foot_female_primitive_stylized.L",
+      "poids": null
+    },
+    {
+      "nom": "GEO-toe_index_female_primitive_stylized.R",
+      "sommets": 42,
+      "faces": 40,
+      "triangles": 0,
+      "quads": 40,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-foot_female_primitive_stylized.R",
+      "poids": null
+    },
+    {
+      "nom": "GEO-toe_index_male_primitive_realistic.L",
+      "sommets": 58,
+      "faces": 56,
+      "triangles": 0,
+      "quads": 56,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-foot.005_male_primitive_realistic.L",
+      "poids": null
+    },
+    {
+      "nom": "GEO-toe_index_male_primitive_realistic.R",
+      "sommets": 58,
+      "faces": 56,
+      "triangles": 0,
+      "quads": 56,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-foot.005_male_primitive_realistic.R",
+      "poids": null
+    },
+    {
+      "nom": "GEO-toe_index_male_primitive_stylized.L",
+      "sommets": 42,
+      "faces": 40,
+      "triangles": 0,
+      "quads": 40,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-foot_male_primitive_stylized.L",
+      "poids": null
+    },
+    {
+      "nom": "GEO-toe_index_male_primitive_stylized.R",
+      "sommets": 42,
+      "faces": 40,
+      "triangles": 0,
+      "quads": 40,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-foot_male_primitive_stylized.R",
+      "poids": null
+    },
+    {
+      "nom": "GEO-toe_index_primitive_female_realistic.L",
+      "sommets": 58,
+      "faces": 56,
+      "triangles": 0,
+      "quads": 56,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-foot_primitive_female_realistic.L",
+      "poids": null
+    },
+    {
+      "nom": "GEO-toe_index_primitive_female_realistic.R",
+      "sommets": 58,
+      "faces": 56,
+      "triangles": 0,
+      "quads": 56,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-foot_primitive_female_realistic.R",
+      "poids": null
+    },
+    {
+      "nom": "GEO-toe_middle_female_primitive_stylized.L",
+      "sommets": 42,
+      "faces": 40,
+      "triangles": 0,
+      "quads": 40,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-foot_female_primitive_stylized.L",
+      "poids": null
+    },
+    {
+      "nom": "GEO-toe_middle_female_primitive_stylized.R",
+      "sommets": 42,
+      "faces": 40,
+      "triangles": 0,
+      "quads": 40,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-foot_female_primitive_stylized.R",
+      "poids": null
+    },
+    {
+      "nom": "GEO-toe_middle_male_primitive_realistic.L",
+      "sommets": 58,
+      "faces": 56,
+      "triangles": 0,
+      "quads": 56,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-foot.005_male_primitive_realistic.L",
+      "poids": null
+    },
+    {
+      "nom": "GEO-toe_middle_male_primitive_realistic.R",
+      "sommets": 58,
+      "faces": 56,
+      "triangles": 0,
+      "quads": 56,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-foot.005_male_primitive_realistic.R",
+      "poids": null
+    },
+    {
+      "nom": "GEO-toe_middle_male_primitive_stylized.L",
+      "sommets": 42,
+      "faces": 40,
+      "triangles": 0,
+      "quads": 40,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-foot_male_primitive_stylized.L",
+      "poids": null
+    },
+    {
+      "nom": "GEO-toe_middle_male_primitive_stylized.R",
+      "sommets": 42,
+      "faces": 40,
+      "triangles": 0,
+      "quads": 40,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-foot_male_primitive_stylized.R",
+      "poids": null
+    },
+    {
+      "nom": "GEO-toe_middle_primitive_female_realistic.L",
+      "sommets": 58,
+      "faces": 56,
+      "triangles": 0,
+      "quads": 56,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-foot_primitive_female_realistic.L",
+      "poids": null
+    },
+    {
+      "nom": "GEO-toe_middle_primitive_female_realistic.R",
+      "sommets": 58,
+      "faces": 56,
+      "triangles": 0,
+      "quads": 56,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-foot_primitive_female_realistic.R",
+      "poids": null
+    },
+    {
+      "nom": "GEO-toe_pinky_female_primitive_stylized.L",
+      "sommets": 50,
+      "faces": 48,
+      "triangles": 0,
+      "quads": 48,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-foot_female_primitive_stylized.L",
+      "poids": null
+    },
+    {
+      "nom": "GEO-toe_pinky_female_primitive_stylized.R",
+      "sommets": 50,
+      "faces": 48,
+      "triangles": 0,
+      "quads": 48,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-foot_female_primitive_stylized.R",
+      "poids": null
+    },
+    {
+      "nom": "GEO-toe_pinky_male_primitive_realistic.L",
+      "sommets": 58,
+      "faces": 56,
+      "triangles": 0,
+      "quads": 56,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-foot.005_male_primitive_realistic.L",
+      "poids": null
+    },
+    {
+      "nom": "GEO-toe_pinky_male_primitive_realistic.R",
+      "sommets": 58,
+      "faces": 56,
+      "triangles": 0,
+      "quads": 56,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-foot.005_male_primitive_realistic.R",
+      "poids": null
+    },
+    {
+      "nom": "GEO-toe_pinky_male_primitive_stylized.L",
+      "sommets": 50,
+      "faces": 48,
+      "triangles": 0,
+      "quads": 48,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-foot_male_primitive_stylized.L",
+      "poids": null
+    },
+    {
+      "nom": "GEO-toe_pinky_male_primitive_stylized.R",
+      "sommets": 50,
+      "faces": 48,
+      "triangles": 0,
+      "quads": 48,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-foot_male_primitive_stylized.R",
+      "poids": null
+    },
+    {
+      "nom": "GEO-toe_pinky_primitive_female_realistic.L",
+      "sommets": 58,
+      "faces": 56,
+      "triangles": 0,
+      "quads": 56,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-foot_primitive_female_realistic.L",
+      "poids": null
+    },
+    {
+      "nom": "GEO-toe_pinky_primitive_female_realistic.R",
+      "sommets": 58,
+      "faces": 56,
+      "triangles": 0,
+      "quads": 56,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-foot_primitive_female_realistic.R",
+      "poids": null
+    },
+    {
+      "nom": "GEO-toe_ring_female_primitive_stylized.L",
+      "sommets": 42,
+      "faces": 40,
+      "triangles": 0,
+      "quads": 40,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-foot_female_primitive_stylized.L",
+      "poids": null
+    },
+    {
+      "nom": "GEO-toe_ring_female_primitive_stylized.R",
+      "sommets": 42,
+      "faces": 40,
+      "triangles": 0,
+      "quads": 40,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-foot_female_primitive_stylized.R",
+      "poids": null
+    },
+    {
+      "nom": "GEO-toe_ring_male_primitive_realistic.L",
+      "sommets": 58,
+      "faces": 56,
+      "triangles": 0,
+      "quads": 56,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-foot.005_male_primitive_realistic.L",
+      "poids": null
+    },
+    {
+      "nom": "GEO-toe_ring_male_primitive_realistic.R",
+      "sommets": 58,
+      "faces": 56,
+      "triangles": 0,
+      "quads": 56,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-foot.005_male_primitive_realistic.R",
+      "poids": null
+    },
+    {
+      "nom": "GEO-toe_ring_male_primitive_stylized.L",
+      "sommets": 42,
+      "faces": 40,
+      "triangles": 0,
+      "quads": 40,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-foot_male_primitive_stylized.L",
+      "poids": null
+    },
+    {
+      "nom": "GEO-toe_ring_male_primitive_stylized.R",
+      "sommets": 42,
+      "faces": 40,
+      "triangles": 0,
+      "quads": 40,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-foot_male_primitive_stylized.R",
+      "poids": null
+    },
+    {
+      "nom": "GEO-toe_ring_primitive_female_realistic.L",
+      "sommets": 58,
+      "faces": 56,
+      "triangles": 0,
+      "quads": 56,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-foot_primitive_female_realistic.L",
+      "poids": null
+    },
+    {
+      "nom": "GEO-toe_ring_primitive_female_realistic.R",
+      "sommets": 58,
+      "faces": 56,
+      "triangles": 0,
+      "quads": 56,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "GEO-foot_primitive_female_realistic.R",
+      "poids": null
+    },
+    {
+      "nom": "Hand  - Realistic",
+      "sommets": 831,
+      "faces": 820,
+      "triangles": 0,
+      "quads": 819,
+      "ngones": 1,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": null,
+      "poids": null
+    },
+    {
+      "nom": "Hand - Stylized ",
+      "sommets": 871,
+      "faces": 880,
+      "triangles": 22,
+      "quads": 858,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": null,
+      "poids": null
+    },
+    {
+      "nom": "Head - Generic Topology",
+      "sommets": 318,
+      "faces": 316,
+      "triangles": 0,
+      "quads": 316,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": null,
+      "poids": null
+    },
+    {
+      "nom": "Head - Planar",
+      "sommets": 318,
+      "faces": 316,
+      "triangles": 0,
+      "quads": 316,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": null,
+      "poids": null
+    },
+    {
+      "nom": "Jaw - Realistic",
+      "sommets": 5294,
+      "faces": 5058,
+      "triangles": 4,
+      "quads": 5002,
+      "ngones": 52,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": null,
+      "poids": null
+    },
+    {
+      "nom": "Jaw - Stylized ",
+      "sommets": 6566,
+      "faces": 6308,
+      "triangles": 0,
+      "quads": 6308,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": null,
+      "poids": null
+    },
+    {
+      "nom": "Skull - Planar",
+      "sommets": 900,
+      "faces": 898,
+      "triangles": 0,
+      "quads": 898,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": null,
+      "poids": null
+    },
+    {
+      "nom": "Skull - Realistic",
+      "sommets": 11684,
+      "faces": 11634,
+      "triangles": 0,
+      "quads": 11634,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": null,
+      "poids": null
+    }
+  ],
+  "armatures": [],
+  "actions": [],
+  "hauteur_m": 2.258,
+  "anomalies": [
+    "Foot - Realistic : n-gones présents",
+    "GEO-head_animation_realistic : n-gones présents",
+    "GEO-head_sculpting_realistic : n-gones présents",
+    "GEO-nose_male_primitive_stylized : n-gones présents",
+    "Hand  - Realistic : n-gones présents",
+    "Jaw - Realistic : n-gones présents",
+    "aucune armature"
+  ]
+}

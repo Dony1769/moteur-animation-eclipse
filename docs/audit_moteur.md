@@ -70,3 +70,10 @@ Chaque étape : code, test automatique, rapport, commit. Une étape non testée 
 - Maria (`docs/rapports/maria.json`) : type `armature_et_poids`, hauteur 1,75 m, 65 os Mixamo (convention reconnue), 8 094 sommets, 4 influences au maximum par sommet, poids normalisés, 0 anomalie. L'épée est un maillage séparé (`Maria_sword`, 42 sommets, 1 groupe), utile pour le retrait de la main.
 - HBM (`assets/hbm`) : type `sans_armature`, 382 pièces, 7 signalements (n-gones sur des pièces de visage et de pied). Pas un personnage complet.
 - Limite : le diagnostic lit seulement ; aucune correction n'est faite. Le test sur un FBX de personnage complet sans skinning reste à fournir.
+
+## 7. Test B : source trouvée, libre, sans skinning
+
+- Le bundle HBM contient des corps complets sans armature : `GEO-body_male_realistic` et `GEO-body_female_realistic` (10 582 sommets, presque tout en quads, UV `UVMap`, pas de matériau, pas de groupes de sommets), ainsi que les variantes stylisées (12 502 sommets).
+- Il est déjà présent dans `assets/hbm` ; rapport complet dans `docs/rapports/hbm_bundle.json`.
+- Plan pour le test B : isoler `GEO-body_male_realistic` (sans les yeux ni les pièces séparées), lui assigner un matériau neutre, puis appliquer les étapes 2 à 8 de la mission (registre, auto-skinning, auto-rig).
+- Licence : Human Base Meshes est distribué par Blender Studio ; à vérifier dans le README officiel avant publication. Pour l'apprentissage, aucune limite.
