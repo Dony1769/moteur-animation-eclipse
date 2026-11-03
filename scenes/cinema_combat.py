@@ -142,7 +142,7 @@ def teinter(mat, couleur):
 
 # personnages : A originale (gauche, face à B), B teintée (droite)
 PERSOS = {}
-for cle, x0, angle, teinte in (("A", -6.0, _m.pi / 2, None), ("B", 6.0, -_m.pi / 2, (0.35, 0.55, 1.0))):
+for cle, x0, angle, teinte in (("A", -6.0, _m.pi / 2, None), ("B", 6.0, -_m.pi / 2, (0.62, 0.8, 1.0))):
     objs = charger("Personnage_Maria.fbx")
     retirer_cubes(objs)
     arm = [o for o in objs if o.type == "ARMATURE"][0]
@@ -243,10 +243,22 @@ B.rotation_mode = "XYZ"
 for f, ang in ((DERNIER_COUP + 40, 0.0), (DERNIER_COUP + 80, -_m.pi / 2)):
     B.rotation_euler.x = ang
     B.keyframe_insert("rotation_euler", index=0, frame=f)
-B.location.z = 0.0
-B.keyframe_insert("location", index=2, frame=DERNIER_COUP + 40)
-B.location.z = 0.05
-B.keyframe_insert("location", index=2, frame=DERNIER_COUP + 80)
+# hauteur image par image : le point le plus bas du maillage reste exactement au sol
+def _point_bas(arm):
+    dg = bpy.context.evaluated_depsgraph_get()
+    zs = []
+    for o in [x for x in bpy.data.objects if x.type == "MESH" and x.parent is arm or (x.type == "MESH" and x.find_armature() is arm)]:
+        ev = o.evaluated_get(dg)
+        zs += [(ev.matrix_world @ Vector(c)).z for c in ev.bound_box]
+    return min(zs)
+
+for f in range(DERNIER_COUP + 40, DERNIER_COUP + 81, 2):
+    sc.frame_set(f)
+    B.location.z = 0.0                      # repartir de zéro à chaque image : pas d'accumulation
+    bpy.context.view_layer.update()
+    B.location.z = -_point_bas(B)           # point le plus bas exactement à z = 0
+    B.keyframe_insert("location", index=2, frame=f)
+sc.frame_set(1)
 
 # effets : débris de sable en arc à chaque impact (gabarit Poly Haven, pas de primitive)
 rnd2 = random.Random(11)
@@ -286,7 +298,7 @@ PLANS = [
     (640,  "ContreJour",  (0.0, -12.0, 0.35), 96, 0,   35,  9.0, 2.8),
     (841,  "PlanProfilB", (0.8, -11.6, 1.35), 90, 0,   50,  2.6, 2.0),
     (1081, "PlanLarge2",  (0.0, -14.0, 3.0), 76, 0,    35, 12.0, 2.8),
-    (1181, "PlanVictoire", (0.0, -11.5, 1.4), 90, 0,   35, 10.0, 2.8),
+    (1181, "PlanVictoire", (0.0, -14.0, 2.4), 84, 0,   35, 12.0, 2.8),
 ]
 marqueurs = []
 for frame, nom, pos, rot_x, rot_z, lentille, mise_au_point, ouverture in PLANS:

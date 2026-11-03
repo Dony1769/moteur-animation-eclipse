@@ -58,7 +58,7 @@ def piste(evenements, duree_images, sortie_wav):
     mix = np.zeros(total)
     for image, type_ in evenements:
         son = BANQUE[type_]()
-        debut = int(image / FPS * RATE)
+        debut = int((image - 1) / FPS * RATE)   # image Blender 1 = instant 0
         fin = min(total, debut + len(son))
         mix[debut:fin] += son[: fin - debut]
     mix = np.clip(mix * 0.8, -1, 1)

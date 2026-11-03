@@ -60,7 +60,7 @@ def victoire(t):
     """Pose de victoire : bras levé avec l'épée, légère respiration."""
     souffle = 0.03 * math.sin(2 * math.pi * t)
     return {
-        "LeftArm": (-2.4 + souffle, 0.0, -0.2),
+        "LeftArm": (2.4 + souffle, 0.0, -0.2),
         "LeftForeArm": (-0.3, 0.0, 0.0),
         "RightArm": (0.2, 0.0, 0.2),
         "RightForeArm": (-0.5, 0.0, 0.0),

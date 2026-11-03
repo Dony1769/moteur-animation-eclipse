@@ -89,3 +89,9 @@
 - Le notebook monte Drive à chaque session (une autorisation à donner) et copie les fichiers manquants. Le dépôt de secours à l'upload reste en place.
 - À faire une fois par vous : créer le dossier et y déposer les cinq fichiers. Un nom avec espaces au lieu de tirets bas est accepté.
 - Simulation locale : copie des cinq fichiers réussie depuis un dossier factice. Test réel sur Colab à faire.
+
+## Cinématique de combat (état)
+- Rendu complet arrêté avant correction : la chute de B reste fausse (altitude calculée incorrecte). À corriger avant tout nouveau rendu.
+- Son : décalage d'une image corrigé, non écouté.
+- Victoire de A : bras levé, vérifié en valeurs, pas encore à l'image.
+- Voir engine/APPRENTISSAGE.md pour les règles et l'état.
