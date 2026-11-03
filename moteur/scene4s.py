@@ -18,7 +18,7 @@ import bmesh
 import bpy
 from mathutils import Vector
 
-from moteur import costume, personnage, sabre
+from moteur import costume, personnage, sabre, mocap, cheveux
 
 FPS = 24
 NB_IMAGES = 96          # 4 s
@@ -310,7 +310,7 @@ def construire(scene):
     scene.render.fps = FPS
     corps, arm = personnage.creer()
     costume.appliquer_costume(corps)
-    costume.ajouter_cheveux(arm)
+    cheveux.ajouter(corps)
     costume.ajouter_yeux(arm)
     sabre.creer(arm)
     racine = bpy.data.objects.new("Racine", None)
@@ -319,7 +319,12 @@ def construire(scene):
     arm.parent = racine
     sol = decor()
     appliquer_materiaux(corps, sol)
-    animer(arm, racine)
+    bpy.context.view_layer.objects.active = arm
+    bpy.ops.object.mode_set(mode="OBJECT")
+    mocap.animer(arm)                                   # course, saut, coup : clips CMU retargetés
+    fing = {f: (0.5 if f <= 36 or 61 <= f <= 72 else 0.0) for f in range(1, NB_IMAGES + 1)}
+    mocap.doigts(arm, "R", fing)
+    mocap.doigts(arm, "L", fing)
     deplacer(racine)
     cam = camera(scene, corps)
     secousse(cam)
