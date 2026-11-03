@@ -244,3 +244,60 @@ Source : sidefx.com, Cloth Configure Object.
 - Assise et IK des pieds : aucune source Epic/Blender textuelle obtenue (forums seulement).
 - Pin de cape dans Blender (groupe de sommets, Pin Stiffness) : vidéos seulement.
 - Peau (subsurface), visage (formes-clés) : voir section 12 (lus en résumé, valeurs non lues).
+
+## 16. Caméra, composition, étalonnage, sound design, synchro labiale (sources hors site officiel)
+
+Règle : « lu » = texte de la méthode obtenu. Tout ce qui suit n'est PAS testé ; le test se fera après la livraison du MP4.
+
+### 16.1 Focales (Cinema 4D, School of Motion) : lu
+- 36 mm : grand-angle (valeur par défaut C4D), accentue la vitesse sur l'axe Z.
+- ~50 mm : objectif moyen, proche de la vision humaine.
+- ~150 mm : téléobjectif, compresse l'espace, bon pour les travellings latéraux et l'orbite.
+- Visages et personnages : éviter le grand-angle rapproché (déformation).
+- Alterner plans larges et longs pour le rythme.
+- Dolly zoom : passer d'un grand-angle à un long objectif, subtilement.
+- Décor : construire seulement ce qui est visible par la caméra (« fake walls »).
+- Source : https://www.schoolofmotion.com/blog/professional-guide-renders-look-better-choose-focal-length
+
+### 16.2 Composition (filmlifestyle) : lu, partiellement
+- Règle des tiers, lignes directrices, équilibre asymétrique vs symétrique.
+- Plans : gros plan (intimité), large (établir le lieu), plongée (vulnérabilité), contre-plongée (puissance), plan hollandais (tension), profondeur de champ.
+- Mouvements : panoramique, tilt, travelling, dolly, grue ; chaque mouvement doit être motivé.
+- Effet Koulechov : l'ordre des plans change l'émotion.
+- Non lu : headroom, lead room, règle des 180° (non traités dans la page).
+- Source : https://filmlifestyle.com/shot-composition/
+
+### 16.3 Continuité de caméra (article sur les règles de montage) : lu
+- Règle de l'axe : garder le personnage du même côté de l'écran d'un plan à l'autre.
+- Champ/contrechamp : les regards vont dans des directions opposées.
+- Déplacement : garder la même direction d'écran d'un plan à l'autre.
+- Source : article en anglais (lien conservé dans l'historique de la session), relu.
+
+### 16.4 Rendu cinématique 3D (RenderHub) : lu, sans valeurs
+- Éclairage : scène de nuit avec lumières dures sur le sujet, fond diffus ; bleu, vert possibles.
+- Étalonnage : corriger balance des blancs, exposition, saturation ; ombres froides, hautes lumières chaudes.
+- Format cinéma : bandes noires horizontales, léger flou sur les bords.
+- Aberration chromatique : faible.
+- Non lu : valeurs chiffrées (bandes, aberration, couleurs), grain, flou de mouvement.
+
+### 16.5 Sound design (bruitages de sabre, armure) : lu, sans valeurs
+- Enregistrer des sources réelles, plusieurs variantes (frotter un tissu pour un « whoosh »).
+- Doubler, transposer (pitch vers le haut et le bas), compresser.
+- Superposer des couches : copies transposées, EQ légèrement différent à chaque couche, réverbération différente à chaque couche.
+- Tester plusieurs objets métalliques pour le bruit d'armure.
+- Non lu : semitons, réglages EQ, durées de réverbération.
+- Source : https://www.moddb.com/tutorials/making-sound-effects-for-video-games-4
+
+### 16.6 Synchronisation labiale expressive (JALI) : lu, en grandes lignes
+- Entrées : audio + transcription.
+- Phonème → visème : correspondance multiple (un son peut avoir plusieurs formes).
+- Décomposition en deux composantes : mâchoire (jaw) et lèvres (lip).
+- Pilotage d'un rig facial par unités d'action FACS.
+- Sortie modifiable par l'animateur.
+- Non lu : algorithmes exacts de jaw/lip.
+- Source : https://www.dgp.toronto.edu/~elf/jali.html
+
+### 16.7 Non encore lu
+- Voix de personnage (synthèse, clonage) : pas de source de méthode lue.
+- Effets magiques volumétriques, grain et flou de mouvement : non lus.
+- Étalonnage LUT détaillé : résultats de liens seulement.
