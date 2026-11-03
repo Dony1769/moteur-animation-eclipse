@@ -21,3 +21,9 @@
   Poly Haven est une étape à compléter. Sans elle, le rendu échoue dès le premier réglage.
 - Le script accepte le GPU (variables DEVICE et BACKEND), mais le profil gpu-kaggle n'est pas mesuré : il
   faut que l'utilisateur lance le notebook avec GPU et Internet activés, puis colle les lignes de résultats.
+
+## Blocage Kaggle (utilisateur)
+- Le GPU et l'accès Internet de Kaggle exigent une vérification par téléphone. L'utilisateur ne reçoit pas le
+  SMS : ni GPU ni Internet dans le notebook. Sans Internet, le téléchargement de Blender et des assets échoue.
+- Le notebook ne plante plus sans GPU : il bascule en CPU. Le profil gpu-kaggle reste non mesuré.
+- Solution de repli proposée : Google Colab (GPU T4), à adapter si l'utilisateur accepte.
