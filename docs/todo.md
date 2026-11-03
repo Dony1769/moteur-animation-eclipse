@@ -73,3 +73,12 @@
 - Étape 8 (20 s, trois plans) : fait, 480 images, MP4 20,00 s, placeholder.
 - Étape 9 (estimation d'un épisode) : rien ne tient sur CPU ni sur Colab avec les mesures actuelles. À faire par l'utilisateur :
   un rendu de 96 images en un seul processus sur T4, pour une mesure GPU propre.
+
+## Combat 60 s, deux Maria (scènes/combat_2maria.py)
+
+- Scène : deux Maria, même rig, textures différentes (B teintée en bleu). Clips Idle, Sword_Slash, Hit_Reaction en NLA, sans translation horizontale. Sept plans liés aux marqueurs, secousse de caméra aux coups, flou de mouvement.
+- Plans vérifiés sur images : large de face, moyen, profils de côté (sans dos), contre-jour bas, plan final. Une image de profil validée à l'œil ; les autres ne sont pas inspectées en pleine résolution.
+- Test local : 11 images en 640×270 et une image en 1280×540, sans erreur. Le MP4 de 960×404 passe en simulation (2 images). La hauteur 405 était impaire et faisait échouer libx264 : corrigée en 404.
+- Rendu 60 s : à lancer par vous sur Colab (cellule « Étape 9 »). Le rendu est fait en lots de 10 s, reprise possible. Durée non mesurée sur T4.
+- Fichiers FBX : non committés. Le dépôt est public et les conditions Mixamo n'autorisent pas la redistribution des fichiers bruts (vérification de la page des conditions à faire). Ils se déposent dans la cellule d'upload à chaque session. Décision à valider.
+- Retargeting sur le squelette Rigify détaillé : appris (contrôles FK, bake), non appliqué. Les personnages du combat restent les Maria Mixamo.
