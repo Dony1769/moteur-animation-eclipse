@@ -31,6 +31,10 @@ def valider(rapport):
         test(f"{nom} : sommets présents", m["sommets"] > 0, f"{m['sommets']} sommets")
         test(f"{nom} : UV présentes", len(m.get("uv_calques", [])) > 0, str(m.get("uv_calques")))
         p = m.get("poids")
+        if p is None and m.get("parent_type") == "BONE" and m.get("parent_os"):
+            # Règle : une pièce qui ne se déforme pas (œil) peut suivre un os en rigide.
+            test(f"{nom} : attache rigide à un os", True, f"suit l'os {m['parent_os']}")
+            continue
         if p is None:
             test(f"{nom} : skinning présent", False, "aucun groupe de sommets")
             continue

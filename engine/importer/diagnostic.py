@@ -72,6 +72,8 @@ def _mesh_info(o):
         "materiaux": [s.material.name for s in o.material_slots if s.material],
         "modificateur_armature": armature_mod[0].object.name if armature_mod and armature_mod[0].object else None,
         "parent": o.parent.name if o.parent else None,
+        "parent_type": o.parent_type if o.parent else None,
+        "parent_os": (o.parent_bone or None) if o.parent else None,
         "poids": _poids(o) if o.vertex_groups else None,
     }
 

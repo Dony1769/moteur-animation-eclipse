@@ -1,0 +1,95 @@
+{
+  "fichier": "/tmp/claude-0/-home-claude/9ce8e1e5-f7cf-5619-8a75-3c6d9a11ab1c/scratchpad/corps_skin.blend",
+  "type": "armature_et_poids",
+  "objets": [
+    "GEO-body_male_realistic",
+    "GEO-body_male_realistic.eye.L",
+    "GEO-body_male_realistic.eye.R",
+    "Squelette_HBM"
+  ],
+  "meshes": [
+    {
+      "nom": "GEO-body_male_realistic",
+      "sommets": 10582,
+      "faces": 10590,
+      "triangles": 20,
+      "quads": 10570,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": "Squelette_HBM",
+      "parent": "Squelette_HBM",
+      "parent_type": "OBJECT",
+      "parent_os": null,
+      "poids": {
+        "sommets": 10582,
+        "sommets_sans_poids": 0,
+        "max_influences_par_sommet": 4,
+        "sommets_poids_non_normalises": 0,
+        "groupes_de_sommets": 19
+      }
+    },
+    {
+      "nom": "GEO-body_male_realistic.eye.L",
+      "sommets": 546,
+      "faces": 544,
+      "triangles": 0,
+      "quads": 544,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "Squelette_HBM",
+      "parent_type": "BONE",
+      "parent_os": "mixamorig:Head",
+      "poids": null
+    },
+    {
+      "nom": "GEO-body_male_realistic.eye.R",
+      "sommets": 546,
+      "faces": 544,
+      "triangles": 0,
+      "quads": 544,
+      "ngones": 0,
+      "uv_calques": [
+        "UVMap"
+      ],
+      "materiaux": [],
+      "modificateur_armature": null,
+      "parent": "Squelette_HBM",
+      "parent_type": "BONE",
+      "parent_os": "mixamorig:Head",
+      "poids": null
+    }
+  ],
+  "armatures": [
+    {
+      "nom": "Squelette_HBM",
+      "os": 19,
+      "os_mixamo": 19,
+      "convention": "mixamo",
+      "racine": [
+        "mixamorig:Hips"
+      ],
+      "echelle": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "rotation_base_deg": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    }
+  ],
+  "actions": [],
+  "hauteur_m": 1.6983,
+  "anomalies": [
+    "GEO-body_male_realistic : pas de matériau"
+  ]
+}

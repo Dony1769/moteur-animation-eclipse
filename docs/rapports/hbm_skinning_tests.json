@@ -1,0 +1,81 @@
+{
+  "entree": "/tmp/claude-0/-home-claude/9ce8e1e5-f7cf-5619-8a75-3c6d9a11ab1c/scratchpad/corps_hbm.blend",
+  "mesure": {
+    "zmin": -0.0055,
+    "zmax": 1.6844,
+    "H": 1.69,
+    "xc": -2.2644,
+    "yc": -0.0342,
+    "xmin": -2.7047,
+    "xmax": -1.824
+  },
+  "methode_skinning": "ARMATURE_AUTO (chaleur)",
+  "os": 19,
+  "poids": {
+    "sommets_sans_poids": 0,
+    "sommets_poids_non_normalises": 0,
+    "max_influences_par_sommet": 4,
+    "groupes": 19
+  },
+  "pieces_rigides": [
+    "GEO-body_male_realistic.eye.L",
+    "GEO-body_male_realistic.eye.R"
+  ],
+  "tests_deformation": [
+    {
+      "test": "pose de repos : le skinning ne modifie pas l'apparence",
+      "ok": true,
+      "detail": "écart maximal 0.0005 mm"
+    },
+    {
+      "test": "épaule Left (flexion du bras)",
+      "ok": true,
+      "detail": "1467/10582 sommets bougent, max 0.667 m, fuite vers sommets non rattachés 65/9342 (0.70%), NaN 0"
+    },
+    {
+      "test": "coude Left",
+      "ok": true,
+      "detail": "1023/10582 sommets bougent, max 0.387 m, fuite vers sommets non rattachés 0/9621 (0.00%), NaN 0"
+    },
+    {
+      "test": "hanche Left (flexion de la cuisse)",
+      "ok": true,
+      "detail": "1922/10582 sommets bougent, max 0.458 m, fuite vers sommets non rattachés 10/8825 (0.11%), NaN 0"
+    },
+    {
+      "test": "genou Left",
+      "ok": true,
+      "detail": "1545/10582 sommets bougent, max 0.378 m, fuite vers sommets non rattachés 7/9088 (0.08%), NaN 0"
+    },
+    {
+      "test": "épaule Right (flexion du bras)",
+      "ok": true,
+      "detail": "1467/10582 sommets bougent, max 0.667 m, fuite vers sommets non rattachés 64/9342 (0.69%), NaN 0"
+    },
+    {
+      "test": "coude Right",
+      "ok": true,
+      "detail": "1023/10582 sommets bougent, max 0.387 m, fuite vers sommets non rattachés 0/9624 (0.00%), NaN 0"
+    },
+    {
+      "test": "hanche Right (flexion de la cuisse)",
+      "ok": true,
+      "detail": "1916/10582 sommets bougent, max 0.458 m, fuite vers sommets non rattachés 15/8831 (0.17%), NaN 0"
+    },
+    {
+      "test": "genou Right",
+      "ok": true,
+      "detail": "1544/10582 sommets bougent, max 0.378 m, fuite vers sommets non rattachés 6/9085 (0.07%), NaN 0"
+    },
+    {
+      "test": "colonne (flexion)",
+      "ok": true,
+      "detail": "7068/10582 sommets bougent, max 0.211 m, fuite vers sommets non rattachés 0/3648 (0.00%), NaN 0"
+    },
+    {
+      "test": "cou",
+      "ok": true,
+      "detail": "4206/10582 sommets bougent, max 0.123 m, fuite vers sommets non rattachés 6/6686 (0.09%), NaN 0"
+    }
+  ]
+}
