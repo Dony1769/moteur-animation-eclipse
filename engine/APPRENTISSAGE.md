@@ -92,3 +92,31 @@ Ce qui n'est PAS encore fait ni testé :
 Règle de travail :
 - Pour un épisode, le script demande un personnage par son nom (dans le registre `engine/personnages.py`), avec ses variantes. Un personnage absent du registre n'est pas inventé à la volée : il est créé et contrôlé d'abord, puis ajouté au registre.
 - Tout personnage nouveau passe par : mesure (hauteur, z minimal), contrôle d'image sous deux angles, contrôle de la déformation sur trois poses, puis seulement l'usage dans un épisode.
+
+## 12. Rigify sur un nouveau maillage, visage, peau (recherches approfondies)
+Les licences sont ignorées pour cet apprentissage ; elles restent à vérifier avant d'utiliser un asset dans une vidéo publiée.
+
+### 12.1 Rigify sur un nouveau maillage (source : guide Neural4D, blog.neural4d.com, lu et résumé)
+1. Edit > Preferences > Add-ons : activer Rigify (livré avec Blender).
+2. Shift+A > Armature > Human Meta-Rig, puis Tab (Edit Mode).
+3. Placer chaque articulation sur l'anatomie du maillage (épaules, coudes, genoux, hanches), de profil ; garder la symétrie (.L / .R, outil de symétrisation du menu Armature).
+4. Armature Properties > Rigify > Generate Rig. Le rig généré porte les contrôles (IK bras et jambes, doigts). On anime ce rig, pas le metarig.
+5. Sélectionner le maillage, puis shift-cliquer le rig généré, Ctrl+P > With Automatic Weights.
+6. Contrôle : Pose Mode, bouger épaules, genoux, hanches. Vérifier le modificateur Armature dans Modifier Properties et les groupes de sommets dans Object Data.
+7. Corrections : Weight Paint, pinceau Subtract pour retirer l'influence parasite, Blur pour adoucir, Weights > Normalize All.
+- Statut : procédure lue, pas encore testée sur un maillage nouveau. Test à faire sur Maria ou sur un corps de test, avec contrôle de déformation sur trois poses.
+
+### 12.2 Peau réaliste (source : Blender Base Camp, lu)
+- Méthode : Principled BSDF, sous-surface (Subsurface) faible pour la translucidité, rayon faible pour les détails fins et plus grand pour les zones fines (oreilles), couleur de base proche du teint, couleur de sous-surface plus chaude, rugosité ajustée sous plusieurs éclairages, cartes de normales pour pores et rides, texture de veines sur Subsurface Color.
+- Les valeurs chiffrées ne sont PAS dans la source : elles seront trouvées par rendus de test (balayage de Subsurface et Radius, un rendu par valeur, contrôle à l'œil sous deux éclairages).
+- Rendu : réglages SSS modérés pour l'animation, sinon le temps de rendu explose.
+
+### 12.3 Visage : blendshapes (sources : tutoriels et articles ARKit, lus en résumé)
+- Méthode : créer des formes-clés (shape keys) pour les expressions de base, selon le jeu ARKit de 52 formes (tutoriel Blender Artists « 52 ARKit blendshapes »).
+- Commencer par un petit jeu : sourire, fermeture des yeux, ouverture de la bouche, sourcils. Tester chaque forme seule, puis en combinaison.
+- Statut : principe lu, pas encore testé. Le moteur utilise déjà les visages du rig Rain pour l'autre projet ; pour Maria, le visage n'est pas encore animé.
+
+### 12.4 Ce qui reste à tester (dans l'ordre)
+1. Rigify sur un corps de test : métarig, génération, poids automatiques, déformation sur trois poses.
+2. Skin : balayage des valeurs de sous-surface, un rendu par valeur, choix à l'œil.
+3. Visage : quelques formes-clés, contrôle image par image.
