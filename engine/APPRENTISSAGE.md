@@ -396,3 +396,41 @@ Règle : « lu » = texte de la méthode obtenu. Rien ici n'est testé ; les tes
 ### Bilan 2 à 8
 - Lu avec méthode utilisable : skinning (3), visèmes (5), marche (6), secondaire (7), éclairage (8), peau (4, sans valeurs).
 - Non lu : rigging IK/FK et contrôles faciaux (2), cheveux shader (4), course et sauts (6), valeurs de secondaire, puissances d'éclairage.
+
+## 19. Pipeline complet : son final, champ/contrechamp, encodage, compositing, topologie (statuts)
+
+Règle : « lu » = texte de la méthode obtenu. Rien ici n'est testé ; tests après chaque bloc.
+
+### 19.1 Son final, dialogue et loudness : lu (valeurs)
+- Streaming : -14 à -16 LUFS (Spotify et YouTube ~-14, Apple Music -16) ; broadcast EBU R128 -23 LUFS, ATSC A/85 -24 LKFS.
+- True peak : -1 dBTP (streaming, EBU), -2 dBTP (ATSC).
+- LRA max broadcast : 18 LU.
+- Pics avant masterisation : entre -6 et -3 dBFS.
+- Méthode : mixer avec headroom, limiteur true peak à -1 dBTP, mesurer le LUFS intégré, gain linéaire = cible - mesure, revérifier le true peak après gain.
+- Non lu : cibles séparées dialogue / musique, règles de ducking chiffrées.
+- Source : https://www.soundbridge.io/loudness-normalization-a-mixing-and-mastering-guide
+
+### 19.2 Champ/contrechamp, dialogue : lu (règles)
+- Axe d'action, ne jamais franchir la ligne ; plan de référence moyen d'abord.
+- Géographie fixe (A à gauche reste à gauche) ; regards en raccord (eyeline match) ; le plus grand regarde légèrement vers le bas, le plus petit vers le haut.
+- Échelle selon l'émotion ; angle selon le rapport de force ; plans de réaction pour le sous-texte.
+- Source : https://blog.indiecinema.co/shot-reverse-shot/
+- Distance à l'axe : non lue.
+
+### 19.3 Encodage H.264 (ffmpeg) : NON LU
+- La page ffmpeg a refusé l'accès (protection anti-robot). À retenter par une autre source écrite.
+
+### 19.4 Retargeting et bibliothèque de mouvements (Mixamo, Unreal) : NON LU
+- Résultats : forums et une fiche de vente. À retenter.
+
+### 19.5 Compositing Blender (glare, bloom, étalonnage nœuds) : NON LU
+- Résultats : billets de vente et pages de blog sans méthode lisible. À retenter.
+
+### 19.6 Topologie de personnage (visage, bouche, yeux) : NON LU
+- Résultats : wiki Reallusion (topologie CC) et forums polycount. À lire la page Reallusion « CC Face Topology Guide ».
+
+### 19.7 Restant du pipeline à lire
+- Dialogue (synthèse, phonèmes) : voir section 17.
+- Motion library (bibliothèque réutilisable) : 19.4.
+- Montage (rythme) : partiellement lu (section 16.2).
+- Export final : 19.3.
