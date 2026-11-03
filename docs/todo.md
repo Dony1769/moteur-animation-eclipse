@@ -53,3 +53,15 @@
 - À faire par l'utilisateur : lancer notebooks/colab_render.ipynb avec Exécution → Modifier le type d'exécution →
   GPU T4, puis coller les lignes de résultats. Le profil gpu-colab sera ajouté à docs/budget.md à partir de ces lignes.
 - Non testé sur GPU réel ici : le chemin GPU n'a été exécuté que sans GPU (repli CPU vérifié).
+
+## Étape 6 (guerrier) : état au 3 novembre 2026, 00 h 45 — NON VALIDÉE
+- Base : Human Base Meshes v1.4.1 (Blender Studio, CC0), corps masculin stylisé (GEO-body_male_stylized, 1,80 m).
+  Téléchargé depuis le miroir officiel ; fichiers dans assets/ (ignoré par git), jamais versionnés.
+- Rig Rigify généré (706 os), poids automatiques posés, FK des membres actif (IK_FK = 0).
+- Retargeting du clip CMU run/09_01 sur les contrôles FK : ÉCHEC. Les jambes ne tournent que de 9° à l'image 9
+  (le clip en demande 30 à 40°), le buste se penche de 22°. Planche de profil refusée.
+- Cause probable : le delta de rotation monde n'est pas correctement composé avec le repos des contrôles Rigify.
+  À reprendre avec un contrôle image par image (angles par os) avant tout nouveau rendu.
+- Pas d'épée, pas de cape, pas de visage rigé à ce stade.
+
+## Étapes 7 à 9 : non commencées (dépendent de l'étape 6 ou du placeholder).
