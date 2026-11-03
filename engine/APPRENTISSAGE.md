@@ -451,3 +451,19 @@ Règle : « lu » = texte de la méthode obtenu. Rien ici n'est testé ; tests a
 - Dimensions paires : non traité ici (déjà appliqué via pad dans le pipeline).
 - Source : https://academysoftwarefoundation.github.io/EncodingGuidelines/Encodeh264.html
 - Statut : lu. Test : À FAIRE pour le prochain MP4 (CRF 18, tune animation, faststart).
+
+### 19.10 Retargeting Mixamo vers un autre rig (Auto-Rig Pro, BlenderNation) : lu (procédure, sans réglages de pieds)
+- Générer le rig cible, match to rig ; FBX Mixamo : Alt+S pour l'échelle en pose de repos.
+- Source = armature Mixamo (freeze armature) ; cible = rig généré ; Build bones list ; preset de correspondance Mixamo.
+- Nettoyage : effacer les clés à remplacer ; push down au NLA pour corriger ; effacer les clés du haut du corps pour ne garder que jambes et pieds.
+- Correction des pieds et de la racine : NON LUE (l'article ne la traite pas).
+- Statut : lu (procédure). Test : À FAIRE.
+
+### 19.11 Fumée et effets lumineux (Cycles) : méthode lue, valeurs NON LUES
+- Principled Volume : une seule node pour fumée et flammes (texte lu) ; réglages chiffrés dans une vidéo, non lus.
+- Particules plutôt que volume : animer la taille des particules sur leur durée de vie ; plans de fumée transparents ; environ 150 plans cités par un lecteur (remarque, pas une règle).
+- Statut : méthodes lues ; valeurs NON LUES.
+
+### 19.12 Lecture sans résultat utilisable ce tour
+- Principled Hair BSDF : page de manuel (navigation seulement).
+- Fourreau et sangle : forums et articles sans procédure.
