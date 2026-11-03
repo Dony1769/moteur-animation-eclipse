@@ -42,7 +42,7 @@ def instance(gabarit, nom, pos, rot_z, echelle):
 
 rnd = random.Random(7)
 # 2. parois : deux rangées de falaises et de rochers de part et d'autre d'un passage (axe Y)
-for cote, x in (("G", -9.0), ("D", 9.0)):
+for cote, x in (("G", -7.0), ("D", 7.0)):          # passage resserré (±7 m) : à ±4,5 m, les falaises masquaient la caméra
     for i in range(-9, 10):
         y = i * 5.0 + rnd.uniform(-0.8, 0.8)
         gab = gabarits["falaise"] if i % 3 else gabarits["roc_a"]
@@ -52,7 +52,7 @@ for cote, x in (("G", -9.0), ("D", 9.0)):
                  (1.8, 1.8, hauteur * 2.2 / 4.6))
 
 # 3. sable : débris et rochers au sol, en instances
-for i in range(-6, 7):
+for i in range(-2, 3):
     for j in range(-12, 13):
         x = i * 3.0
         y = j * 2.6
@@ -157,7 +157,7 @@ for cle, x0, angle, teinte in (("A", -6.0, _m.pi / 2, None), ("B", 6.0, -_m.pi /
                     slot.material = slot.material.copy()
                     teinter(slot.material, teinte)
     arm.rotation_euler.z = angle
-    arm.location = (x0, -9.0, 0.0)
+    arm.location = (0.0, -9.0, 0.0)          # position locale ; la translation en X vient du chariot parent
     bpy.context.view_layer.update()
     zs = [(o.matrix_world @ Vector(c)).z for o in maillages for c in o.bound_box]
     arm.scale = tuple(s * (1.75 / (max(zs) - min(zs))) for s in arm.scale)
@@ -172,14 +172,19 @@ for arm in PERSOS.values():
     for pb in arm.pose.bones:
         pb.rotation_mode = "QUATERNION"
 
-# déplacements : pas de marche, puis course, puis position de combat (keyframes sur l'objet)
-TRAJET = {"A": [(1, -6.0), (96, -2.8), (168, -0.75), (NB, -0.75)],
-          "B": [(1, 6.0), (96, 2.8), (168, 0.75), (NB, 0.75)]}
+# déplacements : pas de marche, puis course, puis position de combat.
+# Le déplacement est porté par un objet parent par personnage (chariot), pas par le squelette :
+# les pistes NLA remplacent l'action du squelette, donc des clés posées dessus étaient perdues (mesuré).
+TRAJET = {"A": [(1, -3.2), (96, -2.0), (168, -0.75), (NB, -0.75)],
+          "B": [(1, 3.2), (96, 2.0), (168, 0.75), (NB, 0.75)]}
 for cle, arm in PERSOS.items():
+    chariot = bpy.data.objects.new("Chariot_" + cle, None)
+    sc.collection.objects.link(chariot)
+    arm.parent = chariot
     for f, x in TRAJET[cle]:
-        arm.location.x = x
-        arm.keyframe_insert("location", index=0, frame=f)
-    for fc in arm.animation_data.action.fcurves:
+        chariot.location = (x, 0.0, 0.0)
+        chariot.keyframe_insert("location", index=0, frame=f)
+    for fc in chariot.animation_data.action.fcurves:
         for kp in fc.keyframe_points:
             kp.interpolation = "LINEAR"
 
@@ -277,8 +282,29 @@ for h in IMPACTS:
             d.keyframe_insert("scale", frame=h + n)
 
 # sons : pas, sabre, impacts, chute (calés sur les images)
-for f in list(range(12, 168, 12)) + list(range(96, 168, 9)):
-    EVENEMENTS.append((f, "pas"))
+def contacts_pieds(arm, fin, ecart=5):
+    """Instants où un pied touche le sol : hauteur minimale de l'articulation du pied, mesurée image par image.
+    Un contact par pas, un pas par pied ; les plateaux de contact sont regroupés (écart minimal en images)."""
+    instants = []
+    for nom in ("mixamorig:LeftFoot", "mixamorig:RightFoot"):
+        pb = arm.pose.bones[nom]
+        hauteurs = []
+        for f in range(1, fin + 1):
+            sc.frame_set(f)
+            bpy.context.view_layer.update()
+            hauteurs.append((arm.matrix_world @ pb.head).z)
+        seuil = min(hauteurs) + 0.03
+        pied = []
+        for i in range(1, len(hauteurs) - 1):
+            if hauteurs[i] <= hauteurs[i - 1] and hauteurs[i] <= hauteurs[i + 1] and hauteurs[i] < seuil:
+                if not pied or i + 1 - pied[-1] >= ecart:
+                    pied.append(i + 1)
+        instants.extend(pied)
+    return sorted(instants)
+
+for cle, arm in PERSOS.items():
+    for f in contacts_pieds(arm, 168):
+        EVENEMENTS.append((f, "pas"))
 for debut, att in ATTAQUES:
     EVENEMENTS.append((debut + 6, "sabre"))
 for h in IMPACTS:
