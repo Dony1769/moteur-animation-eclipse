@@ -120,3 +120,39 @@ Les licences sont ignorées pour cet apprentissage ; elles restent à vérifier 
 1. Rigify sur un corps de test : métarig, génération, poids automatiques, déformation sur trois poses.
 2. Skin : balayage des valeurs de sous-surface, un rendu par valeur, choix à l'œil.
 3. Visage : quelques formes-clés, contrôle image par image.
+
+## 13. Apprentissage du 3 novembre : texte réellement lu
+
+Règle appliquée : un sujet est « lu » seulement si le texte de la méthode a été obtenu. Les pages du manuel officiel Blender renvoient seulement la navigation via l'outil de lecture ; les tutoriels vidéo sans transcription ne donnent rien. Ces cas sont marqués « non lu ».
+
+### 13.1 Cheveux (système de particules) : lu (résumé, pas testé)
+- Création (Growing) : nombre et longueur des cheveux ; le trajet de chaque particule est calculé à l'avance.
+- Style : réglages de physique de base, puis « Children » (cheveux enfants greffés) pour la forme.
+- Retouche : Particle Edit Mode (peigner, couper, allonger à la main ; les réglages de particules sont alors désactivés).
+- Dynamique : solveur de tissu appliqué aux cheveux.
+- Rendu Cycles : shaders Hair BSDF ou Hair Principled BSDF ; Particle Instance Modifier pour des brins épais.
+- État : lu. Valeurs exactes et test de rendu : NON FAIT.
+
+### 13.2 Épée tenue en main (parentage à un os) : lu (procédure, pas testée)
+- Créer des os « hand hold » détachés, parentés à chaque os de main (symétrie X activée) ; orienter ces os sans toucher à la main.
+- Placer l'épée à la tête de l'os « hand hold » droit, puis la parenter à cet os.
+- Prise (grip) : actions d'une seule image par main, doigts fermés autour de l'arme, jouées par-dessus les autres animations avec un masque limité aux os des doigts.
+- Source : tutoriel écrit de rosetta.to (sebastianlague, « RPG graphics E10 »).
+- État : lu. Test : NON FAIT. Le retrait d'une épée d'une main (lâcher, transfert) et le fourreau ne sont pas couverts par cette source.
+
+### 13.3 Attaque à l'épée (animation) : lu (procédure, pas testée)
+- Posture de repos pied avant, corps abaissé, petit mouvement de haut en bas sur une vingtaine d'images, première pose dupliquée pour boucler.
+- Bras de l'épée ramené par-dessus l'épaule vers l'image 9-10, avance, levée du pied, trajectoire diagonale.
+- Trajectoire de la lame : os temporaire à la pointe, chemin de mouvement affiché depuis l'image 9, à recalculer après modification.
+- Retour à la pose initiale vers l'image 30 pour éviter le glissement du pied.
+
+### 13.4 Ce qui est NON LU (sources vidéo seulement, ou pages du manuel inaccessibles)
+- Cape et tissu : simulation, pin group, réglages mass / stiffness / damping / distance de collision : non lu (article blendernation = vidéo).
+- Assise, IK des pieds, pose assise : non lu (aucune source textuelle obtenue).
+- Lueur et effets magiques (émission, bloom, volumétrie) : non lu (résultats : liens et forums).
+- Hard surface (Bevel, Weighted Normal) : non lu (le billet blendernation ne contient pas les réglages).
+- Gain de maillage, caméra cinéma, rigging Rigify, squelette, textures : Rigify = guide Neural4D déjà lu (section 11) ; le reste non lu.
+- Fourreau et retrait de l'épée de la main : non lu.
+
+### Conclusion
+Le moteur n'a appris de façon vérifiable que la partie cheveux (lu) et la prise d'épée et l'attaque (lues). Tout le reste reste à lire ou à tester. Les tests sont la prochaine étape : une épée parentée à la main et une lueur sur un objet, rendus et mesurés, avant toute écriture dans le moteur comme « appris ».
