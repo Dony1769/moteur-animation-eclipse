@@ -148,3 +148,10 @@ Chaque erreur a une cause, une correction et un test. Une erreur corrigée doit 
 - Lecture : l'étirement et la correction des replis viennent de la même région, près de l'articulation. Réduire la zone réduit les deux. Le compromis n'est pas une propriété du champ de décalage mais de la géométrie du pli : une seule clé calibrée sur un angle ne peut pas corriger le pli sans étirer son bord.
 - Décision : option conservée, défaut inchangé (pas de fenêtre).
 - Conclusion sur les quatre tentatives (entrées 23 à 27) : aucune ne satisfait les deux critères. La suite exige une méthode de déformation différente (par exemple des os de torsion répartis ou une clé par angle au lieu d'une clé pilotée), à tester séparément.
+
+## 28. Chaîne de deux os d'aide à la même position : pire que un seul
+- Essai (sans clés, bras gauche, `engine/skinning/test_chaine_aide.py`) : un os d'aide à influence 0,5 (référence) contre deux os d'aide, à 0,33 et 0,67, tous deux à la tête de l'épaule et copiant `LeftArm`.
+- Résultat : replis 3/12/17/19 à 60/90/105/120° contre 4/19/27/36 pour les deux os.
+- Lecture : deux os qui copient la même rotation à la même position additionnent leurs effets au lieu de la répartir. Une répartition réelle exige des os placés à des positions différentes le long du bras (tête au milieu du bras, par exemple), ce qui n'est pas testé.
+- Décision : référence inchangée (un os à 0,5).
+- Règle : pour répartir une rotation sur plusieurs os, placer chaque os à sa propre position le long de la chaîne, jamais empiler des copies au même point.

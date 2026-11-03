@@ -1,0 +1,15 @@
+{
+  "variante": "un",
+  "aides": [
+    [
+      "mixamorig:LeftArmHelper",
+      0.5
+    ]
+  ],
+  "replis": {
+    "60": 3,
+    "90": 12,
+    "105": 17,
+    "120": 19
+  }
+}

@@ -122,3 +122,5 @@ Contrainte de gradient (kappa) sur le décalage : bras à 120° étirement 3,36 
 Direction « vers l'os » (mode `vers_os`) testée : replis bras 11 à 90° et étirement 7,2 : pire que la référence. Non adoptée (entrée 26). Rapports : docs/rapports/final_vers_os.json, gonflement_vers_os.json.
 
 Clé par zone (fenêtre 10 ou 20 cm autour de l'articulation) : rayon 20 cm = référence ; rayon 10 cm = étirement ramené à 2,63 mais replis 7 à 90°. Le compromis reste (entrée 27). Rapports : docs/rapports/final_zone10.json, final_zone20.json, gonflement_zone10.json, gonflement_zone20.json.
+
+Chaîne de deux os d'aide (0,33 et 0,67) à la même position : replis 19 à 90°... 36 à 120° contre 12 et 19 pour un seul. Pire ; non adopté (entrée 28).

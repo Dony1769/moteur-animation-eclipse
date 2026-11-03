@@ -1,0 +1,19 @@
+{
+  "variante": "deux",
+  "aides": [
+    [
+      "mixamorig:LeftArmHelper",
+      0.33
+    ],
+    [
+      "mixamorig:LeftArmHelper2",
+      0.67
+    ]
+  ],
+  "replis": {
+    "60": 4,
+    "90": 19,
+    "105": 27,
+    "120": 36
+  }
+}
