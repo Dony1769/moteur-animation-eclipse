@@ -193,3 +193,54 @@ Règle : un sujet est « lu » seulement si le texte de la méthode a été obte
 
 ### Bilan
 Lu et utilisable après test : hard surface (14.1) ; principe des cheveux en cartes (14.2) ; piège fourreau/arme (14.3). Non lu : cape, lueur/magie, assise, fourreau complet. Ces sujets demandent une autre source textuelle ou des notes fournies par l'utilisateur.
+
+## 15. Réglages lus (documentation officielle Epic, Houdini) : à TESTER après le MP4
+
+Règle : seuls les réglages présents dans le texte lu sont notés. Rien n'est inventé. Les valeurs Blender ne sont pas obtenues (la page API Blender ne renvoie que la navigation) ; elles seront lues dans Blender même (`bpy.types.ClothSettings.bl_rna.properties`) pendant le test.
+
+### 15.1 Lueur magique (Unreal Niagara, « particules lumineuses ») : lu, valeurs lues
+Source : dev.epicgames.com, « how to create particle effects that emit light in niagara ».
+- Émetteur : Life Cycle Mode = System ; Spawn Rate = 500.
+- Initialize Particle : Lifetime Mode = Random ; durée min 1.75, max 2.5.
+- Couleur HDR : Red 0.1, Green 0.3, Blue 50 (valeur > 1 = émission).
+- Sprite : Sprite Size Mode = Random Uniform ; min 2.5, max 8.0.
+- Sphere Location : Sphere Radius 15.
+- Add Velocity in Cone : Velocity Strength min 300, max 600.
+- Particle Update : module Collision (laisser par défaut, corriger l'erreur « Fix Issue »).
+- Render : Light Renderer, Radius Scale 5.0, Color Add (0, 0, 15).
+- Non couvert par la source : matériau du sprite, bloom.
+- État : lu. À transposer dans Blender (Cycles, émission HDR) puis tester : NON FAIT.
+
+### 15.2 Attacher un objet à la main ou à la hanche (Unreal, socket) : lu
+Source : udn.epicgames.com, SkeletalMeshSockets.
+1. Ouvrir le skeletal mesh, Socket Manager, New Socket, choisir l'os.
+2. Nommer le socket (unique dans ce mesh).
+3. Régler l'offset : Relative Location (X, Y, Z), Relative Rotation (Pitch, Yaw, Roll), Relative Scale.
+4. Pour le fourreau : socket sur la hanche (os du bassin), séparé du socket de la main ; l'arme et le fourreau sont des objets distincts (voir 14.3, piège lu).
+- Équivalent Blender : os « hand hold » parenté (section 13.2). Les deux méthodes concordent : un point d'attache par os, décalage fixe.
+- État : lu. Test : NON FAIT.
+
+### 15.3 Cartes de cheveux (groom, Unreal) : réglages lus, valeurs absentes
+Source : dev.epicgames.com, « setting up cards and meshes for grooms ».
+- LOD : nombre de niveaux ; chaque LOD = strands, cartes ou maillage.
+- Carte : Mesh, Guide Type (Generated ou Guide-Based), Material, Layout (Default ou Compact), textures optionnelles (Depth, Coverage, Tangent, RootUV, CoordU, Seed, Auxiliary), Group Index, LOD Index.
+- Maillage : Minimum LOD par plateforme.
+- Non couvert : UV, canal alpha, nombre de cartes, orientation, nommage.
+- État : réglages lus. Valeurs : NON LUES.
+
+### 15.4 Simulation de tissu (Houdini Cloth, paramètres par nom) : lu, sans valeurs par défaut
+Source : sidefx.com, Cloth Configure Object.
+- Overall Damping Ratio : 0 (aucune perte) à 1 (amortissement critique).
+- Relative Stiffness / Relative Damping : entre 0 et 1 pour étirement, cisaillement et flexion (Weak Bend, Strong Bend).
+- Surface Mass Density : masse par m² (pas de valeur par défaut).
+- Collision Radius (appelée Thickness) : ne pas dépasser 1 % de la longueur moyenne des arêtes.
+- Collide within this object : auto-collision ; Friction : 0 = sans friction.
+- Coutures (seam angle), attribut quality.
+- Pas de paramètre « pin » documenté sur ce nœud.
+- Équivalent Blender (ClothSettings) : à lire dans Blender au moment du test ; NON LU.
+- État : concepts lus. Valeurs Blender : NON LUES.
+
+### 15.5 Non lu (à chercher ensuite)
+- Assise et IK des pieds : aucune source Epic/Blender textuelle obtenue (forums seulement).
+- Pin de cape dans Blender (groupe de sommets, Pin Stiffness) : vidéos seulement.
+- Peau (subsurface), visage (formes-clés) : voir section 12 (lus en résumé, valeurs non lues).
