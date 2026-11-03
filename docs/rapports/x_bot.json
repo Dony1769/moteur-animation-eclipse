@@ -1,0 +1,83 @@
+{
+  "fichier": "/mnt/user-data/attachments/9ce8e1e5-f7cf-5619-8a75-3c6d9a11ab1c/824ae738-X_Bot.fbx",
+  "type": "armature_et_poids",
+  "objets": [
+    "Armature",
+    "Beta_Joints",
+    "Beta_Surface"
+  ],
+  "meshes": [
+    {
+      "nom": "Beta_Joints",
+      "sommets": 10514,
+      "faces": 11120,
+      "triangles": 1400,
+      "quads": 9720,
+      "ngones": 0,
+      "uv_calques": [
+        "map1"
+      ],
+      "materiaux": [
+        "Beta_Joints_MAT1"
+      ],
+      "modificateur_armature": "Armature",
+      "parent": "Armature",
+      "poids": {
+        "sommets": 10514,
+        "sommets_sans_poids": 0,
+        "max_influences_par_sommet": 2,
+        "sommets_poids_non_normalises": 0,
+        "groupes_de_sommets": 39
+      }
+    },
+    {
+      "nom": "Beta_Surface",
+      "sommets": 14232,
+      "faces": 14222,
+      "triangles": 172,
+      "quads": 14050,
+      "ngones": 0,
+      "uv_calques": [
+        "map1"
+      ],
+      "materiaux": [
+        "Beta_HighLimbsGeoSG3"
+      ],
+      "modificateur_armature": "Armature",
+      "parent": "Armature",
+      "poids": {
+        "sommets": 14232,
+        "sommets_sans_poids": 0,
+        "max_influences_par_sommet": 3,
+        "sommets_poids_non_normalises": 0,
+        "groupes_de_sommets": 50
+      }
+    }
+  ],
+  "armatures": [
+    {
+      "nom": "Armature",
+      "os": 65,
+      "os_mixamo": 65,
+      "convention": "mixamo",
+      "racine": [
+        "mixamorig:Hips"
+      ],
+      "echelle": [
+        0.01,
+        0.01,
+        0.01
+      ],
+      "rotation_base_deg": [
+        90.0,
+        -0.0,
+        0.0
+      ]
+    }
+  ],
+  "actions": [
+    "Armature|mixamo.com|Layer0"
+  ],
+  "hauteur_m": 1.8092,
+  "anomalies": []
+}
