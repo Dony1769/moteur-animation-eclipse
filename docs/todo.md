@@ -37,3 +37,11 @@
 - MP4 4 s : non fait. À 640×270, le personnage fait passer le rendu à environ 40 s par image, soit plus de 60
   min pour 96 images : au-dessus de la limite de 20 min par test. À réduire avant le MP4.
 - Repli Google Colab : notebooks/colab_render.ipynb, écrit, non testé (à lancer par l'utilisateur).
+
+## Étape 5 (placeholder Mixamo) : mise à jour du 2 novembre 2026, 23 h 20
+- Corrigé : mode de rotation QUATERNION (l'action Mixamo est en quaternions) ; translation horizontale du bassin
+  retirée (course sur place) ; hauteur mesurée en monde (2,24 m avant, 1,75 m après) ; personnage tourné pour
+  courir vers +Y. Action assignée par son slot.
+- Mesuré : 640×270, 4 échantillons, 4,4 s par image (contre ~40 s à 1280×540 et 16 échantillons).
+- MP4 de 4 s produit : 96 images, 24 images/s. Vue de dos uniquement ; profil non validé.
+- Notebook Colab (repli) : valide syntaxiquement, mais il lance scenes/chase_a.py (décor seul), pas la scène Mixamo.

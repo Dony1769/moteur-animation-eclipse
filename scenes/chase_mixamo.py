@@ -102,23 +102,30 @@ action = arm_course.animation_data.action
 arm_perso.animation_data_create()
 arm_perso.animation_data.action = action
 if action.slots: arm_perso.animation_data.action_slot = action.slots[0]
+# l'action Mixamo est en quaternions : le mode de rotation doit être QUATERNION sinon rien ne s'applique
 for pb in arm_perso.pose.bones:
-    pb.rotation_mode = 'XYZ'
+    pb.rotation_mode = 'QUATERNION'
+# course sur place : la translation horizontale du bassin (axes locaux X et Z, soit l'avance) est retirée,
+# le rebond vertical (axe local Y) est conservé
+for fc in list(action.fcurves):
+    if fc.data_path == 'pose.bones["mixamorig:Hips"].location' and fc.array_index in (0, 2):
+        action.fcurves.remove(fc)
 for fc in action.fcurves:
-    fc.modifiers.new("CYCLES")
+    fc.modifiers.new("CYCLES")          # la course de 16 images tourne en boucle sur 96 images
 for o in list(bpy.data.objects):
     if o not in nouveaux and o.type == "ARMATURE" and o is arm_course:
         bpy.data.objects.remove(o, do_unlink=True)
-for o in nouveaux:
-    if o.type == "MESH":
-        o.location.y = 0.0
-# hauteur ~1,75 m : mise à l'échelle depuis les dimensions du maillage
-hauteur = max(o.dimensions.z for o in nouveaux if o.type == "MESH")
-echelle = 1.75 / hauteur if hauteur > 0 else 1.0
-for o in nouveaux:
-    if o.parent is None:
-        o.scale = (o.scale.x * echelle, o.scale.y * echelle, o.scale.z * echelle)
-print("PERSO hauteur", round(hauteur, 3), "echelle", round(echelle, 4), "action", action.name)
+# hauteur mesurée en monde (bounding box du maillage au repos), puis mise à l'échelle de l'armature
+from mathutils import Vector
+sc.frame_set(1)
+bpy.context.view_layer.update()
+zs = [(o.matrix_world @ Vector(c)).z for o in nouveaux if o.type == "MESH" for c in o.bound_box]
+hauteur = max(zs) - min(zs)
+echelle = 1.75 / hauteur
+arm_perso.scale = tuple(s * echelle for s in arm_perso.scale)
+# le run Mixamo avance vers -Y ; on tourne de 180° pour qu'il coure vers +Y (loin de la caméra)
+arm_perso.rotation_euler.z = math.pi
+print("PERSO hauteur_monde", round(hauteur, 3), "echelle", round(echelle, 4), "action", action.name)
 sc.frame_start, sc.frame_end = 1, 96
 for o in nouveaux:
     if o.parent is None:
@@ -134,13 +141,13 @@ if sc.cycles.device == "GPU":
     prefs.get_devices()
     for d in prefs.devices:
         d.use = True
-sc.cycles.samples = 16
+sc.cycles.samples = int(os.environ.get("SPP", "16"))
 sc.cycles.use_denoising = True
 sc.cycles.denoiser = "OPENIMAGEDENOISE"
 sc.cycles.max_bounces = 3
 sc.cycles.caustics_reflective = False
 sc.cycles.caustics_refractive = False
-sc.render.resolution_x, sc.render.resolution_y = 1280, 540
+sc.render.resolution_x, sc.render.resolution_y = int(os.environ.get("RX", "1280")), int(os.environ.get("RY", "540"))
 sc.render.film_transparent = False
 sc.render.image_settings.file_format = "PNG"
 sc.view_settings.view_transform = "AgX"
