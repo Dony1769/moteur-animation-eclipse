@@ -51,13 +51,41 @@ def direction_correction(mode, normale, p, arm, nom, corps):
         return point_sur_segment(p, a, c) - p
     raise ValueError(mode)
 
-def calculer_decalage(corps, arm, nom, axe, angle, pas=0.001, iterations=60, amplitude_max=0.02, mode="normale", initial=None):
+def voisins_sommets(corps):
+    """Voisins directs de chaque sommet (graphe des arêtes du maillage de base)."""
+    voisins = [set() for _ in corps.data.vertices]
+    for e in corps.data.edges:
+        a, b = e.vertices
+        voisins[a].add(b); voisins[b].add(a)
+    return [sorted(v) for v in voisins]
+
+def lisser_decalage(decal, voisins, passes, amplitude_max):
+    """Lissage laplacien du champ de décalage : évite une frontière brutale entre sommets déplacés
+    et sommets immobiles (cause des arêtes étirées constatées par controle_gonflement.py).
+    Chaque passe : d_i <- 0,5 d_i + 0,5 moyenne(d_voisins), puis plafond d'amplitude."""
+    for _ in range(passes):
+        nouveau = []
+        for i, d in enumerate(decal):
+            vs = voisins[i]
+            if vs:
+                moy = Vector((0.0, 0.0, 0.0))
+                for j in vs:
+                    moy += decal[j]
+                d = d * 0.5 + (moy / len(vs)) * 0.5
+            if d.length > amplitude_max:
+                d = d.normalized() * amplitude_max
+            nouveau.append(d)
+        decal[:] = nouveau
+    return decal
+
+def calculer_decalage(corps, arm, nom, axe, angle, pas=0.001, iterations=60, amplitude_max=0.02, mode="normale", initial=None, lissage=0):
     """Décalages locaux qui suppriment les replis de l'os `nom` à l'angle `angle`.
     Renvoie (liste de décalages, historique du nombre de faces repliées par itération)."""
     normales = normales_sommets(corps)
     decal = [Vector(d) for d in initial] if initial is not None else [Vector((0.0, 0.0, 0.0)) for _ in corps.data.vertices]
     repos = poser_temporairement(arm, nom, axe, angle)
     historique = []
+    voisins = voisins_sommets(corps) if lissage > 0 else None
     try:
         for _ in range(iterations):
             n, _, boucle = ml.faces_repliees(corps, arm, ml.matrices(arm), decalage=decal, detail=True)
@@ -72,6 +100,8 @@ def calculer_decalage(corps, arm, nom, axe, angle, pas=0.001, iterations=60, amp
                 if d.length > amplitude_max:
                     d = d.normalized() * amplitude_max
                 decal[i] = d
+            if lissage > 0:
+                lisser_decalage(decal, voisins, lissage, amplitude_max)
     finally:
         arm.pose.bones[nom].matrix = repos
         bpy.context.view_layer.update()
@@ -79,7 +109,7 @@ def calculer_decalage(corps, arm, nom, axe, angle, pas=0.001, iterations=60, amp
 
 # -- Clés de forme correctives --------------------------------------------
 
-def ajouter_cles_correctives(corps, arm, specs, angle=90, iterations=80, amplitude_max=0.04):
+def ajouter_cles_correctives(corps, arm, specs, angle=90, iterations=80, amplitude_max=0.04, lissage=0):
     """Crée une clé de forme par articulation : `specs` = [(os, axe monde)].
     Chaque clé porte le décalage calculé à l'angle `angle` ; sa valeur doit valoir clamp(angle_pose / angle, 0, 1).
     Renvoie un rapport par clé (replis avant/après à l'angle de calibration)."""
@@ -88,7 +118,7 @@ def ajouter_cles_correctives(corps, arm, specs, angle=90, iterations=80, amplitu
     rapport = []
     for nom, axe in specs:
         decal, hist = calculer_decalage(corps, arm, nom, axe, angle, iterations=iterations,
-                                        amplitude_max=amplitude_max, mode="moins_normale")
+                                        amplitude_max=amplitude_max, mode="moins_normale", lissage=lissage)
         cle = corps.shape_key_add(name="corr_" + nom.replace("mixamorig:", ""), from_mix=False)
         cle.slider_min = 0.0; cle.slider_max = 1.0; cle.value = 0.0
         for i, d in enumerate(decal):
@@ -103,7 +133,7 @@ def appliquer_valeur(corps, cle_nom, valeur):
 
 
 def ajouter_cle_seconde_pose(corps, arm, nom, axe, cle_premiere, angle_1=90, angle_2=120,
-                             iterations=80, amplitude_max=0.04):
+                             iterations=80, amplitude_max=0.04, lissage=0):
     """Deuxième échantillon de l'espace de pose : part du décalage de la première clé (calibrée à angle_1)
     et le corrige à angle_2. La seconde clé porte la différence ; sa valeur = clamp((angle - angle_1)/(angle_2 - angle_1)).
     Ainsi, à angle_1 la somme vaut la première clé, et à angle_2 la somme vaut la correction à angle_2.
@@ -112,7 +142,7 @@ def ajouter_cle_seconde_pose(corps, arm, nom, axe, cle_premiere, angle_1=90, ang
     base = kb["Basis"].data
     d1 = [(kb[cle_premiere].data[i].co - base[i].co) for i in range(len(base))]
     decal2, hist = calculer_decalage(corps, arm, nom, axe, angle_2, iterations=iterations,
-                                     amplitude_max=amplitude_max, mode="moins_normale", initial=d1)
+                                     amplitude_max=amplitude_max, mode="moins_normale", initial=d1, lissage=lissage)
     diff = [decal2[i] - d1[i] for i in range(len(base))]
     cle = corps.shape_key_add(name="c" + str(angle_2) + "_" + nom.replace("mixamorig:", ""), from_mix=False)
     cle.slider_min = 0.0; cle.slider_max = 1.0; cle.value = 0.0

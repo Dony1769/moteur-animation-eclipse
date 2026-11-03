@@ -96,3 +96,23 @@ Script : `engine/skinning/construit_final.py`. Rapport : `docs/rapports/hbm_fina
 Replis LBS, bras gauche : 60° : 0 ; 90° : 2 ; 105° : 6 ; 120° : 13. Combinaison des deux méthodes plus efficace que chacune seule (clés seules : 3 / 18 / 20 ; os d'aide seul : 12 / 17 / 19).
 
 Limite : le champ `deplacement_max_120_mm` du rapport ne mesure pas le gonflement (voir erreur 21). Un contrôle de gonflement n'est pas encore implémenté.
+
+
+## Contrôle de gonflement (mesuré)
+
+Mesure : volume signé du maillage évalué / volume de repos, et étirement des arêtes (module `engine/skinning/controle_gonflement.py`). Témoin à 0° vérifié (`tests/test_gonflement.py`, tolérance 1,5e-3 justifiée par le plancher de précision mesuré).
+
+| Variante | Bras 90° : volume / étirement max | Bras 120° : volume / étirement max | Replis bras 60/90/105/120 |
+|---|---|---|---|
+| LBS sans clés | 0,966 / 2,63 | 0,963 / 3,36 | — |
+| LBS avec clés (pipeline de référence) | 0,964 / 3,59 | 0,961 / 5,90 | 0 / 2 / 6 / 13 |
+| DQS avec clés | 0,955 / 4,08 | 0,940 / 6,81 | — |
+| LBS avec clés, lissage 1, 200 it. | 0,962 / 2,63 | 0,948 / 3,34 | 3 / 9 / 15 / 18 |
+
+Lecture :
+- DQS n'améliore pas le volume ; il ne doit pas être adopté pour le bras.
+- Les clés correctives réduisent les replis mais créent des arêtes étirées (frontière brutale du décalage).
+- Le lissage supprime l'étirement mais dégrade les replis : aucun des deux n'est adopté. Le pipeline de référence reste sans lissage.
+- Défaut connu ouvert : étirement de 5,9 à 120° pour le bras. À traiter avant toute animation.
+
+Rapports : `docs/rapports/gonflement_avec_cles.json`, `gonflement_sans_cles.json`, `gonflement_lissage1_200it.json`, `final_lissage1_200it.json`, `final_lissage1_80it.json`.

@@ -20,6 +20,10 @@ AIDE = "mixamorig:LeftArmHelper"
 AIDE_D = "mixamorig:RightArmHelper"
 argv = sys.argv[sys.argv.index("--") + 1:]
 sortie_blend, sortie_json = argv[0], argv[1]
+# lissage du champ de décalage des clés (0 = comportement d'origine, reproductible)
+LISSAGE = int(argv[2]) if len(argv) > 2 else 0
+# nombre d'itérations de calibration des clés (80 = comportement d'origine)
+ITER = int(argv[3]) if len(argv) > 3 else 80
 
 bpy.ops.wm.open_mainfile(filepath="/tmp/claude-0/-home-claude/9ce8e1e5-f7cf-5619-8a75-3c6d9a11ab1c/scratchpad/corps_hbm.blend")
 corps = bpy.data.objects[ak.ENTREE_NOM]
@@ -42,9 +46,9 @@ bpy.context.view_layer.update()
 specs = [("mixamorig:LeftArm", (0, 1, 0)), ("mixamorig:RightArm", (0, 1, 0)),
          ("mixamorig:LeftForeArm", (0, 1, 0)), ("mixamorig:RightForeArm", (0, 1, 0)),
          ("mixamorig:LeftLeg", (1, 0, 0)), ("mixamorig:RightLeg", (1, 0, 0))]
-rapport_cles = cp.ajouter_cles_correctives(corps, arm, specs, angle=90)
+rapport_cles = cp.ajouter_cles_correctives(corps, arm, specs, angle=90, iterations=ITER, lissage=LISSAGE)
 for nom, axe in specs:
-    rapport_cles.append(cp.ajouter_cle_seconde_pose(corps, arm, nom, axe, "corr_" + nom.replace("mixamorig:", "")))
+    rapport_cles.append(cp.ajouter_cle_seconde_pose(corps, arm, nom, axe, "corr_" + nom.replace("mixamorig:", ""), iterations=ITER, lissage=LISSAGE))
 
 kb = corps.data.shape_keys.key_blocks
 base = kb["Basis"].data
@@ -82,7 +86,7 @@ for nom, axe in specs:
     mesures[nom.replace("mixamorig:", "")] = par
 
 repos = max((d.length for d in decal_total({k: 0.0 for k in kb.keys() if k != "Basis"})), default=0.0)
-res = {"cles": rapport_cles, "replis_par_angle": mesures,
+res = {"lissage": LISSAGE, "iterations": ITER, "cles": rapport_cles, "replis_par_angle": mesures,
        "deplacement_max_120_mm": deplacement_120,
        "amplitude_repos_mm": round(repos * 1000, 4), "poids": ak.auditer_poids(corps),
        "os": len(arm.data.bones)}

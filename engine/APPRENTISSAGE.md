@@ -488,3 +488,11 @@ Erreurs commises pendant cette étape et règle à retenir (voir docs/erreurs_ap
 
 Méthode combinée : distribuer la rotation du bras sur un os d'aide (idée des os de torsion lue dans le guide DCC) + contrainte Copy Rotation de Blender à influence 0,5, puis recalcul des poids par chaleur.
 Mesure LBS sans clé, bras gauche seul : 90° 24 -> 12 replis ; 120° 31 -> 19 ; 479 sommets pondérés sur l'os d'aide (max 0,5). Rapports : docs/rapports/hbm_os_aide_epaule.json et hbm_os_aide_temoin.json.
+
+## 22. Contrôle de gonflement (volume et étirement), mesuré
+
+- Méthode : volume signé du maillage évalué par Blender (modificateur Armature actif, Multires désactivé) par rapport au volume de repos, et étirement des arêtes (longueur pose / longueur repos). Module : `engine/skinning/controle_gonflement.py`.
+- Résultat principal : le DQS « preserve volume » ne conserve pas mieux le volume du bras que le LBS (0,940 contre 0,961 à 120°). Il n'est pas adopté.
+- Défaut trouvé : les clés correctives créent des arêtes très étirées (5,9 fois à 120° contre 3,4 sans clés). Cause : décalage limité aux sommets repliés, donc frontière brutale.
+- Essai de correction : lissage laplacien du champ de décalage. Il retrouve l'étirement de référence mais affaiblit la correction des replis. Aucun pipeline ne domine : le pipeline de référence reste sans lissage, en attendant une méthode qui satisfasse les deux critères.
+- Sources : méthode standard de lissage laplacien ; non relue dans cette session. Les références précédentes (sections 20 et 21) restent les seules sources lues.
