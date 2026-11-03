@@ -17,7 +17,7 @@
 - Étapes 7 à 9 : dépendent des étapes 5 et 6.
 
 ## Notebook Kaggle (étape 3)
-- Le notebook est écrit mais pas prêt à tourner : la cellule de téléchargement des textures et maillages
+- Le téléchargement des assets Poly Haven est maintenant écrit dans le notebook (à vérifier au premier lancement). Précédemment, le notebook n'était pas prêt à tourner : la cellule de téléchargement des textures et maillages
   Poly Haven est une étape à compléter. Sans elle, le rendu échoue dès le premier réglage.
 - Le script accepte le GPU (variables DEVICE et BACKEND), mais le profil gpu-kaggle n'est pas mesuré : il
   faut que l'utilisateur lance le notebook avec GPU et Internet activés, puis colle les lignes de résultats.
