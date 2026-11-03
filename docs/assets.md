@@ -15,3 +15,6 @@ Non utilisé : Human Base Meshes (Blender Studio) pour l'instant. blender.org et
 accessibles. mocap.cs.cmu.edu répond en HTTP (200) mais le tunnel HTTPS échoue au proxy : les clips CMU déjà
 téléchargés (dépôt Shriinivas/cmubvh, README : « CMU places no restrictions ») restent disponibles
 localement, mais l'étape B est arrêtée par cette limite réseau.
+
+## Fichiers de travail hors dépôt
+Les maillages et textures Poly Haven sont dans assets/ph/ (ignoré par git).

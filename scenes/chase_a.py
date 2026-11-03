@@ -51,10 +51,10 @@ for cote, x in (("G", -9.0), ("D", 9.0)):
                  (1.8, 1.8, hauteur * 2.2 / 4.6))
 
 # 3. sable : débris et rochers au sol, en instances
-for i in range(-4, 5):
-    for j in range(-8, 9):
-        x = i * 3.6
-        y = j * 3.0
+for i in range(-6, 7):
+    for j in range(-12, 13):
+        x = i * 3.0
+        y = j * 2.6
         instance(gabarits["sable"], f"Sable_{i}_{j}", (x, y, -0.05), rnd.choice((0.0, math.pi)),
                  (1.0, 1.0, 1.0))
 print("DECOR", round(time.time() - t0, 1))
@@ -66,7 +66,8 @@ env = nt.nodes.new("ShaderNodeTexEnvironment")
 env.image = bpy.data.images.load(f"{ph}/belfast_sunset_puresky_1k.exr")
 nt.links.new(env.outputs["Color"], nt.nodes["Background"].inputs["Color"])
 sc.world = w
-bg = nt.nodes["Background"]; bg.inputs["Strength"].default_value = 0.6
+bg = nt.nodes["Background"]; bg.inputs["Strength"].default_value = 1.0
+sc_film = True
 # lumière dorée de fin de journée : soleil bas, teinte chaude (lampe seulement, pas de géométrie)
 soleil_d = bpy.data.lights.new("Soleil", type="SUN")
 soleil_d.energy = 6.0
@@ -97,6 +98,7 @@ sc.cycles.max_bounces = 3
 sc.cycles.caustics_reflective = False
 sc.cycles.caustics_refractive = False
 sc.render.resolution_x, sc.render.resolution_y = 1280, 540
+sc.render.film_transparent = False
 sc.render.image_settings.file_format = "PNG"
 sc.view_settings.view_transform = "AgX"
 sc.render.filepath = f"{sortie}/chase_a_decor.png"
