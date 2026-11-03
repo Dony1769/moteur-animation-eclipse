@@ -1,0 +1,34 @@
+{
+  "fichier": "/mnt/user-data/attachments/9ce8e1e5-f7cf-5619-8a75-3c6d9a11ab1c/66bbd963-Standing_W_Briefcase_Idle.fbx",
+  "type": "inconnu",
+  "objets": [
+    "Armature"
+  ],
+  "meshes": [],
+  "armatures": [
+    {
+      "nom": "Armature",
+      "os": 67,
+      "os_mixamo": 67,
+      "convention": "mixamo",
+      "racine": [
+        "mixamorig:Hips"
+      ],
+      "echelle": [
+        0.01,
+        0.01,
+        0.01
+      ],
+      "rotation_base_deg": [
+        90.0,
+        -0.0,
+        0.0
+      ]
+    }
+  ],
+  "actions": [
+    "Armature|mixamo.com|Layer0"
+  ],
+  "hauteur_m": null,
+  "anomalies": []
+}
