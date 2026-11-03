@@ -28,6 +28,8 @@ ITER = int(argv[3]) if len(argv) > 3 else 80
 KAPPA = float(argv[4]) if len(argv) > 4 else 0.0
 # mode de direction du décalage : moins_normale (référence) ou vers_os
 MODE = argv[5] if len(argv) > 5 else "moins_normale"
+# clé par zone : rayon et transition en mètres (vide = pas de fenêtre)
+ZONE = (float(argv[6]), float(argv[7])) if len(argv) > 7 else None
 
 bpy.ops.wm.open_mainfile(filepath="/tmp/claude-0/-home-claude/9ce8e1e5-f7cf-5619-8a75-3c6d9a11ab1c/scratchpad/corps_hbm.blend")
 corps = bpy.data.objects[ak.ENTREE_NOM]
@@ -50,9 +52,9 @@ bpy.context.view_layer.update()
 specs = [("mixamorig:LeftArm", (0, 1, 0)), ("mixamorig:RightArm", (0, 1, 0)),
          ("mixamorig:LeftForeArm", (0, 1, 0)), ("mixamorig:RightForeArm", (0, 1, 0)),
          ("mixamorig:LeftLeg", (1, 0, 0)), ("mixamorig:RightLeg", (1, 0, 0))]
-rapport_cles = cp.ajouter_cles_correctives(corps, arm, specs, angle=90, iterations=ITER, lissage=LISSAGE, kappa=KAPPA, mode=MODE)
+rapport_cles = cp.ajouter_cles_correctives(corps, arm, specs, angle=90, iterations=ITER, lissage=LISSAGE, kappa=KAPPA, mode=MODE, zone=ZONE)
 for nom, axe in specs:
-    rapport_cles.append(cp.ajouter_cle_seconde_pose(corps, arm, nom, axe, "corr_" + nom.replace("mixamorig:", ""), iterations=ITER, lissage=LISSAGE, kappa=KAPPA, mode=MODE))
+    rapport_cles.append(cp.ajouter_cle_seconde_pose(corps, arm, nom, axe, "corr_" + nom.replace("mixamorig:", ""), iterations=ITER, lissage=LISSAGE, kappa=KAPPA, mode=MODE, zone=ZONE))
 
 kb = corps.data.shape_keys.key_blocks
 base = kb["Basis"].data
@@ -90,7 +92,7 @@ for nom, axe in specs:
     mesures[nom.replace("mixamorig:", "")] = par
 
 repos = max((d.length for d in decal_total({k: 0.0 for k in kb.keys() if k != "Basis"})), default=0.0)
-res = {"lissage": LISSAGE, "iterations": ITER, "kappa": KAPPA, "mode": MODE, "cles": rapport_cles, "replis_par_angle": mesures,
+res = {"lissage": LISSAGE, "iterations": ITER, "kappa": KAPPA, "mode": MODE, "zone": ZONE, "cles": rapport_cles, "replis_par_angle": mesures,
        "deplacement_max_120_mm": deplacement_120,
        "amplitude_repos_mm": round(repos * 1000, 4), "poids": ak.auditer_poids(corps),
        "os": len(arm.data.bones)}

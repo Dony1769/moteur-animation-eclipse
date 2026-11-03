@@ -120,3 +120,5 @@ Rapports : `docs/rapports/gonflement_avec_cles.json`, `gonflement_sans_cles.json
 Contrainte de gradient (kappa) sur le décalage : bras à 120° étirement 3,36 contre 5,90, mais replis 19 contre 13. Même compromis que le lissage ; option désactivée par défaut. Voir docs/erreurs_apprises.md, entrée 25. Rapports : docs/rapports/final_kappa015.json, final_kappa030.json, gonflement_kappa015.json, gonflement_kappa030.json.
 
 Direction « vers l'os » (mode `vers_os`) testée : replis bras 11 à 90° et étirement 7,2 : pire que la référence. Non adoptée (entrée 26). Rapports : docs/rapports/final_vers_os.json, gonflement_vers_os.json.
+
+Clé par zone (fenêtre 10 ou 20 cm autour de l'articulation) : rayon 20 cm = référence ; rayon 10 cm = étirement ramené à 2,63 mais replis 7 à 90°. Le compromis reste (entrée 27). Rapports : docs/rapports/final_zone10.json, final_zone20.json, gonflement_zone10.json, gonflement_zone20.json.
