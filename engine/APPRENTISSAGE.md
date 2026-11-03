@@ -42,3 +42,10 @@ Chaque règle vient d'une lecture ou d'un test. Une règle non testée est marqu
 - Chute de B : BUG OUVERT. La hauteur au sol calculée donne −1,73 m, la position finale reste à z = 1,73. Ne pas lancer le rendu avant correction. Piste : vérifier les bornes du maillage évalué (ce qui inclut peut-être l'épée ou un os mal orienté), ou faire la chute par rotation simple sans compensation puis contrôler à l'œil.
 - Teinte de B : éclaircie (0,62 ; 0,8 ; 1,0). Non vérifiée à l'image.
 - Cadrage : plan de victoire passé en plan large.
+
+## 7. Mesure des positions (quel que soit l'angle de la caméra)
+- Sources lues : discussions Blender sur depsgraph et données évaluées (developer.blender.org, blenderartists) et documentation bpy_extras (world_to_camera_view).
+- Règle 1 : `obj.bound_box` d'un objet déformé par une armature peut être périmé. Mesurer les sommets évalués : `obj.evaluated_get(depsgraph).to_mesh()`, puis transformer chaque sommet par la matrice monde (module `engine/mesure.py`, fonction `sommets_monde`).
+- Règle 2 : la hauteur au sol d'un personnage est le minimum des z de tous ses sommets évalués. Une chute est correcte si ce minimum vaut 0 (à 1 mm près).
+- Règle 3 : pour vérifier une position à l'image, projeter le point avec `world_to_camera_view` : x et y entre 0 et 1 = dans le cadre, distance positive = devant la caméra. Ceci marche pour tout angle de caméra.
+- Règle 4 : toujours mesurer avant de rendre. Une valeur mesurée se consigne dans le journal de test.

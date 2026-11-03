@@ -97,6 +97,7 @@ import math as _m, json, random
 from mathutils import Vector
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "engine"))
 import clips
+import mesure
 NB = int(os.environ.get("NB", "1440"))
 M = os.path.join(ASSETS, "mixamo")
 FPS = 24
@@ -237,26 +238,25 @@ for cle, arm in PERSOS.items():
         ajouter(piste, "Repos_fin", ANIM["Idle"], curseur, NB + 1 - curseur)
     ad.action = None
 
-# B tombe en arrière après le dernier coup (rotation autour de l'axe latéral, pieds au sol)
+# B tombe en arrière après le dernier coup.
+# Repos de Mixamo : rotation X = +90°, Z = -90° (règle : ne jamais écraser la base, la fixer à l'image 1).
+# Chute : X passe de +90° à 0° absolu (vers l'arrière, mesuré : x jusqu'à 2,5 m) ; hauteur recalculée image par image.
 B = PERSOS["B"]
 B.rotation_mode = "XYZ"
-for f, ang in ((DERNIER_COUP + 40, 0.0), (DERNIER_COUP + 80, -_m.pi / 2)):
-    B.rotation_euler.x = ang
-    B.keyframe_insert("rotation_euler", index=0, frame=f)
-# hauteur image par image : le point le plus bas du maillage reste exactement au sol
-def _point_bas(arm):
-    dg = bpy.context.evaluated_depsgraph_get()
-    zs = []
-    for o in [x for x in bpy.data.objects if x.type == "MESH" and x.parent is arm or (x.type == "MESH" and x.find_armature() is arm)]:
-        ev = o.evaluated_get(dg)
-        zs += [(ev.matrix_world @ Vector(c)).z for c in ev.bound_box]
-    return min(zs)
-
-for f in range(DERNIER_COUP + 40, DERNIER_COUP + 81, 2):
+T_CHUTE_DEBUT = DERNIER_COUP + 40
+T_CHUTE_FIN = DERNIER_COUP + 80
+B.rotation_euler = (_m.pi / 2, 0.0, -_m.pi / 2)
+B.keyframe_insert("rotation_euler", index=0, frame=1)
+B.keyframe_insert("rotation_euler", index=0, frame=T_CHUTE_DEBUT)
+B.rotation_euler.x = 0.0                 # couché : repos (+90°) moins 90°, mesuré
+B.keyframe_insert("rotation_euler", index=0, frame=T_CHUTE_FIN)
+B.location.z = 0.0
+B.keyframe_insert("location", index=2, frame=1)
+for f in range(T_CHUTE_DEBUT, T_CHUTE_FIN + 1, 2):
     sc.frame_set(f)
-    B.location.z = 0.0                      # repartir de zéro à chaque image : pas d'accumulation
+    B.location.z = 0.0
     bpy.context.view_layer.update()
-    B.location.z = -_point_bas(B)           # point le plus bas exactement à z = 0
+    B.location.z = -mesure.z_min(B)          # point le plus bas à z = 0, mesuré sur les sommets évalués
     B.keyframe_insert("location", index=2, frame=f)
 sc.frame_set(1)
 
@@ -298,7 +298,7 @@ PLANS = [
     (640,  "ContreJour",  (0.0, -12.0, 0.35), 96, 0,   35,  9.0, 2.8),
     (841,  "PlanProfilB", (0.8, -11.6, 1.35), 90, 0,   50,  2.6, 2.0),
     (1081, "PlanLarge2",  (0.0, -14.0, 3.0), 76, 0,    35, 12.0, 2.8),
-    (1181, "PlanVictoire", (0.0, -14.0, 2.4), 84, 0,   35, 12.0, 2.8),
+    (1181, "PlanVictoire", (0.9, -14.0, 2.4), 84, 0,   35, 12.0, 2.8),
 ]
 marqueurs = []
 for frame, nom, pos, rot_x, rot_z, lentille, mise_au_point, ouverture in PLANS:

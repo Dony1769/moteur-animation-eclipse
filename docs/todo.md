@@ -95,3 +95,9 @@
 - Son : décalage d'une image corrigé, non écouté.
 - Victoire de A : bras levé, vérifié en valeurs, pas encore à l'image.
 - Voir engine/APPRENTISSAGE.md pour les règles et l'état.
+
+## Chute de B (mise à jour)
+- Cause trouvée et corrigée : la rotation de base Mixamo (X = +90°) était écrasée par la chute. Elle est maintenant fixée à l'image 1 et la chute va de +90° à 0° (couché).
+- Mesure : le point le plus bas reste à 0 m pendant la chute (sommets évalués, engine/mesure.py).
+- Ouvert : dans le plan de victoire, le corps couché de B n'est pas lisible à l'image (seule l'épée est visible). À corriger par un plan dédié, ou en rapprochant la caméra du corps couché. Non validé.
+- Rendu complet non relancé.
