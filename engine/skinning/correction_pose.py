@@ -130,7 +130,7 @@ def calculer_decalage(corps, arm, nom, axe, angle, pas=0.001, iterations=60, amp
 
 # -- Clés de forme correctives --------------------------------------------
 
-def ajouter_cles_correctives(corps, arm, specs, angle=90, iterations=80, amplitude_max=0.04, lissage=0, kappa=0.0):
+def ajouter_cles_correctives(corps, arm, specs, angle=90, iterations=80, amplitude_max=0.04, lissage=0, kappa=0.0, mode="moins_normale"):
     """Crée une clé de forme par articulation : `specs` = [(os, axe monde)].
     Chaque clé porte le décalage calculé à l'angle `angle` ; sa valeur doit valoir clamp(angle_pose / angle, 0, 1).
     Renvoie un rapport par clé (replis avant/après à l'angle de calibration)."""
@@ -139,7 +139,7 @@ def ajouter_cles_correctives(corps, arm, specs, angle=90, iterations=80, amplitu
     rapport = []
     for nom, axe in specs:
         decal, hist = calculer_decalage(corps, arm, nom, axe, angle, iterations=iterations,
-                                        amplitude_max=amplitude_max, mode="moins_normale", lissage=lissage, kappa=kappa)
+                                        amplitude_max=amplitude_max, mode=mode, lissage=lissage, kappa=kappa)
         cle = corps.shape_key_add(name="corr_" + nom.replace("mixamorig:", ""), from_mix=False)
         cle.slider_min = 0.0; cle.slider_max = 1.0; cle.value = 0.0
         for i, d in enumerate(decal):
@@ -154,7 +154,7 @@ def appliquer_valeur(corps, cle_nom, valeur):
 
 
 def ajouter_cle_seconde_pose(corps, arm, nom, axe, cle_premiere, angle_1=90, angle_2=120,
-                             iterations=80, amplitude_max=0.04, lissage=0, kappa=0.0):
+                             iterations=80, amplitude_max=0.04, lissage=0, kappa=0.0, mode="moins_normale"):
     """Deuxième échantillon de l'espace de pose : part du décalage de la première clé (calibrée à angle_1)
     et le corrige à angle_2. La seconde clé porte la différence ; sa valeur = clamp((angle - angle_1)/(angle_2 - angle_1)).
     Ainsi, à angle_1 la somme vaut la première clé, et à angle_2 la somme vaut la correction à angle_2.
@@ -163,7 +163,7 @@ def ajouter_cle_seconde_pose(corps, arm, nom, axe, cle_premiere, angle_1=90, ang
     base = kb["Basis"].data
     d1 = [(kb[cle_premiere].data[i].co - base[i].co) for i in range(len(base))]
     decal2, hist = calculer_decalage(corps, arm, nom, axe, angle_2, iterations=iterations,
-                                     amplitude_max=amplitude_max, mode="moins_normale", initial=d1, lissage=lissage, kappa=kappa)
+                                     amplitude_max=amplitude_max, mode=mode, initial=d1, lissage=lissage, kappa=kappa)
     diff = [decal2[i] - d1[i] for i in range(len(base))]
     cle = corps.shape_key_add(name="c" + str(angle_2) + "_" + nom.replace("mixamorig:", ""), from_mix=False)
     cle.slider_min = 0.0; cle.slider_max = 1.0; cle.value = 0.0

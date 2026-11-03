@@ -1,0 +1,176 @@
+{
+  "lissage": 0,
+  "iterations": 80,
+  "kappa": 0.0,
+  "mode": "vers_os",
+  "cles": [
+    {
+      "cle": "corr_LeftArm",
+      "os": "mixamorig:LeftArm",
+      "angle": 90,
+      "replis_avant": 12,
+      "replis_apres": 11,
+      "iterations": 80,
+      "amplitude_max_mm": 40.0
+    },
+    {
+      "cle": "corr_RightArm",
+      "os": "mixamorig:RightArm",
+      "angle": 90,
+      "replis_avant": 3,
+      "replis_apres": 0,
+      "iterations": 31,
+      "amplitude_max_mm": 30.0
+    },
+    {
+      "cle": "corr_LeftForeArm",
+      "os": "mixamorig:LeftForeArm",
+      "angle": 90,
+      "replis_avant": 4,
+      "replis_apres": 0,
+      "iterations": 32,
+      "amplitude_max_mm": 31.0
+    },
+    {
+      "cle": "corr_RightForeArm",
+      "os": "mixamorig:RightForeArm",
+      "angle": 90,
+      "replis_avant": 0,
+      "replis_apres": 0,
+      "iterations": 1,
+      "amplitude_max_mm": 0.0
+    },
+    {
+      "cle": "corr_LeftLeg",
+      "os": "mixamorig:LeftLeg",
+      "angle": 90,
+      "replis_avant": 5,
+      "replis_apres": 4,
+      "iterations": 80,
+      "amplitude_max_mm": 40.0
+    },
+    {
+      "cle": "corr_RightLeg",
+      "os": "mixamorig:RightLeg",
+      "angle": 90,
+      "replis_avant": 6,
+      "replis_apres": 3,
+      "iterations": 80,
+      "amplitude_max_mm": 40.0
+    },
+    {
+      "cle": "c120_LeftArm",
+      "os": "mixamorig:LeftArm",
+      "angle_1": 90,
+      "angle_2": 120,
+      "replis_avant": 17,
+      "replis_apres": 13,
+      "iterations": 80,
+      "amplitude_diff_max_mm": 40.0
+    },
+    {
+      "cle": "c120_RightArm",
+      "os": "mixamorig:RightArm",
+      "angle_1": 90,
+      "angle_2": 120,
+      "replis_avant": 4,
+      "replis_apres": 2,
+      "iterations": 80,
+      "amplitude_diff_max_mm": 40.0
+    },
+    {
+      "cle": "c120_LeftForeArm",
+      "os": "mixamorig:LeftForeArm",
+      "angle_1": 90,
+      "angle_2": 120,
+      "replis_avant": 5,
+      "replis_apres": 3,
+      "iterations": 80,
+      "amplitude_diff_max_mm": 40.0
+    },
+    {
+      "cle": "c120_RightForeArm",
+      "os": "mixamorig:RightForeArm",
+      "angle_1": 90,
+      "angle_2": 120,
+      "replis_avant": 1,
+      "replis_apres": 0,
+      "iterations": 55,
+      "amplitude_diff_max_mm": 40.0
+    },
+    {
+      "cle": "c120_LeftLeg",
+      "os": "mixamorig:LeftLeg",
+      "angle_1": 90,
+      "angle_2": 120,
+      "replis_avant": 10,
+      "replis_apres": 7,
+      "iterations": 80,
+      "amplitude_diff_max_mm": 40.0
+    },
+    {
+      "cle": "c120_RightLeg",
+      "os": "mixamorig:RightLeg",
+      "angle_1": 90,
+      "angle_2": 120,
+      "replis_avant": 8,
+      "replis_apres": 6,
+      "iterations": 80,
+      "amplitude_diff_max_mm": 21.0
+    }
+  ],
+  "replis_par_angle": {
+    "LeftArm": {
+      "60": 4,
+      "90": 11,
+      "105": 13,
+      "120": 13
+    },
+    "RightArm": {
+      "60": 0,
+      "90": 0,
+      "105": 1,
+      "120": 2
+    },
+    "LeftForeArm": {
+      "60": 0,
+      "90": 0,
+      "105": 4,
+      "120": 3
+    },
+    "RightForeArm": {
+      "60": 0,
+      "90": 0,
+      "105": 0,
+      "120": 0
+    },
+    "LeftLeg": {
+      "60": 0,
+      "90": 4,
+      "105": 6,
+      "120": 7
+    },
+    "RightLeg": {
+      "60": 0,
+      "90": 3,
+      "105": 5,
+      "120": 6
+    }
+  },
+  "deplacement_max_120_mm": {
+    "LeftArm": 1154.6,
+    "RightArm": 1155.0,
+    "LeftForeArm": 670.7,
+    "RightForeArm": 670.0,
+    "LeftLeg": 856.0,
+    "RightLeg": 856.0
+  },
+  "amplitude_repos_mm": 0.0,
+  "poids": {
+    "sommets_sans_poids": 0,
+    "sommets_poids_non_normalises": 0,
+    "max_influences_par_sommet": 4,
+    "groupes": 21
+  },
+  "os": 21
+}
