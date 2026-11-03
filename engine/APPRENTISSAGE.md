@@ -49,3 +49,24 @@ Chaque règle vient d'une lecture ou d'un test. Une règle non testée est marqu
 - Règle 2 : la hauteur au sol d'un personnage est le minimum des z de tous ses sommets évalués. Une chute est correcte si ce minimum vaut 0 (à 1 mm près).
 - Règle 3 : pour vérifier une position à l'image, projeter le point avec `world_to_camera_view` : x et y entre 0 et 1 = dans le cadre, distance positive = devant la caméra. Ceci marche pour tout angle de caméra.
 - Règle 4 : toujours mesurer avant de rendre. Une valeur mesurée se consigne dans le journal de test.
+
+## 8. Plans dédiés : caméra qui vise un point mesuré
+- Sources lues : discussions Blender sur la contrainte « Track To » (blenderartists, archive.blender.org).
+- Méthode : mesurer le centre du personnage (`mesure.sommets_monde`, moyenne des min et max), créer un point cible (empty) à cet endroit, placer la caméra à distance fixe devant le sujet, et ajouter une contrainte Track To vers la cible (axe −Z, haut Y).
+- Contrôle obligatoire : `mesure.position_image` doit donner x et y entre 0,1 et 0,9 pour le centre du sujet. Si le sujet sort du cadre, reculer la caméra ou changer la focale.
+- Le plan est lié à un marqueur de timeline (voir plus haut), donc il se déclenche à l'image voulue.
+
+## 9. Vérifier le son sans l'écouter
+- Méthode : mixer le WAV, calculer son enveloppe d'énergie par tranches de 10 ms, et repérer les débuts de bruitage (montées nettes).
+- Comparer chaque début mesuré à l'instant attendu (image − 1) / 24 s. Tolérance : 15 ms. Un écart au-delà = erreur à corriger.
+- Contrôle visuel complémentaire : spectrogramme en image (ffmpeg, filtre showspectrumpic), à regarder avec l'outil de lecture d'images.
+- Ce contrôle prouve le calage, pas la qualité du bruit. La qualité reste à juger à l'oreille par l'utilisateur.
+
+## 10. Valider une pose
+- Une pose se valide seulement par une image rendue en plan rapproché, avec le sujet centré (règle 8) et le bras ou l'épée visibles.
+- Si le sujet n'est pas lisible, ne pas écrire « validé ».
+
+## État vérifié (dernière mise à jour)
+- Chute de B : corps couché visible sur le sol, plan dédié à 1245 (contrôle image). Mesure : point le plus bas à 0 m.
+- Victoire de A : profil, épée levée au-dessus de la tête, plan dédié à 1290 (contrôle image). Lisibilité confirmée à 640×270.
+- Son : 60 événements contrôlés par mesure (engine/verif_son.py) : écart de 3,3 ms au plus, constant (fenêtre de mesure). Calage numériquement validé. La qualité sonore n'est PAS validée : à juger à l'oreille.

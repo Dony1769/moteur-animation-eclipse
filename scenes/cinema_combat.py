@@ -316,6 +316,43 @@ for frame, nom, pos, rot_x, rot_z, lentille, mise_au_point, ouverture in PLANS:
     m.camera = c
     marqueurs.append(c)
 sc.camera = marqueurs[0]
+
+def centre_mesure(arm, image):
+    """Centre du personnage à une image donnée, mesuré sur les sommets évalués."""
+    sc.frame_set(image)
+    bpy.context.view_layer.update()
+    pts = [p for m in mesure.maillages_de(arm) for p in mesure.sommets_monde(m)]
+    return Vector(tuple((min(c) + max(c)) / 2 for c in zip(*[tuple(p) for p in pts])))
+
+def plan_suivi(nom, arm, image, decalage, lentille, marqueur):
+    """Caméra qui vise le centre mesuré du personnage (contrainte Track To), reliée à un marqueur."""
+    centre = centre_mesure(arm, image)
+    cible = bpy.data.objects.new("Cible_" + nom, None)
+    cible.location = centre
+    sc.collection.objects.link(cible)
+    d = bpy.data.cameras.new("Cam_" + nom)
+    d.lens = lentille
+    d.dof.use_dof = True
+    d.dof.focus_distance = decalage.length
+    d.dof.aperture_fstop = 2.8
+    c = bpy.data.objects.new("Cam_" + nom, d)
+    sc.collection.objects.link(c)
+    c.location = centre + decalage
+    con = c.constraints.new("TRACK_TO")
+    con.target = cible
+    con.track_axis = "TRACK_NEGATIVE_Z"
+    con.up_axis = "UP_Y"
+    m = sc.timeline_markers.new(nom, frame=marqueur)
+    m.camera = c
+    sc.frame_set(1)
+    # contrôle : le centre du sujet doit être dans le cadre, mesuré (voir APPRENTISSAGE.md, section 8)
+    x, y, dist = mesure.position_image(sc, c, centre)
+    print("CADRE", nom, "centre_image", round(x, 3), round(y, 3), "distance", round(dist, 2))
+    return c
+
+# plans dédiés : la chute de B (corps couché) et la victoire de A (épée levée)
+plan_suivi("PlanChuteB", PERSOS["B"], DERNIER_COUP + 80, Vector((0.0, -4.5, 0.6)), 50, DERNIER_COUP + 95)
+plan_suivi("PlanVictoireA", PERSOS["A"], DERNIER_COUP + 130, Vector((0.0, -4.0, 0.3)), 50, DERNIER_COUP + 140)
 for f in range(1, NB + 1):
     k = 0.0
     for t_imp in IMPACTS:
