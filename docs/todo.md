@@ -45,3 +45,11 @@
 - Mesuré : 640×270, 4 échantillons, 4,4 s par image (contre ~40 s à 1280×540 et 16 échantillons).
 - MP4 de 4 s produit : 96 images, 24 images/s. Vue de dos uniquement ; profil non validé.
 - Notebook Colab (repli) : valide syntaxiquement, mais il lance scenes/chase_a.py (décor seul), pas la scène Mixamo.
+
+## Colab GPU (2 novembre 2026, 23 h 55)
+- Kaggle est retiré : seul Colab est utilisé.
+- Les scènes choisissent OptiX, puis CUDA, et n'activent que les GPU ; sans GPU, le rendu reste en CPU et le
+  notebook affiche le périphérique réellement utilisé (ligne RENDU).
+- À faire par l'utilisateur : lancer notebooks/colab_render.ipynb avec Exécution → Modifier le type d'exécution →
+  GPU T4, puis coller les lignes de résultats. Le profil gpu-colab sera ajouté à docs/budget.md à partir de ces lignes.
+- Non testé sur GPU réel ici : le chemin GPU n'a été exécuté que sans GPU (repli CPU vérifié).

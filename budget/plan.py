@@ -17,7 +17,7 @@ MESURES = {
         (640, 270, 4, 4.0),
     ],
     # pas encore mesuré : rempli quand l'utilisateur colle les résultats du notebook Kaggle
-    "gpu-kaggle": [],
+    "gpu-colab": [],
 }
 
 REGLAGES_PAR_PRIORITE = sorted(MESURES["cpu"], key=lambda r: (r[0] * r[1], r[2]), reverse=True)

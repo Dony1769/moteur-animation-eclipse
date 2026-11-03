@@ -137,11 +137,19 @@ sc.frame_set(int(os.environ.get('FRAME', '1')))
 sc.render.engine = "CYCLES"
 sc.cycles.device = "CPU" if os.environ.get("DEVICE", "CPU") == "CPU" else "GPU"
 if sc.cycles.device == "GPU":
+    # essaie le backend demandé (OPTIX par défaut), puis CUDA ; n'active que les GPU, jamais le CPU
     prefs = bpy.context.preferences.addons["cycles"].preferences
-    prefs.compute_device_type = os.environ.get("BACKEND", "CUDA")
-    prefs.get_devices()
+    gpu = []
+    for backend in (os.environ.get("BACKEND", "OPTIX"), "CUDA"):
+        prefs.compute_device_type = backend
+        prefs.get_devices()
+        gpu = [d for d in prefs.devices if d.type != "CPU"]
+        if gpu:
+            break
     for d in prefs.devices:
-        d.use = True
+        d.use = d.type != "CPU"
+    sc.cycles.device = "GPU" if gpu else "CPU"
+    print("RENDU", sc.cycles.device, prefs.compute_device_type if gpu else "-", [d.name for d in gpu])
 sc.cycles.samples = int(os.environ.get("SPP", "16"))
 sc.cycles.use_denoising = True
 sc.cycles.denoiser = "OPENIMAGEDENOISE"
