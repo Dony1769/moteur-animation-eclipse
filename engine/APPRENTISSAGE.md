@@ -434,3 +434,20 @@ Règle : « lu » = texte de la méthode obtenu. Rien ici n'est testé ; tests a
 - Motion library (bibliothèque réutilisable) : 19.4.
 - Montage (rythme) : partiellement lu (section 16.2).
 - Export final : 19.3.
+
+### 19.8 Topologie du visage (guide Reallusion CC) : lu (règles, sans nombre de boucles)
+- Yeux : arcade sourcilière, pli de paupière supérieure aligné sur le pli réel, bord externe des paupières (point clé), globe non déformé ; cornée semi-transparente.
+- Bouche : plis des narines, crêtes internes des narines, plis internes des joues (ligne max), philtrum, contour des lèvres (ligne max), bord rouge, commissures sans croisement, répartition régulière des sommets.
+- Symétrie : coins des yeux, commissures, extrémités des sourcils.
+- Contrôle : morph vers la base puis retour pour repérer les zones compressées ; tests d'animation courts pendant la modélisation.
+- Source : https://wiki.reallusion.com/Content_Dev:CC_Face_Topology_Guide
+- Statut : lu. Nombre de boucles : NON LU.
+
+### 19.9 Encodage H.264 (guide académique) : lu (valeurs)
+- CRF 18 recommandé (23 jugé bas en qualité) ; preset medium ou slow suffisent.
+- pix_fmt yuv420p (web, QuickTime) ; profil high pour compatibilité ; -movflags faststart pour le streaming.
+- Tune : animation (aplats de couleur), film (prises réelles), grain.
+- Couleur : bt709 (primaries, colorspace), trc iec61966-2-1 pour sRGB.
+- Dimensions paires : non traité ici (déjà appliqué via pad dans le pipeline).
+- Source : https://academysoftwarefoundation.github.io/EncodingGuidelines/Encodeh264.html
+- Statut : lu. Test : À FAIRE pour le prochain MP4 (CRF 18, tune animation, faststart).
