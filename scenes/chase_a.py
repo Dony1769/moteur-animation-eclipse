@@ -1,0 +1,106 @@
+import bpy, sys, math, random, time
+
+sortie = sys.argv[sys.argv.index("--") + 1]
+t0 = time.time()
+bpy.ops.wm.read_factory_settings(use_empty=True)
+sc = bpy.context.scene
+ph = "/home/claude/moteur3d/assets/ph"
+
+# 1. maillages téléchargés (Poly Haven, CC0) : chargés par nom exact, sans primitives
+SOURCES = {
+    "falaise": ("namaqualand_cliff_01", "namaqualand_cliff_01_LOD1"),
+    "roc_a": ("rock_face_01", "rock_face_01"),
+    "roc_b": ("rock_face_02", "rock_face_02"),
+    "sable": ("sand_rocks_small_01", "sand_rocks_small_01_LOD3"),
+}
+gabarits = {}
+for cle, (fichier, nom) in SOURCES.items():
+    with bpy.data.libraries.load(f"{ph}/{fichier}.blend", link=False) as (src, dst):
+        dst.objects = [nom]
+    gabarits[cle] = bpy.data.objects[nom]
+    print("CHARGE", cle, nom, len(gabarits[cle].data.vertices))
+
+# textures Poly Haven : chemins absolus vers les cartes téléchargées
+for im in bpy.data.images:
+    if im.filepath.startswith("//textures/"):
+        im.filepath = f"{ph}/textures/" + im.filepath.split("/")[-1]
+        im.reload()
+
+# les gabarits ne sont pas dans la scène : on les retire de la collection par défaut, on pose des instances liées
+for g in gabarits.values():
+    if g.name in sc.collection.objects:
+        sc.collection.objects.unlink(g)
+
+def instance(gabarit, nom, pos, rot_z, echelle):
+    o = bpy.data.objects.new(nom, gabarit.data)       # données partagées : pas de copie du maillage
+    o.location = pos
+    o.rotation_euler = (0.0, 0.0, rot_z)
+    o.scale = echelle
+    sc.collection.objects.link(o)
+    return o
+
+rnd = random.Random(7)
+# 2. parois : deux rangées de falaises et de rochers de part et d'autre d'un passage (axe Y)
+for cote, x in (("G", -9.0), ("D", 9.0)):
+    for i in range(-9, 10):
+        y = i * 5.0 + rnd.uniform(-0.8, 0.8)
+        gab = gabarits["falaise"] if i % 3 else gabarits["roc_a"]
+        hauteur = rnd.uniform(3.0, 4.2)
+        rot = (0.0 if cote == "G" else math.pi) + rnd.uniform(-0.3, 0.3)
+        instance(gab, f"Paroi_{cote}{i}", (x + rnd.uniform(-1.0, 1.0), y, 0.0), rot,
+                 (1.8, 1.8, hauteur * 2.2 / 4.6))
+
+# 3. sable : débris et rochers au sol, en instances
+for i in range(-4, 5):
+    for j in range(-8, 9):
+        x = i * 3.6
+        y = j * 3.0
+        instance(gabarits["sable"], f"Sable_{i}_{j}", (x, y, -0.05), rnd.choice((0.0, math.pi)),
+                 (1.0, 1.0, 1.0))
+print("DECOR", round(time.time() - t0, 1))
+
+# 4. éclairage : HDRI de coucher de soleil (CC0, Poly Haven)
+w = bpy.data.worlds.new("Monde"); w.use_nodes = True
+nt = w.node_tree
+env = nt.nodes.new("ShaderNodeTexEnvironment")
+env.image = bpy.data.images.load(f"{ph}/belfast_sunset_puresky_1k.exr")
+nt.links.new(env.outputs["Color"], nt.nodes["Background"].inputs["Color"])
+sc.world = w
+bg = nt.nodes["Background"]; bg.inputs["Strength"].default_value = 0.6
+# lumière dorée de fin de journée : soleil bas, teinte chaude (lampe seulement, pas de géométrie)
+soleil_d = bpy.data.lights.new("Soleil", type="SUN")
+soleil_d.energy = 6.0
+soleil_d.color = (1.0, 0.72, 0.42)
+soleil = bpy.data.objects.new("Soleil", soleil_d)
+soleil.rotation_euler = (math.radians(68), 0.0, math.radians(35))
+sc.collection.objects.link(soleil)
+
+# 5. caméra : 35 mm, angle bas, profondeur de champ
+cam_d = bpy.data.cameras.new("Cam")
+cam_d.lens = 35
+cam_d.dof.use_dof = True
+cam_d.dof.focus_distance = 18.0
+cam_d.dof.aperture_fstop = 2.8
+cam = bpy.data.objects.new("Cam", cam_d)
+cam.location = (0.0, -18.0, 1.6)
+cam.rotation_euler = (math.radians(80), 0.0, 0.0)
+sc.collection.objects.link(cam)
+sc.camera = cam
+
+# 6. rendu : Cycles CPU, débruitage, 3 rebonds, sans caustiques, 1280x540
+sc.render.engine = "CYCLES"
+sc.cycles.device = "CPU"
+sc.cycles.samples = 16
+sc.cycles.use_denoising = True
+sc.cycles.denoiser = "OPENIMAGEDENOISE"
+sc.cycles.max_bounces = 3
+sc.cycles.caustics_reflective = False
+sc.cycles.caustics_refractive = False
+sc.render.resolution_x, sc.render.resolution_y = 1280, 540
+sc.render.image_settings.file_format = "PNG"
+sc.view_settings.view_transform = "AgX"
+sc.render.filepath = f"{sortie}/chase_a_decor.png"
+t1 = time.time()
+bpy.ops.render.render(write_still=True)
+print("TEMPS_RENDU_IMAGE", round(time.time() - t1, 1))
+print("CHASE_A_DONE", round(time.time() - t0, 1))
