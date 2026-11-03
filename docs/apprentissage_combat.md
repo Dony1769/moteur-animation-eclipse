@@ -33,3 +33,22 @@ Notes prises avant d'écrire la scène. Ce qui est « lu » n'est pas encore « 
 
 - Pas de clip de marche disponible en local. Il faut un Walking.fbx (et des coups supplémentaires, par exemple un coup de poing ou une garde) dans le dossier Drive « The_Chase_FBX ».
 - Les sons et les FX ne sont pas encore écrits ni testés.
+
+## Apprentissage 2 : créer des clips à partir d'un seul squelette (sans nouveau FBX)
+
+Sources lues : documentation Blender 4.5 (Action, slots, couches et canaux), recherches sur les cycles de marche en Python (keyframe_insert sur os de pose). La documentation Action ne décrit pas les slots en détail : la méthode est donc confirmée par test, pas par la seule lecture.
+
+Méthode retenue :
+- Un clip procédural est une action créée en Python : on assigne une action vide à l'armature, puis on pose les rotations des os image par image et on insère les images-clés (keyframe_insert sur rotation_euler, avec rotation_mode XYZ pendant la création).
+- Le clip de marche suit un cycle sinusoïdal : cuisse et genou en opposition, bras en contre-phase, bassin qui oscille. Une foulée complète tient en 24 images.
+- Les déplacements (approche, fuite, chute) sont des images-clés sur l'objet armature lui-même, pas sur les os.
+- Pour un montage propre, on place chaque clip dans la pile NLA, puis on cuit le résultat (bake) : une action unique par personnage, image par image, en quaternions. Cela évite les conflits entre bandes.
+- Une seule Maria (un seul FBX) suffit : marche, course, coups et victoire viennent de ce squelette.
+
+Points à vérifier par rendu : le signe des rotations (les genoux ne doivent plier que dans un sens), le glissement des pieds, et la pose de victoire.
+
+## Effets et son (méthode retenue)
+
+- Impacts : petits débris Poly Haven instanciés, lancés en arc balistique à partir du point de contact, puis retirés au bout de quelques images.
+- Son : bruitages synthétisés en Python (numpy) et mixés dans une piste WAV, calés sur les images d'impact. Le MP4 est produit par ffmpeg à partir des images et de la piste son.
+- Limite : pas de poussière simulée à ce stade.
