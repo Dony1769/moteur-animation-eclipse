@@ -332,3 +332,67 @@ Règle : « lu » = texte de la méthode obtenu. Tout ce qui suit n'est PAS test
 ### 17.4 Volumes et brouillard lumineux (Blender) : NON LU
 - La page du manuel Blender renvoie seulement la navigation ; pas de texte sur Density, Anisotropy, Absorption, Scatter, Emission.
 - Statut : NON LU. À chercher ailleurs (article de blog ou thread de forum avec valeurs).
+
+## 18. Sujets 2 à 8 : rigging, skinning, texture, visage, animation, secondaire, environnement
+
+Règle : « lu » = texte de la méthode obtenu. Rien ici n'est testé ; les tests viendront après le MP4.
+
+### 18.2 Rigging (contrôleurs IK/FK, contraintes, contrôles faciaux) : NON LU ce tour
+- Recherches faites : IK/FK switch Rigify, contrôles faciaux. Résultats = liens vers la doc Blender (navigation seulement) et des forums.
+- À faire : lire un tutoriel texte sur IK/FK (Rigify) et sur les contrôles faciaux.
+
+### 18.3 Skinning et weight painting : lu (article 13 étapes)
+- Nommer les os en L/R pour le miroir ; binding automatique (≈ 70–80 % correct, retouche ensuite).
+- Influences par sommet : mobile 2–4, console/PC 4–8 (4 le compromis le plus courant).
+- Retouche sur épaules, hanches, coudes, genoux ; heat map (bleu = 0, rouge = 1).
+- Miroir pour peindre un côté, désactiver pour la finition ; verrouiller les os stables avant de peindre les voisins.
+- Normalisation : somme des poids = 1.0 (Normalize All).
+- Retirer les poids < 0.01 pour l'export.
+- Défauts : candy wrapper (os de torsion ou blend shapes), effondrement articulaire (DQS aux articulations très fléchies), perte de volume.
+- Blend shapes correctifs : 10 à 20 pour les articulations majeures, pilotés par l'angle (au coude, au-delà de 90°).
+- Test : animation de 60 s qui parcourt toutes les articulations.
+- Source : https://mocaponline.com/blogs/mocap-news/weight-painting-skinning-guide
+- Statut : lu. Test : À FAIRE.
+
+### 18.4 Texturing, matériaux, peau, cheveux : peau lue (sans valeurs), cheveux non lus
+- Peau (subsurface) : couleur de diffusion distincte de l'albédo ; rayon par canal RGB (le bleu diffuse plus loin) ; rayon plus petit dans les zones fines (oreilles, doigts) ; thickness map (blanc = épais) bakée depuis un high-poly ; calibrage itératif sous lumière neutre puis HDRI.
+- Source : https://aitextured.com/articles/creating-calibrating-accurate-subsurface-scattering-maps-pbr-materials.html
+- Statut : méthode lue ; valeurs NON LUES.
+- Cheveux shader : non lu.
+
+### 18.5 Animation faciale (yeux, visèmes, clignement, sourcils) : lu (DAZ, méthode et noms)
+- Visèmes : 15 formes (SIL, PP, FF, TH, DD, KK, CH, SS, NN, RR, AA, E, I, O, U). Minimum utile : PP, FF, AA, E, I, O, U.
+- Regard : 4 contrôles par œil (haut/bas, gauche/droite) ; Genesis 9 : regard par os (tête, œil gauche, œil droit).
+- Ordre de réglage : clignement → yeux → sourcils → visèmes → poids.
+- Sourcils : détection par mots-clés (brow + raise, down, furrow…).
+- Pas de valeurs numériques de poids dans la source.
+- Source : arawn-software-publishing (gitbook, DAZ, Crystal LipSync).
+- Statut : lu (méthode et noms). Valeurs : NON LUES. Note : c'est une doc de plugin DAZ ; les noms ne s'appliquent pas tels quels à Blender.
+
+### 18.6 Animation de personnage (marche) : lu (article), valeurs partielles
+- Cycle : 8 à 16 images ; à 24 i/s, 12 images par pas soit 24 pour le cycle complet.
+- Quatre poses clés : contact, descente, passage, montée.
+- Rebond pendant la montée ; symétrie de la seconde moitié ; bras à l'opposé des jambes ; hanches et épaules en sens inverse ; tête discrète ; contrôle des pieds.
+- Première et dernière image identiques pour une boucle.
+- Source : https://prolificstudio.co/blog/walking-animation/
+- Statut : lu. Amplitudes NON LUES. Course et sauts : NON LUS.
+
+### 18.7 Mouvement secondaire (cheveux, vêtements, accessoires, inertie) : lu (ordre et méthode), valeurs NON LUES
+- Ordre : mouvement primaire (torse) puis overlapping puis follow-through.
+- Décalage : analyser des références image par image.
+- Rig : segments liés, IK pour l'extrémité, FK par segment, switch IK/FK, dynamique automatique.
+- Source : https://blog.cg-wire.com/follow-through-overlapping-action
+- Statut : lu. Décalage en images et amortissement : NON LUS.
+
+### 18.8 Environnement et éclairage : lu (méthode et ratios)
+- Trois points : clé à 45°, remplissage à 50 % de la clé, contre-jour pour détacher (puissance non lue).
+- Types : point, sun, spot, area ; area = ombres douces.
+- HDRI seul : plat ; compléter par soleil et lumières d'aire ; lumières d'aire proches de la température du soleil.
+- Éviter la lumière frontale comme clé ; plusieurs petites sources plutôt qu'une seule grande.
+- Light linking pour cibler les objets.
+- Sources : https://uhiyama-lab.com/en/notes/blender/lighting-fundamentals-realistic-light/ et https://schoolofmotion.com/blog/lighting-scene-with-hrdi-and-area-lights
+- Statut : lu. Puissances absolues et tailles : NON LUES.
+
+### Bilan 2 à 8
+- Lu avec méthode utilisable : skinning (3), visèmes (5), marche (6), secondaire (7), éclairage (8), peau (4, sans valeurs).
+- Non lu : rigging IK/FK et contrôles faciaux (2), cheveux shader (4), course et sauts (6), valeurs de secondaire, puissances d'éclairage.
