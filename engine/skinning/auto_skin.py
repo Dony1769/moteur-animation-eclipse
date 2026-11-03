@@ -105,7 +105,7 @@ def skinner(corps, arm):
     lisser_limiter_normaliser(corps)
     return methode
 
-def lisser_limiter_normaliser(corps, facteur=0.5, passes=2):
+def lisser_limiter_normaliser(corps, facteur=0.5, passes=2, zone=None):
     """Post-traitement explicite des poids (déterministe, sans opérateur d'interface) :
     1. lissage : chaque poids se mélange à la moyenne des voisins (arêtes du maillage) ;
     2. limite : seulement les MAX_INFLUENCES plus fortes influences sont gardées ;
@@ -119,7 +119,7 @@ def lisser_limiter_normaliser(corps, facteur=0.5, passes=2):
     for _ in range(passes):
         nouveau = []
         for i, courant in enumerate(poids):
-            if not voisins[i]:
+            if not voisins[i] or (zone is not None and i not in zone):
                 nouveau.append(courant); continue
             moy = {}
             for j in voisins[i]:
@@ -160,6 +160,15 @@ def rattacher_pieces_rigides(arm, os_nom="mixamorig:Head"):
         o.matrix_parent_inverse = cible.inverted() @ monde @ o.matrix_basis.inverted()
         rattaches.append(o.name)
     return rattaches
+
+def zone_autour(corps, centres, rayon):
+    """Indices des sommets situés à moins de `rayon` mètres d'un des centres (coordonnées monde)."""
+    res = set()
+    for v in corps.data.vertices:
+        p = corps.matrix_world @ v.co
+        if any((p - c).length <= rayon for c in centres):
+            res.add(v.index)
+    return res
 
 def auditer_poids(corps):
     """Relit les poids réels, sans supposer le résultat."""

@@ -145,6 +145,8 @@ def analyser(chemin):
         "actions": actions,
         "hauteur_m": _taille(meshes),
         "anomalies": anomalies,
+        "cles_de_forme": [kb.name for m in meshes if m.data.shape_keys
+                          for kb in m.data.shape_keys.key_blocks],
     }
     return rapport
 

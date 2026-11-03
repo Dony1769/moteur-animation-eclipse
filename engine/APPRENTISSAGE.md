@@ -467,3 +467,19 @@ Règle : « lu » = texte de la méthode obtenu. Rien ici n'est testé ; tests a
 ### 19.12 Lecture sans résultat utilisable ce tour
 - Principled Hair BSDF : page de manuel (navigation seulement).
 - Fourreau et sangle : forums et articles sans procédure.
+
+## 20. Correction des pliages : méthode lue et mesurée (étape 3, suite)
+
+Sources lues (réseau) :
+- Pose Space Deformation, cours INRIA (imagine.inrialpes.fr/people/Francois.Faure/htmlCourses/PoseSpaceDeformation.html) : une correction est une différence par rapport à la forme de base, interpolée selon la pose. Le cours ne donne ni le noyau ni la procédure de choix des poses.
+- Guide DCC skinning (seeles.ai) : le LBS (déformation linéaire) fait s'effondrer le coude (« elbow collapse »). Remèdes listés : os de torsion, transition repeinte, DQS (dual quaternion) au milieu de l'avant-bras, petite correction pilotée plutôt que gonflement global des poids.
+- Manuel Blender, formes correctives (docs.blender.org/manual/es/2.92/addons/animation/corrective_shape_keys.html) : clé de forme pilotée par un os.
+
+Ce qui est mesuré (HBM, corps 1,69 m) :
+- Témoin : 0 pli au repos, avec ou sans correction.
+- Élargir la transition seule : 47 → 39 replis à 90° (-17 %). Insuffisant.
+- Correction par décalage vers l'intérieur (« moins normale ») calibrée à 90° : bras 24 → 3 replis à 90°, 6 → 1 à 60°, 0 au repos.
+- Calibrée à 120° : échec (27 replis restants). Limite : une seule forme ne couvre pas 120°.
+- Vérification : le calcul explicite LBS reproduit le modificateur Blender à 0,0005 mm.
+
+Erreurs commises pendant cette étape et règle à retenir (voir docs/erreurs_apprises.md).

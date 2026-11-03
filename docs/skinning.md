@@ -44,3 +44,28 @@ Non-régression : `tests/test_skinning.py` (4 tests sur les rapports committés)
 - **Squelette estimé** : les articulations sont des mesures de sections, sans référence anatomique par corps réel. Il n'a été testé que sur ce corps.
 - **Rendu visuel** : contrôle à l'œil sur deux images, pas sur une animation.
 - Pas de test sur un second personnage non skinné : test B n'est couvert que par ce corps.
+
+## Correction des pliages (étape 3, suite)
+
+Défaut mesuré : la déformation linéaire (LBS) fait se replier la surface au coude, à l'épaule et au genou. Mesure correcte : `engine/skinning/mesure_lbs.py` (faces repliées par rapport à la normale de repos tournée par l'os dominant ; témoin à 0° = 0 ; LBS explicite égal au modificateur Blender à 0,0005 mm).
+
+Méthode retenue : clé de forme corrective par articulation (`engine/skinning/correction_pose.py`), calibrée à 90°, décalage vers l'intérieur de la surface, valeur de la clé = clamp(angle / 90, 0, 1). Le calcul complet est `engine/skinning/construit_correctives.py`, qui reprend le pipeline (squelette, skinning, attache des yeux, clés). Rapport : `docs/rapports/hbm_corrections.json`.
+
+| Articulation | Replis à 90° avant | Après | Replis à 120° après |
+|---|---|---|---|
+| Bras gauche | 24 | 3 | 18 |
+| Bras droit | 8 | 3 | 7 |
+| Avant-bras gauche | 4 | 0 | 6 |
+| Avant-bras droit | 0 | 0 | 2 |
+| Jambe gauche | 5 | 0 | 10 |
+| Jambe droite | 6 | 0 | 8 |
+
+Amplitude au repos : 0,0 mm (la clé vaut 0 au repos).
+
+Comparaison écartée : élargir seulement la zone de transition des poids (–17 % de replis à 90°). Insuffisant, mais reste dans le pipeline sous forme de lissage global.
+
+Limites connues, à ne pas masquer :
+- À 120°, il reste des replis (bras gauche 18). Une forme calibrée à 120° fait pire à 90° (13 replis). Il faudra un os de torsion ou une seconde forme pilotée.
+- Les clés ont été calibrées chaque articulation seule. Leur combinaison (plusieurs articulations pliées à la fois) n'est pas encore testée : la chaîne épaule-coude doit être posée hiérarchiquement pour cela.
+- La valeur `angle / 90` est une règle de test ; le pilotage automatique par les os (drivers) reste à écrire à l'étape rig.
+- Les mesures portent sur le maillage de base ; le détail Multires n'est pas mesuré.

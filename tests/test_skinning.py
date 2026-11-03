@@ -38,3 +38,21 @@ def test_limite_influences_respectee():
     assert s["poids"]["max_influences_par_sommet"] <= controle.MAX_INFLUENCES
     assert s["poids"]["sommets_sans_poids"] == 0
     assert s["poids"]["sommets_poids_non_normalises"] == 0
+
+
+def test_corrections_repos_inchangees():
+    c = charger("hbm_corrections.json")
+    assert c["amplitude_repos_mm"] == 0.0
+
+
+def test_corrections_reduisent_les_replis_a_90():
+    c = charger("hbm_corrections.json")
+    for cle in c["cles"]:
+        assert cle["replis_apres"] <= cle["replis_avant"], cle
+    mesures = c["replis_par_angle"]
+    assert all(v["90"] <= 3 for v in mesures.values()), mesures
+
+
+def test_corps_corrige_est_ready():
+    r = controle.valider(charger("hbm_corps_corrige.json"))
+    assert r["statut"] == "READY FOR ANIMATION", r["echecs"]

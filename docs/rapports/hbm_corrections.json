@@ -1,0 +1,109 @@
+{
+  "cles": [
+    {
+      "cle": "corr_LeftArm",
+      "os": "mixamorig:LeftArm",
+      "angle": 90,
+      "replis_avant": 24,
+      "replis_apres": 3,
+      "iterations": 80,
+      "amplitude_max_mm": 40.0
+    },
+    {
+      "cle": "corr_RightArm",
+      "os": "mixamorig:RightArm",
+      "angle": 90,
+      "replis_avant": 8,
+      "replis_apres": 3,
+      "iterations": 80,
+      "amplitude_max_mm": 40.0
+    },
+    {
+      "cle": "corr_LeftForeArm",
+      "os": "mixamorig:LeftForeArm",
+      "angle": 90,
+      "replis_avant": 4,
+      "replis_apres": 0,
+      "iterations": 15,
+      "amplitude_max_mm": 14.0
+    },
+    {
+      "cle": "corr_RightForeArm",
+      "os": "mixamorig:RightForeArm",
+      "angle": 90,
+      "replis_avant": 0,
+      "replis_apres": 0,
+      "iterations": 1,
+      "amplitude_max_mm": 0.0
+    },
+    {
+      "cle": "corr_LeftLeg",
+      "os": "mixamorig:LeftLeg",
+      "angle": 90,
+      "replis_avant": 5,
+      "replis_apres": 0,
+      "iterations": 27,
+      "amplitude_max_mm": 25.0
+    },
+    {
+      "cle": "corr_RightLeg",
+      "os": "mixamorig:RightLeg",
+      "angle": 90,
+      "replis_avant": 6,
+      "replis_apres": 0,
+      "iterations": 29,
+      "amplitude_max_mm": 28.0
+    }
+  ],
+  "replis_par_angle": {
+    "mixamorig:LeftArm": {
+      "0": 0,
+      "30": 0,
+      "60": 1,
+      "90": 3,
+      "120": 18
+    },
+    "mixamorig:RightArm": {
+      "0": 0,
+      "30": 0,
+      "60": 0,
+      "90": 3,
+      "120": 7
+    },
+    "mixamorig:LeftForeArm": {
+      "0": 0,
+      "30": 0,
+      "60": 0,
+      "90": 0,
+      "120": 6
+    },
+    "mixamorig:RightForeArm": {
+      "0": 0,
+      "30": 0,
+      "60": 0,
+      "90": 0,
+      "120": 2
+    },
+    "mixamorig:LeftLeg": {
+      "0": 0,
+      "30": 0,
+      "60": 0,
+      "90": 0,
+      "120": 10
+    },
+    "mixamorig:RightLeg": {
+      "0": 0,
+      "30": 0,
+      "60": 0,
+      "90": 0,
+      "120": 8
+    }
+  },
+  "amplitude_repos_mm": 0.0,
+  "poids": {
+    "sommets_sans_poids": 0,
+    "sommets_poids_non_normalises": 0,
+    "max_influences_par_sommet": 4,
+    "groupes": 19
+  }
+}
