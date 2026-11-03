@@ -1,4 +1,4 @@
-import bpy, sys, math, random, time
+import bpy, sys, math, random, time, os
 
 sortie = sys.argv[sys.argv.index("--") + 1]
 t0 = time.time()
@@ -90,7 +90,13 @@ sc.camera = cam
 
 # 6. rendu : Cycles CPU, débruitage, 3 rebonds, sans caustiques, 1280x540
 sc.render.engine = "CYCLES"
-sc.cycles.device = "CPU"
+sc.cycles.device = "CPU" if os.environ.get("DEVICE", "CPU") == "CPU" else "GPU"
+if sc.cycles.device == "GPU":
+    prefs = bpy.context.preferences.addons["cycles"].preferences
+    prefs.compute_device_type = os.environ.get("BACKEND", "CUDA")
+    prefs.get_devices()
+    for d in prefs.devices:
+        d.use = True
 sc.cycles.samples = 16
 sc.cycles.use_denoising = True
 sc.cycles.denoiser = "OPENIMAGEDENOISE"
