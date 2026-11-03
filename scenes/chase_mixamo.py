@@ -4,7 +4,8 @@ sortie = sys.argv[sys.argv.index("--") + 1]
 t0 = time.time()
 bpy.ops.wm.read_factory_settings(use_empty=True)
 sc = bpy.context.scene
-ph = "/home/claude/moteur3d/assets/ph"
+ASSETS = os.environ.get("ASSETS") or os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "assets")
+ph = os.path.join(ASSETS, "ph")
 
 # 1. maillages téléchargés (Poly Haven, CC0) : chargés par nom exact, sans primitives
 SOURCES = {
@@ -90,7 +91,7 @@ sc.camera = cam
 
 
 # 5b. personnage Mixamo (placeholder) + animation de course (Running), boucle
-M = "/home/claude/moteur3d/assets/mixamo"
+M = os.path.join(ASSETS, "mixamo")
 avant = set(bpy.data.objects)
 bpy.ops.import_scene.fbx(filepath=f"{M}/Personnage_Maria.fbx", automatic_bone_orientation=True)
 nouveaux = [o for o in bpy.data.objects if o not in avant]

@@ -4,7 +4,8 @@ sortie = sys.argv[sys.argv.index("--") + 1]
 t0 = time.time()
 bpy.ops.wm.read_factory_settings(use_empty=True)
 sc = bpy.context.scene
-ph = "/home/claude/moteur3d/assets/ph"
+ASSETS = os.environ.get("ASSETS") or os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "assets")
+ph = os.path.join(ASSETS, "ph")
 
 # 1. maillages téléchargés (Poly Haven, CC0) : chargés par nom exact, sans primitives
 SOURCES = {
