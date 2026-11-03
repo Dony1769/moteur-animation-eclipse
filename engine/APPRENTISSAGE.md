@@ -156,3 +156,40 @@ Règle appliquée : un sujet est « lu » seulement si le texte de la méthode a
 
 ### Conclusion
 Le moteur n'a appris de façon vérifiable que la partie cheveux (lu) et la prise d'épée et l'attaque (lues). Tout le reste reste à lire ou à tester. Les tests sont la prochaine étape : une épée parentée à la main et une lueur sur un objet, rendus et mesurés, avant toute écriture dans le moteur comme « appris ».
+
+## 14. Apprentissage hors site Blender (sources externes lues)
+
+Règle : un sujet est « lu » seulement si le texte de la méthode a été obtenu. Les titres, plans de cours et questions de forum ne comptent pas. Tous les points ci-dessous sont à TESTER après la livraison du MP4 (pas avant).
+
+### 14.1 Modélisation hard surface (épée, armure) : lu (80.lv, article « hard surface tips » sur un pistolet)
+- Blockout : tout modéliser en détail, nommer chaque pièce, flat shading pendant la phase.
+- Bevels : Bevel modifier en « Limit Method : Weight », Bevel Weight sur les arêtes à arrondir ; désactiver Clamp Overlap et Loop Slide ; Outer Miter « Arc ».
+- Normales : ajouter Weighted Normal (Weighting Mode Corner Angle, Face Influence) ; Triangulate avec Keep Normals avant bake.
+- Booleans : soustraction avec modificateurs non destructifs réordonnables.
+- Edge loops près des arêtes qui doivent rester vives ; creases pour esquisser, puis remplacer par des loops.
+- Cavités : traitées au texturing (Substance), pas dans le modèle.
+- Source : https://80.lv/articles/hard-surface-modeling-tips-tricks-for-creating-a-vintage-quirky-looking-gun
+- Statut : lu. Test : À FAIRE (une lame d'épée).
+
+### 14.2 Cheveux en cartes (hair cards) : plan de cours seulement (non lu en détail)
+- Principe lu : des cartes plates avec texture de cheveux, plus légères que des mèches individuelles.
+- Workflow (plan de cours PixelicaCG, 3 h de vidéo) : préparer les cartes, couche 1, lisser, tresses, couche 2, mèches finales, fusion, export.
+- Statut : principe lu ; réglages et valeurs NON LUS.
+
+### 14.3 Épée et fourreau sur un personnage (Unreal, forums) : question seulement
+- Le piège décrit : si l'arme et le fourreau sont sur le même acteur, attacher l'arme à la main entraîne aussi le fourreau.
+- Solution et réglages : NON LUS (réponses du fil non accessibles).
+- Statut : piège lu ; méthode NON LUE.
+
+### 14.4 Cape et vêtements (Marvelous Designer) : NON LU
+- L'article gametextures a été redirigé ; l'outil de lecture a refusé l'URL de redirection (provenance).
+
+### 14.5 Effets magiques lumineux : NON LU
+- Article realtimevfx sur la couleur : seulement les règles de palette et de valeur (lu), pas l'émission, l'additif ou le bloom.
+- Le fil polycount n'a pas pu être lu.
+
+### 14.6 Assise, pose sur chaise, IK des pieds : NON LU
+- Résultats : forums Unreal, Reallusion, Roblox, sans procédure lisible.
+
+### Bilan
+Lu et utilisable après test : hard surface (14.1) ; principe des cheveux en cartes (14.2) ; piège fourreau/arme (14.3). Non lu : cape, lueur/magie, assise, fourreau complet. Ces sujets demandent une autre source textuelle ou des notes fournies par l'utilisateur.
