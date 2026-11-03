@@ -16,7 +16,7 @@ téléchargés (Poly Haven, CC0), personnage Mixamo (fichiers non versionnés, d
 
 - `notebooks/colab_render.ipynb` : repli sur Google Colab (GPU T4 si disponible, sinon CPU). Clip Mixamo
   facultatif : il demande de déposer les deux FBX.
-- `notebooks/kaggle_render.ipynb` : version Kaggle, bloquée tant que la vérification par téléphone n'est pas faite.
+- Kaggle n'est plus utilisé : sa version est dans l'historique git (commit 30a8bdd et antérieurs).
 
 ## Budget
 
