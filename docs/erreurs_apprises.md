@@ -155,3 +155,16 @@ Chaque erreur a une cause, une correction et un test. Une erreur corrigée doit 
 - Lecture : deux os qui copient la même rotation à la même position additionnent leurs effets au lieu de la répartir. Une répartition réelle exige des os placés à des positions différentes le long du bras (tête au milieu du bras, par exemple), ce qui n'est pas testé.
 - Décision : référence inchangée (un os à 0,5).
 - Règle : pour répartir une rotation sur plusieurs os, placer chaque os à sa propre position le long de la chaîne, jamais empiler des copies au même point.
+
+## 29. Mesure de replis sans les clés : erreur de procédure
+- Symptôme : la première mesure de la correction à trois échantillons donnait exactement les replis du bras sans clés (3/12/17/19).
+- Cause : `faces_repliees` était appelé sans le paramètre `decalage` ; les clés calibrées n'entraient pas dans la mesure.
+- Règle : toute mesure de replis doit recevoir le décalage total des clés actives. Une mesure identique à la variante sans clés est un signal d'erreur de procédure, pas un résultat.
+
+## 30. Correction à trois échantillons (60, 90, 120) : pas de gain net
+- Méthode : une clé par échantillon, calibrée seule à partir d'un décalage nul ; valeur en chapeau (1 à l'échantillon, 0 à 30° de distance). Interpolation linéaire par morceaux entre échantillons.
+- Plafond d'amplitude 40 mm, 150 itérations : bras 0/2/7/15 à 60/90/105/120° (référence 0/2/6/13). Jambe identique à la référence.
+- Plafond 80 mm, 300 itérations : bras 0/1/7/11, jambe gauche 0/0/4/3, mais étirement 8,0 à 120° (référence 5,9) et 4,5 pour la jambe (référence 2,4).
+- Lecture : le goulot est le plafond d'amplitude de la calibration à 120°, qui n'atteint pas zéro replis. Augmenter l'amplitude réduit les replis et augmente l'étirement, dans les mêmes proportions que les essais précédents. Le compromis est structurel.
+- Décision : pipeline de référence conservé (replis 0/2/6/13, étirement 5,9). Justification : c'est le compromis le plus équilibré des variantes mesurées, et aucune ne réduit à la fois les replis et l'étirement.
+- Règle : une amplitude de correction de plusieurs centimètres sur un corps de 1,7 m est un signal d'alerte : elle compense un défaut de déformation au lieu de le corriger.

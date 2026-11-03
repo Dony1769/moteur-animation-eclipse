@@ -1,0 +1,224 @@
+{
+  "echantillons": [
+    60,
+    90,
+    120
+  ],
+  "chapeau_demi_support": 30.0,
+  "iterations": 150,
+  "cles": [
+    {
+      "cle": "m60_LeftArm",
+      "os": "mixamorig:LeftArm",
+      "angle": 60,
+      "replis_avant": 3,
+      "replis_apres": 0,
+      "iterations": 6,
+      "amplitude_max_mm": 5.0
+    },
+    {
+      "cle": "m90_LeftArm",
+      "os": "mixamorig:LeftArm",
+      "angle": 90,
+      "replis_avant": 12,
+      "replis_apres": 2,
+      "iterations": 150,
+      "amplitude_max_mm": 40.0
+    },
+    {
+      "cle": "m120_LeftArm",
+      "os": "mixamorig:LeftArm",
+      "angle": 120,
+      "replis_avant": 19,
+      "replis_apres": 15,
+      "iterations": 150,
+      "amplitude_max_mm": 40.0
+    },
+    {
+      "cle": "m60_RightArm",
+      "os": "mixamorig:RightArm",
+      "angle": 60,
+      "replis_avant": 0,
+      "replis_apres": 0,
+      "iterations": 1,
+      "amplitude_max_mm": 0.0
+    },
+    {
+      "cle": "m90_RightArm",
+      "os": "mixamorig:RightArm",
+      "angle": 90,
+      "replis_avant": 3,
+      "replis_apres": 0,
+      "iterations": 9,
+      "amplitude_max_mm": 8.0
+    },
+    {
+      "cle": "m120_RightArm",
+      "os": "mixamorig:RightArm",
+      "angle": 120,
+      "replis_avant": 5,
+      "replis_apres": 2,
+      "iterations": 150,
+      "amplitude_max_mm": 40.0
+    },
+    {
+      "cle": "m60_LeftForeArm",
+      "os": "mixamorig:LeftForeArm",
+      "angle": 60,
+      "replis_avant": 0,
+      "replis_apres": 0,
+      "iterations": 1,
+      "amplitude_max_mm": 0.0
+    },
+    {
+      "cle": "m90_LeftForeArm",
+      "os": "mixamorig:LeftForeArm",
+      "angle": 90,
+      "replis_avant": 4,
+      "replis_apres": 0,
+      "iterations": 14,
+      "amplitude_max_mm": 13.0
+    },
+    {
+      "cle": "m120_LeftForeArm",
+      "os": "mixamorig:LeftForeArm",
+      "angle": 120,
+      "replis_avant": 6,
+      "replis_apres": 0,
+      "iterations": 51,
+      "amplitude_max_mm": 40.0
+    },
+    {
+      "cle": "m60_RightForeArm",
+      "os": "mixamorig:RightForeArm",
+      "angle": 60,
+      "replis_avant": 0,
+      "replis_apres": 0,
+      "iterations": 1,
+      "amplitude_max_mm": 0.0
+    },
+    {
+      "cle": "m90_RightForeArm",
+      "os": "mixamorig:RightForeArm",
+      "angle": 90,
+      "replis_avant": 0,
+      "replis_apres": 0,
+      "iterations": 1,
+      "amplitude_max_mm": 0.0
+    },
+    {
+      "cle": "m120_RightForeArm",
+      "os": "mixamorig:RightForeArm",
+      "angle": 120,
+      "replis_avant": 1,
+      "replis_apres": 0,
+      "iterations": 5,
+      "amplitude_max_mm": 4.0
+    },
+    {
+      "cle": "m60_LeftLeg",
+      "os": "mixamorig:LeftLeg",
+      "angle": 60,
+      "replis_avant": 0,
+      "replis_apres": 0,
+      "iterations": 1,
+      "amplitude_max_mm": 0.0
+    },
+    {
+      "cle": "m90_LeftLeg",
+      "os": "mixamorig:LeftLeg",
+      "angle": 90,
+      "replis_avant": 5,
+      "replis_apres": 0,
+      "iterations": 27,
+      "amplitude_max_mm": 25.0
+    },
+    {
+      "cle": "m120_LeftLeg",
+      "os": "mixamorig:LeftLeg",
+      "angle": 120,
+      "replis_avant": 11,
+      "replis_apres": 3,
+      "iterations": 150,
+      "amplitude_max_mm": 40.0
+    },
+    {
+      "cle": "m60_RightLeg",
+      "os": "mixamorig:RightLeg",
+      "angle": 60,
+      "replis_avant": 0,
+      "replis_apres": 0,
+      "iterations": 1,
+      "amplitude_max_mm": 0.0
+    },
+    {
+      "cle": "m90_RightLeg",
+      "os": "mixamorig:RightLeg",
+      "angle": 90,
+      "replis_avant": 6,
+      "replis_apres": 0,
+      "iterations": 29,
+      "amplitude_max_mm": 28.0
+    },
+    {
+      "cle": "m120_RightLeg",
+      "os": "mixamorig:RightLeg",
+      "angle": 120,
+      "replis_avant": 10,
+      "replis_apres": 5,
+      "iterations": 150,
+      "amplitude_max_mm": 40.0
+    }
+  ],
+  "replis_par_angle": {
+    "LeftArm": {
+      "0": 0,
+      "60": 0,
+      "90": 2,
+      "105": 7,
+      "120": 15
+    },
+    "RightArm": {
+      "0": 0,
+      "60": 0,
+      "90": 0,
+      "105": 2,
+      "120": 3
+    },
+    "LeftForeArm": {
+      "0": 0,
+      "60": 0,
+      "90": 0,
+      "105": 1,
+      "120": 0
+    },
+    "RightForeArm": {
+      "0": 0,
+      "60": 0,
+      "90": 0,
+      "105": 0,
+      "120": 0
+    },
+    "LeftLeg": {
+      "0": 0,
+      "60": 0,
+      "90": 0,
+      "105": 3,
+      "120": 3
+    },
+    "RightLeg": {
+      "0": 0,
+      "60": 0,
+      "90": 0,
+      "105": 7,
+      "120": 5
+    }
+  },
+  "poids": {
+    "sommets_sans_poids": 0,
+    "sommets_poids_non_normalises": 0,
+    "max_influences_par_sommet": 4,
+    "groupes": 21
+  },
+  "os": 21
+}

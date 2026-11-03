@@ -89,8 +89,21 @@ def evalue():
     return coords
 
 
+CLES_MULTI = __import__("os").environ.get("CLES_MULTI") == "1"
+
+
+def chapeau(a, a_k):
+    return max(0.0, 1.0 - abs(a - a_k) / 30.0)
+
+
 def valeurs_cles(nom, a):
     if not AVEC_CLES:
+        return
+    if CLES_MULTI:
+        base = nom.replace("mixamorig:", "")
+        for a_k in (60, 90, 120):
+            kb[f"m{a_k}_{base}"].value = chapeau(a, a_k)
+        bpy.context.view_layer.update()
         return
     c1 = "corr_" + nom.replace("mixamorig:", "")
     c2 = "c120_" + nom.replace("mixamorig:", "")
