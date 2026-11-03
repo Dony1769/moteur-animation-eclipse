@@ -17,7 +17,8 @@ MESURES = {
         (640, 270, 4, 4.0),
     ],
     # pas encore mesuré : rempli quand l'utilisateur colle les résultats du notebook Kaggle
-    "gpu-colab": [],
+    # Colab T4 (OptiX), run du notebook du 3 novembre 2026, décor seul ; inclut le démarrage de Blender à chaque réglage
+    "gpu-colab": [(1280, 540, 16, 19.6), (960, 405, 8, 11.5), (640, 270, 8, 5.3), (640, 270, 4, 5.3)],
 }
 
 REGLAGES_PAR_PRIORITE = sorted(MESURES["cpu"], key=lambda r: (r[0] * r[1], r[2]), reverse=True)

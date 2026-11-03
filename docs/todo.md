@@ -65,3 +65,11 @@
 - Pas d'épée, pas de cape, pas de visage rigé à ce stade.
 
 ## Étapes 7 à 9 : non commencées (dépendent de l'étape 6 ou du placeholder).
+
+## Étapes 6 à 9 : état du 3 novembre 2026, 01 h 15
+- Étape 6 (guerrier, Human Base Meshes, rig Rigify) : pose de course de test (images-clés sur les os de déformation,
+  scenes/guerrier_pose.py). Pas validée : artefacts aux genoux et aux coudes, retargeting CMU non fait.
+- Étape 7 (combat 6 s) : fait avec le placeholder Maria. Poussière et débris non faits.
+- Étape 8 (20 s, trois plans) : fait, 480 images, MP4 20,00 s, placeholder.
+- Étape 9 (estimation d'un épisode) : rien ne tient sur CPU ni sur Colab avec les mesures actuelles. À faire par l'utilisateur :
+  un rendu de 96 images en un seul processus sur T4, pour une mesure GPU propre.

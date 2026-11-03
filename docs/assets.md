@@ -18,3 +18,8 @@ localement, mais l'étape B est arrêtée par cette limite réseau.
 
 ## Fichiers de travail hors dépôt
 Les maillages et textures Poly Haven sont dans assets/ph/ (ignoré par git).
+
+## Ajouts des étapes 6 à 8 (3 novembre 2026)
+- Human Base Meshes Bundle v1.4.1 (Blender Studio, CC0) : corps stylisé « GEO-body_male_stylized » et rig Rigify. Fichier dans assets/hbm/ (ignoré par git), non redistribué.
+- Mixamo : Personnage_Maria.fbx (placeholder, avec peau), Idle.fbx, Running.fbx, Sword_Slash.fbx, Hit_Reaction.fbx (sans peau). Fichiers dans assets/mixamo/ (ignoré par git), non redistribués, téléchargés depuis le compte de l'auteur.
+- Clips CMU BVH (run/09_01, jump/13_11, sword/02_09) déjà présents localement, non utilisés pour l'instant (retargeting non fait).
