@@ -82,3 +82,10 @@
 - Rendu 60 s : à lancer par vous sur Colab (cellule « Étape 9 »). Le rendu est fait en lots de 10 s, reprise possible. Durée non mesurée sur T4.
 - Fichiers FBX : non committés. Le dépôt est public et les conditions Mixamo n'autorisent pas la redistribution des fichiers bruts (vérification de la page des conditions à faire). Ils se déposent dans la cellule d'upload à chaque session. Décision à valider.
 - Retargeting sur le squelette Rigify détaillé : appris (contrôles FK, bake), non appliqué. Les personnages du combat restent les Maria Mixamo.
+
+## FBX Mixamo : lecture depuis Google Drive (décision validée)
+
+- Les FBX ne sont pas dans le dépôt. Ils restent dans Mon Drive, dossier « The_Chase_FBX » : Personnage_Maria.fbx, Running.fbx, Idle.fbx, Sword_Slash.fbx, Hit_Reaction.fbx.
+- Le notebook monte Drive à chaque session (une autorisation à donner) et copie les fichiers manquants. Le dépôt de secours à l'upload reste en place.
+- À faire une fois par vous : créer le dossier et y déposer les cinq fichiers. Un nom avec espaces au lieu de tirets bas est accepté.
+- Simulation locale : copie des cinq fichiers réussie depuis un dossier factice. Test réel sur Colab à faire.
