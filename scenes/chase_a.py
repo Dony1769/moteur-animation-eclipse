@@ -98,13 +98,13 @@ if sc.cycles.device == "GPU":
     prefs.get_devices()
     for d in prefs.devices:
         d.use = True
-sc.cycles.samples = 16
+sc.cycles.samples = int(os.environ.get("SPP", "16"))
 sc.cycles.use_denoising = True
 sc.cycles.denoiser = "OPENIMAGEDENOISE"
 sc.cycles.max_bounces = 3
 sc.cycles.caustics_reflective = False
 sc.cycles.caustics_refractive = False
-sc.render.resolution_x, sc.render.resolution_y = 1280, 540
+sc.render.resolution_x, sc.render.resolution_y = int(os.environ.get("RX", "1280")), int(os.environ.get("RY", "540"))
 sc.render.film_transparent = False
 sc.render.image_settings.file_format = "PNG"
 sc.view_settings.view_transform = "AgX"
