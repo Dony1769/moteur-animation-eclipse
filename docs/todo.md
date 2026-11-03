@@ -27,3 +27,13 @@
   SMS : ni GPU ni Internet dans le notebook. Sans Internet, le téléchargement de Blender et des assets échoue.
 - Le notebook ne plante plus sans GPU : il bascule en CPU. Le profil gpu-kaggle reste non mesuré.
 - Solution de repli proposée : Google Colab (GPU T4), à adapter si l'utilisateur accepte.
+
+## Étape 5 (placeholder Mixamo) : état au 2 novembre 2026, 22 h 50
+- Fichiers reçus et vérifiés : six FBX binaires (personnage à 65 os, animations Idle, Running, Jump, Sword
+  Slash, Hit Reaction à 24 images/s). Empreintes dans assets/mixamo/SHA256SUMS.txt (dossier ignoré par git).
+- Animation appliquée au personnage : il faut assigner le « slot » de l'action (Blender 4.5). Corrigé.
+- Pose de course : l'animation évolue d'une image à l'autre, mais l'image frame 8 ne se lit pas comme une
+  course (bras écartés, jambes presque droites). Non validée.
+- MP4 4 s : non fait. À 640×270, le personnage fait passer le rendu à environ 40 s par image, soit plus de 60
+  min pour 96 images : au-dessus de la limite de 20 min par test. À réduire avant le MP4.
+- Repli Google Colab : notebooks/colab_render.ipynb, écrit, non testé (à lancer par l'utilisateur).
