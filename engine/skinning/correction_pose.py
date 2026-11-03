@@ -51,11 +51,11 @@ def direction_correction(mode, normale, p, arm, nom, corps):
         return point_sur_segment(p, a, c) - p
     raise ValueError(mode)
 
-def calculer_decalage(corps, arm, nom, axe, angle, pas=0.001, iterations=60, amplitude_max=0.02, mode="normale"):
+def calculer_decalage(corps, arm, nom, axe, angle, pas=0.001, iterations=60, amplitude_max=0.02, mode="normale", initial=None):
     """Décalages locaux qui suppriment les replis de l'os `nom` à l'angle `angle`.
     Renvoie (liste de décalages, historique du nombre de faces repliées par itération)."""
     normales = normales_sommets(corps)
-    decal = [Vector((0.0, 0.0, 0.0)) for _ in corps.data.vertices]
+    decal = [Vector(d) for d in initial] if initial is not None else [Vector((0.0, 0.0, 0.0)) for _ in corps.data.vertices]
     repos = poser_temporairement(arm, nom, axe, angle)
     historique = []
     try:
@@ -100,3 +100,24 @@ def ajouter_cles_correctives(corps, arm, specs, angle=90, iterations=80, amplitu
 
 def appliquer_valeur(corps, cle_nom, valeur):
     corps.data.shape_keys.key_blocks[cle_nom].value = max(0.0, min(1.0, valeur))
+
+
+def ajouter_cle_seconde_pose(corps, arm, nom, axe, cle_premiere, angle_1=90, angle_2=120,
+                             iterations=80, amplitude_max=0.04):
+    """Deuxième échantillon de l'espace de pose : part du décalage de la première clé (calibrée à angle_1)
+    et le corrige à angle_2. La seconde clé porte la différence ; sa valeur = clamp((angle - angle_1)/(angle_2 - angle_1)).
+    Ainsi, à angle_1 la somme vaut la première clé, et à angle_2 la somme vaut la correction à angle_2.
+    Interpolation linéaire entre les deux échantillons (pose space à une dimension)."""
+    kb = corps.data.shape_keys.key_blocks
+    base = kb["Basis"].data
+    d1 = [(kb[cle_premiere].data[i].co - base[i].co) for i in range(len(base))]
+    decal2, hist = calculer_decalage(corps, arm, nom, axe, angle_2, iterations=iterations,
+                                     amplitude_max=amplitude_max, mode="moins_normale", initial=d1)
+    diff = [decal2[i] - d1[i] for i in range(len(base))]
+    cle = corps.shape_key_add(name="c" + str(angle_2) + "_" + nom.replace("mixamorig:", ""), from_mix=False)
+    cle.slider_min = 0.0; cle.slider_max = 1.0; cle.value = 0.0
+    for i in range(len(base)):
+        cle.data[i].co = base[i].co + diff[i]
+    return {"cle": cle.name, "os": nom, "angle_1": angle_1, "angle_2": angle_2,
+            "replis_avant": hist[0], "replis_apres": hist[-1], "iterations": len(hist),
+            "amplitude_diff_max_mm": round(max(d.length for d in diff) * 1000, 2)}

@@ -69,3 +69,22 @@ Limites connues, à ne pas masquer :
 - Les clés ont été calibrées chaque articulation seule. Leur combinaison (plusieurs articulations pliées à la fois) n'est pas encore testée : la chaîne épaule-coude doit être posée hiérarchiquement pour cela.
 - La valeur `angle / 90` est une règle de test ; le pilotage automatique par les os (drivers) reste à écrire à l'étape rig.
 - Les mesures portent sur le maillage de base ; le détail Multires n'est pas mesuré.
+
+## Combinaisons d'articulations (mesurées)
+
+Test : `engine/skinning/test_combinaisons.py`. Les chaînes sont posées hiérarchiquement (`engine/skinning/pose_chaine.py` : l'avant-bras suit le bras). Témoins : un os seul en chaîne retrouve les résultats du test à un os (6 et 5 replis).
+
+| Scénario | Sans correction | Avec correction |
+|---|---|---|
+| Bras gauche 90° + avant-bras 90° | 28 | 3 |
+| Bras gauche 60° + avant-bras 60° | 6 | 1 |
+| Deux bras à 90° | 32 | 6 |
+| Deux jambes à 90° | 11 | 0 |
+| Corps entier à 60° | 7 | 1 |
+
+Bilan : les corrections à 90° se combinent sans créer de replis nouveaux dans ces cas. Un scénario plus extrême (bras et avant-bras à 90° chacun) reste à 3 replis.
+
+## Seconde pose (120°) et DQS : résultats mesurés
+
+- Seconde clé, calibrée à 120° par-dessus la première, valeur `clamp((angle − 90) / 30)` (`engine/skinning/construit_seconde_pose.py`, rapport `docs/rapports/hbm_seconde_pose.json`) : avant-bras 6 → 0 et 2 → 0 à 120° ; jambes 10 → 3 et 8 → 5 ; bras gauche 22 → 20 (plafond de 40 mm atteint). Le bras reste le point faible.
+- DQS (Preserve Volume), testé avec les clés (`engine/skinning/test_dqs_cles.py`, rapport `docs/rapports/hbm_dqs_cles.json`) : bras gauche 105° : 18 → 8 ; jambes 105° : 3 → 0 ; 120° : 20 → 17. Le gonflement du DQS n'est pas encore mesuré : le DQS n'est pas adopté.
