@@ -611,3 +611,8 @@ Mesure LBS sans clé, bras gauche seul : 90° 24 -> 12 replis ; 120° 31 -> 19 ;
 - Résidu : plis à 105° et 120°, car la cible ARAP elle-même plie à grand angle.
 - Échecs : amortissement des plis (erreur 56). Pondération cotangente : gain mixte (erreur 57).
 - Prochaine étape : réduire le résidu de pli à grand angle, sans nouvel amortissement.
+
+## 42. Limitation de rotation et sélection par entraînement
+- Limiter la rotation des sommets repliés dans l'ARAP : efficace sur l'avant-bras et la jambe, cascade sur le bras (erreur 58).
+- Sélection de la variante par pose d'entraînement uniquement, puis revalidation Blender : avant-bras et jambe sans plis à 105° (erreur 59).
+- Reste : bras à 105° et 120°.

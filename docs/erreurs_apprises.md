@@ -320,3 +320,14 @@ Chaque erreur a une cause, une correction et un test. Une erreur corrigée doit 
 - Résultat hors entraînement : bras 105° 4 → 3 plis, étirement minimal 0,51 → 0,70 ; jambe 105° 3 → 1 pli ; avant-bras 105° 2 → 3 plis (minimum 0,28 → 0,25).
 - Non adopté par défaut : gain mixte, pas de chaîne gagnante nette. L'option `poids=` reste disponible.
 - Règle : un bug de second membre peut produire un résultat aberrant uniforme ; un résultat identique sur toutes les poses signale d'abord une erreur d'implémentation.
+
+## 58. Limitation de rotation dès le début de l'ARAP : cascade de plis sur le bras
+- Tentative : ramener vers l'identité la rotation des sommets de faces repliées, à chaque itération.
+- Résultat : bon sur l'avant-bras et la jambe, mais sur le bras le nombre de plis explose (112 à 120° d'entraînement). Le sous-ensemble de faces repliées grossit d'une itération à l'autre.
+- Version douce (alpha 0,8, activée à partir de l'itération 25) : évite la cascade, mais le bras reste dégradé (39 plis à 120°).
+- Règle : une limitation active pendant le solveur doit être testée pour sa stabilité (le nombre de plis doit décroître), pas seulement pour son effet final.
+
+## 59. Choix de variante sur les poses d'entraînement uniquement
+- Méthode : pour chaque pose d'entraînement, garder la variante (ARAP simple ou limitée) qui produit le moins de plis sur cette pose. Les poses de test ne sont jamais utilisées pour ce choix.
+- Résultat hors entraînement (numpy, puis Blender par formes-clés) : avant-bras 105° 0 pli (origine 5), jambe 105° 0 pli (origine 7), jambe 120° 1 pli (origine 10). Bras : 4 plis à 105° (origine 12), 12 à 120° (origine 15).
+- Règle : une sélection entre variantes est légitime si elle n'utilise que l'entraînement et si le résultat est revalidé sur des poses non utilisées.

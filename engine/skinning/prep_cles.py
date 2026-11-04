@@ -14,6 +14,11 @@ for c, nom in enumerate(CH):
     for a in (60, 90, 120):
         p = c * 6 + ANG.index(a)
         P0, Pa = arap_cible(rest, W, M[p], ar, ancre, iters=40)
+        P0l, Pl = arap_cible(rest, W, M[p], ar, ancre, iters=40, faces=d["faces"], alpha=0.8, debut_limite=25)
+        from plis_numpy import plis_positions
+        # choix sur la pose d'entraînement uniquement (erreur 59)
+        if plis_positions(rest, Pl, W, M[p], d["faces"]) < plis_positions(rest, Pa, W, M[p], d["faces"]):
+            Pa = Pl
         delta = Pa - P0
         # matrice linéaire de skinning A_i = somme_b W_ib R_b (partie 3x3)
         A = np.einsum("ib,bjk->ijk", W, M[p][:, :3, :3])

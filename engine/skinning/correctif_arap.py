@@ -31,7 +31,7 @@ def _rotations(x, p, ij, N, wij=None):
     V[det < 0, :, 2] *= -1          # interdit les réflexions
     return V @ np.transpose(U, (0, 2, 1))
 
-def arap_cible(rest, W, M, aretes, ancre, iters=12, poids=None):
+def arap_cible(rest, W, M, aretes, ancre, iters=12, poids=None, faces=None, alpha=0.5, debut_limite=0):
     """Positions ARAP pour une pose. ancre : masque booléen des sommets fixés (à P0)."""
     N = len(rest)
     P0 = _lbs(rest, W, M)
@@ -51,6 +51,16 @@ def arap_cible(rest, W, M, aretes, ancre, iters=12, poids=None):
     solveur = spl.factorized(L)
     for _ in range(iters):
         R = _rotations(rest, p, ij, N, wij)
+        if faces is not None and _ >= debut_limite:
+            # limitation de rotation : sommets des faces repliées ramenés vers l'identité (erreur 58)
+            from plis_numpy import plis_masque
+            masque = plis_masque(rest, p, W, M, faces)
+            if masque.any():
+                touches = np.unique(np.concatenate([np.array(list(faces[k]), dtype=int) for k in np.where(masque)[0]]))
+                melange = alpha * R[touches] + (1 - alpha) * np.eye(3)
+                U2, _, Vt2 = np.linalg.svd(melange)
+                R2 = Vt2.transpose(0, 2, 1) @ U2.transpose(0, 2, 1)
+                R[touches] = R2
         # second membre : sum_j (R_i + R_j)/2 (x_i - x_j) pour chaque arête orientée i->j
         dx = rest[ij[:, 0]] - rest[ij[:, 1]]
         Rm = 0.5 * (R[ij[:, 0]] + R[ij[:, 1]])
