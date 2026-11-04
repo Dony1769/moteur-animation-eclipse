@@ -200,3 +200,13 @@ Chaque erreur a une cause, une correction et un test. Une erreur corrigée doit 
 - Correction : fondu enchaîné NLA (Running sur une piste supérieure, `blend_in` de 12 images, départ 12 images avant la fin d'Idle). Ratio 1,02 à 12 images, 1,57 à 6 images.
 - Réglage retenu : 12 images, qui donne la transition la plus douce. Le seuil 3 a été fixé avant la mesure, à confirmer sur d'autres paires de clips.
 - Limite : une seule paire de clips testée ; le pic de 40 cm par image dans Running reste à examiner.
+
+## 37. Export animé : plage de bake de la scène au lieu de la plage du clip
+- Symptôme : après réimport, un écart de 627 mm entre le personnage exporté et l'original.
+- Cause : l'export cuit la plage de la scène (250 images), pas celle du clip (16 images) ; l'action réimportée couvre 2 à 251.
+- Règle : borner `scene.frame_start/frame_end` à la plage du clip avant tout `bake_anim`, et compter les images à partir du début réel de l'action réimportée.
+
+## 38. Comparer une animation exportée : décalage temporel de l'import FBX
+- Constat : le FBX réimporté commence à l'image 2 pour un clip qui commence à 1.
+- Règle : aligner les images par `frame_range[0]` de l'action réimportée, jamais par numéro d'image brut. Un écart de quelques centimètres sur tout le clip est souvent un décalage d'une image, à vérifier avant de conclure à une erreur d'export.
+- Résultat après correction : écart maximal 0,257 mm sur tout le clip (tolérance 1 mm).

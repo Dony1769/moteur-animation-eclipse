@@ -529,3 +529,9 @@ Mesure LBS sans clé, bras gauche seul : 90° 24 -> 12 replis ; 120° 31 -> 19 ;
 - Contrôleurs absents (5) : IK mains, IK pieds, cibles de pôle, commutation IK/FK, contrôle racine. Constat, non corrigé ici : leur construction relève de l'étape 5.
 - Rig facial absent : 0 forme-clé, 0 os facial. Le moteur ne sait pas encore le faire ; c'est l'étape faciale (≥ 15 expressions).
 - Règle : un inventaire complet n'est pas une fonctionnalité. Le statut « absent » est reporté tel quel.
+
+## 29. Retargeting et export animé de Maria (Test A, items 9 et 12)
+- Couverture : les 52 os animés par le clip Running existent tous sur le squelette de Maria (65 os). Les 13 autres os ne sont pas animés par ce clip.
+- Export : Maria + Running exportés en FBX, réimportés ; même nombre de sommets (8 094), 65 os, 4 influences au plus, mouvement identique à 0,26 mm.
+- Méthode : `engine/validation/test_maria_export.py`. Erreurs de procédure 37 et 38 consignées.
+- Limite : un seul clip exporté ; l'export des autres clips et de la transition reste à tester.
