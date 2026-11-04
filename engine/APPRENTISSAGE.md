@@ -630,3 +630,9 @@ Mesure LBS sans clé, bras gauche seul : 90° 24 -> 12 replis ; 120° 31 -> 19 ;
 ## 45. Correctifs sur poses réparties : validés dans Blender sauf 120°
 - Les correctifs ARAP fonctionnent sur la répartition épaule + bras comme sur le bras seul (erreur 63).
 - Résidu à 120° : 11 plis, identique à l'origine. Piste : correctif dédié à l'épaule à grand angle, ou poids de l'épaule.
+
+## 46. Bras HBM : articulations, armature et test
+- Articulations placées par chemin mesuré sur le maillage (épaule, poignet) ; coude et bout de main estimés (anthropométrie) et signalés comme tels.
+- Résultat test (`engine/validation/test_hbm_bras.py`, Blender, copie) : 8 os, symétrie G/D 0,8 mm, longueurs dans les plages, milieux à l'intérieur du maillage.
+- Limite : le bout de la main est extrapolé (le chemin mesuré est trop court) ; les doigts ne sont pas faits.
+- Défaut trouvé et corrigé pendant le test (erreur 64).

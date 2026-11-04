@@ -354,3 +354,9 @@ Chaque erreur a une cause, une correction et un test. Une erreur corrigée doit 
 - Blender : à 75°, 0 pli (origine 6), étirement 1,22 ; à 105°, 4 plis (origine 9), étirement 1,19. Mêmes ordres de grandeur que le bras seul.
 - Non résolu : à 120° (entraînement), 11 plis, comme à l'origine : la sélection garde la variante simple, la variante limitée n'aide pas sur cette pose.
 - Règle : une correction entraînée sur le même angle total que le test est valable ; le résidu à 120° reste un problème ouvert.
+
+## 64. Test de longueurs : correspondance de suffixe trop large
+- Symptôme : le test des bras signalait « LeftForeArm = 0.144 h hors plage » alors que la valeur est dans la plage de l'avant-bras (0,12–0,18 h).
+- Cause : `"LeftForeArm".endswith("Arm")` est vrai ; l'avant-bras était comparé à la plage du bras.
+- Correctif : comparer le nom après le côté (`Left`/`Right`) à la clé exacte du dictionnaire de plages.
+- Règle : dans un test, ne jamais faire de correspondance par `endswith` sur des noms dont un suffixe est un autre suffixe.
