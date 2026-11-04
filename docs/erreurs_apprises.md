@@ -210,3 +210,10 @@ Chaque erreur a une cause, une correction et un test. Une erreur corrigée doit 
 - Constat : le FBX réimporté commence à l'image 2 pour un clip qui commence à 1.
 - Règle : aligner les images par `frame_range[0]` de l'action réimportée, jamais par numéro d'image brut. Un écart de quelques centimètres sur tout le clip est souvent un décalage d'une image, à vérifier avant de conclure à une erreur d'export.
 - Résultat après correction : écart maximal 0,257 mm sur tout le clip (tolérance 1 mm).
+
+## 39. Mesure de section de jambe : étendue en X fausse à l'entrejambe ; corps non centré
+- Symptôme 1 : aucun sommet sélectionné pour la jambe ; la section « la plus fine » tombait à 0,39 h avec 56 mm (faux).
+- Cause 1 : le corps du bundle HBM est décalé de −2,26 m en X. Le filtre `x > 0,03` ne retenait rien.
+- Cause 2 : près de l'entrejambe, l'étendue en X ne garde que le bord intérieur de la jambe et s'effondre. La mesure est donc fausse à cette hauteur.
+- Règle : recentrer sur le milieu réel du corps avant tout filtre par coordonnée. Pour une section de membre, mesurer la profondeur (étendue en Y), qui ne s'effondre pas à l'entrejambe.
+- Transparence : le changement de métrique a été fait après un échec. Il est justifié par la cause 2 (artefact géométrique), pas par le seul résultat ; à confirmer sur d'autres corps avant de généraliser.

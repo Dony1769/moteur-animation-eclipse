@@ -542,3 +542,10 @@ Mesure LBS sans clé, bras gauche seul : 90° 24 -> 12 replis ; 120° 31 -> 19 ;
 - Dimensions : hauteur 1,690 m, pied à z = −0,006 m, envergure X 0,881 m (bras écartés, pas la largeur d'épaules), profondeur 0,290 m.
 - Méthode : `engine/validation/test_hbm_corps.py`. Items 5 à 15 non faits : articulations, armature, poids, contrôleurs, tests de flexion, visage, animations, export.
 - Règle : mesurer la largeur sur un corps à bras écartés donne l'envergure, pas la largeur d'épaules. Nommer la mesure selon ce qu'elle est.
+
+## 31. Test B, item 5 : articulations du corps HBM
+- Genou : validé. La section de jambe la plus fine (profondeur) est à 0,290 h ; l'estimation anatomique donne 0,285 h (écart 0,005 h, seuil 0,03).
+- Non validées (estimées par proportions) : cheville, hanche, épaule, cou, tête. Aucun contrôle géométrique fiable n'a été écrit pour elles ; elles restent marquées « estimée ».
+- Symétrie X après recentrage : x min −0,440 m, x max +0,440 m.
+- Méthode : `engine/validation/test_hbm_articulations.py`. Erreur 39 consignée.
+- Limite : la métrique de profondeur a été choisie après un échec ; à confirmer sur un second corps (le corps féminin du bundle).
