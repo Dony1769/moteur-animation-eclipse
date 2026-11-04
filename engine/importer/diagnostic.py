@@ -128,9 +128,91 @@ def _type(meshes, armatures, anims):
     return "inconnu"
 
 
+VERSION_DIAGNOSTIC = 2
+
+
+def _textures(meshes):
+    """Images utilisées par les matériaux (nœuds Image Texture), sans doublon."""
+    noms = set()
+    for m in meshes:
+        for slot in m.material_slots:
+            mat = slot.material
+            if not mat or not mat.use_nodes or not mat.node_tree:
+                continue
+            for n in mat.node_tree.nodes:
+                if n.type == "TEX_IMAGE" and n.image:
+                    noms.add(n.image.name)
+    return sorted(noms)
+
+
+def _dimensions(meshes):
+    """Étendue monde X, Y, Z des sommets, en mètres."""
+    if not meshes:
+        return None
+    xs, ys, zs = [], [], []
+    for m in meshes:
+        for v in m.data.vertices:
+            w = m.matrix_world @ v.co
+            xs.append(w.x); ys.append(w.y); zs.append(w.z)
+    return {"x": round(max(xs) - min(xs), 4), "y": round(max(ys) - min(ys), 4), "z": round(max(zs) - min(zs), 4)}
+
+
+def _animations():
+    """Plage d'images et nombre de courbes par action (compatible Blender 4.4+ et versions antérieures)."""
+    res = []
+    for a in bpy.data.actions:
+        courbes = len(a.fcurves) if hasattr(a, "fcurves") else None
+        res.append({"nom": a.name, "images": [int(a.frame_range[0]), int(a.frame_range[1])], "courbes": courbes})
+    return res
+
+
+GROUPES_CORPS = {
+    "tete": {"Head", "HeadTop_End", "Neck", "Jaw"},
+    "tronc": {"Hips", "Spine", "Spine1", "Spine2"},
+    "bras_gauche": {"LeftShoulder", "LeftArm", "LeftForeArm", "LeftHand"},
+    "bras_droit": {"RightShoulder", "RightArm", "RightForeArm", "RightHand"},
+    "jambe_gauche": {"LeftUpLeg", "LeftLeg", "LeftFoot", "LeftToeBase"},
+    "jambe_droite": {"RightUpLeg", "RightLeg", "RightFoot", "RightToeBase"},
+}
+
+
+def _parties_du_corps(armatures):
+    """Parties du corps reconnues par les noms d'os. Sans armature : rien n'est déduit (pas d'invention)."""
+    if not armatures:
+        return {"methode": "aucune_armature", "parties": []}
+    os_bases = {_nom_base(b.name) for a in armatures for b in a.data.bones}
+    trouvees = [p for p, noms in GROUPES_CORPS.items() if noms & os_bases]
+    return {"methode": "noms_d_os", "parties": trouvees}
+
+
+def _operations(type_, rapport_poids, convention, facteur_echelle, axe_vertical=None):
+    """Opérations nécessaires déduites du diagnostic (aucune n'est exécutée ici)."""
+    ops = []
+    if type_ == "sans_armature":
+        ops += ["estimer_articulations", "generer_armature", "calculer_poids"]
+    elif type_ == "armature_sans_poids":
+        ops += ["calculer_poids"]
+    elif type_ == "armature_et_poids":
+        if rapport_poids and rapport_poids.get("sommets_sans_poids", 0) > 0:
+            ops.append("completer_poids_sommets_orphelins")
+        if convention != "mixamo":
+            ops.append("normaliser_convention_os")
+    if rapport_poids and rapport_poids.get("sommets_poids_non_normalises", 0) > 0:
+        ops.append("normaliser_poids")
+    if facteur_echelle is not None:
+        ops.insert(0, f"normaliser_echelle_x{facteur_echelle}")
+    if axe_vertical is not None and axe_vertical != "z":
+        ops.insert(1, f"normaliser_axe_vertical_{axe_vertical}_vers_z")
+    return ops
+
+
 def analyser(chemin):
     _vider_scene()
-    _importer(chemin)
+    erreurs_import = []
+    try:
+        _importer(chemin)
+    except Exception as e:  # on consigne l'erreur, on ne plante pas
+        erreurs_import.append(f"import : {e}")
     objets = list(bpy.data.objects)
     meshes = [o for o in objets if o.type == "MESH"]
     armatures = [o for o in objets if o.type == "ARMATURE"]
@@ -148,16 +230,62 @@ def analyser(chemin):
             anomalies.append(f"{m.name} : n-gones présents")
     if not armatures:
         anomalies.append("aucune armature")
+    elif not any(m.vertex_groups for m in meshes):
+        anomalies.append("armature présente mais aucun groupe de poids")
+    for m in meshes:
+        if m.vertex_groups:
+            pw = _poids(m)
+            if pw["sommets_sans_poids"] > 0:
+                pct = round(100.0 * pw["sommets_sans_poids"] / max(1, pw["sommets"]), 1)
+                anomalies.append(f"{m.name} : {pw['sommets_sans_poids']} sommets sans poids ({pct} %)")
+            if pw["sommets_poids_non_normalises"] > 0:
+                anomalies.append(f"{m.name} : {pw['sommets_poids_non_normalises']} sommets à poids non normalisés")
+    # échelle : une hauteur humaine plausible est entre 0,3 et 3 m (erreur 33 : facteur 100 ou 0,01)
+    h = _taille(meshes)
+    facteur = None
+    axe_haut = None
+    if h is not None and not (0.3 <= h <= 3.0):
+        import math as _m
+        facteur = 10 ** round(_m.log10(1.75 / h))
+        anomalies.append(f"échelle suspecte : hauteur {h} m (facteur suggéré {facteur})")
+        # axe vertical : l'axe dont l'étendue, mise à l'échelle, est une taille humaine (1,4 à 2,0 m)
+        # et dont l'étendue perpendiculaire est une profondeur (< 0,5 m). Heuristique, signalée comme telle.
+        dim = _dimensions(meshes)
+        if dim:
+            candidats = {ax: dim[ax] * facteur for ax in ("y", "z")}
+            humains = [ax for ax, v in candidats.items() if 1.4 <= v <= 2.0]
+            if len(humains) == 1 and candidats[("z" if humains[0] == "y" else "y")] <= 0.5:
+                axe_haut = humains[0]
+            elif len(humains) == 1:
+                axe_haut = humains[0]
+            if axe_haut is not None and axe_haut != "z":
+                anomalies.append(f"axe vertical probable : {axe_haut.upper()} (au lieu de Z) : heuristique")
     for m in meshes:
         if m.vertex_groups and not m.material_slots:
             anomalies.append(f"{m.name} : pas de matériau")
+    type_ = _type(meshes, armatures, actions)
+    poids_global = None
+    for m in meshes:
+        if m.vertex_groups:
+            poids_global = _poids(m)
+            break
+    convention = _arm_info(armatures[0])["convention"] if armatures else None
     rapport = {
+        "version_diagnostic": VERSION_DIAGNOSTIC,
         "fichier": chemin,
-        "type": _type(meshes, armatures, actions),
+        "type": type_,
+        "erreurs_import": erreurs_import,
+        "dimensions_m": _dimensions(meshes),
+        "textures": _textures(meshes),
+        "parties_du_corps": _parties_du_corps(armatures),
+        "operations_recommandees": _operations(type_, poids_global, convention, facteur, axe_haut),
+        "facteur_echelle_suggere": facteur,
+        "axe_vertical_suggere": axe_haut,
         "objets": [o.name for o in objets],
         "meshes": [_mesh_info(m) for m in meshes],
         "armatures": [_arm_info(a) for a in armatures],
         "actions": actions,
+        "animations": _animations(),
         "hauteur_m": _taille(meshes),
         "anomalies": anomalies,
         "cles_de_forme": [kb.name for m in meshes if m.data.shape_keys
