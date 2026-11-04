@@ -16,7 +16,7 @@ bundle, sortie, scratch = argv[0], argv[1], argv[2]
 os.makedirs(scratch, exist_ok=True)
 copie = os.path.join(scratch, "bundle.blend"); shutil.copy(bundle, copie)
 bpy.ops.wm.open_mainfile(filepath=copie)
-o = bpy.data.objects["GEO-body_male_realistic"]
+o = bpy.data.objects[os.environ.get("HBM_OBJET", "GEO-body_male_realistic")]
 pts_monde = [o.matrix_world @ v.co for v in o.data.vertices]
 # le corps n'est pas centré dans le bundle (translation x ≈ -2,26 m) : on recentre sur son milieu en X
 xs_monde = [p.x for p in pts_monde]
@@ -34,7 +34,15 @@ def estime(frac_z, x=0.0):
     return {"z": round(zmin + frac_z * h, 4), "x": round(x, 4), "statut": "estimee"}
 
 A["cheville_g"] = estime(0.04, 0.09 * h); A["genou_g"] = estime(0.285, 0.10 * h)
-A["hanche_g"] = estime(0.53, 0.09 * h); A["epaule_g"] = estime(0.82, 0.19 * h)
+A["hanche_g"] = estime(0.53, 0.09 * h)
+# bras : pose NON horizontale (mesurée, erreur 40). Chemin du bras = centroïde par tranche de X côté +X.
+chemin = []
+for xb in (0.20, 0.25, 0.30, 0.35, 0.40):
+    sel = [p for p in pts if xb <= p.x < xb + 0.02 and p.z > zmin + 0.45 * h]
+    if sel:
+        chemin.append({"x": round(xb + 0.01, 3), "z_frac": round((sum(p.z for p in sel) / len(sel) - zmin) / h, 3)})
+A["epaule_g"] = {"z": round(zmin + chemin[0]["z_frac"] * h, 4), "x": chemin[0]["x"], "statut": "mesuree"} if chemin else estime(0.82, 0.19 * h)
+res["chemin_bras_g"] = chemin
 A["cou"] = estime(0.84); A["tete"] = estime(0.87)
 
 # -- vérification du genou : section la plus fine de la jambe (x > 0.03 pour ne garder qu'une jambe) --
@@ -61,6 +69,7 @@ A["genou_g"]["statut"] = "validee" if ecart <= 0.03 else "estimee"
 sym = abs(max(xs) + min(xs)) <= 0.01
 T["symetrie_x"] = {"ok": sym, "detail": f"centre X du bundle {cx:.3f} m ; après recentrage x min {min(xs):.3f}, x max {max(xs):.3f}", "statut": "validee" if sym else "echec"}
 res["articulations_non_validees"] = [k for k, v in A.items() if v["statut"] == "estimee"]
+res["bras_mesure_non_valide"] = "epaule_g" in A and A["epaule_g"]["statut"] == "mesuree"
 json.dump(res, open(sortie, "w"), indent=2, ensure_ascii=False)
 print("RESULTAT", "OK" if all(v["ok"] for v in T.values()) else "ECHEC")
 for k, v in T.items(): print("TEST", k, v)

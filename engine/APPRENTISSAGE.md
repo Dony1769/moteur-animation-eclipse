@@ -549,3 +549,8 @@ Mesure LBS sans clé, bras gauche seul : 90° 24 -> 12 replis ; 120° 31 -> 19 ;
 - Symétrie X après recentrage : x min −0,440 m, x max +0,440 m.
 - Méthode : `engine/validation/test_hbm_articulations.py`. Erreur 39 consignée.
 - Limite : la métrique de profondeur a été choisie après un échec ; à confirmer sur un second corps (le corps féminin du bundle).
+
+## 32. Corps féminin confirmé, bras mesurés
+- Genou féminin : section la plus fine (profondeur) à 0,280 h, contre 0,285 h estimé (écart 0,005 h). La métrique de profondeur est donc confirmée sur un second corps.
+- Bras masculin : pose inclinée mesurée (épaule 0,74 h → poignet 0,46 h). Chemin consigné dans le rapport du test. Le coude n'est pas encore validé.
+- Prochaine étape : item 6 (armature). Commencer par le tronc et les jambes ; les bras attendent un coude validé. Erreur 40 consignée.
