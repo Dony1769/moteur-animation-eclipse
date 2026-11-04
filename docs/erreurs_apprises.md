@@ -331,3 +331,13 @@ Chaque erreur a une cause, une correction et un test. Une erreur corrigée doit 
 - Méthode : pour chaque pose d'entraînement, garder la variante (ARAP simple ou limitée) qui produit le moins de plis sur cette pose. Les poses de test ne sont jamais utilisées pour ce choix.
 - Résultat hors entraînement (numpy, puis Blender par formes-clés) : avant-bras 105° 0 pli (origine 5), jambe 105° 0 pli (origine 7), jambe 120° 1 pli (origine 10). Bras : 4 plis à 105° (origine 12), 12 à 120° (origine 15).
 - Règle : une sélection entre variantes est légitime si elle n'utilise que l'entraînement et si le résultat est revalidé sur des poses non utilisées.
+
+## 60. Ancre plus large : étirement explosif
+- Test : seuil d'ancrage du tronc à 0,5 ou 0,2 au lieu de 0,99 : étirement 1,8 à 2,2 hors entraînement. Seuil 0,9999 : quasi identique à 0,99.
+- Règle : l'ancrage doit rester au tronc pur ; élargir la zone libre fait dériver l'épaule.
+
+## 61. Protocole : rotation de l'humérus seul à 120° n'est pas un usage réaliste
+- Constat : nos tests font tourner l'humérus (LeftArm) seul jusqu'à 120°. Les pratiques de rig (fil Blender Artists « shoulder caving in ») répartissent la rotation entre un os d'épaule (clavicule) et le bras ; le bras seul est limité à environ 90°.
+- Conséquence : une partie du résidu de plis à 105–120° vient peut-être du protocole, pas de la méthode. À confirmer par un test où la rotation est répartie entre LeftShoulder et LeftArm.
+- Pistes issues de la recherche, non testées ici : Preserve Volume (DQS, déjà rejeté pour le volume, erreur antérieure) ; os d'aide avec contraintes (testé sans gain net) ; placement d'un vrai os d'épaule (à tester).
+- Règle : un test de déformation doit reproduire la répartition réaliste des rotations entre os, sinon il mesure un cas extrême.

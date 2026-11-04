@@ -616,3 +616,8 @@ Mesure LBS sans clé, bras gauche seul : 90° 24 -> 12 replis ; 120° 31 -> 19 ;
 - Limiter la rotation des sommets repliés dans l'ARAP : efficace sur l'avant-bras et la jambe, cascade sur le bras (erreur 58).
 - Sélection de la variante par pose d'entraînement uniquement, puis revalidation Blender : avant-bras et jambe sans plis à 105° (erreur 59).
 - Reste : bras à 105° et 120°.
+
+## 43. Ancrage, densité et protocole du bras
+- Ancrage : seuil 0,99 conservé ; un ancrage plus large fait exploser l'étirement (erreur 60).
+- Densité : ajouter 100 et 110° à l'entraînement améliore le bras à 105° de 4 à 3 plis, sans résoudre le problème à 120° (le bras passe de 4 à 12 plis entre 110 et 120°).
+- Protocole : l'humérus seul à 120° est un cas extrême ; la répartition réaliste avec l'os d'épaule reste à tester (erreur 61).
