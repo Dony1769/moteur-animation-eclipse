@@ -593,3 +593,8 @@ Mesure LBS sans clé, bras gauche seul : 90° 24 -> 12 replis ; 120° 31 -> 19 ;
 - La garde contrôle désormais l'étirement et le nombre de plis, sur entraînement et validation (`engine/skinning/optimiser_poids.py`, `garde_max`).
 - Recherche : ARAP-LBS n'a pas de contrôle de plis ; son échantillonnage est limité à roulis ±60° et torsion ±10°. Au-delà, les poids seuls ne suffisent pas : prévoir des formes correctives pour le coude et l'épaule, comme `construit_final.py`.
 - Méthode de contrôle : toute garde d'optimisation doit mesurer les plis sur des poses non utilisées à l'entraînement.
+
+## 39. Formes correctives : rester déterministe et tester hors entraînement
+- Les clés correctives donnent 13 plis à 120° contre 28 à 32 pour les poids seuls : la voie à suivre pour le coude et l'épaule.
+- Source non officielle (projet Maya, correctif appris) : intéressante mais métriques non définies et test non exclu de l'entraînement. Non retenue comme preuve.
+- Prochaine étape : correctifs déterministes par angle, calculés depuis la différence cible − LBS, puis validés hors entraînement avec la garde (plis et étirement).
