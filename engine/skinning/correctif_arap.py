@@ -17,12 +17,13 @@ def _lbs(rest, W, M):
     R4 = np.concatenate([rest, np.ones((len(rest), 1))], 1)
     return np.einsum("ib,bjk,ik->ij", W, M, R4)[:, :3]
 
-def _rotations(x, p, ij, N):
+def _rotations(x, p, ij, N, wij=None):
     """Rotation polaire par sommet : R_i = argmin sum_j ||(p_i-p_j) - R (x_i-x_j)||^2."""
     i, j = ij[:, 0], ij[:, 1]
     dx = x[i] - x[j]; dp = p[i] - p[j]
     S = np.zeros((N, 3, 3))
-    np.add.at(S, i, dx[:, :, None] * dp[:, None, :])
+    ww = np.ones(len(i)) if wij is None else wij
+    np.add.at(S, i, ww[:, None, None] * dx[:, :, None] * dp[:, None, :])
     U, _, Vt = np.linalg.svd(S)
     V = np.transpose(Vt, (0, 2, 1)).copy()
     R = V @ np.transpose(U, (0, 2, 1))
@@ -30,35 +31,37 @@ def _rotations(x, p, ij, N):
     V[det < 0, :, 2] *= -1          # interdit les réflexions
     return V @ np.transpose(U, (0, 2, 1))
 
-def arap_cible(rest, W, M, aretes, ancre, iters=12):
+def arap_cible(rest, W, M, aretes, ancre, iters=12, poids=None):
     """Positions ARAP pour une pose. ancre : masque booléen des sommets fixés (à P0)."""
     N = len(rest)
     P0 = _lbs(rest, W, M)
-    i, j = aretes[:, 0], aretes[:, 1]
+    if poids is None:
+        poids = np.ones(len(aretes))
     ij = np.vstack([aretes, aretes[:, ::-1]])
+    wij = np.concatenate([poids, poids])
     p = P0.copy()
     free = ~ancre
     idx = -np.ones(N, dtype=int); idx[free] = np.arange(free.sum())
     # matrice laplacienne réduite (poids uniformes)
-    deg = np.bincount(ij[:, 0], minlength=N).astype(float)
+    deg = np.bincount(ij[:, 0], weights=wij, minlength=N)
     mask = free[ij[:, 0]] & free[ij[:, 1]]
     rows = idx[ij[mask, 0]]; cols = idx[ij[mask, 1]]
-    L = sp.diags(deg[free]) - sp.coo_matrix((np.ones(mask.sum()), (rows, cols)), shape=(free.sum(),) * 2).tocsr()
+    L = sp.diags(deg[free]) - sp.coo_matrix((wij[mask], (rows, cols)), shape=(free.sum(),) * 2).tocsr()
     L = L.tocsc()
     solveur = spl.factorized(L)
     for _ in range(iters):
-        R = _rotations(rest, p, ij, N)
+        R = _rotations(rest, p, ij, N, wij)
         # second membre : sum_j (R_i + R_j)/2 (x_i - x_j) pour chaque arête orientée i->j
         dx = rest[ij[:, 0]] - rest[ij[:, 1]]
         Rm = 0.5 * (R[ij[:, 0]] + R[ij[:, 1]])
-        contrib = np.einsum("eij,ej->ei", Rm, dx)
+        contrib = wij[:, None] * np.einsum("eij,ej->ei", Rm, dx)
         b = np.zeros((N, 3))
         np.add.at(b, ij[:, 0], contrib)
         # termes des ancres fixés : retirer la contribution des voisins fixés
         bf = b[free].copy()
         fixed_nb = ~free[ij[:, 1]]
         fb = np.zeros((N, 3))
-        np.add.at(fb, ij[fixed_nb, 0], P0[ij[fixed_nb, 1]])
+        np.add.at(fb, ij[fixed_nb, 0], wij[fixed_nb, None] * P0[ij[fixed_nb, 1]])
         rhs = bf + fb[free]
         p_new = np.zeros((N, 3))
         for c in range(3):
@@ -66,3 +69,26 @@ def arap_cible(rest, W, M, aretes, ancre, iters=12):
         p_new[ancre] = P0[ancre]
         p = p_new
     return P0, p
+
+
+def poids_cotangents(rest, faces, aretes):
+    """Poids cotangents par arête (Pinkall-Polthier), faces triangulées en éventail.
+
+    Poids négatifs ramenés à 0 (cas obtus) pour garder une Laplacienne semi-définie positive.
+    Retourne un tableau aligné sur `aretes`.
+    """
+    index = {(min(a, b), max(a, b)): k for k, (a, b) in enumerate(aretes)}
+    w = np.zeros(len(aretes))
+    for f in faces:
+        f = list(f)
+        for k in range(1, len(f) - 1):
+            tri = (f[0], f[k], f[k + 1])
+            for c in range(3):
+                o, a, b = tri[c], tri[(c + 1) % 3], tri[(c + 2) % 3]
+                u = rest[a] - rest[o]; v = rest[b] - rest[o]
+                cross = np.linalg.norm(np.cross(u, v))
+                cot = np.dot(u, v) / cross if cross > 0 else 0.0
+                key = (min(a, b), max(a, b))
+                if key in index:
+                    w[index[key]] += 0.5 * cot
+    return np.maximum(w, 0.0)

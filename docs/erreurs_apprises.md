@@ -309,3 +309,14 @@ Chaque erreur a une cause, une correction et un test. Une erreur corrigée doit 
 - Résultats (poids d'origine, plis / étirement max) : bras 75° 7 → 0, 2,26 → 1,12 ; bras 105° 12 → 4, 3,00 → 1,16 ; avant-bras 75° 2 → 0 ; avant-bras 105° 5 → 2 ; jambe 75° 1 → 0 ; jambe 105° 7 → 3.
 - Limites : vérifié en numpy seulement (métrique calibrée à ±4 faces) ; arêtes uniformes (non cotangentes) ; test en interpolation, pas en extrapolation au-delà de 120° ; bras à 105° encore 4 plis.
 - Prochaine étape : appliquer les correctifs dans Blender (formes-clés) et mesurer avec `mesure_lbs` avant toute déclaration de succès.
+
+## 56. Amortissement des correctifs autour des plis : échec
+- Tentative : réduire la correction des sommets situés dans une face repliée (facteur 0,8), jusqu'à disparition des plis.
+- Résultat : amortissement brut par sommet : étirement 6,4 à 8,0 sur les poses de test (déchirures). Amortissement lissé par diffusion : 5 plis à 75° au lieu de 0. Les deux variantes sont rejetées.
+- Règle : ne jamais modifier une correction par sommet sans transition continue ; et ne jamais entraîner une correction sur des plis qu'elle ne doit pas corriger.
+
+## 57. Pondération cotangente : bug d'ancre puis résultat mitigé
+- Bug : le second membre des ancres ignorait les poids d'arête (étirement 172 partout). Corrigé.
+- Résultat hors entraînement : bras 105° 4 → 3 plis, étirement minimal 0,51 → 0,70 ; jambe 105° 3 → 1 pli ; avant-bras 105° 2 → 3 plis (minimum 0,28 → 0,25).
+- Non adopté par défaut : gain mixte, pas de chaîne gagnante nette. L'option `poids=` reste disponible.
+- Règle : un bug de second membre peut produire un résultat aberrant uniforme ; un résultat identique sur toutes les poses signale d'abord une erreur d'implémentation.

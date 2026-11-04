@@ -604,3 +604,10 @@ Mesure LBS sans clé, bras gauche seul : 90° 24 -> 12 replis ; 120° 31 -> 19 ;
 - Résultat numpy : plis et étirement améliorés sur les trois chaînes. Témoin 0° exact.
 - Piège : 12 itérations ne suffisent pas (erreur 54). Toujours vérifier la convergence.
 - À faire : vérification Blender, puis garde (plis et étirement) avant toute adoption.
+
+## 41. Validation Blender des correctifs : LBS exact, correctifs en formes-clés
+- Le LBS de Blender (modificateur Armature) et le LBS numpy coïncident à 2e-6 près : le pipeline numérique est fiable.
+- Les correctifs ARAP appliqués en formes-clés dans l'espace de repos (inversion de la matrice de skinning) donnent un étirement de 1,1 à 1,2 sur toutes les poses testées, contre 3,36 à l'origine à 120°.
+- Résidu : plis à 105° et 120°, car la cible ARAP elle-même plie à grand angle.
+- Échecs : amortissement des plis (erreur 56). Pondération cotangente : gain mixte (erreur 57).
+- Prochaine étape : réduire le résidu de pli à grand angle, sans nouvel amortissement.

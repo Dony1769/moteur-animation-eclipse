@@ -54,3 +54,10 @@ Témoin à 0° : étirement 1,000 dans tous les cas.
 - Métrique : `engine/skinning/plis_numpy.py`, calibrée sur Blender (`mesure_lbs.faces_repliees`) à ±4 faces (erreur 51).
 - Poids du haut du corps (entraînement 60/90/120, test 75) : étirement du bras à 120° 3,36 → 1,56, mais plis du bras 15 → 32 (origine numpy → Blender). Avant-bras : 6 → 6 à 120°. Jambe inchangée.
 - Conclusion : non adoptable. La garde de rejet doit désormais inclure le nombre de plis (non encore implémenté).
+
+## Validation Blender des correctifs ARAP (formes-clés)
+- LBS Blender = LBS numpy (2e-6). Clés de référence désactivées pour la mesure.
+- Étirement max après correction : 1,08 à 1,23 sur tous les angles testés (origine : 3,36 à 120° pour le bras).
+- Plis hors entraînement : bras 75° 0, bras 105° 4 (origine 12) ; avant-bras 75° 0, 105° 4 (origine 2, 5) ; jambe 75° 0, 105° 3 (origine 1, 7).
+- Plis résiduels à 120° : bras 12, avant-bras 4, jambe 8 (origine 15, 6, 10).
+- Non retenus : amortissement des plis (erreur 56), pondération cotangente (erreur 57, gain mixte).

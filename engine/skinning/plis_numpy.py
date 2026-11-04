@@ -57,3 +57,18 @@ def plis_positions(rest, pose, W, M, faces):
         if npz @ (R @ nr) < 0:
             n += 1
     return n
+
+def plis_masque(rest, pose, W, M, faces):
+    """Masque booléen des faces repliées (même définition que plis)."""
+    dom = W.argmax(1)
+    masque = np.zeros(len(faces), dtype=bool)
+    for k, f in enumerate(faces):
+        boucle = list(f)
+        os_ = np.bincount(dom[boucle], minlength=W.shape[1]).argmax()
+        R = M[os_, :3, :3]
+        R = R / np.linalg.norm(R, axis=0)
+        nr = _newell(rest, boucle); npz = _newell(pose, boucle)
+        if np.linalg.norm(nr) == 0 or np.linalg.norm(npz) == 0:
+            continue
+        masque[k] = npz @ (R @ nr) < 0
+    return masque
