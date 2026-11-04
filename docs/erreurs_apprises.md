@@ -341,3 +341,10 @@ Chaque erreur a une cause, une correction et un test. Une erreur corrigée doit 
 - Conséquence : une partie du résidu de plis à 105–120° vient peut-être du protocole, pas de la méthode. À confirmer par un test où la rotation est répartie entre LeftShoulder et LeftArm.
 - Pistes issues de la recherche, non testées ici : Preserve Volume (DQS, déjà rejeté pour le volume, erreur antérieure) ; os d'aide avec contraintes (testé sans gain net) ; placement d'un vrai os d'épaule (à tester).
 - Règle : un test de déformation doit reproduire la répartition réaliste des rotations entre os, sinon il mesure un cas extrême.
+
+## 62. Hypothèse « le protocole cause le résidu » : testée, infirmée en grande partie
+- Hypothèse (erreur 61) : répartir la rotation avec l'os d'épaule réduirait les plis du bras à grand angle.
+- Test : pose réelle Blender, 1/3 sur LeftShoulder et 2/3 sur LeftArm, poids d'origine.
+- Résultat (plis / étirement max) : total 60° : 3 / 2,06 contre 3 / 1,91 (bras seul) ; 90° : 8 / 2,84 contre 8 / 2,63 ; 105° : 9 / 3,23 contre 12 / 3,00 ; 120° : 11 / 3,62 contre 15 / 3,36.
+- Conclusion : la répartition réduit à peine les plis (3 à 4 de moins à 105–120°) et dégrade légèrement l'étirement. Le repliement de l'épaule est intrinsèque aux poids LBS, pas seulement au protocole.
+- Règle : tester une hypothèse protocole sur Blender avant d'en tirer une conclusion ; ici, la conclusion initiale était fausse en grande partie.

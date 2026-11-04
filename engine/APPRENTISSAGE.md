@@ -621,3 +621,8 @@ Mesure LBS sans clé, bras gauche seul : 90° 24 -> 12 replis ; 120° 31 -> 19 ;
 - Ancrage : seuil 0,99 conservé ; un ancrage plus large fait exploser l'étirement (erreur 60).
 - Densité : ajouter 100 et 110° à l'entraînement améliore le bras à 105° de 4 à 3 plis, sans résoudre le problème à 120° (le bras passe de 4 à 12 plis entre 110 et 120°).
 - Protocole : l'humérus seul à 120° est un cas extrême ; la répartition réaliste avec l'os d'épaule reste à tester (erreur 61).
+
+## 44. Épaule réaliste : l'hypothèse du protocole est largement infirmée
+- Répartir la rotation entre os d'épaule et bras (1/3 et 2/3) ne réduit les plis que de 3 à 4 à 105–120°, et dégrade un peu l'étirement (erreur 62).
+- Le repliement de l'épaule est donc intrinsèque aux poids LBS : il faut une correction (formes-clés spécifiques à l'épaule, ou poids de l'épaule dédiés).
+- Prochaine étape : correctifs ARAP pour les poses réparties épaule + bras, entraînés sur l'entraînement uniquement.
