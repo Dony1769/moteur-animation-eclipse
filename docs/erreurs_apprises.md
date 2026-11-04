@@ -223,3 +223,23 @@ Chaque erreur a une cause, une correction et un test. Une erreur corrigée doit 
 - Cause : l'envergure (bras écartés) a été prise pour une extension horizontale. Mesure réelle : le bras descend de 0,74 h (épaule, x ≈ 0,21 m) à 0,46 h (poignet, x ≈ 0,41 m), soit une pose en « A » inclinée. Longueur implicite ≈ 0,6 m, cohérente.
 - Règle : ne jamais déduire la pose d'un membre de l'encombrement en X. Mesurer le chemin du membre (centroïde par tranche) avant de poser des os.
 - Correction : `test_hbm_articulations.py` utilise le chemin mesuré ; les bras restent marqués « mesurée », non validés (coude et poignet à confirmer).
+
+## 41. Test d'intérieur : repère du BVH différent de celui des os
+- Symptôme : tous les milieux d'os, y compris ceux du tronc, étaient signalés hors du maillage.
+- Cause : les os sont exprimés dans le repère recentré en X, alors que le BVH était construit dans les coordonnées monde d'origine (décalées de −2,26 m).
+- Règle : construire le BVH dans le même repère que les points testés. Un échec général (tous les points « dehors », même le centre) signale un repère faux, pas un défaut de géométrie.
+
+## 42. Parité verticale fausse dans les zones de recouvrement des pièces
+- Symptôme : cuisses et pieds signalés hors du maillage ; le tronc et les jambes inférieures sont bien dedans.
+- Cause : les pièces du corps (bassin, cuisses) sont des coques fermées qui se recouvrent. Un rayon vertical traverse le bassin et compte des intersections en trop, ce qui inverse la parité.
+- Règle : pour un membre, tester la parité dans la direction qui sort du membre (X, à l'opposé de l'axe du corps). Un test d'intérieur par parité n'est fiable que si les coques ne se recouvrent pas sur le trajet du rayon.
+
+## 43. Point de hanche pris dans les bras : centroïde contaminé par une autre partie
+- Symptôme : la hanche gauche sortait à (0,40 ; −0,10), à l'extérieur du corps et loin de la cuisse.
+- Cause : le centroïde à 0,44 h incluait les sommets des bras (qui descendent jusqu'à 0,46 h). Une tranche horizontale mélange toutes les parties présentes à cette hauteur.
+- Règle : avant de mesurer un membre par tranche, borner la tranche à ce membre (ici |x| < 0,25 m) et vérifier que le point mesuré est bien dans la cuisse.
+
+## 44. Longueur de pied supposée au lieu d'être mesurée
+- Symptôme : le milieu de l'os du pied sortait du maillage.
+- Cause : la pointe du pied était placée à une longueur fixe (0,15 m) au lieu du sommet réel le plus avancé.
+- Règle : une longueur d'os qui n'est pas mesurée doit être déduite de la géométrie (ici : sommet le plus avancé près du sol), jamais fixée à une valeur de catalogue.

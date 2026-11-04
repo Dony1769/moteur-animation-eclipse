@@ -554,3 +554,10 @@ Mesure LBS sans clé, bras gauche seul : 90° 24 -> 12 replis ; 120° 31 -> 19 ;
 - Genou féminin : section la plus fine (profondeur) à 0,280 h, contre 0,285 h estimé (écart 0,005 h). La métrique de profondeur est donc confirmée sur un second corps.
 - Bras masculin : pose inclinée mesurée (épaule 0,74 h → poignet 0,46 h). Chemin consigné dans le rapport du test. Le coude n'est pas encore validé.
 - Prochaine étape : item 6 (armature). Commencer par le tronc et les jambes ; les bras attendent un coude validé. Erreur 40 consignée.
+
+## 33. Test B, item 6 partiel : armature du tronc et des jambes
+- Créée : 11 os (Hips, Spine, Chest, Neck, Head ; LeftUpLeg, LeftLeg, LeftFoot ; symétriques à droite). Racine Hips. Aucun os de longueur nulle. Symétrie des chemins de jambe : 7,8 mm.
+- Mesuré : chemin des jambes (centroïdes bornés à |x| < 0,25 m) ; pointe du pied (sommet le plus avancé près du sol). Estimé : hanche (altitude 0,53 h), tronc (fractions de hauteur).
+- Contrôle d'intérieur : milieu de chaque os dans le maillage (parité des intersections de rayons, sur X pour les membres). C'est un test faible : un point par os, pas le volume entier.
+- Non fait : bras (coude et poignet non validés), poids automatiques (item 7), contrôleurs (item 8).
+- Méthode : `engine/validation/test_hbm_armature.py`. Erreurs 41 à 44 consignées.
