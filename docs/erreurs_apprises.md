@@ -174,3 +174,8 @@ Chaque erreur a une cause, une correction et un test. Une erreur corrigée doit 
 - Cause : deux erreurs de procédure dans le script de rendu. La pose était restaurée avant le rendu, et les clés correctives étaient remises à zéro après le calcul du repos.
 - Règle : une image de contrôle doit montrer exactement l'état que les mesures ont calculé. Pose, clés et couleurs doivent être appliquées au moment du rendu, puis vérifiées par une vue de profil avant toute conclusion.
 - Correction : `engine/skinning/rendu_etirement.py` rétablit les clés et garde la pose au rendu. Image de référence : docs/rapports/visuel_etirement_bras120_profil.png. Le bras est fléchi à environ 90 à 120° vers l'avant, et la zone rouge est à l'épaule.
+
+## 32. Vérification de hauteur d'un FBX importé : coordonnées locales et monde
+- Symptôme : une première mesure donnait 42,9 pour un personnage de 169 cm.
+- Cause : ma mesure utilisait les coordonnées locales du maillage, sans l'échelle 0,01 appliquée à l'objet à l'import (FBX en centimètres). La vraie hauteur monde est 1,70 m.
+- Règle : mesurer une dimension après import uniquement en coordonnées monde (`matrix_world @ co`), et vérifier l'échelle de l'objet avant de conclure à un défaut d'export.

@@ -43,3 +43,20 @@ Décision technique proposée : ne pas intégrer le code. Étudier et réimplém
 1. Exécuter `npm test` et `npm run typecheck` dans un environnement isolé. **Bloqué** : l'exécution a été refusée. Décision à prendre par l'utilisateur.
 2. Télécharger les données CC0 (≈420 Mo) seulement si l'étape 1 est autorisée.
 3. Valider l'écrivain FBX sur le corps HBM par import Blender et contrôle de déformation.
+
+## 6. Résultats mesurés (après autorisation d'exécution)
+
+- **Vérification de types** (`tsc --noEmit`) : réussie, code 0.
+- **Suite de tests** (`npm test`, après `npm run setup-assets`) : réussie, code 0. 386 personnages générés et exportés, 0 échec, 22 modes d'export, 50 liens de partage aller-retour. Durée : 921 s sur un seul processus (2 cœurs disponibles). C'est une donnée de performance CPU utile pour notre étape 12.
+- **Export réel** : `Athletic woman`, 41 188 triangles, 10 matériaux, généré en 1,1 s. FBX de 23,2 Mo, GLB de 11,8 Mo.
+- **Import FBX dans Blender 4.5.15** :
+  - 1 armature, 69 os (la documentation annonce 65 os pour le « game rig » ; l'écart reste à expliquer, probablement les os d'arme ou de doigts).
+  - Hauteur réelle 1,70 m en coordonnées monde (conforme aux 169 cm).
+  - 4 influences au maximum par sommet, aucun poids non normalisé sur 24 929 sommets.
+  - 35 formes (34 expressions et visèmes + Basis), conforme à la documentation.
+  - Groupes de poids présents (55).
+- **Constat de compatibilité :** les os portent les noms `Hips`, `Spine`, `Head`, etc., sans le préfixe `mixamorig:` utilisé par Mixamo. La documentation parle de noms « Mixamo » : c'est vrai pour la convention des noms, mais pas pour le préfixe. Pour retargeter vers notre convention ou celle de Mixamo, il faudra une table de correspondance.
+
+## 7. Mise à jour de la décision
+
+Le moteur Ara est fiable pour l'export (tests réussis, FBX valide dans Blender). Notre décision reste la même : ne pas intégrer son code. Il reste utile comme référence de conventions d'export, et son écrivain FBX peut être comparé à notre propre sortie.
