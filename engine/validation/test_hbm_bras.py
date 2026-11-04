@@ -13,6 +13,8 @@ import bpy, sys, json, os, shutil
 from mathutils import Vector, bvhtree, Matrix
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "rigging"))
 import bras_hbm
+import doigts_hbm
+import numpy as np
 
 argv = sys.argv[sys.argv.index("--") + 1:]
 bundle, sortie, scratch = argv[0], argv[1], argv[2]
@@ -72,12 +74,35 @@ for cote, nom in (("G", "Left"), ("D", "Right")):
     eb[nom + "ForeArm"].parent = eb[nom + "Arm"]
     eb[nom + "Hand"].parent = eb[nom + "ForeArm"]
     eb[nom + "Arm"].parent = eb[nom + "Shoulder"]
+# doigts : chaînes mesurées sur la main de chaque côté (rayon autour du poignet)
+Pn = np.array([[p.x, p.y, p.z] for p in P])
+doigts_par_cote = {}
+for cote, nom in (("G", "Left"), ("D", "Right")):
+    if cote not in joints: continue
+    j = joints[cote]
+    poignet = np.array(j["poignet"])
+    bout = np.array(j["bout_main"])
+    cote_mask = (Pn[:, 0] > 0.05) if cote == "G" else (Pn[:, 0] < -0.05)
+    dist = np.linalg.norm(Pn - poignet, axis=1)
+    main_pts = Pn[cote_mask & (dist < doigts_hbm.RAYON_MAIN)]
+    res_d = doigts_hbm.doigts(main_pts, poignet, bout)
+    doigts_par_cote[cote] = res_d
+    for doig, f in res_d.items():
+        parent = eb[nom + "Hand"]
+        for k, (a, b) in enumerate(f["phalanges"]):
+            e = ad.edit_bones.new(f"{nom}{doig.capitalize()}{k + 1}")
+            e.head = Vector(a.tolist()); e.tail = Vector(b.tolist()); e.use_connect = False
+            e.parent = parent
+            parent = e
 bpy.ops.object.mode_set(mode="OBJECT")
 
 # longueurs et plages anatomiques
 longs = {n: (b.tail_local - b.head_local).length for n, b in ad.bones.items()}
 nul = [n for n, L in longs.items() if L < 0.01]
-T["8_os_crees"] = {"ok": len(ad.bones) == 8 and not nul, "detail": f"{len(ad.bones)} os, longueurs nulles {nul}"}
+nb_bras = sum(1 for n in ad.bones.keys() if n.endswith(("Shoulder", "Arm", "ForeArm", "Hand")) and "Hand" not in n[-1:] and n[:4] in ("Left", "Righ") and not any(c.isdigit() for c in n))
+nb_doigts = sum(1 for n in ad.bones.keys() if any(c.isdigit() for c in n))
+T["os_bras_crees"] = {"ok": nb_bras == 8 and not nul, "detail": f"{nb_bras} os de bras (attendu 8), longueurs nulles {nul}"}
+T["os_doigts_crees"] = {"ok": nb_doigts == 28, "detail": f"{nb_doigts} phalanges (attendu 28 : 2 pouce + 3x4 par main)"}
 plages = {"Arm": (0.15, 0.22), "ForeArm": (0.12, 0.18), "Hand": (0.08, 0.13)}
 hors = []
 for n, L in longs.items():
@@ -104,13 +129,32 @@ def interieur(pt, d):
     return n % 2 == 1
 dedans = {}
 for n, b in ad.bones.items():
+    if any(c.isdigit() for c in n): continue   # doigts : testés par test_hbm_doigts
     m = (b.head_local + b.tail_local) / 2
     d = Vector((1.0 if n.startswith("Left") else -1.0, 0, 0))
     dedans[n] = interieur(m, d)
 hors_m = [n for n, v in dedans.items() if not v]
+# doigts : même nombre et mêmes longueurs à gauche et à droite (écart max 10 mm), phalanges plausibles
+if "G" in doigts_par_cote and "D" in doigts_par_cote:
+    gg, dd = doigts_par_cote["G"], doigts_par_cote["D"]
+    if set(gg) == set(dd):
+        ecart = max(abs(gg[k]["longueur_m"] - dd[k]["longueur_m"]) for k in gg)
+        T["symetrie_doigts"] = {"ok": ecart <= 0.010, "detail": f"{len(gg)} doigts de chaque côté ; écart max de longueur {ecart*1000:.1f} mm (seuil 10 mm)"}
+    else:
+        T["symetrie_doigts"] = {"ok": False, "detail": f"doigts différents : G={sorted(gg)} D={sorted(dd)}"}
+phal = [len(f["phalanges"]) for c in doigts_par_cote.values() for f in c.values()]
+bords = []
+for c, dd_ in doigts_par_cote.items():
+    for nom_d, f in dd_.items():
+        for k, (a_, b_) in enumerate(f["phalanges"]):
+            L_ = float(np.linalg.norm(np.array(b_) - np.array(a_)))
+            if not (0.010 <= L_ <= 0.050):
+                bords.append(f"{c}-{nom_d}{k+1}={L_*1000:.0f} mm")
+T["phalanges_plausibles"] = {"ok": not bords, "detail": "hors plage 10-50 mm : " + (", ".join(bords) or "aucune")}
 T["milieux_dans_maillage"] = {"ok": not hors_m, "detail": f"milieux hors du maillage : {hors_m or 'aucun'}"}
 bm.free()
 
+res["doigts"] = {c: {d: {"mesure": f["mesure"], "estime": f["estime"], "segments_estimes": f["segments_estimes"]} for d, f in dd.items()} for c, dd in doigts_par_cote.items()}
 res["os"] = {n: {"tete": [round(c, 4) for c in b.head_local], "queue": [round(c, 4) for c in b.tail_local],
                   "parent": b.parent.name if b.parent else None} for n, b in ad.bones.items()}
 json.dump(res, open(sortie, "w"), indent=2, ensure_ascii=False)

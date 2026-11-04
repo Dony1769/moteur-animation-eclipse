@@ -360,3 +360,21 @@ Chaque erreur a une cause, une correction et un test. Une erreur corrigée doit 
 - Cause : `"LeftForeArm".endswith("Arm")` est vrai ; l'avant-bras était comparé à la plage du bras.
 - Correctif : comparer le nom après le côté (`Left`/`Right`) à la clé exacte du dictionnaire de plages.
 - Règle : dans un test, ne jamais faire de correspondance par `endswith` sur des noms dont un suffixe est un autre suffixe.
+
+## 65. Lobes de doigts : un bloc de doigts accolés est fusionné, et l'ordre dépendait du côté
+- Symptôme : à gauche, 4 lobes ; à droite, 3 lobes (l'index et le majeur fusionnés, n = 160 sommets). Un rig symétrique était impossible.
+- Cause 1 : le regroupement par écart latéral de 5 mm ne sépare pas des doigts qui se touchent.
+- Cause 2 : les doigts étaient ordonnés par « w décroissant », ce qui suppose le pouce du côté des w élevés. C'est vrai à gauche seulement.
+- Correctif : un lobe plus large que deux doigts (> 21 mm par doigt) est découpé aux plus grands écarts ; les doigts sont ordonnés par distance au pouce.
+- Vérification : gauche et droite donnent 4 lobes, mêmes rôles, écart de longueur 0,6 mm.
+
+## 66. Bout de main déclaré « extrapolé » sans regarder les sommets extrêmes du maillage
+- Symptôme : le chemin de la main s'arrêtait à 0,164 m du poignet et je l'ai signalé comme extrapolé.
+- Vérification ensuite : les sommets les plus avancés du maillage vont à 0,182 m (pouce, index, majeur). L'extrapolation était une sous-estimation.
+- Règle : avant de déclarer une extrémité extrapolée, mesurer les sommets extrêmes du maillage dans la direction de l'os.
+
+## 67. Doigts courbés : une chaîne droite sort du maillage
+- Symptôme : les phalanges droites entre la base et le bout sortaient du maillage (3 segments sur 4 pour l'index).
+- Cause : les doigts du HBM sont légèrement courbés.
+- Correctif : les articulations suivent la ligne médiane mesurée du lobe (centroïde par tranche de 1 cm, abscisse curviligne).
+- Limite : les segments sans lobe mesuré (base du pouce, auriculaire) restent droits et sont marqués « estimés, non testés ».

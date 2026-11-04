@@ -636,3 +636,11 @@ Mesure LBS sans clé, bras gauche seul : 90° 24 -> 12 replis ; 120° 31 -> 19 ;
 - Résultat test (`engine/validation/test_hbm_bras.py`, Blender, copie) : 8 os, symétrie G/D 0,8 mm, longueurs dans les plages, milieux à l'intérieur du maillage.
 - Limite : le bout de la main est extrapolé (le chemin mesuré est trop court) ; les doigts ne sont pas faits.
 - Défaut trouvé et corrigé pendant le test (erreur 64).
+
+## 47. Phase 3 sur le corps HBM : squelette complet (47 os) et doigts mesurés
+- Squelette unique : jambes et tronc (11), bras (8), doigts (28), construits par `engine/validation/test_hbm_complet.py` ; le fichier `.blend` produit est dans le dossier de travail, pas dans le dépôt.
+- Doigts : les lobes distaux (regroupement par largeur, découpe des lobes trop larges, ordre depuis le pouce) donnent 4 doigts mesurés par côté ; le petit doigt est estimé (80 % du majeur), la base du pouce est estimée (paume non résolue).
+- Ligne médiane mesurée : les articulations suivent le doigt courbé (erreur 67).
+- Résultat : 47 os ; symétrie jambes 7,8 mm, bras 0,8 mm, doigts 0,6 mm ; 20 phalanges mesurées dans le maillage, aucune hors ; 4 phalanges estimées non testées (nommées dans le test).
+- Ce qui reste estimé, sans preuve dans le maillage : coude (anthropométrie), base du pouce, auriculaire, bout de main (la main mesurée va plus loin, erreur 66).
+- Tests d'articulation : Blender uniquement (pas de numpy), sur une copie du corps source.

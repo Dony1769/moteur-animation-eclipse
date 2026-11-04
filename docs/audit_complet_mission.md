@@ -37,8 +37,8 @@ Méthode : chaque ligne a été vérifiée dans le dépôt (fichier présent, te
 | Élément | Statut | Preuve |
 |---|---|---|
 | Armature humanoïde sur HBM : bassin, colonne, cou, tête, jambes (11 os) | Vérifié | `engine/validation/test_hbm_armature.py` (symétrie 7,8 mm ; points dans le maillage) |
-| Bras, avant-bras, mains | Partiel | Chemin du bras mesuré (`test_hbm_articulations.py`) ; **aucun os de bras dans l'armature** |
-| Doigts | Absent | — |
+| Bras, avant-bras, mains | Vérifié (HBM) | Squelette complet : `engine/validation/test_hbm_complet.py` (symétrie 0,8 mm ; milieux dans le maillage) ; coude estimé |
+| Doigts | Partiel (HBM) | 4 doigts mesurés par côté (lobes distaux, courbure suivie) ; petit doigt et base du pouce estimés ; `test_hbm_doigts.py` |
 | Rig Mixamo existant (préservation, contrôleurs manquants) | Partiel | Maria : 65 os, convention reconnue ; contrôleurs absents (`test_maria_controles.py`, item 7 : inventaire seulement) |
 | Rigify ou méthode propre | Absent | Non choisi formellement ; à décider après recherche |
 
@@ -153,7 +153,7 @@ engine/
 
 ## 3. Priorités (ordre de travail)
 
-1. **Phase 3** : bras et mains dans l'armature HBM (en cours).
+1. **Phase 3** : fait pour le corps HBM (squelette 47 os, doigts partiellement estimés) ; reste à généraliser la construction à partir de la géométrie à d'autres corps.
 2. **Phase 4** : résidu de plis à 120°, score de confiance, poids par distance validés.
 3. **Assets reproductibles** : manifeste et sommes SHA-256 (section 0).
 4. **Tests qui relancent le pipeline** au lieu de relire des JSON.

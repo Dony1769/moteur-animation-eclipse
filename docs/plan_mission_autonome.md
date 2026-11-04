@@ -10,7 +10,7 @@ Priorité imposée : skinning d'abord (phase 4). État vérifié, pas déclarati
 | 1 | 4 Skinning | En cours. LBS + optimisation d'arêtes par aire et garde (plis + étirement). Correctifs ARAP interpolés : validés en numpy hors entraînement (bras 75° : 7 → 0 plis). | Appliquer les correctifs dans Blender et mesurer avec `mesure_lbs`. Tant que ce n'est pas fait, aucun succès n'est déclaré. |
 | 2 | 4 Skinning, test B | Non commencé sur le mesh sans skinning (poids automatiques). | Poids par distance + ARAP, puis correctifs. Score de confiance par zone. |
 | 3 | 2 Importeur FBX | Partiel : diagnostic avec convention Mixamo, reconnaissance des noms sans préfixe (Ara). | Analyse des 14 points de la mission ; rapport par personnage. |
-| 4 | 3 Auto-rigging | Partiel : armature HBM à 11 os (jambes, bassin, tête) ; bras absents. | Bras, mains, doigts ; vérifier les pivots par la mesure de chemin. |
+| 4 | 3 Auto-rigging | Fait pour le corps HBM : squelette complet de 47 os (jambes, tronc, bras, mains, doigts). Test : `test_hbm_complet.py`. Estimé et signalé : coude, base du pouce, auriculaire, bout de main. Maria non traitée (phase 5). | Armature à partir de la géométrie pour d'autres corps (phase 2 à relancer dessus). |
 | 5 | 5 Rig avancé | Non fait. Test A contrôles 7 et 8 : inventaire seulement (absents). | IK/FK, pôles, racine ; rig facial avec ≥ 15 expressions à construire. |
 | 6 | 6 Animation | Partiel : transitions NLA validées (Idle→Running 1,02 ; seuil 3). | Bibliothèque, retargeting ; second jeu de clips pour valider le seuil. |
 | 7 | 7 Mouvement secondaire | Non fait. | Os-ressorts déterministes (cheveux, cape). |
