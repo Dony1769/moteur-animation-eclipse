@@ -512,3 +512,20 @@ Mesure LBS sans clé, bras gauche seul : 90° 24 -> 12 replis ; 120° 31 -> 19 ;
 - Transitions : le passage direct entre deux clips crée un saut ; un fondu NLA de 12 images le réduit au niveau du mouvement normal.
 - Méthode : `engine/validation/test_maria_anim.py` (sorties dans le dossier scratchpad du test). Résultat : déformation OK, transition OK (ratio 1,02, seuil 3, valeur fixée a priori).
 - Sources : aucune source externe lue dans cette section ; méthode de fondu NLA de la documentation Blender 4.5, non relue dans cette session.
+
+## 26. Pic de 40 cm par image : mouvement réel, pas artefact de skinning
+- Constat : le pic de déplacement par image est porté par des extrémités (orteils, doigts, pied), avec un poids dominant de 1,0. Le sommet suit son os à 0,01 m près (ex. 0,40 contre 0,36 m par image pour l'orteil gauche).
+- Cause : le clip Running ne compte que 16 images pour un cycle complet ; un pas par image est donc grand. Ce n'est pas une déformation parasite.
+- Limite : la mesure par image dépend de l'échantillonnage du clip. Les comparaisons se font entre clips, pas en valeur absolue.
+
+## 27. Transitions : trois paires de clips validées
+- Idle → Running : ratio 1,02 (fondu 12 images).
+- Idle → Jump : ratio 1,64.
+- Running → Sword_Slash : ratio 1,45.
+- Seuil 3 fixé avant les mesures : les trois paires passent. Le test accepte désormais `CLIP_A` et `CLIP_B`.
+- Le nom du contrôle `running_deformation` est historique : il mesure le clip B.
+
+## 28. Contrôleurs et rig facial de Maria : inventaire, pas validation
+- Contrôleurs absents (5) : IK mains, IK pieds, cibles de pôle, commutation IK/FK, contrôle racine. Constat, non corrigé ici : leur construction relève de l'étape 5.
+- Rig facial absent : 0 forme-clé, 0 os facial. Le moteur ne sait pas encore le faire ; c'est l'étape faciale (≥ 15 expressions).
+- Règle : un inventaire complet n'est pas une fonctionnalité. Le statut « absent » est reporté tel quel.

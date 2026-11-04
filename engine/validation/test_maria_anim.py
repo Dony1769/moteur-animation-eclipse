@@ -17,13 +17,15 @@ Usage : blender -b --factory-startup --disable-autoexec -P engine/validation/tes
 import bpy, sys, json, os, shutil, statistics
 
 argv = sys.argv[sys.argv.index("--") + 1:]
+A = os.environ.get("CLIP_A", "Idle")      # clip de départ de la transition
+B = os.environ.get("CLIP_B", "Running")   # clip d'arrivée, mesuré pour la déformation
 sortie, scratch = argv[0], argv[1]
 os.makedirs(scratch, exist_ok=True)
 SRC = "/home/claude/moteur3d/assets/mixamo"
 MARIA = os.path.join(scratch, "maria.fbx")
 shutil.copy(os.path.join(SRC, "Personnage_Maria.fbx"), MARIA)
 clips = {}
-for nom in ("Idle", "Running"):
+for nom in (A, B):
     c = os.path.join(scratch, nom + ".fbx")
     shutil.copy(os.path.join(SRC, nom + ".fbx"), c)
     clips[nom] = c
@@ -76,9 +78,9 @@ def ecart_max_moy(a, b):
 
 
 # -- Running : déformation par image, relative à la hanche --
-if ANIM.get("Running"):
-    affecter(ANIM["Running"])
-    f0, f1 = int(ANIM["Running"].frame_range[0]), int(ANIM["Running"].frame_range[1])
+if ANIM.get(B):
+    affecter(ANIM[B])
+    f0, f1 = int(ANIM[B].frame_range[0]), int(ANIM[B].frame_range[1])
     images = {}
     for f in range(f0, f1 + 1):
         scn.frame_set(f)
@@ -100,16 +102,16 @@ else:
     ok("running_deformation", False, "clip Running absent")
 
 # -- Transition Idle -> Running (bandes NLA) --
-if ANIM.get("Idle") and ANIM.get("Running"):
+if ANIM.get(A) and ANIM.get(B):
     arm.animation_data.action = None
     trk = arm.animation_data.nla_tracks.new()
-    i0, i1 = int(ANIM["Idle"].frame_range[0]), int(ANIM["Idle"].frame_range[1])
+    i0, i1 = int(ANIM[A].frame_range[0]), int(ANIM[A].frame_range[1])
     fin_idle = i0 + (i1 - i0)
     # Fondu enchaîné : Running commence FONDU_IMAGES images avant la fin d'Idle (chevauchement NLA)
     FONDU_IMAGES = int(os.environ.get("FONDU", "12"))
-    s1 = trk.strips.new("Idle", i0, ANIM["Idle"])
+    s1 = trk.strips.new(A, i0, ANIM[A])
     trk2 = arm.animation_data.nla_tracks.new()  # piste supérieure : les bandes ne peuvent pas se chevaucher sur une même piste
-    s2 = trk2.strips.new("Running", fin_idle + 1 - FONDU_IMAGES, ANIM["Running"])
+    s2 = trk2.strips.new(B, fin_idle + 1 - FONDU_IMAGES, ANIM[B])
     s2.blend_in = FONDU_IMAGES
     res["fondu_images"] = FONDU_IMAGES
     # mesure du saut au point de passage (fin d'Idle -> image suivante), toujours dans le fondu
