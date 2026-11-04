@@ -535,3 +535,10 @@ Mesure LBS sans clé, bras gauche seul : 90° 24 -> 12 replis ; 120° 31 -> 19 ;
 - Export : Maria + Running exportés en FBX, réimportés ; même nombre de sommets (8 094), 65 os, 4 influences au plus, mouvement identique à 0,26 mm.
 - Méthode : `engine/validation/test_maria_export.py`. Erreurs de procédure 37 et 38 consignées.
 - Limite : un seul clip exporté ; l'export des autres clips et de la transition reste à tester.
+
+## 30. Test B, items 1 à 4 : corps HBM sans skinning (source brute)
+- Source : `GEO-body_male_realistic` extrait du bundle HBM (`human_base_meshes_bundle.blend`, copié avant lecture).
+- Constats : 10 582 sommets, 10 590 faces (10 570 quads), 0 bord ouvert (maillage fermé), 1 jeu d'UV, 0 groupe de sommets, aucun parent. Un modificateur Multires est présent : ce n'est pas du skinning.
+- Dimensions : hauteur 1,690 m, pied à z = −0,006 m, envergure X 0,881 m (bras écartés, pas la largeur d'épaules), profondeur 0,290 m.
+- Méthode : `engine/validation/test_hbm_corps.py`. Items 5 à 15 non faits : articulations, armature, poids, contrôleurs, tests de flexion, visage, animations, export.
+- Règle : mesurer la largeur sur un corps à bras écartés donne l'envergure, pas la largeur d'épaules. Nommer la mesure selon ce qu'elle est.
