@@ -588,3 +588,8 @@ Mesure LBS sans clé, bras gauche seul : 90° 24 -> 12 replis ; 120° 31 -> 19 ;
 - Méthode : reproduire exactement la définition du projet (vote des sommets pour l'os dominant, normale de Newell, rotation par la matrice 3×3 normalisée), puis comparer aux comptes Blender sur le même fichier. Ici l'écart maximal est de 4 faces.
 - Résultat : les poids du haut du corps réduisent l'étirement du bras mais doublent les faces repliées. Non adoptés. Le critère de garde doit inclure les plis.
 - Outil : `engine/skinning/plis_numpy.py`.
+
+## 38. Garde de plis et limites des poids seuls
+- La garde contrôle désormais l'étirement et le nombre de plis, sur entraînement et validation (`engine/skinning/optimiser_poids.py`, `garde_max`).
+- Recherche : ARAP-LBS n'a pas de contrôle de plis ; son échantillonnage est limité à roulis ±60° et torsion ±10°. Au-delà, les poids seuls ne suffisent pas : prévoir des formes correctives pour le coude et l'épaule, comme `construit_final.py`.
+- Méthode de contrôle : toute garde d'optimisation doit mesurer les plis sur des poses non utilisées à l'entraînement.

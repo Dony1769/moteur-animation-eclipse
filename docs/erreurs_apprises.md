@@ -285,3 +285,9 @@ Chaque erreur a une cause, une correction et un test. Une erreur corrigée doit 
 - Règle : une métrique numpy ne se conclut qu'après calibration sur la mesure Blender du projet. Un écart de l'ordre de 1000 faces indique une erreur de définition, pas un résultat.
 - Constat réel, une fois calibré : les poids du haut du corps réduisent l'étirement du bras (3,36 → 1,56 à 120°), mais multiplient par deux environ les faces repliées du bras (origine numpy 3/7/8/12/15 ; haut 10/11/17/23/32 à 60/75/90/105/120°). Le compte d'origine est numpy (non vérifié dans Blender sur le fichier d'origine). Ce compromis rend ces poids non adoptables en l'état.
 - Règle complémentaire (suite de l'erreur 50) : la garde de rejet doit contrôler aussi le nombre de faces repliées, sur les angles d'entraînement et de validation.
+
+## 52. Garde d'optimisation aveugle aux plis
+- Symptôme : la garde (étirement seul) acceptait des poids qui doublaient les faces repliées du bras (erreur 51).
+- Correction : `garde_max` contrôle désormais le nombre de plis (`plis_numpy`) sur les angles d'entraînement et de validation. Test : poids du haut du corps refusés (plis 3 → 10 à 60°) ; poids d'origine acceptés.
+- Constat de recherche : l'article ARAP-LBS (Thiery et al., telecom-paris, araplbs.pdf) ne traite ni les plis ni les poses de validation hors échantillon. Ses poses d'entraînement sont limitées à roulis ±60° et torsion ±10°. Nos angles de 105° et 120° dépassent ce domaine. Les plis à grand angle ne se résolvent donc pas par les seuls poids : il faut des formes correctives (clés), comme le pipeline de référence.
+- Règle : la garde doit inclure les plis, et l'entraînement doit rester dans le domaine d'angles où la méthode est valide, ou être complété par des formes correctives.

@@ -66,13 +66,24 @@ def poids_aire_aretes(rest, aretes, faces):
     return om / om.mean()
 
 
-def garde_max(data, W, ia_train, W0, tolerance=1.10):
-    """Garde de rejet : refuse un poids si l'étirement max sur un angle d'entraînement dépasse celui de l'origine × tolérance."""
+def garde_max(data, W, ia_train, W0, tolerance=1.10, ia_valid=()):
+    """Garde de rejet (erreurs 50 et 51).
+
+    Refuse un poids si, sur un angle d'entraînement ou de validation :
+      - l'étirement max dépasse celui de l'origine × tolérance (ia_train seulement) ;
+      - le nombre de faces repliées dépasse celui de l'origine (ia_train et ia_valid).
+    """
+    from plis_numpy import plis
     for ia in ia_train:
         ref = evaluer(data, W0, ia)["max"]
         nouv = evaluer(data, W, ia)["max"]
         if nouv > ref * tolerance:
-            return False, (ia, round(ref, 3), round(nouv, 3))
+            return False, ("etirement", ia, round(ref, 3), round(nouv, 3))
+    for ia in list(ia_train) + list(ia_valid):
+        ref = plis(data["rest"], W0, data["M"][ia], data["faces"])
+        nouv = plis(data["rest"], W, data["M"][ia], data["faces"])
+        if nouv > ref:
+            return False, ("plis", ia, ref, nouv)
     return True, None
 
 
