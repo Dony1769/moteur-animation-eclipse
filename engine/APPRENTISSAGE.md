@@ -496,3 +496,8 @@ Mesure LBS sans clé, bras gauche seul : 90° 24 -> 12 replis ; 120° 31 -> 19 ;
 - Défaut trouvé : les clés correctives créent des arêtes très étirées (5,9 fois à 120° contre 3,4 sans clés). Cause : décalage limité aux sommets repliés, donc frontière brutale.
 - Essai de correction : lissage laplacien du champ de décalage. Il retrouve l'étirement de référence mais affaiblit la correction des replis. Aucun pipeline ne domine : le pipeline de référence reste sans lissage, en attendant une méthode qui satisfasse les deux critères.
 - Sources : méthode standard de lissage laplacien ; non relue dans cette session. Les références précédentes (sections 20 et 21) restent les seules sources lues.
+
+## 23. Contrôle visuel : vérifier l'état rendu
+- Une image de contrôle doit reproduire l'état exact mesuré (pose, clés, couleurs). Une image trompeuse est pire que pas d'image.
+- Méthode : `engine/skinning/rendu_etirement.py` (carte d'étirement par sommet, rendu Workbench en arrière-plan, sans GPU).
+- Référence : docs/rapports/visuel_etirement_bras120_profil.png.

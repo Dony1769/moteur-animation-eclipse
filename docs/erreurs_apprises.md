@@ -168,3 +168,9 @@ Chaque erreur a une cause, une correction et un test. Une erreur corrigée doit 
 - Lecture : le goulot est le plafond d'amplitude de la calibration à 120°, qui n'atteint pas zéro replis. Augmenter l'amplitude réduit les replis et augmente l'étirement, dans les mêmes proportions que les essais précédents. Le compromis est structurel.
 - Décision : pipeline de référence conservé (replis 0/2/6/13, étirement 5,9). Justification : c'est le compromis le plus équilibré des variantes mesurées, et aucune ne réduit à la fois les replis et l'étirement.
 - Règle : une amplitude de correction de plusieurs centimètres sur un corps de 1,7 m est un signal d'alerte : elle compense un défaut de déformation au lieu de le corriger.
+
+## 31. Image de contrôle qui ne montre pas la pose mesurée
+- Symptôme : la première carte d'étirement montrait le bras au repos, avec des couleurs calculées sur le bras à 120°. Le bras semblait ne pas être fléchi.
+- Cause : deux erreurs de procédure dans le script de rendu. La pose était restaurée avant le rendu, et les clés correctives étaient remises à zéro après le calcul du repos.
+- Règle : une image de contrôle doit montrer exactement l'état que les mesures ont calculé. Pose, clés et couleurs doivent être appliquées au moment du rendu, puis vérifiées par une vue de profil avant toute conclusion.
+- Correction : `engine/skinning/rendu_etirement.py` rétablit les clés et garde la pose au rendu. Image de référence : docs/rapports/visuel_etirement_bras120_profil.png. Le bras est fléchi à environ 90 à 120° vers l'avant, et la zone rouge est à l'épaule.
