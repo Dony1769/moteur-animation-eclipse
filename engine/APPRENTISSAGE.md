@@ -598,3 +598,9 @@ Mesure LBS sans clé, bras gauche seul : 90° 24 -> 12 replis ; 120° 31 -> 19 ;
 - Les clés correctives donnent 13 plis à 120° contre 28 à 32 pour les poids seuls : la voie à suivre pour le coude et l'épaule.
 - Source non officielle (projet Maya, correctif appris) : intéressante mais métriques non définies et test non exclu de l'entraînement. Non retenue comme preuve.
 - Prochaine étape : correctifs déterministes par angle, calculés depuis la différence cible − LBS, puis validés hors entraînement avec la garde (plis et étirement).
+
+## 40. Correctifs ARAP déterministes : première validation hors entraînement
+- Cible ARAP (locale-globale) par pose, correctif = cible − LBS, interpolé entre angles d'entraînement. Test à 75° et 105°, jamais utilisés pour construire les correctifs.
+- Résultat numpy : plis et étirement améliorés sur les trois chaînes. Témoin 0° exact.
+- Piège : 12 itérations ne suffisent pas (erreur 54). Toujours vérifier la convergence.
+- À faire : vérification Blender, puis garde (plis et étirement) avant toute adoption.

@@ -297,3 +297,15 @@ Chaque erreur a une cause, une correction et un test. Une erreur corrigée doit 
 - Sources lues : Wang & Phillips 2002 (multi-weight enveloping, SG07) : la page lue ne donne ni méthode ni chiffres ; à relire dans l'article original. Projet Maya « ML corrective deformer » (page non officielle) : correctif appris (MLP, angles → déplacements de sommets). Ses métriques ne sont pas définies et le jeu de test n'est pas clairement exclu de l'entraînement : non vérifié, à ne pas citer comme preuve.
 - Règle : une source non officielle sert d'idée. Elle n'est retenue qu'après un test sur poses hors entraînement, dans le même protocole que le projet.
 - Piste déterministe à tester : correctifs par angle (interpolation linéaire des déplacements de sommets entre angles clés), calculés à partir de la différence entre la cible d'étirement optimal et le LBS. Pas de GPU requis, conforme aux règles du projet.
+
+## 54. Cible ARAP non convergée à 12 itérations
+- Symptôme : entre 12 et 40 itérations, l'écart maximal de la cible atteint 0,071 pour une amplitude de correctif de 0,255 (28 %).
+- Cause : itérations insuffisantes pour la méthode locale-globale ARAP.
+- Correction : 40 itérations. Le résultat hors entraînement tient à 40 itérations.
+- Règle : vérifier la convergence d'un solveur itératif (écart entre deux nombres d'itérations) avant d'interpréter son résultat.
+
+## 55. Correctif ARAP interpolé : validé en numpy, pas encore dans Blender
+- Méthode : cible ARAP (locale-globale, arêtes uniformes, ancres = tronc), correctif = cible − LBS, interpolé linéairement entre angles d'entraînement 60/90/120° ; test hors entraînement à 75° et 105°. Témoin 0° : écart 6e-7.
+- Résultats (poids d'origine, plis / étirement max) : bras 75° 7 → 0, 2,26 → 1,12 ; bras 105° 12 → 4, 3,00 → 1,16 ; avant-bras 75° 2 → 0 ; avant-bras 105° 5 → 2 ; jambe 75° 1 → 0 ; jambe 105° 7 → 3.
+- Limites : vérifié en numpy seulement (métrique calibrée à ±4 faces) ; arêtes uniformes (non cotangentes) ; test en interpolation, pas en extrapolation au-delà de 120° ; bras à 105° encore 4 plis.
+- Prochaine étape : appliquer les correctifs dans Blender (formes-clés) et mesurer avec `mesure_lbs` avant toute déclaration de succès.

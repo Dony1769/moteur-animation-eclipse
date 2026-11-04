@@ -41,3 +41,19 @@ def plis(rest, W, M, faces):
         if npz @ (R @ nr) < 0:
             n += 1
     return n
+
+def plis_positions(rest, pose, W, M, faces):
+    """Comme plis, mais avec des positions de pose déjà calculées (LBS + correctif)."""
+    dom = W.argmax(1)
+    n = 0
+    for f in faces:
+        boucle = list(f)
+        os_ = np.bincount(dom[boucle], minlength=W.shape[1]).argmax()
+        R = M[os_, :3, :3]
+        R = R / np.linalg.norm(R, axis=0)
+        nr = _newell(rest, boucle); npz = _newell(pose, boucle)
+        if np.linalg.norm(nr) == 0 or np.linalg.norm(npz) == 0:
+            continue
+        if npz @ (R @ nr) < 0:
+            n += 1
+    return n
