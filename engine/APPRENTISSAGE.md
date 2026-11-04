@@ -506,3 +506,9 @@ Mesure LBS sans clé, bras gauche seul : 90° 24 -> 12 replis ; 120° 31 -> 19 ;
 - Un écart de comptage (69 os contre 65 annoncés) se résout en comparant les listes exactes d'os, pas en devinant.
 - Méthode : exporter les noms d'os des deux fichiers dans Blender (`liste_os.py`, sortie JSON), puis comparer les ensembles, après retrait du préfixe `mixamorig:`.
 - Résultat : les 65 os du corps sont communs ; les 4 en plus sont des os de visage et d'arme. Le squelette de référence est donc le même.
+
+## 25. Valider un mouvement importé : unités, racine, slot, fondu
+- Trois erreurs de mesure successives ont donné des résultats impossibles avant le bon. Ordre de contrôle à suivre pour tout clip importé : (1) distances en mètres monde ; (2) déformation relative à la hanche ; (3) slot d'action affecté et pose visible ; (4) seulement ensuite, transitions.
+- Transitions : le passage direct entre deux clips crée un saut ; un fondu NLA de 12 images le réduit au niveau du mouvement normal.
+- Méthode : `engine/validation/test_maria_anim.py` (sorties dans le dossier scratchpad du test). Résultat : déformation OK, transition OK (ratio 1,02, seuil 3, valeur fixée a priori).
+- Sources : aucune source externe lue dans cette section ; méthode de fondu NLA de la documentation Blender 4.5, non relue dans cette session.

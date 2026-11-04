@@ -179,3 +179,24 @@ Chaque erreur a une cause, une correction et un test. Une erreur corrigée doit 
 - Symptôme : une première mesure donnait 42,9 pour un personnage de 169 cm.
 - Cause : ma mesure utilisait les coordonnées locales du maillage, sans l'échelle 0,01 appliquée à l'objet à l'import (FBX en centimètres). La vraie hauteur monde est 1,70 m.
 - Règle : mesurer une dimension après import uniquement en coordonnées monde (`matrix_world @ co`), et vérifier l'échelle de l'objet avant de conclure à un défaut d'export.
+
+## 33. Distances mesurées en coordonnées locales après import FBX à l'échelle 0,01
+- Symptôme : déplacements de 367 m et un saut de 66 m pour un personnage de 1,70 m. Physiquement impossible.
+- Cause : mesure sur `v.co` (espace de l'armature, en centimètres) et non sur `matrix_world @ v.co`. Les valeurs étaient 100 fois trop grandes.
+- Règle : toute distance après import se mesure en mètres monde. Une valeur physiquement impossible prouve une erreur de mesure avant toute conclusion sur le moteur.
+
+## 34. Translation racine d'un clip comptée comme déformation
+- Symptôme : le clip Running déplace la hanche de 3 à 370 unités sur 16 images (le personnage avance). Le corps entier se translate, et la mesure la comptait comme déformation.
+- Règle : mesurer la déformation par rapport à la hanche (position monde de l'os racine retirée à chaque sommet). Séparer translation du corps et déformation de la peau.
+- Résultat après correction : pas médian de 5,3 cm par image, maximum 40 cm (à vérifier : pic à examiner).
+
+## 35. Action non affectée à l'armature sans slot (Blender 4.5)
+- Symptôme : après `arm.animation_data.action = action`, le maillage ne bouge pas (déplacement 0 sur toutes les images), alors que les os changent.
+- Cause : Blender 4.4 et suivants utilisent des slots d'action ; l'action n'est pas rattachée à l'objet.
+- Règle : affecter aussi `animation_data.action_slot = action.slots[0]`, puis vérifier qu'une pose modifie le maillage avant de mesurer quoi que ce soit.
+
+## 36. Transition directe entre deux clips : saut trop grand, corrigé par fondu
+- Mesure : saut à la jonction Idle → Running de 0,18 m, soit 3,4 fois le pas médian de Running (seuil 3, échec).
+- Correction : fondu enchaîné NLA (Running sur une piste supérieure, `blend_in` de 12 images, départ 12 images avant la fin d'Idle). Ratio 1,02 à 12 images, 1,57 à 6 images.
+- Réglage retenu : 12 images, qui donne la transition la plus douce. Le seuil 3 a été fixé avant la mesure, à confirmer sur d'autres paires de clips.
+- Limite : une seule paire de clips testée ; le pic de 40 cm par image dans Running reste à examiner.
