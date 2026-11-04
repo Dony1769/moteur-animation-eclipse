@@ -378,3 +378,10 @@ Chaque erreur a une cause, une correction et un test. Une erreur corrigée doit 
 - Cause : les doigts du HBM sont légèrement courbés.
 - Correctif : les articulations suivent la ligne médiane mesurée du lobe (centroïde par tranche de 1 cm, abscisse curviligne).
 - Limite : les segments sans lobe mesuré (base du pouce, auriculaire) restent droits et sont marqués « estimés, non testés ».
+
+## 68. Plis à 120° : l'os auxiliaire de torsion domine le bras supérieur
+- Mesure (LBS pur, poids `W_seq_final`) : 20 plis à 120°, localisés sur le bras supérieur (z 1,07 à 1,31 en repos), dominés par `LeftArmHelper` (23 sommets) puis `LeftArm` (11).
+- Hypothèse testée : reporter 50 % ou 100 % du poids de l'auxiliaire sur `LeftArm`. Résultat : 17 et 23 plis, étirement max 3,5 et 2,3. Le report de poids ne résout pas le problème.
+- Conclusion : le pli vient de la déformation linéaire elle-même (torsion et flexion combinées sur le même os), pas seulement de la répartition des poids.
+- Piste à vérifier, non implémentée : séparation torsion/flexion des os (Jacobson et al., « Stretchable and Twistable Bones for Skeletal Shape Deformation », SIGGRAPH Asia 2011). Source trouvée par recherche, non lue en détail.
+- Diagnostic reproductible : `engine/skinning/diagnostic_plis_120.py`.

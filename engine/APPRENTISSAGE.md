@@ -644,3 +644,9 @@ Mesure LBS sans clé, bras gauche seul : 90° 24 -> 12 replis ; 120° 31 -> 19 ;
 - Résultat : 47 os ; symétrie jambes 7,8 mm, bras 0,8 mm, doigts 0,6 mm ; 20 phalanges mesurées dans le maillage, aucune hors ; 4 phalanges estimées non testées (nommées dans le test).
 - Ce qui reste estimé, sans preuve dans le maillage : coude (anthropométrie), base du pouce, auriculaire, bout de main (la main mesurée va plus loin, erreur 66).
 - Tests d'articulation : Blender uniquement (pas de numpy), sur une copie du corps source.
+
+## 48. Phase 4 : plis à 120° sur le bras, diagnostic
+- Localisation : plis sur le bras supérieur, dominés par l'os auxiliaire de torsion (erreur 68).
+- Report de poids vers le bras : insuffisant (17 à 23 plis). Abandonné comme correction.
+- Piste suivante (lue seulement par son résumé) : déformation avec séparation de la torsion et de la flexion d'un même os. À lire, puis à tester en Blender avant toute écriture comme « appris ».
+- État : phase 4 ouverte. Résidu à 120° : 11 plis avec le correctif ARAP, 20 sans correctif.
