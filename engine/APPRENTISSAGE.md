@@ -561,3 +561,9 @@ Mesure LBS sans clé, bras gauche seul : 90° 24 -> 12 replis ; 120° 31 -> 19 ;
 - Contrôle d'intérieur : milieu de chaque os dans le maillage (parité des intersections de rayons, sur X pour les membres). C'est un test faible : un point par os, pas le volume entier.
 - Non fait : bras (coude et poignet non validés), poids automatiques (item 7), contrôleurs (item 8).
 - Méthode : `engine/validation/test_hbm_armature.py`. Erreurs 41 à 44 consignées.
+
+## 34. Intégration Ara 3D Gen : génération externe, testée par notre importeur
+- Adaptateur : `engine/generation/ara_adapter.py` appelle l'export Ara (`npm run export`, preset « Athletic woman ») et écrit une provenance (commit `a4947ff`, licence code MIT, données CC0). Dépendance externe, non copiée.
+- Le FBX produit (69 os, 10 matériaux, 1,70 m, 4 influences au plus, poids normalisés, zéro anomalie) passe notre importeur comme un personnage externe. Test : `engine/validation/test_ara_integration.py`.
+- Une seule correction nécessaire : la convention Mixamo sans préfixe (erreur 45), désormais reconnue par ensemble de noms de référence. Maria inchangée.
+- Limites : seul le FBX statique est importé (pas de clips Ara) ; le dépôt Ara est attendu dans le dossier de travail (variable ARA_REPO) et doit être recloné si la session est réinitialisée.

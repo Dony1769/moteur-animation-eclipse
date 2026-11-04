@@ -243,3 +243,9 @@ Chaque erreur a une cause, une correction et un test. Une erreur corrigée doit 
 - Symptôme : le milieu de l'os du pied sortait du maillage.
 - Cause : la pointe du pied était placée à une longueur fixe (0,15 m) au lieu du sommet réel le plus avancé.
 - Règle : une longueur d'os qui n'est pas mesurée doit être déduite de la géométrie (ici : sommet le plus avancé près du sol), jamais fixée à une valeur de catalogue.
+
+## 45. Convention Mixamo rejetée faute de préfixe « mixamorig: »
+- Symptôme : l'armature Ara (69 os, noms Mixamo exacts) était classée « convention inconnue ».
+- Cause : le diagnostic ne reconnaissait la convention que par le préfixe `mixamorig:`. Ara exporte `Hips`, `Spine`, `LeftArm`… sans préfixe.
+- Règle : reconnaître une convention par l'ensemble des noms de référence (avec ou sans préfixe), et signaler le préfixe comme une propriété séparée, pas comme un critère d'identité.
+- Vérification : les mêmes 22 os de référence sont reconnus dans les deux formes ; le rapport de Maria reste inchangé.

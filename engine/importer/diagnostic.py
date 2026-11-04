@@ -78,14 +78,29 @@ def _mesh_info(o):
     }
 
 
+# Os de référence de la convention Mixamo (sans préfixe). Reconnus avec ou sans « mixamorig: »
+# (erreur 45 : Ara 3D Gen exporte les mêmes noms sans préfixe).
+OS_MIXAMO_REF = {"Hips", "Spine", "Spine1", "Spine2", "Neck", "Head", "LeftShoulder", "LeftArm", "LeftForeArm",
+                 "LeftHand", "RightShoulder", "RightArm", "RightForeArm", "RightHand", "LeftUpLeg", "LeftLeg",
+                 "LeftFoot", "LeftToeBase", "RightUpLeg", "RightLeg", "RightFoot", "RightToeBase"}
+
+
+def _nom_base(n):
+    return n.split(":", 1)[1] if n.startswith("mixamorig:") else n
+
+
 def _arm_info(a):
     os_ = [b.name for b in a.data.bones]
     mixamo = sum(1 for n in os_ if n.startswith("mixamorig:"))
+    reconnus = sum(1 for n in os_ if _nom_base(n) in OS_MIXAMO_REF)
+    convention = "mixamo" if reconnus >= 0.8 * len(OS_MIXAMO_REF) else "inconnue"
     return {
         "nom": a.name,
         "os": len(os_),
         "os_mixamo": mixamo,
-        "convention": "mixamo" if mixamo and mixamo >= 0.8 * len(os_) else "inconnue",
+        "os_reference_mixamo": reconnus,
+        "prefixe_mixamorig": mixamo >= 0.8 * len(os_),
+        "convention": convention,
         "racine": [b.name for b in a.data.bones if b.parent is None],
         "echelle": tuple(round(v, 4) for v in a.scale),
         "rotation_base_deg": tuple(round(math.degrees(v), 2) for v in a.rotation_euler),
