@@ -49,3 +49,8 @@ Témoin à 0° : étirement 1,000 dans tous les cas.
 - `engine/skinning/optimiser_poids.py` : optimisation (puissance 2 ou 4, lambda, poids initiaux).
 - `engine/skinning/appliquer_poids.py` : réécrit des poids dans une copie du .blend pour la mesure Blender.
 - Le pipeline de référence `construit_final.py` n'a pas été modifié.
+
+## Plis (faces repliées) : résultat et calibration
+- Métrique : `engine/skinning/plis_numpy.py`, calibrée sur Blender (`mesure_lbs.faces_repliees`) à ±4 faces (erreur 51).
+- Poids du haut du corps (entraînement 60/90/120, test 75) : étirement du bras à 120° 3,36 → 1,56, mais plis du bras 15 → 32 (origine numpy → Blender). Avant-bras : 6 → 6 à 120°. Jambe inchangée.
+- Conclusion : non adoptable. La garde de rejet doit désormais inclure le nombre de plis (non encore implémenté).

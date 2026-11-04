@@ -13,7 +13,7 @@ import pose_chaine as pc
 
 argv = sys.argv[sys.argv.index("--") + 1:]
 blend, sortie = argv[0], argv[1]
-ANGLES = (0, 60, 90, 105, 120)
+ANGLES = (0, 60, 75, 90, 105, 120)  # 75 : test ; 105 : validation (garde) ; 60/90/120 : entraînement
 bpy.ops.wm.open_mainfile(filepath=blend)
 corps = bpy.data.objects[ak.ENTREE_NOM]
 arm = [m.object for m in corps.modifiers if m.type == "ARMATURE"][0]

@@ -582,3 +582,9 @@ Mesure LBS sans clé, bras gauche seul : 90° 24 -> 12 replis ; 120° 31 -> 19 ;
 - Conclusion : aucun réglage de poids n'améliore les trois chaînes sans dégrader la jambe. Le maximum de la jambe est local (cheville, puis genou) : il faut un correctif géométrique dédié (genou, cheville), pas une optimisation globale.
 - Non adopté. Pipeline de référence inchangé. Prochaine étape : garde à angles de validation, puis correctif dédié à la jambe.
 - Sources lues : brevet US10061871B2 (pondération par aires barycentriques, échantillonnage de poses, ancrage aux extrémités) ; Jacobson & Baran 2012 (poids cotangents, pas de règle de longueur).
+
+## 37. Mesure de plis : calibrer avant de conclure
+- Un comptage de faces repliées calculé en numpy a donné des milliers de plis, là où le projet en compte une dizaine. Cause : la normale de repos était comparée sans la rotation de l'os dominant (erreur 51).
+- Méthode : reproduire exactement la définition du projet (vote des sommets pour l'os dominant, normale de Newell, rotation par la matrice 3×3 normalisée), puis comparer aux comptes Blender sur le même fichier. Ici l'écart maximal est de 4 faces.
+- Résultat : les poids du haut du corps réduisent l'étirement du bras mais doublent les faces repliées. Non adoptés. Le critère de garde doit inclure les plis.
+- Outil : `engine/skinning/plis_numpy.py`.

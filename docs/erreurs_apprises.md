@@ -276,3 +276,12 @@ Chaque erreur a une cause, une correction et un test. Une erreur corrigée doit 
 - Cause : la garde ne contrôlait que les angles d'entraînement. Un angle hors entraînement ne pouvait pas la déclencher.
 - Règle : la garde doit contrôler au moins un angle de validation qui n'est pas dans l'entraînement, en plus des angles d'entraînement. Dans le cas contraire, la garde ne protège que contre la dégradation sur ce qu'elle a déjà vu.
 - Constat complémentaire : à 120°, l'arête extrême de la jambe d'origine est à la cheville (arêtes de 1,7 cm). L'optimisation la déplace au genou (1,49). Les poids déplacent la contrainte sans la résoudre : la jambe demande un traitement dédié.
+
+## 51. Métrique de plis numpy fausse : normale de repos non tournée
+- Symptôme : le comptage numpy donnait 1 288 faces repliées à 120° sur le corps d'origine, contre 13 dans la mesure du projet. Les poids du haut du corps semblaient en aggraver le compte (1 357).
+- Cause : la normale de repos était comparée brute à la normale de pose. Le projet (`mesure_lbs.faces_repliees`) compare la normale de pose à la normale de repos tournée par la matrice 3×3 (colonnes normalisées) de l'os dominant de la face.
+- Correction : outil `engine/skinning/plis_numpy.py`, calqué sur la définition du projet.
+- Calibration Blender sur `corps_haut.blend` (poids du haut du corps), comptes Blender / numpy : bras 10/10, 11/11, 17/17, 23/22, 32/28 (60, 75, 90, 105, 120°) ; avant-bras 4/4, 4/4, 5/5, 5/5, 6/6 ; jambe 0/0, 1/1, 5/5, 7/7, 11/10. Écart maximal : 4 faces (bras à 120°).
+- Règle : une métrique numpy ne se conclut qu'après calibration sur la mesure Blender du projet. Un écart de l'ordre de 1000 faces indique une erreur de définition, pas un résultat.
+- Constat réel, une fois calibré : les poids du haut du corps réduisent l'étirement du bras (3,36 → 1,56 à 120°), mais multiplient par deux environ les faces repliées du bras (origine numpy 3/7/8/12/15 ; haut 10/11/17/23/32 à 60/75/90/105/120°). Le compte d'origine est numpy (non vérifié dans Blender sur le fichier d'origine). Ce compromis rend ces poids non adoptables en l'état.
+- Règle complémentaire (suite de l'erreur 50) : la garde de rejet doit contrôler aussi le nombre de faces repliées, sur les angles d'entraînement et de validation.
