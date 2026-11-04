@@ -575,3 +575,10 @@ Mesure LBS sans clé, bras gauche seul : 90° 24 -> 12 replis ; 120° 31 -> 19 ;
 - Échecs consignés : chaînes conjointes, masque par os, exposant 4, séquence bras/jambe (erreurs 46 à 48). Aucune variante n'améliore les trois chaînes à la fois.
 - Non adopté : le pipeline de référence reste en vigueur. Prochaine étape : pondération par longueur de repos et garde de rejet.
 - Sources lues : ARAP-LBS (Thiery) ; billet non officiel sur le « candy wrapper » (https://jessyleite.dev/posts/blender-candy-wrap-twist-deformation/) qui recommande l'os de torsion pour l'export, ce qui rejoint notre test d'os d'aide.
+
+## 36. Pondération par aire et garde : bras amélioré, jambe non résolue par les poids
+- Pondération par aires barycentriques des arêtes (erreur 49) : bras à 120° 1,65 → 1,63 (test). Marginal mais propre.
+- Entraînement conjoint 60/90/105 avec garde : passe la garde, mais la jambe régresse à 120° (erreur 50). Entraînement 60/90/120, testé à 105° : bras 3,00 → 1,45 ; avant-bras 1,78 → 1,37 ; jambe neutre (1,23 → 1,24). Garde refusée : jambe à 120°, 1,27 → 1,49.
+- Conclusion : aucun réglage de poids n'améliore les trois chaînes sans dégrader la jambe. Le maximum de la jambe est local (cheville, puis genou) : il faut un correctif géométrique dédié (genou, cheville), pas une optimisation globale.
+- Non adopté. Pipeline de référence inchangé. Prochaine étape : garde à angles de validation, puis correctif dédié à la jambe.
+- Sources lues : brevet US10061871B2 (pondération par aires barycentriques, échantillonnage de poses, ancrage aux extrémités) ; Jacobson & Baran 2012 (poids cotangents, pas de règle de longueur).

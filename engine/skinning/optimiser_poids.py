@@ -25,7 +25,7 @@ def projeter_simplexe(V, S):
     return out
 
 
-def perte_et_grad(W, rest, aretes, Ms, L, W0, lam, puissance=2):
+def perte_et_grad(W, rest, aretes, Ms, L, W0, lam, puissance=2, omega=None):
     perte = 0.0
     gW = np.zeros_like(W)
     for M in Ms:
@@ -37,9 +37,10 @@ def perte_et_grad(W, rest, aretes, Ms, L, W0, lam, puissance=2):
         rho = nd / L
         e = rho - 1.0
         # puissance 2 : écart quadratique (défaut) ; puissance 4 : pénalise davantage les arêtes extrêmes
-        perte += np.sum(np.abs(e) ** puissance)
-        # dE/dx_i via arêtes : p |e|^(p-2) e (d/|d|)/L  (p=2 : 2e(d/|d|)/L)
-        g_arete = (puissance * np.abs(e) ** (puissance - 2) * e / (nd * L))[:, None] * d
+        om = np.ones_like(e) if omega is None else omega
+        perte += np.sum(om * np.abs(e) ** puissance)
+        # dE/dx_i via arêtes : ω p |e|^(p-2) e (d/|d|)/L  (p=2 : 2ωe(d/|d|)/L)
+        g_arete = ((om * puissance * np.abs(e) ** (puissance - 2) * e) / (nd * L))[:, None] * d
         gx = np.zeros_like(x)
         np.add.at(gx, aretes[:, 0], g_arete)
         np.add.at(gx, aretes[:, 1], -g_arete)
@@ -49,7 +50,33 @@ def perte_et_grad(W, rest, aretes, Ms, L, W0, lam, puissance=2):
     return perte, gW
 
 
-def optimiser(data, ia_train, lam=1e-3, pas=0.2, iters=400, W0=None, puissance=2):
+def poids_aire_aretes(rest, aretes, faces):
+    """Poids par arête = aire barycentrique (1/3 des faces incidentes) des deux sommets, moyenne 1.
+    Ce n'est pas la longueur : une arête courte entourée de grandes faces garde un poids normal (erreur 49)."""
+    aire = np.zeros(len(rest))
+    for f in faces:
+        f = list(f)
+        if len(f) < 3: continue
+        p0 = rest[f[0]]
+        for k in range(1, len(f) - 1):
+            a = np.linalg.norm(np.cross(rest[f[k]] - p0, rest[f[k + 1]] - p0)) / 2
+            for v in (f[0], f[k], f[k + 1]):
+                aire[v] += a / 3
+    om = aire[aretes[:, 0]] + aire[aretes[:, 1]]
+    return om / om.mean()
+
+
+def garde_max(data, W, ia_train, W0, tolerance=1.10):
+    """Garde de rejet : refuse un poids si l'étirement max sur un angle d'entraînement dépasse celui de l'origine × tolérance."""
+    for ia in ia_train:
+        ref = evaluer(data, W0, ia)["max"]
+        nouv = evaluer(data, W, ia)["max"]
+        if nouv > ref * tolerance:
+            return False, (ia, round(ref, 3), round(nouv, 3))
+    return True, None
+
+
+def optimiser(data, ia_train, lam=1e-3, pas=0.2, iters=400, W0=None, puissance=2, omega_faces=None):
     rest, aretes = data["rest"], data["aretes"]
     W0 = data["W"] if W0 is None else W0
     S = W0 > 0
@@ -57,12 +84,15 @@ def optimiser(data, ia_train, lam=1e-3, pas=0.2, iters=400, W0=None, puissance=2
     ok = L > 0
     aretes, L = aretes[ok], L[ok]
     Ms = [data["M"][i] for i in ia_train]
+    omega = None
+    if omega_faces is not None:
+        omega = poids_aire_aretes(rest, data["aretes"], omega_faces)[ok]
     W = W0.copy(); h = pas
-    p, g = perte_et_grad(W, rest, aretes, Ms, L, W0, lam, puissance)
+    p, g = perte_et_grad(W, rest, aretes, Ms, L, W0, lam, puissance, omega)
     historique = [p]
     for it in range(iters):
         Wn = projeter_simplexe(W - h * g, S)
-        pn, gn = perte_et_grad(Wn, rest, aretes, Ms, L, W0, lam, puissance)
+        pn, gn = perte_et_grad(Wn, rest, aretes, Ms, L, W0, lam, puissance, omega)
         if pn <= p:
             W, p, g = Wn, pn, gn; h *= 1.05
         else:

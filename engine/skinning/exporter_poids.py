@@ -49,6 +49,8 @@ for ic, (os_pivot, axe) in enumerate(CHAINES):
         bpy.context.view_layer.update()
         etiquettes.append(f"{os_pivot.replace('mixamorig:', '')}@{a}")
 
+# faces (polygones) : nécessaires aux poids d'aire barycentrique (erreur 49) ; longueurs variables
+faces = np.array([list(p.vertices) for p in corps.data.polygons], dtype=object)
 np.savez(sortie, rest=rest, aretes=aretes, W=W, os=np.array(os_noms), M=M, angles=np.array(ANGLES),
-         etiquettes=np.array(etiquettes))
+         etiquettes=np.array(etiquettes), faces=faces)
 print("EXPORT_OK", rest.shape, aretes.shape, W.shape, M.shape)

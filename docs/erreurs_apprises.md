@@ -264,3 +264,15 @@ Chaque erreur a une cause, une correction et un test. Une erreur corrigée doit 
 - Symptôme : après entraînement séquentiel, une arête de 1 cm au coude passe de 1,5 à 5,4 à 105°, et 28 arêtes dépassent 2.
 - Cause : le ratio longueur pose / longueur repos est très sensible aux arêtes courtes ; un petit transfert de poids vers l'os d'aide `LeftArmHelper` allonge fortement cette arête.
 - Règle : pondérer la perte par la longueur de repos, et rejeter toute configuration dont l'étirement maximal augmente sur un angle d'entraînement.
+
+## 49. Pondération des arêtes par leur longueur : le mauvais critère
+- Problème identifié (erreur 48) : la perte ratio pondère toutes les arêtes à égalité ; une arête courte de 1 cm domine.
+- Tentation : pondérer par la longueur. Rejeté : une arête courte entourée de grandes faces est normale ; une longueur courte n'indique pas une faible influence géométrique.
+- Méthode retenue, d'après la littérature lue (brevet US10061871 : covariance pondérée par aires barycentriques ; Jacobson & Baran : poids cotangents) : pondérer chaque arête par la somme des aires barycentriques de ses deux sommets, normalisée à une moyenne de 1.
+- Règle : une pondération d'arête doit refléter la surface locale qu'elle représente, pas sa longueur.
+
+## 50. Garde de rejet limitée aux angles d'entraînement
+- Symptôme : une optimisation entraînée sur 60/90/105° passait la garde, mais la jambe passait de 1,27 à 1,60 à 120°.
+- Cause : la garde ne contrôlait que les angles d'entraînement. Un angle hors entraînement ne pouvait pas la déclencher.
+- Règle : la garde doit contrôler au moins un angle de validation qui n'est pas dans l'entraînement, en plus des angles d'entraînement. Dans le cas contraire, la garde ne protège que contre la dégradation sur ce qu'elle a déjà vu.
+- Constat complémentaire : à 120°, l'arête extrême de la jambe d'origine est à la cheville (arêtes de 1,7 cm). L'optimisation la déplace au genou (1,49). Les poids déplacent la contrainte sans la résoudre : la jambe demande un traitement dédié.
