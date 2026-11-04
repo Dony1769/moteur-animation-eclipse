@@ -626,3 +626,7 @@ Mesure LBS sans clé, bras gauche seul : 90° 24 -> 12 replis ; 120° 31 -> 19 ;
 - Répartir la rotation entre os d'épaule et bras (1/3 et 2/3) ne réduit les plis que de 3 à 4 à 105–120°, et dégrade un peu l'étirement (erreur 62).
 - Le repliement de l'épaule est donc intrinsèque aux poids LBS : il faut une correction (formes-clés spécifiques à l'épaule, ou poids de l'épaule dédiés).
 - Prochaine étape : correctifs ARAP pour les poses réparties épaule + bras, entraînés sur l'entraînement uniquement.
+
+## 45. Correctifs sur poses réparties : validés dans Blender sauf 120°
+- Les correctifs ARAP fonctionnent sur la répartition épaule + bras comme sur le bras seul (erreur 63).
+- Résidu à 120° : 11 plis, identique à l'origine. Piste : correctif dédié à l'épaule à grand angle, ou poids de l'épaule.

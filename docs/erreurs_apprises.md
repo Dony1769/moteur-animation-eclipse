@@ -348,3 +348,9 @@ Chaque erreur a une cause, une correction et un test. Une erreur corrigée doit 
 - Résultat (plis / étirement max) : total 60° : 3 / 2,06 contre 3 / 1,91 (bras seul) ; 90° : 8 / 2,84 contre 8 / 2,63 ; 105° : 9 / 3,23 contre 12 / 3,00 ; 120° : 11 / 3,62 contre 15 / 3,36.
 - Conclusion : la répartition réduit à peine les plis (3 à 4 de moins à 105–120°) et dégrade légèrement l'étirement. Le repliement de l'épaule est intrinsèque aux poids LBS, pas seulement au protocole.
 - Règle : tester une hypothèse protocole sur Blender avant d'en tirer une conclusion ; ici, la conclusion initiale était fausse en grande partie.
+
+## 63. Correctifs ARAP sur poses réparties épaule + bras : validation Blender
+- Entraînement 60/90/120 (répartition 1/3 épaule, 2/3 bras), test hors entraînement 75 et 105, formes-clés alimentées par l'angle total.
+- Blender : à 75°, 0 pli (origine 6), étirement 1,22 ; à 105°, 4 plis (origine 9), étirement 1,19. Mêmes ordres de grandeur que le bras seul.
+- Non résolu : à 120° (entraînement), 11 plis, comme à l'origine : la sélection garde la variante simple, la variante limitée n'aide pas sur cette pose.
+- Règle : une correction entraînée sur le même angle total que le test est valable ; le résidu à 120° reste un problème ouvert.
