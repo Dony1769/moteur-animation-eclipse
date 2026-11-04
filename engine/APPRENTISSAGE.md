@@ -501,3 +501,8 @@ Mesure LBS sans clé, bras gauche seul : 90° 24 -> 12 replis ; 120° 31 -> 19 ;
 - Une image de contrôle doit reproduire l'état exact mesuré (pose, clés, couleurs). Une image trompeuse est pire que pas d'image.
 - Méthode : `engine/skinning/rendu_etirement.py` (carte d'étirement par sommet, rendu Workbench en arrière-plan, sans GPU).
 - Référence : docs/rapports/visuel_etirement_bras120_profil.png.
+
+## 24. Comparer deux squelettes par liste de noms avant de conclure à un écart
+- Un écart de comptage (69 os contre 65 annoncés) se résout en comparant les listes exactes d'os, pas en devinant.
+- Méthode : exporter les noms d'os des deux fichiers dans Blender (`liste_os.py`, sortie JSON), puis comparer les ensembles, après retrait du préfixe `mixamorig:`.
+- Résultat : les 65 os du corps sont communs ; les 4 en plus sont des os de visage et d'arme. Le squelette de référence est donc le même.

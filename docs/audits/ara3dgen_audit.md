@@ -50,7 +50,7 @@ Décision technique proposée : ne pas intégrer le code. Étudier et réimplém
 - **Suite de tests** (`npm test`, après `npm run setup-assets`) : réussie, code 0. 386 personnages générés et exportés, 0 échec, 22 modes d'export, 50 liens de partage aller-retour. Durée : 921 s sur un seul processus (2 cœurs disponibles). C'est une donnée de performance CPU utile pour notre étape 12.
 - **Export réel** : `Athletic woman`, 41 188 triangles, 10 matériaux, généré en 1,1 s. FBX de 23,2 Mo, GLB de 11,8 Mo.
 - **Import FBX dans Blender 4.5.15** :
-  - 1 armature, 69 os (la documentation annonce 65 os pour le « game rig » ; l'écart reste à expliquer, probablement les os d'arme ou de doigts).
+  - 1 armature, 69 os. Écart avec les 65 annoncés : expliqué par comparaison avec Maria (voir ci-dessous).
   - Hauteur réelle 1,70 m en coordonnées monde (conforme aux 169 cm).
   - 4 influences au maximum par sommet, aucun poids non normalisé sur 24 929 sommets.
   - 35 formes (34 expressions et visèmes + Basis), conforme à la documentation.
@@ -60,3 +60,9 @@ Décision technique proposée : ne pas intégrer le code. Étudier et réimplém
 ## 7. Mise à jour de la décision
 
 Le moteur Ara est fiable pour l'export (tests réussis, FBX valide dans Blender). Notre décision reste la même : ne pas intégrer son code. Il reste utile comme référence de conventions d'export, et son écrivain FBX peut être comparé à notre propre sortie.
+
+## 8. Comparaison des squelettes Ara et Maria (mesurée)
+
+- Les 65 os du corps sont identiques entre Ara et Maria, aux préfixes près : Ara écrit `Hips`, Maria écrit `mixamorig:Hips`. Le passage d'une convention à l'autre est donc une simple règle de nommage.
+- Les 4 os en plus d'Ara sont `Jaw`, `LeftEye`, `RightEye` (visage) et `WeaponR` (socle d'arme). La documentation de 65 os décrit le corps seul ; le total exporté est 69.
+- Maria : 65 os, 8 094 sommets, 4 influences au maximum, poids sains, 1,75 m. Son squelette est donc le même que celui d'Ara, à la convention de nommage près.
