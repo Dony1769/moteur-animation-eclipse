@@ -567,3 +567,11 @@ Mesure LBS sans clé, bras gauche seul : 90° 24 -> 12 replis ; 120° 31 -> 19 ;
 - Le FBX produit (69 os, 10 matériaux, 1,70 m, 4 influences au plus, poids normalisés, zéro anomalie) passe notre importeur comme un personnage externe. Test : `engine/validation/test_ara_integration.py`.
 - Une seule correction nécessaire : la convention Mixamo sans préfixe (erreur 45), désormais reconnue par ensemble de noms de référence. Maria inchangée.
 - Limites : seul le FBX statique est importé (pas de clips Ara) ; le dépôt Ara est attendu dans le dossier de travail (variable ARA_REPO) et doit être recloné si la session est réinitialisée.
+
+## 35. Optimisation des poids de skinning (ARAP-LBS) : premier résultat validé, pas encore adopté
+- Méthode : poids optimisés pour réduire la déformation des arêtes sur des poses d'exemple, LBS standard (exportable). Inspirée d'ARAP-LBS (Thiery et al.).
+- Témoin : le harnais numpy reproduit exactement la mesure Blender du projet (étirement 3,3584 à 120°).
+- Meilleur résultat validé : bras entraîné sur 60/90/105°, testé sur 120° : étirement max 3,36 → 1,65, compression min 0,11 → 0,55, mouvement du bras conservé (confirmé dans Blender).
+- Échecs consignés : chaînes conjointes, masque par os, exposant 4, séquence bras/jambe (erreurs 46 à 48). Aucune variante n'améliore les trois chaînes à la fois.
+- Non adopté : le pipeline de référence reste en vigueur. Prochaine étape : pondération par longueur de repos et garde de rejet.
+- Sources lues : ARAP-LBS (Thiery) ; billet non officiel sur le « candy wrapper » (https://jessyleite.dev/posts/blender-candy-wrap-twist-deformation/) qui recommande l'os de torsion pour l'export, ce qui rejoint notre test d'os d'aide.

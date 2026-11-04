@@ -249,3 +249,18 @@ Chaque erreur a une cause, une correction et un test. Une erreur corrigée doit 
 - Cause : le diagnostic ne reconnaissait la convention que par le préfixe `mixamorig:`. Ara exporte `Hips`, `Spine`, `LeftArm`… sans préfixe.
 - Règle : reconnaître une convention par l'ensemble des noms de référence (avec ou sans préfixe), et signaler le préfixe comme une propriété séparée, pas comme un critère d'identité.
 - Vérification : les mêmes 22 os de référence sont reconnus dans les deux formes ; le rapport de Maria reste inchangé.
+
+## 46. Poids optimisés jugés sur les poses d'entraînement
+- Symptôme : la jambe s'améliorait à 60/90/105° mais se dégradait à 120° (maximum 1,27 → 1,40).
+- Cause : les poids optimisés sont spécifiques aux angles échantillonnés ; hors de la plage d'entraînement, ils extrapolent mal.
+- Règle : tout résultat d'optimisation se juge sur un angle jamais vu à l'entraînement, et sur une plage qui encadre les angles d'entraînement. Un gain sur les points d'entraînement ne prouve rien.
+
+## 47. Masque par os dominant : frontière brutale
+- Symptôme : en optimisant seulement les sommets dont l'os dominant est le bras, l'étirement maximal monte à 5,39 au lieu de 1,65.
+- Cause : les sommets optimisés et les voisins non optimisés se raccordent sans transition ; c'est la même frontière brutale que l'erreur 22.
+- Règle : ne jamais optimiser un sous-ensemble de sommets sans transition ; l'optimisation doit porter sur le maillage entier, ou sur une zone avec un fondu.
+
+## 48. Arêtes courtes dominant la métrique de ratio
+- Symptôme : après entraînement séquentiel, une arête de 1 cm au coude passe de 1,5 à 5,4 à 105°, et 28 arêtes dépassent 2.
+- Cause : le ratio longueur pose / longueur repos est très sensible aux arêtes courtes ; un petit transfert de poids vers l'os d'aide `LeftArmHelper` allonge fortement cette arête.
+- Règle : pondérer la perte par la longueur de repos, et rejeter toute configuration dont l'étirement maximal augmente sur un angle d'entraînement.
