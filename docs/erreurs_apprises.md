@@ -881,3 +881,18 @@ Résultat (docs/rapports/phase4_psd_hanche_genou.json) : genou plis 0–4, étir
   est invalide, quel que soit le nombre de plis ou d'étirements mesurés.
 - Correction : le rapport phase4_injectif_hanche.json reste marqué INVALIDE. Un solveur valide exige une cible atteinte
   (erreur distale faible) sans inversion ; à défaut, il faut revoir les conditions aux bords (entrée 126).
+
+## 131. Solveur injectif v2 : pas maximal exact, et l'échec vient de la cible, pas du solveur
+- Méthode retenue après recherche (officiel : Schüller et al. 2013 ; calcul du pas maximal : Smith & Schaefer 2015 section 3.3,
+  via Rabinovich et al. 2017 SLIM ; secondaire : libigl lim.h, états Infeasible / IterationLimit / LocalMinima).
+  Implémentée dans engine/skinning/injectif_hanche_v2.py : α_max exact par quadratique sur l'aire orientée, pas = min(1, 0,8 α_max).
+- Résultat : erreur distale 0,41 m à 30° (v1 : 0 m) ; 0,86 m à 90° ; une inversion à 120°. Le rapport v2 est marqué
+  CIBLE_NON_ATTEINTE : l'état « OK » du premier jet était trompeur, car il ne vérifiait que la progression.
+- Diagnostic (scratchpad/diag_v2.py, 30°) : au premier pas, |Δp| = 0,45 m mais α_max = 0,03 (les faces se retournent presque
+  immédiatement) ; ensuite α_max oscille entre 0 et 0,003 pendant 300 itérations, l'erreur ne descend que de 0,46 à 0,38 m.
+- Conclusion : ce n'est pas une faiblesse du pas. Avec proximal fixe au repos et distal rigide, la bande libre de 15 cm ne peut pas
+  absorber une rotation de 30° sans retournement. Le solveur signale bien l'impossibilité (pas de progrès) ; l'erreur v1 nulle à
+  30° venait d'un pas nul, pas d'une solution.
+- Règle : avant de juger un solveur, vérifier si la cible est faisable (α_max au premier pas). Un α_max ≈ 0 dès le premier pas
+  indique une cible infaisable avec ces conditions aux bords, pas un bug à corriger.
+- Suite : changer la géométrie du problème (bande plus large, ou rotation répartie sur la bande), pas le solveur.

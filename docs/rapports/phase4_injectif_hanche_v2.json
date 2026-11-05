@@ -1,0 +1,47 @@
+[
+  {
+    "th": 30,
+    "etat": "CIBLE_NON_ATTEINTE",
+    "inversions": 0,
+    "plis": 0,
+    "erreur_distal_max_m": 0.4074,
+    "etirement_bande_p99": 1.0083,
+    "n_aretes_bande": 87
+  },
+  {
+    "th": 60,
+    "etat": "CIBLE_NON_ATTEINTE",
+    "inversions": 0,
+    "plis": 0,
+    "erreur_distal_max_m": 0.7119,
+    "etirement_bande_p99": 1.0047,
+    "n_aretes_bande": 87
+  },
+  {
+    "th": 90,
+    "etat": "CIBLE_NON_ATTEINTE",
+    "inversions": 0,
+    "plis": 0,
+    "erreur_distal_max_m": 0.8605,
+    "etirement_bande_p99": 0.9972,
+    "n_aretes_bande": 87
+  },
+  {
+    "th": 105,
+    "etat": "CIBLE_NON_ATTEINTE",
+    "inversions": 0,
+    "plis": 0,
+    "erreur_distal_max_m": 0.8599,
+    "etirement_bande_p99": 0.995,
+    "n_aretes_bande": 87
+  },
+  {
+    "th": 120,
+    "etat": "CIBLE_NON_ATTEINTE",
+    "inversions": 1,
+    "plis": 0,
+    "erreur_distal_max_m": 0.9971,
+    "etirement_bande_p99": 0.9947,
+    "n_aretes_bande": 87
+  }
+]

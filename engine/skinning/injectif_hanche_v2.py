@@ -129,8 +129,11 @@ if __name__ == "__main__":
         r = L1 / np.maximum(L0, 1e-9)
         mid = (rest[t.aretes[:, 0]] + rest[t.aretes[:, 1]]) / 2
         band = np.linalg.norm(mid - pivot, axis=1) < 0.10
-        ligne = dict(th=th, etat=etat, inversions=inversions(P), plis=plis,
-                     erreur_distal_max_m=round(erreurs(P, th), 4),
+        err = erreurs(P, th)
+        # un état 'OK' ne suffit pas : la cible distale doit être atteinte (tolérance 1 cm)
+        etat_final = etat if err <= 0.01 else "CIBLE_NON_ATTEINTE"
+        ligne = dict(th=th, etat=etat_final, inversions=inversions(P), plis=plis,
+                     erreur_distal_max_m=round(err, 4),
                      etirement_bande_p99=round(float(np.percentile(r[band], 99)), 4),
                      n_aretes_bande=int(band.sum()))
         sorties.append(ligne); print(ligne, flush=True)

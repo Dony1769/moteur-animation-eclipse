@@ -926,3 +926,7 @@ peau est comprimée, mais le défaut mesuré (extenseur) est en traction et doit
 ## 105. Un solveur qui n'atteint pas sa cible ne prouve rien
 « Zéro pli » peut venir d'une pose qui ne bouge pas. Toujours mesurer l'écart à la cible imposée à côté des plis et des
 inversions. Voir erreurs_apprises entrée 130.
+
+## 106. Distinguer solveur faible et cible infaisable
+Un pas maximal ≈ 0 dès le premier pas signifie que la cible n'est pas atteignable avec ces conditions aux bords. Changer la
+géométrie du problème, pas le solveur. Voir erreurs_apprises entrée 131.
