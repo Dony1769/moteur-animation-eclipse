@@ -657,3 +657,10 @@ Mesure LBS sans clé, bras gauche seul : 90° 24 -> 12 replis ; 120° 31 -> 19 ;
 - Rejeté : torsion pure de l'os auxiliaire (erreur 69), poids par distance bruts (erreur 70).
 - Ouvert : plis au coude (6 à 120°) et au genou (9 à 120°) après ARAP. Les formes-clés de seconde pose existent mais ne sont pas relancées avec la nouvelle base (erreur 73).
 - Ouvert : aucune de ces mesures n'a été rejouée dans Blender avec la nouvelle base (la validation Blender de la phase 4 précédente porte sur l'ancienne base).
+
+## 50. Phase 4 : base finale validée dans Blender (sauf 2 plis à la jambe)
+- Base : heat (Blender) + transfert de 50 % du poids du bras vers l'épaule (rayon 0,16 m) + transfert de l'avant-bras vers le bras au coude (rayon 0,16 m) + transfert de la jambe vers la cuisse au genou (rayon 0,16 m). Sélection sur l'entraînement (120°) uniquement.
+- Correctifs : ARAP interpolé, ramenés à l'espace de repos (d = A⁻¹·δ), mesurés dans Blender (`engine/skinning/valide_base_blender.py`).
+- Blender : bras 0 pli à 60/75/90/105/120° ; avant-bras 0 pli ; jambe 0 pli à 60–90°, 2 à 105° et 120° ; étirement 1,05 à 1,22 partout (la référence était à 6,0 avant).
+- Non fait : la phase 4 n'est pas terminée. Reste : résidu de 2 plis à la jambe (erreur 76) ; confiance validée (erreur 74) ; poids par distance rejetés en brut (erreur 70) ; heat retenue comme base du bras (erreur 71).
+- Rapport : `docs/rapports/phase4_validation_base_blender.json`.

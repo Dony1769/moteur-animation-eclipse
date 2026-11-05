@@ -416,3 +416,15 @@ Chaque erreur a une cause, une correction et un test. Une erreur corrigée doit 
 ## 74. Score de confiance : validé contre les plis
 - `engine/skinning/score_confiance.py` (confiance = 1 − entropie normalisée des poids).
 - Sommets repliés à 120° : confiance 0,62 contre 0,87 pour les autres (Mann-Whitney p = 7e-14). Zones : bras 0,70 ; avant-bras 0,94 ; jambe 0,85 ; tronc 0,68.
+
+## 75. Validation Blender : la normale de repos ne doit pas bouger avec le correctif
+- Symptôme : avec `faces_repliees(..., decalage=...)`, le bras passait de 0 à 68 plis avec le correctif, alors que numpy annonçait 0.
+- Cause : la fonction recalcule la normale de repos sur la géométrie décalée. La règle des plis (entrée 51) compare la pose à la normale du repos ORIGINAL.
+- Correctif : fonction `plis_definition` dans `engine/skinning/valide_base_blender.py` (normale de repos d'origine).
+- Résultat après correction : Blender et numpy concordent sur le bras et l'avant-bras (0 pli partout). Sur la jambe, Blender : 2 plis à 105° et 120° ; numpy : 1 et 3. Écart de 1 à 2 faces, dans la tolérance de calibration (±4).
+
+## 76. Jambe : résidu de 2 à 3 plis au genou, grille de paramètres épuisée
+- Base finale : bras, avant-bras et jambe sont corrigés par ARAP interpolé sur la base épaule + coude + genou.
+- Transfert au genou (jambe → cuisse), sélection sur 120° (entraînement) : rayon 0,16 m et fraction 0,5 → 3 plis (retenu) ; rayon 0,22 → 7 ; rayon 0,13 → 8 ; rayon 0,19 → 9 ; fraction 0,3 → 5 ; fraction 1,0 → 11.
+- Blender sur la base finale : jambe 2 plis à 105° et 120°, 0 à 60/75/90 ; étirement 1,10 à 1,20.
+- Ouvert : ce résidu n'est pas résolu par la famille de méthodes utilisée. Piste non testée : formes-clés de seconde pose au genou, comme pour l'avant-bras avant ce travail (erreur 73).

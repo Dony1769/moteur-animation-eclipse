@@ -1,0 +1,92 @@
+{
+  "LeftArm@60": {
+    "plis_lbs": 3,
+    "plis_corr": 0,
+    "etirement_lbs": 3.412,
+    "etirement_corr": 1.156
+  },
+  "LeftArm@75": {
+    "plis_lbs": 4,
+    "plis_corr": 0,
+    "etirement_lbs": 3.949,
+    "etirement_corr": 1.163
+  },
+  "LeftArm@90": {
+    "plis_lbs": 8,
+    "plis_corr": 0,
+    "etirement_lbs": 4.427,
+    "etirement_corr": 1.171
+  },
+  "LeftArm@105": {
+    "plis_lbs": 10,
+    "plis_corr": 0,
+    "etirement_lbs": 4.84,
+    "etirement_corr": 1.178
+  },
+  "LeftArm@120": {
+    "plis_lbs": 10,
+    "plis_corr": 0,
+    "etirement_lbs": 5.177,
+    "etirement_corr": 1.137
+  },
+  "LeftForeArm@60": {
+    "plis_lbs": 4,
+    "plis_corr": 0,
+    "etirement_lbs": 9.012,
+    "etirement_corr": 1.052
+  },
+  "LeftForeArm@75": {
+    "plis_lbs": 5,
+    "plis_corr": 0,
+    "etirement_lbs": 11.018,
+    "etirement_corr": 1.106
+  },
+  "LeftForeArm@90": {
+    "plis_lbs": 5,
+    "plis_corr": 0,
+    "etirement_lbs": 12.839,
+    "etirement_corr": 1.071
+  },
+  "LeftForeArm@105": {
+    "plis_lbs": 6,
+    "plis_corr": 0,
+    "etirement_lbs": 14.443,
+    "etirement_corr": 1.218
+  },
+  "LeftForeArm@120": {
+    "plis_lbs": 6,
+    "plis_corr": 0,
+    "etirement_lbs": 15.802,
+    "etirement_corr": 1.089
+  },
+  "LeftLeg@60": {
+    "plis_lbs": 6,
+    "plis_corr": 0,
+    "etirement_lbs": 4.413,
+    "etirement_corr": 1.103
+  },
+  "LeftLeg@75": {
+    "plis_lbs": 7,
+    "plis_corr": 0,
+    "etirement_lbs": 5.135,
+    "etirement_corr": 1.15
+  },
+  "LeftLeg@90": {
+    "plis_lbs": 7,
+    "plis_corr": 0,
+    "etirement_lbs": 5.771,
+    "etirement_corr": 1.146
+  },
+  "LeftLeg@105": {
+    "plis_lbs": 7,
+    "plis_corr": 2,
+    "etirement_lbs": 6.309,
+    "etirement_corr": 1.198
+  },
+  "LeftLeg@120": {
+    "plis_lbs": 6,
+    "plis_corr": 2,
+    "etirement_lbs": 6.741,
+    "etirement_corr": 1.154
+  }
+}
