@@ -848,3 +848,15 @@ Résultat (docs/rapports/phase4_psd_hanche_genou.json) : genou plis 0–4, étir
   existe à 89° (0,7 % > 1,15) ; la borne 1,15 était trop stricte pour le genou (référence 15 % > 1,15).
 - Règle : une référence fournie par l'utilisateur doit être mesurée avec le même critère que nos modèles, et
   ses résultats servent de calibration avant toute borne provisoire.
+
+## 128. Champ d'étirement normalisé : référence X-Bot et décalage de rampe
+- Champ normalisé (engine/skinning/reference/champ_etirement_normalise.py) : position le long de la cuisse rapportée à sa
+  longueur. Référence X-Bot à 89° : 22 % des arêtes > 1,15 à s/L ∈ [−0,40 ; −0,20), c'est-à-dire au-dessus de l'articulation,
+  côté bassin ; notre chaîne : 1,6 % dans cette zone. La référence place son étirement au pli bassin-cuisse, pas au centre.
+- Test du décalage de rampe vers le bassin (engine/skinning/reference/decalage_rampe_hanche.py) : 0, −5 et −10 cm ;
+  résultat : 22 à 25 % au-dessus de 1,15 à 90°, presque inchangé. Le décalage ne réduit pas l'étirement ; c'est le gradient
+  de la rampe (entrée 116) qui le fixe.
+- Erreur de signe corrigée pendant le test : f = clip((B − s)/2B) avec s > 0 côté genou donne f = 1 côté bassin (inversé).
+  Le premier résultat (12–14 %) était faux et a été retiré. Règle : vérifier le côté où f vaut 1 avant toute mesure.
+- Conclusion : la référence tient l'étirement au pli bassin-cuisse avec une transition plus étendue ; notre rampe de 15 cm
+  ne peut pas le faire. Piste : rampe plus large côté bassin, ou cible géométrique du pli (non encore testée).

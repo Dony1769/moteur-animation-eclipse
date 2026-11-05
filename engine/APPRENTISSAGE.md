@@ -914,3 +914,7 @@ plus simple avant de conclure. Voir erreurs_apprises entrée 126.
 ## 102. Une référence fournie se mesure avec notre critère avant toute borne
 La peau du X-Bot a montré qu'une hanche propre existe à 89° et que notre borne 1,15 était trop stricte au genou.
 Mesurer les références fournies avec le même critère, avant de figer une borne. Voir erreurs_apprises entrée 127.
+
+## 103. Vérifier le sens de la rampe avant de conclure
+Une rampe inversée donne des chiffres plausibles et faux (entrée 128). Vérifier quel côté reçoit f = 1 avant de mesurer.
+Un champ normalisé (position le long du membre, sans correspondance de sommets) compare une référence à notre modèle.
