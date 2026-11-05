@@ -553,3 +553,11 @@ Chaque erreur a une cause, une correction et un test. Une erreur corrigée doit 
 - Le gonflement borné (cap 15 ou 10 mm) ne change presque rien à l'étirement ni aux plis : le problème n'est pas la pénétration, c'est l'absence de couture.
 - Conclusion : la calotte doit être une géométrie qui recouvre la jointure et relie les deux bords, pas une correction locale de sommets. Les résultats précédents du genou ne sont pas valides.
 - Script : `engine/skinning/test_genou_borne.py`. Rapport : `docs/rapports/phase4_genou_plis_etirement.json`.
+
+## 93. Couture sans géométrie = ouverture de 5 à 9 cm ; coupure par projection sur l'axe ne coupe rien
+- Essai 1 : coupure des pièces par projection sur l'axe du membre. Aucune face supprimée (10 590 à tout m) : au coude, le bras ne dépasse pas le joint et l'avant-bras ne remonte pas au-dessus. Méthode fausse.
+- Essai 2 : couture au plan bissecteur, recalculée à chaque angle, faces traversant la couture supprimées.
+  Pénétration 0 / 4 / 15 / 16 à 30 / 60 / 90 / 120 ; plis 0 / 0 / 0 / 323 ; ouverture 48 / 79 / 78 / 73 mm (rayon 6 cm) ; 88 mm (rayon 10 cm).
+- Conclusion : supprimer les faces de couture ouvre un trou. La calotte doit être une géométrie cousue aux bords (faces de couture mesurées pour l'étirement).
+- Recherche : voir `docs/recherches_phase4.md` (pièces rigides prolongées et recouvertes, calotte générée).
+- Script : `engine/skinning/test_coude_couture.py`.

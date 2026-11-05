@@ -744,3 +744,9 @@ Mesure LBS sans clé, bras gauche seul : 90° 24 -> 12 replis ; 120° 31 -> 19 ;
 ## 67. Mesurer plis et etirement avant de juger une jointure
 - Une jointure peut avoir zero penetration et se dechirer : l'etirement de 8,7 et 745 plis cachaient le probleme. Mesurer les trois (penetration, plis, etirement) a chaque angle, avant toute conclusion.
 - Une separation de segments sans couture cree un dechirement. La couture doit etre generee, pas approximee par des poids.
+
+## 68. Couture : pièces rigides + calotte générée, jamais un trou
+- Méthode retenue (recherche officielle + praticiens, `docs/recherches_phase4.md`) : chaque membre est une pièce rigide par os, coupée au joint ; chaque pièce se prolonge au-delà du joint et la pièce supérieure la recouvre ; la couture est une calotte générée et cousue aux bords.
+- Une coupure qui ne supprime aucune face n'est pas une coupure : vérifier le nombre de faces avant toute mesure (erreur 93).
+- Une couture sans géométrie ouvre un trou : mesurer l'ouverture, pas seulement la pénétration.
+- Recherche : au moins une source officielle, puis une source non officielle si l'officiel ne traite pas le problème ; noter les deux.
