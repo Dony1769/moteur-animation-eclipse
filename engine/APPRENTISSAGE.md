@@ -670,3 +670,8 @@ Mesure LBS sans clé, bras gauche seul : 90° 24 -> 12 replis ; 120° 31 -> 19 ;
 - Le fléchissement se fait toujours à la jonction : sans nœud de jonction, la déformation se répartit dans le maillage et l'aplatit.
 - Articulations à nœud : hanche (sphérique, 3 DDL), genou (charnière), cheville (charnière + sous-talienne), épaule (sphérique + clavicule), coude (charnière + pivot radio-ulnaire), poignet (condylienne), orteils et doigts (chaînes de charnières et de condyliennes), colonne (segments en série).
 - Référence : `docs/anatomie_articulations.md`. Amplitudes : ordres de grandeur, à confirmer par une source officielle avant de les figer dans le rig.
+
+## 52. Articulation par chaîne de nœuds coaxiaux (genou)
+- Un pli se produit quand l'angle entier est appliqué sur une bande étroite : la corde entre deux rotations de même axe rétrécit de cos(Δθ/2). Une bande large réduit Δθ et supprime les plis, au prix d'un étirement localisé.
+- Mesure : 0 pli à 90° et 120° avec B = 0,15 m (étirement max 1,37, p99 1,00). Le critère max ≤ 1,25 n'est pas atteint.
+- Voir erreur 77 et `engine/skinning/test_chaine_genou.py`.

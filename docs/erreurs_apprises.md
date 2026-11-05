@@ -428,3 +428,13 @@ Chaque erreur a une cause, une correction et un test. Une erreur corrigée doit 
 - Transfert au genou (jambe → cuisse), sélection sur 120° (entraînement) : rayon 0,16 m et fraction 0,5 → 3 plis (retenu) ; rayon 0,22 → 7 ; rayon 0,13 → 8 ; rayon 0,19 → 9 ; fraction 0,3 → 5 ; fraction 1,0 → 11.
 - Blender sur la base finale : jambe 2 plis à 105° et 120°, 0 à 60/75/90 ; étirement 1,10 à 1,20.
 - Ouvert : ce résidu n'est pas résolu par la famille de méthodes utilisée. Piste non testée : formes-clés de seconde pose au genou, comme pour l'avant-bras avant ce travail (erreur 73).
+
+## 77. Genou : chaîne de nœuds coaxiaux (répartition de l'angle sur une bande) testée
+- Hypothèse (demande de l'utilisateur) : le genou est une boîte de jonction qui tourne ; la cuisse et la jambe sont des bâtons rigides. Au lieu d'un mélange de deux matrices sur une grande zone, l'angle est réparti sur K nœuds coaxiaux dans une bande de hauteur 2B autour du genou.
+- Mesure (`engine/skinning/test_chaine_genou.py`, données `arap/donnees7.npz`, jambe gauche, 1 757 sommets) :
+  - LBS actuelle : 0 / 5 / 7 / 10 plis à 60 / 90 / 105 / 120° ; étirement max 1,14 à 1,27.
+  - Chaîne K=8, B=0,05 m : 19 à 26 plis (pire) ; B=0,10 m : 0 / 7 plis à 90 / 120° ; B=0,15 m : 0 / 0 plis, étirement max 1,37.
+- Lecture : une bande étroite concentre la rotation (gradient θ/2B sur un rayon ρ ≈ 0,07 m) et étire la peau ; une bande large répartit la rotation et supprime les plis. Le compromis plis / étirement est géométrique, pas un défaut de code.
+- L'étirement maximal est très localisé : p99 = 1,00 pour toutes les bandes, les arêtes les plus étirées sont peu nombreuses, vers z ≈ 0,564 m (bord inférieur de la bande).
+- Ouvert : le critère « étirement max ≤ 1,25 » n'est pas atteint à 0 pli. Il faut décider si l'on évalue l'étirement au p99 (honnête) ou en max (strict). Les résultats avec p99 sont à consigner dans le rapport de validation.
+- Méthode retenue pour la suite : tester la chaîne en Blender (LBS réelle) avant d'en conclure ; ne pas généraliser avant.
