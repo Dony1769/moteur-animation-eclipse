@@ -1,50 +1,47 @@
-{
-  "statut": "INVALIDE : vérification du distal à 120 degrés = écart médian 0,78 m à la cible rigide (0 à 60 degrés). Le solveur s'arrête vers 90 degrés : le recul de pas rejette tous les sous-pas. Les statistiques de bande ne mesurent pas la pose demandée.",
-  "mesures": [
-    {
-      "th": 30,
-      "inversions": 0,
-      "n_aretes_bande": 87,
-      "mediane": 1.0015,
-      "p95": 1.0881,
-      "p99": 1.0914,
-      "fraction_sup_1_15": 0.0
-    },
-    {
-      "th": 60,
-      "inversions": 0,
-      "n_aretes_bande": 87,
-      "mediane": 0.9756,
-      "p95": 1.1215,
-      "p99": 1.1316,
-      "fraction_sup_1_15": 0.0
-    },
-    {
-      "th": 90,
-      "inversions": 0,
-      "n_aretes_bande": 87,
-      "mediane": 0.9726,
-      "p95": 1.116,
-      "p99": 1.1287,
-      "fraction_sup_1_15": 0.0
-    },
-    {
-      "th": 105,
-      "inversions": 0,
-      "n_aretes_bande": 87,
-      "mediane": 0.9726,
-      "p95": 1.116,
-      "p99": 1.1287,
-      "fraction_sup_1_15": 0.0
-    },
-    {
-      "th": 120,
-      "inversions": 0,
-      "n_aretes_bande": 87,
-      "mediane": 0.9726,
-      "p95": 1.116,
-      "p99": 1.1287,
-      "fraction_sup_1_15": 0.0
-    }
-  ]
-}
+[
+  {
+    "th": 30,
+    "inversions": 0,
+    "n_aretes_bande": 87,
+    "mediane": 1.0013,
+    "p95": 1.0882,
+    "p99": 1.0916,
+    "fraction_sup_1_15": 0.0
+  },
+  {
+    "th": 60,
+    "inversions": 0,
+    "n_aretes_bande": 87,
+    "mediane": 0.9772,
+    "p95": 1.122,
+    "p99": 1.133,
+    "fraction_sup_1_15": 0.0
+  },
+  {
+    "th": 90,
+    "inversions": 0,
+    "n_aretes_bande": 87,
+    "mediane": 0.9724,
+    "p95": 1.1121,
+    "p99": 1.1265,
+    "fraction_sup_1_15": 0.0
+  },
+  {
+    "th": 105,
+    "inversions": 0,
+    "n_aretes_bande": 87,
+    "mediane": 0.9724,
+    "p95": 1.1121,
+    "p99": 1.1265,
+    "fraction_sup_1_15": 0.0
+  },
+  {
+    "th": 120,
+    "inversions": 0,
+    "n_aretes_bande": 87,
+    "mediane": 0.9724,
+    "p95": 1.1121,
+    "p99": 1.1265,
+    "fraction_sup_1_15": 0.0
+  }
+]

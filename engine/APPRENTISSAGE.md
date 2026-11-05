@@ -906,3 +906,7 @@ est la répartition de l'étirement côté extenseur, pas la résolution. Voir e
 ## 100. Vérifier que la pose est atteinte avant de mesurer
 Un solveur qui s'arrête en silence donne des statistiques plausibles mais fausses. Avant toute mesure : vérifier l'écart
 au mouvement imposé, et signaler chaque arrêt. Voir erreurs_apprises entrée 125.
+
+## 101. Faisabilité : vérifier le solveur contre un témoin avant de conclure sur la contrainte
+Un blocage de solveur ne prouve pas qu'une contrainte est infaisable. Construire une solution témoin injective sur un cas
+plus simple avant de conclure. Voir erreurs_apprises entrée 126.

@@ -829,3 +829,14 @@ Résultat (docs/rapports/phase4_psd_hanche_genou.json) : genou plis 0–4, étir
 - Règles retenues : (1) vérifier que la pose atteint la cible (écart au mouvement imposé) avant toute statistique ;
   (2) un arrêt de solveur doit être signalé et compté, jamais silencieux ; (3) réduire le pas de marche si le recul échoue.
 - Référence : engine/skinning/injectif_hanche.py ; docs/rapports/phase4_injectif_hanche.json (statut INVALIDE).
+
+## 126. Solveur injectif : les conditions aux bords rendent la pose infaisable, la répartition ne suffit pas
+- Diagnostic instrumenté (scratchpad diag_blocage.py, diag_split.py) : blocage à 65–70° dans les deux cas. Sans
+  répartition (bord proximal fixe), les faces inversées au premier rejet montent à 1765 vers 120° ; avec répartition
+  50/50 elles restent à 33. L'écart distal à 120° est de 0,82 m (sans répartition) puis 0,38 m (50/50) : la pose n'est
+  jamais atteinte.
+- Interprétation : soit la contrainte (bande de 30 cm, bord distal rigide, bord proximal imposé) n'a pas de solution
+  injective à 120°, soit le solveur (ARAP de Laplacien + recul de pas) n'en trouve pas. Aucun des deux n'est démontré.
+- Règle : ne pas conclure sur la faisabilité d'une contrainte tant qu'une solution témoin injective n'est pas construite
+  (par exemple une pose physiquement plausible pour un cas plus simple). Les rapports sont marqués INVALIDE.
+- Prochaine étape : élargir la bande de jonction ou traiter le bassin comme un segment mobile, puis vérifier le distal.
