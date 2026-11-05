@@ -722,3 +722,18 @@ Trois défauts trouvés en testant la PSD (Lewis et al. 2000) sur hanche et geno
    hanche (25 à 120°) parce qu'elle ne contraint pas la face fléchisseur. Une cible géométrique seule ne suffit pas.
 Résultat (docs/rapports/phase4_psd_hanche_genou.json) : genou plis 0–4, étirement hors bande 1,01–1,02, dans la bande
 1,06–1,16 ; hanche plis 25 à 120° (non passé). Prochaine étape : cible sans plis (contrainte d'injectivité) pour la hanche.
+
+## 116. Rotation répartie par sommet : étirement de cisaillement inévitable sur bande étroite
+- Méthode testée (engine/skinning/rotation_repartie.py) : chaque sommet tourne autour de l'axe articulaire de f(s)·θ,
+  f lissée sur une bande de demi-largeur 10 cm (inspirée de Le & Hodgins, lu via phys.org : secondaire).
+- Résultat : hanche plis 13 à 90°, puis 895 à 105° et 1207 à 120° ; genou plis 731 à 120°, 815 à 135° ; étirement dans
+  la bande p99 1,8–2,7. Méthode rejetée.
+- Cause analytique : le gradient de l'angle le long du membre vaut 1,5·θ/(2b) ; un sommet à distance r de l'axe
+  s'allonge de ≈ 1 + r·1,5·θ/(2b). Pour θ = 120° (2,09 rad), r = 0,1 m, b = 0,1 m : allongement ≈ 2,6. Borner
+  l'étirement à 1,2 exigerait une bande d'environ 0,8 m : impossible. Une rotation uniforme répartie ne peut donc pas
+  satisfaire le critère de jonction.
+- Méthode correcte : pour une flexion de grande amplitude, la peau ne peut pas être tordue ; la jonction doit
+  rétracter le côté fléchisseur (pli autorisé en zone de pli anatomique, consigne utilisateur) et étirer le côté
+  extenseur. Donc le critère de plis doit distinguer zone acceptable et zone interdite (plis_zones_acceptables.py),
+  et non compter tous les plis.
+- Référence : docs/rapports/phase4_rotation_repartie.json.

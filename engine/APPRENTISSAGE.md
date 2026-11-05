@@ -859,3 +859,9 @@ Une correction PSD doit reproduire sa cible aux angles d'entraînement. Un multi
 sur la cible la fait diverger : le vérifier par le témoin d'exactitude. Un filtre de rotation sur faces repliées peut
 aggraver les plis ; le mesurer avec et sans. Une cible ARAP réduit l'étirement mais pas forcément les plis. Voir
 erreurs_apprises entrée 115.
+
+## 91. Gradient de rotation : la répartition sur bande étroite crée un cisaillement borné par la géométrie
+Une rotation qui varie le long du membre sur une bande 2b induit un allongement ≈ 1 + r·1,5·θ/(2b). Pour une flexion
+de 120° avec une bande de 10 cm, l'allongement est ≈ 2,6 : hors de portée. La peau doit donc se plier (pli
+fléchisseur) et s'étirer (côté extenseur) plutôt que tourner en continu. Le critère de plis doit tenir compte des zones
+acceptables. Voir erreurs_apprises entrée 116.

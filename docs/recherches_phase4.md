@@ -85,3 +85,13 @@ Date : 2026-11-05. Objectif : sourcer les amplitudes actives de référence adul
 - Application : masque binaire plutôt que poids d'os (erreur 115) ; cible ARAP partant de DQS.
 - Non résolu : plis de la hanche à 105–120° (face fléchisseur). Recherche suivante : cible injective (sans repliement)
   et cibles anatomiques des plis (Hermawati & Marshall pour le coude).
+
+## Recherche : mappages sans repliement et rotation répartie, 2026-11-05
+- Officiel : Schüller et al. 2013 « Locally Injective Mappings » (page Utah) : énergie modifiée où les inversions sont
+  pénalisées à l'infini ; pas de formule dans la page. Smith & Schaefer 2015 (bijectif, PDF tamu) : lu en résumé seulement.
+- Non officiel (phys.org, 2016, vulgarisation) : Le & Hodgins, « Real-time Skeletal Skinning with Optimized Centers of
+  Rotation » : centres de rotation par sommet, réduit l'effondrement LBS et le gonflement DQS. Non lu dans le texte
+  original ; à relire via ACM.
+- Test : rotation répartie (rotation_repartie.py) rejetée (erreur 116) ; cause analytique consignée.
+- Recherche suivante : zones de plis acceptables (consigne utilisateur) pour classer les plis de la hanche, puis cible
+  sans repliement (Schüller 2013) sur la face extenseur seulement.
