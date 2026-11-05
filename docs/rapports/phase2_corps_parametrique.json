@@ -1,0 +1,24 @@
+{
+  "sommets": 19158,
+  "hauteur_homme_dm": 17.6691,
+  "hauteur_homme_m": 1.767,
+  "hauteur_femme_dm": 16.2218,
+  "hauteur_femme_m": 1.622,
+  "hauteur_moyen_dm": 16.9399,
+  "hauteur_moyen_m": 1.694,
+  "hauteur_homme_age_dm": 17.3757,
+  "hauteur_homme_age_m": 1.738,
+  "ecart_max_homme_femme_dm": 1.4974,
+  "cibles_taille_disponibles": [
+    "measure-lowerleg-height-decr.target",
+    "measure-lowerleg-height-incr.target",
+    "measure-neck-height-decr.target",
+    "measure-neck-height-incr.target",
+    "measure-upperleg-height-decr.target",
+    "measure-upperleg-height-incr.target"
+  ],
+  "effet_cible_taille_dm": 0.67,
+  "macro_ecart_max_moyen_dm": 0.93817,
+  "statut": "VALIDE_TECHNIQUE",
+  "note": "Tests techniques seulement : pas d'évaluation anatomique ni visuelle. Les visages (phase 3), cheveux, vêtements et rigging restent à faire."
+}

@@ -907,3 +907,18 @@ Résultat (docs/rapports/phase4_psd_hanche_genou.json) : genou plis 0–4, étir
   converge lentement. Il faut un témoin (une pose injective qui atteint la cible) avant de conclure. Non résolu.
 - Règle : une grille de paramètres qui échoue partout n'est pas une réponse ; il faut soit un témoin de faisabilité, soit une
   autre méthode de déformation (entrées 116 et 126).
+
+## 133. Cibles « universal » MakeHuman absentes du clone anonyme : pointeurs LFS, pas des données
+- Constat : les fichiers targets/macrodetails/universal-*.target font 604 octets (pointeurs Git LFS). Le clone public
+  anonyme avec GIT_LFS_SKIP_SMUDGE ne télécharge pas les objets LFS.
+- Les cibles par race (african/asian/caucasian × male/female × young/old) sont de vraies données (396–436 Ko) et sont sous
+  la même licence CC0 (en-tête de chaque fichier).
+- Méthode retenue : morphologie moyenne = mélange égal des trois races (1/3 chacune), comme MakeHuman le fait.
+- Règle : avant d'utiliser un asset, vérifier sa taille. Un fichier de quelques centaines d'octets est un pointeur LFS, pas
+  un asset. Le signaler, ne pas le prendre pour une donnée.
+
+## 134. Unité du maillage MakeHuman : décimètres (lu dans le code source, pas supposé)
+- Le code d'export (apps/gui/guiexport.py) définit le facteur « decimeter » à 1,0 : une unité du maillage vaut 0,1 m.
+- Premier rapport écrit en « m » : hauteurs de 17,7 — faux. Corrigé en « dm » puis converti (1,77 m).
+- Règle : vérifier l'unité d'un format dans son code de sortie avant de nommer une grandeur. Un nombre plausible
+  (17,7) n'est pas une unité.

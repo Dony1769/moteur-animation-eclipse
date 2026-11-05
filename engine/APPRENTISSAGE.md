@@ -934,3 +934,7 @@ géométrie du problème, pas le solveur. Voir erreurs_apprises entrée 131.
 ## 107. Une grille de paramètres qui échoue partout ne tranche rien
 Une grille (largeur de bande × part de rotation) sans configuration qui atteint la cible ne prouve ni l'infaisabilité ni une
 faiblesse du solveur. Chercher un témoin, ou changer de méthode. Voir erreurs_apprises entrée 132.
+
+## 108. Vérifier un asset avant de l'utiliser
+Taille d'un fichier (pointeur LFS = quelques centaines d'octets), puis unité dans le code de sortie. Voir erreurs_apprises
+entrées 133 et 134.
