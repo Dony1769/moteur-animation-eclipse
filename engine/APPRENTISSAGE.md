@@ -786,3 +786,8 @@ Mesure LBS sans clé, bras gauche seul : 90° 24 -> 12 replis ; 120° 31 -> 19 ;
 - Un produit vectoriel de deux segments alignés est nul : l'axe devient NaN. Fallback anatomique : normale au plan sagittal, (membre) × (direction des orteils) pour le genou.
 - Vérifier le signe en flexion (le talon recule) avant tout rejeu.
 - Un zéro de pénétration sur une animation réelle ne vaut que si le témoin positif, sur les mêmes pièces, détecte un chevauchement connu.
+
+## 76. Plis sur une surface unie : valider la correspondance avant le chiffre
+- Séparer étirement et plis en bande de jonction et hors bande (critère utilisateur, erreur 99).
+- Sur les faces d'origine, la métrique est valide jusqu'à 90° au coude ; au-delà, les faces qui traversent la jointure produisent de faux plis.
+- Sur la surface unie, un témoin identique (θ = 0) ne suffit pas : vérifier aussi la correspondance dans la région où le repos se chevauche.

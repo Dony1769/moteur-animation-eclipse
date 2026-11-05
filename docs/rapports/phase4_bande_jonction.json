@@ -1,0 +1,27 @@
+{
+  "objet": "coude gauche : etirement et plis separes, hors bande de jonction (10 cm) et dans la bande",
+  "critere_utilisateur": "etirement permis aux jonctions, interdit sur le corps de la peau (erreur 99)",
+  "surface_faces_d_origine": {
+    "methode": "faces d'origine, rotation rigide de l'avant-bras ; etirement par arete ; plis = produit scalaire des normales repos/pose",
+    "resultats": {
+      "30": {"etirement_hors": 1.0, "etirement_dans": 2.411, "plis_hors": 0, "plis_dans": 3},
+      "60": {"etirement_hors": 1.0, "etirement_dans": 3.673, "plis_hors": 0, "plis_dans": 7},
+      "90": {"etirement_hors": 1.0, "etirement_dans": 4.688, "plis_hors": 0, "plis_dans": 11},
+      "100": {"etirement_hors": 1.0, "etirement_dans": 4.958, "plis_hors": 188, "plis_dans": 33},
+      "120": {"etirement_hors": 1.0, "etirement_dans": 5.384, "plis_hors": 290, "plis_dans": 41}
+    },
+    "lecture": "hors bande : etirement 1,0 et zero pli jusqu'a 90 deg ; 188 et 290 plis hors bande a 100 et 120 deg, dus aux faces d'origine qui traversent la jointure (metrique sur le mauvais maillage)."
+  },
+  "surface_unie": {
+    "methode": "union manifold bras + avant-bras + sphere 7 cm ; plis = normale de la face posee contre la normale de la face la plus proche au repos",
+    "temoin_theta_0": "0 pli sur 3 630 faces ; distance centroide-surface repos 0,2 mm (metrique correcte sur surface identique)",
+    "resultats": {
+      "30": {"plis_hors": 693, "plis_dans": 2},
+      "60": {"plis_hors": 698, "plis_dans": 26},
+      "90": {"plis_hors": 491, "plis_dans": 0},
+      "100": {"plis_hors": 559, "plis_dans": 0},
+      "120": {"plis_hors": 743, "plis_dans": 37}
+    },
+    "statut": "NON VALIDE. Plis hors bande non explique : hypothese (non verifiee) que le repos contient deja un chevauchement bras / avant-bras qui fausse la correspondance par face la plus proche. A verifier avant toute conclusion."
+  }
+}

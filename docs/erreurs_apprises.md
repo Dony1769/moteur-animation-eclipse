@@ -609,3 +609,9 @@ Chaque erreur a une cause, une correction et un test. Une erreur corrigée doit 
 - Témoin positif (décalage de 10 cm à 120°) : +Z 38,3 cm³, +Y 1,8 cm³ : la méthode voit les chevauchements. Le zéro est donc réel pour ces pièces.
 - Limite : la cuisse n'a que 263 sommets dans ce maillage de référence : mesure faible sur cette pièce. L'étirement et les plis de la bande de jonction restent à mesurer sur la surface unie (erreur 99).
 - Scripts : `engine/skinning/reference/rejeu_danse_genou_volume.py`, `temoin_genou_volume.py`. Données : `docs/reference_hiphop/rejeu_genou_danse.json`.
+
+## 101. Plis et étirement par bande de jonction : mesure sur faces d'origine valide à 90°, la surface unie reste inexpliquée
+- Faces d'origine, coude : hors bande de 10 cm, étirement 1,0 et 0 pli jusqu'à 90° ; à 100° (maximum de la danse) 188 plis hors bande, à 120° 290. Ce sont les faces qui traversent la jointure ; la mesure n'est pas faite sur la surface finale.
+- Surface unie (bras + avant-bras + sphère), plis par correspondance de face la plus proche au repos : témoin à 0° passé (0 pli, distance 0,2 mm), mais 491 à 743 plis hors bande de 30° à 120°. Non expliqué. Hypothèse à vérifier : chevauchement au repos du bras et de l'avant-bras au coude, qui fausse la correspondance.
+- Leçon : un témoin identique ne suffit pas. Il faut aussi un témoin qui touche la région mesurée (ici, le chevauchement de repos).
+- Rapport : `docs/rapports/phase4_bande_jonction.json`. Scripts : `engine/skinning/reference/`.
