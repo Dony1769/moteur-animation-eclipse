@@ -689,3 +689,6 @@ Mesure LBS sans clé, bras gauche seul : 90° 24 -> 12 replis ; 120° 31 -> 19 ;
 - Règle : une articulation se modélise dans son amplitude humaine normale (cheville : dorsale 20°, plantaire 50°), jamais au-delà ; l'amplitude est bornée par la butée osseuse.
 - La bande d'articulation doit suivre la normale de jointure (bissectrice des segments), pas la direction du seul segment parent, quand l'enfant n'est pas dans l'axe.
 - Voir erreur 80.
+
+## 56. Hanche : échec de la chaîne seule
+- Une chaîne coaxiale traite une seule rotation ; la hanche est une sphère à 3 DDL. Les plis sont à la frontière tronc / cuisse. Quatre variantes testées, aucune sous 15 plis. Voir erreur 81.

@@ -18,7 +18,7 @@ def pivot_axe(M):
     return c, axe, phi
 
 
-def chaine(rest, dom, parent, enfants, M_enfant, K, B, enfant_rigide=False, bissectrice=False):
+def chaine(rest, dom, parent, enfants, M_enfant, K, B, enfant_rigide=False, bissectrice=False, f_custom=None):
     """enfant_rigide=True : tout le sous-arbre enfant tourne d'un bloc (f=1) ; la bande ne s'applique
     qu'au segment parent. Utile quand le segment enfant n'est pas dans l'axe du parent (cheville)."""
     c0, axe, phi = pivot_axe(M_enfant)
@@ -42,6 +42,8 @@ def chaine(rest, dom, parent, enfants, M_enfant, K, B, enfant_rigide=False, biss
         m = m / np.linalg.norm(m)
         s = (rest - c) @ m            # >0 côté parent du plan de jointure, <0 côté enfant
     f = np.clip((B - s) / (2 * B), 0, 1)
+    if f_custom is not None:
+        f = f_custom
     if enfant_rigide:
         f = np.where(np.isin(dom, list(enfants)), 1.0, f)
     sel = np.isin(dom, [parent] + list(enfants))

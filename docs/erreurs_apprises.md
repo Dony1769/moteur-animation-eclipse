@@ -459,3 +459,9 @@ Chaque erreur a une cause, une correction et un test. Une erreur corrigée doit 
 - Correctif : bande mesurée le long de la bissectrice des deux segments (`chaine(..., bissectrice=True)`), pied rigide (`enfant_rigide=True`), largeur 0,04 m.
 - Blender : 0 pli à +20, −20, −50 ; pied rigide ; écart Blender/numpy 0,000 mm.
 - Section : la valeur 0,53 était fausse (tranche sur le plan horizontal). Avec la normale de jointure : 1,00 (+20), 0,95 (−20), 0,88 (−50). La perte de 12 % à −50° reste à vérifier visuellement.
+
+## 81. Hanche : plis résiduels 15 à 30 malgré quatre approches
+- Mesure : plis à 90° et 120° : 15 à 30 dans toutes les variantes (bande plane, rigidité du fémur, coquilles sphériques r0/r1, bassin qui suit une fraction p de la rotation).
+- Localisation : plis à z = 0,75–0,96 m, autour du centre de la hanche (0,873 m), donc sur la frontière entre tronc fixe et cuisse tournante, non sur la cuisse elle-même.
+- Lecture : une articulation à 3 DDL ne peut pas être ramenée à une seule rotation coaxiale ; une rotation purement coaxiale ne rend pas le mouvement de la sphère. La frontière tronc / cuisse demande soit un correctif de pose (ARAP, comme pour le bras en phase 4), soit une modification du maillage au pli de l'aine. Non résolu.
+- Outil : `engine/skinning/test_hanche_chaine.py`.
