@@ -1416,3 +1416,15 @@ Résultat (docs/rapports/phase4_psd_hanche_genou.json) : genou plis 0–4, étir
 - Constat : l'écart SQ − LBS sur le maximum dépend beaucoup du maximum LBS (qui varie avec les poids). Une interaction
   géométrie × poids de +0,17 en résulte surtout de cette non-linéarité, pas d'un mécanisme propre.
 - Règle : rapporter aussi l'écart relatif et ne pas interpréter une interaction sans le contrôle de la référence.
+
+## 201. Un test de Taylor avec poids affines ne teste rien
+- Constat : avec des poids affines, la différence exacte et l'approximation de premier ordre coïncident : le test
+  est trivialement exact. Le premier essai ne mesurait donc aucun ordre d'erreur.
+- Correction : poids quadratiques ; l'erreur décroît comme h² (pente log-log 2,00).
+- Règle : un test d'approximation doit comporter un terme d'ordre supérieur non nul.
+
+## 202. Un ratio d'étirement par arête est dominé par les arêtes très courtes
+- Constat : le maillage non uniforme contient des arêtes très courtes ; leur rapport longueur déformée / repos atteint
+  des valeurs de l'ordre de 20. L'excédent max et l'étirement max sont alors peu représentatifs.
+- Règle : rapporter aussi une statistique robuste (part régressée, médiane pondérée par la longueur) et ne pas
+  conclure à un effet « arêtes non uniformes » sur le seul excédent max.

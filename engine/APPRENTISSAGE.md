@@ -1119,3 +1119,10 @@ Voir entrée 199.
 ## 157. Un synthétique qui ne reproduit pas l'effet n'explique pas l'effet
 Le plan 2×2×2 n'a pas reproduit la régression masculine : SQ améliore LBS dans toutes les cellules. Il faut donc
 conclure « non reproduit » et non « éliminé ». Voir docs/rapports/skinning/factorielle/RAPPORT_factorielle.md.
+
+## 158. Un test d'approximation doit être non trivial
+Voir entrée 201.
+
+## 159. Une répartition spatiale à histogramme fixé change le résultat
+Dans le plan de jonction, à histogramme identique, la répartition spatiale modifie fortement la régression. Un
+histogramme de poids ne suffit donc pas à décrire un défaut. Voir docs/rapports/skinning/terme_G/RAPPORT_terme_G.md.
