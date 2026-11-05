@@ -783,3 +783,11 @@ Résultat (docs/rapports/phase4_psd_hanche_genou.json) : genou plis 0–4, étir
   de la hanche : hors de la zone de pli définie (entrée 117). Non passé. Rapport : docs/rapports/phase4_chaine_hanche_numpy.json.
 - Règle : ne jamais écrire « fonctionne » sans mesure ; tester d'abord la méthode validée sur le cas témoin, puis la
   transposer à la nouvelle articulation.
+
+## 121. Borne d'étirement de bande : chercher une mesure de peau vivante, pas de fascia
+- Défaut : la première recherche de borne a trouvé une étude sur le fascia lata de cadavres (Sednieva 2020), qui ne mesure
+  pas la peau. Je l'ai écartée à juste titre, mais la borne reste sans source.
+- Méthode correcte : une borne de peau doit venir d'une mesure sur peau vivante (3D-DIC ou équivalent). Ici : genou
+  +15 % de traction, un seul sujet (PMC6783393) ; cuisse médiale ±6 % à 90° (résumé Emerald). La hanche n'a pas de mesure.
+- Conséquence : la borne 1,15 est provisoire et ne s'applique sûrement qu'au genou. Hanche : extrapolation, marquée comme
+  telle dans docs/bornes_etirement.md.

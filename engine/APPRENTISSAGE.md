@@ -884,3 +884,8 @@ correction reproduit cette cible. Voir erreurs_apprises entrée 119.
 Avant de transposer une méthode validée à une nouvelle articulation, la reproduire sur le cas témoin (ici le genou) en
 numpy. Si le témoin passe, la transposition est fiable. Ne jamais écrire « fonctionne » sans mesure. Voir
 erreurs_apprises entrée 120.
+
+## 96. Borne de peau : mesure vivante, sujet unique, extrapolation marquée
+Une borne d'étirement de peau doit venir d'une mesure sur peau vivante. Les mesures de fascia (cadavre) ne comptent pas.
+Une seule mesure (un sujet) donne une borne provisoire. Le transfert à une autre articulation est une extrapolation,
+à marquer comme telle. Voir docs/bornes_etirement.md et erreurs_apprises entrée 121.
