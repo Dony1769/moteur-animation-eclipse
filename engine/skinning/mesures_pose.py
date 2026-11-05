@@ -1,7 +1,10 @@
 """Mesures de pose (phase 4, erreur 92) : plis, étirement, déplacement.
 
-- plis_retournes : nombre de faces dont la normale s'est retournée par rapport au repos (n_pose · n_repos < 0).
-  Un repli du maillage fait basculer la normale de la face. Métrique simple et directe, sans poids.
+- plis_retournes : FAUSSE MÉTRIQUE (erreur 108). Compare la normale monde au repos à la normale posée ; une
+  rotation rigide de plus de 90° la fait basculer sans aucun repli. NE PAS UTILISER. Conservée uniquement pour
+  mémoire des anciens chiffres, qui sont à remesurer avec plis_locaux.
+- plis_locaux : métrique corrigée (erreur 108). La normale de repos est tournée par la rotation locale de
+  peau de la face (Rf, (F,3,3)), puis comparée à la normale posée : un pli est un vrai retournement local.
 - etirement_max : rapport maximal longueur posée / longueur au repos, sur toutes les arêtes.
 - deplacement : distance max et médiane entre pose et repos (sommets déplacés).
 Ces trois mesures sont secondaires à la pénétration, mais toutes trois doivent être rapportées.
@@ -18,7 +21,17 @@ def normales_faces(P, faces):
     return N
 
 
+def plis_locaux(rest, P, faces, Rf):
+    """Rf : (F,3,3) rotation locale de peau par face (ex. rotation de l'os de poids maximal, ou moyenne DQS).
+    Un pli : n_pose · (Rf n_repos) < 0."""
+    Nr = normales_faces(rest, faces)
+    Nr_loc = np.einsum("fij,fj->fi", Rf, Nr)
+    Np = normales_faces(P, faces)
+    return int(np.sum(np.einsum("ij,ij->i", Nr_loc, Np) < 0))
+
+
 def plis_retournes(rest, P, faces):
+    """OBSOLÈTE (erreur 108) : voir plis_locaux."""
     Nr = normales_faces(rest, faces)
     Np = normales_faces(P, faces)
     return int(np.sum(np.einsum("ij,ij->i", Nr, Np) < 0))

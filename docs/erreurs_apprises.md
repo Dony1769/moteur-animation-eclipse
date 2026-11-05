@@ -654,3 +654,11 @@ Chaque erreur a une cause, une correction et un test. Une erreur corrigée doit 
 - Choix de l'utilisateur après les erreurs 99 à 106. Les segments rigides et la sphère de jonction ne peuvent pas produire le pli fléchisseur ni un étirement borné par jonction.
 - Méthode : skinning à quaternions duaux (Kavan et al. 2008, source officielle), correctives de pose aux articulations (PSD), même maillage et mêmes indices de sommets à chaque pose. La correspondance par sommet devient donc exacte, ce qui rend valides les mesures de pli et d'étirement.
 - Corrige : le pli par proximité (erreur 102) et la saillie constante (erreur 103).
+
+## 108. Métrique de pli fausse depuis l'erreur 67 : elle signalait toute rotation rigide de plus de 90°
+- `mesures_pose.plis_retournes` comparait la normale monde au repos à la normale posée. Une rotation rigide de 120° fait tourner les normales de plus de 90° : le produit scalaire devient négatif sans aucun repli.
+- Preuve : sur des faces dont les sommets ne sont influencés que par l'avant-bras (poids > 0,98, aire normale 0,34 cm²), l'ancienne métrique signale des plis alors que la transformation est rigide (écart de 0,8 mm).
+- Chiffres : ancienne métrique 0 / 0 / 18 / 331 / 403 à 30 / 60 / 90 / 120 / 145° ; métrique corrigée 0 / 0 / 4 / 7 / 8.
+- Conséquence : tous les comptes de plis antérieurs (hanche, épaule, genou, coude, bande de jonction) sont invalides. Ils doivent être remesurés avec `plis_locaux`.
+- Correction : `engine/skinning/mesures_pose.py` (`plis_locaux`), ancienne fonction marquée obsolète.
+- Leçon : vérifier une métrique sur un cas où la réponse connue est zéro (rigide) avant d'interpréter un compte.

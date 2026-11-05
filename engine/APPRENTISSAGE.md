@@ -817,3 +817,8 @@ Mesure LBS sans clé, bras gauche seul : 90° 24 -> 12 replis ; 120° 31 -> 19 ;
 ## 82. Passer à la peau continue : la correspondance par sommet rend les mesures valides
 - Avec une peau continue, le même sommet garde son index à chaque pose : plis et étirement se mesurent sans correspondance par proximité.
 - Le choix méthodologique est acté : DQS (officiel, Kavan 2008) puis correctives de pose (PSD).
+
+## 83. Un pli se mesure dans le repère local, pas en monde
+- Comparer une normale monde au repos à une normale posée signale toute rotation rigide de plus de 90°. Un pli réel est un retournement après correction de la rotation locale.
+- Témoin à appliquer à toute métrique : une transformation rigide doit donner zéro pli.
+- Les anciens comptes de plis sont à remesurer (erreur 108).
