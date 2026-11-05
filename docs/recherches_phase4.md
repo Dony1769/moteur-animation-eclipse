@@ -48,3 +48,10 @@ puis sources non officielles (articles de praticiens, issues de projets) quand l
 - Non officiel (praticien, Sol G. Brennan, Medium, https://sol-g-brennan.medium.com/rigging-tips-methods-for-extra-character-deformation-in-game-dev-e4c0e89e7b00) : blendshapes correctifs pilotés par l'angle, helper joints (set driven keys, RBF), limites : pas de rayon de contrôle en dehors des échantillons, dérive (« swimming ») si les intermédiaires ne sont pas cohérents, invalidation si le maillage change.
 - Décision : la correction de pose (PSD) est la méthode retenue pour le pli fléchisseur. Elle remplace la sphère fixe (erreur 103).
 - Verrou : PSD exige une cible sculptée à l'angle fléchi. Les données disponibles (skin Mixamo de la danse) sont en skinning linéaire, donc arrondies au coude : pas une cible anatomique. Il faut une source de forme de pli (modèle anatomique ou scan) avant d'échantillonner δ.
+
+## Source anatomique de la chair au coude (recherche du 5 nov. 2026)
+- Source publiée et académique (Hermawati & Marshall, « Realistic elbow flesh deformation based on anthropometrical data for ergonomics modeling », https://core.ac.uk/download/288385532.pdf) : sections transversales du bras à 4 postures (extension, 90°, 135°, flexion maximale), 16 distances radiales par section, base PCA. Données : 23 sujets (scanner TC2-NX12 + fil physique à la flexion).
+- Loi reprise : rapport UAF/UAM (surface de chair haute / milieu) en fonction de l'angle, ajustement y = −6e−06·x² − 0,0018·x + 0,9478 (R² 0,937), x en degrés (fig. 5 de l'article, données propres à l'étude).
+- Limites : 5 à 6 sujets par groupe ; le scanner ne capture pas la chair à la flexion ≥ 100° (mesures au fil à la place) ; pas de mesure de maillage complet à l'angle fléchi.
+- Écarté : arXiv 2509.06607 (SKEL) ne traite pas de la chair ni du pli, seulement du squelette et de SMPL.
+- Usage prévu : fixer les postures-clés de PSD (0, 90, 135°, flexion max) et la loi d'échelle de la chair fléchisseur ; le maillage cible reste à construire à partir des 16 distances radiales (non publiées en brut : à reconstituer).

@@ -804,3 +804,7 @@ Mesure LBS sans clé, bras gauche seul : 90° 24 -> 12 replis ; 120° 31 -> 19 ;
 - Une correction de pose (PSD) stocke des décalages à quelques angles, puis les interpole : le pli se crée là où il est sculpté, pas là où une sphère fixe gonfle.
 - Une cible anatomique est indispensable : un skinning linéaire ne peut pas la fournir (il arrondit le coude).
 - Ordre : trouver la cible de pli, puis calculer δ aux angles échantillonnés, puis interpoler et mesurer (saillie fléchisseur / extenseur, erreur 103).
+
+## 80. Cible anatomique de pli : vérifier le type de donnée publiée
+- Une étude peut donner une loi d'échelle et des postures-clés sans donner le maillage. Ici : rapport chair haute/milieu en fonction de l'angle (ajustement publié), et 4 postures.
+- Reconstruire la cible à partir de la loi, en le signalant comme approximation, avant de déclarer la jonction valide.

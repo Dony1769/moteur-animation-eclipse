@@ -635,3 +635,9 @@ Chaque erreur a une cause, une correction et un test. Une erreur corrigée doit 
 - Verrou : PSD a besoin d'une forme cible à l'angle fléchi. Le skinning Mixamo de la danse est linéaire et arrondit le coude : il ne peut pas servir de cible. Aucune source de forme de pli n'est encore disponible dans les fichiers reçus.
 - Décision : passer à la correction de pose, et chercher une source de forme de pli (modèle anatomique ou scan) avant de calculer δ.
 - Recherches : `docs/recherches_phase4.md`.
+
+## 105. Cible de pli : une source publiée donne une loi et des postures-clés, pas le maillage
+- Trouvé : Hermawati & Marshall (sections transversales à 4 postures, loi UAF/UAM vs angle, 23 sujets). Utile pour choisir les postures-clés PSD et l'échelle de la chair.
+- Limite : les 16 distances radiales ne sont pas publiées en brut. La cible de maillage doit être reconstruite, donc elle reste une approximation.
+- Écarté : SKEL (arXiv 2509.06607) ne traite ni la chair ni le pli.
+- Leçon : vérifier ce qu'une source fournit réellement (loi, données brutes, ou maillage) avant de la retenir comme cible.
