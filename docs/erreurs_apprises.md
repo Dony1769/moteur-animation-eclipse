@@ -958,3 +958,25 @@ Résultat (docs/rapports/phase4_psd_hanche_genou.json) : genou plis 0–4, étir
 - Limite connue : pas d'occlusion. Une vue colore aussi les faces cachées. À traiter avant usage réel.
 - Règle : un test qui ne vérifie qu'une tendance (poids plus fort face à la vue) ne prouve pas la visibilité. Le noter
   dans le rapport, et ne pas le présenter comme un texturage validé.
+
+## 138. Tampon de profondeur : orientation oubliée, puis précision insuffisante
+- Premier test : 28 % de faces « arrière » marquées visibles depuis l'avant. Cause 1 : je n'exigeais pas que la face soit
+  tournée vers la caméra (normale · c > 0). Corrigé.
+- Cause 2 : le test sélectionnait les « faces arrière » par un seuil sur la moyenne des sommets (z < moyenne − 0,5), ce qui
+  incluait des faces au milieu du corps. Mauvaise définition du test, pas du calcul.
+- Mesure sur la sphère (vérité connue) : 1 535 faces visibles sur 1 536 pour le tampon. Le tampon est correct en principe.
+- Mesure sur le corps : accord de 84 % avec le lancer de rayon à 256 px, 90 % à 1 024 px. Le tampon est une approximation
+  d'échantillonnage : on le garde comme aperçu rapide, pas comme référence.
+- Règle : valider un calcul de visibilité d'abord sur un cas dont la réponse est connue (sphère), ensuite seulement sur le
+  maillage réel. Et définir la classe testée par la géométrie, pas par un seuil sur une moyenne.
+
+## 139. Le maillage de base contient des surfaces internes : une face tournée vers la caméra peut être cachée
+- Constat : sur le corps de base, 3 637 faces sur 1 859 + 3 637 tournées vers l'avant sont cachées (environ la moitié).
+  Le lancer de rayon exact et le tampon concordent (960 et 978 faces visibles) : ce n'est pas une erreur de calcul.
+- Cause : le maillage contient des surfaces internes (bouche, cavités, jonctions bras-tronc). Le centre des faces cachées
+  est à z = 1,39 en moyenne, alors que le devant du corps est à z = 3,26.
+- Conséquence pour le texturage : 5 271 faces (28 %) ne sont vues par aucune vue. Elles doivent être exclues, pas coloriées.
+- Erreur de test : mon test supposait que toutes les faces tournées vers l'avant sont extérieures. Corrigé : on ne mesure
+  que les faces réellement vues.
+- Méthode retenue : lancer de rayon exact (visibilite_rayon) pour la fusion ; tampon en aperçu seulement.
+- À faire ensuite : nettoyer ou séparer les surfaces internes avant le rigging et la peau (phase 6).

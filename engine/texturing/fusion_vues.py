@@ -7,8 +7,7 @@ dessous 0,05). La couleur finale est la moyenne pondérée. Les faces qu'aucune 
 
 Réimplémentation maison : aucun code ni poids de Tencent n'est utilisé.
 
-Limites explicites (non traitées ici) : pas de test de visibilité (occlusion) : une vue peut « voir » une face cachée
-derrière le corps ; cela sera à ajouter avant tout usage sur un personnage réel.
+Visibilité : le paramètre `visibles` (lancer de rayon exact, visibilite.py) évite qu'une vue colore une face cachée.
 """
 import numpy as np
 
@@ -28,7 +27,7 @@ def normales_faces(V, F):
     return n / np.maximum(np.linalg.norm(n, axis=1, keepdims=True), 1e-12)
 
 
-def fusionner(V, F, couleurs_par_vue, poids_vue=None, bake_exp=BAKE_EXP):
+def fusionner(V, F, couleurs_par_vue, poids_vue=None, bake_exp=BAKE_EXP, visibles=None):
     """couleurs_par_vue : dict nom_vue -> (F, 3) couleur de chaque face vue par cette vue.
     Retourne (couleurs (F,3), couverture (F,) poids total).
 
@@ -43,6 +42,8 @@ def fusionner(V, F, couleurs_par_vue, poids_vue=None, bake_exp=BAKE_EXP):
         c = VUES_CANONIQUES[nom]
         cosinus = np.clip(N @ c, 0.0, None)
         w = (cosinus ** bake_exp) * poids_vue[nom]
+        if visibles is not None:
+            w = w * visibles[nom]
         num += w[:, None] * couleur
         den += w
     couv = den

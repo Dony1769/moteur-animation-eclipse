@@ -1,12 +1,17 @@
 {
   "faces": 18486,
-  "faces_avant": 1859,
-  "erreur_moyenne_face_avant": 0.00017,
-  "faces_arriere": 1446,
+  "faces_avant": 960,
+  "erreur_moyenne_face_avant": 8e-05,
+  "faces_arriere": 689,
   "erreur_moyenne_face_arriere": 0.0,
-  "faces_bord": 2346,
+  "faces_tournees_avant_au_total": 1859,
+  "note_surfaces_internes": "environ la moitié des faces tournées vers l'avant sont cachées : surfaces internes du maillage de base (entrée 139)",
+  "faces_bord": 1787,
   "melange_entre_vues": true,
-  "faces_non_couvertes": 0,
+  "faces_non_couvertes": 5271,
+  "faces_tournees_avant_cachees": 3637,
+  "faces_cachees_couvertes": 1576,
+  "erreur_faces_cachees_couvertes": 0.0,
   "statut": "VALIDE_TECHNIQUE",
-  "limite": "pas de test d'occlusion : une vue voit aussi les faces cachées (voir fusion_vues.py)"
+  "limite": "visibilité par lancer de rayon exact ; teintes des vues de test (décalage +0,2 sur la vue avant) seulement"
 }

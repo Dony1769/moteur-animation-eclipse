@@ -1,0 +1,9 @@
+{
+  "sphere_rayon_exact_part_visibles": 1.0,
+  "corps_faces": 18486,
+  "corps_visibles_vue_avant_rayon": 0.3003,
+  "corps_temps_rayon_s": 6.5,
+  "corps_accord_tampon_1024_avec_rayon": 0.9027,
+  "referente": "rayon exact ; tampon = aperçu",
+  "statut": "VALIDE_TECHNIQUE"
+}

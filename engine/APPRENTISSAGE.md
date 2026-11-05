@@ -951,3 +951,7 @@ d'abord la conclusion fausse (erreurs_apprises entrée 136), puis le code. Voir 
 ## 111. Reprendre une idée, pas un code ni des poids
 Lire une méthode publiée (rapport officiel), vérifier avec une source non officielle, réimplémenter, puis tester avec des
 critères mesurables. Noter la limite (ici, l'occlusion). Voir erreurs_apprises entrée 137 et docs/recherches_humain.md.
+
+## 112. Valider la visibilité sur une sphère, puis sur le maillage réel
+Une sphère (réponse connue) d'abord. Ensuite le maillage réel, avec une vérité exacte (lancer de rayon). Un maillage peut
+contenir des surfaces internes : une face tournée vers la caméra peut être cachée sans erreur de calcul. Voir entrées 138 et 139.
