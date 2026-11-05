@@ -662,3 +662,9 @@ Chaque erreur a une cause, une correction et un test. Une erreur corrigée doit 
 - Conséquence : tous les comptes de plis antérieurs (hanche, épaule, genou, coude, bande de jonction) sont invalides. Ils doivent être remesurés avec `plis_locaux`.
 - Correction : `engine/skinning/mesures_pose.py` (`plis_locaux`), ancienne fonction marquée obsolète.
 - Leçon : vérifier une métrique sur un cas où la réponse connue est zéro (rigide) avant d'interpréter un compte.
+
+## 109. Pénétration sur peau continue : test d'appartenance ambigu sur les sommets de surface
+- Test : sommets d'avant-bras hors bande testés à l'intérieur du maillage du corps (`trimesh.contains`). Au repos, 215 sommets sont « à l'intérieur » alors que la peau ne se chevauche pas : le test est ambigu pour des points situés sur la surface.
+- Les différences par rapport au repos (74, 54, 62, 52, puis −35) sont du bruit. Aucune conclusion.
+- À faire : décaler les points testés de 1 mm le long de la normale vers l'extérieur, ou mesurer la distance signée à la surface de l'autre segment, et contrôler avec un témoin positif.
+- Script (non valide) : `engine/skinning/reference/penetration_dqs_coude_invalide.py`.

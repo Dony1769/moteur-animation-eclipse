@@ -822,3 +822,7 @@ Mesure LBS sans clé, bras gauche seul : 90° 24 -> 12 replis ; 120° 31 -> 19 ;
 - Comparer une normale monde au repos à une normale posée signale toute rotation rigide de plus de 90°. Un pli réel est un retournement après correction de la rotation locale.
 - Témoin à appliquer à toute métrique : une transformation rigide doit donner zéro pli.
 - Les anciens comptes de plis sont à remesurer (erreur 108).
+
+## 84. Mesurer une pénétration sur peau continue : décaler les points avant le test
+- Tester des sommets de surface dans un maillage fermé est ambigu : 215 faux positifs au repos. Décaler les points de 1 mm vers l'extérieur, puis contrôler au repos (zéro attendu) et avec témoin positif.
+- DQS au coude (un seul angle, rapport `docs/rapports/phase4_dqs_coude.json`) : hors bande, 0 pli et étirement 1,00 au 99e centile. Dans la bande, plis à partir de 90° et étirement élevé : à juger.
