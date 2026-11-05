@@ -1,0 +1,50 @@
+{
+  "statut": "NON VALIDE : valeurs identiques à 90, 105 et 120 degrés, solveur possiblement bloqué par le recul de pas ; compte de plis non rapporté. Ne pas utiliser comme résultat.",
+  "mesures": [
+    {
+      "th": 30,
+      "inversions": 0,
+      "n_aretes_bande": 87,
+      "mediane": 1.0015,
+      "p95": 1.0881,
+      "p99": 1.0914,
+      "fraction_sup_1_15": 0.0
+    },
+    {
+      "th": 60,
+      "inversions": 0,
+      "n_aretes_bande": 87,
+      "mediane": 0.9756,
+      "p95": 1.1215,
+      "p99": 1.1316,
+      "fraction_sup_1_15": 0.0
+    },
+    {
+      "th": 90,
+      "inversions": 0,
+      "n_aretes_bande": 87,
+      "mediane": 0.9726,
+      "p95": 1.116,
+      "p99": 1.1287,
+      "fraction_sup_1_15": 0.0
+    },
+    {
+      "th": 105,
+      "inversions": 0,
+      "n_aretes_bande": 87,
+      "mediane": 0.9726,
+      "p95": 1.116,
+      "p99": 1.1287,
+      "fraction_sup_1_15": 0.0
+    },
+    {
+      "th": 120,
+      "inversions": 0,
+      "n_aretes_bande": 87,
+      "mediane": 0.9726,
+      "p95": 1.116,
+      "p99": 1.1287,
+      "fraction_sup_1_15": 0.0
+    }
+  ]
+}
