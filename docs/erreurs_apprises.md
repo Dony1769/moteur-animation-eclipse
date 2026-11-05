@@ -750,3 +750,11 @@ Résultat (docs/rapports/phase4_psd_hanche_genou.json) : genou plis 0–4, étir
   mais crée des plis interdits.
 - Conclusion : aucune méthode ne passe à la fois la zone des plis et l'étirement de jonction. Le blocage restant de la
   hanche est l'étirement dans la bande (DQS p99 2,04 à 120°, PSD 1,15–1,2).
+
+## 118. Restriction dure d'une correction à un côté : discontinuité au bord, plis
+- Test : correction PSD multipliée par un masque binaire (Y > 0 seulement). Résultat : 64 à 83 plis, étirement dans la
+  bande p99 jusqu'à 3,4 (pire que sans restriction). La coupure brutale à Y = hanche crée une discontinuité de
+  déplacement, donc des plis et des déchirures au bord du masque.
+- Méthode correcte : une correction doit varier de façon continue dans l'espace. La restriction à un côté se fait par
+  une pondération lisse (fonction de Y bornée et dérivable, transition sur une distance), jamais par un masque dur.
+  Vérifier la continuité (pas de saut de déplacement entre voisins) avant de mesurer les plis.

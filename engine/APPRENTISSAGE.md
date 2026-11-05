@@ -870,3 +870,7 @@ acceptables. Voir erreurs_apprises entrée 116.
 Quand une source décrit une zone sans coordonnée, on écrit une règle qualitative vérifiable (côté, distance) et on
 déclare la coordonnée non sourcée. Appliquer la règle aux deux méthodes avant de les comparer : la correction PSD a créé
 des plis postérieurs interdits que le DQS n'avait pas. Voir erreurs_apprises entrée 117.
+
+## 93. Pondération spatiale : lisse, jamais dure
+Une correction limitée à un côté par un masque binaire crée une discontinuité de déplacement au bord, donc des plis.
+La restriction doit être une transition lisse. Voir erreurs_apprises entrée 118.
