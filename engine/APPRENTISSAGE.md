@@ -733,3 +733,7 @@ Mesure LBS sans clé, bras gauche seul : 90° 24 -> 12 replis ; 120° 31 -> 19 ;
 - Le sens de rotation est un choix a verifier par mesure (ici -h), pas une convention a supposer.
 - Si les os sont alignes (jambe verticale), l'axe n'est pas defini : repli explicite sur l'axe anatomique et signalement, jamais un axe silencieux.
 - La calotte de 8 cm marche au coude, pas forcement au genou : le rayon se calibre par articulation.
+
+## 65. Un residu dans une zone de pli se traite par gonflement, pas par coupure
+- Le residu du genou est dans le creux poplite, zone ou un pli est admis. La coupure de la jonction ne le resout pas ; il faut un gonflement de la peau hors du volume voisin, sans penetration.
+- Verifier le sens d'un axe par un critere anatomique (ici le talon recule en flexion) avant de le tester numeriquement.

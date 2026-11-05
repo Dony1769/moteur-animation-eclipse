@@ -534,3 +534,10 @@ Chaque erreur a une cause, une correction et un test. Une erreur corrigée doit 
 - Genou et cheville : la jambe HBM est parfaitement verticale, donc le produit vectoriel est nul. Repli sur l'axe X. Resultat non resolu : genou 16 / 10 / 7 / 2 / 0 sans sphere, pire avec sphere 6 cm (61 / 71 / 11 / 0 / 0) ; cheville 124 / 90 / 5 a -55 / -30 / 15.
 - Lecon : chaque articulation a son propre axe. Il se lit sur les os, pas sur un repere commun.
 - Scripts : `engine/skinning/test_coude_axe_reel.py`, `engine/skinning/test_charnieres_axe_reel.py`. Rapports : `docs/rapports/phase4_coude_axe_reel.json`, `docs/rapports/phase4_genou_cheville_axe.json`.
+
+## 90. Genou : residu dans le creux poplite, pas une question de sphere
+- Sens anatomique verifie : -1 (le talon recule en flexion). Sans sphere : 16 / 10 / 7 / 2 / 0 a 30 / 60 / 90 / 120 / 140.
+- Sphere de 5,5 cm (echelle HBM du marqueur X-Bot) : pire a 30 / 60 (61 / 52). Ne pas la retenir au genou.
+- Coupure bissectrice : 19 / 36 / 36 a 30 degres selon la zone (0,08 / 0,12 / 0,16 m). Ne resout pas.
+- Localisation du residu : mollet contre la face arriere de la cuisse, sous le genou, 3 a 4 cm de profondeur. C'est le creux poplite, zone de pli admise (regle 58). Ce qui est admis, c'est un gonflement sans penetration. Il faut donc une correction de type push-out dans cette zone, pas une coupure.
+- Script : `engine/skinning/test_genou_calibre.py`, `engine/skinning/test_genou_bissecteur.py`. Rapport : `docs/rapports/phase4_genou_calibrage.json`.

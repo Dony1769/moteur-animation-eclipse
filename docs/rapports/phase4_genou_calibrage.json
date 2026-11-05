@@ -1,0 +1,9 @@
+{
+  "objet": "genou : sens anatomique de l'axe, calibrage sphere et coupure bissectrice",
+  "sens_anatomique": "le talon doit reculer en flexion : sens -1 (verifie : deplacement talon.orteil = -0,17 en flexion)",
+  "sans_sphere_sens_-1": {"30": 16, "60": 10, "90": 7, "120": 2, "140": 0},
+  "sphere_5_5cm_sens_-1": {"30": 61, "60": 52, "90": 8, "120": 0, "140": 0},
+  "coupure_bissectrice": {"zone_0.08": {"30": 19, "60": 14, "90": 2, "120": 4}, "zone_0.12": {"30": 36, "60": 11, "90": 5, "120": 4}, "zone_0.16": {"30": 36, "60": 5, "90": 3, "120": 4}},
+  "residu_localisation": "mollet (LeftLeg) contre la face arriere de la cuisse (LeftUpLeg), sous le genou, 3 a 4 cm de profondeur : creux poplite",
+  "statut": "non resolu ; la zone poplitee est une zone de pli admise par la regle 58 : elle doit se gonfler sans penetrer, pas se couper"
+}
