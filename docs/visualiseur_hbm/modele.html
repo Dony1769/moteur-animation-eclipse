@@ -1,0 +1,324 @@
+<!doctype html>
+<meta name="claude:viewport-fit-sides" content="cover">
+<title>Déformation du corps HBM</title>
+<style>
+  /* Plan : fond graphite d'atelier, accent ocre, plis en rouge, étirement en dégradé teal → ocre → rouge.
+     Texte Plex Sans, mesures Plex Mono. Scène 3D à gauche, commandes à droite, une colonne sur téléphone.
+     Thème sombre seul ; toutes les couleurs sont explicites. */
+  :root {
+    --bg: #0c0f13; --panel: #141920; --line: #262d37; --fg: #e9e4d8; --muted: #8d949e;
+    --accent: #e0a94a; --bad: #ff5a43; --good: #6fcf97;
+    --sans: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+    --mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+    color-scheme: dark;
+  }
+  body { background: var(--bg); color: var(--fg); margin: 0; font: 14px/1.5 var(--sans);
+         padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
+         padding-block: 20px 40px; }
+  h1 { font-size: 22px; font-weight: 600; margin: 0 0 6px; text-wrap: balance; letter-spacing: -0.01em; }
+  h2 { font-size: 15px; font-weight: 600; margin: 0 0 10px; color: var(--accent); letter-spacing: .02em; }
+  p { margin: 0 0 10px; max-width: 65ch; }
+  .lede { color: var(--muted); }
+  .wrap { display: grid; grid-template-columns: minmax(0, 1fr) 340px; gap: 18px; max-width: 1200px; margin: 0 auto; }
+  @media (max-width: 860px) { .wrap { grid-template-columns: minmax(0, 1fr); } }
+  .card { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 14px; min-width: 0; }
+  #scene-box { position: relative; height: clamp(340px, 60vh, 620px); border-radius: 10px; overflow: hidden; border: 1px solid var(--line); background: var(--bg); }
+  #scene { width: 100%; height: 100%; display: block; touch-action: none; cursor: grab; }
+  .hud { position: absolute; left: 10px; bottom: 10px; display: flex; gap: 8px; flex-wrap: wrap; pointer-events: none; }
+  .chip { font: 12px/1 var(--mono); background: rgba(12,15,19,.85); border: 1px solid var(--line); border-radius: 6px; padding: 6px 8px; color: var(--fg); }
+  .chip b { color: var(--accent); font-weight: 500; }
+  .seg { display: flex; flex-wrap: wrap; gap: 6px; margin: 6px 0 14px; }
+  .seg button { font: 13px var(--sans); color: var(--fg); background: transparent; border: 1px solid var(--line); border-radius: 6px; padding: 7px 10px; cursor: pointer; }
+  .seg button[aria-pressed="true"] { background: var(--accent); color: #15110a; border-color: var(--accent); font-weight: 600; }
+  .seg button:focus-visible, input:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  label.k { display: block; font-size: 12px; color: var(--muted); letter-spacing: .04em; text-transform: uppercase; margin-top: 8px; }
+  input[type="range"] { width: 100%; accent-color: var(--accent); }
+  .ticks { display: flex; justify-content: space-between; font: 11px var(--mono); color: var(--muted); }
+  .stats { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin: 12px 0 0; }
+  .stat { border: 1px solid var(--line); border-radius: 8px; padding: 8px 10px; }
+  .stat span { display: block; font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: .05em; }
+  .stat strong { font: 500 20px var(--mono); }
+  .verdict { margin-top: 10px; padding: 10px 12px; border-radius: 8px; border: 1px solid var(--line); font-weight: 500; }
+  .verdict.ok { border-color: var(--good); color: var(--good); }
+  .verdict.ko { border-color: var(--bad); color: var(--bad); }
+  ul { margin: 0 0 10px; padding-left: 18px; }
+  li { margin: 4px 0; max-width: 65ch; }
+  .table-wrap { overflow-x: auto; margin-top: 8px; }
+  aside { min-width: 0; }
+  table { border-collapse: collapse; width: 100%; font: 12px var(--mono); }
+  th, td { text-align: right; padding: 6px 6px; border-bottom: 1px solid var(--line); }
+  th:first-child, td:first-child { text-align: left; font-family: var(--sans); }
+  th { color: var(--muted); font-weight: 500; font-size: 11px; line-height: 1.3; }
+  .bad { color: var(--bad); } .good { color: var(--good); }
+  .note { font-size: 12px; color: var(--muted); }
+  .legend { display: flex; align-items: center; gap: 8px; font: 12px var(--mono); color: var(--muted); margin-top: 8px; }
+  .bar { flex: 1; height: 8px; border-radius: 4px; background: linear-gradient(90deg, #3fb8a8, #e0a94a 50%, #ff5a43); }
+  .toggle { display: flex; align-items: center; gap: 8px; margin-top: 10px; font-size: 13px; }
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+<div class="wrap">
+  <main>
+    <h1>Déformation du corps HBM</h1>
+    <p class="lede">Le corps avec son squelette final (bras, avant-bras, jambe). Glissez pour tourner, molette pour zoomer. « Sans correctif » montre la déformation linéaire brute ; « Corrigé » ajoute le correctif ARAP.</p>
+
+    <div id="scene-box">
+      <canvas id="scene" aria-label="Modèle 3D du corps HBM déformé"></canvas>
+      <div class="hud">
+        <span class="chip" id="hud-angle">angle <b>—</b></span>
+        <span class="chip" id="hud-plis">plis <b>—</b></span>
+        <span class="chip" id="hud-etir">étirement max <b>—</b></span>
+      </div>
+    </div>
+
+    <div class="legend" aria-hidden="true"><span>1,0</span><div class="bar"></div><span>2,2+</span></div>
+    <p class="note">Mode « Étirement » : teal = proche du repos, ocre = étiré, rouge = très étiré. Mode « Plis » : sommets d'une face repliée en rouge.</p>
+
+    <section class="card" style="margin-top:14px">
+      <h2>Ce qu'il faut regarder</h2>
+      <ul>
+        <li>Le bras, l'avant-bras et la jambe doivent garder un volume plein à 60°, 90° et 120°, sans creux ni pli qui se referme sur lui-même.</li>
+        <li>Au coude et au genou, la peau doit se plier sans pincer ni déchirer.</li>
+        <li>La zone sous l'épaule (bras, angle 90° et plus) est la plus sensible : c'est là que la correction a été ajoutée.</li>
+      </ul>
+      <p class="note">Seuil proposé pour la clôture : zéro pli sur les poses 60–120° et étirement max inférieur à 1,3. Le verdict ci-dessous applique ce seuil à la vue affichée.</p>
+    </section>
+  </main>
+
+  <aside>
+    <section class="card">
+      <h2>Commandes</h2>
+      <label class="k" id="lab-chaine">Chaîne</label>
+      <div class="seg" role="group" aria-labelledby="lab-chaine" id="seg-chaine">
+        <button type="button" data-ci="0" aria-pressed="true">Bras</button>
+        <button type="button" data-ci="1" aria-pressed="false">Avant-bras</button>
+        <button type="button" data-ci="2" aria-pressed="false">Jambe</button>
+      </div>
+
+      <label class="k" for="angle">Angle</label>
+      <input id="angle" type="range" min="0" max="5" step="1" value="5">
+      <div class="ticks" aria-hidden="true"><span>0°</span><span>60°</span><span>75°</span><span>90°</span><span>105°</span><span>120°</span></div>
+
+      <label class="k" id="lab-mode">Déformation</label>
+      <div class="seg" role="group" aria-labelledby="lab-mode" id="seg-mode">
+        <button type="button" data-mode="cor" aria-pressed="true">Corrigé</button>
+        <button type="button" data-mode="lbs" aria-pressed="false">Sans correctif</button>
+      </div>
+
+      <label class="k" id="lab-vue">Affichage</label>
+      <div class="seg" role="group" aria-labelledby="lab-vue" id="seg-vue">
+        <button type="button" data-vue="surface" aria-pressed="true">Surface</button>
+        <button type="button" data-vue="plis" aria-pressed="false">Plis</button>
+        <button type="button" data-vue="etir" aria-pressed="false">Étirement</button>
+      </div>
+
+      <div class="toggle"><input id="wire" type="checkbox"><label for="wire">Fil de fer</label></div>
+      <div class="toggle"><input id="spin" type="checkbox"><label for="spin">Rotation automatique</label></div>
+
+      <div class="stats" aria-live="polite">
+        <div class="stat"><span>Plis</span><strong id="st-plis">—</strong></div>
+        <div class="stat"><span>Étirement max</span><strong id="st-etir">—</strong></div>
+      </div>
+      <div class="verdict" id="verdict" role="status">Chargement du modèle…</div>
+    </section>
+
+    <section class="card" style="margin-top:14px">
+      <h2>Mesures Blender</h2>
+      <p class="note">Mesures faites dans Blender sur la base finale, avec le correctif. Référence de validation.</p>
+      <div class="table-wrap">
+        <table id="tbl">
+          <thead><tr><th>Pose</th><th>Plis (sans)</th><th>Plis (corr.)</th><th>Étir. corr.</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <p class="note">Étirement sans correctif : 3 à 16 selon la chaîne (référence avant travail : 6,0 sur le bras). Le correctif est donc indispensable.</p>
+    </section>
+  </aside>
+</div>
+
+<p class="note" style="max-width:1200px;margin:14px auto 0">Affichage : compte des plis et valeurs par sommet calculés en numpy à partir des mêmes poids et correctifs. Le compte Blender fait foi ; l'écart est de 1 à 2 faces (jambe à 105° : 3 en numpy, 2 en Blender).</p>
+
+<script id="donnees" type="application/json">__DONNEES__</script>
+
+<script>
+(function () {
+  "use strict";
+  var ANG = [0, 60, 75, 90, 105, 120];
+  var CHAINES = ["Bras", "Avant-bras", "Jambe"];
+  var BLENDER = {
+    "Bras":       [[60,3,0,1.16],[75,4,0,1.16],[90,8,0,1.17],[105,10,0,1.18],[120,10,0,1.14]],
+    "Avant-bras": [[60,4,0,1.05],[75,5,0,1.11],[90,5,0,1.07],[105,6,0,1.22],[120,6,0,1.09]],
+    "Jambe":      [[60,6,0,1.10],[75,7,0,1.15],[90,7,0,1.15],[105,7,2,1.20],[120,6,2,1.15]]
+  };
+  var SEUIL_ETIR = 1.3;
+  var etat = { ci: 0, ai: 5, mode: "cor", vue: "surface" };
+  function $(s) { return document.querySelector(s); }
+  function fr(x, d) { return x.toFixed(d || 2).replace(".", ","); }
+  function montrerErreur(msg) {
+    var v = $("#verdict"); v.className = "verdict ko"; v.textContent = msg;
+  }
+
+  // Tableau Blender
+  var tb = $("#tbl tbody");
+  CHAINES.forEach(function (c) {
+    BLENDER[c].forEach(function (r) {
+      var tr = document.createElement("tr");
+      var cls = r[2] > 0 ? ' class="bad"' : ' class="good"';
+      tr.innerHTML = "<td>" + c + " " + r[0] + "°</td><td>" + r[1] + "</td><td" + cls + ">" + r[2] + "</td><td>" + fr(r[3]) + "</td>";
+      tb.appendChild(tr);
+    });
+  });
+
+  if (typeof THREE === "undefined") {
+    montrerErreur("Bibliothèque 3D non chargée : la page ne peut pas afficher le modèle.");
+    return;
+  }
+
+  var D;
+  try {
+    D = JSON.parse(document.getElementById("donnees").textContent);
+  } catch (e) {
+    montrerErreur("Données du modèle illisibles.");
+    return;
+  }
+
+  var canvas = $("#scene");
+  var renderer;
+  try {
+    renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true });
+  } catch (e) {
+    montrerErreur("WebGL indisponible dans ce navigateur : le modèle 3D ne peut pas être affiché.");
+    return;
+  }
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+  var scene = new THREE.Scene();
+  scene.background = new THREE.Color(0x0c0f13);
+  var camera = new THREE.PerspectiveCamera(28, 1, 0.01, 100);
+  camera.up.set(0, 0, 1);
+  scene.add(new THREE.AmbientLight(0xffffff, 0.55));
+  var key = new THREE.DirectionalLight(0xfff3e0, 1.1); key.position.set(2, -3, 3); scene.add(key);
+  var fill = new THREE.DirectionalLight(0x9fc4d6, 0.45); fill.position.set(-3, 2, 1); scene.add(fill);
+
+  var n = D.rest.length / 3;
+  var geo = new THREE.BufferGeometry();
+  geo.setAttribute("position", new THREE.BufferAttribute(new Float32Array(D.rest), 3));
+  geo.setAttribute("color", new THREE.BufferAttribute(new Float32Array(n * 3), 3));
+  var idx = new Uint32Array(D.tri.length * 3);
+  for (var t = 0; t < D.tri.length; t++) { idx[t * 3] = D.tri[t][0]; idx[t * 3 + 1] = D.tri[t][1]; idx[t * 3 + 2] = D.tri[t][2]; }
+  geo.setIndex(new THREE.BufferAttribute(idx, 1));
+  var mat = new THREE.MeshStandardMaterial({ vertexColors: true, roughness: 0.62, metalness: 0.02, side: THREE.DoubleSide });
+  scene.add(new THREE.Mesh(geo, mat));
+
+  geo.computeBoundingSphere();
+  var cc = geo.boundingSphere.center, rr = geo.boundingSphere.radius;
+
+  // Rotation et zoom à la souris / au doigt, écrits ici (pas de dépendance externe)
+  var orb = { theta: -Math.PI / 2, phi: 1.25, r: rr * 4.6, target: cc.clone(), auto: false };
+  function placerCamera() {
+    var s = Math.sin(orb.phi), c = Math.cos(orb.phi);
+    camera.position.set(orb.target.x + orb.r * s * Math.cos(orb.theta),
+                        orb.target.y + orb.r * s * Math.sin(orb.theta),
+                        orb.target.z + orb.r * c);
+    camera.lookAt(orb.target);
+  }
+  var drag = null;
+  canvas.addEventListener("pointerdown", function (e) { drag = { x: e.clientX, y: e.clientY }; canvas.setPointerCapture(e.pointerId); });
+  canvas.addEventListener("pointermove", function (e) {
+    if (!drag) return;
+    orb.theta -= (e.clientX - drag.x) * 0.008;
+    orb.phi = Math.min(Math.PI - 0.05, Math.max(0.05, orb.phi - (e.clientY - drag.y) * 0.008));
+    drag = { x: e.clientX, y: e.clientY };
+  });
+  canvas.addEventListener("pointerup", function () { drag = null; });
+  canvas.addEventListener("pointercancel", function () { drag = null; });
+  canvas.addEventListener("wheel", function (e) {
+    e.preventDefault();
+    orb.r = Math.min(rr * 8, Math.max(rr * 1.2, orb.r * (1 + e.deltaY * 0.001)));
+  }, { passive: false });
+
+  function heat(t) {
+    t = Math.min(1, Math.max(0, t));
+    var a = [63, 184, 168], b = [224, 169, 74], c = [255, 90, 67], p, q, u;
+    if (t < 0.5) { p = a; q = b; u = t / 0.5; } else { p = b; q = c; u = (t - 0.5) / 0.5; }
+    return [0, 1, 2].map(function (k) { return (p[k] + (q[k] - p[k]) * u) / 255; });
+  }
+
+  function verdict(plis, etir) {
+    var v = $("#verdict");
+    if (plis === 0 && etir < SEUIL_ETIR) {
+      v.className = "verdict ok"; v.textContent = "Acceptable : 0 pli, étirement sous le seuil.";
+    } else {
+      var m = [];
+      if (plis > 0) m.push(plis + (plis > 1 ? " plis" : " pli"));
+      if (etir >= SEUIL_ETIR) m.push("étirement " + fr(etir));
+      v.className = "verdict ko"; v.textContent = "Non acceptable : " + m.join(", ") + ".";
+    }
+  }
+
+  function montrer() {
+    var f = D.frames[etat.ci * 6 + etat.ai];
+    var cor = etat.mode === "cor";
+    var P = cor ? f.cor : f.lbs;
+    var plisV = cor ? f.pli_v_cor : f.pli_v_lbs;
+    var et = cor ? f.etir_cor : f.etir_lbs;
+    geo.attributes.position.array.set(P);
+    geo.attributes.position.needsUpdate = true;
+    var c = geo.attributes.color.array;
+    for (var i = 0; i < n; i++) {
+      var rgb;
+      if (etat.vue === "plis") rgb = plisV[i] ? [1.0, 0.35, 0.26] : [0.66, 0.63, 0.57];
+      else if (etat.vue === "etir") rgb = heat((et[i] - 1) / 1.2);
+      else rgb = [0.78, 0.74, 0.66];
+      c[i * 3] = rgb[0]; c[i * 3 + 1] = rgb[1]; c[i * 3 + 2] = rgb[2];
+    }
+    geo.attributes.color.needsUpdate = true;
+    geo.computeVertexNormals();
+    var etirMax = 0;
+    for (var j = 0; j < n; j++) if (et[j] > etirMax) etirMax = et[j];
+    var plis = cor ? f.plis_cor : f.plis_lbs;
+    $("#st-plis").textContent = plis;
+    $("#st-etir").textContent = fr(etirMax);
+    $("#hud-angle").innerHTML = "angle <b>" + ANG[etat.ai] + "°</b>";
+    $("#hud-plis").innerHTML = "plis <b>" + plis + "</b>";
+    $("#hud-etir").innerHTML = "étirement max <b>" + fr(etirMax) + "</b>";
+    verdict(plis, etirMax);
+  }
+
+  function boutons(sel, attr, cle, conv) {
+    document.querySelectorAll(sel + " button").forEach(function (b) {
+      b.addEventListener("click", function () {
+        var v = b.getAttribute("data-" + attr);
+        etat[cle] = conv ? conv(v) : v;
+        document.querySelectorAll(sel + " button").forEach(function (x) {
+          x.setAttribute("aria-pressed", String(x === b));
+        });
+        montrer();
+      });
+    });
+  }
+  boutons("#seg-chaine", "ci", "ci", function (v) { return parseInt(v, 10); });
+  boutons("#seg-mode", "mode", "mode");
+  boutons("#seg-vue", "vue", "vue");
+  $("#angle").addEventListener("input", function (e) { etat.ai = parseInt(e.target.value, 10); montrer(); });
+  $("#wire").addEventListener("change", function (e) { mat.wireframe = e.target.checked; });
+  $("#spin").addEventListener("change", function (e) { orb.auto = e.target.checked; });
+
+  function redimensionner() {
+    var w = canvas.clientWidth, h = canvas.clientHeight;
+    if (!w || !h) return;
+    renderer.setSize(w, h, false);
+    camera.aspect = w / h; camera.updateProjectionMatrix();
+  }
+  window.addEventListener("resize", redimensionner);
+
+  montrer();
+  redimensionner();
+  placerCamera();
+  (function boucle() {
+    if (orb.auto) orb.theta += 0.006;
+    placerCamera();
+    renderer.render(scene, camera);
+    requestAnimationFrame(boucle);
+  })();
+})();
+</script>
