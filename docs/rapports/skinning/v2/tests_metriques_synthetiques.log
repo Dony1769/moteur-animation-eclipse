@@ -1,0 +1,32 @@
+OK    T1a_translation_pas_d_etirement : max 1.000000000000
+OK    T1b_translation_residu_nul : résidu max 5.47e-16 m
+OK    T1c_translation_volume_inchange : variation 0.00e+00
+OK    T1d_bosse_detectee_par_residu : résidu max 19.62 mm (bosse 20 mm)
+OK    R1a_rotation_pas_d_etirement : max 1.000000000000 min 1.000000000000
+OK    R1b_rotation_residu_nul : résidu max 2.00e-16 m
+OK    R1c_rotation_zero_retournement_avec_repere : 0
+OK    R1d_rotation_faux_retournements_sans_repere : 64 (régression entrée 147)
+OK    R1e_non_rigide_residu_positif : résidu max 0.100 m
+OK    E1a_echelle_etirement_exact : max 1.200000000
+OK    E1b_echelle_volume_s3 : variation 0.728000000 attendu 0.728000000
+OK    E1c_sans_echelle_rien_detecte : aucune arête signalée
+OK    C1a_compression_detectee : min 0.700 ; arêtes < 0,9 : 4
+OK    C1b_compression_localisee : centre détecté [0.5 0.  0. ] attendu [0.5 0.  0. ]
+OK    C1c_bordure_etiree_valeur_exacte : arêtes > 1,1 : 4 ; max 1.300000000 (attendu 4 et 1,300000000)
+OK    C1d_pas_de_compression_sans_defaut : 0 arête
+OK    S1a_etirement_valeur_exacte : max 1.118034 attendu 1.118034
+OK    S1b_zone_limitee_aux_4_aretes : arêtes > 1,1 : 4 (attendu 4)
+OK    S1c_sommet_le_plus_touche_identifie : pire sommet 84 attendu 84
+OK    S1d_localisation_pres_du_sommet : localisation [0.562 0.    0.   ]
+OK    S1e_negatif_sans_deplacement : rien
+OK    I1a_petit_cube_dans_grand_detecte : 26 sur 26
+OK    I1b_profondeur_exacte : profondeur max 0.400000 attendu 0,400000
+OK    I1c_localisation_centre : localisation [-0. -0. -0.]
+OK    I1d_separes_rien_detecte : 0
+OK    V1a_volume_face_translatee : variation 0.050000 attendu 0.05
+OK    V1b_negatif_sans_changement : 0.00e+00
+OK    P1_rigide_quelconque_residu_nul : 9.57e-16
+OK    D1a_mouvement_rigide_de_l_os_residu_nul : résidu max 0.00e+00
+OK    D1b_melange_residu_exact : écart au calcul à la main 0.00e+00 ; résidu max 0.5000
+OK    D1c_melange_residu_positif : résidu max 0.5000 m
+RESULTAT OK

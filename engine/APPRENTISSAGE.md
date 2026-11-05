@@ -997,3 +997,15 @@ l'écart miroir du repos en premier, et le plan de symétrie par ajustement. Voi
 ## 122. Un passage de test sur une statistique de queue n'est pas une validation
 Changer le critère (p99 au lieu du maximum) peut faire passer un test sans que le défaut ait disparu. Déclarer ce que
 la nouvelle statistique ne voit pas, et conserver les extrêmes locaux dans le rapport. Voir erreurs entrée 154.
+
+## 123. Un attendu de test se vérifie indépendamment avant de changer
+Corriger un attendu parce que le code ne le donne pas est une erreur de méthode. Le corriger après un calcul à la main
+qui le justifie, en le documentant, est acceptable. Voir erreurs entrée 157.
+
+## 124. Mesurer un résidu sur le mouvement rigide de l'os dominant, pas sur le corps entier
+Un corps articulé n'est pas rigide dans son ensemble : le recalage global mesure le mouvement de l'articulation.
+Comparer chaque sommet au mouvement de son os dominant. Voir entrée 156.
+
+## 125. Le p99 ne valide jamais une déformation locale
+Un p99 proche de 1 peut coexister avec un maximum local de 8 (Maria). Présenter les deux, avec les comptages et la
+localisation. Voir entrée 158.

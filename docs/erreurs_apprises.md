@@ -1127,3 +1127,31 @@ Résultat (docs/rapports/phase4_psd_hanche_genou.json) : genou plis 0–4, étir
   polygone et tester la cause (poids, repos, pose) avant de conclure. Consigné dans `diagnostic_retournements_asymetrie.md`.
 - Mise en garde : un critère statistique plus souple (percentile 99) a fait passer Maria, mais il ne voit pas les
   étirements locaux maximaux. Son passage ne vaut pas validation anatomique.
+
+## 155. « Sommet le plus touché » classé par maximum : égalités sur les voisins
+- Constat : le test sur un sommet étiré (1,118) désignait un voisin, pas le sommet déplacé.
+- Cause : les quatre voisins partagent l'arête vers le sommet déplacé, donc ont le même rapport maximal (1,118).
+- Correction : classement par nombre d'arêtes étirées incidentes, puis par rapport maximal (`metriques_locales.defauts`).
+- Test : S1c, sommet identifié et 4 arêtes étirées.
+
+## 156. Résidu rigide global (Kabsch) inadapté à un corps articulé
+- Constat : le résidu après recalage rigide du corps entier atteignait 1 m à flex120.
+- Cause : la jambe fléchie n'est pas rigide par rapport au reste du corps. Ce n'est pas une déformation locale.
+- Correction : résidu par os dominant (`residu_os_dominant`) : écart entre la position posée et le mouvement rigide de
+  l'os qui domine chaque sommet. Test D1a–D1c (rigide : 0 ; mélange 50/50 : 0,5 exact).
+- Limite : au pli, le résidu inclut le mélange de bassin et de cuisse (16 cm à flex120). C'est le mélange, pas une erreur.
+
+## 157. Attendu de test faux, corrigé après vérification géométrique (pas réglé sur la sortie)
+- Constat : test C1c échouait (surface 5 000 cm² et 4 arêtes étirées), attendu « aucun étirement ».
+- Vérification à la main : l'arête entre un sommet fixe (0,5 m) et un sommet déplacé (0,175 m) passe de 0,25 à 0,325 m,
+  soit exactement 1,30. La déformation de test étire donc la bordure de la cuvette.
+- Correction : attendu corrigé (4 arêtes, 1,30 exact), avec la justification dans le test.
+- Règle : un attendu est corrigé seulement après calcul indépendant, jamais pour faire passer un test.
+- Conséquence sur la métrique : aucune ; la métrique était juste.
+
+## 158. Le p99 masque les défauts locaux (confirmé sur trois personnages)
+- Constat : p99 de l'étirement entre 1,00 et 1,25 sur les trois personnages, alors que le maximum local atteint 8,30
+  (Maria, hanche, LBS) et 3,29 (masculin, hanche, DQS).
+- Règle : aucune validation sur le p99 seul. Le maximum, les comptages à plusieurs seuils, la localisation et la capture
+  sont obligatoires (`comparer_v2.py`).
+- DQS : réduit les retournements et l'écart de volume, mais augmente le maximum d'étirement à la hanche.
