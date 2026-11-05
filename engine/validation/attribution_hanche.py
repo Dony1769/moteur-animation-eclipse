@@ -39,4 +39,3 @@ for vi in ratio_v:
 print("ATTRIB sommets_etires", len(ratio_v), "sur", len(R))
 print("ATTRIB os_dominant", bones.most_common(8))
 if zs: print("ATTRIB z_repos min/med/max", round(min(zs),3), round(sorted(zs)[len(zs)//2],3), round(max(zs),3))
-print("ATTRIB hanche_LeftUpLeg_tete_z", round(arm.matrix_world.translation.z + 0,3))
