@@ -465,3 +465,11 @@ Chaque erreur a une cause, une correction et un test. Une erreur corrigée doit 
 - Localisation : plis à z = 0,75–0,96 m, autour du centre de la hanche (0,873 m), donc sur la frontière entre tronc fixe et cuisse tournante, non sur la cuisse elle-même.
 - Lecture : une articulation à 3 DDL ne peut pas être ramenée à une seule rotation coaxiale ; une rotation purement coaxiale ne rend pas le mouvement de la sphère. La frontière tronc / cuisse demande soit un correctif de pose (ARAP, comme pour le bras en phase 4), soit une modification du maillage au pli de l'aine. Non résolu.
 - Outil : `engine/skinning/test_hanche_chaine.py`.
+
+## 82. Hanche : mélange de rotations (SBS) testé ; les 0 plis étaient un artefact
+- Méthode étudiée (source primaire, article de Kavan et al., I3D 2005 : https://users.cs.utah.edu/~ladislav/kavan05spherical/kavan05spherical.pdf) : au lieu de mélanger les matrices (LBS), on mélange les rotations en quaternions (QLERP) autour d'un centre de rotation ; la translation reste linéaire. Pour un pivot commun : v' = R(q(f))·(v − c) + c.
+- Implémentation : `engine/skinning/sbs_articulation.py`.
+- Piège : avec un champ en coquilles sphériques (r0 = 0,05 ; r1 = 0,15), on obtenait 0 pli à 90° et 120°, mais 23 sommets du tronc voisin bougeaient de 18 à 26 cm. Les plis étaient masqués par ce déplacement.
+- Variante corrigée (tronc au-dessus de la hanche bloqué) : 31 à 38 plis, déplacement du tronc 12 à 17 cm. Le problème n'est pas résolu.
+- Lecture : le point de contact est la frontière entre la cuisse proximale (dans le bassin) et le tronc (fixe). Un champ de poids ne suffit pas ; il faut un correctif de pose (ARAP ou formes-clés de la hanche), comme pour le bras en phase 4.
+- Règle retenue : un résultat « 0 pli » n'est valable que si les sommets voisins ne se déplacent pas de façon non anatomique. Toujours mesurer les déplacements du voisinage avant de conclure.

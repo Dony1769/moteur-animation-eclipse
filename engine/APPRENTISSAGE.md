@@ -692,3 +692,8 @@ Mesure LBS sans clé, bras gauche seul : 90° 24 -> 12 replis ; 120° 31 -> 19 ;
 
 ## 56. Hanche : échec de la chaîne seule
 - Une chaîne coaxiale traite une seule rotation ; la hanche est une sphère à 3 DDL. Les plis sont à la frontière tronc / cuisse. Quatre variantes testées, aucune sous 15 plis. Voir erreur 81.
+
+## 57. Recherche sur la hanche : SBS (rotations mélangées)
+- Source : Kavan et al. (I3D 2005), mélange de rotations par quaternions autour d'un centre de rotation. Supprime le rétrécissement de la LBS entre deux rotations.
+- Appliqué à la hanche : les plis ne disparaissent que si le tronc voisin se déplace de 12 à 26 cm, ce qui est non anatomique. Vérifier le voisinage avant de conclure (erreur 82).
+- Ce qui reste : un correctif de pose sur la frontière cuisse / tronc.
