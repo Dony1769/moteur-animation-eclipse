@@ -810,3 +810,13 @@ Résultat (docs/rapports/phase4_psd_hanche_genou.json) : genou plis 0–4, étir
 - Conclusion : la hanche n'est pas un artefact de statistique. Une part importante de la bande dépasse la traction
   mesurée au genou (15 %). La chaîne coaxiale seule ne suffit pas pour la hanche ; la répartition de l'étirement doit
   être revue (plus de nœuds, bande plus large, ou correctif de volume).
+
+## 124. Balayage B et K sur la chaîne coaxiale : K sans effet, B aide peu à la hanche
+- Test (engine/skinning/balayage_bande_hanche.py, docs/rapports/phase4_balayage_bande_hanche.json) : K ∈ {8, 16},
+  B ∈ {0,15, 0,25} m. Critère de bande fixe (10 cm).
+- Résultats : K ne change rien (écarts < 0,01). B = 0,25 m : hanche fraction > 1,15 = 20 % à 90° (contre 27 %), 26 % à
+  120° (contre 29 %). Genou témoin avec B = 0,25 : 0 % à 120°, p99 1,09.
+- Conclusion : augmenter le nombre de nœuds ne sert pas ; élargir la bande améliore peu la hanche. Le problème n'est pas
+  la résolution de la chaîne mais le transfert de l'étirement sur la face postérieure à la flexion de hanche. Une correction
+  géométrique ciblée (cible ARAP sur l'extenseur) ou un correctif de volume est nécessaire ; ni l'un ni l'autre n'est encore
+  validé pour la hanche.

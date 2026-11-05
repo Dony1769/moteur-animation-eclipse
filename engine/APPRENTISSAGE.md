@@ -898,3 +898,7 @@ Voir erreurs_apprises entrée 122.
 ## 98. Mesurer toute la bande avant de conclure
 Sur la hanche, la fraction d'arêtes au-dessus de la borne est 22 à 29 % : un échec net, pas un bruit de percentile. Le
 critère complet (n, médiane, p95, p99, fraction) doit être le seul rapport retenu. Voir erreurs_apprises entrée 123.
+
+## 99. Ne pas confondre résolution et physique : K n'agit pas, B aide peu
+Augmenter le nombre de nœuds d'une chaîne n'a pas réduit l'étirement de hanche. Élargir la bande aide peu. Le problème
+est la répartition de l'étirement côté extenseur, pas la résolution. Voir erreurs_apprises entrée 124.
