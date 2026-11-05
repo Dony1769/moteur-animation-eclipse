@@ -801,3 +801,12 @@ Résultat (docs/rapports/phase4_psd_hanche_genou.json) : genou plis 0–4, étir
   pas interdit. Le critère « étirement seulement dans la bande » reste pertinent, mais l'effectif doit être indiqué.
 - Méthode correcte : rapporter n (arêtes dans la bande), la médiane, le p95 et le p99, et la fraction au-dessus de la
   borne 1,15, puis conclure. Ne pas conclure sur un p99 d'effectif faible.
+
+## 123. Bande de hanche : 22 à 29 % des arêtes au-dessus de la borne 1,15 (échec réel)
+- Mesure complète (engine/skinning/mesure_bande_complete.py, docs/rapports/phase4_bande_complete.json), chaîne validée :
+  hanche : n = 82 arêtes ; médiane ≈ 1,01–1,03 ; p95 1,12 à 60° puis 1,50 à 120° ; fraction > 1,15 : 22 % (60°), 27 % (90–105°),
+  29 % (120°). Échec net sur la borne provisoire.
+- Genou : n = 140 ; médiane 0,99 ; p95 1,15 à 120° ; fraction > 1,15 : 5 % à 120°, 0 % à 60°. Proche de la borne.
+- Conclusion : la hanche n'est pas un artefact de statistique. Une part importante de la bande dépasse la traction
+  mesurée au genou (15 %). La chaîne coaxiale seule ne suffit pas pour la hanche ; la répartition de l'étirement doit
+  être revue (plus de nœuds, bande plus large, ou correctif de volume).

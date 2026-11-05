@@ -894,3 +894,7 @@ Une seule mesure (un sujet) donne une borne provisoire. Le transfert à une autr
 Un percentile sur quelques dizaines d'arêtes ne dit rien de stable. Rapporter l'effectif, la médiane, le p95, le p99 et la
 fraction au-dessus de la borne. L'étirement côté extenseur à la flexion est attendu : il se borne, il ne s'interdit pas.
 Voir erreurs_apprises entrée 122.
+
+## 98. Mesurer toute la bande avant de conclure
+Sur la hanche, la fraction d'arêtes au-dessus de la borne est 22 à 29 % : un échec net, pas un bruit de percentile. Le
+critère complet (n, médiane, p95, p99, fraction) doit être le seul rapport retenu. Voir erreurs_apprises entrée 123.

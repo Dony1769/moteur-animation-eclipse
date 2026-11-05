@@ -1,0 +1,92 @@
+[
+  {
+    "articulation": "genou",
+    "th": 60,
+    "n_aretes_bande": 140,
+    "mediane": 0.995,
+    "p95": 1.0583,
+    "p99": 1.0785,
+    "fraction_sup_borne": 0.0,
+    "borne": 1.15
+  },
+  {
+    "articulation": "genou",
+    "th": 90,
+    "n_aretes_bande": 140,
+    "mediane": 0.9924,
+    "p95": 1.0939,
+    "p99": 1.1345,
+    "fraction_sup_borne": 0.0071,
+    "borne": 1.15
+  },
+  {
+    "articulation": "genou",
+    "th": 105,
+    "n_aretes_bande": 140,
+    "mediane": 0.9907,
+    "p95": 1.1151,
+    "p99": 1.169,
+    "fraction_sup_borne": 0.0214,
+    "borne": 1.15
+  },
+  {
+    "articulation": "genou",
+    "th": 120,
+    "n_aretes_bande": 140,
+    "mediane": 0.9919,
+    "p95": 1.149,
+    "p99": 1.2061,
+    "fraction_sup_borne": 0.05,
+    "borne": 1.15
+  },
+  {
+    "articulation": "hanche",
+    "th": 30,
+    "n_aretes_bande": 82,
+    "mediane": 1.0074,
+    "p95": 1.1235,
+    "p99": 1.2058,
+    "fraction_sup_borne": 0.0122,
+    "borne": 1.15
+  },
+  {
+    "articulation": "hanche",
+    "th": 60,
+    "n_aretes_bande": 82,
+    "mediane": 1.0148,
+    "p95": 1.2479,
+    "p99": 1.4227,
+    "fraction_sup_borne": 0.2195,
+    "borne": 1.15
+  },
+  {
+    "articulation": "hanche",
+    "th": 90,
+    "n_aretes_bande": 82,
+    "mediane": 1.0221,
+    "p95": 1.3759,
+    "p99": 1.6401,
+    "fraction_sup_borne": 0.2683,
+    "borne": 1.15
+  },
+  {
+    "articulation": "hanche",
+    "th": 105,
+    "n_aretes_bande": 82,
+    "mediane": 1.0259,
+    "p95": 1.4398,
+    "p99": 1.7476,
+    "fraction_sup_borne": 0.2683,
+    "borne": 1.15
+  },
+  {
+    "articulation": "hanche",
+    "th": 120,
+    "n_aretes_bande": 82,
+    "mediane": 1.0304,
+    "p95": 1.5033,
+    "p99": 1.8539,
+    "fraction_sup_borne": 0.2927,
+    "borne": 1.15
+  }
+]
