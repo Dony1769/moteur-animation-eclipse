@@ -1100,3 +1100,12 @@ Comparer à la normale au repos crée de faux positifs sous rotation rigide. Voi
 ## 151. Deux mécanismes peuvent se superposer : les séparer par une expérience, pas par une corrélation
 La compression (moyenne des rotations) et la propagation (écart entre voisins) répondent différemment à la polaire.
 Voir entrée 194.
+
+## 152. Une identité se vérifie avec la cible exacte de la configuration mesurée
+Voir entrée 195.
+
+## 153. Une décomposition doit être indépendante du choix de l'origine
+Un découpage rotation / translation qui se compense n'a pas de sens physique. Voir entrée 196.
+
+## 154. Un effet global ne se lit pas dans la taille des résidus locaux
+Une corrélation par arête ne suffit pas à désigner une cause. Voir entrée 197.

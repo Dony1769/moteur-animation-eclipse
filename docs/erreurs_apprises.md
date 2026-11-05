@@ -1377,3 +1377,23 @@ Résultat (docs/rapports/phase4_psd_hanche_genou.json) : genou plis 0–4, étir
   moyenne. Mais la propagation vers les sommets purs augmente (0,34 h → 0,39 h).
 - Règle : deux phénomènes distincts (compression par moyenne non orthogonale ; propagation par écart de rotation entre
   voisins). Les traiter séparément ; supprimer l'un ne supprime pas l'autre.
+
+## 195. Une vérification d'identité doit utiliser exactement la cible de la configuration testée
+- Constat : l'identité δ = M⁻¹g échouait à 7,5 × 10⁻⁴ m, parce que le résidu utilisait la moyenne arithmétique des
+  rotations alors que la configuration testée utilisait la polaire. Après correction : 1,4 × 10⁻¹⁴ m.
+- Règle : toute identité algébrique se vérifie avec les mêmes entrées que la configuration mesurée, jamais avec une
+  variante voisine.
+
+## 196. Une décomposition « rotation / translation » d'un LBS d'arête dépend de l'origine des coordonnées
+- Constat : la partie translation Σ Δw·t_k et la partie rotation Σ Δw·R_k·r_c étaient grandes (≈ 17 h et 3,6 longueurs)
+  et se compensaient. Les valeurs n'avaient pas de sens physique séparé : elles dépendaient du choix de l'origine.
+- Correction : décomposition exacte et indépendante de l'origine, `lbs_a − lbs_c = Mv_a·d + G`, avec
+  `G = Σ_k (w_ak − w_ck)·T_k·r_c`. Identité vérifiée à 1,7 × 10⁻⁷ m.
+- Règle : ne pas décomposer un vecteur en termes dépendant d'une origine ; chercher une décomposition qui se
+  compense algébriquement ou qui a une interprétation indépendante du repère.
+
+## 197. La taille locale du résidu de cible ne prédit pas l'amplification SQ par arête
+- Constat : sur les 69 arêtes défectueuses, corrélation avec l'amplification de −0,26 pour le terme de gradient G et
+  de −0,01 pour le terme de rotation. À géométrie et poids fixes, varier l'angle des cuisses ne donne pas d'effet monotone.
+- Règle : l'amplification est un effet global du solveur, pas une somme de défauts locaux. Ne pas conclure à une
+  causalité locale à partir d'une corrélation par arête.

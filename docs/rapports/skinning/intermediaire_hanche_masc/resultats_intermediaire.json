@@ -1,0 +1,408 @@
+{
+ "zones_nb_sommets": {
+  "defauts_24": 24,
+  "voisin_1": 50,
+  "voisin_2": 82,
+  "large_6": 290
+ },
+ "bloc2": {
+  "A_LBS": {
+   "global": {
+    "etirement_max": 2.4713830769575034,
+    "etirement_p99": 1.185001269785174,
+    "retournements": 4,
+    "variation_volume": -0.04488601279755409
+   },
+   "zones": {
+    "defauts_24": {
+     "etirement": {
+      "max": 2.4713830769575034,
+      "p99": 2.4374708500748925,
+      "n_aretes": 69
+     },
+     "deplacement_sur_h_mediane": 0.0,
+     "triangles": {
+      "aire_min_SQ": 0.0842304168601053,
+      "aire_mediane_SQ": 0.877642366173368,
+      "anisotropie_mediane_SQ": 3.110807146072883,
+      "triangles_compression": 50,
+      "n_triangles": 81
+     }
+    },
+    "voisin_1": {
+     "etirement": {
+      "max": 2.4713830769575034,
+      "p99": 2.3874477900175446,
+      "n_aretes": 126
+     },
+     "deplacement_sur_h_mediane": 0.0,
+     "triangles": {
+      "aire_min_SQ": 0.0842304168601053,
+      "aire_mediane_SQ": 0.9772217232900371,
+      "anisotropie_mediane_SQ": 2.4593491407163874,
+      "triangles_compression": 74,
+      "n_triangles": 145
+     }
+    },
+    "voisin_2": {
+     "etirement": {
+      "max": 2.4713830769575034,
+      "p99": 2.289342418662696,
+      "n_aretes": 198
+     },
+     "deplacement_sur_h_mediane": 0.0,
+     "triangles": {
+      "aire_min_SQ": 0.0842304168601053,
+      "aire_mediane_SQ": 0.9986710456901865,
+      "anisotropie_mediane_SQ": 2.0232135654367105,
+      "triangles_compression": 110,
+      "n_triangles": 220
+     }
+    },
+    "large_6": {
+     "etirement": {
+      "max": 2.4713830769575034,
+      "p99": 2.065992958473833,
+      "n_aretes": 646
+     },
+     "deplacement_sur_h_mediane": 0.0,
+     "triangles": {
+      "aire_min_SQ": 0.047931176984558156,
+      "aire_mediane_SQ": 1.0005395653700755,
+      "anisotropie_mediane_SQ": 1.2536428697583124,
+      "triangles_compression": 287,
+      "n_triangles": 680
+     }
+    }
+   }
+  },
+  "B_SQ_arithmetique": {
+   "global": {
+    "etirement_max": 2.5895921229991896,
+    "etirement_p99": 1.1316694542326213,
+    "retournements": 1,
+    "variation_volume": -0.06866487045174535
+   },
+   "zones": {
+    "defauts_24": {
+     "etirement": {
+      "max": 2.5895921229991896,
+      "p99": 2.5894639907803474,
+      "n_aretes": 69
+     },
+     "deplacement_sur_h_mediane": 1.0130772869806297,
+     "triangles": {
+      "aire_min_SQ": 0.2376389383676655,
+      "aire_mediane_SQ": 0.9427755483015038,
+      "anisotropie_mediane_SQ": 2.878840446210316,
+      "triangles_compression": 45,
+      "n_triangles": 81
+     }
+    },
+    "voisin_1": {
+     "etirement": {
+      "max": 2.5895921229991896,
+      "p99": 2.571658799524027,
+      "n_aretes": 126
+     },
+     "deplacement_sur_h_mediane": 1.0356583807443198,
+     "triangles": {
+      "aire_min_SQ": 0.2376389383676655,
+      "aire_mediane_SQ": 1.0136852243219332,
+      "anisotropie_mediane_SQ": 2.2327159612923384,
+      "triangles_compression": 69,
+      "n_triangles": 145
+     }
+    },
+    "voisin_2": {
+     "etirement": {
+      "max": 2.5895921229991896,
+      "p99": 2.520553505548303,
+      "n_aretes": 198
+     },
+     "deplacement_sur_h_mediane": 1.1433226045513007,
+     "triangles": {
+      "aire_min_SQ": 0.2376389383676655,
+      "aire_mediane_SQ": 1.007603894358911,
+      "anisotropie_mediane_SQ": 1.924659614440237,
+      "triangles_compression": 108,
+      "n_triangles": 220
+     }
+    },
+    "large_6": {
+     "etirement": {
+      "max": 2.5895921229991896,
+      "p99": 2.0282325478301244,
+      "n_aretes": 646
+     },
+     "deplacement_sur_h_mediane": 1.3893231083646762,
+     "triangles": {
+      "aire_min_SQ": 0.2376389383676655,
+      "aire_mediane_SQ": 1.0081162754056328,
+      "anisotropie_mediane_SQ": 1.2945772708857084,
+      "triangles_compression": 329,
+      "n_triangles": 680
+     }
+    }
+   }
+  },
+  "C_SQ_polaire": {
+   "global": {
+    "etirement_max": 2.5915900013879014,
+    "etirement_p99": 1.1321266473263725,
+    "retournements": 1,
+    "variation_volume": -0.06857923683220095
+   },
+   "zones": {
+    "defauts_24": {
+     "etirement": {
+      "max": 2.5915900013879014,
+      "p99": 2.589181927531074,
+      "n_aretes": 69
+     },
+     "deplacement_sur_h_mediane": 1.0357578964716916,
+     "triangles": {
+      "aire_min_SQ": 0.2505818446234663,
+      "aire_mediane_SQ": 0.9494373145336559,
+      "anisotropie_mediane_SQ": 2.8691905511690585,
+      "triangles_compression": 45,
+      "n_triangles": 81
+     }
+    },
+    "voisin_1": {
+     "etirement": {
+      "max": 2.5915900013879014,
+      "p99": 2.5707151704327815,
+      "n_aretes": 126
+     },
+     "deplacement_sur_h_mediane": 1.0521852183377618,
+     "triangles": {
+      "aire_min_SQ": 0.2505818446234663,
+      "aire_mediane_SQ": 1.0134707633821383,
+      "anisotropie_mediane_SQ": 2.233397837692347,
+      "triangles_compression": 68,
+      "n_triangles": 145
+     }
+    },
+    "voisin_2": {
+     "etirement": {
+      "max": 2.5915900013879014,
+      "p99": 2.520794558322717,
+      "n_aretes": 198
+     },
+     "deplacement_sur_h_mediane": 1.1374280121982576,
+     "triangles": {
+      "aire_min_SQ": 0.2505818446234663,
+      "aire_mediane_SQ": 1.009555580269297,
+      "anisotropie_mediane_SQ": 1.926244352308486,
+      "triangles_compression": 107,
+      "n_triangles": 220
+     }
+    },
+    "large_6": {
+     "etirement": {
+      "max": 2.5915900013879014,
+      "p99": 2.035040769551858,
+      "n_aretes": 646
+     },
+     "deplacement_sur_h_mediane": 1.387306476079158,
+     "triangles": {
+      "aire_min_SQ": 0.24188289002383176,
+      "aire_mediane_SQ": 1.0097468466438975,
+      "anisotropie_mediane_SQ": 1.2948102643113604,
+      "triangles_compression": 328,
+      "n_triangles": 680
+     }
+    }
+   }
+  },
+  "D_C_propagation_separee": {
+   "global": {
+    "etirement_max": 2.5915900013879014,
+    "etirement_p99": 1.1321266473263725,
+    "retournements": 1,
+    "variation_volume": -0.06857923683220095
+   },
+   "zones": {
+    "defauts_24": {
+     "etirement": {
+      "max": 2.5915900013879014,
+      "p99": 2.589181927531074,
+      "n_aretes": 69
+     },
+     "deplacement_sur_h_mediane": 1.0357578964716916,
+     "triangles": {
+      "aire_min_SQ": 0.2505818446234663,
+      "aire_mediane_SQ": 0.9494373145336559,
+      "anisotropie_mediane_SQ": 2.8691905511690585,
+      "triangles_compression": 45,
+      "n_triangles": 81
+     }
+    },
+    "voisin_1": {
+     "etirement": {
+      "max": 2.5915900013879014,
+      "p99": 2.5707151704327815,
+      "n_aretes": 126
+     },
+     "deplacement_sur_h_mediane": 1.0521852183377618,
+     "triangles": {
+      "aire_min_SQ": 0.2505818446234663,
+      "aire_mediane_SQ": 1.0134707633821383,
+      "anisotropie_mediane_SQ": 2.233397837692347,
+      "triangles_compression": 68,
+      "n_triangles": 145
+     }
+    },
+    "voisin_2": {
+     "etirement": {
+      "max": 2.5915900013879014,
+      "p99": 2.520794558322717,
+      "n_aretes": 198
+     },
+     "deplacement_sur_h_mediane": 1.1374280121982576,
+     "triangles": {
+      "aire_min_SQ": 0.2505818446234663,
+      "aire_mediane_SQ": 1.009555580269297,
+      "anisotropie_mediane_SQ": 1.926244352308486,
+      "triangles_compression": 107,
+      "n_triangles": 220
+     }
+    },
+    "large_6": {
+     "etirement": {
+      "max": 2.5915900013879014,
+      "p99": 2.035040769551858,
+      "n_aretes": 646
+     },
+     "deplacement_sur_h_mediane": 1.387306476079158,
+     "triangles": {
+      "aire_min_SQ": 0.24188289002383176,
+      "aire_mediane_SQ": 1.0097468466438975,
+      "anisotropie_mediane_SQ": 1.2948102643113604,
+      "triangles_compression": 328,
+      "n_triangles": 680
+     }
+    }
+   },
+   "propagation_par_distance": {
+    "pur_G": {
+     "0": {
+      "n": 23,
+      "deplacement_SQ_LBS_sur_h_mediane": 0.8329480985394566
+     },
+     "1": {
+      "n": 10,
+      "deplacement_SQ_LBS_sur_h_mediane": 0.4916121661218026
+     }
+    },
+    "pur_D": {
+     "0": {
+      "n": 93,
+      "deplacement_SQ_LBS_sur_h_mediane": 0.378087262531827
+     },
+     "1": {
+      "n": 78,
+      "deplacement_SQ_LBS_sur_h_mediane": 0.08965791544881518
+     },
+     "2": {
+      "n": 70,
+      "deplacement_SQ_LBS_sur_h_mediane": 0.0029635645877898716
+     },
+     "3": {
+      "n": 74,
+      "deplacement_SQ_LBS_sur_h_mediane": 0.03718715822437005
+     },
+     "4": {
+      "n": 79,
+      "deplacement_SQ_LBS_sur_h_mediane": 0.029682224827742472
+     },
+     "5": {
+      "n": 87,
+      "deplacement_SQ_LBS_sur_h_mediane": 0.024079044287860233
+     },
+     "6": {
+      "n": 94,
+      "deplacement_SQ_LBS_sur_h_mediane": 0.017627138617999534
+     }
+    }
+   },
+   "deplacement_sur_h": {
+    "sommets_purs": 5.229355086046175e-06,
+    "sommets_mixtes": 0.320199345696494,
+    "interfaces": 0.3358404779139331
+   }
+  }
+ },
+ "bloc3": {
+  "nb_aretes_defaut": 69,
+  "effet_angle_geometrie_fixe": {
+   "0": {
+    "n": 138,
+    "amp_arith_mediane": 0.004135255663357538
+   },
+   "60": {
+    "n": 138,
+    "amp_arith_mediane": -0.012783371400673543
+   },
+   "120": {
+    "n": 138,
+    "amp_arith_mediane": 0.04006343234143411
+   }
+  },
+  "par_classe_arete": {
+   "mixte_asymetrique / mixte_asymetrique": {
+    "n": 270,
+    "amp_arith_mediane": 0.01086947302990688
+   },
+   "mixte_asymetrique / mixte_equilibre": {
+    "n": 102,
+    "amp_arith_mediane": -0.008949806446604152
+   },
+   "mixte_equilibre / mixte_equilibre": {
+    "n": 42,
+    "amp_arith_mediane": 0.06344691479799179
+   }
+  },
+  "regression": {
+   "variables": [
+    "ecart_angle",
+    "poids_G_moyen",
+    "gradient_poids",
+    "longueur_sur_h"
+   ],
+   "coefficients_standardises": [
+    0.0035967053391784613,
+    -0.03143693037650818,
+    0.03714375848281571,
+    0.04268086412031726
+   ],
+   "R2": 0.07820241550316631,
+   "avertissement": "régression exploratoire sur des arêtes d'un même maillage : aucune causalité établie"
+  }
+ },
+ "bloc4": {
+  "verification_identite_delta_M_inv_g_m": 1.4180700378090405e-14,
+  "norme_g_defauts_mediane": 0.009805983337533918,
+  "norme_g_purs_mediane": 4.125649267121171e-17,
+  "norme_g_purs_non_nuls_nb": 39,
+  "nb_sommets_purs": 9462,
+  "norme_g_interfaces_mediane": 1.340419564796734e-15,
+  "verification_identite_G_m": 1.697798873139672e-07,
+  "terme_gradient_G_sur_longueur_mediane": 0.5990600063829975,
+  "terme_rotation_sur_longueur_mediane": 0.32788222141011564,
+  "terme_rotation_sur_longueur_max": 0.5097660377686564,
+  "correlation_amp_arith_vs_terme_gradient": -0.2550404228344505,
+  "correlation_amp_arith_vs_terme_rotation": -0.008778008805053545,
+  "nb_aretes_defaut": 69,
+  "spectre_laplacien_plus_petites_valeurs": [
+   9.999999913011404e-09,
+   0.0002950037212079143,
+   0.00034613638495565517,
+   0.0006199041961953979,
+   0.0006958634392662087,
+   0.002567456898380295
+  ]
+ },
+ "pas_de_proprietes_injectees": "poids, géométrie, transformations originaux ; seul l'angle de chaque cuisse varie au bloc 3"
+}
