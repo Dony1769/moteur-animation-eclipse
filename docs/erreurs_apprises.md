@@ -820,3 +820,12 @@ Résultat (docs/rapports/phase4_psd_hanche_genou.json) : genou plis 0–4, étir
   la résolution de la chaîne mais le transfert de l'étirement sur la face postérieure à la flexion de hanche. Une correction
   géométrique ciblée (cible ARAP sur l'extenseur) ou un correctif de volume est nécessaire ; ni l'un ni l'autre n'est encore
   validé pour la hanche.
+
+## 125. Solveur à pas acceptés : arrêt silencieux au-delà de 90° (statistiques fausses)
+- Constat : le rapport injectif affichait zéro arête au-dessus de 1,15, mais la vérification montre que le bord distal
+  ne suit pas le mouvement rigide à 120° (écart médian 0,78 m ; exact à 60°). La pose est restée bloquée vers 90°.
+- Cause probable : le recul de pas (σ/2 jusqu'à 1/64) rejette tous les sous-pas qui inversent une face, et le solveur
+  s'arrête sans le signaler (break silencieux). Les mesures ont été prises sur une pose non atteinte.
+- Règles retenues : (1) vérifier que la pose atteint la cible (écart au mouvement imposé) avant toute statistique ;
+  (2) un arrêt de solveur doit être signalé et compté, jamais silencieux ; (3) réduire le pas de marche si le recul échoue.
+- Référence : engine/skinning/injectif_hanche.py ; docs/rapports/phase4_injectif_hanche.json (statut INVALIDE).

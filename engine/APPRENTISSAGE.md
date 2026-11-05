@@ -902,3 +902,7 @@ critère complet (n, médiane, p95, p99, fraction) doit être le seul rapport re
 ## 99. Ne pas confondre résolution et physique : K n'agit pas, B aide peu
 Augmenter le nombre de nœuds d'une chaîne n'a pas réduit l'étirement de hanche. Élargir la bande aide peu. Le problème
 est la répartition de l'étirement côté extenseur, pas la résolution. Voir erreurs_apprises entrée 124.
+
+## 100. Vérifier que la pose est atteinte avant de mesurer
+Un solveur qui s'arrête en silence donne des statistiques plausibles mais fausses. Avant toute mesure : vérifier l'écart
+au mouvement imposé, et signaler chaque arrêt. Voir erreurs_apprises entrée 125.
