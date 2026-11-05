@@ -758,3 +758,14 @@ Résultat (docs/rapports/phase4_psd_hanche_genou.json) : genou plis 0–4, étir
 - Méthode correcte : une correction doit varier de façon continue dans l'espace. La restriction à un côté se fait par
   une pondération lisse (fonction de Y bornée et dérivable, transition sur une distance), jamais par un masque dur.
   Vérifier la continuité (pas de saut de déplacement entre voisins) avant de mesurer les plis.
+
+## 119. Pondération spatiale lisse appliquée après coup : même défaut que le masque dur
+- Test : correction PSD multipliée par une transition lisse en Y (10 cm). Résultat : 304 à 341 plis, étirement hors bande
+  jusqu'à 1,76 (pire que le masque dur, entrée 118). Les sommets à mi-poids reçoivent une fraction du déplacement cible,
+  leurs voisins le plein : cisaillement entre voisins.
+- Cause : atténuer une correction déjà calculée ne la rend pas cohérente avec la cible. Lisser la transition ne suffit
+  pas. Le notes officielles de Lewis (PSDwebnotes) disent que la décroissance vers zéro doit venir du noyau interpolé
+  lui-même, pas d'un facteur appliqué après.
+- Méthode correcte : intégrer la restriction dans la cible elle-même, c'est-à-dire dans la résolution ARAP (ancres
+  souples : poids de fixation qui varie lisse dans l'espace, pris dans l'énergie), pas comme multiplicateur de sortie.
+  Vérifier ensuite la continuité et le témoin d'exactitude.

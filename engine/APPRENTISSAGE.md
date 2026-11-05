@@ -874,3 +874,8 @@ des plis postérieurs interdits que le DQS n'avait pas. Voir erreurs_apprises en
 ## 93. Pondération spatiale : lisse, jamais dure
 Une correction limitée à un côté par un masque binaire crée une discontinuité de déplacement au bord, donc des plis.
 La restriction doit être une transition lisse. Voir erreurs_apprises entrée 118.
+
+## 94. Ne pas atténuer une correction après coup : intégrer la restriction dans la cible
+Multiplier une correction par un poids spatial partiel crée un cisaillement entre voisins, quelle que soit la douceur de
+la transition (erreurs 118 et 119). La restriction doit être dans l'énergie de la cible (ancres souples), puis la
+correction reproduit cette cible. Voir erreurs_apprises entrée 119.
