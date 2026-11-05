@@ -1,0 +1,10 @@
+{
+  "objet": "coude : union booleenne (corps pose + sphere de jonction), manifold3d",
+  "methode": "corps pose (avant-bras rigide, bras fixe) union sphere de rayon Rs au centre du coude (icosphere subdiv 3) ; moteur manifold",
+  "corps_repos": {"ferme": true, "volume_m3": 0.0672, "orientation_coherente": true},
+  "resultats": {
+    "Rs_0.07": {"30": {"ferme": true, "volume": 0.0679, "faces": 22330}, "60": {"ferme": true, "volume": 0.0679, "faces": 22336}, "90": {"ferme": true, "volume": 0.0679, "faces": 22338}, "120": {"ferme": true, "volume": 0.0679, "faces": 22372}},
+    "Rs_0.08": {"30": {"ferme": true, "volume": 0.0685, "faces": 22296}, "60": {"ferme": true, "volume": 0.0685, "faces": 22300}, "90": {"ferme": true, "volume": 0.0685, "faces": 22300}, "120": {"ferme": true, "volume": 0.0685, "faces": 22308}}
+  },
+  "statut": "NON VALIDE. Le maillage est ferme a chaque angle (plus de trou) et le volume est conserve. Restent a mesurer : penetration visible apres union (pas encore mesuree sur la surface unie), plis, etirement sur les sommets d'origine, et validation Blender."
+}

@@ -561,3 +561,10 @@ Chaque erreur a une cause, une correction et un test. Une erreur corrigée doit 
 - Conclusion : supprimer les faces de couture ouvre un trou. La calotte doit être une géométrie cousue aux bords (faces de couture mesurées pour l'étirement).
 - Recherche : voir `docs/recherches_phase4.md` (pièces rigides prolongées et recouvertes, calotte générée).
 - Script : `engine/skinning/test_coude_couture.py`.
+
+## 94. Couture approximée par sommets voisins : 22 à 36 arêtes ouvertes, plis 8 à 31
+- Couture par triangles reliant chaque arête de bord aux sommets de sphère les plus proches : bords encore ouverts (22 à 36 arêtes), plis à 30 à 60° (8 à 31), étirement 1,00 trompeur (les bords ne sont pas reliés).
+- Méthode corrigée : union booléenne (Manifold via manifold3d) du corps posé et de la sphère de jonction. Résultat : maillage fermé à chaque angle, volume conservé (0,0679 à Rs 7 cm, 0,0685 à Rs 8 cm, repos 0,0672).
+- Leçon : un étirement de 1,00 sur des bords ouverts ne prouve rien. Vérifier d'abord que le maillage est fermé.
+- Reste à mesurer sur la surface unie : pénétration visible, plis, étirement, puis Blender.
+- Scripts : `engine/skinning/test_union_coude.py`. Rapport : `docs/rapports/phase4_coude_union.json`.

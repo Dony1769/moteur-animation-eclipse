@@ -28,3 +28,11 @@ puis sources non officielles (articles de praticiens, issues de projets) quand l
 2. La couture doit être une géométrie générée : une calotte (sphère ou disque) reliée aux deux bords ouverts.
 3. Mesures obligatoires : pénétration, plis retournés, étirement des faces de couture, ouverture de couture.
 4. Une calotte sans couture (trou) donne une ouverture de plusieurs centimètres : mesuré à 48-88 mm au coude (erreur 93).
+
+## Union booléenne (méthode retenue pour la couture)
+- Bibliothèque : Manifold (Emmett Lalish), https://github.com/elalish/manifold — licence Apache-2.0. Garantit une sortie
+  manifold pour les booléens, à condition que les entrées soient manifold (vérifié ici : le corps au repos est fermé).
+- Wrapper Python : trimesh 5.2 + manifold3d (installés par pip).
+- Résultat : l'union du corps posé et d'une sphère de jonction donne un maillage fermé à 30, 60, 90 et 120°, volume conservé.
+  C'est ce qui manquait aux couture approximées (erreurs 93 et 94).
+- Limite : la fermeture ne prouve pas l'absence de pénétration visible. Il faut mesurer la surface unie.

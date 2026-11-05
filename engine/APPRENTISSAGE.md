@@ -750,3 +750,8 @@ Mesure LBS sans clé, bras gauche seul : 90° 24 -> 12 replis ; 120° 31 -> 19 ;
 - Une coupure qui ne supprime aucune face n'est pas une coupure : vérifier le nombre de faces avant toute mesure (erreur 93).
 - Une couture sans géométrie ouvre un trou : mesurer l'ouverture, pas seulement la pénétration.
 - Recherche : au moins une source officielle, puis une source non officielle si l'officiel ne traite pas le problème ; noter les deux.
+
+## 69. Fermer le maillage avant de mesurer ; utiliser une union booléenne robuste
+- Un étirement de 1,00 sur un maillage ouvert ne prouve rien : vérifier d'abord la fermeture (arêtes de bord = 0).
+- Une couture par sommets voisins reste ouverte. Une union booléenne (Manifold, licence Apache-2.0, sortie manifold garantie) ferme le maillage à chaque angle.
+- Méthode : vérifier que l'entrée est fermée, faire l'union, vérifier la fermeture et le volume, puis mesurer la surface unie.
