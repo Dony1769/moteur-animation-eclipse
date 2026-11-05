@@ -649,3 +649,8 @@ Chaque erreur a une cause, une correction et un test. Une erreur corrigée doit 
 - Leçon : une correction chiffrée doit dépasser le bruit de la mesure ; sinon elle n'a pas d'effet démontrable. Et la base elle-même change avec l'angle (ensemble de sommets exposés), à corriger avant de comparer.
 - Conséquence : la sphère ne peut pas exprimer le pli. Il faut changer la géométrie de jonction (surface de pli explicite), pas seulement réduire la saillie.
 - Script : `engine/skinning/reference/correction_pose_flechisseur_coude.py`.
+
+## 107. Décision de méthode : peau continue (DQS) pour tout le corps, plus de segments rigides
+- Choix de l'utilisateur après les erreurs 99 à 106. Les segments rigides et la sphère de jonction ne peuvent pas produire le pli fléchisseur ni un étirement borné par jonction.
+- Méthode : skinning à quaternions duaux (Kavan et al. 2008, source officielle), correctives de pose aux articulations (PSD), même maillage et mêmes indices de sommets à chaque pose. La correspondance par sommet devient donc exacte, ce qui rend valides les mesures de pli et d'étirement.
+- Corrige : le pli par proximité (erreur 102) et la saillie constante (erreur 103).

@@ -813,3 +813,7 @@ Mesure LBS sans clé, bras gauche seul : 90° 24 -> 12 replis ; 120° 31 -> 19 ;
 - Réduire la saillie de la sphère selon une loi publiée n'a changé la médiane que de 0,01 à 0,03 cm, contre 0,5 cm de variation de base avec l'angle.
 - Avant de conclure à une correction, mesurer le bruit (variation de la base, classification des sommets). Si l'effet est plus petit, le résultat est négatif.
 - Une sphère ne peut pas exprimer un pli : il faut une géométrie de pli explicite.
+
+## 82. Passer à la peau continue : la correspondance par sommet rend les mesures valides
+- Avec une peau continue, le même sommet garde son index à chaque pose : plis et étirement se mesurent sans correspondance par proximité.
+- Le choix méthodologique est acté : DQS (officiel, Kavan 2008) puis correctives de pose (PSD).
