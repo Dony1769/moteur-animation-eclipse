@@ -889,3 +889,8 @@ erreurs_apprises entrée 120.
 Une borne d'étirement de peau doit venir d'une mesure sur peau vivante. Les mesures de fascia (cadavre) ne comptent pas.
 Une seule mesure (un sujet) donne une borne provisoire. Le transfert à une autre articulation est une extrapolation,
 à marquer comme telle. Voir docs/bornes_etirement.md et erreurs_apprises entrée 121.
+
+## 97. Statistique : effectif avant percentile
+Un percentile sur quelques dizaines d'arêtes ne dit rien de stable. Rapporter l'effectif, la médiane, le p95, le p99 et la
+fraction au-dessus de la borne. L'étirement côté extenseur à la flexion est attendu : il se borne, il ne s'interdit pas.
+Voir erreurs_apprises entrée 122.

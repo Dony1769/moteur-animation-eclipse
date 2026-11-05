@@ -791,3 +791,13 @@ Résultat (docs/rapports/phase4_psd_hanche_genou.json) : genou plis 0–4, étir
   +15 % de traction, un seul sujet (PMC6783393) ; cuisse médiale ±6 % à 90° (résumé Emerald). La hanche n'a pas de mesure.
 - Conséquence : la borne 1,15 est provisoire et ne s'applique sûrement qu'au genou. Hanche : extrapolation, marquée comme
   telle dans docs/bornes_etirement.md.
+
+## 122. Critère p99 dans la bande : statistique fondée sur très peu d'arêtes
+- Constat : à la hanche, la bande de 10 cm ne contient que 82 arêtes. Le p99 (1,85 à 120°) revient à l'arête la plus étirée.
+  Les 5 arêtes au-dessus du p95 sont toutes postérieures (y médian −0,075 m), côté fessier, donc côté extenseur.
+- Défaut : un p99 sur quelques dizaines d'arêtes est instable (une seule arête le fait bouger). Le critère de phase 4 doit
+  donner aussi l'effectif, la médiane et la fraction d'arêtes au-dessus de la borne, et une bande avec un effectif minimal.
+- Interprétation : un étirement côté extenseur (fessier) à la flexion est physiologiquement attendu ; il doit être borné,
+  pas interdit. Le critère « étirement seulement dans la bande » reste pertinent, mais l'effectif doit être indiqué.
+- Méthode correcte : rapporter n (arêtes dans la bande), la médiane, le p95 et le p99, et la fraction au-dessus de la
+  borne 1,15, puis conclure. Ne pas conclure sur un p99 d'effectif faible.
