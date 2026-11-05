@@ -1,0 +1,16 @@
+POSE L_flex90 LBS polygones_retournes 0 / 10590
+POSE L_flex120 LBS polygones_retournes 4 / 10590
+HAUTEUR_m min/median/max [0.757 0.864 0.947]
+X_m min/median/max [-2.259 -2.199 -2.133]
+OS_DOMINANT_SOMMETS [('mixamorig:LeftUpLeg', 15), ('mixamorig:Hips', 1)]
+TRANCHES_HAUTEUR [(0.6, 0.8, 1), (0.8, 0.9, 1), (0.9, 1.0, 2), (1.0, 1.2, 0), (1.2, 1.4, 0)]
+POSE L_genou90 LBS polygones_retournes 8 / 10590
+HAUTEUR_m min/median/max [0.464 0.484 0.499]
+X_m min/median/max [-2.171 -2.13  -2.093]
+OS_DOMINANT_SOMMETS [('mixamorig:LeftUpLeg', 19), ('mixamorig:LeftLeg', 13)]
+TRANCHES_HAUTEUR [(0.6, 0.8, 0), (0.8, 0.9, 0), (0.9, 1.0, 0), (1.0, 1.2, 0), (1.2, 1.4, 0)]
+POSE L_combo_flex120_genou90 LBS polygones_retournes 12 / 10590
+HAUTEUR_m min/median/max [0.464 0.498 0.947]
+X_m min/median/max [-2.259 -2.14  -2.093]
+OS_DOMINANT_SOMMETS [('mixamorig:LeftUpLeg', 34), ('mixamorig:LeftLeg', 13), ('mixamorig:Hips', 1)]
+TRANCHES_HAUTEUR [(0.6, 0.8, 1), (0.8, 0.9, 1), (0.9, 1.0, 2), (1.0, 1.2, 0), (1.2, 1.4, 0)]

@@ -970,3 +970,14 @@ entrées 144 et 145.
 Un test qui affiche « 0 défaut » doit d'abord prouver qu'il a vu la surface entière : comparer le nombre d'éléments mesurés
 au total du maillage. Un filtre implicite (ici « triangles seulement » sur un maillage en quads) peut rendre la métrique
 aveugle sans la moindre erreur. Voir erreurs_apprises entrée 146.
+
+## 117. Une rotation rigide n'est pas un retournement
+Comparer une normale posée à la normale de repos ne suffit pas dès que la pièce tourne de plus de 90° : le produit
+scalaire change de signe sans déformation. Comparer au repère rigide local (la rotation mélangée du sommet), identique
+pour toutes les méthodes. Voir erreurs_apprises entrée 147.
+
+## 118. Une hypothèse de cause se teste seule, et se note avant la mesure
+Dans une comparaison de méthodes, on ne change qu'une chose à la fois (les poids, ou la méthode, jamais les deux), et
+l'hypothèse est écrite avant la mesure. L'hypothèse « transition de poids trop brusque » a été réfutée : le lissage a
+dégradé l'étirement. Le résultat négatif est conservé dans `docs/rapports/skinning/experience_poids_lissage.json`.
+Un chiffre plus favorable ne suffit pas : vérifier aussi le volume, les sommets aberrants et la capture visuelle.

@@ -1050,3 +1050,30 @@ Résultat (docs/rapports/phase4_psd_hanche_genou.json) : genou plis 0–4, étir
 - Résultat (mêmes entrées, `docs/rapports/hanche_banc_reference.json`) : 90° : 28 triangles retournés, volume −2,7 % ;
   120° : 1 662 retournés, volume −4,5 %. L'ancien rapport est conservé sous `hanche_banc_reference_avant_correction_triangles.json`.
 - Règle : avant de conclure « zéro défaut » sur une métrique, compter les éléments mesurés et les comparer au total du maillage.
+
+## 147. Retournements mesurés contre le repos brut : faux positifs à toute rotation de plus de 90°
+- Constat : à 120° de flexion, le banc annonçait 828 polygones retournés (LBS) et 1 662 dans le rapport de la hanche
+  (entrée 146). Les méthodes DQS et hybrides donnaient le même ordre de grandeur. Le chiffre ne baissait avec aucune méthode.
+- Cause réelle : la normale posée était comparée à la normale de repos brute. Une rotation rigide de 120° autour de X
+  envoie une normale presque horizontale vers l'arrière : son produit scalaire avec la normale de repos devient négatif
+  sans aucune déformation. Les polygones concernés sont les pieds, les cuisses et les jambes (tous tournés).
+- Correction : normale attendue = normale de repos tournée par la rotation locale mélangée du sommet (moyenne sur le
+  polygone, `methodes.repere_rigide`). Même repère pour toutes les méthodes. Test de régression : `test_skinning.py`,
+  tests 5 et 5b (un cube tourné de 120° : 0 retournement avec le repère rigide, 4 sans).
+- Résultat : 828 → 4 retournements (LBS, 120°) ; 822 → 1 (DQS). Les chiffres « brut » de l'entrée 146 et du rapport
+  `docs/rapports/hanche_banc_reference.json` sont faux pour cette raison. Ne plus les citer.
+
+## 148. Haute résolution : transfert de poids par plus proche sommet, erreur de 5,5 cm au maximum
+- Constat : le contrôle LBS sur le maillage MULTIRES (677 000 sommets) reproduit Blender avec une erreur médiane de
+  3e-8 m, mais une erreur maximale de 5,5 cm à 120°, et 0,4 % des sommets au-dessus de 1 cm.
+- Cause : les poids du maillage haute résolution sont pris au sommet de base le plus proche. Le transfert ne reproduit
+  pas la pondération que Blender calcule sur le maillage subdivisé, surtout à l'entrejambe.
+- Interpolation sur les 3 sommets les plus proches : max 4,7 cm, insuffisant.
+- Règle : les mesures haute résolution ne sont pas comparables au pourcent près tant que les poids ne viennent pas de
+  l'évaluation Blender elle-même (Data Transfer sur le maillage appliqué). Déclaré dans le rapport, non résolu.
+
+## 149. Signe de rotation mesuré sur un point situé sur l'axe de la cuisse : test impossible
+- Constat : la détection du signe de rotation externe échouait dans les deux sens (aucun déplacement mesuré).
+- Cause : la rotation autour de l'axe de la cuisse ne déplace pas le pied, qui est sur cet axe. Le rig n'a pas d'os
+  d'orteil (19 os).
+- Correction : mesure du bout de l'os du pied (`tail`), décalé vers l'avant. Signes détectés, identiques des deux côtés.

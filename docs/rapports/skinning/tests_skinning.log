@@ -1,0 +1,10 @@
+OK    1_quaternion_aller_retour : erreur max 8.88e-16
+OK    2_lbs_formule : erreur 2.78e-16
+OK    3a_dqs_un_os_egal_lbs : erreur 2.66e-15
+OK    3b_dqs_translation_egal_lbs : erreur 4.44e-16
+OK    4_hybride_extremites : erreurs 0.00e+00 0.00e+00
+OK    5_retournement_rigide_zero : rigide 0 ; brut 4
+OK    5b_brut_detecte_faux_positifs : brut 4 (entrée 147 : faux positifs)
+OK    6_volume_cube_unitaire : volume 1.000000
+OK    7_lbs_vs_blender : 28 poses ; erreur max 6.55e-07 m
+RESULTAT OK

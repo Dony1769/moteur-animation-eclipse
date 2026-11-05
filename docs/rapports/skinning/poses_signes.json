@@ -1,0 +1,435 @@
+{
+  "entree": "/tmp/claude-0/-home-claude/9ce8e1e5-f7cf-5619-8a75-3c6d9a11ab1c/scratchpad/corps_skin.blend",
+  "objet": "GEO-body_male_realistic",
+  "os": [
+    "mixamorig:Hips",
+    "mixamorig:Spine",
+    "mixamorig:Spine1",
+    "mixamorig:Neck",
+    "mixamorig:Head",
+    "mixamorig:LeftShoulder",
+    "mixamorig:LeftArm",
+    "mixamorig:LeftForeArm",
+    "mixamorig:LeftHand",
+    "mixamorig:RightShoulder",
+    "mixamorig:RightArm",
+    "mixamorig:RightForeArm",
+    "mixamorig:RightHand",
+    "mixamorig:LeftUpLeg",
+    "mixamorig:LeftLeg",
+    "mixamorig:LeftFoot",
+    "mixamorig:RightUpLeg",
+    "mixamorig:RightLeg",
+    "mixamorig:RightFoot"
+  ],
+  "methode_controle": "Blender ARMATURE, maillage de base",
+  "ignores_groupes_non_os": 0,
+  "signes": {
+    "Left": {
+      "flexion_hanche": -1.0,
+      "genou": 1.0,
+      "abduction": 1.0,
+      "rotation_externe": -1.0
+    },
+    "Right": {
+      "flexion_hanche": -1.0,
+      "genou": 1.0,
+      "abduction": 1.0,
+      "rotation_externe": -1.0
+    }
+  },
+  "poses": {
+    "L_flex30": {
+      "angles_deg": {
+        "mixamorig:LeftUpLeg": [
+          -30.0,
+          -0.0,
+          0.0
+        ],
+        "mixamorig:LeftLeg": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "L_flex60": {
+      "angles_deg": {
+        "mixamorig:LeftUpLeg": [
+          -60.0,
+          -0.0,
+          0.0
+        ],
+        "mixamorig:LeftLeg": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "L_flex90": {
+      "angles_deg": {
+        "mixamorig:LeftUpLeg": [
+          -90.0,
+          -0.0,
+          0.0
+        ],
+        "mixamorig:LeftLeg": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "L_flex120": {
+      "angles_deg": {
+        "mixamorig:LeftUpLeg": [
+          -120.0,
+          -0.0,
+          0.0
+        ],
+        "mixamorig:LeftLeg": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "L_abd30": {
+      "angles_deg": {
+        "mixamorig:LeftUpLeg": [
+          -0.0,
+          -0.0,
+          30.0
+        ],
+        "mixamorig:LeftLeg": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "L_add20": {
+      "angles_deg": {
+        "mixamorig:LeftUpLeg": [
+          -0.0,
+          -0.0,
+          -20.0
+        ],
+        "mixamorig:LeftLeg": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "L_ext30": {
+      "angles_deg": {
+        "mixamorig:LeftUpLeg": [
+          -0.0,
+          -30.0,
+          0.0
+        ],
+        "mixamorig:LeftLeg": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "L_int30": {
+      "angles_deg": {
+        "mixamorig:LeftUpLeg": [
+          -0.0,
+          30.0,
+          0.0
+        ],
+        "mixamorig:LeftLeg": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "L_genou30": {
+      "angles_deg": {
+        "mixamorig:LeftUpLeg": [
+          -0.0,
+          -0.0,
+          0.0
+        ],
+        "mixamorig:LeftLeg": [
+          30.0,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "L_genou60": {
+      "angles_deg": {
+        "mixamorig:LeftUpLeg": [
+          -0.0,
+          -0.0,
+          0.0
+        ],
+        "mixamorig:LeftLeg": [
+          60.0,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "L_genou90": {
+      "angles_deg": {
+        "mixamorig:LeftUpLeg": [
+          -0.0,
+          -0.0,
+          0.0
+        ],
+        "mixamorig:LeftLeg": [
+          90.0,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "L_combo_flex90_abd30_ext30": {
+      "angles_deg": {
+        "mixamorig:LeftUpLeg": [
+          -90.0,
+          -30.0,
+          30.0
+        ],
+        "mixamorig:LeftLeg": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "L_combo_flex120_genou90": {
+      "angles_deg": {
+        "mixamorig:LeftUpLeg": [
+          -120.0,
+          -0.0,
+          0.0
+        ],
+        "mixamorig:LeftLeg": [
+          90.0,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "L_combo_flex60_abd20_int20_genou60": {
+      "angles_deg": {
+        "mixamorig:LeftUpLeg": [
+          -60.0,
+          20.0,
+          20.0
+        ],
+        "mixamorig:LeftLeg": [
+          60.0,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "R_flex30": {
+      "angles_deg": {
+        "mixamorig:RightUpLeg": [
+          -30.0,
+          -0.0,
+          0.0
+        ],
+        "mixamorig:RightLeg": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "R_flex60": {
+      "angles_deg": {
+        "mixamorig:RightUpLeg": [
+          -60.0,
+          -0.0,
+          0.0
+        ],
+        "mixamorig:RightLeg": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "R_flex90": {
+      "angles_deg": {
+        "mixamorig:RightUpLeg": [
+          -90.0,
+          -0.0,
+          0.0
+        ],
+        "mixamorig:RightLeg": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "R_flex120": {
+      "angles_deg": {
+        "mixamorig:RightUpLeg": [
+          -120.0,
+          -0.0,
+          0.0
+        ],
+        "mixamorig:RightLeg": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "R_abd30": {
+      "angles_deg": {
+        "mixamorig:RightUpLeg": [
+          -0.0,
+          -0.0,
+          30.0
+        ],
+        "mixamorig:RightLeg": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "R_add20": {
+      "angles_deg": {
+        "mixamorig:RightUpLeg": [
+          -0.0,
+          -0.0,
+          -20.0
+        ],
+        "mixamorig:RightLeg": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "R_ext30": {
+      "angles_deg": {
+        "mixamorig:RightUpLeg": [
+          -0.0,
+          -30.0,
+          0.0
+        ],
+        "mixamorig:RightLeg": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "R_int30": {
+      "angles_deg": {
+        "mixamorig:RightUpLeg": [
+          -0.0,
+          30.0,
+          0.0
+        ],
+        "mixamorig:RightLeg": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "R_genou30": {
+      "angles_deg": {
+        "mixamorig:RightUpLeg": [
+          -0.0,
+          -0.0,
+          0.0
+        ],
+        "mixamorig:RightLeg": [
+          30.0,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "R_genou60": {
+      "angles_deg": {
+        "mixamorig:RightUpLeg": [
+          -0.0,
+          -0.0,
+          0.0
+        ],
+        "mixamorig:RightLeg": [
+          60.0,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "R_genou90": {
+      "angles_deg": {
+        "mixamorig:RightUpLeg": [
+          -0.0,
+          -0.0,
+          0.0
+        ],
+        "mixamorig:RightLeg": [
+          90.0,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "R_combo_flex90_abd30_ext30": {
+      "angles_deg": {
+        "mixamorig:RightUpLeg": [
+          -90.0,
+          -30.0,
+          30.0
+        ],
+        "mixamorig:RightLeg": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "R_combo_flex120_genou90": {
+      "angles_deg": {
+        "mixamorig:RightUpLeg": [
+          -120.0,
+          -0.0,
+          0.0
+        ],
+        "mixamorig:RightLeg": [
+          90.0,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "R_combo_flex60_abd20_int20_genou60": {
+      "angles_deg": {
+        "mixamorig:RightUpLeg": [
+          -60.0,
+          20.0,
+          20.0
+        ],
+        "mixamorig:RightLeg": [
+          60.0,
+          0.0,
+          0.0
+        ]
+      }
+    }
+  }
+}

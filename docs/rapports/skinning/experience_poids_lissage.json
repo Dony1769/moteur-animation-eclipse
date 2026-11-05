@@ -1,0 +1,191 @@
+{
+  "bande_z_m": [
+    0.6,
+    1.15
+  ],
+  "lambda": 0.5,
+  "iterations": 5,
+  "sommets_lisses": 2747,
+  "poses": {
+    "L_flex90": {
+      "LBS|poids_origine": {
+        "etirement_max": 2.1054468764473664,
+        "etirement_p99": 1.1536602670122602,
+        "sommets_aberrants": 53,
+        "variation_volume_relative": -0.027012524179403887,
+        "polygones_retournes": 0
+      },
+      "DQS|poids_origine": {
+        "etirement_max": 2.472234659779497,
+        "etirement_p99": 1.1758996601737557,
+        "sommets_aberrants": 74,
+        "variation_volume_relative": 0.009852321776875159,
+        "polygones_retournes": 0
+      },
+      "LBS|poids_lisses": {
+        "etirement_max": 2.1304492628377507,
+        "etirement_p99": 1.1501268138328506,
+        "sommets_aberrants": 35,
+        "variation_volume_relative": -0.030521354563814267,
+        "polygones_retournes": 0
+      },
+      "DQS|poids_lisses": {
+        "etirement_max": 2.511092953408312,
+        "etirement_p99": 1.16962869145137,
+        "sommets_aberrants": 63,
+        "variation_volume_relative": 0.00928845303546935,
+        "polygones_retournes": 0
+      }
+    },
+    "L_flex120": {
+      "LBS|poids_origine": {
+        "etirement_max": 2.4713829903400635,
+        "etirement_p99": 1.1850002034548963,
+        "sommets_aberrants": 86,
+        "variation_volume_relative": -0.04488605156324264,
+        "polygones_retournes": 4
+      },
+      "DQS|poids_origine": {
+        "etirement_max": 3.2882017187556603,
+        "etirement_p99": 1.2497670813810478,
+        "sommets_aberrants": 130,
+        "variation_volume_relative": 0.012665661899851357,
+        "polygones_retournes": 1
+      },
+      "LBS|poids_lisses": {
+        "etirement_max": 2.5041336070378732,
+        "etirement_p99": 1.1749275892524134,
+        "sommets_aberrants": 54,
+        "variation_volume_relative": -0.04985304628702215,
+        "polygones_retournes": 2
+      },
+      "DQS|poids_lisses": {
+        "etirement_max": 3.3438648089960132,
+        "etirement_p99": 1.2514854584216621,
+        "sommets_aberrants": 112,
+        "variation_volume_relative": 0.012021070903117425,
+        "polygones_retournes": 0
+      }
+    },
+    "L_genou90": {
+      "LBS|poids_origine": {
+        "etirement_max": 1.1955209325024252,
+        "etirement_p99": 1.019842025880943,
+        "sommets_aberrants": 0,
+        "variation_volume_relative": -0.011300762019934792,
+        "polygones_retournes": 8
+      },
+      "DQS|poids_origine": {
+        "etirement_max": 1.2767717755183527,
+        "etirement_p99": 1.0097123374075088,
+        "sommets_aberrants": 0,
+        "variation_volume_relative": -0.008266411690446855,
+        "polygones_retournes": 4
+      },
+      "LBS|poids_lisses": {
+        "etirement_max": 1.1955212693652155,
+        "etirement_p99": 1.018428864646711,
+        "sommets_aberrants": 0,
+        "variation_volume_relative": -0.011583647367193018,
+        "polygones_retournes": 8
+      },
+      "DQS|poids_lisses": {
+        "etirement_max": 1.2767717755183527,
+        "etirement_p99": 1.0097123374075088,
+        "sommets_aberrants": 0,
+        "variation_volume_relative": -0.008514242820270322,
+        "polygones_retournes": 4
+      }
+    },
+    "L_combo_flex120_genou90": {
+      "LBS|poids_origine": {
+        "etirement_max": 2.4713829903400635,
+        "etirement_p99": 1.185170103318396,
+        "sommets_aberrants": 86,
+        "variation_volume_relative": -0.05618702235972356,
+        "polygones_retournes": 12
+      },
+      "DQS|poids_origine": {
+        "etirement_max": 3.2882017187556603,
+        "etirement_p99": 1.2527965000254675,
+        "sommets_aberrants": 130,
+        "variation_volume_relative": 0.004398969586858142,
+        "polygones_retournes": 5
+      },
+      "LBS|poids_lisses": {
+        "etirement_max": 2.5041336070378732,
+        "etirement_p99": 1.1821130903870583,
+        "sommets_aberrants": 54,
+        "variation_volume_relative": -0.061452968545074094,
+        "polygones_retournes": 10
+      },
+      "DQS|poids_lisses": {
+        "etirement_max": 3.3438648089960132,
+        "etirement_p99": 1.2526099832989304,
+        "sommets_aberrants": 112,
+        "variation_volume_relative": 0.0034910782677106205,
+        "polygones_retournes": 4
+      }
+    },
+    "R_flex120": {
+      "LBS|poids_origine": {
+        "etirement_max": 2.485443739511555,
+        "etirement_p99": 1.1822563710389185,
+        "sommets_aberrants": 86,
+        "variation_volume_relative": -0.044057458310926986,
+        "polygones_retournes": 5
+      },
+      "DQS|poids_origine": {
+        "etirement_max": 3.1970028764327174,
+        "etirement_p99": 1.244215288212584,
+        "sommets_aberrants": 127,
+        "variation_volume_relative": 0.013626788495244933,
+        "polygones_retournes": 1
+      },
+      "LBS|poids_lisses": {
+        "etirement_max": 2.607061817142044,
+        "etirement_p99": 1.1754402351179678,
+        "sommets_aberrants": 56,
+        "variation_volume_relative": -0.0489250722673251,
+        "polygones_retournes": 2
+      },
+      "DQS|poids_lisses": {
+        "etirement_max": 3.2677145865554587,
+        "etirement_p99": 1.2492558499171247,
+        "sommets_aberrants": 109,
+        "variation_volume_relative": 0.013007181310033176,
+        "polygones_retournes": 0
+      }
+    },
+    "R_genou90": {
+      "LBS|poids_origine": {
+        "etirement_max": 1.1808087081472824,
+        "etirement_p99": 1.0177312657147841,
+        "sommets_aberrants": 0,
+        "variation_volume_relative": -0.011451999376417707,
+        "polygones_retournes": 8
+      },
+      "DQS|poids_origine": {
+        "etirement_max": 1.2764917657174772,
+        "etirement_p99": 1.008734883570642,
+        "sommets_aberrants": 0,
+        "variation_volume_relative": -0.008621574420517406,
+        "polygones_retournes": 5
+      },
+      "LBS|poids_lisses": {
+        "etirement_max": 1.180807627932757,
+        "etirement_p99": 1.0174182154900453,
+        "sommets_aberrants": 0,
+        "variation_volume_relative": -0.01176377671032062,
+        "polygones_retournes": 8
+      },
+      "DQS|poids_lisses": {
+        "etirement_max": 1.2764917657174772,
+        "etirement_p99": 1.0087348835706413,
+        "sommets_aberrants": 0,
+        "variation_volume_relative": -0.008896467847217919,
+        "polygones_retournes": 5
+      }
+    }
+  }
+}
