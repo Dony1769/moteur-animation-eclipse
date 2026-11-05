@@ -109,3 +109,16 @@ Date : 2026-11-05. Objectif : sourcer les amplitudes actives de référence adul
 - Application prévue : pli fléchisseur (côté bassin-cuisse, zone où la référence X-Bot place son étirement) avec amplitude
   issue de la compression mesurée ; l'étirement côté extenseur reste borné par la rampe.
 - Statut : pas encore implémenté ; à valider avec le critère complet et la zone de pli acceptable.
+
+## Recherche : centres de rotation optimisés (Le & Hodgins 2016), tour du 2026-11-05
+- Officiel, PDF Disney Research (la.disneyresearch.com/...Paper.pdf) : échec client (erreur d'accès), page non lue.
+- Officiel, page Disney (studios.disneyresearch.com/?p=39548) : non lue en détail dans ce tour.
+- Académique, Bittner 2019 « Evaluation of Optimised Centres of Rotation Skinning » (TU Braunschweig) : bloqué par robots.txt ;
+  non lu (et on ne contourne pas un blocage).
+- Non officiel, Belgrod (dbelgrod.com/project/blend-skinning) : bloqué par robots.txt ; non lu.
+- Non officiel, dépôts GitHub AvatarWorld/OptimisedCentresOfRotationSkinning et damian0815/skellington (C++, implémentations
+  de Le & Hodgins) : lus au niveau de la page d'accueil seulement (dossiers include/cor, src, shader). Le code source de
+  l'optimisation n'a pas encore été lu.
+- Secondaire, phys.org (2016) : déjà connu.
+- Conclusion : la méthode exacte (objectif, contraintes sur les centres, traitement des retournements) n'est pas encore lue.
+  Prochaine étape : lire le code source de src/ et include/cor/ du dépôt AvatarWorld (non officiel, à citer comme tel).
