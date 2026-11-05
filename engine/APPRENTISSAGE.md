@@ -717,3 +717,9 @@ Mesure LBS sans clé, bras gauche seul : 90° 24 -> 12 replis ; 120° 31 -> 19 ;
 - Mesure retenue : distance signée à la face la plus proche du reste du corps. Elle doit passer un contrôle positif (forcer un membre dans le tronc) avant d'être crue.
 - Le repos peut contenir des chevauchements du maillage source. Les compter comme défauts de la pose fausse le résultat : on compare à la pose de repos (pénétrations nouvelles seulement).
 - Pour une articulation, la pénétration se joue dans la calotte de jonction. Une bande de poids ne suffit pas : les segments durs suppriment la pénétration mais ouvrent des fentes (variante testée au coude).
+
+## 62. Chaque jonction a un sens : bornes avant tout calcul
+- Une articulation n'autorise qu'un ensemble de mouvements. Le modèle doit refuser une pose hors de cet ensemble avant de mesurer le reste (erreur 87).
+- Source officielle des bornes : CDC / NCHS (jeu de données sur les amplitudes normales, 674 sujets). Les fiches et les sites de révision ne suffisent pas.
+- Le squelette de référence X-Bot donne les centres et les axes de flexion. Il faut le lire dans Blender (lecture des axes locaux des os) avant de poser une chaîne.
+- Une jonction se pose sur ses axes réels, pas sur un axe fixe commun à tous les membres.

@@ -509,3 +509,10 @@ Chaque erreur a une cause, une correction et un test. Une erreur corrigée doit 
   - le repos lui-même chevauche au pli du coude (l'avant-bras commence dans le bras) : on ne compte que les pénétrations *nouvelles* par rapport au repos.
 - Résultat coude (pénétrations nouvelles, chaîne actuelle B = 0,10) : 60° : 17 ; 90° : 5 ; 105° : 2 ; 120° : 0. Le critère de plis disait 0 partout.
 - Variante « segments durs » (sans bande) : 0 pénétration de 60° à 120°, mais des fentes et des plis à la jonction. Il faut donc une calotte rigide au centre de la jonction, pas seulement une bande de poids.
+
+## 87. Le coude pliait vers l'arrière : aucune limite anatomique dans le modèle
+- Constat : le modèle accepte n'importe quel angle. Au coude à −10° (hyperextension), 5 sommets de l'avant-bras pénètrent le bras.
+- Cause : les chaînes de jonctions n'ont pas de bornes de mouvement ; seules des amplitudes positives ont été testées.
+- Méthode : bornes par articulation tirées du jeu officiel CDC / NCHS (674 sujets), dans `engine/skinning/limites_articulations.py`.
+- Mesure, six articulations, amplitudes normales : pénétrations nouvelles présentes partout sauf poignet (voir `docs/squelette_xbot_articulations.md`).
+- Lacune : abduction de hanche, abduction et élévation de l'épaule, poignet : aucune valeur officielle trouvée. Marquées « non vérifié ».
