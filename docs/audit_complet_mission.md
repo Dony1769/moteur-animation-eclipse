@@ -167,3 +167,20 @@ engine/
 - Relancer les tests `engine/validation/` qui dépendent des assets (le reste n'a pas été revérifié cette session).
 - Inspecter les textures des modèles Ara (images, pas seulement le nombre de matériaux).
 - Mesurer le temps de rendu réel sur une scène d'épisode, et non sur une image de combat.
+
+## 5. Mise à jour (5 novembre 2026)
+
+Relecture de la mission (pièce jointe 435d1225, 15 phases, tests A = Maria et B = FBX sans skinning). Le contenu de la section 3 ci-dessus correspond à cette mission : l'item « liste d'étapes non reçue » du plan est donc levé.
+
+Corrections apportées à cette relecture :
+- Le plan est déjà écrit (`docs/plan_mission_autonome.md`, commit 2b5f81d). L'affirmation selon laquelle l'audit et le plan n'existaient pas était fausse ; ils sont là, et cette section les met à jour.
+- Environnement de cette session : Blender n'est pas installé (`bpy` absent). Les tests marqués « Vérifié » qui dépendent de Blender (importeur, rig HBM, tests Maria) n'ont donc pas pu être relancés ici. Leur statut reste celui des sessions précédentes, avec le commit cité ; à relancer dès que Blender est disponible.
+- Le test de classification extérieure/intérieure (`engine/texturing/test_surface_exterieure.py`, commit f2a4123) est relancé en arrière-plan ; son résultat n'est pas encore connu et n'est pas compté comme validé.
+
+Ordre de travail retenu (inchangé dans le fond, précisé) :
+1. Phase 4 : résidu de la jambe au genou ; critère d'acceptation à fixer avant d'élargir les poses.
+2. Phase 2 : diagnostic à 14 points sur une copie normalisée, rapport par personnage (Blender requis).
+3. Phase 3 : construction d'armature à partir de la géométrie pour d'autres corps que HBM.
+4. Phases 5 à 15 : après les étapes précédentes, dans l'ordre du plan.
+
+Rien de ce qui suit n'est déclaré fait par cette mise à jour : elle ne contient aucun nouveau résultat de test.
