@@ -1,0 +1,9 @@
+{
+  "objet": "genou et cheville : charniere sur axe X (jambe verticale, axe non defini par les os)",
+  "genou_sans_sphere_sens_moins": {"30": 16, "60": 10, "90": 7, "120": 2, "140": 0},
+  "genou_sphere_6cm_sens_moins": {"30": 61, "60": 71, "90": 11, "120": 0, "140": 0},
+  "genou_sans_sphere_sens_plus": {"30": 22, "60": 16, "90": 25, "120": 47, "140": 66},
+  "cheville_sans_sphere_sens_moins": {"-55": 124, "-30": 90, "15": 5},
+  "cheville_sans_sphere_sens_plus": {"-55": 79, "-30": 46, "15": 55},
+  "statut": "non resolu : genou et cheville pénètrent ; la sphere de 6 cm ne suffit pas au genou ; sens de l'axe a verifier"
+}

@@ -1,0 +1,9 @@
+{
+  "objet": "coude : axe de charniere lu sur les os + calotte (sphere 8 cm, trim de la zone de jonction)",
+  "metrique": "penetrations nouvelles par rapport au repos, sans exclusion de zone (erreur 88)",
+  "axe": "h = produit vectoriel (bras - coude) x (main - coude), sens -h (verifie) ; axe monde X donne 72/24/23/26 a 30/60/90/120",
+  "sans_sphere_axe_reel": {"30": 2, "60": 2, "90": 9, "105": 13, "120": 18, "145": 108},
+  "sphere_8cm_axe_reel": {"30": 3, "60": 0, "90": 0, "105": 0, "120": 0, "145": 85},
+  "statut": "reussi de 60 a 120 deg ; 30 deg residuel (3) ; 145 deg non resolu (85, contact bras/avant-bras a pleine flexion, non represente par les tubes)",
+  "non_valide": "pas de validation Blender ; pas de contact des tissus mous ; rayon de sphere a justifier (marqueur X-Bot 4,1 cm, retenu 8 cm)"
+}

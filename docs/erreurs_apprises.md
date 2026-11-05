@@ -526,3 +526,11 @@ Chaque erreur a une cause, une correction et un test. Une erreur corrigée doit 
   - rayon 6 cm et plus : 33 / 5 / 14 / 10 / 11.
   Aucune variante n'arrive à zéro. Le plan de coupure sur les sommets existants ne suffit pas : il faut générer une géométrie de sphère, traitée comme matière de jonction, et la mesurer.
 - Source : `engine/skinning/test_calotte_coude.py`, rapport à compléter dans `docs/rapports/`.
+
+## 89. Axe de charniere : l'axe monde X est faux pour le coude ; l'axe lu sur les os corrige
+- Le coude pliait autour de l'axe monde X. Or le bras HBM est incline : l'axe reel, calcule par le produit vectoriel (bras - coude) x (main - coude), fait 19,4 degres avec X.
+- Avec l'axe reel dans le bon sens (-h) : sans sphere 2 / 2 / 9 / 18 pénétrations a 30 / 60 / 90 / 120 ; axe X : 72 / 24 / 23 / 26.
+- Avec une sphere de 8 cm (trim de la zone de jonction, pas d'exclusion) : 3 / 0 / 0 / 0 a 30 / 60 / 90 / 120. A 145 : 85 (non resolu).
+- Genou et cheville : la jambe HBM est parfaitement verticale, donc le produit vectoriel est nul. Repli sur l'axe X. Resultat non resolu : genou 16 / 10 / 7 / 2 / 0 sans sphere, pire avec sphere 6 cm (61 / 71 / 11 / 0 / 0) ; cheville 124 / 90 / 5 a -55 / -30 / 15.
+- Lecon : chaque articulation a son propre axe. Il se lit sur les os, pas sur un repere commun.
+- Scripts : `engine/skinning/test_coude_axe_reel.py`, `engine/skinning/test_charnieres_axe_reel.py`. Rapports : `docs/rapports/phase4_coude_axe_reel.json`, `docs/rapports/phase4_genou_cheville_axe.json`.

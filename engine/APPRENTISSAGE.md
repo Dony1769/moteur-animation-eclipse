@@ -727,3 +727,9 @@ Mesure LBS sans clé, bras gauche seul : 90° 24 -> 12 replis ; 120° 31 -> 19 ;
 ## 63. Une exclusion de zone ne doit jamais servir à valider une articulation
 - Exclure la zone de jonction du test fait disparaître précisément la pénétration à mesurer (erreur 88). Toute exclusion doit être justifiée et mesurée à part.
 - Une calotte définie seulement par un plan de coupure sur les sommets existants ne supprime pas la pénétration. Il faut générer la géométrie de jonction et la mesurer comme matière.
+
+## 64. Chaque charniere a son axe : le lire sur les os, verifier le sens, repli explicite
+- Un axe fixe commun (X) fait pénétrer le coude incline de 19 degres. L'axe lu sur les os (produit vectoriel des deux segments) corrige le coude.
+- Le sens de rotation est un choix a verifier par mesure (ici -h), pas une convention a supposer.
+- Si les os sont alignes (jambe verticale), l'axe n'est pas defini : repli explicite sur l'axe anatomique et signalement, jamais un axe silencieux.
+- La calotte de 8 cm marche au coude, pas forcement au genou : le rayon se calibre par articulation.
