@@ -772,3 +772,7 @@ Mesure LBS sans clé, bras gauche seul : 90° 24 -> 12 replis ; 120° 31 -> 19 ;
 - Mesurer l'angle de flexion comme 180° moins l'angle entre segments, et vérifier sur membre tendu.
 - Les plages de la danse donnent un plancher d'entraînement, pas la limite humaine. Les limites restent sourcées séparément (CDC/NCHS).
 - Un profil de poids échantillonné sur peu de sommets ne tranche pas une largeur de zone de fusion.
+
+## 73. Rejouer une animation réelle : compter les images, pas seulement les angles
+- Extraire l'angle image par image (`engine/skinning/reference/serie_flexion.py`), puis mesurer chaque angle distinct : une seule métrique par image, pour que le résultat dise combien d'images passent.
+- Coude de la danse : 0 image sur 250 avec pénétration hors sphère. Ne valide pas les plis ni l'étirement de la surface unie.

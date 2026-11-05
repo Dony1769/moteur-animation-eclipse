@@ -589,3 +589,9 @@ Chaque erreur a une cause, une correction et un test. Une erreur corrigée doit 
 - Profil de poids par distance au coude : peu de sommets dans la fenêtre, et la pose du maillage peut différer du cadre 1. Résultat trop clairsemé pour fixer une largeur de transition. Mesurer sur plus de sommets, ou sur la pose de liaison, avant d'en tirer une valeur.
 - Vrai pour la danse : coude ≤ 100°, genou ≤ 150°, cuisse et bras ≤ 90° du vertical. Ces plages ne suffisent pas à valider les limites humaines complètes.
 - Scripts : `engine/skinning/reference/`. Données : `docs/reference_hiphop/`.
+
+## 98. Rejeu de la danse : pénétration 0 sur 250 images, mais résultat partiel
+- Rejeu du coude droit de la danse (0 à 100°, 250 images, pas de 5°) sur le modèle rigide bras + avant-bras (sphère 7 cm exclue, arbre symétrique supposé) : interpénétration 0 cm³ à chaque angle ; 0 image sur 250 avec pénétration.
+- Ce résultat ne couvre pas : les plis et l'étirement sur la surface unie, et la plage 100 à 145° (le modèle y a déjà 4,95 cm³ à 120°). La symétrie gauche/droite est supposée.
+- Leçon : un passage de test sur une animation réelle est plus fort que des angles isolés, mais il faut dire quelles métriques il couvre et lesquelles restent ouvertes.
+- Données : `docs/reference_hiphop/rejeu_coude_danse.json`. Script : `engine/skinning/reference/rejeu_danse_coude.py`.
