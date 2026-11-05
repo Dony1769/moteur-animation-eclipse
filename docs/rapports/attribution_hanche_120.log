@@ -1,0 +1,4 @@
+ATTRIB sommets_etires 255 sur 10582
+ATTRIB os_dominant [('mixamorig:LeftUpLeg', 73), ('mixamorig:Spine1', 44), ('mixamorig:RightUpLeg', 35), ('mixamorig:Spine(<0.5)', 31), ('mixamorig:Hips(<0.5)', 20), ('mixamorig:Spine', 18), ('mixamorig:LeftUpLeg(<0.5)', 18), ('mixamorig:Hips', 7)]
+ATTRIB z_repos min/med/max 0.628 0.921 1.158
+ATTRIB hanche_LeftUpLeg_tete_z 0.0
