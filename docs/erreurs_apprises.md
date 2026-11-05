@@ -1291,3 +1291,26 @@ Résultat (docs/rapports/phase4_psd_hanche_genou.json) : genou plis 0–4, étir
 ## 179. Le critère de calibration peut échouer de peu : c'est un résultat, pas à assouplir
 - Constat : α = 0,25 échoue sur le p99 de 0,005 (1,159 contre 1,154). Le seuil n'est pas relâché ; le blend est quasi nul.
 - Règle : ne pas arrondir ni relâcher le critère pour accepter une variante ; l'échec est documenté.
+
+## 180. λ = 0 rend le système ARAP singulier : la translation globale n'est plus ancrée
+- Constat : test unitaire sur mouvement rigide pur : erreur 2 m avec λ = 0 ; 4e-16 avec λ = 0,1.
+- Règle : tout système de contraintes sur positions doit être ancré (λ > 0 ou un sommet fixé). Un test unitaire sur
+  mouvement rigide doit précéder toute expérience.
+
+## 181. Des contraintes de longueur d'arête peuvent créer des retournements
+- Constat : contraintes d'arêtes (β, K, λ) : p99 1,15 → 1,11 mais retournements 0 → 4 à 90°. Rejeté.
+- Cause : une contrainte de longueur ne contrôle pas l'orientation du polygone.
+
+## 182. ARAP ajusté sur la géométrie déformée dégrade le maximum des HBM
+- Constat : ARAP (K = 20, λ = 0,1) : Maria 8,30 → 1,90 ; masculin 2,49 → 2,99 ; féminin 2,53 → 2,83.
+- Cause supposée : les rotations locales ajustées suivent la déformation déjà fausse ; elles la figent au lieu de la corriger.
+
+## 183. Les rotations du squelette dégradent la hanche masculine (2,49 → 2,60 à 120°)
+- Constat : SQ (λ = 0,1) ; la correction de volume n'y est pour rien (SQ seul : 2,59).
+- Cause supposée (non démontrée) : le repère Mv est une moyenne pondérée des rotations de deux os sur la zone de
+  transition hanche/bassin ; sa polaire n'est la rotation d'aucun os.
+- Statut : à tester (rotation par arête de l'os dominant).
+
+## 184. Un candidat peut passer la calibration et échouer sur le test : aucune validation sur la calibration seule
+- Constat : SQV1 λ = 0,1 accepté en calibration (masculin 60/90°), mais dégrade la hanche masculine en test (+0,12).
+- Règle : la calibration ne valide rien ; la validation exige les trois morphologies et des poses de test.

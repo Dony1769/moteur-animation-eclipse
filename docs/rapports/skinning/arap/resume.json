@@ -1,0 +1,2397 @@
+{
+ "ks": [
+  5,
+  20
+ ],
+ "lambdas": [
+  0.1,
+  1.0
+ ],
+ "morphos": {
+  "masculin": {
+   "lignes": [
+    {
+     "articulation": "hanche_G",
+     "angle_deg": 60,
+     "phase": "calibration",
+     "LBS": {
+      "etirement_max": 1.6554403485365352,
+      "etirement_p99": 1.1027264942182582,
+      "retournements": 0,
+      "volume_variation": -0.01098478024383347
+     },
+     "DQS": {
+      "etirement_max": 1.7810168816016292,
+      "etirement_p99": 1.1037149975683063,
+      "retournements": 0,
+      "volume_variation": 0.006788549990505802
+     },
+     "ARAP_K5_l0.1": {
+      "etirement_max": 1.73145678556063,
+      "etirement_p99": 1.0593183820059173,
+      "retournements": 0,
+      "volume_variation": -0.015532906838295796
+     },
+     "ARAP_K5_l1.0": {
+      "etirement_max": 1.736621799556287,
+      "etirement_p99": 1.088586229758003,
+      "retournements": 0,
+      "volume_variation": -0.01175803022781319
+     },
+     "ARAP_K20_l0.1": {
+      "etirement_max": 1.7429669229654567,
+      "etirement_p99": 1.0585689820854778,
+      "retournements": 0,
+      "volume_variation": -0.01566121476486358
+     },
+     "ARAP_K20_l1.0": {
+      "etirement_max": 1.7384285485331405,
+      "etirement_p99": 1.088618331984044,
+      "retournements": 0,
+      "volume_variation": -0.011755760511277061
+     },
+     "SQ_l0.1": {
+      "etirement_max": 1.763128449452118,
+      "etirement_p99": 1.0723776590195495,
+      "retournements": 0,
+      "volume_variation": -0.018862211477656158
+     },
+     "SQV1_l0.1": {
+      "etirement_max": 1.723055465338699,
+      "etirement_p99": 1.0760419908422068,
+      "retournements": 0,
+      "volume_variation": 0.00013749822462993995
+     },
+     "SQV3_l0.1": {
+      "etirement_max": 1.7233153573960394,
+      "etirement_p99": 1.0760112601018066,
+      "retournements": 0,
+      "volume_variation": -2.889562191578029e-15
+     },
+     "SQ_l1.0": {
+      "etirement_max": 1.7462780058059508,
+      "etirement_p99": 1.0927786331676053,
+      "retournements": 0,
+      "volume_variation": -0.012887778848538822
+     },
+     "SQV1_l1.0": {
+      "etirement_max": 1.7049172500090246,
+      "etirement_p99": 1.0964010240889297,
+      "retournements": 0,
+      "volume_variation": 6.387670576696552e-05
+     },
+     "SQV3_l1.0": {
+      "etirement_max": 1.7051012706955855,
+      "etirement_p99": 1.0963333289258324,
+      "retournements": 0,
+      "volume_variation": 0.0
+     }
+    },
+    {
+     "articulation": "hanche_G",
+     "angle_deg": 75,
+     "phase": "test",
+     "LBS": {
+      "etirement_max": 1.8865731988877374,
+      "etirement_p99": 1.1314808443836226,
+      "retournements": 0,
+      "volume_variation": -0.018472922440304358
+     },
+     "DQS": {
+      "etirement_max": 2.111052085298853,
+      "etirement_p99": 1.142061433227205,
+      "retournements": 0,
+      "volume_variation": 0.008349575556889751
+     },
+     "ARAP_K5_l0.1": {
+      "etirement_max": 1.9817601846900303,
+      "etirement_p99": 1.0757419530256895,
+      "retournements": 0,
+      "volume_variation": -0.024351114997033033
+     },
+     "ARAP_K5_l1.0": {
+      "etirement_max": 1.9793709872014646,
+      "etirement_p99": 1.115417916574974,
+      "retournements": 0,
+      "volume_variation": -0.01945140954389551
+     },
+     "ARAP_K20_l0.1": {
+      "etirement_max": 1.9955312168147057,
+      "etirement_p99": 1.0752783494806395,
+      "retournements": 0,
+      "volume_variation": -0.024580152598164637
+     },
+     "ARAP_K20_l1.0": {
+      "etirement_max": 1.9742941513182355,
+      "etirement_p99": 1.1154225247200338,
+      "retournements": 0,
+      "volume_variation": -0.019448186791527846
+     },
+     "SQ_l0.1": {
+      "etirement_max": 1.9863001929697977,
+      "etirement_p99": 1.089609597634353,
+      "retournements": 0,
+      "volume_variation": -0.029957431138829732
+     },
+     "SQV1_l0.1": {
+      "etirement_max": 1.9341211868610515,
+      "etirement_p99": 1.0976891913018578,
+      "retournements": 0,
+      "volume_variation": 0.0003558081093972073
+     },
+     "SQV3_l0.1": {
+      "etirement_max": 1.9346020237210433,
+      "etirement_p99": 1.0977955480866144,
+      "retournements": 0,
+      "volume_variation": -2.518047052660854e-14
+     },
+     "SQ_l1.0": {
+      "etirement_max": 2.0005986077875733,
+      "etirement_p99": 1.117480399711024,
+      "retournements": 0,
+      "volume_variation": -0.021182168646515318
+     },
+     "SQV1_l1.0": {
+      "etirement_max": 1.9515394320589288,
+      "etirement_p99": 1.1230413130499546,
+      "retournements": 0,
+      "volume_variation": 0.00017640609838556477
+     },
+     "SQV3_l1.0": {
+      "etirement_max": 1.9518724945911845,
+      "etirement_p99": 1.1230298923586954,
+      "retournements": 0,
+      "volume_variation": 2.4767675927811676e-15
+     }
+    },
+    {
+     "articulation": "hanche_G",
+     "angle_deg": 90,
+     "phase": "calibration",
+     "LBS": {
+      "etirement_max": 2.105446350155652,
+      "etirement_p99": 1.1536623541836009,
+      "retournements": 0,
+      "volume_variation": -0.027012478474478168
+     },
+     "DQS": {
+      "etirement_max": 2.472234596957758,
+      "etirement_p99": 1.1759001639782658,
+      "retournements": 0,
+      "volume_variation": 0.009852263135996431
+     },
+     "ARAP_K5_l0.1": {
+      "etirement_max": 2.229914164243891,
+      "etirement_p99": 1.090031942897613,
+      "retournements": 1,
+      "volume_variation": -0.03407134632933401
+     },
+     "ARAP_K5_l1.0": {
+      "etirement_max": 2.2596048502580155,
+      "etirement_p99": 1.1335391054463573,
+      "retournements": 1,
+      "volume_variation": -0.02811182576579592
+     },
+     "ARAP_K20_l0.1": {
+      "etirement_max": 2.2332118427196623,
+      "etirement_p99": 1.0884437404679892,
+      "retournements": 1,
+      "volume_variation": -0.034461678534079714
+     },
+     "ARAP_K20_l1.0": {
+      "etirement_max": 2.2478098247670184,
+      "etirement_p99": 1.1336082734957311,
+      "retournements": 1,
+      "volume_variation": -0.02810755157052224
+     },
+     "SQ_l0.1": {
+      "etirement_max": 2.1987989211059262,
+      "etirement_p99": 1.1070418327600373,
+      "retournements": 0,
+      "volume_variation": -0.04246761756025749
+     },
+     "SQV1_l0.1": {
+      "etirement_max": 2.132546456084147,
+      "etirement_p99": 1.1205874509170641,
+      "retournements": 0,
+      "volume_variation": 0.000736398110751081
+     },
+     "SQV3_l0.1": {
+      "etirement_max": 2.1330574301513034,
+      "etirement_p99": 1.120284283086057,
+      "retournements": 0,
+      "volume_variation": 3.0546800310967734e-14
+     },
+     "SQ_l1.0": {
+      "etirement_max": 2.237094569656351,
+      "etirement_p99": 1.1357638738085705,
+      "retournements": 0,
+      "volume_variation": -0.030566370001516758
+     },
+     "SQV1_l1.0": {
+      "etirement_max": 2.1897608337163925,
+      "etirement_p99": 1.1474324787279921,
+      "retournements": 0,
+      "volume_variation": 0.0003762839951771238
+     },
+     "SQV3_l1.0": {
+      "etirement_max": 2.1901442338520334,
+      "etirement_p99": 1.1474507246936883,
+      "retournements": 0,
+      "volume_variation": 7.223905478945072e-15
+     }
+    },
+    {
+     "articulation": "hanche_G",
+     "angle_deg": 105,
+     "phase": "test",
+     "LBS": {
+      "etirement_max": 2.3026454578097084,
+      "etirement_p99": 1.1678736474315095,
+      "retournements": 1,
+      "volume_variation": -0.03602149171502239
+     },
+     "DQS": {
+      "etirement_max": 2.8638841438842917,
+      "etirement_p99": 1.2167193447407527,
+      "retournements": 0,
+      "volume_variation": 0.011292763444968809
+     },
+     "ARAP_K5_l0.1": {
+      "etirement_max": 2.5787789913841674,
+      "etirement_p99": 1.1028168122920647,
+      "retournements": 1,
+      "volume_variation": -0.04407630363166759
+     },
+     "ARAP_K5_l1.0": {
+      "etirement_max": 2.608329287717199,
+      "etirement_p99": 1.1547680404376848,
+      "retournements": 1,
+      "volume_variation": -0.0370592743543506
+     },
+     "ARAP_K20_l0.1": {
+      "etirement_max": 2.5020509247158564,
+      "etirement_p99": 1.106077959662114,
+      "retournements": 3,
+      "volume_variation": -0.043719665644154034
+     },
+     "ARAP_K20_l1.0": {
+      "etirement_max": 2.563423763492397,
+      "etirement_p99": 1.154822395326647,
+      "retournements": 1,
+      "volume_variation": -0.037061629744743176
+     },
+     "SQ_l0.1": {
+      "etirement_max": 2.4099103329290217,
+      "etirement_p99": 1.120822615764437,
+      "retournements": 0,
+      "volume_variation": -0.055635234259564216
+     },
+     "SQV1_l0.1": {
+      "etirement_max": 2.36688528560035,
+      "etirement_p99": 1.1381625077126667,
+      "retournements": 1,
+      "volume_variation": 0.0013047805011142178
+     },
+     "SQV3_l0.1": {
+      "etirement_max": 2.36649004348223,
+      "etirement_p99": 1.1364594136380335,
+      "retournements": 1,
+      "volume_variation": 3.9421884185100253e-13
+     },
+     "SQ_l1.0": {
+      "etirement_max": 2.444850997638782,
+      "etirement_p99": 1.151229764287572,
+      "retournements": 0,
+      "volume_variation": -0.040405490564641496
+     },
+     "SQV1_l1.0": {
+      "etirement_max": 2.409432632487715,
+      "etirement_p99": 1.169662682875695,
+      "retournements": 1,
+      "volume_variation": 0.0006737443116819023
+     },
+     "SQV3_l1.0": {
+      "etirement_max": 2.409583207248664,
+      "etirement_p99": 1.1681000502309158,
+      "retournements": 1,
+      "volume_variation": 5.944242222674802e-14
+     }
+    },
+    {
+     "articulation": "hanche_G",
+     "angle_deg": 120,
+     "phase": "test",
+     "LBS": {
+      "etirement_max": 2.4713830769575034,
+      "etirement_p99": 1.185001269785174,
+      "retournements": 4,
+      "volume_variation": -0.04488601279755409
+     },
+     "DQS": {
+      "etirement_max": 3.2882013922815814,
+      "etirement_p99": 1.2497669991436362,
+      "retournements": 1,
+      "volume_variation": 0.012665603132878121
+     },
+     "ARAP_K5_l0.1": {
+      "etirement_max": 3.0737403252335636,
+      "etirement_p99": 1.1207420612210128,
+      "retournements": 9,
+      "volume_variation": -0.05075821843785642
+     },
+     "ARAP_K5_l1.0": {
+      "etirement_max": 2.972023224850903,
+      "etirement_p99": 1.161973239727648,
+      "retournements": 7,
+      "volume_variation": -0.044951418605434765
+     },
+     "ARAP_K20_l0.1": {
+      "etirement_max": 2.8730062772790097,
+      "etirement_p99": 1.123116141418415,
+      "retournements": 7,
+      "volume_variation": -0.05175131645401292
+     },
+     "ARAP_K20_l1.0": {
+      "etirement_max": 2.90781893330349,
+      "etirement_p99": 1.1620528010561306,
+      "retournements": 8,
+      "volume_variation": -0.04499670013663695
+     },
+     "SQ_l0.1": {
+      "etirement_max": 2.5895921229991896,
+      "etirement_p99": 1.1316694542326213,
+      "retournements": 1,
+      "volume_variation": -0.06866487045174535
+     },
+     "SQV1_l0.1": {
+      "etirement_max": 2.586226810865776,
+      "etirement_p99": 1.1544007894211803,
+      "retournements": 1,
+      "volume_variation": 0.002052663787538131
+     },
+     "SQV3_l0.1": {
+      "etirement_max": 2.583682698499621,
+      "etirement_p99": 1.1522606132910296,
+      "retournements": 1,
+      "volume_variation": 2.703598224820043e-12
+     },
+     "SQ_l1.0": {
+      "etirement_max": 2.6152071532617915,
+      "etirement_p99": 1.1639478801073397,
+      "retournements": 2,
+      "volume_variation": -0.05003485907272847
+     },
+     "SQV1_l1.0": {
+      "etirement_max": 2.6003250860903835,
+      "etirement_p99": 1.18201016247483,
+      "retournements": 3,
+      "volume_variation": 0.0010573877141177512
+     },
+     "SQV3_l1.0": {
+      "etirement_max": 2.5998237175553975,
+      "etirement_p99": 1.1824370786922163,
+      "retournements": 3,
+      "volume_variation": 1.6759460711152568e-13
+     }
+    },
+    {
+     "articulation": "hanche_D",
+     "angle_deg": 75,
+     "phase": "test",
+     "LBS": {
+      "etirement_max": 1.8303543379202534,
+      "etirement_p99": 1.1282906975867488,
+      "retournements": 0,
+      "volume_variation": -0.017767165020363955
+     },
+     "DQS": {
+      "etirement_max": 2.04254783249234,
+      "etirement_p99": 1.1418017332129335,
+      "retournements": 0,
+      "volume_variation": 0.009000079458486392
+     },
+     "ARAP_K5_l0.1": {
+      "etirement_max": 1.9402970772289645,
+      "etirement_p99": 1.07446486435384,
+      "retournements": 0,
+      "volume_variation": -0.023635520094431053
+     },
+     "ARAP_K5_l1.0": {
+      "etirement_max": 1.9259853096209065,
+      "etirement_p99": 1.1131391209857626,
+      "retournements": 0,
+      "volume_variation": -0.018704547837974646
+     },
+     "ARAP_K20_l0.1": {
+      "etirement_max": 1.9591150907186092,
+      "etirement_p99": 1.0734750534801458,
+      "retournements": 0,
+      "volume_variation": -0.023872642868438185
+     },
+     "ARAP_K20_l1.0": {
+      "etirement_max": 1.9289688387652197,
+      "etirement_p99": 1.1131224317811719,
+      "retournements": 0,
+      "volume_variation": -0.01870035757373862
+     },
+     "SQ_l0.1": {
+      "etirement_max": 1.941205339672203,
+      "etirement_p99": 1.0881599257473284,
+      "retournements": 0,
+      "volume_variation": -0.029368267321622024
+     },
+     "SQV1_l0.1": {
+      "etirement_max": 1.8734370969805594,
+      "etirement_p99": 1.0943818820861004,
+      "retournements": 0,
+      "volume_variation": 0.0003400417392452073
+     },
+     "SQV3_l0.1": {
+      "etirement_max": 1.873993802080571,
+      "etirement_p99": 1.0943341422665014,
+      "retournements": 0,
+      "volume_variation": -4.127945987968613e-16
+     },
+     "SQ_l1.0": {
+      "etirement_max": 1.9346607620625342,
+      "etirement_p99": 1.1174029935308953,
+      "retournements": 0,
+      "volume_variation": -0.020448657615776897
+     },
+     "SQV1_l1.0": {
+      "etirement_max": 1.8888355653725226,
+      "etirement_p99": 1.1224062337512788,
+      "retournements": 0,
+      "volume_variation": 0.0001631782179374977
+     },
+     "SQV3_l1.0": {
+      "etirement_max": 1.8891100910482848,
+      "etirement_p99": 1.1223255202797577,
+      "retournements": 0,
+      "volume_variation": -8.255891975937226e-16
+     }
+    },
+    {
+     "articulation": "hanche_D",
+     "angle_deg": 120,
+     "phase": "test",
+     "LBS": {
+      "etirement_max": 2.485441346796892,
+      "etirement_p99": 1.1822549126970165,
+      "retournements": 5,
+      "volume_variation": -0.04405741742799264
+     },
+     "DQS": {
+      "etirement_max": 3.1970025556188855,
+      "etirement_p99": 1.244215299934941,
+      "retournements": 1,
+      "volume_variation": 0.013626724362956975
+     },
+     "ARAP_K5_l0.1": {
+      "etirement_max": 3.181454063226682,
+      "etirement_p99": 1.1176293875713346,
+      "retournements": 9,
+      "volume_variation": -0.04972371165142672
+     },
+     "ARAP_K5_l1.0": {
+      "etirement_max": 3.0740007488588317,
+      "etirement_p99": 1.15980051295477,
+      "retournements": 7,
+      "volume_variation": -0.044053728944253225
+     },
+     "ARAP_K20_l0.1": {
+      "etirement_max": 2.9860532196723706,
+      "etirement_p99": 1.117340000162327,
+      "retournements": 7,
+      "volume_variation": -0.0509483134745739
+     },
+     "ARAP_K20_l1.0": {
+      "etirement_max": 3.0122959414880235,
+      "etirement_p99": 1.1597288558146868,
+      "retournements": 8,
+      "volume_variation": -0.04414937155219525
+     },
+     "SQ_l0.1": {
+      "etirement_max": 2.5758278305852427,
+      "etirement_p99": 1.1274941684649928,
+      "retournements": 1,
+      "volume_variation": -0.06781847887831656
+     },
+     "SQV1_l0.1": {
+      "etirement_max": 2.6044741355115946,
+      "etirement_p99": 1.1535515729937036,
+      "retournements": 1,
+      "volume_variation": 0.001986543794315727
+     },
+     "SQV3_l0.1": {
+      "etirement_max": 2.602170992425837,
+      "etirement_p99": 1.151452985549283,
+      "retournements": 1,
+      "volume_variation": 2.2662423473947684e-12
+     },
+     "SQ_l1.0": {
+      "etirement_max": 2.645398977987777,
+      "etirement_p99": 1.1594907444461307,
+      "retournements": 2,
+      "volume_variation": -0.049116793870335046
+     },
+     "SQV1_l1.0": {
+      "etirement_max": 2.686735711141645,
+      "etirement_p99": 1.1859704813386682,
+      "retournements": 3,
+      "volume_variation": 0.0010098748789830962
+     },
+     "SQV3_l1.0": {
+      "etirement_max": 2.685897412571665,
+      "etirement_p99": 1.18596583102168,
+      "retournements": 3,
+      "volume_variation": 8.998922253771577e-14
+     }
+    },
+    {
+     "articulation": "genou_G",
+     "angle_deg": 60,
+     "phase": "test",
+     "LBS": {
+      "etirement_max": 1.1364477517974672,
+      "etirement_p99": 1.010668433375037,
+      "retournements": 0,
+      "volume_variation": -0.007530433430363752
+     },
+     "DQS": {
+      "etirement_max": 1.1911841917999813,
+      "etirement_p99": 1.0031547031764805,
+      "retournements": 0,
+      "volume_variation": -0.0054798269082565985
+     },
+     "ARAP_K5_l0.1": {
+      "etirement_max": 1.0624986527130955,
+      "etirement_p99": 1.0076667739951541,
+      "retournements": 0,
+      "volume_variation": -0.008187676754654984
+     },
+     "ARAP_K5_l1.0": {
+      "etirement_max": 1.0728554444211258,
+      "etirement_p99": 1.0079478931291106,
+      "retournements": 0,
+      "volume_variation": -0.007664949608018065
+     },
+     "ARAP_K20_l0.1": {
+      "etirement_max": 1.0589182708039049,
+      "etirement_p99": 1.007768224233677,
+      "retournements": 0,
+      "volume_variation": -0.008198294679942254
+     },
+     "ARAP_K20_l1.0": {
+      "etirement_max": 1.0728531280375344,
+      "etirement_p99": 1.0079440771897288,
+      "retournements": 0,
+      "volume_variation": -0.007664362458443226
+     },
+     "SQ_l0.1": {
+      "etirement_max": 1.056767110782913,
+      "etirement_p99": 1.006053261306165,
+      "retournements": 0,
+      "volume_variation": -0.011489629157623419
+     },
+     "SQV1_l0.1": {
+      "etirement_max": 1.0608112842116821,
+      "etirement_p99": 1.0171961950997583,
+      "retournements": 0,
+      "volume_variation": 4.924195931722609e-05
+     },
+     "SQV3_l0.1": {
+      "etirement_max": 1.0607939311915697,
+      "etirement_p99": 1.0171219187578142,
+      "retournements": 0,
+      "volume_variation": -1.238383796390584e-14
+     },
+     "SQ_l1.0": {
+      "etirement_max": 1.0826632376055139,
+      "etirement_p99": 1.008388564836913,
+      "retournements": 0,
+      "volume_variation": -0.008443400138013708
+     },
+     "SQV1_l1.0": {
+      "etirement_max": 1.085731497984418,
+      "etirement_p99": 1.0161756202378998,
+      "retournements": 0,
+      "volume_variation": 2.655014154980108e-05
+     },
+     "SQV3_l1.0": {
+      "etirement_max": 1.08572183162274,
+      "etirement_p99": 1.016167143437275,
+      "retournements": 0,
+      "volume_variation": 3.09595949097646e-15
+     }
+    },
+    {
+     "articulation": "genou_G",
+     "angle_deg": 90,
+     "phase": "test",
+     "LBS": {
+      "etirement_max": 1.1955212735700853,
+      "etirement_p99": 1.0198432645149003,
+      "retournements": 8,
+      "volume_variation": -0.011300721054821715
+     },
+     "DQS": {
+      "etirement_max": 1.2767714779134174,
+      "etirement_p99": 1.0097123386276268,
+      "retournements": 4,
+      "volume_variation": -0.008266478191782004
+     },
+     "ARAP_K5_l0.1": {
+      "etirement_max": 1.0663891039714477,
+      "etirement_p99": 1.0181253889493893,
+      "retournements": 6,
+      "volume_variation": -0.0084722167906212
+     },
+     "ARAP_K5_l1.0": {
+      "etirement_max": 1.1477347651357794,
+      "etirement_p99": 1.0177575884046242,
+      "retournements": 7,
+      "volume_variation": -0.01047122158792521
+     },
+     "ARAP_K20_l0.1": {
+      "etirement_max": 1.0666321024143715,
+      "etirement_p99": 1.0186140397614736,
+      "retournements": 6,
+      "volume_variation": -0.008899392030411178
+     },
+     "ARAP_K20_l1.0": {
+      "etirement_max": 1.147731736805222,
+      "etirement_p99": 1.0177782752711715,
+      "retournements": 7,
+      "volume_variation": -0.010476704807692751
+     },
+     "SQ_l0.1": {
+      "etirement_max": 1.0859305299932176,
+      "etirement_p99": 1.0109269342629197,
+      "retournements": 0,
+      "volume_variation": -0.017365941950925324
+     },
+     "SQV1_l0.1": {
+      "etirement_max": 1.0858965065534225,
+      "etirement_p99": 1.02703129124325,
+      "retournements": 0,
+      "volume_variation": 0.00011334452806851885
+     },
+     "SQV3_l0.1": {
+      "etirement_max": 1.0858418083451198,
+      "etirement_p99": 1.026916768986285,
+      "retournements": 0,
+      "volume_variation": -5.1599324849607666e-15
+     },
+     "SQ_l1.0": {
+      "etirement_max": 1.1495322443735227,
+      "etirement_p99": 1.0172962595270978,
+      "retournements": 1,
+      "volume_variation": -0.012751227865432212
+     },
+     "SQV1_l1.0": {
+      "etirement_max": 1.1491995692580799,
+      "etirement_p99": 1.0257059749671154,
+      "retournements": 1,
+      "volume_variation": 6.0972284412754326e-05
+     },
+     "SQV3_l1.0": {
+      "etirement_max": 1.1492010781765543,
+      "etirement_p99": 1.025585692983805,
+      "retournements": 1,
+      "volume_variation": -4.540740586765474e-15
+     }
+    },
+    {
+     "articulation": "genou_G",
+     "angle_deg": 105,
+     "phase": "test",
+     "LBS": {
+      "etirement_max": 1.2293182688873627,
+      "etirement_p99": 1.0247996682199274,
+      "retournements": 13,
+      "volume_variation": -0.012721130138941569
+     },
+     "DQS": {
+      "etirement_max": 1.3266525942686276,
+      "etirement_p99": 1.0129099683977967,
+      "retournements": 9,
+      "volume_variation": -0.009662290442420991
+     },
+     "ARAP_K5_l0.1": {
+      "etirement_max": 1.0919027926110931,
+      "etirement_p99": 1.0240541194396835,
+      "retournements": 12,
+      "volume_variation": -0.008159267326915682
+     },
+     "ARAP_K5_l1.0": {
+      "etirement_max": 1.185478718559521,
+      "etirement_p99": 1.0207398460171397,
+      "retournements": 11,
+      "volume_variation": -0.011527548402196382
+     },
+     "ARAP_K20_l0.1": {
+      "etirement_max": 1.0920033407811272,
+      "etirement_p99": 1.0250639491875722,
+      "retournements": 12,
+      "volume_variation": -0.008237627589346716
+     },
+     "ARAP_K20_l1.0": {
+      "etirement_max": 1.1854755848447478,
+      "etirement_p99": 1.020735228414537,
+      "retournements": 11,
+      "volume_variation": -0.011524554674013688
+     },
+     "SQ_l0.1": {
+      "etirement_max": 1.10895668248253,
+      "etirement_p99": 1.0142549125141882,
+      "retournements": 0,
+      "volume_variation": -0.019569728026995203
+     },
+     "SQV1_l0.1": {
+      "etirement_max": 1.1083410597728156,
+      "etirement_p99": 1.0310798609229246,
+      "retournements": 0,
+      "volume_variation": 0.00014425664431545472
+     },
+     "SQV3_l0.1": {
+      "etirement_max": 1.108345395611489,
+      "etirement_p99": 1.030880054116947,
+      "retournements": 0,
+      "volume_variation": -3.3023567903748904e-15
+     },
+     "SQ_l1.0": {
+      "etirement_max": 1.1876694833647927,
+      "etirement_p99": 1.0236223836819487,
+      "retournements": 8,
+      "volume_variation": -0.014382698458017854
+     },
+     "SQV1_l1.0": {
+      "etirement_max": 1.1874843571875524,
+      "etirement_p99": 1.0312256547257335,
+      "retournements": 8,
+      "volume_variation": 7.769320137251188e-05
+     },
+     "SQV3_l1.0": {
+      "etirement_max": 1.187483334568416,
+      "etirement_p99": 1.0312228264396512,
+      "retournements": 8,
+      "volume_variation": -1.3209427161499562e-14
+     }
+    }
+   ]
+  },
+  "feminin": {
+   "lignes": [
+    {
+     "articulation": "hanche_G",
+     "angle_deg": 60,
+     "phase": "calibration",
+     "LBS": {
+      "etirement_max": 1.7622099462961873,
+      "etirement_p99": 1.0804592129221384,
+      "retournements": 0,
+      "volume_variation": -0.01342411929366903
+     },
+     "DQS": {
+      "etirement_max": 1.9036939744619403,
+      "etirement_p99": 1.0776733961829097,
+      "retournements": 0,
+      "volume_variation": 0.007973744593033192
+     },
+     "ARAP_K5_l0.1": {
+      "etirement_max": 1.5912896855581966,
+      "etirement_p99": 1.055605111291283,
+      "retournements": 0,
+      "volume_variation": -0.01902684610284779
+     },
+     "ARAP_K5_l1.0": {
+      "etirement_max": 1.755391632602875,
+      "etirement_p99": 1.0758330871686663,
+      "retournements": 0,
+      "volume_variation": -0.014585599502065278
+     },
+     "ARAP_K20_l0.1": {
+      "etirement_max": 1.5788803814825867,
+      "etirement_p99": 1.0543071662320436,
+      "retournements": 0,
+      "volume_variation": -0.019260121377534866
+     },
+     "ARAP_K20_l1.0": {
+      "etirement_max": 1.7554259056265333,
+      "etirement_p99": 1.0757855053821044,
+      "retournements": 0,
+      "volume_variation": -0.014585452724015496
+     },
+     "SQ_l0.1": {
+      "etirement_max": 1.591903548662049,
+      "etirement_p99": 1.0687803537187635,
+      "retournements": 0,
+      "volume_variation": -0.022851037708880813
+     },
+     "SQV1_l0.1": {
+      "etirement_max": 1.558913895350304,
+      "etirement_p99": 1.0724119056498937,
+      "retournements": 0,
+      "volume_variation": 0.0001868340003806526
+     },
+     "SQV3_l0.1": {
+      "etirement_max": 1.5591447905414042,
+      "etirement_p99": 1.072290516405564,
+      "retournements": 0,
+      "volume_variation": 1.1330241684443473e-14
+     },
+     "SQ_l1.0": {
+      "etirement_max": 1.7119259105565958,
+      "etirement_p99": 1.078433602485154,
+      "retournements": 0,
+      "volume_variation": -0.01578700898763498
+     },
+     "SQV1_l1.0": {
+      "etirement_max": 1.675044267298556,
+      "etirement_p99": 1.0851978587495132,
+      "retournements": 0,
+      "volume_variation": 9.08389277517802e-05
+     },
+     "SQV3_l1.0": {
+      "etirement_max": 1.6752385997347192,
+      "etirement_p99": 1.0851217391123749,
+      "retournements": 0,
+      "volume_variation": -1.2130023450404189e-14
+     }
+    },
+    {
+     "articulation": "hanche_G",
+     "angle_deg": 75,
+     "phase": "test",
+     "LBS": {
+      "etirement_max": 1.9870760102034448,
+      "etirement_p99": 1.1049422856378321,
+      "retournements": 0,
+      "volume_variation": -0.022482971081035634
+     },
+     "DQS": {
+      "etirement_max": 2.1958727790498638,
+      "etirement_p99": 1.1113394499285283,
+      "retournements": 0,
+      "volume_variation": 0.009807729042064374
+     },
+     "ARAP_K5_l0.1": {
+      "etirement_max": 1.8146775066035237,
+      "etirement_p99": 1.0699996780753096,
+      "retournements": 0,
+      "volume_variation": -0.029811163223369425
+     },
+     "ARAP_K5_l1.0": {
+      "etirement_max": 2.001108421373218,
+      "etirement_p99": 1.0953143999371115,
+      "retournements": 0,
+      "volume_variation": -0.023955649327880267
+     },
+     "ARAP_K20_l0.1": {
+      "etirement_max": 1.7857058668522183,
+      "etirement_p99": 1.0697654638441265,
+      "retournements": 0,
+      "volume_variation": -0.030302229710342667
+     },
+     "ARAP_K20_l1.0": {
+      "etirement_max": 2.00079559601907,
+      "etirement_p99": 1.0951154353586312,
+      "retournements": 0,
+      "volume_variation": -0.02395789399405058
+     },
+     "SQ_l0.1": {
+      "etirement_max": 1.7798375398638009,
+      "etirement_p99": 1.0844397481554613,
+      "retournements": 0,
+      "volume_variation": -0.03611635842642776
+     },
+     "SQV1_l0.1": {
+      "etirement_max": 1.7072506667908052,
+      "etirement_p99": 1.093680721726622,
+      "retournements": 0,
+      "volume_variation": 0.0004847472723709445
+     },
+     "SQV3_l0.1": {
+      "etirement_max": 1.7080451590943557,
+      "etirement_p99": 1.0935916988550627,
+      "retournements": 0,
+      "volume_variation": 6.664848049672631e-16
+     },
+     "SQ_l1.0": {
+      "etirement_max": 1.9261636859982367,
+      "etirement_p99": 1.1003808415813798,
+      "retournements": 0,
+      "volume_variation": -0.025849034834535406
+     },
+     "SQV1_l1.0": {
+      "etirement_max": 1.8808940609982292,
+      "etirement_p99": 1.1094958394684222,
+      "retournements": 0,
+      "volume_variation": 0.00025311828482592417
+     },
+     "SQV3_l1.0": {
+      "etirement_max": 1.8812833595984213,
+      "etirement_p99": 1.1093015759771858,
+      "retournements": 0,
+      "volume_variation": -1.826168365610301e-14
+     }
+    },
+    {
+     "articulation": "hanche_G",
+     "angle_deg": 90,
+     "phase": "calibration",
+     "LBS": {
+      "etirement_max": 2.1939760532420194,
+      "etirement_p99": 1.137984295527713,
+      "retournements": 0,
+      "volume_variation": -0.03279877788265512
+     },
+     "DQS": {
+      "etirement_max": 2.544637791390875,
+      "etirement_p99": 1.1381177993628322,
+      "retournements": 0,
+      "volume_variation": 0.011578448437491999
+     },
+     "ARAP_K5_l0.1": {
+      "etirement_max": 2.060490791743423,
+      "etirement_p99": 1.0834121876777714,
+      "retournements": 0,
+      "volume_variation": -0.04168295001719183
+     },
+     "ARAP_K5_l1.0": {
+      "etirement_max": 2.24268758328296,
+      "etirement_p99": 1.1234039047648403,
+      "retournements": 0,
+      "volume_variation": -0.03446516209013519
+     },
+     "ARAP_K20_l0.1": {
+      "etirement_max": 2.028780598168921,
+      "etirement_p99": 1.0803184352918327,
+      "retournements": 2,
+      "volume_variation": -0.04270649717427581
+     },
+     "ARAP_K20_l1.0": {
+      "etirement_max": 2.241721547236695,
+      "etirement_p99": 1.1235554286789857,
+      "retournements": 0,
+      "volume_variation": -0.034475331625056456
+     },
+     "SQ_l0.1": {
+      "etirement_max": 1.9578459115195375,
+      "etirement_p99": 1.1030140232839147,
+      "retournements": 0,
+      "volume_variation": -0.051042524975232144
+     },
+     "SQV1_l0.1": {
+      "etirement_max": 1.881323813507726,
+      "etirement_p99": 1.1195903745027775,
+      "retournements": 0,
+      "volume_variation": 0.0010109180054019959
+     },
+     "SQV3_l0.1": {
+      "etirement_max": 1.8824895900243368,
+      "etirement_p99": 1.1190052804707316,
+      "retournements": 0,
+      "volume_variation": 1.4196126345802704e-13
+     },
+     "SQ_l1.0": {
+      "etirement_max": 2.124110193701439,
+      "etirement_p99": 1.1219725633226931,
+      "retournements": 0,
+      "volume_variation": -0.03721172144032287
+     },
+     "SQV1_l1.0": {
+      "etirement_max": 2.0769814448641126,
+      "etirement_p99": 1.1374374619183958,
+      "retournements": 0,
+      "volume_variation": 0.0005464233589951293
+     },
+     "SQV3_l1.0": {
+      "etirement_max": 2.0775748778477783,
+      "etirement_p99": 1.136837961955822,
+      "retournements": 0,
+      "volume_variation": 3.5323694663264946e-14
+     }
+    },
+    {
+     "articulation": "hanche_G",
+     "angle_deg": 105,
+     "phase": "test",
+     "LBS": {
+      "etirement_max": 2.3752075806378055,
+      "etirement_p99": 1.1524503328684925,
+      "retournements": 1,
+      "volume_variation": -0.0436685345127275
+     },
+     "DQS": {
+      "etirement_max": 2.9199639571611233,
+      "etirement_p99": 1.1655919371661905,
+      "retournements": 0,
+      "volume_variation": 0.013283206555940815
+     },
+     "ARAP_K5_l0.1": {
+      "etirement_max": 2.4173925413534874,
+      "etirement_p99": 1.0962274287629339,
+      "retournements": 3,
+      "volume_variation": -0.053513753446910305
+     },
+     "ARAP_K5_l1.0": {
+      "etirement_max": 2.47929694316868,
+      "etirement_p99": 1.13389933882461,
+      "retournements": 0,
+      "volume_variation": -0.04530428518852368
+     },
+     "ARAP_K20_l0.1": {
+      "etirement_max": 2.4957538410075135,
+      "etirement_p99": 1.0928937518620867,
+      "retournements": 6,
+      "volume_variation": -0.05507809093488041
+     },
+     "ARAP_K20_l1.0": {
+      "etirement_max": 2.4780723878945237,
+      "etirement_p99": 1.1343385651550912,
+      "retournements": 3,
+      "volume_variation": -0.04526086554322686
+     },
+     "SQ_l0.1": {
+      "etirement_max": 2.1190818253324957,
+      "etirement_p99": 1.1182158189891216,
+      "retournements": 0,
+      "volume_variation": -0.06673628046824293
+     },
+     "SQV1_l0.1": {
+      "etirement_max": 2.048542652528145,
+      "etirement_p99": 1.1410936763499038,
+      "retournements": 0,
+      "volume_variation": 0.0018118395099039589
+     },
+     "SQV3_l0.1": {
+      "etirement_max": 2.049975227372668,
+      "etirement_p99": 1.1410177673511523,
+      "retournements": 0,
+      "volume_variation": 1.4149472409454996e-12
+     },
+     "SQ_l1.0": {
+      "etirement_max": 2.2979609845749067,
+      "etirement_p99": 1.135733749698033,
+      "retournements": 0,
+      "volume_variation": -0.04910828929269867
+     },
+     "SQV1_l1.0": {
+      "etirement_max": 2.2559297056057304,
+      "etirement_p99": 1.1637765363868757,
+      "retournements": 0,
+      "volume_variation": 0.0009920985219983617
+     },
+     "SQV3_l1.0": {
+      "etirement_max": 2.256671689427864,
+      "etirement_p99": 1.161482773152332,
+      "retournements": 0,
+      "volume_variation": 1.1236933811748057e-13
+     }
+    },
+    {
+     "articulation": "hanche_G",
+     "angle_deg": 120,
+     "phase": "test",
+     "LBS": {
+      "etirement_max": 2.525129534254983,
+      "etirement_p99": 1.1563085468408874,
+      "retournements": 6,
+      "volume_variation": -0.05435148501999116
+     },
+     "DQS": {
+      "etirement_max": 3.3242308392575404,
+      "etirement_p99": 1.196462090315908,
+      "retournements": 0,
+      "volume_variation": 0.014916827092358904
+     },
+     "ARAP_K5_l0.1": {
+      "etirement_max": 2.867957305641725,
+      "etirement_p99": 1.1095858542241968,
+      "retournements": 8,
+      "volume_variation": -0.06215622161828195
+     },
+     "ARAP_K5_l1.0": {
+      "etirement_max": 2.7434646002188687,
+      "etirement_p99": 1.1455368336543938,
+      "retournements": 8,
+      "volume_variation": -0.05489995245591518
+     },
+     "ARAP_K20_l0.1": {
+      "etirement_max": 2.82755997809499,
+      "etirement_p99": 1.1107354917023498,
+      "retournements": 11,
+      "volume_variation": -0.06369016509147364
+     },
+     "ARAP_K20_l1.0": {
+      "etirement_max": 2.7684691217827444,
+      "etirement_p99": 1.1448327269965406,
+      "retournements": 8,
+      "volume_variation": -0.055146529398789765
+     },
+     "SQ_l0.1": {
+      "etirement_max": 2.2583654763117034,
+      "etirement_p99": 1.1232292841720326,
+      "retournements": 0,
+      "volume_variation": -0.08226621624042464
+     },
+     "SQV1_l0.1": {
+      "etirement_max": 2.2042735615728413,
+      "etirement_p99": 1.1708473968274957,
+      "retournements": 0,
+      "volume_variation": 0.002892659431632255
+     },
+     "SQV3_l0.1": {
+      "etirement_max": 2.2057353500713526,
+      "etirement_p99": 1.16601637732452,
+      "retournements": 0,
+      "volume_variation": 1.1509259503057681e-11
+     },
+     "SQ_l1.0": {
+      "etirement_max": 2.441893484675314,
+      "etirement_p99": 1.1432974556450386,
+      "retournements": 0,
+      "volume_variation": -0.0607411176694142
+     },
+     "SQV1_l1.0": {
+      "etirement_max": 2.4124066120789096,
+      "etirement_p99": 1.1824620292304189,
+      "retournements": 4,
+      "volume_variation": 0.0015799054759976195
+     },
+     "SQV3_l1.0": {
+      "etirement_max": 2.4131593690755704,
+      "etirement_p99": 1.182328993822514,
+      "retournements": 4,
+      "volume_variation": 8.247082976664914e-13
+     }
+    },
+    {
+     "articulation": "hanche_D",
+     "angle_deg": 75,
+     "phase": "test",
+     "LBS": {
+      "etirement_max": 1.9776817492313494,
+      "etirement_p99": 1.1090819741105498,
+      "retournements": 0,
+      "volume_variation": -0.022763191111865564
+     },
+     "DQS": {
+      "etirement_max": 2.180965116570234,
+      "etirement_p99": 1.1139271047050021,
+      "retournements": 0,
+      "volume_variation": 0.009413381778530357
+     },
+     "ARAP_K5_l0.1": {
+      "etirement_max": 1.7648078860442533,
+      "etirement_p99": 1.071184003586273,
+      "retournements": 0,
+      "volume_variation": -0.02999115104985784
+     },
+     "ARAP_K5_l1.0": {
+      "etirement_max": 1.9464911118447386,
+      "etirement_p99": 1.0989061657957484,
+      "retournements": 0,
+      "volume_variation": -0.024179968602488753
+     },
+     "ARAP_K20_l0.1": {
+      "etirement_max": 1.7381746924054435,
+      "etirement_p99": 1.070711272107321,
+      "retournements": 0,
+      "volume_variation": -0.030453944339767527
+     },
+     "ARAP_K20_l1.0": {
+      "etirement_max": 1.946157512230148,
+      "etirement_p99": 1.0986072014025123,
+      "retournements": 0,
+      "volume_variation": -0.024181338226402137
+     },
+     "SQ_l0.1": {
+      "etirement_max": 1.7737089664638848,
+      "etirement_p99": 1.0881793824520694,
+      "retournements": 0,
+      "volume_variation": -0.03649760520033368
+     },
+     "SQV1_l0.1": {
+      "etirement_max": 1.7506965479528642,
+      "etirement_p99": 1.1003937876087524,
+      "retournements": 0,
+      "volume_variation": 0.000494626332682874
+     },
+     "SQV3_l0.1": {
+      "etirement_max": 1.7508953477427693,
+      "etirement_p99": 1.0996998953836543,
+      "retournements": 0,
+      "volume_variation": 5.4518457046322125e-14
+     },
+     "SQ_l1.0": {
+      "etirement_max": 1.8995434425270459,
+      "etirement_p99": 1.103152727396339,
+      "retournements": 0,
+      "volume_variation": -0.026143393354248767
+     },
+     "SQV1_l1.0": {
+      "etirement_max": 1.8849505326596938,
+      "etirement_p99": 1.1134581754118829,
+      "retournements": 0,
+      "volume_variation": 0.00025833132061496474
+     },
+     "SQV3_l1.0": {
+      "etirement_max": 1.885057916329318,
+      "etirement_p99": 1.1132736584607827,
+      "retournements": 0,
+      "volume_variation": -7.464629815633347e-15
+     }
+    },
+    {
+     "articulation": "hanche_D",
+     "angle_deg": 120,
+     "phase": "test",
+     "LBS": {
+      "etirement_max": 2.519882137761195,
+      "etirement_p99": 1.1649869012779688,
+      "retournements": 6,
+      "volume_variation": -0.054675576793584646
+     },
+     "DQS": {
+      "etirement_max": 3.3049159683377907,
+      "etirement_p99": 1.205034355414147,
+      "retournements": 0,
+      "volume_variation": 0.014102227643804432
+     },
+     "ARAP_K5_l0.1": {
+      "etirement_max": 2.8713676264495223,
+      "etirement_p99": 1.1111278153232431,
+      "retournements": 9,
+      "volume_variation": -0.0623524212623843
+     },
+     "ARAP_K5_l1.0": {
+      "etirement_max": 2.7368211305712964,
+      "etirement_p99": 1.1460126869879945,
+      "retournements": 7,
+      "volume_variation": -0.05533933741840953
+     },
+     "ARAP_K20_l0.1": {
+      "etirement_max": 2.8223100611840874,
+      "etirement_p99": 1.1098873893048102,
+      "retournements": 12,
+      "volume_variation": -0.06385479719895468
+     },
+     "ARAP_K20_l1.0": {
+      "etirement_max": 2.7562703908744943,
+      "etirement_p99": 1.1456302988567209,
+      "retournements": 8,
+      "volume_variation": -0.05541210189895323
+     },
+     "SQ_l0.1": {
+      "etirement_max": 2.2743064086554403,
+      "etirement_p99": 1.1274447665208207,
+      "retournements": 0,
+      "volume_variation": -0.08287250573346398
+     },
+     "SQV1_l0.1": {
+      "etirement_max": 2.2684171168514555,
+      "etirement_p99": 1.1712983503328525,
+      "retournements": 0,
+      "volume_variation": 0.00293286074802545
+     },
+     "SQV3_l0.1": {
+      "etirement_max": 2.2677983746343164,
+      "etirement_p99": 1.1687042952621782,
+      "retournements": 0,
+      "volume_variation": 1.2412746304671302e-11
+     },
+     "SQ_l1.0": {
+      "etirement_max": 2.4060371915197334,
+      "etirement_p99": 1.1446118359533948,
+      "retournements": 2,
+      "volume_variation": -0.061123757938931045
+     },
+     "SQV1_l1.0": {
+      "etirement_max": 2.4032370791859563,
+      "etirement_p99": 1.184131959806308,
+      "retournements": 5,
+      "volume_variation": 0.0015947319922364326
+     },
+     "SQV3_l1.0": {
+      "etirement_max": 2.40303600358355,
+      "etirement_p99": 1.1824433872342415,
+      "retournements": 5,
+      "volume_variation": 8.84958524035532e-13
+     }
+    },
+    {
+     "articulation": "genou_G",
+     "angle_deg": 60,
+     "phase": "test",
+     "LBS": {
+      "etirement_max": 1.4972755226199905,
+      "etirement_p99": 1.0000000000001532,
+      "retournements": 3,
+      "volume_variation": -0.009746484557210049
+     },
+     "DQS": {
+      "etirement_max": 1.5491568336224997,
+      "etirement_p99": 1.0000000000000289,
+      "retournements": 2,
+      "volume_variation": -0.009024555353812897
+     },
+     "ARAP_K5_l0.1": {
+      "etirement_max": 1.092470910838133,
+      "etirement_p99": 1.0005543205810126,
+      "retournements": 0,
+      "volume_variation": -0.010232940323498342
+     },
+     "ARAP_K5_l1.0": {
+      "etirement_max": 1.1887872794968672,
+      "etirement_p99": 1.0001448114101907,
+      "retournements": 0,
+      "volume_variation": -0.00981469206206543
+     },
+     "ARAP_K20_l0.1": {
+      "etirement_max": 1.084290809879784,
+      "etirement_p99": 1.0004808011872912,
+      "retournements": 0,
+      "volume_variation": -0.010375059529833638
+     },
+     "ARAP_K20_l1.0": {
+      "etirement_max": 1.1886629348801867,
+      "etirement_p99": 1.0001559518500778,
+      "retournements": 0,
+      "volume_variation": -0.009817075603279726
+     },
+     "SQ_l0.1": {
+      "etirement_max": 1.139387563588471,
+      "etirement_p99": 1.0001273185320154,
+      "retournements": 0,
+      "volume_variation": -0.013416598086786344
+     },
+     "SQV1_l0.1": {
+      "etirement_max": 1.1443513660115536,
+      "etirement_p99": 1.0175078640964537,
+      "retournements": 0,
+      "volume_variation": 5.878571414967465e-05
+     },
+     "SQV3_l0.1": {
+      "etirement_max": 1.144329460946433,
+      "etirement_p99": 1.017447404151544,
+      "retournements": 0,
+      "volume_variation": -1.372958698232562e-14
+     },
+     "SQ_l1.0": {
+      "etirement_max": 1.2104809153793383,
+      "etirement_p99": 1.0000094403680782,
+      "retournements": 0,
+      "volume_variation": -0.010741460872205177
+     },
+     "SQV1_l1.0": {
+      "etirement_max": 1.2147547301838792,
+      "etirement_p99": 1.0141460387783976,
+      "retournements": 0,
+      "volume_variation": 3.7711984540339776e-05
+     },
+     "SQV3_l1.0": {
+      "etirement_max": 1.214739664035701,
+      "etirement_p99": 1.014096323398825,
+      "retournements": 0,
+      "volume_variation": 8.930896386561326e-15
+     }
+    },
+    {
+     "articulation": "genou_G",
+     "angle_deg": 90,
+     "phase": "test",
+     "LBS": {
+      "etirement_max": 1.612798467735662,
+      "etirement_p99": 1.0000000000001872,
+      "retournements": 10,
+      "volume_variation": -0.013294844166665327
+     },
+     "DQS": {
+      "etirement_max": 1.7364443728074415,
+      "etirement_p99": 1.0000000000000315,
+      "retournements": 8,
+      "volume_variation": -0.013544348923750607
+     },
+     "ARAP_K5_l0.1": {
+      "etirement_max": 1.0900754128303947,
+      "etirement_p99": 1.0034657110285374,
+      "retournements": 8,
+      "volume_variation": -0.009215891457710935
+     },
+     "ARAP_K5_l1.0": {
+      "etirement_max": 1.1955701835365393,
+      "etirement_p99": 1.0010813450718,
+      "retournements": 8,
+      "volume_variation": -0.012131710516165375
+     },
+     "ARAP_K20_l0.1": {
+      "etirement_max": 1.0853392137275166,
+      "etirement_p99": 1.002947079567566,
+      "retournements": 5,
+      "volume_variation": -0.01002041716304255
+     },
+     "ARAP_K20_l1.0": {
+      "etirement_max": 1.1952888548561882,
+      "etirement_p99": 1.0010906437433995,
+      "retournements": 8,
+      "volume_variation": -0.012145597911017277
+     },
+     "SQ_l0.1": {
+      "etirement_max": 1.180374726318957,
+      "etirement_p99": 1.0002117606123426,
+      "retournements": 0,
+      "volume_variation": -0.020487639202034568
+     },
+     "SQV1_l0.1": {
+      "etirement_max": 1.1834540818329458,
+      "etirement_p99": 1.0271314032941044,
+      "retournements": 0,
+      "volume_variation": 0.00013786991329934353
+     },
+     "SQV3_l0.1": {
+      "etirement_max": 1.1834336715258797,
+      "etirement_p99": 1.0269516550027245,
+      "retournements": 0,
+      "volume_variation": 3.865611868810126e-15
+     },
+     "SQ_l1.0": {
+      "etirement_max": 1.2118383769994632,
+      "etirement_p99": 1.0000827995988368,
+      "retournements": 5,
+      "volume_variation": -0.01525091452521658
+     },
+     "SQV1_l1.0": {
+      "etirement_max": 1.2197325056735155,
+      "etirement_p99": 1.0207986838037422,
+      "retournements": 5,
+      "volume_variation": 7.655338775521082e-05
+     },
+     "SQV3_l1.0": {
+      "etirement_max": 1.2196929573245716,
+      "etirement_p99": 1.0206889228658107,
+      "retournements": 5,
+      "volume_variation": 2.6659392198690525e-15
+     }
+    },
+    {
+     "articulation": "genou_G",
+     "angle_deg": 105,
+     "phase": "test",
+     "LBS": {
+      "etirement_max": 1.6316897518095383,
+      "etirement_p99": 1.000000000000191,
+      "retournements": 13,
+      "volume_variation": -0.01425593586580823
+     },
+     "DQS": {
+      "etirement_max": 1.801576718198815,
+      "etirement_p99": 1.0000000000000187,
+      "retournements": 13,
+      "volume_variation": -0.015767193527358284
+     },
+     "ARAP_K5_l0.1": {
+      "etirement_max": 1.1135311916283732,
+      "etirement_p99": 1.0077800223562763,
+      "retournements": 13,
+      "volume_variation": -0.009639752301139785
+     },
+     "ARAP_K5_l1.0": {
+      "etirement_max": 1.1772652578454856,
+      "etirement_p99": 1.0017684104931812,
+      "retournements": 12,
+      "volume_variation": -0.013056219874815637
+     },
+     "ARAP_K20_l0.1": {
+      "etirement_max": 1.1008796401587502,
+      "etirement_p99": 1.0072631292045666,
+      "retournements": 11,
+      "volume_variation": -0.009878112900488586
+     },
+     "ARAP_K20_l1.0": {
+      "etirement_max": 1.176767299035585,
+      "etirement_p99": 1.0017924434798477,
+      "retournements": 12,
+      "volume_variation": -0.013053495665769146
+     },
+     "SQ_l0.1": {
+      "etirement_max": 1.1911708910036587,
+      "etirement_p99": 1.0003190796838712,
+      "retournements": 0,
+      "volume_variation": -0.023305259331054165
+     },
+     "SQV1_l0.1": {
+      "etirement_max": 1.1949405494287808,
+      "etirement_p99": 1.0313291863317637,
+      "retournements": 0,
+      "volume_variation": 0.00017880187619976248
+     },
+     "SQV3_l0.1": {
+      "etirement_max": 1.194912085758438,
+      "etirement_p99": 1.0310867904821257,
+      "retournements": 0,
+      "volume_variation": -2.1993998563919685e-14
+     },
+     "SQ_l1.0": {
+      "etirement_max": 1.210115275349114,
+      "etirement_p99": 1.0002473232703986,
+      "retournements": 8,
+      "volume_variation": -0.016707331757752096
+     },
+     "SQV1_l1.0": {
+      "etirement_max": 1.214018948313117,
+      "etirement_p99": 1.0235333588719726,
+      "retournements": 8,
+      "volume_variation": 9.204711226398147e-05
+     },
+     "SQV3_l1.0": {
+      "etirement_max": 1.2139944142664896,
+      "etirement_p99": 1.0234066312916767,
+      "retournements": 8,
+      "volume_variation": -1.5995635319214315e-14
+     }
+    }
+   ]
+  },
+  "maria": {
+   "lignes": [
+    {
+     "articulation": "hanche_G",
+     "angle_deg": 60,
+     "phase": "calibration",
+     "LBS": {
+      "etirement_max": 5.051847513758113,
+      "etirement_p99": 1.0000000000001055,
+      "retournements": 9,
+      "volume_variation": 0.00676258907171044
+     },
+     "DQS": {
+      "etirement_max": 5.289355246413095,
+      "etirement_p99": 1.0063102752804807,
+      "retournements": 10,
+      "volume_variation": 0.011359929758042283
+     },
+     "ARAP_K5_l0.1": {
+      "etirement_max": 1.4958337786642437,
+      "etirement_p99": 1.0070838258529216,
+      "retournements": 0,
+      "volume_variation": 0.018777485241284784
+     },
+     "ARAP_K5_l1.0": {
+      "etirement_max": 2.316664262773004,
+      "etirement_p99": 1.0158262134027625,
+      "retournements": 5,
+      "volume_variation": 0.012265467181547998
+     },
+     "ARAP_K20_l0.1": {
+      "etirement_max": 1.4840829816410899,
+      "etirement_p99": 1.0058701965129409,
+      "retournements": 0,
+      "volume_variation": 0.025627191754338616
+     },
+     "ARAP_K20_l1.0": {
+      "etirement_max": 2.3255123581704145,
+      "etirement_p99": 1.0152141531165628,
+      "retournements": 4,
+      "volume_variation": 0.014602327668715978
+     },
+     "SQ_l0.1": {
+      "etirement_max": 1.686340410626623,
+      "etirement_p99": 1.0117999465768879,
+      "retournements": 3,
+      "volume_variation": 0.021758569211113573
+     },
+     "SQV1_l0.1": {
+      "etirement_max": 1.6872929376976802,
+      "etirement_p99": 1.0148958223105227,
+      "retournements": 3,
+      "volume_variation": -1.160236359282494e-05
+     },
+     "SQV3_l0.1": {
+      "etirement_max": 1.6872924283854887,
+      "etirement_p99": 1.0148873871601625,
+      "retournements": 3,
+      "volume_variation": 4.3915744823444413e-16
+     },
+     "SQ_l1.0": {
+      "etirement_max": 2.270945202377173,
+      "etirement_p99": 1.0177399557039548,
+      "retournements": 4,
+      "volume_variation": 0.015171475446657286
+     },
+     "SQV1_l1.0": {
+      "etirement_max": 2.270941429800381,
+      "etirement_p99": 1.0189373888314062,
+      "retournements": 4,
+      "volume_variation": -5.645291157713552e-06
+     },
+     "SQV3_l1.0": {
+      "etirement_max": 2.270941431192907,
+      "etirement_p99": 1.018937548197964,
+      "retournements": 4,
+      "volume_variation": 2.1957872411722207e-16
+     }
+    },
+    {
+     "articulation": "hanche_G",
+     "angle_deg": 75,
+     "phase": "test",
+     "LBS": {
+      "etirement_max": 6.025557903177532,
+      "etirement_p99": 1.0000000000000941,
+      "retournements": 13,
+      "volume_variation": 0.0008077872911402614
+     },
+     "DQS": {
+      "etirement_max": 6.478332709381352,
+      "etirement_p99": 1.0091078574894594,
+      "retournements": 16,
+      "volume_variation": 0.007649580462420853
+     },
+     "ARAP_K5_l0.1": {
+      "etirement_max": 1.6371439615568186,
+      "etirement_p99": 1.008763353532368,
+      "retournements": 11,
+      "volume_variation": 0.0021526556242971134
+     },
+     "ARAP_K5_l1.0": {
+      "etirement_max": 2.7010497066996897,
+      "etirement_p99": 1.0195343075200558,
+      "retournements": 12,
+      "volume_variation": 0.00178178571210561
+     },
+     "ARAP_K20_l0.1": {
+      "etirement_max": 1.5652087951032596,
+      "etirement_p99": 1.0058805691441715,
+      "retournements": 1,
+      "volume_variation": 0.020847699972914156
+     },
+     "ARAP_K20_l1.0": {
+      "etirement_max": 2.700800105884058,
+      "etirement_p99": 1.0197603041622219,
+      "retournements": 12,
+      "volume_variation": 0.002095355201421748
+     },
+     "SQ_l0.1": {
+      "etirement_max": 1.8120457290869518,
+      "etirement_p99": 1.0141458055149728,
+      "retournements": 3,
+      "volume_variation": 0.024010099269342246
+     },
+     "SQV1_l0.1": {
+      "etirement_max": 1.8129852603436856,
+      "etirement_p99": 1.0176011814834895,
+      "retournements": 3,
+      "volume_variation": -1.4542754555122398e-05
+     },
+     "SQV3_l0.1": {
+      "etirement_max": 1.812984689825813,
+      "etirement_p99": 1.0175910482997308,
+      "retournements": 3,
+      "volume_variation": -8.783148964688883e-16
+     },
+     "SQ_l1.0": {
+      "etirement_max": 2.5950639091705687,
+      "etirement_p99": 1.021736465298188,
+      "retournements": 5,
+      "volume_variation": 0.013684163563266473
+     },
+     "SQV1_l1.0": {
+      "etirement_max": 2.5950454400162672,
+      "etirement_p99": 1.0225944545771872,
+      "retournements": 5,
+      "volume_variation": -4.7304107323998606e-06
+     },
+     "SQV3_l1.0": {
+      "etirement_max": 2.595045446425245,
+      "etirement_p99": 1.0225945667592307,
+      "retournements": 5,
+      "volume_variation": 1.0978936205861104e-15
+     }
+    },
+    {
+     "articulation": "hanche_G",
+     "angle_deg": 90,
+     "phase": "calibration",
+     "LBS": {
+      "etirement_max": 6.902363229844155,
+      "etirement_p99": 1.0000000000001106,
+      "retournements": 16,
+      "volume_variation": -0.007703228997156645
+     },
+     "DQS": {
+      "etirement_max": 7.664659800457387,
+      "etirement_p99": 1.0180295093871203,
+      "retournements": 18,
+      "volume_variation": 0.001566500688337123
+     },
+     "ARAP_K5_l0.1": {
+      "etirement_max": 1.76955096564267,
+      "etirement_p99": 1.0094018341732085,
+      "retournements": 13,
+      "volume_variation": -0.0015793736244964674
+     },
+     "ARAP_K5_l1.0": {
+      "etirement_max": 3.0373000393325156,
+      "etirement_p99": 1.0229222354262832,
+      "retournements": 15,
+      "volume_variation": -0.004821853466334222
+     },
+     "ARAP_K20_l0.1": {
+      "etirement_max": 1.687443163303338,
+      "etirement_p99": 1.0071930745358364,
+      "retournements": 8,
+      "volume_variation": 0.00989954065336648
+     },
+     "ARAP_K20_l1.0": {
+      "etirement_max": 3.0352438512168645,
+      "etirement_p99": 1.0229080135372053,
+      "retournements": 14,
+      "volume_variation": -0.004622104371444001
+     },
+     "SQ_l0.1": {
+      "etirement_max": 1.9108643661766487,
+      "etirement_p99": 1.0135630124776989,
+      "retournements": 4,
+      "volume_variation": 0.024594908623952985
+     },
+     "SQV1_l0.1": {
+      "etirement_max": 1.9117115236302669,
+      "etirement_p99": 1.0175566545178196,
+      "retournements": 4,
+      "volume_variation": -1.5615531997110023e-05
+     },
+     "SQV3_l0.1": {
+      "etirement_max": 1.9117109848069826,
+      "etirement_p99": 1.0175566914772374,
+      "retournements": 4,
+      "volume_variation": 0.0
+     },
+     "SQ_l1.0": {
+      "etirement_max": 2.8821174958751925,
+      "etirement_p99": 1.024567907592073,
+      "retournements": 6,
+      "volume_variation": 0.010110129953936725
+     },
+     "SQV1_l1.0": {
+      "etirement_max": 2.882099492723575,
+      "etirement_p99": 1.025128302532091,
+      "retournements": 6,
+      "volume_variation": -2.6408066662276986e-06
+     },
+     "SQV3_l1.0": {
+      "etirement_max": 2.882099497442917,
+      "etirement_p99": 1.025128313979557,
+      "retournements": 6,
+      "volume_variation": 0.0
+     }
+    },
+    {
+     "articulation": "hanche_G",
+     "angle_deg": 105,
+     "phase": "test",
+     "LBS": {
+      "etirement_max": 7.665147990288112,
+      "etirement_p99": 1.0000000000001106,
+      "retournements": 16,
+      "volume_variation": -0.018190448098250846
+     },
+     "DQS": {
+      "etirement_max": 8.842104256640434,
+      "etirement_p99": 1.0224902567745107,
+      "retournements": 24,
+      "volume_variation": -0.006471594758427605
+     },
+     "ARAP_K5_l0.1": {
+      "etirement_max": 1.883271002683471,
+      "etirement_p99": 1.0102530098437765,
+      "retournements": 20,
+      "volume_variation": -0.006596638638540379
+     },
+     "ARAP_K5_l1.0": {
+      "etirement_max": 3.3267286985251565,
+      "etirement_p99": 1.0241362572407533,
+      "retournements": 18,
+      "volume_variation": -0.013095280054492953
+     },
+     "ARAP_K20_l0.1": {
+      "etirement_max": 1.8173628880790638,
+      "etirement_p99": 1.0080051198652062,
+      "retournements": 15,
+      "volume_variation": -0.0016788245146735028
+     },
+     "ARAP_K20_l1.0": {
+      "etirement_max": 3.3228914974616908,
+      "etirement_p99": 1.0244713484359187,
+      "retournements": 19,
+      "volume_variation": -0.01287547589418011
+     },
+     "SQ_l0.1": {
+      "etirement_max": 1.978517434627034,
+      "etirement_p99": 1.0125414864609046,
+      "retournements": 4,
+      "volume_variation": 0.023477359909715046
+     },
+     "SQV1_l0.1": {
+      "etirement_max": 1.9792134018782555,
+      "etirement_p99": 1.0156869589635793,
+      "retournements": 4,
+      "volume_variation": -1.4201035202604198e-05
+     },
+     "SQV3_l0.1": {
+      "etirement_max": 1.979212980651394,
+      "etirement_p99": 1.0156872727555224,
+      "retournements": 4,
+      "volume_variation": 4.3915744823444413e-16
+     },
+     "SQ_l1.0": {
+      "etirement_max": 3.123617267916158,
+      "etirement_p99": 1.0241456187908342,
+      "retournements": 8,
+      "volume_variation": 0.004703597664145246
+     },
+     "SQV1_l1.0": {
+      "etirement_max": 3.123609364514836,
+      "etirement_p99": 1.0241456187908342,
+      "retournements": 8,
+      "volume_variation": -5.691478700027625e-07
+     },
+     "SQV3_l1.0": {
+      "etirement_max": 3.123609365473061,
+      "etirement_p99": 1.0241456187908342,
+      "retournements": 8,
+      "volume_variation": -2.1957872411722207e-16
+     }
+    },
+    {
+     "articulation": "hanche_G",
+     "angle_deg": 120,
+     "phase": "test",
+     "LBS": {
+      "etirement_max": 8.299742089822155,
+      "etirement_p99": 1.0000000000001055,
+      "retournements": 18,
+      "volume_variation": -0.029939183361354413
+     },
+     "DQS": {
+      "etirement_max": 10.003295420436398,
+      "etirement_p99": 1.0301199145623314,
+      "retournements": 26,
+      "volume_variation": -0.01591944810128028
+     },
+     "ARAP_K5_l0.1": {
+      "etirement_max": 1.9642267158159705,
+      "etirement_p99": 1.0099874481123863,
+      "retournements": 23,
+      "volume_variation": -0.019225832205465837
+     },
+     "ARAP_K5_l1.0": {
+      "etirement_max": 3.56664617762071,
+      "etirement_p99": 1.026418315739854,
+      "retournements": 22,
+      "volume_variation": -0.023902656697489873
+     },
+     "ARAP_K20_l0.1": {
+      "etirement_max": 1.9021986871416936,
+      "etirement_p99": 1.0086710010571924,
+      "retournements": 20,
+      "volume_variation": -0.016792331105311684
+     },
+     "ARAP_K20_l1.0": {
+      "etirement_max": 3.561047077103207,
+      "etirement_p99": 1.027376767100428,
+      "retournements": 23,
+      "volume_variation": -0.02376353223959825
+     },
+     "SQ_l0.1": {
+      "etirement_max": 2.0361705657452527,
+      "etirement_p99": 1.0108914266668707,
+      "retournements": 5,
+      "volume_variation": 0.0206958555742071
+     },
+     "SQV1_l0.1": {
+      "etirement_max": 2.0349725210581777,
+      "etirement_p99": 1.014033073130333,
+      "retournements": 5,
+      "volume_variation": -1.0564661477490722e-05
+     },
+     "SQV3_l0.1": {
+      "etirement_max": 2.0349731346739106,
+      "etirement_p99": 1.0140330762197964,
+      "retournements": 5,
+      "volume_variation": 0.0
+     },
+     "SQ_l1.0": {
+      "etirement_max": 3.3810505372320145,
+      "etirement_p99": 1.0257003676629841,
+      "retournements": 12,
+      "volume_variation": -0.002175580131227458
+     },
+     "SQV1_l1.0": {
+      "etirement_max": 3.381201923255378,
+      "etirement_p99": 1.0256940822111973,
+      "retournements": 12,
+      "volume_variation": -1.1635852465831542e-07
+     },
+     "SQV3_l1.0": {
+      "etirement_max": 3.381201931349737,
+      "etirement_p99": 1.0256940818758975,
+      "retournements": 12,
+      "volume_variation": 0.0
+     }
+    },
+    {
+     "articulation": "hanche_D",
+     "angle_deg": 75,
+     "phase": "test",
+     "LBS": {
+      "etirement_max": 5.28181407837241,
+      "etirement_p99": 1.0000000000001634,
+      "retournements": 12,
+      "volume_variation": 0.0011819033402923507
+     },
+     "DQS": {
+      "etirement_max": 5.745664911420173,
+      "etirement_p99": 1.0109126197543894,
+      "retournements": 14,
+      "volume_variation": 0.007881153082470503
+     },
+     "ARAP_K5_l0.1": {
+      "etirement_max": 1.6230193439838196,
+      "etirement_p99": 1.008699009944743,
+      "retournements": 11,
+      "volume_variation": 0.0022796253871952103
+     },
+     "ARAP_K5_l1.0": {
+      "etirement_max": 2.5916138552645482,
+      "etirement_p99": 1.0206025137845174,
+      "retournements": 12,
+      "volume_variation": 0.0019479452922471756
+     },
+     "ARAP_K20_l0.1": {
+      "etirement_max": 1.5541787152313933,
+      "etirement_p99": 1.0057299966175064,
+      "retournements": 1,
+      "volume_variation": 0.021052560348115753
+     },
+     "ARAP_K20_l1.0": {
+      "etirement_max": 2.5914131256861803,
+      "etirement_p99": 1.0204172841351977,
+      "retournements": 12,
+      "volume_variation": 0.002148891771364506
+     },
+     "SQ_l0.1": {
+      "etirement_max": 1.7961404859148684,
+      "etirement_p99": 1.013824481851697,
+      "retournements": 3,
+      "volume_variation": 0.02372845621895806
+     },
+     "SQV1_l0.1": {
+      "etirement_max": 1.7970684687842018,
+      "etirement_p99": 1.0173880820735977,
+      "retournements": 3,
+      "volume_variation": -1.4200537978221107e-05
+     },
+     "SQV3_l0.1": {
+      "etirement_max": 1.7970679120680724,
+      "etirement_p99": 1.0173781850909893,
+      "retournements": 3,
+      "volume_variation": 0.0
+     },
+     "SQ_l1.0": {
+      "etirement_max": 2.5065997081159437,
+      "etirement_p99": 1.0216886078579517,
+      "retournements": 5,
+      "volume_variation": 0.013732426651829681
+     },
+     "SQV1_l1.0": {
+      "etirement_max": 2.5066025361536814,
+      "etirement_p99": 1.0226382169207018,
+      "retournements": 5,
+      "volume_variation": -4.7621730877614346e-06
+     },
+     "SQV3_l1.0": {
+      "etirement_max": 2.506602535100037,
+      "etirement_p99": 1.0226382181389175,
+      "retournements": 5,
+      "volume_variation": 4.3915744823444413e-16
+     }
+    },
+    {
+     "articulation": "hanche_D",
+     "angle_deg": 120,
+     "phase": "test",
+     "LBS": {
+      "etirement_max": 7.231279339322919,
+      "etirement_p99": 1.0000000000001634,
+      "retournements": 18,
+      "volume_variation": -0.029215807055939784
+     },
+     "DQS": {
+      "etirement_max": 8.981251301111936,
+      "etirement_p99": 1.0323012034648682,
+      "retournements": 25,
+      "volume_variation": -0.015376845534550692
+     },
+     "ARAP_K5_l0.1": {
+      "etirement_max": 1.93425051963607,
+      "etirement_p99": 1.0095375191853662,
+      "retournements": 22,
+      "volume_variation": -0.018839358477657154
+     },
+     "ARAP_K5_l1.0": {
+      "etirement_max": 3.4077165192632415,
+      "etirement_p99": 1.0257354011688216,
+      "retournements": 22,
+      "volume_variation": -0.02350196369073484
+     },
+     "ARAP_K20_l0.1": {
+      "etirement_max": 1.875026608013324,
+      "etirement_p99": 1.0086243868728755,
+      "retournements": 20,
+      "volume_variation": -0.016309901939644048
+     },
+     "ARAP_K20_l1.0": {
+      "etirement_max": 3.4002841308970484,
+      "etirement_p99": 1.0269799650898837,
+      "retournements": 21,
+      "volume_variation": -0.023387698040756376
+     },
+     "SQ_l0.1": {
+      "etirement_max": 1.9879295323975579,
+      "etirement_p99": 1.0112897137904788,
+      "retournements": 4,
+      "volume_variation": 0.019803051586060633
+     },
+     "SQV1_l0.1": {
+      "etirement_max": 1.988414004914879,
+      "etirement_p99": 1.0143439681540851,
+      "retournements": 4,
+      "volume_variation": -9.657819904582463e-06
+     },
+     "SQV3_l0.1": {
+      "etirement_max": 1.9884137688511383,
+      "etirement_p99": 1.0143372613670525,
+      "retournements": 4,
+      "volume_variation": 4.3915744823444413e-16
+     },
+     "SQ_l1.0": {
+      "etirement_max": 3.3052409926853925,
+      "etirement_p99": 1.0257012373003078,
+      "retournements": 12,
+      "volume_variation": -0.0022470495088239718
+     },
+     "SQV1_l1.0": {
+      "etirement_max": 3.3053959224442933,
+      "etirement_p99": 1.0256947427506944,
+      "retournements": 12,
+      "volume_variation": -1.241334034740326e-07
+     },
+     "SQV3_l1.0": {
+      "etirement_max": 3.30539593100052,
+      "etirement_p99": 1.0256947423928768,
+      "retournements": 12,
+      "volume_variation": 0.0
+     }
+    },
+    {
+     "articulation": "genou_G",
+     "angle_deg": 60,
+     "phase": "test",
+     "LBS": {
+      "etirement_max": 1.4636099668911824,
+      "etirement_p99": 1.0000000000000242,
+      "retournements": 12,
+      "volume_variation": -0.02060451620202373
+     },
+     "DQS": {
+      "etirement_max": 1.5889697373158964,
+      "etirement_p99": 1.0000000000000102,
+      "retournements": 12,
+      "volume_variation": -0.020337689973537267
+     },
+     "ARAP_K5_l0.1": {
+      "etirement_max": 1.2394732859047202,
+      "etirement_p99": 1.0012183798209118,
+      "retournements": 0,
+      "volume_variation": -0.017144880999310316
+     },
+     "ARAP_K5_l1.0": {
+      "etirement_max": 1.3390509898559515,
+      "etirement_p99": 1.000244212384252,
+      "retournements": 8,
+      "volume_variation": -0.019683350147631718
+     },
+     "ARAP_K20_l0.1": {
+      "etirement_max": 1.174261707412736,
+      "etirement_p99": 1.0007755965286718,
+      "retournements": 0,
+      "volume_variation": -0.015169532201817928
+     },
+     "ARAP_K20_l1.0": {
+      "etirement_max": 1.335309561326383,
+      "etirement_p99": 1.0002434852095279,
+      "retournements": 8,
+      "volume_variation": -0.01965055463613123
+     },
+     "SQ_l0.1": {
+      "etirement_max": 1.343931084381203,
+      "etirement_p99": 1.0006332490097503,
+      "retournements": 0,
+      "volume_variation": -0.01791708957920851
+     },
+     "SQV1_l0.1": {
+      "etirement_max": 1.3447636191385073,
+      "etirement_p99": 1.005521623892434,
+      "retournements": 0,
+      "volume_variation": -7.622811305660457e-06
+     },
+     "SQV3_l0.1": {
+      "etirement_max": 1.3447639735448251,
+      "etirement_p99": 1.005521623892434,
+      "retournements": 0,
+      "volume_variation": 4.3915744823444413e-16
+     },
+     "SQ_l1.0": {
+      "etirement_max": 1.3629133710636456,
+      "etirement_p99": 1.0001420149051745,
+      "retournements": 10,
+      "volume_variation": -0.01971769739151459
+     },
+     "SQV1_l1.0": {
+      "etirement_max": 1.3639196486016152,
+      "etirement_p99": 1.0059355085837225,
+      "retournements": 10,
+      "volume_variation": -9.232483563566279e-06
+     },
+     "SQV3_l1.0": {
+      "etirement_max": 1.363920120009579,
+      "etirement_p99": 1.0059396053529353,
+      "retournements": 10,
+      "volume_variation": 0.0
+     }
+    },
+    {
+     "articulation": "genou_G",
+     "angle_deg": 90,
+     "phase": "test",
+     "LBS": {
+      "etirement_max": 1.927399450756871,
+      "etirement_p99": 1.0000000000000258,
+      "retournements": 18,
+      "volume_variation": -0.03149990668024732
+     },
+     "DQS": {
+      "etirement_max": 1.8998088232128347,
+      "etirement_p99": 1.000000000000011,
+      "retournements": 15,
+      "volume_variation": -0.03129153873282481
+     },
+     "ARAP_K5_l0.1": {
+      "etirement_max": 1.2549488610856405,
+      "etirement_p99": 1.0013751251939227,
+      "retournements": 8,
+      "volume_variation": -0.028810200574831815
+     },
+     "ARAP_K5_l1.0": {
+      "etirement_max": 1.506934286537212,
+      "etirement_p99": 1.0004122541503153,
+      "retournements": 14,
+      "volume_variation": -0.03132716514495399
+     },
+     "ARAP_K20_l0.1": {
+      "etirement_max": 1.2196707711925172,
+      "etirement_p99": 1.0012365473736482,
+      "retournements": 8,
+      "volume_variation": -0.02619801973380535
+     },
+     "ARAP_K20_l1.0": {
+      "etirement_max": 1.4901949362464846,
+      "etirement_p99": 1.0003844509285087,
+      "retournements": 14,
+      "volume_variation": -0.03136718958256094
+     },
+     "SQ_l0.1": {
+      "etirement_max": 1.4651180715962877,
+      "etirement_p99": 1.000553769248704,
+      "retournements": 8,
+      "volume_variation": -0.027339021145110887
+     },
+     "SQV1_l0.1": {
+      "etirement_max": 1.4669923501346196,
+      "etirement_p99": 1.0081969681468852,
+      "retournements": 8,
+      "volume_variation": -1.7474638061839708e-05
+     },
+     "SQV3_l0.1": {
+      "etirement_max": 1.4669935489915211,
+      "etirement_p99": 1.0082021930600618,
+      "retournements": 8,
+      "volume_variation": 2.1957872411722207e-16
+     },
+     "SQ_l1.0": {
+      "etirement_max": 1.4616386528374796,
+      "etirement_p99": 1.0001965051712147,
+      "retournements": 13,
+      "volume_variation": -0.030121128126137195
+     },
+     "SQV1_l1.0": {
+      "etirement_max": 1.4638561435229123,
+      "etirement_p99": 1.0092053376938772,
+      "retournements": 13,
+      "volume_variation": -2.121420839136071e-05
+     },
+     "SQV3_l1.0": {
+      "etirement_max": 1.4638577066062732,
+      "etirement_p99": 1.0092118597699578,
+      "retournements": 13,
+      "volume_variation": -4.3915744823444413e-16
+     }
+    },
+    {
+     "articulation": "genou_G",
+     "angle_deg": 105,
+     "phase": "test",
+     "LBS": {
+      "etirement_max": 2.3213236590042228,
+      "etirement_p99": 1.0000000000000262,
+      "retournements": 19,
+      "volume_variation": -0.03576806534810531
+     },
+     "DQS": {
+      "etirement_max": 2.266307271908634,
+      "etirement_p99": 1.0000000000000113,
+      "retournements": 18,
+      "volume_variation": -0.035702289826500276
+     },
+     "ARAP_K5_l0.1": {
+      "etirement_max": 1.3670391092755176,
+      "etirement_p99": 1.0016336711660343,
+      "retournements": 10,
+      "volume_variation": -0.03380393442353515
+     },
+     "ARAP_K5_l1.0": {
+      "etirement_max": 1.6821563562410016,
+      "etirement_p99": 1.000579547106081,
+      "retournements": 14,
+      "volume_variation": -0.03615300682874392
+     },
+     "ARAP_K20_l0.1": {
+      "etirement_max": 1.32270434494419,
+      "etirement_p99": 1.0013226525648893,
+      "retournements": 9,
+      "volume_variation": -0.03187839540355392
+     },
+     "ARAP_K20_l1.0": {
+      "etirement_max": 1.6618253167345491,
+      "etirement_p99": 1.0005591395958502,
+      "retournements": 14,
+      "volume_variation": -0.03623470278681384
+     },
+     "SQ_l0.1": {
+      "etirement_max": 1.5085281332978122,
+      "etirement_p99": 1.0005292148384362,
+      "retournements": 11,
+      "volume_variation": -0.031117605383131592
+     },
+     "SQV1_l0.1": {
+      "etirement_max": 1.5110014136379182,
+      "etirement_p99": 1.0092325285004915,
+      "retournements": 11,
+      "volume_variation": -2.234456970269716e-05
+     },
+     "SQV3_l0.1": {
+      "etirement_max": 1.5110031909885664,
+      "etirement_p99": 1.0092325285004915,
+      "retournements": 11,
+      "volume_variation": 8.783148964688883e-16
+     },
+     "SQ_l1.0": {
+      "etirement_max": 1.560926864200006,
+      "etirement_p99": 1.000220160657234,
+      "retournements": 14,
+      "volume_variation": -0.03420843912146101
+     },
+     "SQV1_l1.0": {
+      "etirement_max": 1.5639355479652206,
+      "etirement_p99": 1.0104018078014356,
+      "retournements": 14,
+      "volume_variation": -2.700668330333011e-05
+     },
+     "SQV3_l1.0": {
+      "etirement_max": 1.5639379213289346,
+      "etirement_p99": 1.0104100806548002,
+      "retournements": 14,
+      "volume_variation": -2.1957872411722207e-16
+     }
+    }
+   ]
+  }
+ },
+ "calibration": {
+  "ARAP_K5_l0.1": {
+   "accepte": false,
+   "max_pire": 2.229914164243891,
+   "p99_pire": 1.090031942897613,
+   "retournements_pires": 1
+  },
+  "ARAP_K5_l1.0": {
+   "accepte": false,
+   "max_pire": 2.2596048502580155,
+   "p99_pire": 1.1335391054463573,
+   "retournements_pires": 1
+  },
+  "ARAP_K20_l0.1": {
+   "accepte": false,
+   "max_pire": 2.2332118427196623,
+   "p99_pire": 1.0884437404679892,
+   "retournements_pires": 1
+  },
+  "ARAP_K20_l1.0": {
+   "accepte": false,
+   "max_pire": 2.2478098247670184,
+   "p99_pire": 1.1336082734957311,
+   "retournements_pires": 1
+  },
+  "SQ_l0.1": {
+   "accepte": false,
+   "max_pire": 2.1987989211059262,
+   "p99_pire": 1.1070418327600373,
+   "retournements_pires": 0
+  },
+  "SQ_l1.0": {
+   "accepte": false,
+   "max_pire": 2.237094569656351,
+   "p99_pire": 1.1357638738085705,
+   "retournements_pires": 0
+  },
+  "SQV1_l0.1": {
+   "accepte": true,
+   "max_pire": 2.132546456084147,
+   "p99_pire": 1.1205874509170641,
+   "retournements_pires": 0
+  },
+  "SQV1_l1.0": {
+   "accepte": true,
+   "max_pire": 2.1897608337163925,
+   "p99_pire": 1.1474324787279921,
+   "retournements_pires": 0
+  },
+  "SQV3_l0.1": {
+   "accepte": true,
+   "max_pire": 2.1330574301513034,
+   "p99_pire": 1.120284283086057,
+   "retournements_pires": 0
+  },
+  "SQV3_l1.0": {
+   "accepte": true,
+   "max_pire": 2.1901442338520334,
+   "p99_pire": 1.1474507246936883,
+   "retournements_pires": 0
+  }
+ },
+ "choix": "SQV1_l0.1"
+}

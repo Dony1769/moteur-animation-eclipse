@@ -1065,3 +1065,12 @@ Le générateur (centres et axes réels, chaîne de descendants) reproduit les p
 
 ## 140. Pour un blend, mesurer la correction, pas la position
 Voir entrée 178.
+
+## 141. Tester une contrainte sur un mouvement rigide pur avant toute expérience
+Un mouvement rigide doit être reproduit exactement. Voir entrée 180.
+
+## 142. Une méthode qui améliore le maximum sur une morphologie peut dégrader une autre : mesurer par pose
+Voir entrées 182 et 183 : même méthode, effets opposés selon la morphologie, visibles seulement par pose.
+
+## 143. La calibration ne valide pas, elle sélectionne : la validation se fait sur des poses et des morphologies séparées
+Voir entrée 184.
