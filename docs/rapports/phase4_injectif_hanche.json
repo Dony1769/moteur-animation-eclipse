@@ -1,47 +1,50 @@
-[
-  {
-    "th": 30,
-    "inversions": 0,
-    "n_aretes_bande": 87,
-    "mediane": 1.0013,
-    "p95": 1.0882,
-    "p99": 1.0916,
-    "fraction_sup_1_15": 0.0
-  },
-  {
-    "th": 60,
-    "inversions": 0,
-    "n_aretes_bande": 87,
-    "mediane": 0.9772,
-    "p95": 1.122,
-    "p99": 1.133,
-    "fraction_sup_1_15": 0.0
-  },
-  {
-    "th": 90,
-    "inversions": 0,
-    "n_aretes_bande": 87,
-    "mediane": 0.9724,
-    "p95": 1.1121,
-    "p99": 1.1265,
-    "fraction_sup_1_15": 0.0
-  },
-  {
-    "th": 105,
-    "inversions": 0,
-    "n_aretes_bande": 87,
-    "mediane": 0.9724,
-    "p95": 1.1121,
-    "p99": 1.1265,
-    "fraction_sup_1_15": 0.0
-  },
-  {
-    "th": 120,
-    "inversions": 0,
-    "n_aretes_bande": 87,
-    "mediane": 0.9724,
-    "p95": 1.1121,
-    "p99": 1.1265,
-    "fraction_sup_1_15": 0.0
-  }
-]
+{
+  "statut": "INVALIDE. Partage 50/50 de la rotation (a = 0,5) : blocage vers 70 degres ; à 120 degres, écart distal 0,38 m (bord non atteint). Les statistiques de bande sont identiques à 90, 105 et 120 degrés : elles ne mesurent pas la pose demandée. Sans répartition (a = 1) : écart distal 0,82 m à 120 degrés. Voir erreurs_apprises entrée 126.",
+  "mesures_non_valides": [
+    {
+      "th": 30,
+      "inversions": 0,
+      "n_aretes_bande": 87,
+      "mediane": 1.0013,
+      "p95": 1.0882,
+      "p99": 1.0916,
+      "fraction_sup_1_15": 0.0
+    },
+    {
+      "th": 60,
+      "inversions": 0,
+      "n_aretes_bande": 87,
+      "mediane": 0.9772,
+      "p95": 1.122,
+      "p99": 1.133,
+      "fraction_sup_1_15": 0.0
+    },
+    {
+      "th": 90,
+      "inversions": 0,
+      "n_aretes_bande": 87,
+      "mediane": 0.9724,
+      "p95": 1.1121,
+      "p99": 1.1265,
+      "fraction_sup_1_15": 0.0
+    },
+    {
+      "th": 105,
+      "inversions": 0,
+      "n_aretes_bande": 87,
+      "mediane": 0.9724,
+      "p95": 1.1121,
+      "p99": 1.1265,
+      "fraction_sup_1_15": 0.0
+    },
+    {
+      "th": 120,
+      "inversions": 0,
+      "n_aretes_bande": 87,
+      "mediane": 0.9724,
+      "p95": 1.1121,
+      "p99": 1.1265,
+      "fraction_sup_1_15": 0.0
+    }
+  ]
+}
