@@ -791,3 +791,7 @@ Mesure LBS sans clé, bras gauche seul : 90° 24 -> 12 replis ; 120° 31 -> 19 ;
 - Séparer étirement et plis en bande de jonction et hors bande (critère utilisateur, erreur 99).
 - Sur les faces d'origine, la métrique est valide jusqu'à 90° au coude ; au-delà, les faces qui traversent la jointure produisent de faux plis.
 - Sur la surface unie, un témoin identique (θ = 0) ne suffit pas : vérifier aussi la correspondance dans la région où le repos se chevauche.
+
+## 77. Correspondance matérielle avant tout compte de plis
+- Une correspondance par face la plus proche n'a de sens que si la surface est proche de son repos. Mesurer la distance de correspondance (médiane 9 cm ici) avant d'interpréter un compte.
+- Pour un segment rigide, la correspondance est la transformation rigide : pli zéro par construction. Un pli n'apparaît qu'à la jointure, et il doit être mesuré là seulement.

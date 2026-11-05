@@ -615,3 +615,10 @@ Chaque erreur a une cause, une correction et un test. Une erreur corrigée doit 
 - Surface unie (bras + avant-bras + sphère), plis par correspondance de face la plus proche au repos : témoin à 0° passé (0 pli, distance 0,2 mm), mais 491 à 743 plis hors bande de 30° à 120°. Non expliqué. Hypothèse à vérifier : chevauchement au repos du bras et de l'avant-bras au coude, qui fausse la correspondance.
 - Leçon : un témoin identique ne suffit pas. Il faut aussi un témoin qui touche la région mesurée (ici, le chevauchement de repos).
 - Rapport : `docs/rapports/phase4_bande_jonction.json`. Scripts : `engine/skinning/reference/`.
+
+## 102. Plis sur surface unie : la correspondance « face la plus proche au repos » est fausse quand la surface s'est déplacée
+- Hypothèse du chevauchement de repos (erreur 101) réfutée : chevauchement hors sphère = 0 cm³.
+- Diagnostic : les 695 faces signalées à 30° sont à 8,5–40,7 cm du coude (médiane 31 cm). Leur plus proche voisine au repos est à 9 cm en médiane. La surface a bougé bien au-delà de la distance où la correspondance par proximité reste valable. Le « pli » est un faux positif (dot médian −0,45 avec une face qui ne correspond pas au même point matériel).
+- Règle correcte : la correspondance se fait par point matériel. Pour un segment rigide (bras, avant-bras), la correspondance est la transformation rigide, donc aucun pli par construction ; les plis ne peuvent naître qu'à la jointure (sphère, coupe). Pour la peau continue, il faut une correspondance par sommets ou par paramétrage.
+- Leçon : une métrique de pli par proximité n'est valide que si la surface reste près de son repos. Vérifier la distance de correspondance avant d'interpréter le compte.
+- Diagnostic : `engine/skinning/reference/diagnostic_plis_surface_unie.py`.
