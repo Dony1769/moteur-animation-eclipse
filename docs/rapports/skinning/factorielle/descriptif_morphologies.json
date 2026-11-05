@@ -1,0 +1,150 @@
+{
+ "masculin": {
+  "nom": "masculin",
+  "N": 10582,
+  "polygones": 10590,
+  "quads": 10570,
+  "triangles": 20,
+  "bbox_min": [
+   -2.7047,
+   -0.1795,
+   -0.0055
+  ],
+  "bbox_max": [
+   -1.824,
+   0.111,
+   1.6844
+  ],
+  "centres_hanche_G": [
+   -2.1544,
+   -0.0342,
+   0.8732
+  ],
+  "centres_hanche_D": [
+   -2.3744,
+   -0.0342,
+   0.8732
+  ],
+  "region_R_sommets": 317,
+  "region_R_mixtes": 221,
+  "mixtes_equilibres_0.4_0.6": 15,
+  "region_R_aretes": 574,
+  "aretes_mediane_m": 0.030373091767821693,
+  "aretes_p10_m": 0.025102563087257054,
+  "aretes_p90_m": 0.03599489008176649,
+  "aretes_direction_mixte_axe_x_moyenne": 0.4347934007902255,
+  "polygone_rapport_max_min_mediane_R": 1.212699398096864,
+  "courbure_mediane_R": 0.04949937330506884,
+  "courbure_mediane_global": 0.04014656226626908,
+  "valence_mediane_R": 4.0,
+  "valence_repartition_global": [
+   0,
+   0,
+   0,
+   232,
+   10106,
+   244
+  ],
+  "mixtes_centroide": [
+   -2.2649,
+   -0.0073,
+   0.7785
+  ],
+  "mixtes_etendue_std": [
+   0.075,
+   0.0808,
+   0.0893
+  ],
+  "mixtes_distance_milieu_hanches_mediane": 0.16053528612059598,
+  "mixtes_distance_min_centre_mediane": 0.15757352830332433,
+  "mixtes_aretes_nb": 393,
+  "mixtes_gradient_poids_mediane_par_m": 1.1523918869004486,
+  "mixtes_gradient_poids_p90_par_m": 4.493917658371077,
+  "histogramme_wG_mixtes_10_classes": [
+   81,
+   26,
+   11,
+   9,
+   7,
+   8,
+   6,
+   10,
+   15,
+   48
+  ]
+ },
+ "feminin": {
+  "nom": "feminin",
+  "N": 10582,
+  "polygones": 10590,
+  "quads": 10570,
+  "triangles": 20,
+  "bbox_min": [
+   -2.6855,
+   -0.1674,
+   0.002
+  ],
+  "bbox_max": [
+   -1.8432,
+   0.1152,
+   1.6413
+  ],
+  "centres_hanche_G": [
+   -2.1544,
+   -0.0342,
+   0.8732
+  ],
+  "centres_hanche_D": [
+   -2.3744,
+   -0.0342,
+   0.8732
+  ],
+  "region_R_sommets": 252,
+  "region_R_mixtes": 171,
+  "mixtes_equilibres_0.4_0.6": 12,
+  "region_R_aretes": 453,
+  "aretes_mediane_m": 0.028469835997406864,
+  "aretes_p10_m": 0.021251131954863448,
+  "aretes_p90_m": 0.03470180160603117,
+  "aretes_direction_mixte_axe_x_moyenne": 0.44853128192839964,
+  "polygone_rapport_max_min_mediane_R": 1.256674202180346,
+  "courbure_mediane_R": 0.03822844139870071,
+  "courbure_mediane_global": 0.0394177087709429,
+  "valence_mediane_R": 4.0,
+  "valence_repartition_global": [
+   0,
+   0,
+   0,
+   232,
+   10106,
+   244
+  ],
+  "mixtes_centroide": [
+   -2.2643,
+   0.0124,
+   0.8393
+  ],
+  "mixtes_etendue_std": [
+   0.0524,
+   0.0804,
+   0.0965
+  ],
+  "mixtes_distance_milieu_hanches_mediane": 0.14513836352099282,
+  "mixtes_distance_min_centre_mediane": 0.15592435965194582,
+  "mixtes_aretes_nb": 300,
+  "mixtes_gradient_poids_mediane_par_m": 1.5362061050837748,
+  "mixtes_gradient_poids_p90_par_m": 4.963894724564983,
+  "histogramme_wG_mixtes_10_classes": [
+   67,
+   30,
+   13,
+   10,
+   6,
+   6,
+   6,
+   9,
+   14,
+   10
+  ]
+ }
+}

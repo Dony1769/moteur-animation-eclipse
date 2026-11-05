@@ -1397,3 +1397,22 @@ Résultat (docs/rapports/phase4_psd_hanche_genou.json) : genou plis 0–4, étir
   de −0,01 pour le terme de rotation. À géométrie et poids fixes, varier l'angle des cuisses ne donne pas d'effet monotone.
 - Règle : l'amplification est un effet global du solveur, pas une somme de défauts locaux. Ne pas conclure à une
   causalité locale à partir d'une corrélation par arête.
+
+## 198. Une correspondance par plus proche voisin n'est pas un transfert de poids valide
+- Constat : entre les maillages masculin et féminin (même connectivité, ordre de sommets différent), le plus proche
+  voisin a une erreur médiane de 2,0 cm, supérieure à une arête (≈ 3 cm), et n'est pas injectif (4 215 cibles uniques
+  pour 10 582 sommets). Transférer les poids par indice ou par plus proche voisin est donc invalide.
+- Règle : avant toute comparaison croisée de deux maillages, valider une correspondance (injective, erreur médiane
+  nettement sous une arête) ou déclarer le plan croisé bloqué.
+- Conséquence : le plan factoriel réel est bloqué ; l'isolation est menée sur des grilles synthétiques.
+
+## 199. Un plan factoriel dont un facteur change la densité ne sépare pas la forme du pas
+- Constat : dans `investigation_factorielle.py`, le facteur géométrie change le nombre de points (21 ou 22 par côté).
+  Son effet mesuré mélange donc forme, densité et pas.
+- Règle : pour isoler une forme, garder le même nombre de sommets et ne faire varier que la forme ; le pas seul
+  doit être un facteur à part entière.
+
+## 200. Une métrique de différence absolue peut être dominée par la valeur de référence
+- Constat : l'écart SQ − LBS sur le maximum dépend beaucoup du maximum LBS (qui varie avec les poids). Une interaction
+  géométrie × poids de +0,17 en résulte surtout de cette non-linéarité, pas d'un mécanisme propre.
+- Règle : rapporter aussi l'écart relatif et ne pas interpréter une interaction sans le contrôle de la référence.

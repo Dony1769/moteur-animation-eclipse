@@ -1109,3 +1109,13 @@ Un découpage rotation / translation qui se compense n'a pas de sens physique. V
 
 ## 154. Un effet global ne se lit pas dans la taille des résidus locaux
 Une corrélation par arête ne suffit pas à désigner une cause. Voir entrée 197.
+
+## 155. Une correspondance invalide ne permet pas de transférer des données
+Voir entrée 198 : vérifier l'injectivité et l'erreur d'une correspondance avant tout transfert.
+
+## 156. Un plan factoriel doit séparer forme et densité
+Voir entrée 199.
+
+## 157. Un synthétique qui ne reproduit pas l'effet n'explique pas l'effet
+Le plan 2×2×2 n'a pas reproduit la régression masculine : SQ améliore LBS dans toutes les cellules. Il faut donc
+conclure « non reproduit » et non « éliminé ». Voir docs/rapports/skinning/factorielle/RAPPORT_factorielle.md.

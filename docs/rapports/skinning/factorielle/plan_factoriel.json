@@ -1,0 +1,258 @@
+{
+ "cellules": {
+  "GM_WM_TA": {
+   "LBS": {
+    "max": 1.3919410907075043,
+    "p99": 1.231868499475492,
+    "max_bande": 1.3919410907075043,
+    "retournements": 0,
+    "compression_min_aire": 0.5074445782546106
+   },
+   "SQ": {
+    "max": 1.1137643340234538,
+    "p99": 1.0792082330814168,
+    "max_bande": 1.1137643340234538,
+    "retournements": 0,
+    "compression_min_aire": 0.7022346437760142
+   },
+   "nb_sommets": 441,
+   "nb_aretes": 1240,
+   "espacement_m": 0.03,
+   "nb_sommets_bande": 147
+  },
+  "GM_WM_TB": {
+   "LBS": {
+    "max": 1.3919410907075043,
+    "p99": 1.231868499475492,
+    "max_bande": 1.3919410907075043,
+    "retournements": 0,
+    "compression_min_aire": 0.5074445782546106
+   },
+   "SQ": {
+    "max": 1.1191515839324795,
+    "p99": 1.0841504195943124,
+    "max_bande": 1.1191515839324795,
+    "retournements": 0,
+    "compression_min_aire": 0.719934014399625
+   },
+   "nb_sommets": 441,
+   "nb_aretes": 1240,
+   "espacement_m": 0.03,
+   "nb_sommets_bande": 147
+  },
+  "GM_WF_TA": {
+   "LBS": {
+    "max": 2.0536552777912838,
+    "p99": 1.7197383521919845,
+    "max_bande": 2.0536552777912838,
+    "retournements": 0,
+    "compression_min_aire": 0.5074445782546109
+   },
+   "SQ": {
+    "max": 1.2209178243447951,
+    "p99": 1.1570969285412396,
+    "max_bande": 1.1175875311653032,
+    "retournements": 0,
+    "compression_min_aire": 0.7121013510075017
+   },
+   "nb_sommets": 441,
+   "nb_aretes": 1240,
+   "espacement_m": 0.03,
+   "nb_sommets_bande": 147
+  },
+  "GM_WF_TB": {
+   "LBS": {
+    "max": 2.0536552777912838,
+    "p99": 1.7197383521919845,
+    "max_bande": 2.0536552777912838,
+    "retournements": 0,
+    "compression_min_aire": 0.5074445782546109
+   },
+   "SQ": {
+    "max": 1.2426184199653805,
+    "p99": 1.1633338147816534,
+    "max_bande": 1.1231228471744985,
+    "retournements": 0,
+    "compression_min_aire": 0.738881363587433
+   },
+   "nb_sommets": 441,
+   "nb_aretes": 1240,
+   "espacement_m": 0.03,
+   "nb_sommets_bande": 147
+  },
+  "GF_WM_TA": {
+   "LBS": {
+    "max": 1.6370705543744897,
+    "p99": 1.3564659966250536,
+    "max_bande": 1.6370705543744897,
+    "retournements": 0,
+    "compression_min_aire": 0.529150262212918
+   },
+   "SQ": {
+    "max": 1.1288149637336902,
+    "p99": 1.0849480474929574,
+    "max_bande": 1.1288149637336902,
+    "retournements": 0,
+    "compression_min_aire": 0.7301859644074201
+   },
+   "nb_sommets": 484,
+   "nb_aretes": 1365,
+   "espacement_m": 0.0285,
+   "nb_sommets_bande": 176
+  },
+  "GF_WM_TB": {
+   "LBS": {
+    "max": 1.6370705543744897,
+    "p99": 1.327679889895671,
+    "max_bande": 1.6370705543744897,
+    "retournements": 0,
+    "compression_min_aire": 0.529150262212918
+   },
+   "SQ": {
+    "max": 1.138489545230717,
+    "p99": 1.090413876362713,
+    "max_bande": 1.138489545230717,
+    "retournements": 0,
+    "compression_min_aire": 0.739319625570495
+   },
+   "nb_sommets": 484,
+   "nb_aretes": 1365,
+   "espacement_m": 0.0285,
+   "nb_sommets_bande": 176
+  },
+  "GF_WF_TA": {
+   "LBS": {
+    "max": 1.969771560359223,
+    "p99": 1.844417252142258,
+    "max_bande": 1.969771560359223,
+    "retournements": 0,
+    "compression_min_aire": 0.5074445782546109
+   },
+   "SQ": {
+    "max": 1.2500183569319812,
+    "p99": 1.1888765432975459,
+    "max_bande": 1.1695310721280423,
+    "retournements": 0,
+    "compression_min_aire": 0.6914619350307663
+   },
+   "nb_sommets": 484,
+   "nb_aretes": 1365,
+   "espacement_m": 0.0285,
+   "nb_sommets_bande": 176
+  },
+  "GF_WF_TB": {
+   "LBS": {
+    "max": 1.969771560359223,
+    "p99": 1.844417252142258,
+    "max_bande": 1.969771560359223,
+    "retournements": 0,
+    "compression_min_aire": 0.5074445782546109
+   },
+   "SQ": {
+    "max": 1.2709050368766763,
+    "p99": 1.1918686332200814,
+    "max_bande": 1.1836675472723044,
+    "retournements": 0,
+    "compression_min_aire": 0.7123307840145522
+   },
+   "nb_sommets": 484,
+   "nb_aretes": 1365,
+   "espacement_m": 0.0285,
+   "nb_sommets_bande": 176
+  }
+ },
+ "effets": {
+  "max_SQ": {
+   "effet_geometrie_F_moins_M": 0.022943935126738868,
+   "effet_poids_F_moins_M": 0.12105980279962325,
+   "effet_triangulation_B_moins_A": 0.014412276742833185,
+   "interaction_geometrie_x_poids": 0.0057496396225019675,
+   "interaction_geometrie_x_triangulation": -0.0008683539780278693,
+   "interaction_poids_x_triangulation": -0.006881361039806966
+  },
+  "p99_SQ": {
+   "effet_geometrie_F_moins_M": 0.01807942609366875,
+   "effet_poids_F_moins_M": 0.09061383582728033,
+   "effet_triangulation_B_moins_A": 0.0049092478864001254,
+   "interaction_geometrie_x_poids": 0.012077790503698282,
+   "interaction_geometrie_x_triangulation": 0.000680288490254588,
+   "interaction_poids_x_triangulation": 0.00029475980492554843
+  },
+  "max_bande_SQ": {
+   "effet_geometrie_F_moins_M": 0.0367192080172547,
+   "effet_poids_F_moins_M": 0.02342214270495191,
+   "effet_triangulation_B_moins_A": 0.008683405639877462,
+   "interaction_geometrie_x_poids": 0.0195249125130178,
+   "interaction_geometrie_x_triangulation": -0.0032221226807670478,
+   "interaction_poids_x_triangulation": -0.001152489936851131
+  },
+  "delta_max_SQ_moins_LBS": {
+   "effet_geometrie_F_moins_M": -0.05767893799072332,
+   "effet_poids_F_moins_M": -0.37614779373463325,
+   "effet_triangulation_B_moins_A": 0.014412276742833297,
+   "interaction_geometrie_x_poids": 0.17025623017202507,
+   "interaction_geometrie_x_triangulation": -0.0008683539780277583,
+   "interaction_poids_x_triangulation": -0.006881361039806966
+  },
+  "delta_p99_SQ_moins_LBS": {
+   "effet_geometrie_F_moins_M": -0.09936224577390301,
+   "effet_poids_F_moins_M": -0.4044932449719138,
+   "effet_triangulation_B_moins_A": 0.012105774568745786,
+   "interaction_geometrie_x_poids": 0.004840562420996675,
+   "interaction_geometrie_x_triangulation": -0.006516238192091073,
+   "interaction_poids_x_triangulation": 0.007491286487271098
+  },
+  "compression_min_SQ": {
+   "effet_geometrie_F_moins_M": 3.673406316495598e-05,
+   "effet_poids_F_moins_M": -0.009224703628325281,
+   "effet_triangulation_B_moins_A": 0.01862047333760064,
+   "interaction_geometrie_x_poids": -0.023631731837973013,
+   "interaction_geometrie_x_triangulation": 0.003619218264170332,
+   "interaction_poids_x_triangulation": -0.005203957444257945
+  },
+  "retournements_SQ": {
+   "effet_geometrie_F_moins_M": 0.0,
+   "effet_poids_F_moins_M": 0.0,
+   "effet_triangulation_B_moins_A": 0.0,
+   "interaction_geometrie_x_poids": 0.0,
+   "interaction_geometrie_x_triangulation": 0.0,
+   "interaction_poids_x_triangulation": 0.0
+  }
+ },
+ "parametres": {
+  "espacement": {
+   "M": 0.03,
+   "F": 0.0285
+  },
+  "bande_m": 0.1,
+  "domaine_m": 0.6,
+  "lambda": 0.1,
+  "rotation_G_deg": 120,
+  "histogrammes_wG_mixtes": {
+   "M": [
+    81,
+    26,
+    11,
+    9,
+    7,
+    8,
+    6,
+    10,
+    15,
+    48
+   ],
+   "F": [
+    67,
+    30,
+    13,
+    10,
+    6,
+    6,
+    6,
+    9,
+    14,
+    10
+   ]
+  }
+ }
+}
