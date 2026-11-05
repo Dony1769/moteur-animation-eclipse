@@ -799,3 +799,8 @@ Mesure LBS sans clé, bras gauche seul : 90° 24 -> 12 replis ; 120° 31 -> 19 ;
 ## 78. Juger la jonction par sa forme, pas seulement par la pénétration
 - Une sphère de jonction donne une saillie constante (1,5 cm ici) à tous les angles : elle ne crée pas de pli. Le côté fléchisseur doit devenir concave en flexion, le côté extenseur rester lisse.
 - Mesurer la saillie séparément côté fléchisseur et extenseur, à chaque angle, avant de déclarer la jonction valide.
+
+## 79. Pli fléchisseur : correction de pose, cible anatomique requise
+- Une correction de pose (PSD) stocke des décalages à quelques angles, puis les interpole : le pli se crée là où il est sculpté, pas là où une sphère fixe gonfle.
+- Une cible anatomique est indispensable : un skinning linéaire ne peut pas la fournir (il arrondit le coude).
+- Ordre : trouver la cible de pli, puis calculer δ aux angles échantillonnés, puis interpoler et mesurer (saillie fléchisseur / extenseur, erreur 103).

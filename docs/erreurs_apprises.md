@@ -629,3 +629,9 @@ Chaque erreur a une cause, une correction et un test. Une erreur corrigée doit 
 - Conséquence : la jonction est un renflement statique, pas une articulation anatomique. La critère « pas d'écrasement, pas d'aplatissement, plis seulement aux zones anatomiques » ne peut pas être validé avec une sphère seule.
 - À faire : séparer la saillie côté fléchisseur et côté extenseur, et exiger une concavité côté fléchisseur qui croît avec l'angle.
 - Script : `engine/skinning/reference/saillie_sphere_coude.py`.
+
+## 104. Pli fléchisseur : la boule fixe ne suffit pas ; retenir la correction de pose, mais il manque une cible anatomique
+- Recherche officielle (PSD, Lewis 2000) et non officielle (praticien) convergent : le pli fléchisseur est une correction de pose, sculptée à l'angle fléchi et interpolée sur l'angle.
+- Verrou : PSD a besoin d'une forme cible à l'angle fléchi. Le skinning Mixamo de la danse est linéaire et arrondit le coude : il ne peut pas servir de cible. Aucune source de forme de pli n'est encore disponible dans les fichiers reçus.
+- Décision : passer à la correction de pose, et chercher une source de forme de pli (modèle anatomique ou scan) avant de calculer δ.
+- Recherches : `docs/recherches_phase4.md`.
