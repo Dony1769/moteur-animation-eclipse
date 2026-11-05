@@ -1084,3 +1084,9 @@ sont améliorées. Voir entrée 186.
 
 ## 146. Ne régler un paramètre d'ancrage qu'avant de regarder le test
 Un réglage choisi après avoir vu les résultats sur la région défectueuse est une calibration déguisée. Voir entrée 187.
+
+## 147. Une composante de variation doit être séparée en axiale et perpendiculaire
+Une erreur d'arête dans l'axe de l'arête ne se corrige pas par une rotation. Voir entrée 189.
+
+## 148. Une cohérence de rotation locale ne suffit pas à valider une transformation
+Deux méthodes peuvent tourner de la même façon et se distinguer par leur aire et leur étirement. Voir entrée 190.

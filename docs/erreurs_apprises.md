@@ -1337,3 +1337,21 @@ Résultat (docs/rapports/phase4_psd_hanche_genou.json) : genou plis 0–4, étir
 - Constat : F6 (poids de la cuisse reportés sur les Hips) : SQ améliore le maximum, mais le LBS avec les poids modifiés
   atteint 5,50 avec 2 retournements. Le changement de poids n'est pas une correction admissible.
 - Règle : une modification des poids doit être validée sur le LBS seul avant toute mesure de SQ.
+
+## 189. L'amplification SQ est une variation de longueur le long de l'arête, pas une rotation
+- Constat : sur les 69 arêtes défectueuses, la composante de variation dans l'axe de l'arête corrèle à 0,85 avec
+  l'amplification ; la composante perpendiculaire à 0,20. L'angle entre les rotations des extrémités (10°) ne
+  corrèle pas positivement (−0,37).
+- Règle : décomposer la variation d'arête en composante axiale et perpendiculaire avant de conclure sur la rotation.
+
+## 190. Une rotation locale correcte peut coexister avec une amplification : mesurer le gradient par triangle
+- Constat : l'angle entre la rotation LBS et la rotation SQ est de 2,4° (médiane) sur les triangles défectueux. Le
+  repère de SQ n'est donc pas incohérent localement, mais SQ comprime 45 triangles sur 81 (minimum 0,24).
+- Règle : une cohérence de rotation ne garantit pas une cohérence d'aire ou d'étirement ; les deux se mesurent séparément.
+
+## 191. Une propagation de rotation peut déplacer un sommet dont la transformation locale est rigide
+- Constat : à poids modifiés (les sommets défectueux reçoivent tout le poids de la cuisse droite), LBS laisse les
+  défauts rigides (1,00) ; SQ les déplace de 4,8 cm (0,8 cm à poids d'origine) et crée un étirement de 1,22.
+- Cause probable : le système de contraintes transmet les rotations des voisins, sans que le sommet ait lui-même
+  une transformation non rigide. Mesuré sur un seul changement de poids, non démontré à poids d'origine.
+- Règle : tester la propagation en modifiant les poids seuls, à géométrie et transformations fixes.
