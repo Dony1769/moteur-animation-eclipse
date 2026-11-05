@@ -776,3 +776,8 @@ Mesure LBS sans clé, bras gauche seul : 90° 24 -> 12 replis ; 120° 31 -> 19 ;
 ## 73. Rejouer une animation réelle : compter les images, pas seulement les angles
 - Extraire l'angle image par image (`engine/skinning/reference/serie_flexion.py`), puis mesurer chaque angle distinct : une seule métrique par image, pour que le résultat dise combien d'images passent.
 - Coude de la danse : 0 image sur 250 avec pénétration hors sphère. Ne valide pas les plis ni l'étirement de la surface unie.
+
+## 74. Étirement : séparer la zone de jonction du corps de la peau
+- L'étirement est attendu au pli d'une articulation, et doit être borné là. Il est interdit sur le corps de la peau.
+- Mesurer deux métriques : étirement hors jonction (cible ≈ 1) et étirement dans la bande de jonction (borné, séparé). Ne jamais les agréger.
+- Source : consigne explicite de l'utilisateur, à retenir comme critère de référence (erreur 99).

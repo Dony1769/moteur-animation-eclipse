@@ -595,3 +595,9 @@ Chaque erreur a une cause, une correction et un test. Une erreur corrigée doit 
 - Ce résultat ne couvre pas : les plis et l'étirement sur la surface unie, et la plage 100 à 145° (le modèle y a déjà 4,95 cm³ à 120°). La symétrie gauche/droite est supposée.
 - Leçon : un passage de test sur une animation réelle est plus fort que des angles isolés, mais il faut dire quelles métriques il couvre et lesquelles restent ouvertes.
 - Données : `docs/reference_hiphop/rejeu_coude_danse.json`. Script : `engine/skinning/reference/rejeu_danse_coude.py`.
+
+## 99. Critère d'étirement mal posé : l'étirement est permis aux jonctions, interdit sur le corps de la peau
+- Consigne de l'utilisateur : l'étirement doit apparaître dans les zones de jonction (où la peau se plie), pas le long du corps de la peau. Un étirement généralisé sur le corps est un défaut.
+- Critère correct : étirement ≈ 1 (écart < quelques %) sur toute la peau hors des zones de jonction ; étirement borné dans la zone de jonction, mesuré séparément ; plis = 0 partout en dehors des plis anatomiques autorisés.
+- Mesure : deux métriques, une globale hors jonction, une locale dans la bande de jonction (distance au centre de l'articulation). Ne jamais agréger les deux.
+- Erreur précédente : j'ai rapporté un étirement maximal global de 2 à 5, sans séparer la zone de jonction. Cela a masqué à la fois le défaut de la peau et l'effet attendu de la jonction.
