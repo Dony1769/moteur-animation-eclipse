@@ -6,7 +6,7 @@ notre propre moteur. Aucune fonctionnalité ne doit dépendre d'un abonnement, d
 ## Statut de ce document
 
 - Ce plan liste les projets, leur rôle dans notre moteur et l'ordre d'étude.
-- Les licences de UniRig et Puppeteer sont vérifiées (section « Résultats » ci-dessous). Les autres projets ne le sont pas.
+- Licences vérifiées sur sources officielles : UniRig, Puppeteer, MPFB2, MB-Lab, MakeHuman Community (sections « Résultats »). Les autres projets ne le sont pas.
 - Aucune intégration n'est déclarée fonctionnelle. Le test d'inférence local n'a pas été exécuté (voir « Limitations »).
 
 ## Résultats : UniRig (VAST-AI Research)
@@ -98,6 +98,38 @@ Architecture lue (partielle) :
 Ce qui reste à lire dans MPFB2 : la génération de morphologie (`services/humanservice.py`, `targetservice.py`) et
 la création de visage ; à relier à notre `engine/human_generator/`.
 
+## Résultats : MB-Lab (animate1978)
+
+Sources lues : dépôt officiel `https://github.com/animate1978/MB-Lab` (clone superficiel, commit 063bff0, 2024-06-08 : dépôt
+peu récent), fichier `license.txt` à la racine (trois sections : code, base de données, modèles générés).
+
+| Élément | Licence vérifiée | Source |
+|---|---|---|
+| Code Python | GPL-3.0 | `license.txt`, section « LICENSE OF THE CODE » |
+| Base de données (meshes, .blend, JSON, images) | **AGPL-3.0** | `license.txt`, section « LICENSE OF THE DATABASE » |
+| Modèles générés par le logiciel | **AGPL-3.0 par défaut** : « the AGPL will propagate from the base models and from the database to the output models » | `license.txt`, section « LICENSE OF MODELS GENERATED » |
+| Rendus 2D (images, vidéos) | Libres, l'auteur du rendu en est propriétaire | `license.txt`, section « LICENSE OF RENDERS » |
+
+Conséquence pour nous : un personnage produit avec les données de MB-Lab reste sous AGPL-3. Nous n'utiliserons donc pas
+ses données dans les personnages du moteur. On peut étudier son architecture (génération paramétrique, expressions,
+morphologie) et réimplémenter les idées sans recopier ses fichiers de données.
+
+Architecture lue : bloc de génération par morphs, moteur d'expressions, pipeline de squelette (`skeleton_ops.py`,
+`skeletonengine.py`), rotations humanoïdes (`humanoid_rotations.py`). Test local non exécuté (addon Blender, bpy absent).
+
+## Résultats : MakeHuman Community (code et assets)
+
+Sources lues : dépôt officiel `https://github.com/makehumancommunity/makehuman` (clone superficiel, commit a8bc2d5), fichiers
+`LICENSE.CODE.md` et `LICENSE.ASSETS.md`.
+
+| Élément | Licence vérifiée | Source |
+|---|---|---|
+| Code | AGPL-3.0 | `LICENSE.CODE.md` |
+| Assets graphiques (cibles, matériaux, poses) | CC0 1.0 | `LICENSE.ASSETS.md` ; mention dans les fichiers `.mhmat` et `poseunits` |
+
+Conséquence : on peut réutiliser les assets CC0 (cibles de morphologie déjà utilisées dans `engine/human_generator/`), en
+gardant l'attribution. Le code AGPL n'est pas copié.
+
 ## Limitations (à lire avant toute reprise)
 
 - **Test d'inférence local non exécuté.** Raisons mesurées : checkpoints de 1,7 à 4,4 Go ; 7 Go de RAM et 2 CPU ; 12 Go
@@ -158,6 +190,6 @@ la création de visage ; à relier à notre `engine/human_generator/`.
 
 - UniRig et Puppeteer : code et licences lus ; test local non exécuté (voir Limitations).
 - MPFB2 : licence vérifiée (code GPL-3.0, assets CC0), lecture partielle du rig ; test non exécuté (Blender absent).
-- Les autres projets (MB-Lab, TripoSR, Stable Fast 3D, Open3D, Instant Meshes, etc.) ne sont pas lus. Leurs licences
+- Les autres projets (TripoSR, Stable Fast 3D, Open3D, Instant Meshes, etc.) ne sont pas lus. Leurs licences
   ne sont pas vérifiées.
 - Anomalie texturage A1 (67 faces) ouverte dans `docs/todo.md`, non bloquante.
