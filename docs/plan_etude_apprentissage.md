@@ -6,9 +6,82 @@ notre propre moteur. Aucune fonctionnalité ne doit dépendre d'un abonnement, d
 ## Statut de ce document
 
 - Ce plan liste les projets, leur rôle dans notre moteur et l'ordre d'étude.
-- **Aucune licence n'est vérifiée ici.** Chaque projet doit d'abord avoir sa licence du code, des poids, des datasets
-  et des assets relue sur sa source officielle, puis une seconde source avant d'être utilisé (règle de la mission).
-- Aucun résultat de test n'est ajouté par ce document.
+- Les licences de UniRig et Puppeteer sont vérifiées (section « Résultats » ci-dessous). Les autres projets ne le sont pas.
+- Aucune intégration n'est déclarée fonctionnelle. Le test d'inférence local n'a pas été exécuté (voir « Limitations »).
+
+## Résultats : UniRig (VAST-AI Research)
+
+Sources lues : dépôt officiel `https://github.com/VAST-AI-Research/UniRig` (clone superficiel, commit 6793c66, 2026-06-04),
+fiche Hugging Face `https://huggingface.co/VAST-AI/UniRig` (API, tag `license:mit`).
+
+| Élément | Licence vérifiée | Source |
+|---|---|---|
+| Code racine | MIT (© 2025 VAST-AI-Research) | fichier LICENSE du dépôt |
+| Poids (skeleton, skin) | MIT | tag `license:mit` de la fiche HF |
+| Dataset Articulation-XL2.0 | CC-BY-4.0 | tag de la fiche HF `Seed3D/Articulation-XL2.0` |
+| Code Michelangelo (`src/model/michelangelo/`) | **GPL-3.0** (fichier LICENSE local et en-tête) | licence locale, pas la licence MIT racine |
+| Code Pointcept (`src/model/pointcept/`) | MIT (© 2024 Pointcept) | LICENSE local |
+| Modèle OPT-350m (cité) | `license:other` | fiche HF `facebook/opt-350m` ; UniRig ne charge que la configuration (`from_config`, poids aléatoires) |
+
+Limites de licence à retenir :
+- Le code Michelangelo est GPL-3.0 dans un dépôt MIT. Le réutiliser ou le redistribuer impose la GPL-3.0 à ce code.
+  Nous ne le copierons pas : on ne réimplémente que l'idée.
+- Le dataset (CC-BY-4.0) contient des modèles issus d'Objaverse, dont la licence dépend de chaque objet. Les poids entraînés
+  sur ces données ne sont pas « libres de tout risque » pour un usage commercial : à traiter avant toute utilisation commerciale.
+
+Architecture lue (`src/model/unirig_skin.py`, 595 lignes, prédiction des poids) :
+1. Encodeur d'os : positions des articulations, parents, latents du maillage.
+2. Encodeur de maillage : PTv3 (Point Transformer v3) sur les sommets, normales et grille.
+3. Attention croisée des sommets vers les os (une tête par canal) ; softmax sur les os.
+4. Prior de voxels : le poids d'un enfant est propagé à son parent le long de la chaîne (`skin_mask`), puis multiplié par le
+   masque en fin de prédiction.
+5. Tête de poids : MLP sur les caractéristiques par paire sommet-os, softmax, puis normalisation.
+
+Ce qui est réutilisable comme idée : le prior de voxels à propagation parent (point 4) et la lecture par paire
+sommet-os. Ce qui ne l'est pas tel quel : le modèle ne fait aucune validation de pli ni d'étirement ; il prédit des poids
+appris, sans garantie d'injectivité.
+
+Dépendances matérielles (lues dans le code et `requirements.txt`) :
+- `flash_attn` importé au niveau du module (`unirig_skin.py`, ligne 10) : paquet compilé pour CUDA.
+- `torch.autocast(device_type='cuda')` codé en dur (lignes 370, 429 ; `src/system/ar.py` ligne 135).
+- `bpy==4.2` (Blender en module Python) : roue prévue pour Python 3.11.
+- Checkpoint skin : 4,4 Go (`skin/articulation-xl/model.ckpt`). Modèle d'articulations AR de 350 M de paramètres.
+
+## Résultats : Puppeteer (ByteDance Seed)
+
+Sources lues : dépôt officiel `https://github.com/ByteDance-Seed/Puppeteer` (clone superficiel, commit 1c9d948, 2025-09-09),
+fiche Hugging Face `https://huggingface.co/Seed3D/Puppeteer` (tag `license:apache-2.0`).
+
+| Élément | Licence vérifiée | Source |
+|---|---|---|
+| Code racine | Apache-2.0 | fichier LICENSE du dépôt |
+| Poids (skeleton, skinning) | Apache-2.0 | tag de la fiche HF |
+| Dataset Articulation-XL2.0 | CC-BY-4.0 | fiche HF |
+| PartField (`skinning/third_partys/`) | **Licence NVIDIA, usage non commercial** (§ 3.3 : « non-commercially means for non-commercial research and educational purposes only ») | LICENSE du dépôt ChaoyueSong/PartField (sous-module non cloné ici) |
+| Michelangelo (`skeleton/third_partys/`) | **GPL-3.0** | LICENSE du dépôt ChaoyueSong/Michelangelo |
+| ptlflow, Video_Depth_Anything (`animation/third_partys/`) | Apache-2.0 | LICENSE des dépôts |
+| co-tracker (`animation/third_partys/`) | **CC-BY-NC-4.0** (usage non commercial) | LICENSE du dépôt amont `facebookresearch/co-tracker` ; le dépôt ChaoyueSong renvoie 404 |
+
+Limites de licence à retenir :
+- La partie skinning dépend de PartField (licence NVIDIA non commerciale) : elle ne peut pas servir à un produit commercial.
+- La partie animation dépend de co-tracker (CC-BY-NC) : même limite.
+- Les poids Puppeteer sont Apache-2.0, mais leur chemin d'inférence complet passe par ces composants.
+
+Architecture lue (`skinning/skinning_models/models.py`) :
+- Bloc « SkinningBlock » : attention croisée joint-joint (avec un biais de distance dans le graphe d'articulations, appelé
+  TAJA), joint-point, point-shape, point-joint.
+- Tête de poids : similarité cosinus point-joint normalisée, mise à l'échelle, puis softmax sur les articulations.
+
+Ce qui est réutilisable comme idée : le biais de distance dans le graphe d'articulations (TAJA). Il donne aux articulations
+voisines plus d'influence, sans codifier la géométrie. Ce qui ne l'est pas : la tête est apprise, sans contrainte d'injectivité.
+
+## Limitations (à lire avant toute reprise)
+
+- **Test d'inférence local non exécuté.** Raisons mesurées : checkpoints de 1,7 à 4,4 Go ; 7 Go de RAM et 2 CPU ; 12 Go
+  de disque libre ; code CUDA à patcher (flash_attn, autocast) ; bpy 4.2 requiert Python 3.11 (présent : `/usr/bin/python3.11`).
+  Un test CPU exige donc un environnement dédié et des patchs dans une copie de travail, pas dans le dépôt.
+- Aucun de ces modèles n'est intégré au moteur. Pour le moteur, la piste retenue reste la géométrie et les tests de déformation
+  (corrections de poses), qui ne dépendent pas d'un entraînement.
 
 ## Projets et rôle dans le moteur
 
@@ -60,6 +133,7 @@ notre propre moteur. Aucune fonctionnalité ne doit dépendre d'un abonnement, d
 
 ## Ce qui n'est pas encore fait
 
-- Aucun projet de cette liste n'a été lu dans cette session.
-- Les licences de UniRig, Puppeteer, TripoSR et Stable Fast 3D (poids) ne sont pas vérifiées.
-- Le test de classification extérieure (texturage) reste en attente d'une décision de l'utilisateur.
+- UniRig et Puppeteer : code et licences lus ; test local non exécuté (voir Limitations).
+- Les autres projets (MPFB2, MB-Lab, TripoSR, Stable Fast 3D, Open3D, Instant Meshes, etc.) ne sont pas lus. Leurs licences
+  ne sont pas vérifiées.
+- Anomalie texturage A1 (67 faces) ouverte dans `docs/todo.md`, non bloquante.

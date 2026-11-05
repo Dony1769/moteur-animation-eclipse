@@ -101,3 +101,10 @@
 - Mesure : le point le plus bas reste à 0 m pendant la chute (sommets évalués, engine/mesure.py).
 - Ouvert : dans le plan de victoire, le corps couché de B n'est pas lisible à l'image (seule l'épée est visible). À corriger par un plan dédié, ou en rapprochant la caméra du corps couché. Non validé.
 - Rendu complet non relancé.
+
+## Anomalies ouvertes : texturage (5 novembre 2026)
+- Décision : Takayama et al. 2014 abandonné pour le texturage. Référence retenue : lancer de rayon exact (visibilite_rayon).
+- Anomalie A1 (non bloquante) : 67 faces sur 13 221 vues par la visibilité exacte sont classées intérieures par
+  surface_exterieure.classer (2 points x 32 directions, graine 0). Hypothèse non vérifiée : incidence rasante.
+  À traiter plus tard si la classification sert encore ; le texturage n'en dépend plus.
+- Le test test_surface_exterieure.py échoue sur ce critère : il reste en l'état, à ne pas considérer comme validé.

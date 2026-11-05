@@ -980,3 +980,19 @@ Résultat (docs/rapports/phase4_psd_hanche_genou.json) : genou plis 0–4, étir
   que les faces réellement vues.
 - Méthode retenue : lancer de rayon exact (visibilite_rayon) pour la fusion ; tampon en aperçu seulement.
 - À faire ensuite : nettoyer ou séparer les surfaces internes avant le rigging et la peau (phase 6).
+
+## 140. Le lancer de rayon de trimesh sans embree tue le processus sur un maillage de 18 000 faces
+- Constat : test_surface_exterieure.py, classification du corps (18 486 faces, 37 000 origines x 32 directions) : processus
+  tué (exit 137, mémoire) sans message d'erreur Python.
+- Cause : sans embree, trimesh.ray.intersects_any utilise ray_triangle, qui construit une matrice rayons x triangles en
+  mémoire (≈ 37 000 x 18 000 valeurs par direction).
+- Correction : lots de 256 rayons (LOT_RAYONS dans surface_exterieure.py). Mesure : 470 s, 1,4 Go de pointe, même résultat.
+- Règle : sans embree, ne jamais passer un tableau entier de rayons à trimesh sur un maillage de plusieurs milliers de faces.
+
+## 141. Takayama 2014 : test de cohérence non passé, méthode abandonnée pour le texturage
+- Constat : sphère OK (toutes les faces non dégénérées extérieures). Corps : 67 faces sur 13 221 vues par la visibilité
+  exacte sont classées intérieures (test incohérent, statut A_REVOIR).
+- Ce qui est établi : sur le corps, aucune face n'est dégénérée. L'entrée 140 concernait la sphère (pôles), pas le corps.
+- Décision de l'utilisateur (5 novembre 2026) : abandonner Takayama pour le texturage ; garder le lancer de rayon exact comme
+  référence ; consigner les 67 faces comme anomalie ouverte (docs/todo.md).
+- Hypothèse non testée : faces en incidence rasante, peu de rayons libres avec 2 points x 32 directions.
