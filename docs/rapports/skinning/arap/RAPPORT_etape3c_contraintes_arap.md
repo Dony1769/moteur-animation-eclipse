@@ -45,3 +45,18 @@ Détail par pose (maximum, LBS → SQV1) :
 ## Décision
 Aucun candidat n'est intégré. Référence : LBS, DQS, Bone Heat, inchangés.
 Prochaine investigation : rotation par arête issue du seul os dominant (au lieu d'une moyenne sur la zone de transition).
+
+## Complément : rotation de l'os dominant (hypothèse de l'étape 3c, réfutée)
+Hypothèse : la dégradation masculine vient de la moyenne du repère Mv sur la zone de transition.
+Test : rotation par sommet de l'os de plus fort poids (polaire de son R_k), résolution linéaire, avec et sans une étape de volume.
+
+| Morphologie | Méthode | Étirement max | p99 moyen | Retournements | |Volume| max |
+|---|---|---:|---:|---:|---:|
+| masculin | LBS | 2,485 | 1,106 | 31 | 0,045 |
+| masculin | SDV1 λ 0,1 (os dominant + volume) | 3,486 | 1,097 | 8 | 0,003 |
+| féminin | SDV1 λ 0,1 | 2,678 | 1,102 | 17 | 0,004 |
+| Maria | SDV1 λ 0,1 | 2,160 | 1,010 | 53 | 0,000 |
+
+Lecture : pire que le repère moyenné (SQV1 : masculin 2,604, féminin 2,268). L'hypothèse est donc réfutée : la moyenne
+n'est pas la cause, et la rotation d'un seul os crée des défauts plus grands. La dégradation masculine reste inexpliquée.
+Entrée 185.

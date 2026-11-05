@@ -1314,3 +1314,8 @@ Résultat (docs/rapports/phase4_psd_hanche_genou.json) : genou plis 0–4, étir
 ## 184. Un candidat peut passer la calibration et échouer sur le test : aucune validation sur la calibration seule
 - Constat : SQV1 λ = 0,1 accepté en calibration (masculin 60/90°), mais dégrade la hanche masculine en test (+0,12).
 - Règle : la calibration ne valide rien ; la validation exige les trois morphologies et des poses de test.
+
+## 185. La rotation de l'os dominant est pire que le repère moyenné : l'hypothèse de la moyenne est réfutée
+- Constat : masculin, hanche 120° : maximum LBS 2,49 ; SQV1 (repère moyen) 2,60 ; SDV1 (os dominant) 3,49.
+- Conséquence : la dégradation masculine n'est pas causée par la moyenne des rotations. Sa cause reste à établir.
+- Règle : une hypothèse causale se teste par une expérience qui l'isole ; ici, l'hypothèse a été infirmée et consignée.

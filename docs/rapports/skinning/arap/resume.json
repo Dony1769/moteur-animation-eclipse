@@ -50,6 +50,30 @@
       "retournements": 0,
       "volume_variation": -0.011755760511277061
      },
+     "SD_l0.1": {
+      "etirement_max": 2.0827641511568347,
+      "etirement_p99": 1.0750866986895622,
+      "retournements": 0,
+      "volume_variation": -0.02178931171027436
+     },
+     "SDV1_l0.1": {
+      "etirement_max": 2.050310314147395,
+      "etirement_p99": 1.0845536162898972,
+      "retournements": 0,
+      "volume_variation": 0.00018509802857957937
+     },
+     "SD_l1.0": {
+      "etirement_max": 1.9186776607550984,
+      "etirement_p99": 1.091321117743001,
+      "retournements": 0,
+      "volume_variation": -0.013222676226626706
+     },
+     "SDV1_l1.0": {
+      "etirement_max": 1.8979931845844218,
+      "etirement_p99": 1.0945730062438437,
+      "retournements": 0,
+      "volume_variation": 6.743029477367001e-05
+     },
      "SQ_l0.1": {
       "etirement_max": 1.763128449452118,
       "etirement_p99": 1.0723776590195495,
@@ -126,6 +150,30 @@
       "etirement_p99": 1.1154225247200338,
       "retournements": 0,
       "volume_variation": -0.019448186791527846
+     },
+     "SD_l0.1": {
+      "etirement_max": 2.3904916914929575,
+      "etirement_p99": 1.09866351721881,
+      "retournements": 0,
+      "volume_variation": -0.03430612104061615
+     },
+     "SDV1_l0.1": {
+      "etirement_max": 2.3612951866275473,
+      "etirement_p99": 1.110122510469124,
+      "retournements": 0,
+      "volume_variation": 0.0004733783663986285
+     },
+     "SD_l1.0": {
+      "etirement_max": 2.182995258354107,
+      "etirement_p99": 1.1163711910829273,
+      "retournements": 0,
+      "volume_variation": -0.021663912090123798
+     },
+     "SDV1_l1.0": {
+      "etirement_max": 2.1607168650781277,
+      "etirement_p99": 1.1222239903654079,
+      "retournements": 0,
+      "volume_variation": 0.0001854743066234852
      },
      "SQ_l0.1": {
       "etirement_max": 1.9863001929697977,
@@ -204,6 +252,30 @@
       "retournements": 1,
       "volume_variation": -0.02810755157052224
      },
+     "SD_l0.1": {
+      "etirement_max": 2.6716903670833942,
+      "etirement_p99": 1.1164495594046004,
+      "retournements": 0,
+      "volume_variation": -0.04819998828906326
+     },
+     "SDV1_l0.1": {
+      "etirement_max": 2.6602621630792163,
+      "etirement_p99": 1.1314963510106246,
+      "retournements": 0,
+      "volume_variation": 0.000966344763704009
+     },
+     "SD_l1.0": {
+      "etirement_max": 2.4310018509217874,
+      "etirement_p99": 1.1378308168267655,
+      "retournements": 0,
+      "volume_variation": -0.031197183950465213
+     },
+     "SDV1_l1.0": {
+      "etirement_max": 2.407991868762511,
+      "etirement_p99": 1.1497606887014797,
+      "retournements": 0,
+      "volume_variation": 0.00039456832620905465
+     },
      "SQ_l0.1": {
       "etirement_max": 2.1987989211059262,
       "etirement_p99": 1.1070418327600373,
@@ -280,6 +352,30 @@
       "etirement_p99": 1.154822395326647,
       "retournements": 1,
       "volume_variation": -0.037061629744743176
+     },
+     "SD_l0.1": {
+      "etirement_max": 2.917419312813387,
+      "etirement_p99": 1.1273094519955815,
+      "retournements": 0,
+      "volume_variation": -0.06252406936328675
+     },
+     "SDV1_l0.1": {
+      "etirement_max": 2.9385224233708023,
+      "etirement_p99": 1.1493306768822622,
+      "retournements": 1,
+      "volume_variation": 0.0016814363610639816
+     },
+     "SD_l1.0": {
+      "etirement_max": 2.674695421522775,
+      "etirement_p99": 1.1526836335053365,
+      "retournements": 1,
+      "volume_variation": -0.04117281508481369
+     },
+     "SDV1_l1.0": {
+      "etirement_max": 2.6399530396790816,
+      "etirement_p99": 1.1663237221084513,
+      "retournements": 1,
+      "volume_variation": 0.0007047198394340835
      },
      "SQ_l0.1": {
       "etirement_max": 2.4099103329290217,
@@ -358,6 +454,30 @@
       "retournements": 8,
       "volume_variation": -0.04499670013663695
      },
+     "SD_l0.1": {
+      "etirement_max": 3.121069250032519,
+      "etirement_p99": 1.1355325866097603,
+      "retournements": 1,
+      "volume_variation": -0.07630220180981503
+     },
+     "SDV1_l0.1": {
+      "etirement_max": 3.1853899244755466,
+      "etirement_p99": 1.170997782619535,
+      "retournements": 2,
+      "volume_variation": 0.0025832613329555875
+     },
+     "SD_l1.0": {
+      "etirement_max": 2.8822317102043065,
+      "etirement_p99": 1.167686246171245,
+      "retournements": 1,
+      "volume_variation": -0.050910982716806545
+     },
+     "SDV1_l1.0": {
+      "etirement_max": 2.862428164264331,
+      "etirement_p99": 1.184426616026167,
+      "retournements": 3,
+      "volume_variation": 0.0011027561438904918
+     },
      "SQ_l0.1": {
       "etirement_max": 2.5895921229991896,
       "etirement_p99": 1.1316694542326213,
@@ -434,6 +554,30 @@
       "etirement_p99": 1.1131224317811719,
       "retournements": 0,
       "volume_variation": -0.01870035757373862
+     },
+     "SD_l0.1": {
+      "etirement_max": 2.3601907110495777,
+      "etirement_p99": 1.0976103320274595,
+      "retournements": 0,
+      "volume_variation": -0.033516243975176045
+     },
+     "SDV1_l0.1": {
+      "etirement_max": 2.378421087758741,
+      "etirement_p99": 1.1049414699736797,
+      "retournements": 0,
+      "volume_variation": 0.00044788584023470606
+     },
+     "SD_l1.0": {
+      "etirement_max": 2.2132500711926713,
+      "etirement_p99": 1.117475441259272,
+      "retournements": 0,
+      "volume_variation": -0.02093749999548486
+     },
+     "SDV1_l1.0": {
+      "etirement_max": 2.2186785470249903,
+      "etirement_p99": 1.121715218492322,
+      "retournements": 0,
+      "volume_variation": 0.00017222221455135867
      },
      "SQ_l0.1": {
       "etirement_max": 1.941205339672203,
@@ -512,6 +656,30 @@
       "retournements": 8,
       "volume_variation": -0.04414937155219525
      },
+     "SD_l0.1": {
+      "etirement_max": 3.34872120407994,
+      "etirement_p99": 1.1296300274339641,
+      "retournements": 2,
+      "volume_variation": -0.07436736507061582
+     },
+     "SDV1_l0.1": {
+      "etirement_max": 3.4856823928838545,
+      "etirement_p99": 1.1685307637000193,
+      "retournements": 2,
+      "volume_variation": 0.0024064325151312857
+     },
+     "SD_l1.0": {
+      "etirement_max": 3.1284527537606843,
+      "etirement_p99": 1.1616571910277569,
+      "retournements": 2,
+      "volume_variation": -0.04997466512448958
+     },
+     "SDV1_l1.0": {
+      "etirement_max": 3.1994916628731405,
+      "etirement_p99": 1.184893971993806,
+      "retournements": 4,
+      "volume_variation": 0.00104768994079124
+     },
      "SQ_l0.1": {
       "etirement_max": 2.5758278305852427,
       "etirement_p99": 1.1274941684649928,
@@ -588,6 +756,30 @@
       "etirement_p99": 1.0079440771897288,
       "retournements": 0,
       "volume_variation": -0.007664362458443226
+     },
+     "SD_l0.1": {
+      "etirement_max": 1.1827780013796805,
+      "etirement_p99": 1.0056536615945573,
+      "retournements": 0,
+      "volume_variation": -0.010822218905727906
+     },
+     "SDV1_l0.1": {
+      "etirement_max": 1.187267969380379,
+      "etirement_p99": 1.0163220079822113,
+      "retournements": 0,
+      "volume_variation": 4.368489279450375e-05
+     },
+     "SD_l1.0": {
+      "etirement_max": 1.1780601667385062,
+      "etirement_p99": 1.009509496966701,
+      "retournements": 0,
+      "volume_variation": -0.008235237391663002
+     },
+     "SDV1_l1.0": {
+      "etirement_max": 1.1814257409277227,
+      "etirement_p99": 1.0160839793895824,
+      "retournements": 0,
+      "volume_variation": 2.5262260672980512e-05
      },
      "SQ_l0.1": {
       "etirement_max": 1.056767110782913,
@@ -666,6 +858,30 @@
       "retournements": 7,
       "volume_variation": -0.010476704807692751
      },
+     "SD_l0.1": {
+      "etirement_max": 1.1893097127952765,
+      "etirement_p99": 1.0127574170635685,
+      "retournements": 0,
+      "volume_variation": -0.0164715733664202
+     },
+     "SDV1_l0.1": {
+      "etirement_max": 1.1925583664869823,
+      "etirement_p99": 1.0264422503763062,
+      "retournements": 0,
+      "volume_variation": 0.000101917250788612
+     },
+     "SD_l1.0": {
+      "etirement_max": 1.1896327906003739,
+      "etirement_p99": 1.0187306112570724,
+      "retournements": 2,
+      "volume_variation": -0.012439266109147687
+     },
+     "SDV1_l1.0": {
+      "etirement_max": 1.1921926037585853,
+      "etirement_p99": 1.0263411194439052,
+      "retournements": 3,
+      "volume_variation": 5.801794831006131e-05
+     },
      "SQ_l0.1": {
       "etirement_max": 1.0859305299932176,
       "etirement_p99": 1.0109269342629197,
@@ -742,6 +958,30 @@
       "etirement_p99": 1.020735228414537,
       "retournements": 11,
       "volume_variation": -0.011524554674013688
+     },
+     "SD_l0.1": {
+      "etirement_max": 1.1867356630176282,
+      "etirement_p99": 1.0183234219550499,
+      "retournements": 2,
+      "volume_variation": -0.01866506937756513
+     },
+     "SDV1_l0.1": {
+      "etirement_max": 1.1968212468319452,
+      "etirement_p99": 1.0312098911917642,
+      "retournements": 3,
+      "volume_variation": 0.00013110363349806936
+     },
+     "SD_l1.0": {
+      "etirement_max": 1.2047234446871085,
+      "etirement_p99": 1.0278535910940587,
+      "retournements": 7,
+      "volume_variation": -0.014045900197950514
+     },
+     "SDV1_l1.0": {
+      "etirement_max": 1.2119609976004504,
+      "etirement_p99": 1.032924628957729,
+      "retournements": 7,
+      "volume_variation": 7.40718314654405e-05
      },
      "SQ_l0.1": {
       "etirement_max": 1.10895668248253,
@@ -824,6 +1064,30 @@
       "retournements": 0,
       "volume_variation": -0.014585452724015496
      },
+     "SD_l0.1": {
+      "etirement_max": 1.684426141323739,
+      "etirement_p99": 1.0722429482263645,
+      "retournements": 0,
+      "volume_variation": -0.0265930065373214
+     },
+     "SDV1_l0.1": {
+      "etirement_max": 1.6426756406250118,
+      "etirement_p99": 1.0765750013534106,
+      "retournements": 0,
+      "volume_variation": 0.0002547999334100782
+     },
+     "SD_l1.0": {
+      "etirement_max": 1.7238847984078698,
+      "etirement_p99": 1.079218006860582,
+      "retournements": 0,
+      "volume_variation": -0.016200971573999124
+     },
+     "SDV1_l1.0": {
+      "etirement_max": 1.7029531453718048,
+      "etirement_p99": 1.0832894562104711,
+      "retournements": 0,
+      "volume_variation": 9.627668515931024e-05
+     },
      "SQ_l0.1": {
       "etirement_max": 1.591903548662049,
       "etirement_p99": 1.0687803537187635,
@@ -900,6 +1164,30 @@
       "etirement_p99": 1.0951154353586312,
       "retournements": 0,
       "volume_variation": -0.02395789399405058
+     },
+     "SD_l0.1": {
+      "etirement_max": 1.9141078660696182,
+      "etirement_p99": 1.0922806448976918,
+      "retournements": 0,
+      "volume_variation": -0.04145521509034967
+     },
+     "SDV1_l0.1": {
+      "etirement_max": 1.870688416573694,
+      "etirement_p99": 1.1024665737760502,
+      "retournements": 0,
+      "volume_variation": 0.0006410453755350106
+     },
+     "SD_l1.0": {
+      "etirement_max": 1.9547459921697374,
+      "etirement_p99": 1.1050421280316396,
+      "retournements": 0,
+      "volume_variation": -0.026455634771285184
+     },
+     "SDV1_l1.0": {
+      "etirement_max": 1.923828199814828,
+      "etirement_p99": 1.1139651634333416,
+      "retournements": 0,
+      "volume_variation": 0.00026642204502698647
      },
      "SQ_l0.1": {
       "etirement_max": 1.7798375398638009,
@@ -978,6 +1266,30 @@
       "retournements": 0,
       "volume_variation": -0.034475331625056456
      },
+     "SD_l0.1": {
+      "etirement_max": 2.130030480452933,
+      "etirement_p99": 1.1089484919187709,
+      "retournements": 0,
+      "volume_variation": -0.057872512723342456
+     },
+     "SDV1_l0.1": {
+      "etirement_max": 2.08946165328135,
+      "etirement_p99": 1.1306150524617111,
+      "retournements": 0,
+      "volume_variation": 0.001297194698017953
+     },
+     "SD_l1.0": {
+      "etirement_max": 2.170012884119564,
+      "etirement_p99": 1.1255597925480152,
+      "retournements": 0,
+      "volume_variation": -0.03802165553627418
+     },
+     "SDV1_l1.0": {
+      "etirement_max": 2.140346819354614,
+      "etirement_p99": 1.1444217684430706,
+      "retournements": 0,
+      "volume_variation": 0.0005713974884934388
+     },
      "SQ_l0.1": {
       "etirement_max": 1.9578459115195375,
       "etirement_p99": 1.1030140232839147,
@@ -1054,6 +1366,30 @@
       "etirement_p99": 1.1343385651550912,
       "retournements": 3,
       "volume_variation": -0.04526086554322686
+     },
+     "SD_l0.1": {
+      "etirement_max": 2.3232403312504397,
+      "etirement_p99": 1.1204930785469085,
+      "retournements": 0,
+      "volume_variation": -0.07472608773341026
+     },
+     "SDV1_l0.1": {
+      "etirement_max": 2.286465973203481,
+      "etirement_p99": 1.158696782042711,
+      "retournements": 2,
+      "volume_variation": 0.002251381643753433
+     },
+     "SD_l1.0": {
+      "etirement_max": 2.3611523274407027,
+      "etirement_p99": 1.1341889073293525,
+      "retournements": 0,
+      "volume_variation": -0.05011082866753353
+     },
+     "SDV1_l1.0": {
+      "etirement_max": 2.3354216261752745,
+      "etirement_p99": 1.1617962200734888,
+      "retournements": 2,
+      "volume_variation": 0.0010305678488791137
      },
      "SQ_l0.1": {
       "etirement_max": 2.1190818253324957,
@@ -1132,6 +1468,30 @@
       "retournements": 8,
       "volume_variation": -0.055146529398789765
      },
+     "SD_l0.1": {
+      "etirement_max": 2.487251570729774,
+      "etirement_p99": 1.1255625043487272,
+      "retournements": 0,
+      "volume_variation": -0.090867396835599
+     },
+     "SDV1_l0.1": {
+      "etirement_max": 2.4519109503787613,
+      "etirement_p99": 1.1900641952723554,
+      "retournements": 4,
+      "volume_variation": 0.003470804789424808
+     },
+     "SD_l1.0": {
+      "etirement_max": 2.5219561578227965,
+      "etirement_p99": 1.137292965735658,
+      "retournements": 2,
+      "volume_variation": -0.0618992969946121
+     },
+     "SDV1_l1.0": {
+      "etirement_max": 2.5006194985875765,
+      "etirement_p99": 1.1760893068269902,
+      "retournements": 5,
+      "volume_variation": 0.001631195149011973
+     },
      "SQ_l0.1": {
       "etirement_max": 2.2583654763117034,
       "etirement_p99": 1.1232292841720326,
@@ -1208,6 +1568,30 @@
       "etirement_p99": 1.0986072014025123,
       "retournements": 0,
       "volume_variation": -0.024181338226402137
+     },
+     "SD_l0.1": {
+      "etirement_max": 1.9489555921998358,
+      "etirement_p99": 1.093662517951052,
+      "retournements": 0,
+      "volume_variation": -0.041095049251319266
+     },
+     "SDV1_l0.1": {
+      "etirement_max": 1.9297946360481684,
+      "etirement_p99": 1.104471810047132,
+      "retournements": 0,
+      "volume_variation": 0.0006523060849165239
+     },
+     "SD_l1.0": {
+      "etirement_max": 1.9806028248670564,
+      "etirement_p99": 1.1072246341032665,
+      "retournements": 0,
+      "volume_variation": -0.026632732291984495
+     },
+     "SDV1_l1.0": {
+      "etirement_max": 1.968401010452408,
+      "etirement_p99": 1.116158837052147,
+      "retournements": 0,
+      "volume_variation": 0.0002734904786276199
      },
      "SQ_l0.1": {
       "etirement_max": 1.7737089664638848,
@@ -1286,6 +1670,30 @@
       "retournements": 8,
       "volume_variation": -0.05541210189895323
      },
+     "SD_l0.1": {
+      "etirement_max": 2.5783429039173864,
+      "etirement_p99": 1.1305633975655827,
+      "retournements": 0,
+      "volume_variation": -0.09058824539969158
+     },
+     "SDV1_l0.1": {
+      "etirement_max": 2.6783920390544584,
+      "etirement_p99": 1.1907474571394188,
+      "retournements": 3,
+      "volume_variation": 0.0036934331519985625
+     },
+     "SD_l1.0": {
+      "etirement_max": 2.5833357497740894,
+      "etirement_p99": 1.1443812293819766,
+      "retournements": 1,
+      "volume_variation": -0.06215161593296888
+     },
+     "SDV1_l1.0": {
+      "etirement_max": 2.6005833593448147,
+      "etirement_p99": 1.1803344011459982,
+      "retournements": 5,
+      "volume_variation": 0.0016922674879906907
+     },
      "SQ_l0.1": {
       "etirement_max": 2.2743064086554403,
       "etirement_p99": 1.1274447665208207,
@@ -1362,6 +1770,30 @@
       "etirement_p99": 1.0001559518500778,
       "retournements": 0,
       "volume_variation": -0.009817075603279726
+     },
+     "SD_l0.1": {
+      "etirement_max": 1.147880156557611,
+      "etirement_p99": 1.0000917260590008,
+      "retournements": 0,
+      "volume_variation": -0.012892996974108199
+     },
+     "SDV1_l0.1": {
+      "etirement_max": 1.149439937408437,
+      "etirement_p99": 1.0168463758209818,
+      "retournements": 0,
+      "volume_variation": 5.4268282095340105e-05
+     },
+     "SD_l1.0": {
+      "etirement_max": 1.2134770234193373,
+      "etirement_p99": 1.0000077913985075,
+      "retournements": 0,
+      "volume_variation": -0.010499862739584451
+     },
+     "SDV1_l1.0": {
+      "etirement_max": 1.2177813627281422,
+      "etirement_p99": 1.0138190840084382,
+      "retournements": 0,
+      "volume_variation": 3.604081482951383e-05
      },
      "SQ_l0.1": {
       "etirement_max": 1.139387563588471,
@@ -1440,6 +1872,30 @@
       "retournements": 8,
       "volume_variation": -0.012145597911017277
      },
+     "SD_l0.1": {
+      "etirement_max": 1.1828218933151513,
+      "etirement_p99": 1.0001723711851658,
+      "retournements": 2,
+      "volume_variation": -0.019288739172291222
+     },
+     "SDV1_l0.1": {
+      "etirement_max": 1.1857410409356834,
+      "etirement_p99": 1.0255413945562808,
+      "retournements": 3,
+      "volume_variation": 0.00012232159592543007
+     },
+     "SD_l1.0": {
+      "etirement_max": 1.2042354573411271,
+      "etirement_p99": 1.0000797650572562,
+      "retournements": 6,
+      "volume_variation": -0.014748270323740723
+     },
+     "SDV1_l1.0": {
+      "etirement_max": 1.2102195137699818,
+      "etirement_p99": 1.0202330799061903,
+      "retournements": 6,
+      "volume_variation": 7.164394929528233e-05
+     },
      "SQ_l0.1": {
       "etirement_max": 1.180374726318957,
       "etirement_p99": 1.0002117606123426,
@@ -1516,6 +1972,30 @@
       "etirement_p99": 1.0017924434798477,
       "retournements": 12,
       "volume_variation": -0.013053495665769146
+     },
+     "SD_l0.1": {
+      "etirement_max": 1.1865303977659127,
+      "etirement_p99": 1.000351093297201,
+      "retournements": 5,
+      "volume_variation": -0.02168148333535779
+     },
+     "SDV1_l0.1": {
+      "etirement_max": 1.1899472400371707,
+      "etirement_p99": 1.0289877671807708,
+      "retournements": 5,
+      "volume_variation": 0.00015496017810537655
+     },
+     "SD_l1.0": {
+      "etirement_max": 1.2175509195272662,
+      "etirement_p99": 1.0003160068998833,
+      "retournements": 8,
+      "volume_variation": -0.016064198999404408
+     },
+     "SDV1_l1.0": {
+      "etirement_max": 1.2201238500849831,
+      "etirement_p99": 1.023061928854062,
+      "retournements": 8,
+      "volume_variation": 8.516472937638424e-05
      },
      "SQ_l0.1": {
       "etirement_max": 1.1911708910036587,
@@ -1598,6 +2078,30 @@
       "retournements": 4,
       "volume_variation": 0.014602327668715978
      },
+     "SD_l0.1": {
+      "etirement_max": 1.6494846509597645,
+      "etirement_p99": 1.003681492333105,
+      "retournements": 3,
+      "volume_variation": 0.021626586371223985
+     },
+     "SDV1_l0.1": {
+      "etirement_max": 1.6504025375379296,
+      "etirement_p99": 1.0105572386989086,
+      "retournements": 3,
+      "volume_variation": -1.1464394130139008e-05
+     },
+     "SD_l1.0": {
+      "etirement_max": 2.2421989588427205,
+      "etirement_p99": 1.016548293096472,
+      "retournements": 4,
+      "volume_variation": 0.015111442318323886
+     },
+     "SDV1_l1.0": {
+      "etirement_max": 2.2422033180265846,
+      "etirement_p99": 1.0179589396863302,
+      "retournements": 4,
+      "volume_variation": -5.598940870895262e-06
+     },
      "SQ_l0.1": {
       "etirement_max": 1.686340410626623,
       "etirement_p99": 1.0117999465768879,
@@ -1674,6 +2178,30 @@
       "etirement_p99": 1.0197603041622219,
       "retournements": 12,
       "volume_variation": 0.002095355201421748
+     },
+     "SD_l0.1": {
+      "etirement_max": 1.7745054148375683,
+      "etirement_p99": 1.003794006589587,
+      "retournements": 3,
+      "volume_variation": 0.02359115415718693
+     },
+     "SDV1_l0.1": {
+      "etirement_max": 1.7756163105478433,
+      "etirement_p99": 1.0115396342634142,
+      "retournements": 3,
+      "volume_variation": -1.4049146959691944e-05
+     },
+     "SD_l1.0": {
+      "etirement_max": 2.5645285704945393,
+      "etirement_p99": 1.0176518887628994,
+      "retournements": 5,
+      "volume_variation": 0.01346700979475925
+     },
+     "SDV1_l1.0": {
+      "etirement_max": 2.564519494317517,
+      "etirement_p99": 1.0205909410991745,
+      "retournements": 5,
+      "volume_variation": -4.581517144749181e-06
      },
      "SQ_l0.1": {
       "etirement_max": 1.8120457290869518,
@@ -1752,6 +2280,30 @@
       "retournements": 14,
       "volume_variation": -0.004622104371444001
      },
+     "SD_l0.1": {
+      "etirement_max": 1.8970890241157734,
+      "etirement_p99": 1.0042278813346985,
+      "retournements": 4,
+      "volume_variation": 0.0237511330754229
+     },
+     "SDV1_l0.1": {
+      "etirement_max": 1.898115024941944,
+      "etirement_p99": 1.0119848390297097,
+      "retournements": 4,
+      "volume_variation": -1.4573388625850497e-05
+     },
+     "SD_l1.0": {
+      "etirement_max": 2.8621552953938982,
+      "etirement_p99": 1.0192920906050662,
+      "retournements": 5,
+      "volume_variation": 0.009646751981996627
+     },
+     "SDV1_l1.0": {
+      "etirement_max": 2.8637170069182036,
+      "etirement_p99": 1.0204481993208152,
+      "retournements": 5,
+      "volume_variation": -2.404912749515174e-06
+     },
      "SQ_l0.1": {
       "etirement_max": 1.9108643661766487,
       "etirement_p99": 1.0135630124776989,
@@ -1828,6 +2380,30 @@
       "etirement_p99": 1.0244713484359187,
       "retournements": 19,
       "volume_variation": -0.01287547589418011
+     },
+     "SD_l0.1": {
+      "etirement_max": 1.9953777273228128,
+      "etirement_p99": 1.0046261856497194,
+      "retournements": 5,
+      "volume_variation": 0.022095620827034583
+     },
+     "SDV1_l0.1": {
+      "etirement_max": 1.99627393333199,
+      "etirement_p99": 1.0111398149578332,
+      "retournements": 5,
+      "volume_variation": -1.2577607179058103e-05
+     },
+     "SD_l1.0": {
+      "etirement_max": 3.145269862614669,
+      "etirement_p99": 1.0210558916247083,
+      "retournements": 12,
+      "volume_variation": 0.00391101313670454
+     },
+     "SDV1_l1.0": {
+      "etirement_max": 3.146056850305987,
+      "etirement_p99": 1.0210456312801433,
+      "retournements": 12,
+      "volume_variation": -3.9375979536674546e-07
      },
      "SQ_l0.1": {
       "etirement_max": 1.978517434627034,
@@ -1906,6 +2482,30 @@
       "retournements": 23,
       "volume_variation": -0.02376353223959825
      },
+     "SD_l0.1": {
+      "etirement_max": 2.16067980016266,
+      "etirement_p99": 1.004987479256544,
+      "retournements": 8,
+      "volume_variation": 0.01873743783588261
+     },
+     "SDV1_l0.1": {
+      "etirement_max": 2.1595735273486945,
+      "etirement_p99": 1.009390632870258,
+      "retournements": 8,
+      "volume_variation": -8.643667080640457e-06
+     },
+     "SD_l1.0": {
+      "etirement_max": 3.3823415303577757,
+      "etirement_p99": 1.0222095386028252,
+      "retournements": 14,
+      "volume_variation": -0.003349325617569361
+     },
+     "SDV1_l1.0": {
+      "etirement_max": 3.381605800503045,
+      "etirement_p99": 1.022298801252241,
+      "retournements": 14,
+      "volume_variation": -2.762953310646561e-07
+     },
      "SQ_l0.1": {
       "etirement_max": 2.0361705657452527,
       "etirement_p99": 1.0108914266668707,
@@ -1982,6 +2582,30 @@
       "etirement_p99": 1.0204172841351977,
       "retournements": 12,
       "volume_variation": 0.002148891771364506
+     },
+     "SD_l0.1": {
+      "etirement_max": 1.759777983076781,
+      "etirement_p99": 1.0038048902813237,
+      "retournements": 3,
+      "volume_variation": 0.02499496958236501
+     },
+     "SDV1_l0.1": {
+      "etirement_max": 1.7607234333497492,
+      "etirement_p99": 1.0121725071602885,
+      "retournements": 3,
+      "volume_variation": -1.5778580082966942e-05
+     },
+     "SD_l1.0": {
+      "etirement_max": 2.46373814312157,
+      "etirement_p99": 1.017204756894715,
+      "retournements": 5,
+      "volume_variation": 0.014459013759808941
+     },
+     "SDV1_l1.0": {
+      "etirement_max": 2.4637461515759034,
+      "etirement_p99": 1.0199675179308985,
+      "retournements": 5,
+      "volume_variation": -5.2812183472199364e-06
      },
      "SQ_l0.1": {
       "etirement_max": 1.7961404859148684,
@@ -2060,6 +2684,30 @@
       "retournements": 21,
       "volume_variation": -0.023387698040756376
      },
+     "SD_l0.1": {
+      "etirement_max": 2.1205785373148496,
+      "etirement_p99": 1.004788645157797,
+      "retournements": 8,
+      "volume_variation": 0.01951506578973023
+     },
+     "SDV1_l0.1": {
+      "etirement_max": 2.1194304051587274,
+      "etirement_p99": 1.009562249001965,
+      "retournements": 8,
+      "volume_variation": -9.38455884978394e-06
+     },
+     "SD_l1.0": {
+      "etirement_max": 3.1743096155838755,
+      "etirement_p99": 1.0222094196537654,
+      "retournements": 13,
+      "volume_variation": -0.002399959451793815
+     },
+     "SDV1_l1.0": {
+      "etirement_max": 3.1744678868434084,
+      "etirement_p99": 1.022293221021784,
+      "retournements": 13,
+      "volume_variation": -1.418495496100033e-07
+     },
      "SQ_l0.1": {
       "etirement_max": 1.9879295323975579,
       "etirement_p99": 1.0112897137904788,
@@ -2136,6 +2784,30 @@
       "etirement_p99": 1.0002434852095279,
       "retournements": 8,
       "volume_variation": -0.01965055463613123
+     },
+     "SD_l0.1": {
+      "etirement_max": 1.404765682050112,
+      "etirement_p99": 1.0004026616147577,
+      "retournements": 4,
+      "volume_variation": -0.018999269800616864
+     },
+     "SDV1_l0.1": {
+      "etirement_max": 1.4059042980192848,
+      "etirement_p99": 1.0056036682628307,
+      "retournements": 4,
+      "volume_variation": -8.57206633097663e-06
+     },
+     "SD_l1.0": {
+      "etirement_max": 1.450013245660779,
+      "etirement_p99": 1.0003918442520707,
+      "retournements": 10,
+      "volume_variation": -0.02012421629268452
+     },
+     "SDV1_l1.0": {
+      "etirement_max": 1.4512259952325317,
+      "etirement_p99": 1.0061135588655967,
+      "retournements": 10,
+      "volume_variation": -9.616592396863505e-06
      },
      "SQ_l0.1": {
       "etirement_max": 1.343931084381203,
@@ -2214,6 +2886,30 @@
       "retournements": 14,
       "volume_variation": -0.03136718958256094
      },
+     "SD_l0.1": {
+      "etirement_max": 1.4733670111029105,
+      "etirement_p99": 1.0002830901808895,
+      "retournements": 10,
+      "volume_variation": -0.028836095140578097
+     },
+     "SDV1_l0.1": {
+      "etirement_max": 1.4757223074355303,
+      "etirement_p99": 1.0084774826269856,
+      "retournements": 10,
+      "volume_variation": -1.9444535959263714e-05
+     },
+     "SD_l1.0": {
+      "etirement_max": 1.539337156301146,
+      "etirement_p99": 1.0002447934460161,
+      "retournements": 13,
+      "volume_variation": -0.030704731588631136
+     },
+     "SDV1_l1.0": {
+      "etirement_max": 1.5418623139295051,
+      "etirement_p99": 1.0092639809004216,
+      "retournements": 13,
+      "volume_variation": -2.204369106009434e-05
+     },
      "SQ_l0.1": {
       "etirement_max": 1.4651180715962877,
       "etirement_p99": 1.000553769248704,
@@ -2290,6 +2986,30 @@
       "etirement_p99": 1.0005591395958502,
       "retournements": 14,
       "volume_variation": -0.03623470278681384
+     },
+     "SD_l0.1": {
+      "etirement_max": 1.4708473558352204,
+      "etirement_p99": 1.000221806546439,
+      "retournements": 12,
+      "volume_variation": -0.032633535591814145
+     },
+     "SDV1_l0.1": {
+      "etirement_max": 1.473795639243925,
+      "etirement_p99": 1.009494485772309,
+      "retournements": 12,
+      "volume_variation": -2.4579798574128926e-05
+     },
+     "SD_l1.0": {
+      "etirement_max": 1.716974602013735,
+      "etirement_p99": 1.0001594578698947,
+      "retournements": 15,
+      "volume_variation": -0.034833270161992565
+     },
+     "SDV1_l1.0": {
+      "etirement_max": 1.721265337368313,
+      "etirement_p99": 1.0105742622621585,
+      "retournements": 15,
+      "volume_variation": -2.8001815376324254e-05
      },
      "SQ_l0.1": {
       "etirement_max": 1.5085281332978122,
@@ -2390,6 +3110,30 @@
    "accepte": true,
    "max_pire": 2.1901442338520334,
    "p99_pire": 1.1474507246936883,
+   "retournements_pires": 0
+  },
+  "SD_l0.1": {
+   "accepte": false,
+   "max_pire": 2.6716903670833942,
+   "p99_pire": 1.1164495594046004,
+   "retournements_pires": 0
+  },
+  "SD_l1.0": {
+   "accepte": false,
+   "max_pire": 2.4310018509217874,
+   "p99_pire": 1.1378308168267655,
+   "retournements_pires": 0
+  },
+  "SDV1_l0.1": {
+   "accepte": true,
+   "max_pire": 2.6602621630792163,
+   "p99_pire": 1.1314963510106246,
+   "retournements_pires": 0
+  },
+  "SDV1_l1.0": {
+   "accepte": true,
+   "max_pire": 2.407991868762511,
+   "p99_pire": 1.1497606887014797,
    "retournements_pires": 0
   }
  },

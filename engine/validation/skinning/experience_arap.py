@@ -101,7 +101,7 @@ def main():
         contextes[morph] = {"z": z, "noms": noms, "js": os.path.join(RACINE, js), "sens": sens}
 
     cles = [f"ARAP_K{k}_l{l}" for k in KS for l in LAMBDAS] + [f"SQ_l{l}" for l in LAMBDAS] + \
-        [f"SQV{e}_l{l}" for e in (1, 3) for l in LAMBDAS]
+        [f"SQV{e}_l{l}" for e in (1, 3) for l in LAMBDAS] + [f"SD_l{l}" for l in LAMBDAS] + [f"SDV1_l{l}" for l in LAMBDAS]
     for morph, c in contextes.items():
         z, noms, js = c["z"], c["noms"], c["js"]
         rest, Wi, Ww, B = z["rest_monde"], z["W_idx"], z["W_w"], z["bones_rest_monde"]
@@ -129,6 +129,15 @@ def main():
                         pos = arap(lbs, rest, A, K, lam)
                         ligne[f"ARAP_K{K}_l{lam}"] = mesurer_pose(pos, rest, b, tot, A, Wi, Ww, B, pm)
                 Rsq = polaire(M.repere_rigide(Wi, Ww, B, pm))
+                # variante « os dominant » : rotation du seul os de plus fort poids (pas de moyenne)
+                Tk = pm @ np.linalg.inv(B)
+                dom = Wi[np.arange(len(Wi)), np.argmax(Ww, axis=1)]
+                Rdom = polaire(Tk[dom, :3, :3])
+                for lam in LAMBDAS:
+                    pos_d = solve_fixe(lbs, rest, A, Rdom, lam)
+                    ligne[f"SD_l{lam}"] = mesurer_pose(pos_d, rest, b, tot, A, Wi, Ww, B, pm)
+                    pvd, _ = CV.corriger(pos_d, rest, Wi, Ww, b, tot, T=TRI, M=1)
+                    ligne[f"SDV1_l{lam}"] = mesurer_pose(pvd, rest, b, tot, A, Wi, Ww, B, pm)
                 for lam in LAMBDAS:
                     pos = solve_fixe(lbs, rest, A, Rsq, lam)
                     ligne[f"SQ_l{lam}"] = mesurer_pose(pos, rest, b, tot, A, Wi, Ww, B, pm)

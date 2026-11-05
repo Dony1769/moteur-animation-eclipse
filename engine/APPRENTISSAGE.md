@@ -1074,3 +1074,6 @@ Voir entrées 182 et 183 : même méthode, effets opposés selon la morphologie,
 
 ## 143. La calibration ne valide pas, elle sélectionne : la validation se fait sur des poses et des morphologies séparées
 Voir entrée 184.
+
+## 144. Une hypothèse causale infirmée est un résultat : la consigner avant d'en tester une autre
+Voir entrée 185.
