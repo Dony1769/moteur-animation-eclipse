@@ -576,3 +576,9 @@ Chaque erreur a une cause, une correction et un test. Une erreur corrigée doit 
 - Témoin positif : avant d'accepter les zéros, décalage de l'avant-bras de 10 cm en +Z donne 46 cm³ : la méthode voit bien un chevauchement quand il existe. Les autres directions de décalage donnent 0, ce qui est cohérent avec une séparation.
 - Leçon : un zéro peut venir d'un booléen qui ne calcule rien. Toujours vérifier la fermeture et l'orientation, puis tester un témoin positif connu.
 - Script : `engine/skinning/test_coude_volume_union.py`. Rapport : `docs/rapports/phase4_coude_union.json`.
+
+## 96. Plis et étirement sur sommets d'origine : faux signal au joint en pièces rigides ; poussée de contact partielle
+- Mesure sur sommets d'origine, sans union : plis 3 / 7 / 11 et étirement 2,41 / 3,67 / 4,69 à 30 / 60 / 90°, alors que la pénétration est nulle. Cause : les faces d'origine qui traversent la jointure sont étirées par la rotation rigide d'une seule partie. Cette métrique ne mesure pas le coude de la surface unie.
+- Poussée bornée des sommets de l'avant-bras vers la surface du bras (normale de face, lissage 30 itérations) : à 120°, 5 sommets pénètrent encore (déplacement max 0,5 mm) ; à 145°, 28 sur 30 (déplacement max 4,7 mm, moyen 3,9 mm). Le lissage ramène les sommets dans le bras.
+- Leçon : valider la forme sur la surface réellement fermée (union), pas sur les faces d'origine qui traversent la jointure. Et une correction de contact doit être mesurée après lissage, pas avant.
+- Script : `engine/skinning/test_coude_correction_contact.py`. Recherche : `docs/recherches_phase4.md`.

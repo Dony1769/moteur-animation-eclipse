@@ -760,3 +760,8 @@ Mesure LBS sans clé, bras gauche seul : 90° 24 -> 12 replis ; 120° 31 -> 19 ;
 - Un bouchon en éventail doit suivre le sens inverse de l'arête de bord ; sinon le volume devient négatif sur une pièce et positif sur l'autre, et le booléen échoue (erreur 95). Après bouchon : `trimesh.repair.fix_winding` puis `fix_inversion`, et vérifier `is_volume`.
 - Avant d'accepter un zéro d'interpénétration, prouver que la méthode voit un chevauchement : décaler une pièce d'une distance connue et vérifier qu'un volume positif apparaît. Ici : 46 cm³ pour 10 cm en +Z.
 - Résultat coude (Rs 7 cm, sphère exclue) : 0 cm³ à 0–90°, 4,95 à 120°, 84,46 à 145°. Le coude n'est pas validé au-delà de 120° ; le tronc n'est pas encore inclus.
+
+## 71. Métrique de pli et d'étirement : ne pas l'appliquer à une jointure en pièces rigides
+- Sur les sommets d'origine, une rotation rigide d'une seule pièce étire les faces qui traversent la jointure, même sans pénétration (plis 3 à 11, étirement 2,4 à 4,7 à 30–90° au coude). Un résultat « pli 0 » ou « pénétration 0 » ne suffit donc pas.
+- Une correction de contact doit être mesurée après lissage : le lissage peut ramener les sommets dans l'autre pièce (5 et 28 sommets restants à 120 et 145°).
+- Source non officielle utile : choisir la direction de correction sur toute la séquence, pas image par image (orca_forge, dev.to). Voir `docs/recherches_phase4.md`.

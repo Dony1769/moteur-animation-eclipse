@@ -36,3 +36,9 @@ puis sources non officielles (articles de praticiens, issues de projets) quand l
 - Résultat : l'union du corps posé et d'une sphère de jonction donne un maillage fermé à 30, 60, 90 et 120°, volume conservé.
   C'est ce qui manquait aux couture approximées (erreurs 93 et 94).
 - Limite : la fermeture ne prouve pas l'absence de pénétration visible. Il faut mesurer la surface unie.
+
+## Coude au-dela de 120 deg (recherche du 4 nov. 2026)
+- Officiel (Kavan et al. 2008, Dual quaternion skinning, page du projet https://users.cs.utah.edu/~ladislav/dq/) : DQS supprime l'effondrement du coude par melange de quaternions duaux ; limite connue : bascule du sens de rotation (le plus court chemin). Peau continue, donc pas une methode de contact pour segments rigides.
+- Officiel-academique (Rohmer et al., « Exact volume preserving skinning with shape control », DOI 10.1145/1599470.1599481) : correction geometrique post-skinning qui conserve le volume exactement ; forme controlee par profils 1D. Pertinent pour le volume, mais demande une peau continue.
+- Non officiel (dev.to, orca_forge, « Elbow Interference Correction Jumps Back and Forth », https://dev.to/orca_forge/elbow-interference-correction-jumps-back-and-forth-1k70) : la correction de penetration saute d'un cote a l'autre d'une image a l'autre si la direction est choisie image par image. Methodes retenues : choisir la direction sur toute la sequence (programmation dynamique), normale de surface lissee sur 16 voisins, pole du coude deplace avec l'avant-bras, correction limitee a la partie distale du bras.
+- Application au moteur : poussee bornee et lissee (test_coude_correction_contact.py) : resultat partiel, voir erreur 96. Le saut d'image n'est pas le probleme ici (pose statique) ; la limite est la metrique sur sommets d'origine au joint.
