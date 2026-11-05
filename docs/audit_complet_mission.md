@@ -192,4 +192,9 @@ Rien de ce qui suit n'est déclaré fait par cette mise à jour : elle ne contie
 - `engine/validation/test_hbm_complet.py` : RESULTAT OK (47 os ; symétrie des bras 0,8 mm ; 5 doigts par côté ; 20 phalanges
   mesurées dans le maillage ; 8 phalanges estimées signalées, non testées).
 - `engine/validation/test_maria.py` : RESULTAT OK après correction du test 10 (clip Running, slot affecté, mètres monde relatifs à la hanche ; entrées 144 et 145). Le test précédent était faux : il lisait une action statique de 2 images.
-- Non relancés : test_maria_anim.py, test_maria_export.py, test_maria_controles.py, test_ara_integration.py (à faire ensuite).
+- `engine/validation/test_maria_anim.py` : RESULTAT OK (clips Mixamo, slot affecté, transition Idle vers Running).
+- `engine/validation/test_maria_export.py` : RESULTAT OK (export FBX et ré-import, 65 os).
+- `engine/validation/test_maria_controles.py` : OK, mais c'est un inventaire, pas un test de fonction. Il constate
+  5 contrôleurs absents (IK mains, IK pieds, pôles coude et genou, commutation IK/FK, racine et hanches) et 0 forme-clé
+  ni os facial. Ces fonctions n'existent pas encore.
+- Non relancé : test_ara_integration.py (dépend du dépôt Ara, ARA_REPO).
