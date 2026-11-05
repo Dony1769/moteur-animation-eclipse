@@ -104,3 +104,8 @@ et le muscle moteur donne le sens. Le moteur doit reproduire ce couple : axe, se
 - Épaule : amplitudes (flexion, abduction, rotation) à sourcer ; rythme scapulo-huméral à ajouter.
 - Coude et poignet : amplitudes à sourcer (la fiche StatPearls coude ne les donne pas).
 - Colonne, pouce, doigts, orteils : non traités ici.
+
+## 9. Statut de la recherche d'amplitudes (2026-11-05)
+Requêtes Europe PMC testées sans valeur normative exploitable pour coude, poignet, épaule (journal complet dans
+docs/recherches_phase4.md). Les amplitudes du coude (0–145°), du poignet (80°/70°) et de l'épaule restent
+NON SOURCÉES et ne doivent pas être figées dans le rig avant une source lue.

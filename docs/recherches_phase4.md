@@ -62,3 +62,17 @@ puis sources non officielles (articles de praticiens, issues de projets) quand l
 - NCBI E-utilities esearch : erreur 500 au moment de l'essai.
 - Europe PMC (API REST officielle, EBI) : fonctionne ; résultats = études récentes (marche, rééducation). Aucune valeur normale de référence trouvée en 1 requête. À affiner par mots-clés goniométrie + revue systématique.
 - Conséquence : hanche, genou et poignet restent sourcés par des pages non officielles (Muscle and Motion, TeachMeAnatomy), en attendant une source officielle lisible.
+
+## Journal : recherche des amplitudes normatives (coude, poignet, épaule, hanche, genou)
+Date : 2026-11-05. Objectif : sourcer les amplitudes actives de référence adultes.
+- Europe PMC (API officielle REST), requêtes testées :
+  - « hip AND reference values AND goniometer… » (encodage correct) : résultats hors sujet (chiens, dynamomètre, marche).
+  - « normal range of motion joints adults goniometry reference » : 169 résultats, aucune valeur normative extraite ;
+    articles pertinents seulement pour genou/hanche chez athlètes (PMID 42091667, 41829622) sans tableau de référence accessible.
+  - « Norkin White goniometry normal values » : hors sujet pour l'adulte (enfants, sujets épaule).
+  - « normative joint range of motion ages 20 to 59 adults » : hors sujet.
+- Conclusion : aucune source consultée ne donne les amplitudes normatives du coude, du poignet ni de l'épaule
+  avec tableau exploitable. Ces valeurs restent NON SOURCÉES dans docs/articulations_humaines_sources.md.
+- Sources non officielles à lire ensuite (non encore accessibles par API) : Norkin & White, « Measurement of Joint Motion » ;
+  AAOS « Joint Motion » tables. Ne pas utiliser les valeurs de la fiche StatPearls poignet (formulaire seulement).
+- Aucune contournement d'accès : seules les API officielles ont été utilisées.
