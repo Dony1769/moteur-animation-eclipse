@@ -1268,3 +1268,11 @@ Résultat (docs/rapports/phase4_psd_hanche_genou.json) : genou plis 0–4, étir
 ## 175. Le rapport d'un essai doit donner les valeurs de référence à côté des variantes
 - Constat : le résumé ne montrait pas d'abord la référence Bone Heat ; un lecteur pouvait confondre une dégradation
   relative avec une valeur absolue. Corrigé : chaque tableau affiche la référence en premier.
+
+## 176. Les poses « HR » ne sont pas une cible de déformation indépendante
+- Constat : la pose HR évaluée sur les sommets de base égale la référence Blender (0,0000 m) ; la référence Blender égale
+  le LBS du projet à 4e-7 m. Les données ne contiennent donc aucune déformation plus fidèle que le LBS.
+- Conséquence : aucune correction corrective ne peut être apprise ni validée contre elles. Toute correction doit être
+  justifiée par un modèle et évaluée par contraintes (étirement, retournements, volume, intersections).
+- Règle : avant de considérer une donnée comme une vérité, vérifier qu'elle diffère de la méthode qu'elle est censée
+  corriger. Voir rapport docs/rapports/skinning/psd/RAPPORT_etape3a_verification_references.md.

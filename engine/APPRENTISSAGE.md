@@ -1056,3 +1056,6 @@ Un noyau de distance euclidienne ne remplace pas des poids calculés sur la surf
 ## 137. Une correction localisée doit être jugée sur ses effets hors zone, pas seulement dans la zone
 La variante bornée (β) laisse la référence intacte loin des articulations, mais ses effets sur le p99 global
 montrent qu'une correction locale peut dégrader le reste. Voir entrée 174.
+
+## 138. Une « référence haute résolution » peut être la même méthode à plus haute résolution
+Vérifier qu'une donnée de référence diffère de la méthode évaluée. Ici, le HR est identique au LBS (entrée 176).
