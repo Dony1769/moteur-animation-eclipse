@@ -896,3 +896,14 @@ Résultat (docs/rapports/phase4_psd_hanche_genou.json) : genou plis 0–4, étir
 - Règle : avant de juger un solveur, vérifier si la cible est faisable (α_max au premier pas). Un α_max ≈ 0 dès le premier pas
   indique une cible infaisable avec ces conditions aux bords, pas un bug à corriger.
 - Suite : changer la géométrie du problème (bande plus large, ou rotation répartie sur la bande), pas le solveur.
+
+## 132. Largeur de bande et part de rotation distale : aucune configuration ne tient la cible en 80 itérations
+- Grille (engine/skinning/faisabilite_hanche.py ; rapport docs/rapports/phase4_faisabilite_hanche.json), 30°, sans retournement :
+  - B = 0,15 m : A=1 → erreur 0,41 m ; A=0,5 → 0,15 m ; A=0,25 → 0,11 m.
+  - B = 0,25 m : A=1 → 0,31 m ; A=0,5 → 0,12 m ; A=0,25 → 0,06 m.
+  - B = 0,35 m : A=1 → 0,43 m ; A=0,5 → 0,12 m ; A=0,25 → 0,11 m.
+- Le meilleur cas (B=0,25 m, A=0,25) reste à 6 cm de la cible. Aucune configuration ne l'atteint.
+- Ce résultat ne prouve pas l'infaisabilité : 80 itérations pourraient ne pas suffire, et le solveur ARAP local/global
+  converge lentement. Il faut un témoin (une pose injective qui atteint la cible) avant de conclure. Non résolu.
+- Règle : une grille de paramètres qui échoue partout n'est pas une réponse ; il faut soit un témoin de faisabilité, soit une
+  autre méthode de déformation (entrées 116 et 126).

@@ -930,3 +930,7 @@ inversions. Voir erreurs_apprises entrée 130.
 ## 106. Distinguer solveur faible et cible infaisable
 Un pas maximal ≈ 0 dès le premier pas signifie que la cible n'est pas atteignable avec ces conditions aux bords. Changer la
 géométrie du problème, pas le solveur. Voir erreurs_apprises entrée 131.
+
+## 107. Une grille de paramètres qui échoue partout ne tranche rien
+Une grille (largeur de bande × part de rotation) sans configuration qui atteint la cible ne prouve ni l'infaisabilité ni une
+faiblesse du solveur. Chercher un témoin, ou changer de méthode. Voir erreurs_apprises entrée 132.
