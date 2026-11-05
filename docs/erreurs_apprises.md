@@ -622,3 +622,10 @@ Chaque erreur a une cause, une correction et un test. Une erreur corrigée doit 
 - Règle correcte : la correspondance se fait par point matériel. Pour un segment rigide (bras, avant-bras), la correspondance est la transformation rigide, donc aucun pli par construction ; les plis ne peuvent naître qu'à la jointure (sphère, coupe). Pour la peau continue, il faut une correspondance par sommets ou par paramétrage.
 - Leçon : une métrique de pli par proximité n'est valide que si la surface reste près de son repos. Vérifier la distance de correspondance avant d'interpréter le compte.
 - Diagnostic : `engine/skinning/reference/diagnostic_plis_surface_unie.py`.
+
+## 103. Sphère de jonction : saillie constante de 1,5 cm à tous les angles ; pas de pli côté fléchisseur
+- Mesure du coude gauche, sommets de la sphère 7 cm exposés hors des pièces (77 %) : saillie au-delà du membre 1,5 cm, constante de 0° à 120° (médiane 1,4 à 1,5 cm).
+- Une boule fixe ne forme pas la crête du pli : le côté fléchisseur devrait devenir concave à mesure que l'angle croît, et le côté extenseur rester lisse. Ce modèle ne fait ni l'un ni l'autre.
+- Conséquence : la jonction est un renflement statique, pas une articulation anatomique. La critère « pas d'écrasement, pas d'aplatissement, plis seulement aux zones anatomiques » ne peut pas être validé avec une sphère seule.
+- À faire : séparer la saillie côté fléchisseur et côté extenseur, et exiger une concavité côté fléchisseur qui croît avec l'angle.
+- Script : `engine/skinning/reference/saillie_sphere_coude.py`.

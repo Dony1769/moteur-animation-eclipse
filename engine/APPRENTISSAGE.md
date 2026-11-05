@@ -795,3 +795,7 @@ Mesure LBS sans clé, bras gauche seul : 90° 24 -> 12 replis ; 120° 31 -> 19 ;
 ## 77. Correspondance matérielle avant tout compte de plis
 - Une correspondance par face la plus proche n'a de sens que si la surface est proche de son repos. Mesurer la distance de correspondance (médiane 9 cm ici) avant d'interpréter un compte.
 - Pour un segment rigide, la correspondance est la transformation rigide : pli zéro par construction. Un pli n'apparaît qu'à la jointure, et il doit être mesuré là seulement.
+
+## 78. Juger la jonction par sa forme, pas seulement par la pénétration
+- Une sphère de jonction donne une saillie constante (1,5 cm ici) à tous les angles : elle ne crée pas de pli. Le côté fléchisseur doit devenir concave en flexion, le côté extenseur rester lisse.
+- Mesurer la saillie séparément côté fléchisseur et extenseur, à chaque angle, avant de déclarer la jonction valide.
