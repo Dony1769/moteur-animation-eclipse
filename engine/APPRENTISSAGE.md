@@ -701,3 +701,8 @@ Mesure LBS sans clé, bras gauche seul : 90° 24 -> 12 replis ; 120° 31 -> 19 ;
 ## 58. Plis acceptables par zone anatomique
 - Un pli n'est acceptable que dans une zone de pli réelle (aine, pli fessier, creux poplité, pli du coude, aisselle) et sans pénétration. Hors zone, c'est un défaut.
 - Hanche : la majorité des plis sont sur le côté (trochanter, fessier externe), pas à l'aine. Ils sont donc des défauts. Voir erreur 83 et `engine/skinning/plis_zones_acceptables.py`.
+
+## 59. Hanche : vérifier le sous-arbre et le déplacement du voisinage
+- Le sous-arbre d'une articulation (ici la jambe entière) doit suivre la rotation ; sinon les plis apparaissent à l'articulation voisine (erreur 84).
+- Un correctif qui réduit les plis en déplaçant le voisinage de plus de quelques centimètres n'est pas un correctif valable.
+- Hanche : 0 pli jusqu'à 30°. Au-delà : non résolu (erreur 84).

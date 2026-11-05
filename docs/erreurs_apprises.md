@@ -479,3 +479,12 @@ Chaque erreur a une cause, une correction et un test. Une erreur corrigée doit 
 - Règle retenue (`engine/skinning/plis_zones_acceptables.py`) : un pli n'est acceptable que dans une zone de pli anatomique et sans pénétration. Tout pli hors zone est un défaut.
 - Mesure sur la hanche (chaîne LBS, 90° et 120°) : 6 à 7 plis dans la zone de l'aine, 22 à 23 hors zone, surtout sur le côté (x ≈ −2,27 à −2,33 ; z 0,75 à 0,90 ; trochanter et fessier externe). Ces plis ne sont pas acceptables : ce sont des défauts.
 - Conséquence : la hanche n'est pas validée. Il faut un correctif de pose sur le côté de la hanche, ou un autre traitement de la frontière tronc / cuisse.
+
+## 84. Hanche : erreur de sous-arbre corrigée ; plis réels à partir de 45°
+- Erreur de test : la flexion de hanche a fait tourner la seule cuisse ; la jambe et le pied (sous-arbre enfant) restaient immobiles. Les plis « au genou » à 10° venaient de cette erreur.
+- Correction : sous-arbre complet (cuisse, jambe, pied). Résultats (chaîne, bande 0,04 m, bissectrice) : 0 pli à 10° et 30°, 15 à 60°, 21 à 90°, 24 à 120°.
+- Localisation des plis : z 0,76 à 0,90 m (hauteur de la hanche, 0,873 m), côté latéral (x −2,13 à −2,33) : trochanter et fessier externe. Ces plis ne sont pas acceptables (erreur 83).
+- Piège : une bande plus large (0,12 à 0,20 m) fait tomber les plis à 2–5 à 60–90°, mais déplace des sommets du tronc de 10 à 20 cm. Ce n'est pas une solution.
+- Correctif ARAP local (rayon 0,25 m) : plis 8 / 16 / 18 à 60 / 90 / 120°, mais déplacements de 10 à 16 cm. Trop large pour un correctif.
+- État : hanche validée à 0 pli jusqu'à 30° uniquement. Au-delà, il faut une solution de correction non résolue. Rapport à compléter.
+- Outil : `engine/skinning/test_hanche_chaine.py` (à mettre à jour avec le sous-arbre complet).
