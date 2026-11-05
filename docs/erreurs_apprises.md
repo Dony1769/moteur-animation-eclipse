@@ -452,3 +452,10 @@ Chaque erreur a une cause, une correction et un test. Une erreur corrigée doit 
 - Erreur de mesure corrigée : l'axe de pivot est une droite ; le point choisi doit être projeté au niveau de la jointure, sinon la bande tombe hors du maillage (pivot à y = −2,08 au lieu de −0,04).
 - Cheville (numpy, pas encore Blender) : en mode « enfant rigide », 0 pli en flexion plantaire (−20°), mais 18 plis en flexion dorsale (+20°) : le pied rigide traverse le bas de la jambe. La section tombe à 0,37 à −50°. Ouvert : la géométrie de contact cheville/tibia n'est pas résolue.
 - Rapport : `docs/rapports/phase4_coude_cheville.json`.
+
+## 80. Cheville : bande mesurée sur la bissectrice de jointure (valeurs humaines normales)
+- Référence : flexion dorsale normale ≈ 20°, flexion plantaire ≈ 50° (genou tendu). Le pied ne passe pas devant le tibia : la butée est osseuse, le pied rigide ne doit donc pas pénétrer le tibia dans ces amplitudes.
+- Cause du 18 plis : la bande était mesurée le long du tibia, alors que le pied est à angle droit ; une partie des sommets du pied se trouvait dans la bande et pénétrait le tibia dès 5°.
+- Correctif : bande mesurée le long de la bissectrice des deux segments (`chaine(..., bissectrice=True)`), pied rigide (`enfant_rigide=True`), largeur 0,04 m.
+- Blender : 0 pli à +20, −20, −50 ; pied rigide ; écart Blender/numpy 0,000 mm.
+- Section : la valeur 0,53 était fausse (tranche sur le plan horizontal). Avec la normale de jointure : 1,00 (+20), 0,95 (−20), 0,88 (−50). La perte de 12 % à −50° reste à vérifier visuellement.

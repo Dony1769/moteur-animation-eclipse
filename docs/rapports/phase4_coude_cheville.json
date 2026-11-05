@@ -34,28 +34,41 @@
   },
   "cheville": {
     "pivot": [
-      -2.154,
+      -2.074,
       -0.034,
       0.062
     ],
-    "statut": "ECHEC partiel (numpy, pas encore Blender)",
-    "mode": "enfant_rigide (pied rigide, bande sur le tibia)",
-    "resultats_numpy": {
-      "+20": {
-        "plis": 18
-      },
-      "-20": {
+    "axe": [
+      1,
+      0,
+      0
+    ],
+    "K": 8,
+    "bande_m": 0.04,
+    "methode": "bissectrice (plan de jointure) + enfant rigide",
+    "validation": "LBS Blender reelle, ecart Blender/numpy 0.000 mm",
+    "amplitudes_normales_humaines": {
+      "flexion_dorsale": 20,
+      "flexion_plantaire": 50
+    },
+    "resultats": {
+      "+20 (dorsale normale)": {
         "plis": 0,
-        "section": 0.902
+        "rigidite_pied_mm": 0.0,
+        "section": 1.005
       },
-      "+50": {
-        "plis": 18
-      },
-      "-50": {
+      "-20 (plantaire)": {
         "plis": 0,
-        "section": 0.365
+        "rigidite_pied_mm": 0.0,
+        "section": 0.954
+      },
+      "-50 (plantaire max)": {
+        "plis": 0,
+        "rigidite_pied_mm": 0.0,
+        "section": 0.884
       }
     },
-    "lecture": "plis en flexion dorsale : le pied rigide pénètre le bas de la jambe ; la section chute en plantaire à -50"
+    "statut": "plis et rigidite OK ; section a -50 a 0,88 (perte de 12 %, tranche de 93 sommets) : a verifier visuellement",
+    "note": "la valeur 0,53 precedente venait d'une mauvaise normale de tranche (plan horizontal) ; corrigee"
   }
 }

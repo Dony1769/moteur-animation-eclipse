@@ -684,3 +684,8 @@ Mesure LBS sans clé, bras gauche seul : 90° 24 -> 12 replis ; 120° 31 -> 19 ;
 ## 54. Coude validé ; cheville en échec partiel
 - Méthode générique : `engine/skinning/articulation_chaine.py` (pivot et axe mesurés depuis la pose, projection du pivot sur la jointure) et `engine/skinning/criteres_articulation.py` (plis, rigidité, section).
 - Le coude passe les critères dans Blender. La cheville échoue en flexion dorsale : un segment enfant rigide qui n'est pas dans l'axe du parent pénètre le parent. Voir erreur 79.
+
+## 55. Cheville : amplitude humaine normale et bande sur la bissectrice
+- Règle : une articulation se modélise dans son amplitude humaine normale (cheville : dorsale 20°, plantaire 50°), jamais au-delà ; l'amplitude est bornée par la butée osseuse.
+- La bande d'articulation doit suivre la normale de jointure (bissectrice des segments), pas la direction du seul segment parent, quand l'enfant n'est pas dans l'axe.
+- Voir erreur 80.
