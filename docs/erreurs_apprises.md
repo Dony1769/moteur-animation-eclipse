@@ -1117,3 +1117,13 @@ Résultat (docs/rapports/phase4_psd_hanche_genou.json) : genou plis 0–4, étir
   autre arête (6 % des arêtes n'ont pas d'image miroir). Le critère « étirement maximal » est donc sensible à la
   topologie. Un critère robuste (percentile, ou étirement relatif au repos du même côté) devra être fixé AVANT la
   mesure ; il n'est pas appliqué ici.
+
+## 154. Retournements gauche/droite : les différences de comptage viennent des poids automatiques, pas de la pose
+- Constat : sur masculin et féminin, les comptages de retournements G et D diffèrent de 1 à 2 polygones dans 5
+  mouvements. Un seul polygone de l'entrejambe ou du genou est en cause à chaque fois.
+- Cause testée : pose symétrique (< 0,2 mm), repos symétrisé sans effet sur les comptages, poids symétrisés : 5 = 5 et
+  13 = 13. Les poids Bone Heat diffèrent de 0,01 à 0,03 entre sommets miroir, et le pli amplifie l'effet.
+- Règle : un compte discret de polygones près d'un seuil n'est pas une mesure d'asymétrie. Le décomposer polygone par
+  polygone et tester la cause (poids, repos, pose) avant de conclure. Consigné dans `diagnostic_retournements_asymetrie.md`.
+- Mise en garde : un critère statistique plus souple (percentile 99) a fait passer Maria, mais il ne voit pas les
+  étirements locaux maximaux. Son passage ne vaut pas validation anatomique.

@@ -993,3 +993,7 @@ avant la mesure. Voir entrée 151.
 ## 121. Vérifier la symétrie du maillage de repos avant de tester la symétrie de la déformation
 Un écart miroir du repos de 11 mm (Maria) produit des écarts de métrique sans aucune asymétrie de déformation. Mesurer
 l'écart miroir du repos en premier, et le plan de symétrie par ajustement. Voir entrée 153.
+
+## 122. Un passage de test sur une statistique de queue n'est pas une validation
+Changer le critère (p99 au lieu du maximum) peut faire passer un test sans que le défaut ait disparu. Déclarer ce que
+la nouvelle statistique ne voit pas, et conserver les extrêmes locaux dans le rapport. Voir erreurs entrée 154.
