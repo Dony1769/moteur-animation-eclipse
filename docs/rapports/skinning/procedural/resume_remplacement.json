@@ -1,0 +1,406 @@
+{
+ "alphas": [
+  0.25,
+  0.5,
+  1.0
+ ],
+ "morphos": {
+  "maria": {
+   "reference": {
+    "LBS": {
+     "etirement_max_pire": 8.299758447066417,
+     "etirement_max_mediane": 3.5018976020117663,
+     "etirement_p99_moyen": 1.0055686951343943,
+     "poses_max_>1.5": 24,
+     "poses_max_>1.25": 28,
+     "retournements_total": 288,
+     "residu_os_max_m": 0.1002315713642754,
+     "zones_max_pire": {
+      "hanche_G": 8.299758447066417,
+      "hanche_D": 8.299758447066417,
+      "genou_G": 1.927394469887919,
+      "genou_D": 1.927378546240895
+     }
+    },
+    "DQS": {
+     "etirement_max_pire": 10.003363208919168,
+     "etirement_max_mediane": 3.473981378964379,
+     "etirement_p99_moyen": 1.0151064717432872,
+     "poses_max_>1.5": 26,
+     "poses_max_>1.25": 28,
+     "retournements_total": 314,
+     "residu_os_max_m": 0.11492295735916233,
+     "zones_max_pire": {
+      "hanche_G": 10.003363208919168,
+      "hanche_D": 10.003363208919168,
+      "genou_G": 1.8998132873261322,
+      "genou_D": 1.899785622759611
+     }
+    }
+   },
+   "variantes": {
+    "0.25": {
+     "LBS": {
+      "etirement_max_pire": 15.222569048071087,
+      "etirement_max_mediane": 5.030868211394532,
+      "etirement_p99_moyen": 2.8420962810810524,
+      "poses_max_>1.5": 28,
+      "poses_max_>1.25": 28,
+      "retournements_total": 9423,
+      "residu_os_max_m": 0.4724510547883182,
+      "zones_max_pire": {
+       "hanche_G": 2.959146194757552,
+       "hanche_D": 2.9598826417475115,
+       "genou_G": 6.021637867785713,
+       "genou_D": 6.021637867785713
+      }
+     },
+     "DQS": {
+      "etirement_max_pire": 19.721757493349305,
+      "etirement_max_mediane": 5.316427227792133,
+      "etirement_p99_moyen": 3.123116273090847,
+      "poses_max_>1.5": 28,
+      "poses_max_>1.25": 28,
+      "retournements_total": 10109,
+      "residu_os_max_m": 0.5316673007594417,
+      "zones_max_pire": {
+       "hanche_G": 3.6934065538627237,
+       "hanche_D": 3.694259062709412,
+       "genou_G": 7.61620627066747,
+       "genou_D": 7.61620627066747
+      }
+     }
+    },
+    "0.5": {
+     "LBS": {
+      "etirement_max_pire": 10.370315605663398,
+      "etirement_max_mediane": 3.661108332043583,
+      "etirement_p99_moyen": 1.6097483486480901,
+      "poses_max_>1.5": 27,
+      "poses_max_>1.25": 28,
+      "retournements_total": 8441,
+      "residu_os_max_m": 0.6334390077141273,
+      "zones_max_pire": {
+       "hanche_G": 1.5170391588355006,
+       "hanche_D": 1.5133065477224326,
+       "genou_G": 2.264521256348286,
+       "genou_D": 2.2645161513067107
+      }
+     },
+     "DQS": {
+      "etirement_max_pire": 10.193172772507259,
+      "etirement_max_mediane": 3.56513133475047,
+      "etirement_p99_moyen": 1.7006332772650858,
+      "poses_max_>1.5": 27,
+      "poses_max_>1.25": 28,
+      "retournements_total": 10799,
+      "residu_os_max_m": 0.7269246783516171,
+      "zones_max_pire": {
+       "hanche_G": 1.8780731932397237,
+       "hanche_D": 1.8726395601752341,
+       "genou_G": 2.882326856433842,
+       "genou_D": 2.8823410788344423
+      }
+     }
+    },
+    "1.0": {
+     "LBS": {
+      "etirement_max_pire": 24.150755108986605,
+      "etirement_max_mediane": 8.770837587436578,
+      "etirement_p99_moyen": 2.623154425283844,
+      "poses_max_>1.5": 28,
+      "poses_max_>1.25": 28,
+      "retournements_total": 2529,
+      "residu_os_max_m": 0.7296167624753404,
+      "zones_max_pire": {
+       "hanche_G": 12.236234399068364,
+       "hanche_D": 12.236234399068364,
+       "genou_G": 1.1616256480007718,
+       "genou_D": 1.1616264177184457
+      }
+     },
+     "DQS": {
+      "etirement_max_pire": 25.48627971736973,
+      "etirement_max_mediane": 8.605908799587207,
+      "etirement_p99_moyen": 2.7020806139862974,
+      "poses_max_>1.5": 28,
+      "poses_max_>1.25": 28,
+      "retournements_total": 4045,
+      "residu_os_max_m": 0.8417881130914098,
+      "zones_max_pire": {
+       "hanche_G": 12.018521207236166,
+       "hanche_D": 12.018521207236166,
+       "genou_G": 1.4768041021580762,
+       "genou_D": 1.4768047017107626
+      }
+     }
+    }
+   }
+  },
+  "masculin": {
+   "reference": {
+    "LBS": {
+     "etirement_max_pire": 2.485441407338839,
+     "etirement_max_mediane": 1.5249637973188488,
+     "etirement_p99_moyen": 1.074472452869741,
+     "poses_max_>1.5": 14,
+     "poses_max_>1.25": 22,
+     "retournements_total": 50,
+     "residu_os_max_m": 0.1629231941624937,
+     "zones_max_pire": {
+      "hanche_G": 2.485441407338839,
+      "hanche_D": 2.485441407338839,
+      "genou_G": 1.1955212693652155,
+      "genou_D": 1.18521874174459
+     }
+    },
+    "DQS": {
+     "etirement_max_pire": 3.2882017187556603,
+     "etirement_max_mediane": 1.6060350354472392,
+     "etirement_p99_moyen": 1.0852644937143279,
+     "poses_max_>1.5": 14,
+     "poses_max_>1.25": 24,
+     "retournements_total": 22,
+     "residu_os_max_m": 0.1844633869052353,
+     "zones_max_pire": {
+      "hanche_G": 3.2882017187556603,
+      "hanche_D": 3.2882017187556603,
+      "genou_G": 1.2767717755183527,
+      "genou_D": 1.2764917657174772
+     }
+    }
+   },
+   "variantes": {
+    "0.25": {
+     "LBS": {
+      "etirement_max_pire": 10.566897689476917,
+      "etirement_max_mediane": 3.082578055386197,
+      "etirement_p99_moyen": 1.2826505913944497,
+      "poses_max_>1.5": 22,
+      "poses_max_>1.25": 24,
+      "retournements_total": 357,
+      "residu_os_max_m": 0.2974570658530548,
+      "zones_max_pire": {
+       "hanche_G": 5.152905903059582,
+       "hanche_D": 5.165661011732215,
+       "genou_G": 1.7627116099270634,
+       "genou_D": 1.7627116099270634
+      }
+     },
+     "DQS": {
+      "etirement_max_pire": 13.019254179402402,
+      "etirement_max_mediane": 3.085507562687386,
+      "etirement_p99_moyen": 1.3247504389456723,
+      "poses_max_>1.5": 22,
+      "poses_max_>1.25": 24,
+      "retournements_total": 518,
+      "residu_os_max_m": 0.33883699568909315,
+      "zones_max_pire": {
+       "hanche_G": 6.701714950870721,
+       "hanche_D": 6.7348290365833146,
+       "genou_G": 2.0510648976152495,
+       "genou_D": 2.026118151530192
+      }
+     }
+    },
+    "0.5": {
+     "LBS": {
+      "etirement_max_pire": 8.37810784219922,
+      "etirement_max_mediane": 3.281965012304446,
+      "etirement_p99_moyen": 1.426720152126188,
+      "poses_max_>1.5": 28,
+      "poses_max_>1.25": 28,
+      "retournements_total": 438,
+      "residu_os_max_m": 0.3794758496347579,
+      "zones_max_pire": {
+       "hanche_G": 2.2396997074935587,
+       "hanche_D": 2.2359299762938223,
+       "genou_G": 5.497370837197093,
+       "genou_D": 5.516586533597182
+      }
+     },
+     "DQS": {
+      "etirement_max_pire": 10.052597228911946,
+      "etirement_max_mediane": 3.5440385926330937,
+      "etirement_p99_moyen": 1.482260653498106,
+      "poses_max_>1.5": 28,
+      "poses_max_>1.25": 28,
+      "retournements_total": 489,
+      "residu_os_max_m": 0.4272766111639997,
+      "zones_max_pire": {
+       "hanche_G": 2.5728912813695555,
+       "hanche_D": 2.5741088449284253,
+       "genou_G": 6.574702645823533,
+       "genou_D": 6.578476709293204
+      }
+     }
+    },
+    "1.0": {
+     "LBS": {
+      "etirement_max_pire": 19.400888565801537,
+      "etirement_max_mediane": 8.659313468422567,
+      "etirement_p99_moyen": 3.484925185930915,
+      "poses_max_>1.5": 28,
+      "poses_max_>1.25": 28,
+      "retournements_total": 3905,
+      "residu_os_max_m": 0.6126177338948802,
+      "zones_max_pire": {
+       "hanche_G": 4.964160065621727,
+       "hanche_D": 4.964838240897249,
+       "genou_G": 11.555173238697023,
+       "genou_D": 11.50092990845706
+      }
+     },
+     "DQS": {
+      "etirement_max_pire": 24.059629378613796,
+      "etirement_max_mediane": 8.777572118476552,
+      "etirement_p99_moyen": 3.683859387396691,
+      "poses_max_>1.5": 28,
+      "poses_max_>1.25": 28,
+      "retournements_total": 3563,
+      "residu_os_max_m": 0.7030369896753229,
+      "zones_max_pire": {
+       "hanche_G": 5.718111965613485,
+       "hanche_D": 5.7232990716121375,
+       "genou_G": 14.484636555829438,
+       "genou_D": 14.414220992364445
+      }
+     }
+    }
+   }
+  },
+  "feminin": {
+   "reference": {
+    "LBS": {
+     "etirement_max_pire": 2.525129586093093,
+     "etirement_max_mediane": 1.6910806012859854,
+     "etirement_p99_moyen": 1.0647121353822637,
+     "poses_max_>1.5": 19,
+     "poses_max_>1.25": 28,
+     "retournements_total": 77,
+     "residu_os_max_m": 0.14675361213655894,
+     "zones_max_pire": {
+      "hanche_G": 2.525129586093093,
+      "hanche_D": 2.525129586093093,
+      "genou_G": 1.6127985229368806,
+      "genou_D": 1.6298406094033269
+     }
+    },
+    "DQS": {
+     "etirement_max_pire": 3.3242311316595523,
+     "etirement_max_mediane": 1.8092752309934597,
+     "etirement_p99_moyen": 1.070621224172107,
+     "poses_max_>1.5": 20,
+     "poses_max_>1.25": 26,
+     "retournements_total": 36,
+     "residu_os_max_m": 0.16614256587240628,
+     "zones_max_pire": {
+      "hanche_G": 3.3242311316595523,
+      "hanche_D": 3.3242311316595523,
+      "genou_G": 1.7364452128362924,
+      "genou_D": 1.7567029553431228
+     }
+    }
+   },
+   "variantes": {
+    "0.25": {
+     "LBS": {
+      "etirement_max_pire": 13.369836422137524,
+      "etirement_max_mediane": 3.6540406574958206,
+      "etirement_p99_moyen": 1.3130601294792095,
+      "poses_max_>1.5": 22,
+      "poses_max_>1.25": 24,
+      "retournements_total": 511,
+      "residu_os_max_m": 0.2979628625110964,
+      "zones_max_pire": {
+       "hanche_G": 5.047835485631585,
+       "hanche_D": 4.786071168714022,
+       "genou_G": 1.9186411065256967,
+       "genou_D": 1.9186411065256967
+      }
+     },
+     "DQS": {
+      "etirement_max_pire": 16.003151271806505,
+      "etirement_max_mediane": 3.666107542604871,
+      "etirement_p99_moyen": 1.3637350291671546,
+      "poses_max_>1.5": 22,
+      "poses_max_>1.25": 24,
+      "retournements_total": 609,
+      "residu_os_max_m": 0.3416529108799885,
+      "zones_max_pire": {
+       "hanche_G": 6.651282712168756,
+       "hanche_D": 6.148845943430389,
+       "genou_G": 2.1825644889885725,
+       "genou_D": 2.1825644889885725
+      }
+     }
+    },
+    "0.5": {
+     "LBS": {
+      "etirement_max_pire": 9.881399929618409,
+      "etirement_max_mediane": 3.7862461490874733,
+      "etirement_p99_moyen": 1.6515918201585458,
+      "poses_max_>1.5": 28,
+      "poses_max_>1.25": 28,
+      "retournements_total": 1192,
+      "residu_os_max_m": 0.4031287857831239,
+      "zones_max_pire": {
+       "hanche_G": 2.3352517341780006,
+       "hanche_D": 2.342070733503536,
+       "genou_G": 7.4694638562716245,
+       "genou_D": 7.431806601413221
+      }
+     },
+     "DQS": {
+      "etirement_max_pire": 12.261893803732052,
+      "etirement_max_mediane": 4.063456810730962,
+      "etirement_p99_moyen": 1.7307041524616946,
+      "poses_max_>1.5": 28,
+      "poses_max_>1.25": 28,
+      "retournements_total": 1336,
+      "residu_os_max_m": 0.4550052567360134,
+      "zones_max_pire": {
+       "hanche_G": 2.5777363604768686,
+       "hanche_D": 2.5837206066655565,
+       "genou_G": 9.248379652832595,
+       "genou_D": 9.200165446651466
+      }
+     }
+    },
+    "1.0": {
+     "LBS": {
+      "etirement_max_pire": 20.88390524499744,
+      "etirement_max_mediane": 8.587055217151176,
+      "etirement_p99_moyen": 3.696131391872382,
+      "poses_max_>1.5": 28,
+      "poses_max_>1.25": 28,
+      "retournements_total": 3693,
+      "residu_os_max_m": 0.6494342564124149,
+      "zones_max_pire": {
+       "hanche_G": 6.16331544286771,
+       "hanche_D": 6.047490844091815,
+       "genou_G": 13.149339370539412,
+       "genou_D": 12.984576969445941
+      }
+     },
+     "DQS": {
+      "etirement_max_pire": 24.477280016863855,
+      "etirement_max_mediane": 8.461435380477088,
+      "etirement_p99_moyen": 3.9077378567135286,
+      "poses_max_>1.5": 28,
+      "poses_max_>1.25": 28,
+      "retournements_total": 3248,
+      "residu_os_max_m": 0.7478590361531162,
+      "zones_max_pire": {
+       "hanche_G": 5.946865958327569,
+       "hanche_D": 5.82907392979214,
+       "genou_G": 16.914130349058485,
+       "genou_D": 16.698876033682108
+      }
+     }
+    }
+   }
+  }
+ },
+ "mode": "remplacement"
+}
