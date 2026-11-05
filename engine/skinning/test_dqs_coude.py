@@ -14,7 +14,7 @@ parent_nom = {"Spine":"Hips","Spine1":"Spine","Neck":"Spine1","Head":"Neck","Lef
 parent = np.array([-1 if n.split(":")[-1] == "Hips" else ix["mixamorig:"+parent_nom[n.split(":")[-1]]] for n in os_])
 h = np.array([J[n]["tete"] for n in os_])
 c = h[ix["mixamorig:LeftForeArm"]]; epaule = h[ix["mixamorig:LeftArm"]]; poignet = h[ix["mixamorig:LeftHand"]]
-ax = -np.cross(epaule - c, poignet - c); ax /= np.linalg.norm(ax)
+ax = np.cross(epaule - c, poignet - c); ax /= np.linalg.norm(ax)   # sens de flexion vérifié : poignet vers l avant (erreur 110)
 B = len(os_)
 def pose(th):
     R = np.tile(np.eye(3), (B,1,1))

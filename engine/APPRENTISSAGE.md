@@ -826,3 +826,9 @@ Mesure LBS sans clé, bras gauche seul : 90° 24 -> 12 replis ; 120° 31 -> 19 ;
 ## 84. Mesurer une pénétration sur peau continue : décaler les points avant le test
 - Tester des sommets de surface dans un maillage fermé est ambigu : 215 faux positifs au repos. Décaler les points de 1 mm vers l'extérieur, puis contrôler au repos (zéro attendu) et avec témoin positif.
 - DQS au coude (un seul angle, rapport `docs/rapports/phase4_dqs_coude.json`) : hors bande, 0 pli et étirement 1,00 au 99e centile. Dans la bande, plis à partir de 90° et étirement élevé : à juger.
+
+## 85. Vérifier le sens de flexion avant tout : déplacement du segment distal vers l'avant
+- Un axe de flexion au signe inversé donne une hyperextension et des mesures plausibles. Vérifier : à θ > 0, le segment distal (poignet, cheville) doit se déplacer vers l'avant (sens des orteils).
+- Le genou se vérifie de la même façon (talon qui recule). Le coude était mal vérifié (erreur 110).
+- Contrôle de torsion : le segment proximal ne bouge pas ; l'axe ajusté du segment distal est égal à l'axe de flexion.
+- Tous les résultats antérieurs du coude sont à remesurer.

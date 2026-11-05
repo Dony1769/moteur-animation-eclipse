@@ -668,3 +668,12 @@ Chaque erreur a une cause, une correction et un test. Une erreur corrigée doit 
 - Les différences par rapport au repos (74, 54, 62, 52, puis −35) sont du bruit. Aucune conclusion.
 - À faire : décaler les points testés de 1 mm le long de la normale vers l'extérieur, ou mesurer la distance signée à la surface de l'autre segment, et contrôler avec un témoin positif.
 - Script (non valide) : `engine/skinning/reference/penetration_dqs_coude_invalide.py`.
+
+## 110. Signe de l'axe de flexion du coude inversé : hyperextension ; tous les résultats du coude étaient faux
+- Constat de l'utilisateur : le bras semble se tordre vers l'arrière. Mesure : à 60°, le poignet se déplace de 23,7 cm vers l'arrière (−Y, sens opposé aux orteils) : c'est une hyperextension.
+- Cause : l'axe utilisé était +cross(poignet − coude, épaule − coude) au lieu de +cross(épaule − coude, poignet − coude). Le signe n'avait pas été vérifié par le déplacement du poignet.
+- Conséquences : tous les volumes d'interpénétration du coude (rigide), la série de la danse (0 image avec pénétration) et les critères DQS précédents ont été calculés sur un coude en hyperextension. Ils sont invalides.
+- Résultats corrigés (rigide, sphère 7 cm exclue) : 0 cm³ à 0°, 30°, 60° ; 0,10 à 90° ; 20,5 à 120° ; 109,8 à 145°. Rejeu de la danse : 7 images sur 250 avec pénétration (et non 0).
+- DQS corrigé : hors bande, étirement 1,00 et 0 pli à tous les angles ; dans la bande, plis 2 / 7 / 11 à 90 / 120 / 145° et étirement 2,24 / 2,67 / 3,04.
+- Torsion : le bras supérieur ne bouge pas (0 mm) ; l'avant-bras tourne d'un seul angle autour de l'axe de flexion (axe ajusté · axe = 1,0000). Pas de torsion.
+- Leçon : vérifier le sens de flexion par le déplacement du segment distal vers l'avant (pour un membre fléchi, ici +Y, sens des orteils), avant toute mesure. Un signe faux produit des résultats plausibles.

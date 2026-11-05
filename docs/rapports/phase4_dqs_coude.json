@@ -1,14 +1,49 @@
 {
   "objet": "coude gauche : peau continue DQS (Kavan 2008) sur le maillage HBM de référence, 21 os, un seul angle (avant-bras)",
-  "methode": "DQS (engine/skinning/dqs.py) ; plis par rotation locale (mesures_pose.plis_locaux, erreur 108) ; étirement par arête ; bande de jonction = 10 cm autour du centre du coude",
+  "methode": "DQS (engine/skinning/dqs.py), axe de flexion CORRIGE (poignet vers l avant, erreur 110) ; plis par rotation locale (mesures_pose.plis_locaux, erreur 108) ; étirement par arête ; bande = 10 cm autour du coude",
   "temoin_identite": "écart max au repos 0,0",
   "resultats": {
-    "30": {"plis_hors_bande": 0, "plis_dans_bande": 0, "etirement_hors_max": 1.012, "etirement_hors_p99": 1.000, "etirement_dans_max": 1.359},
-    "60": {"plis_hors_bande": 0, "plis_dans_bande": 0, "etirement_hors_max": 1.024, "etirement_hors_p99": 1.000, "etirement_dans_max": 1.724},
-    "90": {"plis_hors_bande": 0, "plis_dans_bande": 4, "etirement_hors_max": 1.034, "etirement_hors_p99": 1.000, "etirement_dans_max": 2.103},
-    "120": {"plis_hors_bande": 0, "plis_dans_bande": 7, "etirement_hors_max": 1.042, "etirement_hors_p99": 1.000, "etirement_dans_max": 2.508},
-    "145": {"plis_hors_bande": 0, "plis_dans_bande": 8, "etirement_hors_max": 1.047, "etirement_hors_p99": 1.000, "etirement_dans_max": 2.872}
+    "30": {
+      "plis_hors_bande": 0,
+      "plis_dans_bande": 0,
+      "etirement_hors_max": 1.0,
+      "etirement_hors_p99": 1.0,
+      "etirement_dans_max": 1.412
+    },
+    "60": {
+      "plis_hors_bande": 0,
+      "plis_dans_bande": 0,
+      "etirement_hors_max": 1.0,
+      "etirement_hors_p99": 1.0,
+      "etirement_dans_max": 1.823
+    },
+    "90": {
+      "plis_hors_bande": 0,
+      "plis_dans_bande": 2,
+      "etirement_hors_max": 1.0,
+      "etirement_hors_p99": 1.0,
+      "etirement_dans_max": 2.24
+    },
+    "120": {
+      "plis_hors_bande": 0,
+      "plis_dans_bande": 7,
+      "etirement_hors_max": 1.0,
+      "etirement_hors_p99": 1.0,
+      "etirement_dans_max": 2.668
+    },
+    "145": {
+      "plis_hors_bande": 0,
+      "plis_dans_bande": 11,
+      "etirement_hors_max": 1.0,
+      "etirement_hors_p99": 1.0,
+      "etirement_dans_max": 3.036
+    }
   },
   "lecture": "hors bande : aucun pli, étirement 1,00 au 99e centile. Dans la bande : plis à partir de 90° et étirement borné par l'utilisateur (permis aux jonctions) mais à 2,87 à 145°, à juger.",
-  "statut": "PARTIEL. Non validé : pénétration de la peau continue non mesurée de façon fiable (erreur 109) ; localisation des plis de bande (côté fléchisseur ?) non vérifiée ; autres articulations non traitées."
+  "statut": "PARTIEL. Non validé : plis de bande à 90 à 145° (à localiser : côté fléchisseur ?) ; étirement de bande à 3,0 à 145° (à borner) ; pénétration de la peau continue non mesurée (erreur 109).",
+  "torsion": {
+    "bras_superieur_deplacement_max_mm": 0.0,
+    "avant_bras_axe_ajuste_dot_ax": 1.0,
+    "lecture": "flexion pure, aucune torsion ni déplacement du bras supérieur"
+  }
 }
