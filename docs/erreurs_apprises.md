@@ -496,3 +496,16 @@ Chaque erreur a une cause, une correction et un test. Une erreur corrigée doit 
 - Décision : variante B abandonnée, variante A (chaîne de jonctions seule) retenue, conformément à l'instruction de l'utilisateur.
 - Conséquence : hanche vérifiée à 0 pli jusqu'à 30° seulement, épaule jusqu'à 20°, poignet jusqu'à 50°. Au-delà, défauts non résolus (voir `docs/rapports/phase4_hanche_epaule_poignet.json`).
 - Outil : `engine/skinning/correctif_hanche_minimal.py` (échec documenté, ne pas réutiliser tel quel).
+
+## 86. Le critère de plis ne voit pas la pénétration : verdict « acceptable » faux
+- Constat (captures de l'utilisateur) : coude à 105°, cheville à −50°, poignet à 50°, genou à 120° : des membres traversent le tronc ou un autre membre. Le visualiseur affichait pourtant « Acceptable : 0 pli ».
+- Cause : le critère ne comptait que les normales de faces repliées. Il ne mesure ni la pénétration, ni la perte de volume.
+- Correction du verdict : la page n'affiche plus jamais « acceptable » tant que la pénétration n'est pas mesurée (commit de la v2 corrigée).
+- Métrique ajoutée : `engine/skinning/penetration.py`. Pour chaque sommet du membre, distance signée à la face la plus proche du reste du corps (maillage fermé et cohérent, vérifié : 0 arête de bord, volume positif).
+- Contrôle positif : pousser l'avant-bras vers le tronc fait apparaître 126 à 811 pénétrations : la métrique détecte bien une traversée.
+- Pièges rencontrés :
+  - normale du sommet le plus proche : faux (50 pénétrations au repos) ; remplacée par la face la plus proche ;
+  - seuil de distance à la surface de 3 cm : masque justement les pénétrations profondes ; supprimé ;
+  - le repos lui-même chevauche au pli du coude (l'avant-bras commence dans le bras) : on ne compte que les pénétrations *nouvelles* par rapport au repos.
+- Résultat coude (pénétrations nouvelles, chaîne actuelle B = 0,10) : 60° : 17 ; 90° : 5 ; 105° : 2 ; 120° : 0. Le critère de plis disait 0 partout.
+- Variante « segments durs » (sans bande) : 0 pénétration de 60° à 120°, mais des fentes et des plis à la jonction. Il faut donc une calotte rigide au centre de la jonction, pas seulement une bande de poids.

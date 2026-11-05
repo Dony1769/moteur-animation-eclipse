@@ -1,0 +1,9 @@
+{
+  "objet": "penetration des membres (metrique de l'erreur 86), coude",
+  "metrique": "distance signee a la face la plus proche du reste du corps ; pénétrations nouvelles par rapport au repos ; zone de jonction exclue (rayon 0,13 m)",
+  "controle_positif": "avant-bras pousse vers le tronc : 126 (0,6) et 811 (1,0) penetrations",
+  "chaine_actuelle_B_0.10": {"60": 17, "90": 5, "105": 2, "120": 0},
+  "segments_durs_B_1e-4": {"60": 0, "90": 0, "105": 0, "120": 0, "remarque": "fentes et plis a la jonction (variante 'sans methode')"},
+  "chaine_B_0.04": {"60": 50, "90": 666, "105": 348, "120": 37},
+  "statut": "non valide : la calotte de jonction n'est pas encore construite ; genou, hanche, cheville, epaule, poignet non mesures"
+}

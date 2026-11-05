@@ -711,3 +711,9 @@ Mesure LBS sans clé, bras gauche seul : 90° 24 -> 12 replis ; 120° 31 -> 19 ;
 - Une articulation n'est validée que dans la plage où le test donne 0 pli et où la mesure est faite. Hanche : 30°. Épaule : 20°. Poignet : 50°. La plage normale du corps humain (hanche 120°, épaule 180°, poignet 80°) n'est pas atteinte.
 - Quand un correctif de repli échoue (erreur 85), on passe à la variante sans correctif et on le dit clairement, au lieu d'élargir la bande jusqu'à ce que les plis disparaissent (cela déplace le tronc, voir section 59).
 - L'étirement n'est pas bloquant : il est signalé. Il reste élevé à la hanche (5,10 à 30°), ce qui doit être regardé visuellement avant toute revendication.
+
+## 61. Mesurer la pénétration avant de parler de validation
+- Un critère de plis ne suffit pas : un membre peut traverser le corps sans créer de pli dans sa propre surface. Toute validation doit inclure une mesure de pénétration (erreur 86).
+- Mesure retenue : distance signée à la face la plus proche du reste du corps. Elle doit passer un contrôle positif (forcer un membre dans le tronc) avant d'être crue.
+- Le repos peut contenir des chevauchements du maillage source. Les compter comme défauts de la pose fausse le résultat : on compare à la pose de repos (pénétrations nouvelles seulement).
+- Pour une articulation, la pénétration se joue dans la calotte de jonction. Une bande de poids ne suffit pas : les segments durs suppriment la pénétration mais ouvrent des fentes (variante testée au coude).

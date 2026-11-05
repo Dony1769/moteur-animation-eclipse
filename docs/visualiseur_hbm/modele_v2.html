@@ -80,7 +80,7 @@
         <li>Hanche (jusqu'à 30°), épaule (jusqu'à 20°), poignet (jusqu'à 50°) : zéro pli dans la plage vérifiée. Au-delà, la méthode actuelle produit des plis latéraux : ce sont des défauts non résolus, pas des plis acceptables.</li>
         <li>Les plis dans les zones de pli anatomique (aine, creux du genou, pli du coude, aisselle) peuvent être acceptables s'ils ne pénètrent pas le volume. Les plis latéraux ne le sont pas.</li>
       </ul>
-      <p class="note">Le verdict ne compte que les plis, qui sont bloquants. L'étirement est affiché comme indicateur secondaire et n'empêche pas la validation.</p>
+      <p class="note">Le verdict ne peut pas être « acceptable » tant que la pénétration des membres n'est pas mesurée. L'étirement reste un indicateur secondaire.</p>
     </section>
   </main>
 
@@ -254,10 +254,11 @@
   function verdict(plis, etir) {
     var v = $("#verdict");
     // critère bloquant : les plis (pénétration). L'étirement est un indicateur secondaire, rapporté seul.
+    // Aucune pénétration n'est encore mesurée : la page ne peut jamais afficher « acceptable ».
     if (plis === 0) {
-      v.className = "verdict ok"; v.textContent = "Acceptable : 0 pli (étirement max " + fr(etir) + ", indicateur secondaire).";
+      v.className = "verdict ko"; v.textContent = "Non validé : 0 pli, mais la pénétration des membres n'est pas mesurée (étirement max " + fr(etir) + ").";
     } else {
-      v.className = "verdict ko"; v.textContent = "Non acceptable : " + plis + (plis > 1 ? " plis" : " pli") + " (étirement max " + fr(etir) + ").";
+      v.className = "verdict ko"; v.textContent = "Non validé : " + plis + (plis > 1 ? " plis" : " pli") + " (étirement max " + fr(etir) + ").";
     }
   }
 
