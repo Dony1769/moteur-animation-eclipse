@@ -943,3 +943,7 @@ entrées 133 et 134.
 Les centres de rotation par sommet (formule seule) donnent plus de plis que la chaîne. La méthode complète ajuste ses
 centres sur des poses de référence et mélange les transformations. Vérifier l'objectif d'optimisation avant de juger une
 méthode. Voir erreurs_apprises entrée 135.
+
+## 110. Vérifier le contenu d'un asset, pas sa taille
+Une cible ou un fichier se valide par son contenu (lignes de données, signature LFS), jamais par sa taille. Corriger
+d'abord la conclusion fausse (erreurs_apprises entrée 136), puis le code. Voir entrées 133 et 136.

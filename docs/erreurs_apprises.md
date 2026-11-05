@@ -939,3 +939,14 @@ Résultat (docs/rapports/phase4_psd_hanche_genou.json) : genou plis 0–4, étir
   mélange), pas seulement dans sa formule de base. Lire le code ne suffit pas à reproduire son résultat.
 - Piste suivante (apprentissage depuis la référence X-Bot) : ajuster les centres pour que la déformation rejoigne la peau
   X-Bot exportée (scratchpad/ref_mixamo), au lieu de les calculer par formule.
+
+## 136. Correction de l'entrée 133 : les cibles « universal » ne sont pas des pointeurs LFS, elles sont vides
+- Entrée 133 affirmait que les universal-*.target (604 octets) étaient des pointeurs Git LFS. C'est FAUX : aucun de ces
+  fichiers ne contient la signature « git-lfs » (0 fichier sur 1 280). Ce sont des fichiers d'en-tête sans aucune ligne
+  « index dx dy dz » : ils n'ont pas de données, et 8 cibles sont dans ce cas dans le dépôt.
+- Erreur de méthode : j'ai conclu à partir de la taille et de l'absence de données sans vérifier le contenu. J'ai aussi
+  utilisé un seuil de 2 Ko, qui écarte de vraies petites cibles (1 Ko, 49 lignes de données dans mouth-cupidsbow-decr).
+- Méthode correcte : une cible est valide si elle contient au moins une ligne « index dx dy dz ». Vérifier le contenu,
+  pas la taille. Un pointeur LFS se reconnaît à la signature « version https://git-lfs » dans le fichier.
+- Conséquence : la moyenne sur les trois races (corps.py) reste justifiée, mais pas pour la raison donnée ; les
+  universal-* sont simplement vides dans ce dépôt.

@@ -1,0 +1,85 @@
+{
+  "regions": {
+    "nose": {
+      "cibles_valides": 42,
+      "pointeurs_lfs_ecartes": [],
+      "sommets_touches": 741,
+      "max_sommets_deplaces_par_cible": 309
+    },
+    "chin": {
+      "cibles_valides": 15,
+      "pointeurs_lfs_ecartes": [],
+      "sommets_touches": 1179,
+      "max_sommets_deplaces_par_cible": 571
+    },
+    "cheek": {
+      "cibles_valides": 16,
+      "pointeurs_lfs_ecartes": [],
+      "sommets_touches": 768,
+      "max_sommets_deplaces_par_cible": 172
+    },
+    "forehead": {
+      "cibles_valides": 8,
+      "pointeurs_lfs_ecartes": [],
+      "sommets_touches": 834,
+      "max_sommets_deplaces_par_cible": 465
+    },
+    "ears": {
+      "cibles_valides": 44,
+      "pointeurs_lfs_ecartes": [],
+      "sommets_touches": 1030,
+      "max_sommets_deplaces_par_cible": 421
+    },
+    "mouth": {
+      "cibles_valides": 44,
+      "pointeurs_lfs_ecartes": [],
+      "sommets_touches": 1334,
+      "max_sommets_deplaces_par_cible": 462
+    },
+    "eyes": {
+      "cibles_valides": 68,
+      "pointeurs_lfs_ecartes": [],
+      "sommets_touches": 1776,
+      "max_sommets_deplaces_par_cible": 105
+    },
+    "eyebrows": {
+      "cibles_valides": 6,
+      "pointeurs_lfs_ecartes": [],
+      "sommets_touches": 850,
+      "max_sommets_deplaces_par_cible": 446
+    }
+  },
+  "recouvrement_jaccard": {
+    "chin~nose": 0.0218,
+    "chin~forehead": 0.005,
+    "chin~ears": 0.1523,
+    "chin~mouth": 0.2325,
+    "chin~eyes": 0.0068,
+    "chin~eyebrows": 0.0,
+    "cheek~nose": 0.2053,
+    "cheek~chin": 0.2131,
+    "cheek~forehead": 0.0282,
+    "cheek~ears": 0.0702,
+    "cheek~mouth": 0.2053,
+    "cheek~eyes": 0.1148,
+    "cheek~eyebrows": 0.0412,
+    "forehead~nose": 0.0083,
+    "forehead~mouth": 0.0,
+    "ears~nose": 0.0,
+    "ears~forehead": 0.1162,
+    "ears~mouth": 0.0,
+    "ears~eyes": 0.0137,
+    "ears~eyebrows": 0.0251,
+    "mouth~nose": 0.2477,
+    "eyes~nose": 0.1348,
+    "eyes~forehead": 0.0524,
+    "eyes~mouth": 0.0144,
+    "eyebrows~nose": 0.0927,
+    "eyebrows~forehead": 0.1943,
+    "eyebrows~mouth": 0.0,
+    "eyebrows~eyes": 0.3343
+  },
+  "recouvrement_max": 0.3343,
+  "statut": "VALIDE_TECHNIQUE",
+  "note": "Tests techniques seulement : localité mesurée, réalisme non évalué. Une inspection visuelle reste obligatoire avant toute validation de phase 3."
+}
