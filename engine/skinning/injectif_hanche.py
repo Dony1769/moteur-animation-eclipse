@@ -49,8 +49,18 @@ libre = bande
 Lmat = None
 
 
+A_DISTAL = 1.0   # part de la rotation prise par le segment distal (1.0 = bord proximal fixe, sans répartition)
+
+
 def cible_rigide(theta):
-    R = Rot.from_rotvec(axe * np.radians(theta)).as_matrix()
+    """Cible du segment distal : rotation a·θ (a = A_DISTAL)."""
+    R = Rot.from_rotvec(axe * np.radians(theta * A_DISTAL)).as_matrix()
+    return pivot + (t.rest - pivot) @ R.T
+
+
+def cible_proximale(theta):
+    """Cible du segment proximal : rotation −(1−a)·θ (répartition type épaule, rapport phase 4)."""
+    R = Rot.from_rotvec(axe * np.radians(-theta * (1.0 - A_DISTAL))).as_matrix()
     return pivot + (t.rest - pivot) @ R.T
 
 
@@ -90,7 +100,7 @@ def pose(theta_total, pas=5.0, iters=10):
     while th < theta_total - 1e-9:
         th = min(th + pas, theta_total)
         fixe = p.copy()
-        fixe[proximal] = t.rest[proximal]
+        fixe[proximal] = cible_proximale(th)[proximal]
         fixe[distal] = cible_rigide(th)[distal]
         for _ in range(iters):
             R = _rotations(t.rest, p, ij, N, wij)
@@ -109,6 +119,7 @@ def pose(theta_total, pas=5.0, iters=10):
 
 if __name__ == "__main__":
     sorties = []
+    A_DISTAL = float(sys.argv[2]) if len(sys.argv) > 2 else 1.0
     for th in (30, 60, 90, 105, 120):
         P = pose(th)
         n_inv = inversions(P)
