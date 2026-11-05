@@ -922,3 +922,7 @@ Un champ normalisé (position le long du membre, sans correspondance de sommets)
 ## 104. Compression et traction par côté avant de placer un pli
 Mesurer le signe de l'étirement par côté (compression ou traction) avant de placer un pli. Le pli se justifie là où la
 peau est comprimée, mais le défaut mesuré (extenseur) est en traction et doit être traité séparément. Voir erreurs entrée 129.
+
+## 105. Un solveur qui n'atteint pas sa cible ne prouve rien
+« Zéro pli » peut venir d'une pose qui ne bouge pas. Toujours mesurer l'écart à la cible imposée à côté des plis et des
+inversions. Voir erreurs_apprises entrée 130.

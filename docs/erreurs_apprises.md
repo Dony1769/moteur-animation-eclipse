@@ -869,3 +869,15 @@ Résultat (docs/rapports/phase4_psd_hanche_genou.json) : genou plis 0–4, étir
 - Conséquence : un pli à intégrale nulle côté fléchisseur est justifié, mais il ne réduit pas l'étirement extenseur, qui
   est le défaut mesuré. Il faut traiter les deux : pli comprimé côté fléchisseur ET réduction de la traction côté extenseur.
 - Règle : mesurer le signe de la déformation (compression ou traction) par côté avant de placer un pli ou une borne.
+
+## 130. « Zéro pli » du solveur injectif était un arrêt : la cible distale n'est pas atteinte
+- Mesure (vérification de la solution injective hanche, pose(), A_DISTAL = 1) :
+  - 30° et 60° : 0 inversion, 0 pli, erreur distale 0 m ;
+  - 90° : 0 inversion, 0 pli, erreur distale max 0,38 m ; 105° : 0,61 m ; 120° : 0,82 m.
+- Lecture : 0 pli à 90–120° n'est PAS un succès. Le segment distal n'atteint pas sa cible rigide ; la pose reste proche du
+  repos, donc il n'y a pas de pli parce qu'il n'y a presque pas de flexion. Le critère « plis = 0 » est trompeur sans contrôle
+  d'atteinte de la cible.
+- Règle : tout résultat de solveur doit être accompagné de l'erreur à la cible imposée. Un solveur qui n'atteint pas sa cible
+  est invalide, quel que soit le nombre de plis ou d'étirements mesurés.
+- Correction : le rapport phase4_injectif_hanche.json reste marqué INVALIDE. Un solveur valide exige une cible atteinte
+  (erreur distale faible) sans inversion ; à défaut, il faut revoir les conditions aux bords (entrée 126).
