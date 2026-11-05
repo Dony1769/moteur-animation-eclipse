@@ -1033,3 +1033,19 @@ l'entrée d'erreur, puis tester sa sensibilité avant de conclure. Voir entrée 
 ## 131. Recherche en deux temps : officiel d'abord, non officiel ensuite pour croiser
 Source officielle (auteur, éditeur) pour la méthode ; source non officielle (implémentation, blog technique) pour les
 détails pratiques et les améliorations ; les deux se croisent avant usage. Voir entrée 166.
+
+## 132. Lire les données d'un fichier avant de concevoir un algorithme sur elles
+Vérifier d'abord quel fichier contient le maillage déformé et quels os sont réellement actifs, puis concevoir.
+Le squelette complet HBM n'a pas de peau ; le corps féminin partage le squelette masculin. Voir entrées 167 et 168.
+
+## 133. Une longueur d'os n'est mesurée que si l'os a une cible
+Un os terminal recopie souvent la longueur de son parent dans l'import. Le marquer non fiable et ne pas le mesurer.
+Voir entrée 169.
+
+## 134. La classification anatomique ne doit pas dépendre des noms ; les noms servent seulement à vérifier
+Classer par topologie (segments, jonctions) et géométrie (hauteur, ordre x) puis comparer aux noms dans un test séparé.
+Le côté gauche/droit reste une convention à part. Voir entrées 170 et 171.
+
+## 135. Une région construite par argmax des poids reflète les poids, pas l'anatomie
+Une région « cou » qui contient la poitrine n'est pas une erreur de classification : elle décrit les poids. Vérifier
+la hauteur des sommets avant de conclure. Voir entrée 172.

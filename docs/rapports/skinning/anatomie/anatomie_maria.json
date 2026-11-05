@@ -1,0 +1,119 @@
+{
+ "nb_os_total": 65,
+ "nb_os_avec_poids": 52,
+ "articulations_m": {
+  "hanche_x_min": [
+   -0.09688759595155716,
+   -0.0007651494815945625,
+   0.9956104755401611
+  ],
+  "genou_x_min": [
+   -0.09688759595155716,
+   -0.015585385262966156,
+   0.5641849040985107
+  ],
+  "cheville_x_min": [
+   -0.09688759595155716,
+   0.0273006372153759,
+   0.1582668423652649
+  ],
+  "hanche_x_max": [
+   0.09688763320446014,
+   -0.0007651710766367614,
+   0.995610237121582
+  ],
+  "genou_x_max": [
+   0.09688763320446014,
+   -0.015585375018417835,
+   0.5641851425170898
+  ],
+  "cheville_x_max": [
+   0.09688761830329895,
+   0.027300577610731125,
+   0.1582670956850052
+  ],
+  "racine": [
+   3.54562312843143e-09,
+   -0.0176513884216547,
+   1.0524624586105347
+  ]
+ },
+ "mesures_m": {
+  "largeur_hanches": 0.19377522915616519,
+  "cuisse": {
+   "x_min": 0.43168009834541277,
+   "x_max": 0.43167956154239995
+  },
+  "jambe": {
+   "x_min": 0.4081773201019963,
+   "x_max": 0.40817724493220536
+  },
+  "tronc_bassin_au_cou": 0.36898241166836987
+ },
+ "regions": {
+  "racine": [
+   "mixamorig:Hips"
+  ],
+  "tronc": [
+   "mixamorig:Spine",
+   "mixamorig:Spine1",
+   "mixamorig:Spine2"
+  ],
+  "cou": [
+   "mixamorig:Neck",
+   "mixamorig:Head",
+   "mixamorig:HeadTop_End"
+  ],
+  "epaules": [
+   [
+    "mixamorig:LeftShoulder",
+    "mixamorig:LeftArm",
+    "mixamorig:LeftForeArm",
+    "mixamorig:LeftHand"
+   ],
+   [
+    "mixamorig:RightShoulder",
+    "mixamorig:RightArm",
+    "mixamorig:RightForeArm",
+    "mixamorig:RightHand"
+   ]
+  ]
+ },
+ "jambes_cote": {
+  "x_min": [
+   "mixamorig:RightUpLeg",
+   "mixamorig:RightLeg",
+   "mixamorig:RightFoot",
+   "mixamorig:RightToeBase",
+   "mixamorig:RightToe_End"
+  ],
+  "x_max": [
+   "mixamorig:LeftUpLeg",
+   "mixamorig:LeftLeg",
+   "mixamorig:LeftFoot",
+   "mixamorig:LeftToeBase",
+   "mixamorig:LeftToe_End"
+  ]
+ },
+ "vertices_par_region_dominante": {
+  "bassin": 464,
+  "bras_x_max": 1254,
+  "bras_x_min": 1296,
+  "cou_tete": 1438,
+  "jambe_x_max": 626,
+  "jambe_x_min": 625,
+  "non_classe": 658,
+  "tronc": 1775
+ },
+ "ambigus": [],
+ "absent_ou_ambigu": [],
+ "unite": {
+  "scale_length": 1.0,
+  "system": "METRIC",
+  "echelle_objet_armature": [
+   0.009999999776482582,
+   0.009999999776482582,
+   0.009999999776482582
+  ]
+ }
+}

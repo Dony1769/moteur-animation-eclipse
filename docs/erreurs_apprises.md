@@ -1213,3 +1213,41 @@ Résultat (docs/rapports/phase4_psd_hanche_genou.json) : genou plis 0–4, étir
 - Officiel : Rohmer, Hahmann, Cani (CGF 2008) : texte intégral sur la page de l'auteur (RHC_GTMG08.pdf).
 - Non officiel : implémentation de Kim & Han 2014 par R. Vaillant. Non officiel signalé comme tel ; il faut le croiser.
 - Une source officielle seule ne suffit pas à implémenter la méthode : la formule a fallu la dériver.
+
+## 167. Un fichier squelette n'est pas forcément un fichier de peau : HBM_squelette_complet.blend ne contient aucun corps
+- Constat : l'extraction du fichier « squelette complet » donne 47 os et 0 sommet déformé (avertissement explicite).
+- Cause : le corps skinné est dans corps_final.blend (armature Squelette_HBM, 21 groupes de poids).
+- Règle : pour une morphologie, extraire le fichier qui contient le maillage déformé par l'armature, et le vérifier
+  par le nombre de groupes de poids. Ne jamais déduire les poids d'un squelette seul.
+
+## 168. Un fichier peut contenir deux corps : le féminin comptait le masculin en plus
+- Constat : femme_skin.blend contient GEO-body_female_realistic et GEO-body_male_realistic, tous deux déformés par la
+  même armature. L'extraction sans sélection donnait 21164 sommets (deux fois 10582).
+- Correction : extraire_squelette.py accepte un argument « maillages demandés » ; un avertissement est émis si plusieurs
+  maillages déformables sont présents sans sélection.
+- Conséquence : le squelette féminin est identique au masculin (mêmes longueurs au micron près). La différence de
+  morphologie vient uniquement de la géométrie du maillage, pas des os.
+
+## 169. Blender recopie la longueur du parent sur les os terminaux : ces longueurs ne sont pas anatomiques
+- Constat : LeftHandThumb4 = LeftHandThumb3 = 0,0333 m ; LeftToe_End = LeftToeBase = 0,1377 m ; sur 13 os terminaux de Maria.
+- Règle : un os sans enfant n'a pas de longueur mesurée. Marqué longueur_fiable = false ; jamais utilisé comme mesure.
+- Lien avec l'entrée 165 : la valeur par défaut 0,10 m est supprimée, pas remplacée par une autre valeur.
+
+## 170. Gauche et droite ne se déduisent pas de la géométrie seule : c'est une convention de nommage
+- Constat : la classification par topologie donne deux jambes ; l'ordre x (x_min / x_max) ne dit pas quel côté est gauche.
+  Chez Mixamo, LeftUpLeg est au x le plus grand.
+- Règle : la classification sort des côtés x_min / x_max. Les noms ne servent qu'au contrôle des tests (T2).
+
+## 171. Un auxiliaire d'os rattaché au tronc est classé à tort s'il est pris pour un cou ou un bras
+- Constat : sur les HBM, les os ArmHelper sont attachés au haut du tronc. Un premier critère (« le plus central en x »)
+  choisissait l'un d'eux comme cou ; un deuxième critère (« la plus haute extrémité ») était correct pour les trois
+  squelettes. Les auxiliaires d'un seul os sont maintenant signalés comme ambigus.
+- Règle : le cou est identifié par la hauteur de la tête, pas par la position latérale.
+
+## 172. Sur les poids HBM, le cou domine une partie de la poitrine haute (z 1,28 à 1,40 m)
+- Constat : la région « cou_tete » (argmax des poids) compte 3898 sommets sur 10582 au masculin, contre 1438 sur 8136
+  pour Maria. Elle descend à 1,28 m, soit 5 cm sous la base du cou (1,33 m). Dans la bande z = 1,30 m ± 2 cm, 36 des 125
+  sommets ont le cou comme os dominant.
+- Cause probable : les poids du rig HBM (deux os de tronc seulement, Spine et Spine1) répartissent la poitrine haute sur
+  le cou et les épaules. C'est une propriété des poids, non un défaut de la classification : la classification suit les poids.
+- Statut : observé, non corrigé. À relier aux déformations d'épaule dans les étapes suivantes, à vérifier visuellement.

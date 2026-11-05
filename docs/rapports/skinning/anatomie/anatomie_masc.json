@@ -1,0 +1,125 @@
+{
+ "nb_os_total": 21,
+ "nb_os_avec_poids": 21,
+ "articulations_m": {
+  "hanche_x_min": [
+   -2.374380111694336,
+   -0.034230560064315796,
+   0.8732318878173828
+  ],
+  "genou_x_min": [
+   -2.374380111694336,
+   -0.034230560064315796,
+   0.47609105706214905
+  ],
+  "cheville_x_min": [
+   -2.374380111694336,
+   -0.034230560064315796,
+   0.06205061078071594
+  ],
+  "hanche_x_max": [
+   -2.1543850898742676,
+   -0.034230560064315796,
+   0.8732318878173828
+  ],
+  "genou_x_max": [
+   -2.1543850898742676,
+   -0.034230560064315796,
+   0.47609105706214905
+  ],
+  "cheville_x_max": [
+   -2.1543850898742676,
+   -0.034230560064315796,
+   0.06205061078071594
+  ],
+  "racine": [
+   -2.2643826007843018,
+   -0.034230560064315796,
+   0.8732318878173828
+  ]
+ },
+ "mesures_m": {
+  "largeur_hanches": 0.21999502182006836,
+  "cuisse": {
+   "x_min": 0.39714083075523376,
+   "x_max": 0.39714083075523376
+  },
+  "jambe": {
+   "x_min": 0.4140404462814331,
+   "x_max": 0.4140404462814331
+  },
+  "tronc_bassin_au_cou": 0.25349414348602295
+ },
+ "regions": {
+  "racine": [
+   "mixamorig:Hips"
+  ],
+  "tronc": [
+   "mixamorig:Spine",
+   "mixamorig:Spine1"
+  ],
+  "cou": [
+   "mixamorig:Neck",
+   "mixamorig:Head"
+  ],
+  "epaules": [
+   [
+    "mixamorig:LeftShoulder",
+    "mixamorig:LeftArm",
+    "mixamorig:LeftForeArm",
+    "mixamorig:LeftHand"
+   ],
+   [
+    "mixamorig:RightShoulder",
+    "mixamorig:RightArm",
+    "mixamorig:RightForeArm",
+    "mixamorig:RightHand"
+   ]
+  ]
+ },
+ "jambes_cote": {
+  "x_min": [
+   "mixamorig:RightUpLeg",
+   "mixamorig:RightLeg",
+   "mixamorig:RightFoot"
+  ],
+  "x_max": [
+   "mixamorig:LeftUpLeg",
+   "mixamorig:LeftLeg",
+   "mixamorig:LeftFoot"
+  ]
+ },
+ "vertices_par_region_dominante": {
+  "bassin": 37,
+  "bras_x_max": 1357,
+  "bras_x_min": 1354,
+  "cou_tete": 3898,
+  "jambe_x_max": 1757,
+  "jambe_x_min": 1751,
+  "tronc": 428
+ },
+ "ambigus": [
+  {
+   "segment": [
+    "mixamorig:LeftArmHelper"
+   ],
+   "raison": "segment d'un seul os attaché au haut du tronc (auxiliaire ?)"
+  },
+  {
+   "segment": [
+    "mixamorig:RightArmHelper"
+   ],
+   "raison": "segment d'un seul os attaché au haut du tronc (auxiliaire ?)"
+  }
+ ],
+ "absent_ou_ambigu": [],
+ "unite": {
+  "scale_length": 1.0,
+  "system": "METRIC",
+  "echelle_objet_armature": [
+   1.0,
+   1.0,
+   1.0
+  ]
+ }
+}
