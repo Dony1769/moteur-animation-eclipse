@@ -832,3 +832,9 @@ Mesure LBS sans clé, bras gauche seul : 90° 24 -> 12 replis ; 120° 31 -> 19 ;
 - Le genou se vérifie de la même façon (talon qui recule). Le coude était mal vérifié (erreur 110).
 - Contrôle de torsion : le segment proximal ne bouge pas ; l'axe ajusté du segment distal est égal à l'axe de flexion.
 - Tous les résultats antérieurs du coude sont à remesurer.
+
+## 86. Apprendre les articulations avant de modeler : type, sens, liens, déclencheur
+- Pour chaque jonction : type (charnière, sphérique, condyloïde, pivot, sellaire), mouvements avec amplitude sourcée, muscles moteurs qui tirent au-delà de l'axe, nerf qui commande le muscle.
+- Le déclencheur d'un mouvement est un motoneurone qui active un muscle ; la tendon tire l'os autour de l'axe. Le moteur doit reproduire couple, axe et sens.
+- Une amplitude non sourcée n'est pas une donnée : la marquer et la remplacer dès qu'une source la donne (hanche corrigée, erreur 111).
+- Référence : `docs/articulations_humaines_sources.md`.

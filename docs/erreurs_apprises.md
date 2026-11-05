@@ -677,3 +677,11 @@ Chaque erreur a une cause, une correction et un test. Une erreur corrigée doit 
 - DQS corrigé : hors bande, étirement 1,00 et 0 pli à tous les angles ; dans la bande, plis 2 / 7 / 11 à 90 / 120 / 145° et étirement 2,24 / 2,67 / 3,04.
 - Torsion : le bras supérieur ne bouge pas (0 mm) ; l'avant-bras tourne d'un seul angle autour de l'axe de flexion (axe ajusté · axe = 1,0000). Pas de torsion.
 - Leçon : vérifier le sens de flexion par le déplacement du segment distal vers l'avant (pour un membre fléchi, ici +Y, sens des orteils), avant toute mesure. Un signe faux produit des résultats plausibles.
+
+## 111. Apprentissage des articulations sauté : je suis passé aux maillages sans étudier les jonctions
+- Consigne de l'utilisateur, répétée : apprendre tous les points de jonction, le sens de chacun, les parties liées et le déclencheur du mouvement, avant de modeler.
+- Erreur : j'ai utilisé des amplitudes non sourcées (`docs/anatomie_articulations.md`, « ordres de grandeur ») et codé des géométries sans connaître le déclencheur (muscle, nerf).
+- Correction : `docs/articulations_humaines_sources.md` : pour chaque articulation, type, liens, mouvements, muscles moteurs, nerfs, ligaments, source de chaque chiffre.
+- Sources : StatPearls (officiel) pour le coude et l'épaule ; StatPearls hanche, genou et poignet bloqués ; remplacés par Physiopedia, Muscle and Motion, TeachMeAnatomy (non officiel, signalé).
+- Écarts trouvés : hanche extension 10° (et non 20–30°), rotation 15°/35° (et non 30–45°) ; les anciennes valeurs étaient non sourcées.
+- Leçon : apprendre d'abord, puis modeler. Chaque chiffre doit porter sa source, et une valeur non sourcée est marquée comme telle.
