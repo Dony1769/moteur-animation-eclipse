@@ -781,3 +781,8 @@ Mesure LBS sans clé, bras gauche seul : 90° 24 -> 12 replis ; 120° 31 -> 19 ;
 - L'étirement est attendu au pli d'une articulation, et doit être borné là. Il est interdit sur le corps de la peau.
 - Mesurer deux métriques : étirement hors jonction (cible ≈ 1) et étirement dans la bande de jonction (borné, séparé). Ne jamais les agréger.
 - Source : consigne explicite de l'utilisateur, à retenir comme critère de référence (erreur 99).
+
+## 75. Axe de charnière quand le membre est aligné : normale au plan sagittal
+- Un produit vectoriel de deux segments alignés est nul : l'axe devient NaN. Fallback anatomique : normale au plan sagittal, (membre) × (direction des orteils) pour le genou.
+- Vérifier le signe en flexion (le talon recule) avant tout rejeu.
+- Un zéro de pénétration sur une animation réelle ne vaut que si le témoin positif, sur les mêmes pièces, détecte un chevauchement connu.

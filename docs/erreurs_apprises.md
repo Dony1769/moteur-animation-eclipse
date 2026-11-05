@@ -601,3 +601,11 @@ Chaque erreur a une cause, une correction et un test. Une erreur corrigée doit 
 - Critère correct : étirement ≈ 1 (écart < quelques %) sur toute la peau hors des zones de jonction ; étirement borné dans la zone de jonction, mesuré séparément ; plis = 0 partout en dehors des plis anatomiques autorisés.
 - Mesure : deux métriques, une globale hors jonction, une locale dans la bande de jonction (distance au centre de l'articulation). Ne jamais agréger les deux.
 - Erreur précédente : j'ai rapporté un étirement maximal global de 2 à 5, sans séparer la zone de jonction. Cela a masqué à la fois le défaut de la peau et l'effet attendu de la jonction.
+
+## 100. Genou : axe NaN quand la jambe est verticale ; pièces fermées ; rejeu danse 0 pénétration avec témoin
+- Axe de charnière par produit (hanche − genou) × (cheville − genou) : NaN quand la jambe est verticale au repos. Correction : normale au plan sagittal (jambe × orteils), axe médio-latéral, signe −1 vérifié (talon recule en flexion).
+- Pièces cuisse (263 sommets) et jambe (1 494) : fermées, volume valide, cohérent. L'échec précédent « Not all meshes are volumes » venait de l'axe NaN, pas des bouchons.
+- Rejeu de la danse (genou gauche, 250 images, 0 à 150°) : interpénétration 0 cm³ à chaque angle, 0 image sur 250.
+- Témoin positif (décalage de 10 cm à 120°) : +Z 38,3 cm³, +Y 1,8 cm³ : la méthode voit les chevauchements. Le zéro est donc réel pour ces pièces.
+- Limite : la cuisse n'a que 263 sommets dans ce maillage de référence : mesure faible sur cette pièce. L'étirement et les plis de la bande de jonction restent à mesurer sur la surface unie (erreur 99).
+- Scripts : `engine/skinning/reference/rejeu_danse_genou_volume.py`, `temoin_genou_volume.py`. Données : `docs/reference_hiphop/rejeu_genou_danse.json`.
