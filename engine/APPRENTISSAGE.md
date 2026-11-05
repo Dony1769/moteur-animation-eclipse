@@ -650,3 +650,10 @@ Mesure LBS sans clé, bras gauche seul : 90° 24 -> 12 replis ; 120° 31 -> 19 ;
 - Report de poids vers le bras : insuffisant (17 à 23 plis). Abandonné comme correction.
 - Piste suivante (lue seulement par son résumé) : déformation avec séparation de la torsion et de la flexion d'un même os. À lire, puis à tester en Blender avant toute écriture comme « appris ».
 - État : phase 4 ouverte. Résidu à 120° : 11 plis avec le correctif ARAP, 20 sans correctif.
+
+## 49. Phase 4 : base heat, transfert à l'épaule, confiance
+- Base : poids heat de Blender meilleure que la référence optimisée sur le bras (erreur 71). Sur le bras, ARAP interpolé avec cette base donne 0 pli à 75° et 105° hors entraînement, étirement ≈ 1,14.
+- Résidu à 120° du bras : 0 pli après transfert de 50 % du poids du bras vers l'épaule (rayon 0,16 m), sélection sur l'entraînement (erreur 72).
+- Rejeté : torsion pure de l'os auxiliaire (erreur 69), poids par distance bruts (erreur 70).
+- Ouvert : plis au coude (6 à 120°) et au genou (9 à 120°) après ARAP. Les formes-clés de seconde pose existent mais ne sont pas relancées avec la nouvelle base (erreur 73).
+- Ouvert : aucune de ces mesures n'a été rejouée dans Blender avec la nouvelle base (la validation Blender de la phase 4 précédente porte sur l'ancienne base).

@@ -385,3 +385,34 @@ Chaque erreur a une cause, une correction et un test. Une erreur corrigée doit 
 - Conclusion : le pli vient de la déformation linéaire elle-même (torsion et flexion combinées sur le même os), pas seulement de la répartition des poids.
 - Piste à vérifier, non implémentée : séparation torsion/flexion des os (Jacobson et al., « Stretchable and Twistable Bones for Skeletal Shape Deformation », SIGGRAPH Asia 2011). Source trouvée par recherche, non lue en détail.
 - Diagnostic reproductible : `engine/skinning/diagnostic_plis_120.py`.
+
+## 69. Os de torsion : retirer sa flexion aggrave les plis (rejeté)
+- Hypothèse : l'auxiliaire `LeftArmHelper` ne devrait tourner qu'en torsion (sa flexion mesurée à 120° : 60°).
+- Test (`engine/skinning/test_torsion_vraie.py`, pivot = épaule au repos, axe = os au repos) : 20 → 35 plis à 120° en LBS, étirement 6,0 → 9,4.
+- Erreur de méthode corrigée en route : un point fixe de rotation n'est pas unique (toute la droite de l'axe est fixe), donc le pivot ne peut pas venir d'un moindres carrés seul.
+- Conclusion : les poids de référence sont calibrés avec la flexion de l'auxiliaire. Piste rejetée.
+
+## 70. Poids par distance bruts : nettement moins bons que la référence
+- `engine/skinning/poids_distance.py` (K = 4, p = 2) : 48 plis à 120° contre 20, étirement 16,6 contre 6,0 (bras gauche, LBS).
+- Décision : base trop faible pour servir seule ; elle n'est pas adoptée. Le test reste dans le dépôt comme témoin.
+
+## 71. Poids heat (Blender ARMATURE_AUTO) : meilleure base que la référence pour le bras
+- Export sans optimisation (`engine/skinning/exporter_poids_heat.py`) : bras à 120° : 12 plis contre 20, étirement 4,7 contre 6,0 ; avant-bras : étirement 2,2 contre 1,5 (moins bon).
+- Avec ARAP interpolé (entraînement 60/90/120, test 75/105) : 75° : 8 → 0 plis ; 105° : 10 → 4 plis ; étirement ≈ 1,14 partout (référence ≈ 1,2).
+- Décision : heat devient la base du bras ; la référence optimisée est gardée comme témoin.
+
+## 72. Résidu du bras à 120° : transfert de poids vers l'épaule, sélection sur l'entraînement
+- Localisation (erreur 71) : 33 sommets sous le sommet de l'épaule, dominés par le bras.
+- Transfert de 50 % du poids du bras vers l'épaule dans un rayon de 0,16 m (`engine/skinning/transfert_epaule.py`).
+- Sélection faite sur 120° (entraînement) : rayon 0,10 → zone vide (filtre trop strict, corrigé) ; 0,12 → 4 plis ; 0,16 → 0 pli. 100 % du transfert : 6 plis, rejeté.
+- Vérification hors entraînement : 75° → 0 pli ; 105° → 0 pli ; étirement 1,15.
+- Limite : sélection du rayon et de la fraction sur des poses qui sont aussi l'objet du test ; à confirmer sur de nouvelles poses.
+
+## 73. Avant-bras et jambe : plis résiduels au coude et au genou
+- Après ARAP sur la nouvelle base : avant-bras 120° : 6 plis (14 sommets, au pli du coude) ; 105° : 2 ; jambe 120° : 9 plis (18 sommets, au genou) ; 105° : 3.
+- Étirement : avant-bras 1,08, jambe 1,14.
+- Solution déjà mesurée dans le dépôt pour ce cas : formes-clés de seconde pose (`construit_seconde_pose.py`), mais le script est lié à une scène et à des chemins /tmp, et n'est pas relancé avec la nouvelle base. Non fait.
+
+## 74. Score de confiance : validé contre les plis
+- `engine/skinning/score_confiance.py` (confiance = 1 − entropie normalisée des poids).
+- Sommets repliés à 120° : confiance 0,62 contre 0,87 pour les autres (Mann-Whitney p = 7e-14). Zones : bras 0,70 ; avant-bras 0,94 ; jambe 0,85 ; tronc 0,68.
