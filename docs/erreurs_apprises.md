@@ -1187,3 +1187,29 @@ Résultat (docs/rapports/phase4_psd_hanche_genou.json) : genou plis 0–4, étir
 - Constat : dans la zone, LBS perd environ 30 % de volume, DQS gagne environ 17 % (masculin et féminin).
 - Mise en garde : le volume de zone est une somme de tétraèdres sur les polygones de la zone ; ce n'est pas le volume d'un
   solide fermé. C'est un indicateur, pas une mesure absolue.
+
+## 164. Corriger le volume global ne corrige pas l'étirement local (Rohmer et al. 2008, variante normale)
+- Constat : la correction restaure le volume total à 1e-14 près (LBS et DQS, trois morphologies, 0,02 à 0,045 s par pose).
+  Mais le maximum d'étirement ne baisse pas (Maria 8,30 → 8,30), les comptages au-delà de 1,5 augmentent (masculin 86 → 93)
+  et les retournements augmentent (masculin 4 → 7, combo 12 → 16).
+- Cause : la perte de volume est un symptôme qui accompagne le défaut ; le défaut d'étirement vient de la géométrie de
+  la peau au-dessus du bassin, non du volume.
+- Erreur de formule : l'article présente rho = ΔV·γ⟨n,∇V⟩/Σγ⟨n,∇V⟩² avec ΔV = V(déformé) − V(original), ce qui donne le
+  mauvais signe pour atteindre le volume de repos. Dérivé et vérifié sur un cube à volume réduit (D = V_repos − V_posé) :
+  volume restauré à 1e-15. Test K1a.
+- Règle : une formule publiée avec une convention de signe ambiguë se dérive et se teste sur un cas synthétique avant
+  usage. Ne jamais la recopier telle quelle.
+
+## 165. DQS anti-gonflement (Kim & Han 2014) : maximum d'étirement multiplié par 1,6 à 1,9 ; approximation à vérifier
+- Constat : comptages légèrement meilleurs (masculin flex120 >1,5 : 130 → 121), volume de zone moins faux (+17 % → +5 %),
+  mais maximum 3,29 → 6,45 (masculin flex120), 1,96 → 5,23 (masculin abd30), 3,32 → 5,28 (féminin flex120).
+- Source : implémentation décrite par R. Vaillant (non officielle), à croiser avec l'article original (Comput. Anim.
+  Virtual Worlds 2014) qui n'a pas pu être lu.
+- Approximation déclarée : pas de longueurs d'os dans les données ; segments = tête → tête suivante de la chaîne, sinon
+  0,10 m. Un segment faux change la projection et donc la correction. Hypothèse non testée : la projection sur le segment
+  crée un déchirement au bord de la zone corrigée. Refusé en l'état ; à reprendre avec de vraies longueurs d'os.
+
+## 166. Recherche : méthode de volume trouvée dans la source officielle, formule dérivée et vérifiée
+- Officiel : Rohmer, Hahmann, Cani (CGF 2008) : texte intégral sur la page de l'auteur (RHC_GTMG08.pdf).
+- Non officiel : implémentation de Kim & Han 2014 par R. Vaillant. Non officiel signalé comme tel ; il faut le croiser.
+- Une source officielle seule ne suffit pas à implémenter la méthode : la formule a fallu la dériver.

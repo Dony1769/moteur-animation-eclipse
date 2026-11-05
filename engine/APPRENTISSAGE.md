@@ -1017,3 +1017,19 @@ sommets et les déclarer avant de lire le résultat. Voir entrée 159.
 ## 127. Une cause de défaut peut dépendre du personnage
 Le même lissage corrige Maria et n'a pas d'effet sur le masculin. Ne jamais généraliser une correction à partir d'un
 seul personnage ; mesurer sur les trois, et garder les résultats négatifs. Voir entrées 160 à 162.
+
+## 128. Un symptôme ne se confond pas avec sa cause : volume et étirement sont découplés ici
+Une correction peut rétablir une grandeur globale (volume) sans toucher le défaut local (étirement). Avant de corriger une
+grandeur, vérifier qu'elle est la cause du défaut, par une expérience où elle est corrigée seule. Voir entrée 164.
+
+## 129. Une formule publiée se dérive et se teste avant usage
+Quand le signe ou la convention d'une formule n'est pas explicite, la dériver soi-même, puis la vérifier sur un cas
+synthétique à résultat connu. Ne jamais la recopier. Voir entrées 164 et 166.
+
+## 130. Une approximation doit être nommée et testée, sinon elle devient un résultat
+Une valeur remplacée (longueur d'os inventée, ici 0,10 m) change le résultat. La déclarer dans le code, le rapport et
+l'entrée d'erreur, puis tester sa sensibilité avant de conclure. Voir entrée 165.
+
+## 131. Recherche en deux temps : officiel d'abord, non officiel ensuite pour croiser
+Source officielle (auteur, éditeur) pour la méthode ; source non officielle (implémentation, blog technique) pour les
+détails pratiques et les améliorations ; les deux se croisent avant usage. Voir entrée 166.

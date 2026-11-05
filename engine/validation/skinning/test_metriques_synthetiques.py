@@ -209,6 +209,31 @@ def test_residu_os_dominant():
     verifier("D1c_melange_residu_positif", r2.max() > 0.01, f"résidu max {r2.max():.4f} m")
 
 
+# ---------- 10. correction locale de volume (Rohmer et al. 2008) ----------
+def test_correction_volume():
+    import correction_volume as CV
+    rest, b, t, A = cube()
+    T = CV._triangles(b, t)
+    pos = rest.copy()
+    m = rest[:, 0] > 0.49
+    pos[m, 0] -= 0.05  # face enfoncée : volume perdu de 5 %
+    Wi = np.zeros((len(rest), 1), dtype=np.int64)
+    Ww = np.ones((len(rest), 1))
+    p3, d3 = CV.corriger(pos, rest, Wi, Ww, b, t, T=T, M=3, G=0.0)
+    verifier("K1a_correction_volume_restaure", abs(d3["relatif_apres"]) < 0.01,
+             f"avant {d3['relatif_avant']:+.4f} ; après 3 étapes {d3['relatif_apres']:+.2e}")
+    p0, d0 = CV.corriger(rest, rest, Wi, Ww, b, t, T=T, M=3, G=0.0)
+    verifier("K1b_sans_defaut_aucune_modification", np.abs(p0 - rest).max() < 1e-12,
+             f"déplacement max {np.abs(p0 - rest).max():.2e}")
+    # localité : un sommet pur (poids 1 sur un os) ne bouge pas quand gamma = 0 pour lui
+    Wi2 = np.zeros((len(rest), 2), dtype=np.int64); Wi2[:, 1] = 1
+    Ww2 = np.zeros((len(rest), 2)); Ww2[:, 0] = np.where(rest[:, 0] > 0, 1.0, 0.5); Ww2[:, 1] = 1 - Ww2[:, 0]
+    p5, _ = CV.corriger(pos, rest, Wi2, Ww2, b, t, T=T, M=1, G=1.0)
+    purs = np.where(rest[:, 0] > 0)[0]
+    verifier("K1c_os_pur_non_deplace", np.abs(p5[purs] - pos[purs]).max() < 1e-12,
+             f"déplacement max sur sommets purs {np.abs(p5[purs] - pos[purs]).max():.2e}")
+
+
 def main():
     test_translation()
     test_rotation()
@@ -219,6 +244,7 @@ def main():
     test_volume_local()
     test_separation_scale_mix()
     test_residu_os_dominant()
+    test_correction_volume()
     for nom, ok, d in RES:
         print(("OK   " if ok else "ECHEC") + " " + nom + " : " + d)
     echecs = [n for n, ok, _ in RES if not ok]

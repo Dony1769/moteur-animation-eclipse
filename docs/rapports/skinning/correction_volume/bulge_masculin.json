@@ -1,0 +1,933 @@
+{
+  "personnage": "masculin",
+  "approximation_segments_m": 0.1,
+  "poses": {
+    "L_abd30": {
+      "DQS": {
+        "etirement_max": 1.9594122520322534,
+        "etirement_p99": 1.0430174064160067,
+        "n>1.1": 86,
+        "n>1.25": 23,
+        "n>1.5": 11,
+        "retournements": 0,
+        "volume_total": 0.011505232777490715,
+        "volume_zone": 0.01740464510908879
+      },
+      "DQS+KH": {
+        "etirement_max": 5.234447311105407,
+        "etirement_p99": 1.0339095625744896,
+        "n>1.1": 62,
+        "n>1.25": 26,
+        "n>1.5": 14,
+        "retournements": 0,
+        "volume_total": 0.0017674650036341166,
+        "volume_zone": -0.010492560505112047
+      },
+      "DQS+Rohmer3": {
+        "etirement_max": 2.0290839541905195,
+        "etirement_p99": 1.0422267451615372,
+        "n>1.1": 80,
+        "n>1.25": 26,
+        "n>1.5": 11,
+        "retournements": 0,
+        "volume_total": 3.9968028886505635e-15,
+        "volume_zone": -0.004308105457576983
+      },
+      "DQS+KH_sommets_corriges": 0.16424116424116425
+    },
+    "L_add20": {
+      "DQS": {
+        "etirement_max": 1.262769889358392,
+        "etirement_p99": 1.017041397099985,
+        "n>1.1": 43,
+        "n>1.25": 2,
+        "n>1.5": 0,
+        "retournements": 0,
+        "volume_total": -0.007771043888670448,
+        "volume_zone": -0.009711528552317827
+      },
+      "DQS+KH": {
+        "etirement_max": 1.406927825743337,
+        "etirement_p99": 1.0102606894038686,
+        "n>1.1": 50,
+        "n>1.25": 12,
+        "n>1.5": 0,
+        "retournements": 0,
+        "volume_total": -0.01209039219727892,
+        "volume_zone": -0.025526138463572434
+      },
+      "DQS+Rohmer3": {
+        "etirement_max": 1.255070442864945,
+        "etirement_p99": 1.0201475447157748,
+        "n>1.1": 50,
+        "n>1.25": 2,
+        "n>1.5": 0,
+        "retournements": 0,
+        "volume_total": 6.217248937900877e-15,
+        "volume_zone": 0.0015485963807018166
+      },
+      "DQS+KH_sommets_corriges": 0.16357966357966358
+    },
+    "L_combo_flex120_genou90": {
+      "DQS": {
+        "etirement_max": 3.2882017187556603,
+        "etirement_p99": 1.2527965000254675,
+        "n>1.1": 353,
+        "n>1.25": 218,
+        "n>1.5": 130,
+        "retournements": 5,
+        "volume_total": 0.004398969586856927,
+        "volume_zone": 0.17406718808787836
+      },
+      "DQS+KH": {
+        "etirement_max": 6.448003171282428,
+        "etirement_p99": 1.2302286251770747,
+        "n>1.1": 356,
+        "n>1.25": 207,
+        "n>1.5": 121,
+        "retournements": 5,
+        "volume_total": -0.019731628345574848,
+        "volume_zone": 0.04670593869327777
+      },
+      "DQS+Rohmer3": {
+        "etirement_max": 3.2929764593122757,
+        "etirement_p99": 1.2529013824279445,
+        "n>1.1": 350,
+        "n>1.25": 217,
+        "n>1.5": 130,
+        "retournements": 5,
+        "volume_total": 1.5987211554602254e-14,
+        "volume_zone": 0.16298870008782473
+      },
+      "DQS+KH_sommets_corriges": 0.27263277263277264
+    },
+    "L_combo_flex60_abd20_int20_genou60": {
+      "DQS": {
+        "etirement_max": 2.588336331840491,
+        "etirement_p99": 1.1275057228324028,
+        "n>1.1": 265,
+        "n>1.25": 123,
+        "n>1.5": 46,
+        "retournements": 0,
+        "volume_total": 0.010127119597881373,
+        "volume_zone": 0.09512904247333331
+      },
+      "DQS+KH": {
+        "etirement_max": 6.591008766213689,
+        "etirement_p99": 1.1245115421510883,
+        "n>1.1": 260,
+        "n>1.25": 122,
+        "n>1.5": 46,
+        "retournements": 0,
+        "volume_total": -0.006550134592253842,
+        "volume_zone": 0.021952246094190775
+      },
+      "DQS+Rohmer3": {
+        "etirement_max": 2.6222282753222284,
+        "etirement_p99": 1.121270782969042,
+        "n>1.1": 261,
+        "n>1.25": 122,
+        "n>1.5": 45,
+        "retournements": 0,
+        "volume_total": 1.6209256159527285e-14,
+        "volume_zone": 0.0733688869329705
+      },
+      "DQS+KH_sommets_corriges": 0.271026271026271
+    },
+    "L_combo_flex90_abd30_ext30": {
+      "DQS": {
+        "etirement_max": 2.080133357849361,
+        "etirement_p99": 1.1490178042397736,
+        "n>1.1": 245,
+        "n>1.25": 123,
+        "n>1.5": 56,
+        "retournements": 0,
+        "volume_total": 0.021620033142947248,
+        "volume_zone": 0.22962234186578678
+      },
+      "DQS+KH": {
+        "etirement_max": 2.9505432343141575,
+        "etirement_p99": 1.1209831447992242,
+        "n>1.1": 239,
+        "n>1.25": 122,
+        "n>1.5": 54,
+        "retournements": 0,
+        "volume_total": -0.0028057134266484818,
+        "volume_zone": 0.0904308689874409
+      },
+      "DQS+Rohmer3": {
+        "etirement_max": 2.039215211347403,
+        "etirement_p99": 1.1401907124156778,
+        "n>1.1": 247,
+        "n>1.25": 124,
+        "n>1.5": 55,
+        "retournements": 0,
+        "volume_total": 3.086420008457935e-14,
+        "volume_zone": 0.17304884479010574
+      },
+      "DQS+KH_sommets_corriges": 0.2934227934227934
+    },
+    "L_ext30": {
+      "DQS": {
+        "etirement_max": 1.487236056777066,
+        "etirement_p99": 1.0231528605680318,
+        "n>1.1": 80,
+        "n>1.25": 24,
+        "n>1.5": 0,
+        "retournements": 0,
+        "volume_total": 0.008954022550086371,
+        "volume_zone": 0.044988712841427025
+      },
+      "DQS+KH": {
+        "etirement_max": 1.9966821621192952,
+        "etirement_p99": 1.0127614773650524,
+        "n>1.1": 66,
+        "n>1.25": 31,
+        "n>1.5": 14,
+        "retournements": 0,
+        "volume_total": 0.0017866422040866414,
+        "volume_zone": 0.034667418819742224
+      },
+      "DQS+Rohmer3": {
+        "etirement_max": 1.5042972353528972,
+        "etirement_p99": 1.0236621495808407,
+        "n>1.1": 79,
+        "n>1.25": 23,
+        "n>1.5": 2,
+        "retournements": 0,
+        "volume_total": -1.887379141862766e-15,
+        "volume_zone": 0.029042676863477945
+      },
+      "DQS+KH_sommets_corriges": 0.16254016254016254
+    },
+    "L_flex120": {
+      "DQS": {
+        "etirement_max": 3.2882017187556603,
+        "etirement_p99": 1.2497670813810453,
+        "n>1.1": 282,
+        "n>1.25": 213,
+        "n>1.5": 130,
+        "retournements": 1,
+        "volume_total": 0.012665661899840419,
+        "volume_zone": 0.17406718808787836
+      },
+      "DQS+KH": {
+        "etirement_max": 6.448003171282428,
+        "etirement_p99": 1.2279838985446943,
+        "n>1.1": 283,
+        "n>1.25": 204,
+        "n>1.5": 121,
+        "retournements": 1,
+        "volume_total": -0.011038567387070986,
+        "volume_zone": 0.04670593869327777
+      },
+      "DQS+Rohmer3": {
+        "etirement_max": 3.302839271374174,
+        "etirement_p99": 1.242472146557115,
+        "n>1.1": 282,
+        "n>1.25": 211,
+        "n>1.5": 129,
+        "retournements": 1,
+        "volume_total": 2.7755575615628914e-14,
+        "volume_zone": 0.1428045070704813
+      },
+      "DQS+KH_sommets_corriges": 0.2525987525987526
+    },
+    "L_flex30": {
+      "DQS": {
+        "etirement_max": 1.3497210234279098,
+        "etirement_p99": 1.0411908108905823,
+        "n>1.1": 113,
+        "n>1.25": 20,
+        "n>1.5": 0,
+        "retournements": 0,
+        "volume_total": 0.003501027609580376,
+        "volume_zone": 0.03930033225953289
+      },
+      "DQS+KH": {
+        "etirement_max": 1.8033811923698488,
+        "etirement_p99": 1.0454250186791625,
+        "n>1.1": 112,
+        "n>1.25": 30,
+        "n>1.5": 8,
+        "retournements": 0,
+        "volume_total": -0.002447862113967081,
+        "volume_zone": 0.012547735301382756
+      },
+      "DQS+Rohmer3": {
+        "etirement_max": 1.3485537488226689,
+        "etirement_p99": 1.0408853812041226,
+        "n>1.1": 111,
+        "n>1.25": 22,
+        "n>1.5": 0,
+        "retournements": 0,
+        "volume_total": -4.107825191113079e-15,
+        "volume_zone": 0.03343266159930902
+      },
+      "DQS+KH_sommets_corriges": 0.2786807786807787
+    },
+    "L_flex60": {
+      "DQS": {
+        "etirement_max": 1.7810170845133608,
+        "etirement_p99": 1.1037149839790659,
+        "n>1.1": 228,
+        "n>1.25": 111,
+        "n>1.5": 27,
+        "retournements": 0,
+        "volume_total": 0.0067886148335007945,
+        "volume_zone": 0.08544254950386398
+      },
+      "DQS+KH": {
+        "etirement_max": 3.3502377270962076,
+        "etirement_p99": 1.10280121691003,
+        "n>1.1": 233,
+        "n>1.25": 104,
+        "n>1.5": 35,
+        "retournements": 0,
+        "volume_total": -0.005299403893705534,
+        "volume_zone": 0.027701797634396286
+      },
+      "DQS+Rohmer3": {
+        "etirement_max": 1.8051894699043547,
+        "etirement_p99": 1.1022325105006687,
+        "n>1.1": 228,
+        "n>1.25": 109,
+        "n>1.5": 27,
+        "retournements": 0,
+        "volume_total": 1.5543122344752192e-15,
+        "volume_zone": 0.07267612602649276
+      },
+      "DQS+KH_sommets_corriges": 0.2916272916272916
+    },
+    "L_flex90": {
+      "DQS": {
+        "etirement_max": 2.4722346597795064,
+        "etirement_p99": 1.1758996601737561,
+        "n>1.1": 270,
+        "n>1.25": 176,
+        "n>1.5": 74,
+        "retournements": 0,
+        "volume_total": 0.009852321776866235,
+        "volume_zone": 0.13259121959413056
+      },
+      "DQS+KH": {
+        "etirement_max": 5.197025553266651,
+        "etirement_p99": 1.1647629226481355,
+        "n>1.1": 269,
+        "n>1.25": 172,
+        "n>1.5": 74,
+        "retournements": 0,
+        "volume_total": -0.008269665087082712,
+        "volume_zone": 0.0404919536543753
+      },
+      "DQS+Rohmer3": {
+        "etirement_max": 2.4931765629575104,
+        "etirement_p99": 1.1719587734576074,
+        "n>1.1": 268,
+        "n>1.25": 175,
+        "n>1.5": 74,
+        "retournements": 0,
+        "volume_total": 1.4432899320127035e-14,
+        "volume_zone": 0.11142467671101741
+      },
+      "DQS+KH_sommets_corriges": 0.28293328293328296
+    },
+    "L_genou30": {
+      "DQS": {
+        "etirement_max": 1.0989129166823073,
+        "etirement_p99": 1.0004388072263697,
+        "n>1.1": 0,
+        "n>1.25": 0,
+        "n>1.5": 0,
+        "retournements": 0,
+        "volume_total": -0.0027178064235680033,
+        "volume_zone": -1.4512714585634967e-08
+      },
+      "DQS+KH": {
+        "etirement_max": 1.0840046020195877,
+        "etirement_p99": 1.0004184656642603,
+        "n>1.1": 0,
+        "n>1.25": 0,
+        "n>1.5": 0,
+        "retournements": 0,
+        "volume_total": -0.0028537418988373586,
+        "volume_zone": -1.2418984063344851e-08
+      },
+      "DQS+Rohmer3": {
+        "etirement_max": 1.1003227756788112,
+        "etirement_p99": 1.0048621487449338,
+        "n>1.1": 2,
+        "n>1.25": 0,
+        "n>1.5": 0,
+        "retournements": 0,
+        "volume_total": 4.884981308350689e-15,
+        "volume_zone": 0.004237126527779855
+      },
+      "DQS+KH_sommets_corriges": 0.24740124740124741
+    },
+    "L_genou60": {
+      "DQS": {
+        "etirement_max": 1.191184531687849,
+        "etirement_p99": 1.0031547100933027,
+        "n>1.1": 24,
+        "n>1.25": 0,
+        "n>1.5": 0,
+        "retournements": 0,
+        "volume_total": -0.005479760116737786,
+        "volume_zone": -1.4512714585634967e-08
+      },
+      "DQS+KH": {
+        "etirement_max": 1.1740625624394327,
+        "etirement_p99": 1.0034078181621695,
+        "n>1.1": 24,
+        "n>1.25": 0,
+        "n>1.5": 0,
+        "retournements": 0,
+        "volume_total": -0.005761230126304362,
+        "volume_zone": -1.2418984063344851e-08
+      },
+      "DQS+Rohmer3": {
+        "etirement_max": 1.1961151089656483,
+        "etirement_p99": 1.0105189655022562,
+        "n>1.1": 24,
+        "n>1.25": 0,
+        "n>1.5": 0,
+        "retournements": 0,
+        "volume_total": 9.103828801926284e-15,
+        "volume_zone": 0.008598054272246136
+      },
+      "DQS+KH_sommets_corriges": 0.24834624834624835
+    },
+    "L_genou90": {
+      "DQS": {
+        "etirement_max": 1.2767717755183527,
+        "etirement_p99": 1.0097123374075088,
+        "n>1.1": 71,
+        "n>1.25": 5,
+        "n>1.5": 0,
+        "retournements": 4,
+        "volume_total": -0.008266411690448394,
+        "volume_zone": -1.4512714585634967e-08
+      },
+      "DQS+KH": {
+        "etirement_max": 1.2728526214392981,
+        "etirement_p99": 1.0104396240570641,
+        "n>1.1": 73,
+        "n>1.25": 3,
+        "n>1.5": 0,
+        "retournements": 4,
+        "volume_total": -0.008696880573825116,
+        "volume_zone": -1.2418984063344851e-08
+      },
+      "DQS+Rohmer3": {
+        "etirement_max": 1.2872724512840696,
+        "etirement_p99": 1.017283435769111,
+        "n>1.1": 80,
+        "n>1.25": 5,
+        "n>1.5": 0,
+        "retournements": 5,
+        "volume_total": -4.9960036108132044e-15,
+        "volume_zone": 0.013019790658500563
+      },
+      "DQS+KH_sommets_corriges": 0.25222075222075224
+    },
+    "L_int30": {
+      "DQS": {
+        "etirement_max": 1.3764763459020404,
+        "etirement_p99": 1.0115947319065444,
+        "n>1.1": 55,
+        "n>1.25": 8,
+        "n>1.5": 0,
+        "retournements": 0,
+        "volume_total": -0.009215776741777426,
+        "volume_zone": -0.04581870338665184
+      },
+      "DQS+KH": {
+        "etirement_max": 2.380947049828202,
+        "etirement_p99": 1.0087358577708463,
+        "n>1.1": 43,
+        "n>1.25": 18,
+        "n>1.5": 8,
+        "retournements": 0,
+        "volume_total": -0.014174381901397082,
+        "volume_zone": -0.07462647973929382
+      },
+      "DQS+Rohmer3": {
+        "etirement_max": 1.3482079293752056,
+        "etirement_p99": 1.0163478824927767,
+        "n>1.1": 56,
+        "n>1.25": 10,
+        "n>1.5": 0,
+        "retournements": 0,
+        "volume_total": 4.884981308350689e-15,
+        "volume_zone": -0.03180325879295509
+      },
+      "DQS+KH_sommets_corriges": 0.16735966735966737
+    },
+    "R_abd30": {
+      "DQS": {
+        "etirement_max": 1.9466183547654927,
+        "etirement_p99": 1.0415531513748093,
+        "n>1.1": 88,
+        "n>1.25": 22,
+        "n>1.5": 11,
+        "retournements": 0,
+        "volume_total": 0.011740662516774636,
+        "volume_zone": 0.11013828548821114
+      },
+      "DQS+KH": {
+        "etirement_max": 5.7488504033064185,
+        "etirement_p99": 1.0326098362330063,
+        "n>1.1": 59,
+        "n>1.25": 21,
+        "n>1.5": 13,
+        "retournements": 0,
+        "volume_total": 0.002814856438193125,
+        "volume_zone": 0.10697160754686186
+      },
+      "DQS+Rohmer3": {
+        "etirement_max": 2.018762810111132,
+        "etirement_p99": 1.0414227291512888,
+        "n>1.1": 79,
+        "n>1.25": 26,
+        "n>1.5": 11,
+        "retournements": 0,
+        "volume_total": 1.1102230246251565e-14,
+        "volume_zone": 0.0879061463493731
+      },
+      "DQS+KH_sommets_corriges": 0.2938952938952939
+    },
+    "R_add20": {
+      "DQS": {
+        "etirement_max": 1.2633887441966922,
+        "etirement_p99": 1.0136224098161697,
+        "n>1.1": 45,
+        "n>1.25": 2,
+        "n>1.5": 0,
+        "retournements": 0,
+        "volume_total": -0.007926878819593086,
+        "volume_zone": -0.062143671107566245
+      },
+      "DQS+KH": {
+        "etirement_max": 1.375810981557093,
+        "etirement_p99": 1.0088235847428242,
+        "n>1.1": 49,
+        "n>1.25": 10,
+        "n>1.5": 0,
+        "retournements": 0,
+        "volume_total": -0.012229907230096093,
+        "volume_zone": -0.06301224288433638
+      },
+      "DQS+Rohmer3": {
+        "etirement_max": 1.2520007291455182,
+        "etirement_p99": 1.0181145896750678,
+        "n>1.1": 50,
+        "n>1.25": 2,
+        "n>1.5": 0,
+        "retournements": 0,
+        "volume_total": 1.1102230246251565e-14,
+        "volume_zone": -0.05089599128966282
+      },
+      "DQS+KH_sommets_corriges": 0.30523530523530523
+    },
+    "R_combo_flex120_genou90": {
+      "DQS": {
+        "etirement_max": 3.1970028764327045,
+        "etirement_p99": 1.245441007905258,
+        "n>1.1": 353,
+        "n>1.25": 207,
+        "n>1.5": 127,
+        "retournements": 6,
+        "volume_total": 0.005004809940868382,
+        "volume_zone": -0.015555553875949868
+      },
+      "DQS+KH": {
+        "etirement_max": 6.852442147506577,
+        "etirement_p99": 1.2293217292837457,
+        "n>1.1": 353,
+        "n>1.25": 199,
+        "n>1.5": 117,
+        "retournements": 6,
+        "volume_total": -0.018719259448650383,
+        "volume_zone": -0.025847427297957748
+      },
+      "DQS+Rohmer3": {
+        "etirement_max": 3.2021505602306055,
+        "etirement_p99": 1.2409774662442963,
+        "n>1.1": 350,
+        "n>1.25": 206,
+        "n>1.5": 127,
+        "retournements": 6,
+        "volume_total": 2.020605904817785e-14,
+        "volume_zone": -0.02169305955579459
+      },
+      "DQS+KH_sommets_corriges": 0.1666981666981667
+    },
+    "R_combo_flex60_abd20_int20_genou60": {
+      "DQS": {
+        "etirement_max": 2.529679376140883,
+        "etirement_p99": 1.1198374929770136,
+        "n>1.1": 254,
+        "n>1.25": 115,
+        "n>1.5": 45,
+        "retournements": 0,
+        "volume_total": 0.010797067036259156,
+        "volume_zone": 0.07783897321317679
+      },
+      "DQS+KH": {
+        "etirement_max": 7.424338337311083,
+        "etirement_p99": 1.1177170086969297,
+        "n>1.1": 251,
+        "n>1.25": 114,
+        "n>1.5": 43,
+        "retournements": 0,
+        "volume_total": -0.004762493484123831,
+        "volume_zone": 0.06939017958772564
+      },
+      "DQS+Rohmer3": {
+        "etirement_max": 2.568376500758232,
+        "etirement_p99": 1.1188960932081247,
+        "n>1.1": 252,
+        "n>1.25": 116,
+        "n>1.5": 44,
+        "retournements": 0,
+        "volume_total": 2.220446049250313e-15,
+        "volume_zone": 0.05990368387584932
+      },
+      "DQS+KH_sommets_corriges": 0.17756567756567757
+    },
+    "R_combo_flex90_abd30_ext30": {
+      "DQS": {
+        "etirement_max": 2.065474952813373,
+        "etirement_p99": 1.146252017438786,
+        "n>1.1": 245,
+        "n>1.25": 122,
+        "n>1.5": 58,
+        "retournements": 0,
+        "volume_total": 0.021782013509915155,
+        "volume_zone": 0.06861791691491614
+      },
+      "DQS+KH": {
+        "etirement_max": 2.912438752230724,
+        "etirement_p99": 1.1186945359101443,
+        "n>1.1": 238,
+        "n>1.25": 117,
+        "n>1.5": 51,
+        "retournements": 0,
+        "volume_total": -0.0011589802121760862,
+        "volume_zone": 0.027537282866397783
+      },
+      "DQS+Rohmer3": {
+        "etirement_max": 2.0140363184653034,
+        "etirement_p99": 1.1378510654582104,
+        "n>1.1": 248,
+        "n>1.25": 127,
+        "n>1.5": 59,
+        "retournements": 0,
+        "volume_total": -9.992007221626409e-16,
+        "volume_zone": 0.03820435520777843
+      },
+      "DQS+KH_sommets_corriges": 0.26214326214326217
+    },
+    "R_ext30": {
+      "DQS": {
+        "etirement_max": 1.473393940405739,
+        "etirement_p99": 1.0216978839974635,
+        "n>1.1": 84,
+        "n>1.25": 27,
+        "n>1.5": 0,
+        "retournements": 0,
+        "volume_total": 0.008607548473920312,
+        "volume_zone": 0.044549812130326716
+      },
+      "DQS+KH": {
+        "etirement_max": 2.456589762652433,
+        "etirement_p99": 1.0119414141233454,
+        "n>1.1": 63,
+        "n>1.25": 30,
+        "n>1.5": 16,
+        "retournements": 0,
+        "volume_total": 0.001482029514148886,
+        "volume_zone": 0.004467403145343329
+      },
+      "DQS+Rohmer3": {
+        "etirement_max": 1.499112028511593,
+        "etirement_p99": 1.0224354123629114,
+        "n>1.1": 83,
+        "n>1.25": 25,
+        "n>1.5": 0,
+        "retournements": 0,
+        "volume_total": 7.771561172376096e-15,
+        "volume_zone": 0.03081775599726333
+      },
+      "DQS+KH_sommets_corriges": 0.3073143073143073
+    },
+    "R_flex120": {
+      "DQS": {
+        "etirement_max": 3.1970028764327045,
+        "etirement_p99": 1.2442152882125836,
+        "n>1.1": 284,
+        "n>1.25": 205,
+        "n>1.5": 127,
+        "retournements": 1,
+        "volume_total": 0.013626788495221032,
+        "volume_zone": -0.015555553875949868
+      },
+      "DQS+KH": {
+        "etirement_max": 6.852442147506577,
+        "etirement_p99": 1.2293217292837457,
+        "n>1.1": 282,
+        "n>1.25": 199,
+        "n>1.5": 117,
+        "retournements": 1,
+        "volume_total": -0.009694871459862475,
+        "volume_zone": -0.025847427297957748
+      },
+      "DQS+Rohmer3": {
+        "etirement_max": 3.211756794910248,
+        "etirement_p99": 1.2408663763521544,
+        "n>1.1": 282,
+        "n>1.25": 203,
+        "n>1.5": 126,
+        "retournements": 1,
+        "volume_total": -3.219646771412954e-14,
+        "volume_zone": -0.03207058759418324
+      },
+      "DQS+KH_sommets_corriges": 0.18635418635418635
+    },
+    "R_flex30": {
+      "DQS": {
+        "etirement_max": 1.3462741864864307,
+        "etirement_p99": 1.0418628132014613,
+        "n>1.1": 115,
+        "n>1.25": 20,
+        "n>1.5": 0,
+        "retournements": 0,
+        "volume_total": 0.003778721629800863,
+        "volume_zone": -0.004532429801137994
+      },
+      "DQS+KH": {
+        "etirement_max": 1.8161685212927918,
+        "etirement_p99": 1.0439187936177967,
+        "n>1.1": 112,
+        "n>1.25": 27,
+        "n>1.5": 6,
+        "retournements": 0,
+        "volume_total": -0.0019098860039757914,
+        "volume_zone": -0.0019006030126450524
+      },
+      "DQS+Rohmer3": {
+        "etirement_max": 1.344104763984199,
+        "etirement_p99": 1.0413452521322717,
+        "n>1.1": 113,
+        "n>1.25": 20,
+        "n>1.5": 0,
+        "retournements": 0,
+        "volume_total": 5.10702591327572e-15,
+        "volume_zone": -0.009980386667947316
+      },
+      "DQS+KH_sommets_corriges": 0.17662067662067663
+    },
+    "R_flex60": {
+      "DQS": {
+        "etirement_max": 1.7248340141174126,
+        "etirement_p99": 1.107626025690694,
+        "n>1.1": 229,
+        "n>1.25": 108,
+        "n>1.5": 27,
+        "retournements": 0,
+        "volume_total": 0.007321163527605146,
+        "volume_zone": -0.008543413560075486
+      },
+      "DQS+KH": {
+        "etirement_max": 3.267283939789104,
+        "etirement_p99": 1.1011783565657718,
+        "n>1.1": 229,
+        "n>1.25": 103,
+        "n>1.5": 29,
+        "retournements": 0,
+        "volume_total": -0.004322356464094734,
+        "volume_zone": -0.006368135422255783
+      },
+      "DQS+Rohmer3": {
+        "etirement_max": 1.746610985582228,
+        "etirement_p99": 1.1028505504188375,
+        "n>1.1": 229,
+        "n>1.25": 109,
+        "n>1.5": 27,
+        "retournements": 0,
+        "volume_total": -7.882583474838611e-15,
+        "volume_zone": -0.0184304287585213
+      },
+      "DQS+KH_sommets_corriges": 0.19145719145719145
+    },
+    "R_flex90": {
+      "DQS": {
+        "etirement_max": 2.3958604066738878,
+        "etirement_p99": 1.1740697033970127,
+        "n>1.1": 269,
+        "n>1.25": 175,
+        "n>1.5": 72,
+        "retournements": 0,
+        "volume_total": 0.010613893290345455,
+        "volume_zone": -0.012130791624933801
+      },
+      "DQS+KH": {
+        "etirement_max": 5.253957520086987,
+        "etirement_p99": 1.1644599598204586,
+        "n>1.1": 268,
+        "n>1.25": 171,
+        "n>1.5": 72,
+        "retournements": 0,
+        "volume_total": -0.0070154559233284175,
+        "volume_zone": -0.014327472487452031
+      },
+      "DQS+Rohmer3": {
+        "etirement_max": 2.4173787674136364,
+        "etirement_p99": 1.1693065503812297,
+        "n>1.1": 267,
+        "n>1.25": 176,
+        "n>1.5": 72,
+        "retournements": 0,
+        "volume_total": 4.440892098500626e-16,
+        "volume_zone": -0.025645877180236032
+      },
+      "DQS+KH_sommets_corriges": 0.18172368172368172
+    },
+    "R_genou30": {
+      "DQS": {
+        "etirement_max": 1.0986142969974517,
+        "etirement_p99": 1.0003578806360796,
+        "n>1.1": 0,
+        "n>1.25": 0,
+        "n>1.5": 0,
+        "retournements": 0,
+        "volume_total": -0.0028372897993758084,
+        "volume_zone": -1.4512714585634967e-08
+      },
+      "DQS+KH": {
+        "etirement_max": 1.08053981317176,
+        "etirement_p99": 1.0003578806360796,
+        "n>1.1": 0,
+        "n>1.25": 0,
+        "n>1.5": 0,
+        "retournements": 0,
+        "volume_total": -0.002953846235781432,
+        "volume_zone": -1.2418984063344851e-08
+      },
+      "DQS+Rohmer3": {
+        "etirement_max": 1.1003425596280678,
+        "etirement_p99": 1.0051097480639044,
+        "n>1.1": 2,
+        "n>1.25": 0,
+        "n>1.5": 0,
+        "retournements": 0,
+        "volume_total": 9.547918011776346e-15,
+        "volume_zone": 0.004423790565199592
+      },
+      "DQS+KH_sommets_corriges": 0.24655074655074655
+    },
+    "R_genou60": {
+      "DQS": {
+        "etirement_max": 1.1907398201487505,
+        "etirement_p99": 1.0027025029404824,
+        "n>1.1": 18,
+        "n>1.25": 0,
+        "n>1.5": 0,
+        "retournements": 0,
+        "volume_total": -0.005718344676851728,
+        "volume_zone": -1.4512714585634967e-08
+      },
+      "DQS+KH": {
+        "etirement_max": 1.145286692684702,
+        "etirement_p99": 1.0030403482828252,
+        "n>1.1": 20,
+        "n>1.25": 0,
+        "n>1.5": 0,
+        "retournements": 0,
+        "volume_total": -0.005967492881541858,
+        "volume_zone": -1.2418984063344851e-08
+      },
+      "DQS+Rohmer3": {
+        "etirement_max": 1.1965223254328976,
+        "etirement_p99": 1.0106834739491353,
+        "n>1.1": 19,
+        "n>1.25": 0,
+        "n>1.5": 0,
+        "retournements": 0,
+        "volume_total": 7.105427357601002e-15,
+        "volume_zone": 0.008973341569959326
+      },
+      "DQS+KH_sommets_corriges": 0.24777924777924779
+    },
+    "R_genou90": {
+      "DQS": {
+        "etirement_max": 1.2764917657174772,
+        "etirement_p99": 1.0087348835706464,
+        "n>1.1": 69,
+        "n>1.25": 2,
+        "n>1.5": 0,
+        "retournements": 5,
+        "volume_total": -0.008621574420531464,
+        "volume_zone": -1.4512714585634967e-08
+      },
+      "DQS+KH": {
+        "etirement_max": 1.222359531048123,
+        "etirement_p99": 1.0089708810969122,
+        "n>1.1": 71,
+        "n>1.25": 0,
+        "n>1.5": 0,
+        "retournements": 5,
+        "volume_total": -0.009028961321492668,
+        "volume_zone": -1.2418984063344851e-08
+      },
+      "DQS+Rohmer3": {
+        "etirement_max": 1.288589600416532,
+        "etirement_p99": 1.0174106716422835,
+        "n>1.1": 75,
+        "n>1.25": 2,
+        "n>1.5": 0,
+        "retournements": 6,
+        "volume_total": 1.5543122344752192e-15,
+        "volume_zone": 0.013579534731151588
+      },
+      "DQS+KH_sommets_corriges": 0.2517482517482518
+    },
+    "R_int30": {
+      "DQS": {
+        "etirement_max": 1.3745960754685036,
+        "etirement_p99": 1.0114279486028765,
+        "n>1.1": 52,
+        "n>1.25": 8,
+        "n>1.5": 0,
+        "retournements": 0,
+        "volume_total": -0.008880771752056704,
+        "volume_zone": -0.03284484042703961
+      },
+      "DQS+KH": {
+        "etirement_max": 2.5894573979602855,
+        "etirement_p99": 1.008399994697779,
+        "n>1.1": 43,
+        "n>1.25": 20,
+        "n>1.5": 6,
+        "retournements": 0,
+        "volume_total": -0.013634344993523562,
+        "volume_zone": -0.058791911525234
+      },
+      "DQS+Rohmer3": {
+        "etirement_max": 1.3395039869650522,
+        "etirement_p99": 1.0153709353774167,
+        "n>1.1": 54,
+        "n>1.25": 10,
+        "n>1.5": 0,
+        "retournements": 0,
+        "volume_total": 8.659739592076221e-15,
+        "volume_zone": -0.018231512712373
+      },
+      "DQS+KH_sommets_corriges": 0.297013797013797
+    }
+  },
+  "cpu_s": {
+    "DQS+KH": 0.0018295582857142756
+  }
+}
