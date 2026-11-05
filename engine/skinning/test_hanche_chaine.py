@@ -17,10 +17,11 @@ hip = np.array(J["mixamorig:LeftUpLeg"]["tete"])
 D = np.load(SCR + "donnees7.npz", allow_pickle=True)
 rest = D["rest"]; W0 = D["W"]; os_ = [str(x) for x in D["os"]]; faces = D["faces"]
 dom = W0.argmax(1); iH = os_.index("mixamorig:Hips"); iU = os_.index("mixamorig:LeftUpLeg")
+enf = [iU, os_.index("mixamorig:LeftLeg"), os_.index("mixamorig:LeftFoot")]  # sous-arbre complet (erreur 84)
 rng = np.random.default_rng(0)
 for th in (90, 120):
     R = Rot.from_rotvec(np.array([1.0, 0, 0]) * np.radians(th)).as_matrix()
     M = np.eye(4); M[:3, :3] = R; M[:3, 3] = hip - R @ hip
-    Wc, Ms, info = chaine(rest, dom, iH, [iU], M, 8, 0.04, enfant_rigide=False, bissectrice=True)
+    Wc, Ms, info = chaine(rest, dom, iH, enf, M, 8, 0.04, enfant_rigide=False, bissectrice=True)
     pts = deformer(rest, Wc, Ms)
-    print(f"hanche θ={th}:", evaluer(rest, faces, dom == iH, dom == iU, Wc, Ms, pts, th, info, 0.04, rng))
+    print(f"hanche θ={th}:", evaluer(rest, faces, dom == iH, np.isin(dom, enf), Wc, Ms, pts, th, info, 0.04, rng))

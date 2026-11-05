@@ -706,3 +706,8 @@ Mesure LBS sans clé, bras gauche seul : 90° 24 -> 12 replis ; 120° 31 -> 19 ;
 - Le sous-arbre d'une articulation (ici la jambe entière) doit suivre la rotation ; sinon les plis apparaissent à l'articulation voisine (erreur 84).
 - Un correctif qui réduit les plis en déplaçant le voisinage de plus de quelques centimètres n'est pas un correctif valable.
 - Hanche : 0 pli jusqu'à 30°. Au-delà : non résolu (erreur 84).
+
+## 60. Limite de plage : ne pas valider au-delà de ce qui est mesuré
+- Une articulation n'est validée que dans la plage où le test donne 0 pli et où la mesure est faite. Hanche : 30°. Épaule : 20°. Poignet : 50°. La plage normale du corps humain (hanche 120°, épaule 180°, poignet 80°) n'est pas atteinte.
+- Quand un correctif de repli échoue (erreur 85), on passe à la variante sans correctif et on le dit clairement, au lieu d'élargir la bande jusqu'à ce que les plis disparaissent (cela déplace le tronc, voir section 59).
+- L'étirement n'est pas bloquant : il est signalé. Il reste élevé à la hanche (5,10 à 30°), ce qui doit être regardé visuellement avant toute revendication.

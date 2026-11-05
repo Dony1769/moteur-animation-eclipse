@@ -488,3 +488,11 @@ Chaque erreur a une cause, une correction et un test. Une erreur corrigée doit 
 - Correctif ARAP local (rayon 0,25 m) : plis 8 / 16 / 18 à 60 / 90 / 120°, mais déplacements de 10 à 16 cm. Trop large pour un correctif.
 - État : hanche validée à 0 pli jusqu'à 30° uniquement. Au-delà, il faut une solution de correction non résolue. Rapport à compléter.
 - Outil : `engine/skinning/test_hanche_chaine.py` (à mettre à jour avec le sous-arbre complet).
+
+## 85. Correctif calculé de hanche (variante B) : rejeté, il aggrave les plis
+- Méthode testée : correctif de pose calculé sur la frontière tronc / cuisse, plafonné en déplacement.
+- Résultats : plafond 3 cm sans effet sur les plis ; plafonds 6 et 10 cm font monter les plis à 36–48, soit plus que sans correctif.
+- Cause : le correctif déplace des sommets voisins dans une zone où la géométrie se replie ; sans contrainte de volume, il crée de nouveaux plis.
+- Décision : variante B abandonnée, variante A (chaîne de jonctions seule) retenue, conformément à l'instruction de l'utilisateur.
+- Conséquence : hanche vérifiée à 0 pli jusqu'à 30° seulement, épaule jusqu'à 20°, poignet jusqu'à 50°. Au-delà, défauts non résolus (voir `docs/rapports/phase4_hanche_epaule_poignet.json`).
+- Outil : `engine/skinning/correctif_hanche_minimal.py` (échec documenté, ne pas réutiliser tel quel).

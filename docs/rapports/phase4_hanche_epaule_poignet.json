@@ -1,0 +1,41 @@
+{
+  "objet": "hanche, epaule, poignet : chaines de jonctions (numpy seul, NON valide dans Blender)",
+  "statut": "partiel : zero pli dans la plage verifiee, plage normale du corps humain non atteinte",
+  "methode": "chaine de noeuds coaxiaux, bande de jonction sur la bissectrice, sans correctif (A). Variante B (correctif calcule, plafonds 3/6/10 cm) testee et rejetee.",
+  "plage_normale_humaine": {
+    "hanche_flexion": "120 deg",
+    "epaule_elevation": "180 deg",
+    "poignet_flexion": "80 deg"
+  },
+  "hanche": {
+    "sous_arbre": ["LeftUpLeg", "LeftLeg", "LeftFoot"],
+    "resultats_sans_correctif_plis": {"10": 0, "30": 0, "60": 15, "90": 21, "120": 24},
+    "plis_localisation": "trochanter et fessier externe (z 0,76 a 0,90 m, cote lateral) : defauts, pas des plis acceptables",
+    "etirement_max_secondaire_a_30": 5.10,
+    "etirement_note": "valeur elevee a 30 deg : indicateur secondaire, a examiner visuellement a la frontiere tronc / cuisse",
+    "verifie_jusqu_a": "30 deg",
+    "non_resolu": "60 a 120 deg"
+  },
+  "epaule": {
+    "sous_arbre": ["LeftArm", "LeftForeArm", "LeftHand"],
+    "resultats_sans_correctif_plis": {"5": 0, "10": 0, "15": 0, "20": 0, "30": 3},
+    "etirement_max_secondaire_a_20": 2.50,
+    "verifie_jusqu_a": "20 deg",
+    "non_resolu": "30 a 180 deg"
+  },
+  "poignet": {
+    "sous_arbre": ["LeftHand"],
+    "resultats_sans_correctif_plis": {"10": 0, "20": 0, "30": 0, "40": 0, "50": 0, "60": 2},
+    "etirement_max_secondaire_a_50": 1.50,
+    "verifie_jusqu_a": "50 deg",
+    "non_resolu": "60 a 80 deg"
+  },
+  "correctif_calcule_B": {
+    "resultat": "rejete",
+    "plis_avec_plafond_3_cm": "aucun effet",
+    "plis_avec_plafond_6_et_10_cm": "36 a 48 (pire que sans correctif)",
+    "voir": "docs/erreurs_apprises.md, entree 85"
+  },
+  "validation_blender": "non faite pour la hanche, l'epaule et le poignet ; seuls genou, coude et cheville ont ete valides dans Blender",
+  "viewer": "scratchpad/articulations/viewer_v2.html (affiche les six articulations, verdict sur les plis seuls)"
+}
