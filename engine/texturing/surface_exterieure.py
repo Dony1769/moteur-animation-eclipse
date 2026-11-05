@@ -13,6 +13,8 @@ Lancer de rayon : trimesh (BVH rtree), réimplémentation de la règle ; aucun c
 import numpy as np
 import trimesh
 
+LOT_RAYONS = 256   # taille de lot : borne la mémoire du lancer de rayon sans embree
+
 
 def classer(V, F, points_par_face=2, directions=32, seed=0):
     """Retourne (exterieure (F,) bool, cfront (F,), cback (F,), a_retourner (F,) bool).
@@ -42,8 +44,12 @@ def classer(V, F, points_par_face=2, directions=32, seed=0):
         cote = np.sign(N[face_id] @ dk)              # +1 : côté normale ; -1 : autre côté
         ok = cote != 0
         origine = pts + eps * dk * np.sign(np.where(ok, cote, 1))[:, None]   # décalage du côté du rayon
-        dirs = np.tile(dk, (len(origine), 1))
-        bloque = m.ray.intersects_any(origine, dirs)
+        # Lots de rayons : sans embree, trimesh construit une matrice rayons x triangles en mémoire
+        # (≈ 37 000 x 18 000 pour le corps) et le processus est tué (entrée 140, mesure du 5 novembre).
+        bloque = np.zeros(len(origine), dtype=bool)
+        for k in range(0, len(origine), LOT_RAYONS):
+            o = origine[k:k + LOT_RAYONS]
+            bloque[k:k + len(o)] = m.ray.intersects_any(o, np.tile(dk, (len(o), 1)))
         libre = ok & (~bloque)
         np.add.at(cfront, face_id[libre & (cote > 0)], 1)
         np.add.at(cback, face_id[libre & (cote < 0)], 1)
