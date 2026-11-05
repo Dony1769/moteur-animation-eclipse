@@ -1276,3 +1276,18 @@ Résultat (docs/rapports/phase4_psd_hanche_genou.json) : genou plis 0–4, étir
   justifiée par un modèle et évaluée par contraintes (étirement, retournements, volume, intersections).
 - Règle : avant de considérer une donnée comme une vérité, vérifier qu'elle diffère de la méthode qu'elle est censée
   corriger. Voir rapport docs/rapports/skinning/psd/RAPPORT_etape3a_verification_references.md.
+
+## 177. Un blend rigide articulaire réduit le maximum d'étirement de Maria en dégradant le p99 et le volume
+- Constat : C1 (α = 1,0) : maximum 8,30 → 2,88 sur Maria, mais p99 1,00 → 1,63, |volume| 0,036 → 0,084. Sur masculin
+  et féminin, aucun gain significatif sur le maximum.
+- Règle : un gain sur le maximum seul est rejeté ; le p99, le volume et les retournements doivent aussi tenir.
+
+## 178. La courbure d'une trajectoire rigide fausse une mesure d'interpolation si on mesure la position brute
+- Constat : l'écart PSD sur position donnait 0,03016 m pour TOUTES les méthodes (identique). Cause : les sommets rigides
+  décrivent un arc de cercle dont l'écart à l'interpolation linéaire est identique pour toutes les méthodes.
+- Correction : mesurer l'interpolation de la correction δ = méthode − LBS. Valeurs distinctes et interprétables.
+- Règle : pour tester une interpolation (PSD), mesurer l'écart de la correction, jamais la position.
+
+## 179. Le critère de calibration peut échouer de peu : c'est un résultat, pas à assouplir
+- Constat : α = 0,25 échoue sur le p99 de 0,005 (1,159 contre 1,154). Le seuil n'est pas relâché ; le blend est quasi nul.
+- Règle : ne pas arrondir ni relâcher le critère pour accepter une variante ; l'échec est documenté.

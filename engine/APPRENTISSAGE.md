@@ -1059,3 +1059,9 @@ montrent qu'une correction locale peut dégrader le reste. Voir entrée 174.
 
 ## 138. Une « référence haute résolution » peut être la même méthode à plus haute résolution
 Vérifier qu'une donnée de référence diffère de la méthode évaluée. Ici, le HR est identique au LBS (entrée 176).
+
+## 139. Générer des poses intermédiaires à partir de l'anatomie réelle permet de tester l'interpolation sans cible
+Le générateur (centres et axes réels, chaîne de descendants) reproduit les poses réelles à 1e-7 près. Voir entrée 177.
+
+## 140. Pour un blend, mesurer la correction, pas la position
+Voir entrée 178.
