@@ -95,3 +95,17 @@ Date : 2026-11-05. Objectif : sourcer les amplitudes actives de référence adul
 - Test : rotation répartie (rotation_repartie.py) rejetée (erreur 116) ; cause analytique consignée.
 - Recherche suivante : zones de plis acceptables (consigne utilisateur) pour classer les plis de la hanche, puis cible
   sans repliement (Schüller 2013) sur la face extenseur seulement.
+
+## Recherche : plis de peau aux articulations, 2026-11-06
+- Sources lues : (1) Computers & Graphics 2014, « Dynamic Skin Deformation using Finite Difference Solutions » (core.ac.uk
+  42142683) : ne modélise pas les plis, les renvoie en travaux futurs. Hors sujet pour les plis. (2) Zhang, Sim & Tan,
+  ICCS 2005, « Simulating Wrinkles in Facial Expressions on an Anatomy-Based Face » (Springer 11428848) : plis faciaux,
+  pas plis d'articulation.
+- Technique transférable (Zhang et al. 2005), à implémenter :
+  - Profil périodique du pli à intégrale nulle sur un cycle (creux puis bosse) : modélise l'incompressibilité de la peau.
+  - Amplitude proportionnelle à la compression ε (moyenne pondérée par cos de l'angle arête/direction de traction), nulle en
+    traction (ε < 0) : un pli n'apparaît que là où la peau est comprimée.
+  - Atténuation nulle au bord de la zone d'influence du muscle.
+- Application prévue : pli fléchisseur (côté bassin-cuisse, zone où la référence X-Bot place son étirement) avec amplitude
+  issue de la compression mesurée ; l'étirement côté extenseur reste borné par la rampe.
+- Statut : pas encore implémenté ; à valider avec le critère complet et la zone de pli acceptable.
