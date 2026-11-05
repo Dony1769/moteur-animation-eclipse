@@ -1,0 +1,12 @@
+{
+  "faces": 18486,
+  "faces_avant": 1859,
+  "erreur_moyenne_face_avant": 0.00017,
+  "faces_arriere": 1446,
+  "erreur_moyenne_face_arriere": 0.0,
+  "faces_bord": 2346,
+  "melange_entre_vues": true,
+  "faces_non_couvertes": 0,
+  "statut": "VALIDE_TECHNIQUE",
+  "limite": "pas de test d'occlusion : une vue voit aussi les faces cachées (voir fusion_vues.py)"
+}

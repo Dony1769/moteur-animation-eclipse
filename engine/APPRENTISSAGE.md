@@ -947,3 +947,7 @@ méthode. Voir erreurs_apprises entrée 135.
 ## 110. Vérifier le contenu d'un asset, pas sa taille
 Une cible ou un fichier se valide par son contenu (lignes de données, signature LFS), jamais par sa taille. Corriger
 d'abord la conclusion fausse (erreurs_apprises entrée 136), puis le code. Voir entrées 133 et 136.
+
+## 111. Reprendre une idée, pas un code ni des poids
+Lire une méthode publiée (rapport officiel), vérifier avec une source non officielle, réimplémenter, puis tester avec des
+critères mesurables. Noter la limite (ici, l'occlusion). Voir erreurs_apprises entrée 137 et docs/recherches_humain.md.

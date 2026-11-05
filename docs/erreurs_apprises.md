@@ -950,3 +950,11 @@ Résultat (docs/rapports/phase4_psd_hanche_genou.json) : genou plis 0–4, étir
   pas la taille. Un pointeur LFS se reconnaît à la signature « version https://git-lfs » dans le fichier.
 - Conséquence : la moyenne sur les trois races (corps.py) reste justifiée, mais pas pour la raison donnée ; les
   universal-* sont simplement vides dans ce dépôt.
+
+## 137. Idée d'un texturage multi-vues reprise sans code ni poids : fusion par cosinus puissance 4
+- Source : rapport Hunyuan3D 2.1 (arXiv, officiel) et DeepWiki (non officiel), section texture.
+- Méthode retenue et réimplémentée : poids = max(0, n·c)^4 × poids de vue. Testée sur le maillage de base :
+  erreur 0,0002 sur les faces avant, 0,0 sur les faces arrière, mélange correct sur les faces de bord.
+- Limite connue : pas d'occlusion. Une vue colore aussi les faces cachées. À traiter avant usage réel.
+- Règle : un test qui ne vérifie qu'une tendance (poids plus fort face à la vue) ne prouve pas la visibilité. Le noter
+  dans le rapport, et ne pas le présenter comme un texturage validé.
