@@ -45,3 +45,15 @@ faute de valeur officielle). Le coude en hyperextension (−10°) pénètre : c'
 - Fait : bornes anatomiques (source CDC), mesure de pénétration par articulation, constat ci-dessus.
 - Non fait : calotte rigide au point de jonction (génération géométrique), validation Blender, rig 47 os
   avec nœuds de jonction, bornes d'abduction de hanche et d'épaule, poignet.
+
+## Maillage de marqueurs `Beta_Joints` (inspecté en 3D, Blender)
+- Chaque articulation est une **sphère de jonction** centrée sur la tête de l'os enfant. Le centre mesuré sur les anneaux de marqueurs coïncide avec la tête d'os à quelques millimètres près (genou, cheville, épaule, coude, cou).
+- Rayons mesurés (sphère de jonction) : genou 6,2 cm ; épaule 5,0 cm ; cheville 3,6 cm ; coude 4,1 cm ; cou 5,2 cm ; bassin 32 cm (un seul grand volume, hanche et colonne fusionnés dans le regroupement).
+- Les orteils et les doigts ont aussi leur petite sphère de jonction.
+- `Beta_Surface` n'est **pas une peau continue** : ce sont des **tubes séparés** par segment (cuisse, jambe, bras, avant-bras, main). Les tubes se rejoignent par les sphères de jonction. Le recouvrement se fait par la sphère, pas par un mélange de poids sur la peau.
+- Images de contrôle : `scratchpad/fbx/xbot_cote.png` (profil), `scratchpad/fbx/xbot_detail_bras.png` (coude et poignet).
+
+## Conséquence pour le modèle HBM
+- Le modèle HBM doit reproduire cette structure : segments rigides séparés, une sphère de jonction par articulation de rayon mesuré ci-dessus (à l'échelle HBM, environ 0,9 × les valeurs X-Bot : taille genou HBM ≈ 0,476 / 0,532 de la hauteur X-Bot).
+- C'est la calotte rigide demandée : la sphère comble l'écart, les tubes restent rigides.
+- Les rayons ci-dessus sont des données, pas des valeurs à inventer.
