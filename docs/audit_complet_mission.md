@@ -184,3 +184,11 @@ Ordre de travail retenu (inchangé dans le fond, précisé) :
 4. Phases 5 à 15 : après les étapes précédentes, dans l'ordre du plan.
 
 Rien de ce qui suit n'est déclaré fait par cette mise à jour : elle ne contient aucun nouveau résultat de test.
+
+### Relances réelles (5 novembre 2026, Blender 4.5.15 LTS)
+- `engine/validation/test_importer.py` : 21/21 après sélection explicite du corps (entrée 143 ; avant : 19/20, entrée 142).
+- `engine/validation/test_hbm_armature.py` : RESULTAT OK (symétrie jambes 7,8 mm ; 11 os ; hiérarchie à la racine Hips ;
+  milieux dans le maillage).
+- `engine/validation/test_hbm_complet.py` : RESULTAT OK (47 os ; symétrie des bras 0,8 mm ; 5 doigts par côté ; 20 phalanges
+  mesurées dans le maillage ; 8 phalanges estimées signalées, non testées).
+- Non relancés : test_maria*.py et test_ara_integration.py (à faire ensuite).
