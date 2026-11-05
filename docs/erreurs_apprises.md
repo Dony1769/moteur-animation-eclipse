@@ -840,3 +840,11 @@ Résultat (docs/rapports/phase4_psd_hanche_genou.json) : genou plis 0–4, étir
 - Règle : ne pas conclure sur la faisabilité d'une contrainte tant qu'une solution témoin injective n'est pas construite
   (par exemple une pose physiquement plausible pour un cas plus simple). Les rapports sont marqués INVALIDE.
 - Prochaine étape : élargir la bande de jonction ou traiter le bassin comme un segment mobile, puis vérifier le distal.
+
+## 127. Référence fournie non exploitée : la peau Mixamo mesurée seulement pour ses angles
+- Défaut : le X-Bot skinné (hiphop/skin.fbx) était une référence géométrique, mais je ne l'avais utilisée que pour
+  les angles de la danse. Sa peau déformée n'a jamais servi de comparaison.
+- Correction : export des sommets posés (Blender) et mesure du même critère de bande. Résultat : la hanche propre
+  existe à 89° (0,7 % > 1,15) ; la borne 1,15 était trop stricte pour le genou (référence 15 % > 1,15).
+- Règle : une référence fournie par l'utilisateur doit être mesurée avec le même critère que nos modèles, et
+  ses résultats servent de calibration avant toute borne provisoire.

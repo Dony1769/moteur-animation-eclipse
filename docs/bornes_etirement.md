@@ -29,3 +29,16 @@ Objectif : fixer la borne d'étirement admise dans la bande de jonction, sur une
 - Genou (chaîne validée, numpy) : étirement p99 bande 1,08 à 60°, 1,21 à 120° : légèrement au-dessus de 1,15 à partir de
   ~105°.
 - Hanche (chaîne, numpy) : 1,21 à 30° puis 1,85 à 120° : au-dessus de 1,15 dès 30°. Non passé.
+
+## Calibration sur la peau de référence Mixamo (X-Bot, Hip Hop Dancing, fourni par l'utilisateur)
+Mesure : engine/skinning/reference/export_peau_mixamo.py (Blender, sommets posés, 1 image sur 5) puis
+engine/skinning/reference/stats_peau_mixamo.py ; résultats : docs/rapports/reference_mixamo_bandes.json.
+Même critère que nos modèles : arêtes à moins de 10 cm du centre articulaire, ratio par rapport à la pose de départ.
+
+- Hanche, cuisse à 89° de la verticale (image 231) : médiane 1,00 ; p95 1,07 ; 0,7 % > 1,15 (n = 1031).
+  Notre chaîne coaxiale à 90° : 27 % > 1,15. Une hanche propre à cet angle existe.
+- Genou, flexion 100–150° : 15 % des arêtes > 1,15 (p95 1,28 à 102°). La borne 1,15 est plus stricte
+  que la référence professionnelle ; à reconsidérer avant de la figer.
+- Image 206 : p95 1,79 à la hanche (aberration de la référence) ; à exclure ou à examiner.
+- Limite : une seule peau de référence (X-Bot), maillage différent du nôtre ; c'est une référence de comparaison,
+  pas une norme anatomique.
