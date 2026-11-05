@@ -960,3 +960,8 @@ contenir des surfaces internes : une face tournée vers la caméra peut être ca
 Un bundle (plusieurs corps posés à l'origine) donne une mesure fausse si on prend l'union de tous les maillages. Le diagnostic
 exige maintenant un corps (`--corps NOM`) et refuse de mesurer sans choix. Pour un objet déformé, mesurer les sommets évalués
 (le dimensions de Blender peut ignorer les modificateurs, voir erreurs_apprises entrées 142 et 143).
+
+## 115. Un test d'animation doit contrôler son entrée et son slot
+Avant de mesurer une déformation : vérifier que l'action contient du mouvement (plage d'images, canaux), que son slot est
+affecté (Blender 4.4+), et mesurer en mètres monde relatifs à la hanche (armature à l'échelle 0,01). Voir erreurs_apprises
+entrées 144 et 145.

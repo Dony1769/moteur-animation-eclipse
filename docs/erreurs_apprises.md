@@ -1019,3 +1019,23 @@ Résultat (docs/rapports/phase4_psd_hanche_genou.json) : genou plis 0–4, étir
 - Règle retenue : mesurer les sommets évalués (depsgraph) pour tout objet déformé ; ne jamais se fier à `dimensions`
   seul. Limite connue : `_dimensions` lit encore les sommets de base ; sans effet sur ce bundle, à corriger avant un
   personnage avec modificateurs (todo).
+
+## 144. Test de déformation : une action statique embarquée et une affectation sans slot ne prouvent rien
+- Constat (Blender 4.5.15 LTS, test_maria.py test 10) : déplacement nul « 0,0000 m » sur 2 images, donc ECHEC.
+- Cause 1 : l'action embarquée dans Personnage_Maria.fbx ne couvre que les images 1 à 2 (pose statique). Le test ne pouvait
+  rien mesurer. Il faut un vrai clip (Running.fbx : images 1 à 16, 52 os communs avec Maria).
+- Cause 2 : depuis Blender 4.4, `animation_data.action` seul ne suffit pas : il faut aussi `animation_data.action_slot`. Sans
+  le slot, l'action n'agit pas (pose identité à toutes les images). Source officielle : developer.blender.org,
+  release notes 4.4, « Slotted Actions » (lue le 5 novembre 2026).
+- Correction : test 10 importe Running.fbx, affecte l'action et son slot (`clip.slots[0]`), supprime l'objet importé.
+- Entrée déjà connue : test_maria_anim.py l'applique depuis plusieurs sessions. Le test test_maria.py ne le faisait pas.
+
+## 145. Mesurer une peau en coordonnées locales : valeurs 100 fois trop grandes avec une armature à l'échelle 0,01
+- Constat : sondage avec `v.co` du maillage évalué : sommets à y = 160 au repos (corps de 1,7 m). Déplacement médian de
+  7,6 m sur tous les sommets, alors que le corps ne bouge pas.
+- Cause : l'armature de Maria est à l'échelle 0,01 (import en centimètres). Les coordonnées locales du maillage évalué sont
+  dans l'espace de l'armature.
+- Règle : mesurer en mètres monde (`matrix_world @ v.co`), relativement à la hanche (translation retirée). Déjà la règle de
+  test_maria_anim.py et engine/mesure.py ; le test 10 et le sondage ne l'appliquaient pas.
+- Résultat après correction (test_maria.py) : RESULTAT OK ; déplacement maximal de 0,93 m relatif à la hanche sur 8 images
+  (mouvement des membres dans Running, pas une mesure de qualité de la déformation).

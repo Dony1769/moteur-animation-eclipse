@@ -191,4 +191,5 @@ Rien de ce qui suit n'est déclaré fait par cette mise à jour : elle ne contie
   milieux dans le maillage).
 - `engine/validation/test_hbm_complet.py` : RESULTAT OK (47 os ; symétrie des bras 0,8 mm ; 5 doigts par côté ; 20 phalanges
   mesurées dans le maillage ; 8 phalanges estimées signalées, non testées).
-- Non relancés : test_maria*.py et test_ara_integration.py (à faire ensuite).
+- `engine/validation/test_maria.py` : RESULTAT OK après correction du test 10 (clip Running, slot affecté, mètres monde relatifs à la hanche ; entrées 144 et 145). Le test précédent était faux : il lisait une action statique de 2 images.
+- Non relancés : test_maria_anim.py, test_maria_export.py, test_maria_controles.py, test_ara_integration.py (à faire ensuite).

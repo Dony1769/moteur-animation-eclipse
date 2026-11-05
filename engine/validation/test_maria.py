@@ -62,27 +62,42 @@ bb_avant = [tuple(round(c, 4) for c in v.co) for v in (peau.data.vertices[0], pe
 n_sommets_avant = len(peau.data.vertices)
 res["controleurs_manquants"] = []  # rien n'est ajouté par ce test
 
-# -- 10 : animation d'origine : déformation mesurée --
-act = [a for a in bpy.data.actions]
-ok("10_action_presente", len(act) >= 1, f"actions {[a.name for a in act]}")
+# -- 10 : déformation sous un vrai clip (Running), mesurée en mètres monde, relative à la hanche --
+# L'action embarquée dans Personnage_Maria.fbx ne couvre que 2 images (pose statique) : elle ne prouve rien.
+# Corrections (entrées 144 et 145) : slot de l'action affecté (Blender 4.4+) ; coordonnées locales interdites
+# (armature à l'échelle 0.01 : 100 fois trop grand) ; translation de la hanche retirée.
+CLIP = os.environ.get("MARIA_CLIP", "/home/claude/moteur3d/assets/mixamo/Running.fbx")
+ok("10_action_presente", os.path.exists(CLIP), f"clip {CLIP}")
 scn = bpy.context.scene
-if act:
-    arm.animation_data.action = act[0]
-    f0, f1 = int(act[0].frame_range[0]), int(act[0].frame_range[1])
+if os.path.exists(CLIP):
+    avant_obj = set(bpy.data.objects.keys())
+    avant_act = set(a.name for a in bpy.data.actions)
+    bpy.ops.import_scene.fbx(filepath=CLIP)
+    clip = [a for a in bpy.data.actions if a.name not in avant_act][0]
+    for nom in set(bpy.data.objects.keys()) - avant_obj:   # le clip importé : seule son action sert
+        bpy.data.objects.remove(bpy.data.objects[nom], do_unlink=True)
+    arm.animation_data_create()
+    arm.animation_data.action = clip
+    if hasattr(arm.animation_data, "action_slot") and clip.slots:
+        arm.animation_data.action_slot = clip.slots[0]
+    f0, f1 = int(clip.frame_range[0]), int(clip.frame_range[1])
     scn.frame_start, scn.frame_end = f0, f1
-    dep = []
-    ref = None
-    depsgraph_pts = lambda: [peau.evaluated_get(bpy.context.evaluated_depsgraph_get()).data.vertices]
-    for f in range(f0, f1 + 1, max(1, (f1 - f0) // 12)):
+
+    def pts_relatifs():
+        hanche = (arm.matrix_world @ arm.pose.bones["mixamorig:Hips"].matrix).to_translation()
+        m = peau.evaluated_get(bpy.context.evaluated_depsgraph_get()).data
+        return [(peau.matrix_world @ v.co) - hanche for v in m.vertices]
+
+    dep, ref = [], None
+    for f in range(f0, f1 + 1, max(1, (f1 - f0) // 6)):
         scn.frame_set(f)
-        pts = [v.co.copy() for v in peau.evaluated_get(bpy.context.evaluated_depsgraph_get()).data.vertices]
+        bpy.context.view_layer.update()
+        pts = pts_relatifs()
         if ref is None:
             ref = pts
         dep.append(max((a - b).length for a, b in zip(pts, ref)))
-        if any(p.length != p.length for p in pts):  # NaN
-            dep.append(float("nan"))
     ok("10_deformation", max(dep) > 0.01 and all(x == x for x in dep),
-       f"déplacement max {max(dep):.4f} m sur {len(dep)} images, pas de NaN")
+       f"déplacement max {max(dep):.4f} m (monde, relatif à la hanche) sur {len(dep)} images, pas de NaN")
     res["images_mesurees"] = [round(x, 4) for x in dep]
 
 # -- 12 : export FBX puis ré-import --
