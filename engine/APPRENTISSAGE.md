@@ -938,3 +938,8 @@ faiblesse du solveur. Chercher un témoin, ou changer de méthode. Voir erreurs_
 ## 108. Vérifier un asset avant de l'utiliser
 Taille d'un fichier (pointeur LFS = quelques centaines d'octets), puis unité dans le code de sortie. Voir erreurs_apprises
 entrées 133 et 134.
+
+## 109. Une formule d'une méthode publiée n'est pas la méthode
+Les centres de rotation par sommet (formule seule) donnent plus de plis que la chaîne. La méthode complète ajuste ses
+centres sur des poses de référence et mélange les transformations. Vérifier l'objectif d'optimisation avant de juger une
+méthode. Voir erreurs_apprises entrée 135.

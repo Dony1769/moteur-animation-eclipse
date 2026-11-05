@@ -922,3 +922,20 @@ Résultat (docs/rapports/phase4_psd_hanche_genou.json) : genou plis 0–4, étir
 - Premier rapport écrit en « m » : hauteurs de 17,7 — faux. Corrigé en « dm » puis converti (1,77 m).
 - Règle : vérifier l'unité d'un format dans son code de sortie avant de nommer une grandeur. Un nombre plausible
   (17,7) n'est pas une unité.
+
+## 135. Centres de rotation par sommet seuls : plus de plis et d'inversions que la chaîne
+- Méthode testée (engine/skinning/centres_rotation_optimises.py, cor_hanche_test.py) : centre de chaque sommet de la bande
+  calculé par la formule de Le & Hodgins (moyenne des centroïdes pondérée par l'aire et la similarité de poids, σ = 0,1),
+  puis rotation de chaque sommet autour de SON centre, d'un angle θ·rampe(s).
+- Résultats (2 014 sommets de bande, 87 arêtes de contrôle) :
+  - 30° : 61 plis, 57 inversions, étirement p99 1,16 ;
+  - 90° : 78 plis, 250 inversions, p99 1,47 ;
+  - 120° : 84 plis, 2 076 inversions, p99 1,62.
+  La chaîne numpy à 60–120° avait 0 pli sur le genou et une bande propre à la hanche (voir rapports phase 4).
+- Diagnostic : des voisins proches ont des centres différents et tournent d'angles différents, donc leurs distances se
+  déforment. Le centre seul n'évite pas les retournements. Dans la méthode publiée, les centres sont ajustés par
+  optimisation sur des poses de référence, et les transformations sont mélangées : on ne l'a pas reproduit.
+- Règle : une idée tirée d'une méthode publiée doit être vérifiée dans son intégralité (objectif d'optimisation et
+  mélange), pas seulement dans sa formule de base. Lire le code ne suffit pas à reproduire son résultat.
+- Piste suivante (apprentissage depuis la référence X-Bot) : ajuster les centres pour que la déformation rejoigne la peau
+  X-Bot exportée (scratchpad/ref_mixamo), au lieu de les calculer par formule.
