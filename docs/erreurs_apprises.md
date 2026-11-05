@@ -582,3 +582,10 @@ Chaque erreur a une cause, une correction et un test. Une erreur corrigée doit 
 - Poussée bornée des sommets de l'avant-bras vers la surface du bras (normale de face, lissage 30 itérations) : à 120°, 5 sommets pénètrent encore (déplacement max 0,5 mm) ; à 145°, 28 sur 30 (déplacement max 4,7 mm, moyen 3,9 mm). Le lissage ramène les sommets dans le bras.
 - Leçon : valider la forme sur la surface réellement fermée (union), pas sur les faces d'origine qui traversent la jointure. Et une correction de contact doit être mesurée après lissage, pas avant.
 - Script : `engine/skinning/test_coude_correction_contact.py`. Recherche : `docs/recherches_phase4.md`.
+
+## 97. Analyse de référence FBX : noms d'os préfixés, signe d'angle, profil de poids trompeur
+- Les os et les groupes de sommets portent le préfixe `mixamorig1:` : une recherche exacte (`LeftArm`) renvoie vide ou zéro poids. Chercher par suffixe après le dernier `:`.
+- Convention d'angle : `angle entre segments` vaut 180° pour un membre tendu ; la flexion est 180° moins cette valeur. Première version : plages inversées (coude 97–177 au lieu de 3–83). Vérifier la convention sur un cas connu (membre tendu = 0).
+- Profil de poids par distance au coude : peu de sommets dans la fenêtre, et la pose du maillage peut différer du cadre 1. Résultat trop clairsemé pour fixer une largeur de transition. Mesurer sur plus de sommets, ou sur la pose de liaison, avant d'en tirer une valeur.
+- Vrai pour la danse : coude ≤ 100°, genou ≤ 150°, cuisse et bras ≤ 90° du vertical. Ces plages ne suffisent pas à valider les limites humaines complètes.
+- Scripts : `engine/skinning/reference/`. Données : `docs/reference_hiphop/`.

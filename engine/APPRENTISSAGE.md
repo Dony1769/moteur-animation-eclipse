@@ -765,3 +765,10 @@ Mesure LBS sans clé, bras gauche seul : 90° 24 -> 12 replis ; 120° 31 -> 19 ;
 - Sur les sommets d'origine, une rotation rigide d'une seule pièce étire les faces qui traversent la jointure, même sans pénétration (plis 3 à 11, étirement 2,4 à 4,7 à 30–90° au coude). Un résultat « pli 0 » ou « pénétration 0 » ne suffit donc pas.
 - Une correction de contact doit être mesurée après lissage : le lissage peut ramener les sommets dans l'autre pièce (5 et 28 sommets restants à 120 et 145°).
 - Source non officielle utile : choisir la direction de correction sur toute la séquence, pas image par image (orca_forge, dev.to). Voir `docs/recherches_phase4.md`.
+
+## 72. Lire une animation de référence FBX : vérifier la convention avant les chiffres
+- Un FBX avec peau et un sans peau : le premier donne les poids et le maillage, le second donne seulement le squelette et les courbes. Compter les `Mesh`, `Skin`, `Cluster` avant de choisir le fichier.
+- Les noms d'os portent un préfixe (`mixamorig1:`) : chercher par suffixe.
+- Mesurer l'angle de flexion comme 180° moins l'angle entre segments, et vérifier sur membre tendu.
+- Les plages de la danse donnent un plancher d'entraînement, pas la limite humaine. Les limites restent sourcées séparément (CDC/NCHS).
+- Un profil de poids échantillonné sur peu de sommets ne tranche pas une largeur de zone de fusion.
