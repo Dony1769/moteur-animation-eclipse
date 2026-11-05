@@ -848,3 +848,8 @@ Mesure LBS sans clé, bras gauche seul : 90° 24 -> 12 replis ; 120° 31 -> 19 ;
 Une valeur d'articulation n'est sourcée que si une source primaire a été lue. Quand la primaire est inaccessible, la valeur
 reste marquée « secondaire non vérifiée ». Chaque désaccord entre sources est écrit dans le tableau. Pour une borne
 physique du rig, on prend la plage basse tant que le désaccord n'est pas tranché. Voir docs/erreurs_apprises.md entrée 113.
+
+## 89. Étirement : percentile, pas maximum ; DQS seul insuffisant pour la hanche et le genou
+Le maximum d'étirement est une statistique d'arêtes isolées. Le critère de phase 4 se mesure au 99e percentile hors
+bande, avec un témoin identité égal à 1,0. Sur hanche et genou, DQS seul donne p99 hors bande ≥ 1,01 et dans la bande
+jusqu'à 2,6 : il faut des correctifs de pose (PSD) pour la jonction, puis remesurer. Voir erreurs_apprises entrée 114.

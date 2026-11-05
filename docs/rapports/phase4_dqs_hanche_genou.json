@@ -1,0 +1,83 @@
+[
+  {
+    "articulation": "hanche",
+    "th": 30,
+    "etirement_hors_bande_p99": 1.0186,
+    "etirement_hors_bande_max": 1.4026,
+    "etirement_dans_bande_p99": 1.2094,
+    "etirement_dans_bande_max": 1.211,
+    "plis_total": 0
+  },
+  {
+    "articulation": "hanche",
+    "th": 60,
+    "etirement_hors_bande_p99": 1.0516,
+    "etirement_hors_bande_max": 1.9537,
+    "etirement_dans_bande_p99": 1.4534,
+    "etirement_dans_bande_max": 1.4551,
+    "plis_total": 0
+  },
+  {
+    "articulation": "hanche",
+    "th": 90,
+    "etirement_hors_bande_p99": 1.0902,
+    "etirement_hors_bande_max": 2.6624,
+    "etirement_dans_bande_p99": 1.7287,
+    "etirement_dans_bande_max": 1.7313,
+    "plis_total": 2
+  },
+  {
+    "articulation": "hanche",
+    "th": 120,
+    "etirement_hors_bande_p99": 1.1388,
+    "etirement_hors_bande_max": 3.4819,
+    "etirement_dans_bande_p99": 2.0397,
+    "etirement_dans_bande_max": 2.0463,
+    "plis_total": 8
+  },
+  {
+    "articulation": "genou",
+    "th": 30,
+    "etirement_hors_bande_p99": 1.0098,
+    "etirement_hors_bande_max": 1.3571,
+    "etirement_dans_bande_p99": 1.3293,
+    "etirement_dans_bande_max": 1.3654,
+    "plis_total": 0
+  },
+  {
+    "articulation": "genou",
+    "th": 60,
+    "etirement_hors_bande_p99": 1.0217,
+    "etirement_hors_bande_max": 1.7218,
+    "etirement_dans_bande_p99": 1.6692,
+    "etirement_dans_bande_max": 1.744,
+    "plis_total": 0
+  },
+  {
+    "articulation": "genou",
+    "th": 90,
+    "etirement_hors_bande_p99": 1.0362,
+    "etirement_hors_bande_max": 2.1013,
+    "etirement_dans_bande_p99": 2.0275,
+    "etirement_dans_bande_max": 2.1464,
+    "plis_total": 0
+  },
+  {
+    "articulation": "genou",
+    "th": 120,
+    "etirement_hors_bande_p99": 1.0502,
+    "etirement_hors_bande_max": 2.504,
+    "etirement_dans_bande_p99": 2.415,
+    "etirement_dans_bande_max": 2.5869,
+    "plis_total": 0
+  },
+  {
+    "articulation": "genou",
+    "th": 135,
+    "etirement_hors_bande_p99": 1.056,
+    "etirement_hors_bande_max": 2.7244,
+    "etirement_dans_bande_p99": 2.6237,
+    "etirement_dans_bande_max": 2.8273,
+    "plis_total": 0
+  }
+]

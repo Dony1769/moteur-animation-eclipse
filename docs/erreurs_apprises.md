@@ -699,3 +699,13 @@ Chaque erreur a une cause, une correction et un test. Une erreur corrigée doit 
   et indiquer qu'elle cite une primaire non vérifiée ; (3) recouper avec une deuxième source indépendante ;
   (4) consigner chaque désaccord dans le tableau ; (5) pour une borne physique, prendre la plage basse.
 - Référence : docs/articulations_humaines_sources.md section 10.
+
+## 114. Critère d'étirement au maximum : dominé par des arêtes aberrantes
+- Erreur : le premier rapport DQS hanche/genou utilisait le maximum du ratio de longueur (étirement 3,48 à 120°,
+  1,36 à 30° pour le genou), ce qui fait croire à un défaut de 30° alors que la majorité des arêtes est saine.
+- Méthode correcte : critère au 99e percentile (témoin identité = 1,0), maximum rapporté seulement en complément.
+  Les deux valeurs sont écrites dans docs/rapports/phase4_dqs_hanche_genou.json.
+- Résultat réel (non passé) : hors bande p99 1,02–1,14 (hanche) et 1,01–1,06 (genou), cible 1,0 ; dans la bande
+  p99 jusqu'à 2,0 (hanche) et 2,6 (genou à 135°). Plis : hanche 2 (90°) et 8 (120°), genou 0.
+- Conclusion : DQS seul ne satisfait pas la phase 4 pour la hanche et le genou. Prochaine étape : correctifs de pose
+  (PSD) pour réduire l'étirement de jonction et les plis, puis remesure.
