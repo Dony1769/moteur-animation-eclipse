@@ -955,3 +955,8 @@ critères mesurables. Noter la limite (ici, l'occlusion). Voir erreurs_apprises 
 ## 112. Valider la visibilité sur une sphère, puis sur le maillage réel
 Une sphère (réponse connue) d'abord. Ensuite le maillage réel, avec une vérité exacte (lancer de rayon). Un maillage peut
 contenir des surfaces internes : une face tournée vers la caméra peut être cachée sans erreur de calcul. Voir entrées 138 et 139.
+
+## 114. Un fichier multi-variantes n'est pas un personnage : choisir le corps avant de mesurer
+Un bundle (plusieurs corps posés à l'origine) donne une mesure fausse si on prend l'union de tous les maillages. Le diagnostic
+exige maintenant un corps (`--corps NOM`) et refuse de mesurer sans choix. Pour un objet déformé, mesurer les sommets évalués
+(le dimensions de Blender peut ignorer les modificateurs, voir erreurs_apprises entrées 142 et 143).

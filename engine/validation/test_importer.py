@@ -38,9 +38,11 @@ def main():
         "hbm_sans_armature": os.path.join(scratch, "corps_hbm.blend"),
     }
     rapports = {}
+    # Le bundle HBM contient toutes les variantes : on choisit un corps explicitement (entrée 142).
+    options = {"hbm_sans_armature": ["--corps", "GEO-body_female_realistic"]}
     for nom, f in entrees.items():
         sortie = os.path.join(diag, nom + ".json")
-        r = blender(os.path.join(RACINE, "engine/importer/diagnostic.py"), f, sortie)
+        r = blender(os.path.join(RACINE, "engine/importer/diagnostic.py"), f, sortie, *options.get(nom, []))
         assert "DIAGNOSTIC_OK" in r.stdout, (nom, r.stderr[-800:])
         rapports[nom] = json.load(open(sortie))
 

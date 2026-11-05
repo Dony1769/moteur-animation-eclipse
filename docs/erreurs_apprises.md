@@ -1006,3 +1006,16 @@ Résultat (docs/rapports/phase4_psd_hanche_genou.json) : genou plis 0–4, étir
   1,64 m) avant de mesurer.
 - Décision : le seuil n'est pas abaissé pour faire passer le test. Correction à faire dans l'importeur (sélection d'un corps
   dans un bundle), puis relance du test.
+
+## 143. Correction de l'entrée 142 : sélection explicite du corps, mesure refusée sans choix
+- Correction : diagnostic.analyser(chemin, corps) ; `--corps NOM` sur la ligne de commande. Sans choix dans un bundle de
+  plusieurs corps, le rapport signale « bundle multi-variantes », met dimensions_m et hauteur_m à None, et ne fabrique
+  aucune mesure.
+- Résultat (Blender 4.5.15 LTS) : test_importer.py 21/21 OK, dont hbm_dimensions_humaines (1,66 m pour GEO-body_female_realistic).
+  Cas négatif vérifié : sans --corps, 4 corps détectés, aucune mesure.
+- Recherche (officielle puis non officielle) : la page officielle de l'API Object ne détaille pas `dimensions` dans l'extrait
+  récupéré ; une source non officielle (projects.blender.org, PR 114897, issue 114870) indique que `dimensions` peut ne pas
+  suivre la géométrie évaluée (modificateurs), problème corrigé dans le développement de fin 2023.
+- Règle retenue : mesurer les sommets évalués (depsgraph) pour tout objet déformé ; ne jamais se fier à `dimensions`
+  seul. Limite connue : `_dimensions` lit encore les sommets de base ; sans effet sur ce bundle, à corriger avant un
+  personnage avec modificateurs (todo).

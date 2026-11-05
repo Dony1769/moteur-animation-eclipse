@@ -110,5 +110,5 @@
 - Le test test_surface_exterieure.py échoue sur ce critère : il reste en l'état, à ne pas considérer comme validé.
 
 ## Importeur : bundle multi-variantes (5 novembre 2026)
-- diagnostic.py mesure tous les maillages d'un fichier. Sur human_base_meshes_bundle.blend, cela donne 2,26 m au lieu de 1,64 m
-  (corps GEO-body_female_realistic). Correction à faire : sélection d'un corps par nom avant le diagnostic. Entrée 142.
+- Corrigé (entrée 143) : sélection par --corps, refus de mesurer sans choix ; test 21/21.
+- À faire : _dimensions lit les sommets de base ; passer aux sommets évalués (depsgraph) pour les objets avec modificateurs.

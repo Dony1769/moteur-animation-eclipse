@@ -206,7 +206,17 @@ def _operations(type_, rapport_poids, convention, facteur_echelle, axe_vertical=
     return ops
 
 
-def analyser(chemin):
+def _corps_candidats(meshes):
+    """Noms des corps d'un bundle multi-variantes (ex. GEO-body_female_realistic) : maillages racine nommés GEO-body_*."""
+    return sorted({m.name for m in meshes if m.name.startswith("GEO-body_") and "." not in m.name})
+
+
+def _selection_corps(meshes, corps):
+    """Garde le corps choisi et ses pièces (yeux : nom.eye.L). Ne mesure jamais une réunion de variantes (entrée 142)."""
+    return [m for m in meshes if m.name == corps or m.name.startswith(corps + ".")]
+
+
+def analyser(chemin, corps=None):
     _vider_scene()
     erreurs_import = []
     try:
@@ -215,6 +225,18 @@ def analyser(chemin):
         erreurs_import.append(f"import : {e}")
     objets = list(bpy.data.objects)
     meshes = [o for o in objets if o.type == "MESH"]
+    candidats = _corps_candidats(meshes)
+    corps_anomalies = []
+    corps_choisi = None
+    if len(candidats) > 1:
+        if corps is None:
+            corps_anomalies.append(f"bundle multi-variantes : {len(candidats)} corps ({', '.join(candidats[:4])}...) ; "
+                                   "aucun corps choisi : mesures globales non fiables, choisir un corps")
+        elif corps not in candidats:
+            corps_anomalies.append(f"corps demandé absent du fichier : {corps}")
+        else:
+            corps_choisi = corps
+            meshes = _selection_corps(meshes, corps)
     armatures = [o for o in objets if o.type == "ARMATURE"]
     actions = [a.name for a in bpy.data.actions]
     anomalies = []
@@ -240,8 +262,10 @@ def analyser(chemin):
                 anomalies.append(f"{m.name} : {pw['sommets_sans_poids']} sommets sans poids ({pct} %)")
             if pw["sommets_poids_non_normalises"] > 0:
                 anomalies.append(f"{m.name} : {pw['sommets_poids_non_normalises']} sommets à poids non normalisés")
+    anomalies += corps_anomalies
+    bundle_sans_choix = len(candidats) > 1 and corps is None
     # échelle : une hauteur humaine plausible est entre 0,3 et 3 m (erreur 33 : facteur 100 ou 0,01)
-    h = _taille(meshes)
+    h = None if bundle_sans_choix else _taille(meshes)
     facteur = None
     axe_haut = None
     if h is not None and not (0.3 <= h <= 3.0):
@@ -275,7 +299,9 @@ def analyser(chemin):
         "fichier": chemin,
         "type": type_,
         "erreurs_import": erreurs_import,
-        "dimensions_m": _dimensions(meshes),
+        "dimensions_m": None if bundle_sans_choix else _dimensions(meshes),
+        "corps_candidats": candidats,
+        "corps_choisi": corps_choisi,
         "textures": _textures(meshes),
         "parties_du_corps": _parties_du_corps(armatures),
         "operations_recommandees": _operations(type_, poids_global, convention, facteur, axe_haut),
@@ -286,7 +312,7 @@ def analyser(chemin):
         "armatures": [_arm_info(a) for a in armatures],
         "actions": actions,
         "animations": _animations(),
-        "hauteur_m": _taille(meshes),
+        "hauteur_m": None if bundle_sans_choix else _taille(meshes),
         "anomalies": anomalies,
         "cles_de_forme": [kb.name for m in meshes if m.data.shape_keys
                           for kb in m.data.shape_keys.key_blocks],
@@ -296,8 +322,13 @@ def analyser(chemin):
 
 if __name__ == "__main__":
     argv = sys.argv[sys.argv.index("--") + 1:]
+    corps_arg = None
+    if "--corps" in argv:
+        i = argv.index("--corps")
+        corps_arg = argv[i + 1]
+        argv = argv[:i] + argv[i + 2:]
     entree, sortie = argv[0], argv[1]
-    rapport = analyser(entree)
+    rapport = analyser(entree, corps=corps_arg)
     with open(sortie, "w") as f:
         json.dump(rapport, f, indent=2, ensure_ascii=False)
     print("DIAGNOSTIC_OK", rapport["type"], "meshes", len(rapport["meshes"]), "armatures", len(rapport["armatures"]),
