@@ -737,3 +737,6 @@ Mesure LBS sans clé, bras gauche seul : 90° 24 -> 12 replis ; 120° 31 -> 19 ;
 ## 65. Un residu dans une zone de pli se traite par gonflement, pas par coupure
 - Le residu du genou est dans le creux poplite, zone ou un pli est admis. La coupure de la jonction ne le resout pas ; il faut un gonflement de la peau hors du volume voisin, sans penetration.
 - Verifier le sens d'un axe par un critere anatomique (ici le talon recule en flexion) avant de le tester numeriquement.
+
+## 66. Une correction qui supprime la penetration doit aussi etre bornee
+- Zero penetration ne suffit pas : mesurer l'amplitude du deplacement, la localisation, les plis et l'etirement. Une poussee non bornee peut tout 'reparer' en gonflant la peau de plusieurs centimetres (erreur 91).

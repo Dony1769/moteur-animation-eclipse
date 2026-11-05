@@ -541,3 +541,9 @@ Chaque erreur a une cause, une correction et un test. Une erreur corrigée doit 
 - Coupure bissectrice : 19 / 36 / 36 a 30 degres selon la zone (0,08 / 0,12 / 0,16 m). Ne resout pas.
 - Localisation du residu : mollet contre la face arriere de la cuisse, sous le genou, 3 a 4 cm de profondeur. C'est le creux poplite, zone de pli admise (regle 58). Ce qui est admis, c'est un gonflement sans penetration. Il faut donc une correction de type push-out dans cette zone, pas une coupure.
 - Script : `engine/skinning/test_genou_calibre.py`, `engine/skinning/test_genou_bissecteur.py`. Rapport : `docs/rapports/phase4_genou_calibrage.json`.
+
+## 91. Gonflement du creux poplite : zero penetration, mais amplitude inacceptable
+- Push-out des sommets du mollet qui penetrent la cuisse (normale de la face la plus proche, marge 6 mm) : 0 penetration nouvelle a 30 / 60 / 90 / 120 deg.
+- Mais le deplacement atteint 71 mm (30 deg, 56 sommets), mediane 23 a 28 mm. Un creux poplite ne se gonfle pas de 7 cm : resultat non acceptable.
+- Cause probable : la poussee s'applique a des sommets profondement penetrants sans borne. Il faut borner le deplacement (cap) et verifier le repli et l'etirement, pas seulement la penetration.
+- Script : `engine/skinning/test_genou_gonflement.py`. Rapport : `docs/rapports/phase4_genou_gonflement.json`.

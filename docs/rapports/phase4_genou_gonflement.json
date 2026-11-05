@@ -1,0 +1,11 @@
+{
+  "objet": "genou : gonflement (push-out) des sommets du mollet qui penetrent la cuisse",
+  "penetrations_nouvelles_apres_gonflement": {"30": 0, "60": 0, "90": 0, "120": 0},
+  "amplitude": {
+    "30": {"sommets": 56, "max_mm": 71.2, "median_mm": 28.4, "distance_genou_max_m": 0.211},
+    "60": {"sommets": 28, "max_mm": 65.8, "median_mm": 23.0, "distance_genou_max_m": 0.164},
+    "90": {"sommets": 12, "max_mm": 51.0, "median_mm": 23.6, "distance_genou_max_m": 0.123},
+    "120": {"sommets": 6, "max_mm": 38.8, "median_mm": 24.2, "distance_genou_max_m": 0.101}
+  },
+  "statut": "partiel : zero penetration mais deplacement jusqu'a 71 mm, non acceptable ; plis et etirement non mesures ; pas de validation Blender"
+}
