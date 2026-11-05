@@ -879,3 +879,8 @@ La restriction doit être une transition lisse. Voir erreurs_apprises entrée 11
 Multiplier une correction par un poids spatial partiel crée un cisaillement entre voisins, quelle que soit la douceur de
 la transition (erreurs 118 et 119). La restriction doit être dans l'énergie de la cible (ancres souples), puis la
 correction reproduit cette cible. Voir erreurs_apprises entrée 119.
+
+## 95. Réutiliser la méthode validée : contrôle d'abord, puis transposition
+Avant de transposer une méthode validée à une nouvelle articulation, la reproduire sur le cas témoin (ici le genou) en
+numpy. Si le témoin passe, la transposition est fiable. Ne jamais écrire « fonctionne » sans mesure. Voir
+erreurs_apprises entrée 120.

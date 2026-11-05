@@ -1,0 +1,74 @@
+[
+  {
+    "articulation": "genou",
+    "th": 60,
+    "bissectrice": false,
+    "etirement_hors_p99": 1.0,
+    "etirement_dans_p99": 1.0785,
+    "plis_total": 0
+  },
+  {
+    "articulation": "genou",
+    "th": 90,
+    "bissectrice": false,
+    "etirement_hors_p99": 1.0,
+    "etirement_dans_p99": 1.1345,
+    "plis_total": 0
+  },
+  {
+    "articulation": "genou",
+    "th": 105,
+    "bissectrice": false,
+    "etirement_hors_p99": 1.0,
+    "etirement_dans_p99": 1.169,
+    "plis_total": 0
+  },
+  {
+    "articulation": "genou",
+    "th": 120,
+    "bissectrice": false,
+    "etirement_hors_p99": 1.0,
+    "etirement_dans_p99": 1.2061,
+    "plis_total": 0
+  },
+  {
+    "articulation": "hanche",
+    "th": 30,
+    "bissectrice": false,
+    "etirement_hors_p99": 1.0,
+    "etirement_dans_p99": 1.2058,
+    "plis_total": 0
+  },
+  {
+    "articulation": "hanche",
+    "th": 60,
+    "bissectrice": false,
+    "etirement_hors_p99": 1.0,
+    "etirement_dans_p99": 1.4227,
+    "plis_total": 2
+  },
+  {
+    "articulation": "hanche",
+    "th": 90,
+    "bissectrice": false,
+    "etirement_hors_p99": 1.0,
+    "etirement_dans_p99": 1.6401,
+    "plis_total": 5
+  },
+  {
+    "articulation": "hanche",
+    "th": 105,
+    "bissectrice": false,
+    "etirement_hors_p99": 1.0,
+    "etirement_dans_p99": 1.7476,
+    "plis_total": 7
+  },
+  {
+    "articulation": "hanche",
+    "th": 120,
+    "bissectrice": false,
+    "etirement_hors_p99": 1.0,
+    "etirement_dans_p99": 1.8539,
+    "plis_total": 11
+  }
+]

@@ -769,3 +769,17 @@ Résultat (docs/rapports/phase4_psd_hanche_genou.json) : genou plis 0–4, étir
 - Méthode correcte : intégrer la restriction dans la cible elle-même, c'est-à-dire dans la résolution ARAP (ancres
   souples : poids de fixation qui varie lisse dans l'espace, pris dans l'énergie), pas comme multiplicateur de sortie.
   Vérifier ensuite la continuité et le témoin d'exactitude.
+
+## 120. J'ai déclaré l'épaule « fonctionnelle » sans la mesurer, et ignoré la méthode validée sur le genou
+- Défaut : l'épaule n'est vérifiée que jusqu'à 20° (docs/rapports/phase4_hanche_epaule_poignet.json : plis 0, étirement
+  2,5 à 20°, non résolu de 30 à 180°). Le retour de l'utilisateur (« seul l'épaule fonctionnait correctement ») n'est
+  pas une mesure validée ; je n'aurais pas dû le présenter comme acquis.
+- Méthode validée à retenir : chaîne de nœuds coaxiaux (engine/skinning/articulation_chaine.py), K = 8, demi-bande
+  0,15 m, validée dans Blender pour le genou (plis 0 de 60 à 120°, docs/rapports/phase4_genou_chaine_blender.json).
+- Contrôle numpy : test_chaine_hanche.py reproduit le genou (plis 0 ; étirement hors bande 1,00). La méthode est donc
+  fiable en numpy.
+- Hanche avec la même chaîne : étirement hors bande p99 1,00 (critère atteint) ; bande 1,21 (30°) à 1,85 (120°) ; plis
+  0, 2, 5, 7, 11 de 30 à 120°. Les plis sont presque tous antérieurs, mais 8 sur 11 à 120° sont au-delà de 15 cm du centre
+  de la hanche : hors de la zone de pli définie (entrée 117). Non passé. Rapport : docs/rapports/phase4_chaine_hanche_numpy.json.
+- Règle : ne jamais écrire « fonctionne » sans mesure ; tester d'abord la méthode validée sur le cas témoin, puis la
+  transposer à la nouvelle articulation.
