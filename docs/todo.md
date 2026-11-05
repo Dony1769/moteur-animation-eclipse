@@ -108,3 +108,7 @@
   surface_exterieure.classer (2 points x 32 directions, graine 0). Hypothèse non vérifiée : incidence rasante.
   À traiter plus tard si la classification sert encore ; le texturage n'en dépend plus.
 - Le test test_surface_exterieure.py échoue sur ce critère : il reste en l'état, à ne pas considérer comme validé.
+
+## Importeur : bundle multi-variantes (5 novembre 2026)
+- diagnostic.py mesure tous les maillages d'un fichier. Sur human_base_meshes_bundle.blend, cela donne 2,26 m au lieu de 1,64 m
+  (corps GEO-body_female_realistic). Correction à faire : sélection d'un corps par nom avant le diagnostic. Entrée 142.

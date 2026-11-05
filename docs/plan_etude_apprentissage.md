@@ -115,7 +115,7 @@ ses données dans les personnages du moteur. On peut étudier son architecture (
 morphologie) et réimplémenter les idées sans recopier ses fichiers de données.
 
 Architecture lue : bloc de génération par morphs, moteur d'expressions, pipeline de squelette (`skeleton_ops.py`,
-`skeletonengine.py`), rotations humanoïdes (`humanoid_rotations.py`). Test local non exécuté (addon Blender, bpy absent).
+`skeletonengine.py`), rotations humanoïdes (`humanoid_rotations.py`). Test local non exécuté (addon Blender ; Blender 4.5.15 LTS est disponible sur la machine, à lancer).
 
 ## Résultats : MakeHuman Community (code et assets)
 
@@ -236,7 +236,7 @@ Limites :
 ## Ce qui n'est pas encore fait
 
 - UniRig et Puppeteer : code et licences lus ; test local non exécuté (voir Limitations).
-- MPFB2 : licence vérifiée (code GPL-3.0, assets CC0), lecture partielle du rig ; test non exécuté (Blender absent).
+- MPFB2 : licence vérifiée (code GPL-3.0, assets CC0), lecture partielle du rig ; test non exécuté (Blender 4.5.15 disponible, à lancer).
 - Visage (MMD Tools, MediaPipe, OpenSeeFace, Rhubarb) : licences du code vérifiées, licences des modèles MediaPipe et OpenSeeFace à confirmer.
 - Vêtements (OpenSew 2) : licence du code vérifiée (GPL-3.0-or-later), lecture partielle, pas de test local.
 - Les autres projets (TripoSR, Stable Fast 3D, Open3D, Instant Meshes, etc.) ne sont pas lus. Leurs licences

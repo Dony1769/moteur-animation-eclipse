@@ -174,7 +174,7 @@ Relecture de la mission (pièce jointe 435d1225, 15 phases, tests A = Maria et B
 
 Corrections apportées à cette relecture :
 - Le plan est déjà écrit (`docs/plan_mission_autonome.md`, commit 2b5f81d). L'affirmation selon laquelle l'audit et le plan n'existaient pas était fausse ; ils sont là, et cette section les met à jour.
-- Environnement de cette session : Blender n'est pas installé (`bpy` absent). Les tests marqués « Vérifié » qui dépendent de Blender (importeur, rig HBM, tests Maria) n'ont donc pas pu être relancés ici. Leur statut reste celui des sessions précédentes, avec le commit cité ; à relancer dès que Blender est disponible.
+- Environnement de cette session : Blender 4.5.15 LTS est présent (`/home/claude/moteur3d/tools/blender-4.5.15-linux-x64/blender`, démarrage headless vérifié). Il n'est pas dans le PATH, d'où une fausse conclusion d'absence (corrigée le 5 novembre). Les tests « Vérifié » qui en dépendent sont à relancer avec la variable BLENDER.
 - Le test de classification extérieure/intérieure (`engine/texturing/test_surface_exterieure.py`, commit f2a4123) est relancé en arrière-plan ; son résultat n'est pas encore connu et n'est pas compté comme validé.
 
 Ordre de travail retenu (inchangé dans le fond, précisé) :

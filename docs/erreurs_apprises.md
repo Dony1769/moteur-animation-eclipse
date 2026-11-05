@@ -996,3 +996,13 @@ Résultat (docs/rapports/phase4_psd_hanche_genou.json) : genou plis 0–4, étir
 - Décision de l'utilisateur (5 novembre 2026) : abandonner Takayama pour le texturage ; garder le lancer de rayon exact comme
   référence ; consigner les 67 faces comme anomalie ouverte (docs/todo.md).
 - Hypothèse non testée : faces en incidence rasante, peu de rayons libres avec 2 points x 32 directions.
+
+## 142. Un bundle Blender n'est pas un personnage : le diagnostic mesurait la réunion de toutes les variantes
+- Constat (Blender 4.5.15 LTS, test_importer.py) : 19 vérifications sur 20 passent ; échec sur hbm_dimensions_humaines
+  (hauteur 2,26 m, attendu 1,4 à 2,0 m).
+- Cause : human_base_meshes_bundle.blend contient toutes les variantes (homme et femme, réaliste et stylisé, yeux, pieds,
+  bras, poitrines), toutes posées à l'origine. diagnostic.py mesure l'union de tous les maillages du fichier.
+- Ce n'est pas un défaut du critère : c'est une entrée mal choisie. Il faut sélectionner un corps (ex. GEO-body_female_realistic,
+  1,64 m) avant de mesurer.
+- Décision : le seuil n'est pas abaissé pour faire passer le test. Correction à faire dans l'importeur (sélection d'un corps
+  dans un bundle), puis relance du test.
