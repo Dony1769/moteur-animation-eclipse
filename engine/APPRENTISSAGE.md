@@ -1009,3 +1009,11 @@ Comparer chaque sommet au mouvement de son os dominant. Voir entrée 156.
 ## 125. Le p99 ne valide jamais une déformation locale
 Un p99 proche de 1 peut coexister avec un maximum local de 8 (Maria). Présenter les deux, avec les comptages et la
 localisation. Voir entrée 158.
+
+## 126. Une expérience sur les poids doit compter les sommets qu'elle vide
+Retirer une influence peut annuler la somme des poids d'un sommet ; le sommet part alors à l'origine. Compter ces
+sommets et les déclarer avant de lire le résultat. Voir entrée 159.
+
+## 127. Une cause de défaut peut dépendre du personnage
+Le même lissage corrige Maria et n'a pas d'effet sur le masculin. Ne jamais généraliser une correction à partir d'un
+seul personnage ; mesurer sur les trois, et garder les résultats négatifs. Voir entrées 160 à 162.

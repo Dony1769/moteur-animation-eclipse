@@ -1155,3 +1155,35 @@ Résultat (docs/rapports/phase4_psd_hanche_genou.json) : genou plis 0–4, étir
 - Règle : aucune validation sur le p99 seul. Le maximum, les comptages à plusieurs seuils, la localisation et la capture
   sont obligatoires (`comparer_v2.py`).
 - DQS : réduit les retournements et l'écart de volume, mais augmente le maximum d'étirement à la hanche.
+
+## 159. Retrait d'un os dans une zone : sommets sans poids envoyés à l'origine (artefact d'expérience)
+- Constat : E3 (sans cuisse) donnait un étirement de 82 ; E4 donnait 6.
+- Cause : quand on retire l'unique influence d'un sommet, la somme des poids tombe à zéro ; le LBS le renvoie à
+  l'origine. C'est un artefact du protocole, pas une réponse des poids.
+- Correction : repli déclaré (poids 1 sur Hips pour les sommets vides), compté et écrit dans le JSON (14 sommets sur le
+  masculin, 42 sur le féminin, 63 sur Maria pour E3).
+- Règle : toute expérience qui retire des poids compte les sommets vidés avant de lire un résultat.
+
+## 160. Expériences contrôlées sur les poids : résultats négatifs conservés
+- E1 (un os par sommet dans la zone) : maximum multiplié par 5 à 6 sur les trois morphologies. Les transitions raides
+  sont nuisibles.
+- E3 (sans cuisse) et E4 (sans bassin) : pires que la référence sur les trois morphologies.
+- E2 (lissage) et E5 (gradient limité automatiquement) : améliorations partielles, voir entrées 161 et 162.
+- Contrôle E0 : reproduit le système actuel à 1e-15 m, donc le protocole ne change que les poids de la zone.
+
+## 161. Lissage des poids : effet dépendant du personnage (Maria seulement)
+- Constat : E2 réduit le maximum de Maria de 8,30 à 3,01, mais le masculin reste à 2,51 (référence 2,47).
+- Cause : sur Maria, les transitions Hips / cuisse dans la zone sont de 0,65 à 0,73 par arête, contre 0,23 sur le
+  masculin. Le défaut de Maria est donc bien lié à une transition raide. Ce n'est pas le cas du masculin.
+- Limite : E2 aggrave la perte de volume de la zone (masculin −30 → −34 %, féminin −31 → −36 %). Refusé comme correction.
+
+## 162. Limitation automatique du gradient de poids (E5) : pas validée
+- Seuil : percentile 95 des gradients de poids hors zone, calculé sur le corps lui-même, fixé avant mesure.
+- Résultat : Maria 8,30 → 2,90 au maximum, mais les comptages au-delà de 1,25 augmentent (101 → 109). Féminin : maximum
+  2,52 → 2,65. Masculin : comptage au-delà de 1,5 augmente (86 → 93).
+- Règle appliquée : une amélioration sur une seule métrique ne suffit pas. Refusé.
+
+## 163. Aucune méthode ne conserve le volume local à la hanche
+- Constat : dans la zone, LBS perd environ 30 % de volume, DQS gagne environ 17 % (masculin et féminin).
+- Mise en garde : le volume de zone est une somme de tétraèdres sur les polygones de la zone ; ce n'est pas le volume d'un
+  solide fermé. C'est un indicateur, pas une mesure absolue.
