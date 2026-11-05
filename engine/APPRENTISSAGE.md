@@ -838,3 +838,8 @@ Mesure LBS sans clé, bras gauche seul : 90° 24 -> 12 replis ; 120° 31 -> 19 ;
 - Le déclencheur d'un mouvement est un motoneurone qui active un muscle ; la tendon tire l'os autour de l'axe. Le moteur doit reproduire couple, axe et sens.
 - Une amplitude non sourcée n'est pas une donnée : la marquer et la remplacer dès qu'une source la donne (hanche corrigée, erreur 111).
 - Référence : `docs/articulations_humaines_sources.md`.
+
+## 87. Sources bloquées : API officielle, pas contournement
+- Une vérification de navigateur est un contrôle d'accès : ne pas la contourner, même avec autorisation.
+- Essayer les APIs officielles : NCBI E-utilities (efetch PubMed, résumé des fiches StatPearls) et Europe PMC (résumés d'études). Elles n'ont pas le corps des fiches.
+- Quand la source reste inaccessible, signaler la lacune dans le document et marquer les chiffres non officiels.

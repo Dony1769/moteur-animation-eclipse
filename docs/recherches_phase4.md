@@ -55,3 +55,10 @@ puis sources non officielles (articles de praticiens, issues de projets) quand l
 - Limites : 5 à 6 sujets par groupe ; le scanner ne capture pas la chair à la flexion ≥ 100° (mesures au fil à la place) ; pas de mesure de maillage complet à l'angle fléchi.
 - Écarté : arXiv 2509.06607 (SKEL) ne traite pas de la chair ni du pli, seulement du squelette et de SMPL.
 - Usage prévu : fixer les postures-clés de PSD (0, 90, 135°, flexion max) et la loi d'échelle de la chair fléchisseur ; le maillage cible reste à construire à partir des 16 distances radiales (non publiées en brut : à reconstituer).
+
+## Accès aux sources d'articulations (5 nov. 2026)
+- Contournement de la vérification du navigateur (NCBI Bookshelf) : refusé. C'est un contrôle contre les clients automatisés ; l'autorisation de l'utilisateur ne le lève pas. Accès légitime retenu : APIs officielles.
+- NCBI E-utilities (efetch, db=pubmed) : fonctionne. Pour une fiche StatPearls, n'expose que le résumé et les titres de section (corps absent). PMID 29262200 = « Anatomy, Bony Pelvis and Lower Limb, Hip Joint » (NBK470555) : résumé seulement.
+- NCBI E-utilities esearch : erreur 500 au moment de l'essai.
+- Europe PMC (API REST officielle, EBI) : fonctionne ; résultats = études récentes (marche, rééducation). Aucune valeur normale de référence trouvée en 1 requête. À affiner par mots-clés goniométrie + revue systématique.
+- Conséquence : hanche, genou et poignet restent sourcés par des pages non officielles (Muscle and Motion, TeachMeAnatomy), en attendant une source officielle lisible.

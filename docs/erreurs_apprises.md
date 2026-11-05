@@ -685,3 +685,8 @@ Chaque erreur a une cause, une correction et un test. Une erreur corrigée doit 
 - Sources : StatPearls (officiel) pour le coude et l'épaule ; StatPearls hanche, genou et poignet bloqués ; remplacés par Physiopedia, Muscle and Motion, TeachMeAnatomy (non officiel, signalé).
 - Écarts trouvés : hanche extension 10° (et non 20–30°), rotation 15°/35° (et non 30–45°) ; les anciennes valeurs étaient non sourcées.
 - Leçon : apprendre d'abord, puis modeler. Chaque chiffre doit porter sa source, et une valeur non sourcée est marquée comme telle.
+
+## 112. Vérification du navigateur (NCBI) : ne pas la contourner ; utiliser les APIs officielles
+- Demande : contourner la vérification du navigateur pour lire StatPearls. Refusé : c'est un contrôle contre les clients automatisés ; une autorisation de l'utilisateur ne le lève pas.
+- Voies légitimes testées : NCBI E-utilities efetch (résumé seulement, corps absent de l'API) ; Europe PMC (résumés, pas de valeurs normales en 1 requête).
+- Leçon : quand une source bloque l'accès automatisé, chercher l'API officielle ou une autre source primaire, et signaler la lacune plutôt que la contourner.
