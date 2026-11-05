@@ -918,3 +918,7 @@ Mesurer les références fournies avec le même critère, avant de figer une bor
 ## 103. Vérifier le sens de la rampe avant de conclure
 Une rampe inversée donne des chiffres plausibles et faux (entrée 128). Vérifier quel côté reçoit f = 1 avant de mesurer.
 Un champ normalisé (position le long du membre, sans correspondance de sommets) compare une référence à notre modèle.
+
+## 104. Compression et traction par côté avant de placer un pli
+Mesurer le signe de l'étirement par côté (compression ou traction) avant de placer un pli. Le pli se justifie là où la
+peau est comprimée, mais le défaut mesuré (extenseur) est en traction et doit être traité séparément. Voir erreurs entrée 129.

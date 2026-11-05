@@ -860,3 +860,12 @@ Résultat (docs/rapports/phase4_psd_hanche_genou.json) : genou plis 0–4, étir
   Le premier résultat (12–14 %) était faux et a été retiré. Règle : vérifier le côté où f vaut 1 avant toute mesure.
 - Conclusion : la référence tient l'étirement au pli bassin-cuisse avec une transition plus étendue ; notre rampe de 15 cm
   ne peut pas le faire. Piste : rampe plus large côté bassin, ou cible géométrique du pli (non encore testée).
+
+## 129. Où la chaîne comprime et où elle étire : le pli n'est pas le problème principal
+- Mesure (engine/skinning/reference/compression_hanche_chaine.py, bande de 15 cm) :
+  - côté fléchisseur (antérieur) : compression moyenne 0,12 (60°) à 0,19 (120°) ; 64–65 % des arêtes comprimées : c'est là
+    qu'un pli est physiquement cohérent (compression, entrée 127 et recherche Zhang et al.) ;
+  - côté extenseur (postérieur) : 79 % des arêtes en traction ; traction maximale 1,8 (60°), 2,7 (90°), 3,6 (120°).
+- Conséquence : un pli à intégrale nulle côté fléchisseur est justifié, mais il ne réduit pas l'étirement extenseur, qui
+  est le défaut mesuré. Il faut traiter les deux : pli comprimé côté fléchisseur ET réduction de la traction côté extenseur.
+- Règle : mesurer le signe de la déformation (compression ou traction) par côté avant de placer un pli ou une borne.
