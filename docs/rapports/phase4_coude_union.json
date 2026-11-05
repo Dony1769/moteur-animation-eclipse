@@ -1,10 +1,69 @@
 {
-  "objet": "coude : union booleenne (corps pose + sphere de jonction), manifold3d",
+  "objet": "coude : union booleenne (corps pose + sphere de jonction) puis volume d'interpenetration bras / avant-bras hors sphere",
   "methode": "corps pose (avant-bras rigide, bras fixe) union sphere de rayon Rs au centre du coude (icosphere subdiv 3) ; moteur manifold",
-  "corps_repos": {"ferme": true, "volume_m3": 0.0672, "orientation_coherente": true},
-  "resultats": {
-    "Rs_0.07": {"30": {"ferme": true, "volume": 0.0679, "faces": 22330}, "60": {"ferme": true, "volume": 0.0679, "faces": 22336}, "90": {"ferme": true, "volume": 0.0679, "faces": 22338}, "120": {"ferme": true, "volume": 0.0679, "faces": 22372}},
-    "Rs_0.08": {"30": {"ferme": true, "volume": 0.0685, "faces": 22296}, "60": {"ferme": true, "volume": 0.0685, "faces": 22300}, "90": {"ferme": true, "volume": 0.0685, "faces": 22300}, "120": {"ferme": true, "volume": 0.0685, "faces": 22308}}
+  "corps_repos": {
+    "ferme": true,
+    "volume_m3": 0.0672,
+    "orientation_coherente": true
   },
-  "statut": "NON VALIDE. Le maillage est ferme a chaque angle (plus de trou) et le volume est conserve. Restent a mesurer : penetration visible apres union (pas encore mesuree sur la surface unie), plis, etirement sur les sommets d'origine, et validation Blender."
+  "resultats": {
+    "Rs_0.07": {
+      "30": {
+        "ferme": true,
+        "volume": 0.0679,
+        "faces": 22330
+      },
+      "60": {
+        "ferme": true,
+        "volume": 0.0679,
+        "faces": 22336
+      },
+      "90": {
+        "ferme": true,
+        "volume": 0.0679,
+        "faces": 22338
+      },
+      "120": {
+        "ferme": true,
+        "volume": 0.0679,
+        "faces": 22372
+      }
+    },
+    "Rs_0.08": {
+      "30": {
+        "ferme": true,
+        "volume": 0.0685,
+        "faces": 22296
+      },
+      "60": {
+        "ferme": true,
+        "volume": 0.0685,
+        "faces": 22300
+      },
+      "90": {
+        "ferme": true,
+        "volume": 0.0685,
+        "faces": 22300
+      },
+      "120": {
+        "ferme": true,
+        "volume": 0.0685,
+        "faces": 22308
+      }
+    }
+  },
+  "statut": "NON VALIDE. Maillage ferme a chaque angle. Interpenetration hors sphere : 0 cm3 jusqu'a 90 deg, 4,95 cm3 a 120 deg, 84,46 cm3 a 145 deg : le coude echoue a partir de 120 deg. Restent : plis et etirement sur sommets d'origine, interpenetration avec le tronc, validation Blender.",
+  "mesure_interpenetration_hors_sphere": {
+    "methode": "bras et avant-bras fermes par bouchons (orientation corrigee), sphere de jonction Rs 7 cm retiree de chaque piece, volume de l'intersection (manifold)",
+    "resultats_cm3": {
+      "0": 0.0,
+      "30": 0.0,
+      "60": 0.0,
+      "90": 0.0,
+      "120": 4.95,
+      "145": 84.46
+    },
+    "temoin_positif": "decalage de 10 cm de l'avant-bras en +Z : 46.29 cm3 (la methode voit un chevauchement quand il existe)",
+    "limites": "ne mesure que bras / avant-bras (pas le tronc) ; la sphere de jonction est exclue par construction ; pas encore fait sur les sommets d'origine"
+  }
 }

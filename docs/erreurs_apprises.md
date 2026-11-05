@@ -568,3 +568,11 @@ Chaque erreur a une cause, une correction et un test. Une erreur corrigée doit 
 - Leçon : un étirement de 1,00 sur des bords ouverts ne prouve rien. Vérifier d'abord que le maillage est fermé.
 - Reste à mesurer sur la surface unie : pénétration visible, plis, étirement, puis Blender.
 - Scripts : `engine/skinning/test_union_coude.py`. Rapport : `docs/rapports/phase4_coude_union.json`.
+
+## 95. Volume d'interpénétration : « Not all meshes are volumes » ; bouchons à orientation incohérente
+- Cause : les bouchons en éventail reprenaient le sens des arêtes de bord au lieu de le inverser. Résultat : bras à volume +11 983 cm³, avant-bras à −8 772 cm³ ; trimesh refuse l'union booléenne.
+- Correction : bouchon orienté à l'envers par rapport à l'arête de bord, puis `trimesh.repair.fix_winding` et `fix_inversion`. Contrôle : `is_volume True`, volumes 1 886 et 1 274 cm³, cohérence True.
+- Mesure corrigée (Rs 7 cm, sphère retirée) : interpénétration 0 cm³ à 0, 30, 60, 90° ; 4,95 cm³ à 120° ; 84,46 cm³ à 145°. Le coude ÉCHOUE à partir de 120°.
+- Témoin positif : avant d'accepter les zéros, décalage de l'avant-bras de 10 cm en +Z donne 46 cm³ : la méthode voit bien un chevauchement quand il existe. Les autres directions de décalage donnent 0, ce qui est cohérent avec une séparation.
+- Leçon : un zéro peut venir d'un booléen qui ne calcule rien. Toujours vérifier la fermeture et l'orientation, puis tester un témoin positif connu.
+- Script : `engine/skinning/test_coude_volume_union.py`. Rapport : `docs/rapports/phase4_coude_union.json`.

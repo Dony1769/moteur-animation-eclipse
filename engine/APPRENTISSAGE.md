@@ -755,3 +755,8 @@ Mesure LBS sans clé, bras gauche seul : 90° 24 -> 12 replis ; 120° 31 -> 19 ;
 - Un étirement de 1,00 sur un maillage ouvert ne prouve rien : vérifier d'abord la fermeture (arêtes de bord = 0).
 - Une couture par sommets voisins reste ouverte. Une union booléenne (Manifold, licence Apache-2.0, sortie manifold garantie) ferme le maillage à chaque angle.
 - Méthode : vérifier que l'entrée est fermée, faire l'union, vérifier la fermeture et le volume, puis mesurer la surface unie.
+
+## 70. Volume d'interpénétration : orienter les bouchons, puis tester un témoin positif
+- Un bouchon en éventail doit suivre le sens inverse de l'arête de bord ; sinon le volume devient négatif sur une pièce et positif sur l'autre, et le booléen échoue (erreur 95). Après bouchon : `trimesh.repair.fix_winding` puis `fix_inversion`, et vérifier `is_volume`.
+- Avant d'accepter un zéro d'interpénétration, prouver que la méthode voit un chevauchement : décaler une pièce d'une distance connue et vérifier qu'un volume positif apparaît. Ici : 46 cm³ pour 10 cm en +Z.
+- Résultat coude (Rs 7 cm, sphère exclue) : 0 cm³ à 0–90°, 4,95 à 120°, 84,46 à 145°. Le coude n'est pas validé au-delà de 120° ; le tronc n'est pas encore inclus.
