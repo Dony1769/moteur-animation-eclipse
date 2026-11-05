@@ -1251,3 +1251,20 @@ Résultat (docs/rapports/phase4_psd_hanche_genou.json) : genou plis 0–4, étir
 - Cause probable : les poids du rig HBM (deux os de tronc seulement, Spine et Spine1) répartissent la poitrine haute sur
   le cou et les épaules. C'est une propriété des poids, non un défaut de la classification : la classification suit les poids.
 - Statut : observé, non corrigé. À relier aux déformations d'épaule dans les étapes suivantes, à vérifier visuellement.
+
+## 173. Des poids procéduraux par distance à l'os, à longueur réelle, dégradent toutes les métriques
+- Constat : noyau exp(−(d/(α L))²), α ∈ {0,25 ; 0,5 ; 1,0}, trois morphologies. Le p99 passe de ~1,0 à 1,4–1,7 à α = 0,5,
+  les retournements sont multipliés par 10 à 25, le résidu d'os dominant par 3 à 4.
+- Cause : la distance euclidienne ignore la topologie du maillage (les sommets proches d'un os mais séparés par la surface
+  reçoivent le même poids). Les poids Bone Heat, eux, diffusent le long de la surface.
+- Règle : ne jamais remplacer la référence Bone Heat par un noyau de distance. Toute méthode de poids doit garder la
+  diffusion surfacique ou la prouver équivalente. Voir rapport étape 2.
+
+## 174. Une correction bornée aux articulations peut réduire les retournements sans améliorer le reste
+- Constat : variante « bande » (β = max_j exp(−(d_tête/(α L_j))²)), α = 0,25 : retournements DQS 36 → 0 (féminin) et
+  22 → 0 (masculin), mais p99 +0,01 à +0,04 et maximum de hanche toujours > 1,5. Non validée.
+- Règle : un gain sur une seule métrique (ici les retournements) ne valide rien. Le p99 et le résidu doivent aussi s'améliorer.
+
+## 175. Le rapport d'un essai doit donner les valeurs de référence à côté des variantes
+- Constat : le résumé ne montrait pas d'abord la référence Bone Heat ; un lecteur pouvait confondre une dégradation
+  relative avec une valeur absolue. Corrigé : chaque tableau affiche la référence en premier.

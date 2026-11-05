@@ -1049,3 +1049,10 @@ Le côté gauche/droit reste une convention à part. Voir entrées 170 et 171.
 ## 135. Une région construite par argmax des poids reflète les poids, pas l'anatomie
 Une région « cou » qui contient la poitrine n'est pas une erreur de classification : elle décrit les poids. Vérifier
 la hauteur des sommets avant de conclure. Voir entrée 172.
+
+## 136. Une distance n'est pas une diffusion : les poids de surface portent une information que la géométrie 3D perd
+Un noyau de distance euclidienne ne remplace pas des poids calculés sur la surface. Voir entrée 173.
+
+## 137. Une correction localisée doit être jugée sur ses effets hors zone, pas seulement dans la zone
+La variante bornée (β) laisse la référence intacte loin des articulations, mais ses effets sur le p99 global
+montrent qu'une correction locale peut dégrader le reste. Voir entrée 174.
