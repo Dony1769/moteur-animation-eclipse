@@ -680,3 +680,7 @@ Mesure LBS sans clé, bras gauche seul : 90° 24 -> 12 replis ; 120° 31 -> 19 ;
 - La chaîne de nœuds coaxiaux donne en LBS réelle : 0 pli, segments rigides, section du genou conservée (0,995–0,999).
 - Critère de section : perpendiculaire à l'axe du segment, jamais sur le plan horizontal.
 - Voir erreur 78 et `docs/rapports/phase4_genou_chaine_blender.json`.
+
+## 54. Coude validé ; cheville en échec partiel
+- Méthode générique : `engine/skinning/articulation_chaine.py` (pivot et axe mesurés depuis la pose, projection du pivot sur la jointure) et `engine/skinning/criteres_articulation.py` (plis, rigidité, section).
+- Le coude passe les critères dans Blender. La cheville échoue en flexion dorsale : un segment enfant rigide qui n'est pas dans l'axe du parent pénètre le parent. Voir erreur 79.

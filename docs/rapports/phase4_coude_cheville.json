@@ -1,0 +1,61 @@
+{
+  "objet": "articulations en charniere par chaine de noeuds coaxiaux (LBS Blender reelle)",
+  "coude": {
+    "pivot": [
+      -1.965,
+      -0.038,
+      1.077
+    ],
+    "K": 8,
+    "bande_m": 0.1,
+    "ecart_blender_numpy_mm": 0.0,
+    "resultats": {
+      "60": {
+        "plis": 0,
+        "rigidite_mm": 0.0,
+        "section": 0.998
+      },
+      "90": {
+        "plis": 0,
+        "rigidite_mm": 0.0,
+        "section": 0.996
+      },
+      "105": {
+        "plis": 0,
+        "rigidite_mm": 0.0,
+        "section": 0.995
+      },
+      "120": {
+        "plis": 0,
+        "rigidite_mm": 0.0,
+        "section": 0.993
+      }
+    }
+  },
+  "cheville": {
+    "pivot": [
+      -2.154,
+      -0.034,
+      0.062
+    ],
+    "statut": "ECHEC partiel (numpy, pas encore Blender)",
+    "mode": "enfant_rigide (pied rigide, bande sur le tibia)",
+    "resultats_numpy": {
+      "+20": {
+        "plis": 18
+      },
+      "-20": {
+        "plis": 0,
+        "section": 0.902
+      },
+      "+50": {
+        "plis": 18
+      },
+      "-50": {
+        "plis": 0,
+        "section": 0.365
+      }
+    },
+    "lecture": "plis en flexion dorsale : le pied rigide pénètre le bas de la jambe ; la section chute en plantaire à -50"
+  }
+}

@@ -445,3 +445,10 @@ Chaque erreur a une cause, une correction et un test. Une erreur corrigée doit 
 - Erreur de contrôle corrigée : l'axe de la section était mesuré sur le plan horizontal. Il faut le mesurer perpendiculairement à l'axe du segment (`engine/skinning/mesure_section_genou.py`).
 - Hauteur du genou vérifiée : pivot Mixamo à z = 0,476 m, soit 0,285 × 1,69 m (taille du maillage) ; c'est le bon centre.
 - Rapport : `docs/rapports/phase4_genou_chaine_blender.json`. Ouvert : coude, cheville, hanche, épaule, poignet ; nœuds à ajouter au squelette HBM.
+
+## 79. Coude validé dans Blender ; cheville en échec partiel
+- Coude : chaîne de 8 nœuds, bande 0,10 m, pivot Mixamo LeftForeArm (z = 1,077 m, soit 0,64 h). LBS Blender = numpy (0,000 mm) ; 0 pli à 60–120° ; segments rigides ; section 0,993–0,998.
+- Erreur de mesure corrigée : la tranche de section incluait des sommets du tronc qui ne bougent pas, d'où une fausse section de 0,52. Ne mesurer que les sommets du membre.
+- Erreur de mesure corrigée : l'axe de pivot est une droite ; le point choisi doit être projeté au niveau de la jointure, sinon la bande tombe hors du maillage (pivot à y = −2,08 au lieu de −0,04).
+- Cheville (numpy, pas encore Blender) : en mode « enfant rigide », 0 pli en flexion plantaire (−20°), mais 18 plis en flexion dorsale (+20°) : le pied rigide traverse le bas de la jambe. La section tombe à 0,37 à −50°. Ouvert : la géométrie de contact cheville/tibia n'est pas résolue.
+- Rapport : `docs/rapports/phase4_coude_cheville.json`.
