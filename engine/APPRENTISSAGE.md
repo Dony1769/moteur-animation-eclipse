@@ -1077,3 +1077,10 @@ Voir entrée 184.
 
 ## 144. Une hypothèse causale infirmée est un résultat : la consigner avant d'en tester une autre
 Voir entrée 185.
+
+## 145. Localiser n'est pas expliquer : une corrélation spatiale doit être suivie d'une intervention
+Le gradient de poids désigne les arêtes où SQ dégrade (corrélation 0,45), mais la moitié des arêtes les plus raides
+sont améliorées. Voir entrée 186.
+
+## 146. Ne régler un paramètre d'ancrage qu'avant de regarder le test
+Un réglage choisi après avoir vu les résultats sur la région défectueuse est une calibration déguisée. Voir entrée 187.

@@ -1319,3 +1319,21 @@ Résultat (docs/rapports/phase4_psd_hanche_genou.json) : genou plis 0–4, étir
 - Constat : masculin, hanche 120° : maximum LBS 2,49 ; SQV1 (repère moyen) 2,60 ; SDV1 (os dominant) 3,49.
 - Conséquence : la dégradation masculine n'est pas causée par la moyenne des rotations. Sa cause reste à établir.
 - Règle : une hypothèse causale se teste par une expérience qui l'isole ; ici, l'hypothèse a été infirmée et consignée.
+
+## 186. Le gradient de poids localise la dégradation SQ sans en expliquer le signe
+- Constat : 174 arêtes sur 21 170 sont dégradées de plus de 0,05 par SQ, avec un gradient de poids médian de 0,15
+  (0,00 pour toutes les arêtes). Mais sur les 50 arêtes au gradient le plus fort, SQ améliore autant qu'il dégrade
+  (médiane +0,007). Corrélation gradient / variation d'étirement : 0,45.
+- Règle : une corrélation qui localise un défaut ne prouve pas la cause. Il faut une expérience qui modifie le
+  gradient seul et mesure l'effet sur le signe.
+- Statut : hypothèse H3 partiellement soutenue, non démontrée. Voir `RAPPORT_investigation_hanche_masc.md`.
+
+## 187. Un réglage d'ancre qui améliore le maximum en dégradant le volume n'est pas une correction
+- Constat : λ = 0,01 réduit le maximum de la hanche masculine à 60° (1,76 → 1,67) mais porte la variation de volume
+  de −0,011 à −0,025. λ = 1,0 fait l'inverse. Aucune valeur ne satisfait les deux critères.
+- Règle : choisir λ après avoir vu le test sur la hanche revient à calibrer sur le test. Aucun λ n'est retenu.
+
+## 188. Transférer les poids de l'entrejambe casse la référence LBS
+- Constat : F6 (poids de la cuisse reportés sur les Hips) : SQ améliore le maximum, mais le LBS avec les poids modifiés
+  atteint 5,50 avec 2 retournements. Le changement de poids n'est pas une correction admissible.
+- Règle : une modification des poids doit être validée sur le LBS seul avant toute mesure de SQ.

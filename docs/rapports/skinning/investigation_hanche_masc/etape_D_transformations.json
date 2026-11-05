@@ -1,0 +1,221 @@
+{
+ "erreur_LBS_manuel_global_m": 9.898359376592225e-08,
+ "lignes": [
+  {
+   "sommet": 3393,
+   "LBS_vs_somme_manuelle_m": 3.4e-08,
+   "det_Mv": 0.5375,
+   "angle_rotation_moyennee_deg": 13.0,
+   "angle_rotation_os_dominant_deg": 0.0,
+   "ecart_moyenne_vs_dominant_deg": 13.0,
+   "ecart_polaire_Mv_m": 0.3774
+  },
+  {
+   "sommet": 3395,
+   "LBS_vs_somme_manuelle_m": 3.2e-08,
+   "det_Mv": 0.4789,
+   "angle_rotation_moyennee_deg": 16.26,
+   "angle_rotation_os_dominant_deg": 0.0,
+   "ecart_moyenne_vs_dominant_deg": 16.26,
+   "ecart_polaire_Mv_m": 0.4355
+  },
+  {
+   "sommet": 3396,
+   "LBS_vs_somme_manuelle_m": 9e-09,
+   "det_Mv": 0.6423,
+   "angle_rotation_moyennee_deg": 8.6,
+   "angle_rotation_os_dominant_deg": 0.0,
+   "ecart_moyenne_vs_dominant_deg": 8.6,
+   "ecart_polaire_Mv_m": 0.2808
+  },
+  {
+   "sommet": 3474,
+   "LBS_vs_somme_manuelle_m": 1.2e-08,
+   "det_Mv": 0.3921,
+   "angle_rotation_moyennee_deg": 22.98,
+   "angle_rotation_os_dominant_deg": 0.0,
+   "ecart_moyenne_vs_dominant_deg": 22.98,
+   "ecart_polaire_Mv_m": 0.5286
+  },
+  {
+   "sommet": 3475,
+   "LBS_vs_somme_manuelle_m": 1.7e-08,
+   "det_Mv": 0.3549,
+   "angle_rotation_moyennee_deg": 27.07,
+   "angle_rotation_os_dominant_deg": 0.0,
+   "ecart_moyenne_vs_dominant_deg": 27.07,
+   "ecart_polaire_Mv_m": 0.5717
+  },
+  {
+   "sommet": 3476,
+   "LBS_vs_somme_manuelle_m": 3.4e-08,
+   "det_Mv": 0.3782,
+   "angle_rotation_moyennee_deg": 24.4,
+   "angle_rotation_os_dominant_deg": 0.0,
+   "ecart_moyenne_vs_dominant_deg": 24.4,
+   "ecart_polaire_Mv_m": 0.5445
+  },
+  {
+   "sommet": 3561,
+   "LBS_vs_somme_manuelle_m": 1.7e-08,
+   "det_Mv": 0.5251,
+   "angle_rotation_moyennee_deg": 13.63,
+   "angle_rotation_os_dominant_deg": 0.0,
+   "ecart_moyenne_vs_dominant_deg": 13.63,
+   "ecart_polaire_Mv_m": 0.3895
+  },
+  {
+   "sommet": 3710,
+   "LBS_vs_somme_manuelle_m": 5.1e-08,
+   "det_Mv": 0.4973,
+   "angle_rotation_moyennee_deg": 15.16,
+   "angle_rotation_os_dominant_deg": 0.0,
+   "ecart_moyenne_vs_dominant_deg": 15.16,
+   "ecart_polaire_Mv_m": 0.417
+  },
+  {
+   "sommet": 3856,
+   "LBS_vs_somme_manuelle_m": 2.9e-08,
+   "det_Mv": 0.4572,
+   "angle_rotation_moyennee_deg": 17.69,
+   "angle_rotation_os_dominant_deg": 0.0,
+   "ecart_moyenne_vs_dominant_deg": 17.69,
+   "ecart_polaire_Mv_m": 0.458
+  },
+  {
+   "sommet": 3870,
+   "LBS_vs_somme_manuelle_m": 3.7e-08,
+   "det_Mv": 0.5561,
+   "angle_rotation_moyennee_deg": 12.11,
+   "angle_rotation_os_dominant_deg": 0.0,
+   "ecart_moyenne_vs_dominant_deg": 12.11,
+   "ecart_polaire_Mv_m": 0.3596
+  },
+  {
+   "sommet": 8092,
+   "LBS_vs_somme_manuelle_m": 0.0,
+   "det_Mv": 0.3873,
+   "angle_rotation_moyennee_deg": 23.46,
+   "angle_rotation_os_dominant_deg": 0.0,
+   "ecart_moyenne_vs_dominant_deg": 23.46,
+   "ecart_polaire_Mv_m": 0.5341
+  },
+  {
+   "sommet": 8093,
+   "LBS_vs_somme_manuelle_m": 2.1e-08,
+   "det_Mv": 0.3174,
+   "angle_rotation_moyennee_deg": 32.56,
+   "angle_rotation_os_dominant_deg": 120.0,
+   "ecart_moyenne_vs_dominant_deg": 87.44,
+   "ecart_polaire_Mv_m": 0.6174
+  },
+  {
+   "sommet": 8653,
+   "LBS_vs_somme_manuelle_m": 6.5e-08,
+   "det_Mv": 0.2506,
+   "angle_rotation_moyennee_deg": 62.76,
+   "angle_rotation_os_dominant_deg": 120.0,
+   "ecart_moyenne_vs_dominant_deg": 57.24,
+   "ecart_polaire_Mv_m": 0.7063
+  },
+  {
+   "sommet": 8654,
+   "LBS_vs_somme_manuelle_m": 6e-09,
+   "det_Mv": 0.3209,
+   "angle_rotation_moyennee_deg": 88.03,
+   "angle_rotation_os_dominant_deg": 120.0,
+   "ecart_moyenne_vs_dominant_deg": 31.97,
+   "ecart_polaire_Mv_m": 0.6131
+  },
+  {
+   "sommet": 8733,
+   "LBS_vs_somme_manuelle_m": 1.3e-08,
+   "det_Mv": 0.2546,
+   "angle_rotation_moyennee_deg": 67.7,
+   "angle_rotation_os_dominant_deg": 120.0,
+   "ecart_moyenne_vs_dominant_deg": 52.3,
+   "ecart_polaire_Mv_m": 0.7007
+  },
+  {
+   "sommet": 8734,
+   "LBS_vs_somme_manuelle_m": 1.7e-08,
+   "det_Mv": 0.2636,
+   "angle_rotation_moyennee_deg": 73.11,
+   "angle_rotation_os_dominant_deg": 120.0,
+   "ecart_moyenne_vs_dominant_deg": 46.89,
+   "ecart_polaire_Mv_m": 0.6882
+  },
+  {
+   "sommet": 8735,
+   "LBS_vs_somme_manuelle_m": 0.0,
+   "det_Mv": 0.2695,
+   "angle_rotation_moyennee_deg": 75.59,
+   "angle_rotation_os_dominant_deg": 120.0,
+   "ecart_moyenne_vs_dominant_deg": 44.41,
+   "ecart_polaire_Mv_m": 0.6801
+  },
+  {
+   "sommet": 8820,
+   "LBS_vs_somme_manuelle_m": 0.0,
+   "det_Mv": 0.3641,
+   "angle_rotation_moyennee_deg": 94.04,
+   "angle_rotation_os_dominant_deg": 120.0,
+   "ecart_moyenne_vs_dominant_deg": 25.96,
+   "ecart_polaire_Mv_m": 0.5609
+  },
+  {
+   "sommet": 8969,
+   "LBS_vs_somme_manuelle_m": 3.4e-08,
+   "det_Mv": 0.3764,
+   "angle_rotation_moyennee_deg": 95.42,
+   "angle_rotation_os_dominant_deg": 120.0,
+   "ecart_moyenne_vs_dominant_deg": 24.58,
+   "ecart_polaire_Mv_m": 0.5466
+  },
+  {
+   "sommet": 9115,
+   "LBS_vs_somme_manuelle_m": 4.3e-08,
+   "det_Mv": 0.2809,
+   "angle_rotation_moyennee_deg": 79.36,
+   "angle_rotation_os_dominant_deg": 120.0,
+   "ecart_moyenne_vs_dominant_deg": 40.64,
+   "ecart_polaire_Mv_m": 0.6647
+  },
+  {
+   "sommet": 9130,
+   "LBS_vs_somme_manuelle_m": 3.4e-08,
+   "det_Mv": 0.2647,
+   "angle_rotation_moyennee_deg": 46.38,
+   "angle_rotation_os_dominant_deg": 120.0,
+   "ecart_moyenne_vs_dominant_deg": 73.62,
+   "ecart_polaire_Mv_m": 0.6866
+  },
+  {
+   "sommet": 9131,
+   "LBS_vs_somme_manuelle_m": 2.7e-08,
+   "det_Mv": 0.2832,
+   "angle_rotation_moyennee_deg": 39.98,
+   "angle_rotation_os_dominant_deg": 120.0,
+   "ecart_moyenne_vs_dominant_deg": 80.02,
+   "ecart_polaire_Mv_m": 0.6616
+  },
+  {
+   "sommet": 9133,
+   "LBS_vs_somme_manuelle_m": 1.7e-08,
+   "det_Mv": 0.2502,
+   "angle_rotation_moyennee_deg": 58.31,
+   "angle_rotation_os_dominant_deg": 120.0,
+   "ecart_moyenne_vs_dominant_deg": 61.69,
+   "ecart_polaire_Mv_m": 0.7068
+  },
+  {
+   "sommet": 9134,
+   "LBS_vs_somme_manuelle_m": 3.3e-08,
+   "det_Mv": 0.3648,
+   "angle_rotation_moyennee_deg": 25.88,
+   "angle_rotation_os_dominant_deg": 0.0,
+   "ecart_moyenne_vs_dominant_deg": 25.88,
+   "ecart_polaire_Mv_m": 0.5601
+  }
+ ]
+}

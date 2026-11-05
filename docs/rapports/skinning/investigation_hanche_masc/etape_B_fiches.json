@@ -1,0 +1,902 @@
+[
+ {
+  "sommet": 3393,
+  "repos_m": [
+   -2.28409,
+   0.09893,
+   0.85099
+  ],
+  "stretch_LBS_120G": 1.3726,
+  "stretch_SQ_120G": 1.4837,
+  "stretch_SQV1_120G": 1.5085,
+  "deplacement_LBS_m": 0.04453,
+  "deplacement_SQ_m": 0.05015,
+  "correction_volume_m": 0.016968,
+  "poids": [
+   [
+    "mixamorig:RightUpLeg",
+    0.3858620524406433
+   ],
+   [
+    "mixamorig:Hips",
+    0.38318392634391785
+   ],
+   [
+    "mixamorig:LeftUpLeg",
+    0.19043061137199402
+   ],
+   [
+    "mixamorig:Spine",
+    0.04052339494228363
+   ]
+  ],
+  "distance_centre_hanche_G_m": 0.1364,
+  "distance_segment_plus_proche": {
+   "os": "mixamorig:Hips",
+   "m": 0.1364
+  },
+  "aretes_incidentes": 4,
+  "polygones_incidents": 4
+ },
+ {
+  "sommet": 3395,
+  "repos_m": [
+   -2.2831,
+   0.09161,
+   0.81081
+  ],
+  "stretch_LBS_120G": 1.5774,
+  "stretch_SQ_120G": 1.6672,
+  "stretch_SQV1_120G": 1.6946,
+  "deplacement_LBS_m": 0.05444,
+  "deplacement_SQ_m": 0.05617,
+  "correction_volume_m": 0.01587,
+  "poids": [
+   [
+    "mixamorig:RightUpLeg",
+    0.4934758245944977
+   ],
+   [
+    "mixamorig:Hips",
+    0.27370792627334595
+   ],
+   [
+    "mixamorig:LeftUpLeg",
+    0.2237633317708969
+   ],
+   [
+    "mixamorig:Spine",
+    0.00905293133109808
+   ]
+  ],
+  "distance_centre_hanche_G_m": 0.1417,
+  "distance_segment_plus_proche": {
+   "os": "mixamorig:Hips",
+   "m": 0.1417
+  },
+  "aretes_incidentes": 4,
+  "polygones_incidents": 4
+ },
+ {
+  "sommet": 3396,
+  "repos_m": [
+   -2.31026,
+   0.1034,
+   0.81434
+  ],
+  "stretch_LBS_120G": 1.3724,
+  "stretch_SQ_120G": 1.3337,
+  "stretch_SQV1_120G": 1.5241,
+  "deplacement_LBS_m": 0.03588,
+  "deplacement_SQ_m": 0.03933,
+  "correction_volume_m": 0.008613,
+  "poids": [
+   [
+    "mixamorig:RightUpLeg",
+    0.6267291903495789
+   ],
+   [
+    "mixamorig:Hips",
+    0.22449852526187897
+   ],
+   [
+    "mixamorig:LeftUpLeg",
+    0.1383979320526123
+   ],
+   [
+    "mixamorig:Spine",
+    0.010374348610639572
+   ]
+  ],
+  "distance_centre_hanche_G_m": 0.1566,
+  "distance_segment_plus_proche": {
+   "os": "mixamorig:RightUpLeg",
+   "m": 0.1518
+  },
+  "aretes_incidentes": 4,
+  "polygones_incidents": 4
+ },
+ {
+  "sommet": 3474,
+  "repos_m": [
+   -2.27653,
+   -0.06793,
+   0.75591
+  ],
+  "stretch_LBS_120G": 2.2412,
+  "stretch_SQ_120G": 2.5184,
+  "stretch_SQV1_120G": 2.4668,
+  "deplacement_LBS_m": 0.0597,
+  "deplacement_SQ_m": 0.06347,
+  "correction_volume_m": 0.009929,
+  "poids": [
+   [
+    "mixamorig:RightUpLeg",
+    0.5364646315574646
+   ],
+   [
+    "mixamorig:LeftUpLeg",
+    0.28234657645225525
+   ],
+   [
+    "mixamorig:Hips",
+    0.18092016875743866
+   ],
+   [
+    "mixamorig:Spine",
+    0.0002686286752577871
+   ]
+  ],
+  "distance_centre_hanche_G_m": 0.1227,
+  "distance_segment_plus_proche": {
+   "os": "mixamorig:RightUpLeg",
+   "m": 0.1035
+  },
+  "aretes_incidentes": 4,
+  "polygones_incidents": 4
+ },
+ {
+  "sommet": 3475,
+  "repos_m": [
+   -2.27204,
+   -0.02786,
+   0.75256
+  ],
+  "stretch_LBS_120G": 2.2853,
+  "stretch_SQ_120G": 2.5894,
+  "stretch_SQV1_120G": 2.4386,
+  "deplacement_LBS_m": 0.06551,
+  "deplacement_SQ_m": 0.06385,
+  "correction_volume_m": 0.006158,
+  "poids": [
+   [
+    "mixamorig:RightUpLeg",
+    0.5651782155036926
+   ],
+   [
+    "mixamorig:LeftUpLeg",
+    0.3130120635032654
+   ],
+   [
+    "mixamorig:Hips",
+    0.12180972844362259
+   ]
+  ],
+  "distance_centre_hanche_G_m": 0.1211,
+  "distance_segment_plus_proche": {
+   "os": "mixamorig:RightUpLeg",
+   "m": 0.1025
+  },
+  "aretes_incidentes": 4,
+  "polygones_incidents": 4
+ },
+ {
+  "sommet": 3476,
+  "repos_m": [
+   -2.27642,
+   0.01059,
+   0.75968
+  ],
+  "stretch_LBS_120G": 1.8591,
+  "stretch_SQ_120G": 2.0249,
+  "stretch_SQV1_120G": 1.9724,
+  "deplacement_LBS_m": 0.06202,
+  "deplacement_SQ_m": 0.06082,
+  "correction_volume_m": 0.00803,
+  "poids": [
+   [
+    "mixamorig:RightUpLeg",
+    0.5776466727256775
+   ],
+   [
+    "mixamorig:LeftUpLeg",
+    0.29330381751060486
+   ],
+   [
+    "mixamorig:Hips",
+    0.12904949486255646
+   ]
+  ],
+  "distance_centre_hanche_G_m": 0.1227,
+  "distance_segment_plus_proche": {
+   "os": "mixamorig:RightUpLeg",
+   "m": 0.1077
+  },
+  "aretes_incidentes": 4,
+  "polygones_incidents": 4
+ },
+ {
+  "sommet": 3561,
+  "repos_m": [
+   -2.28178,
+   -0.06333,
+   0.74112
+  ],
+  "stretch_LBS_120G": 1.8091,
+  "stretch_SQ_120G": 2.0415,
+  "stretch_SQV1_120G": 1.9733,
+  "deplacement_LBS_m": 0.04621,
+  "deplacement_SQ_m": 0.04653,
+  "correction_volume_m": 0.005411,
+  "poids": [
+   [
+    "mixamorig:RightUpLeg",
+    0.69253009557724
+   ],
+   [
+    "mixamorig:LeftUpLeg",
+    0.19720663130283356
+   ],
+   [
+    "mixamorig:Hips",
+    0.11026326566934586
+   ]
+  ],
+  "distance_centre_hanche_G_m": 0.1364,
+  "distance_segment_plus_proche": {
+   "os": "mixamorig:RightUpLeg",
+   "m": 0.0971
+  },
+  "aretes_incidentes": 4,
+  "polygones_incidents": 4
+ },
+ {
+  "sommet": 3710,
+  "repos_m": [
+   -2.27173,
+   -0.02739,
+   0.73493
+  ],
+  "stretch_LBS_120G": 1.7489,
+  "stretch_SQ_120G": 1.8269,
+  "stretch_SQV1_120G": 1.7853,
+  "deplacement_LBS_m": 0.05106,
+  "deplacement_SQ_m": 0.04844,
+  "correction_volume_m": 0.007177,
+  "poids": [
+   [
+    "mixamorig:RightUpLeg",
+    0.7037824988365173
+   ],
+   [
+    "mixamorig:LeftUpLeg",
+    0.21290889382362366
+   ],
+   [
+    "mixamorig:Hips",
+    0.0833086296916008
+   ]
+  ],
+  "distance_centre_hanche_G_m": 0.1387,
+  "distance_segment_plus_proche": {
+   "os": "mixamorig:RightUpLeg",
+   "m": 0.1029
+  },
+  "aretes_incidentes": 4,
+  "polygones_incidents": 4
+ },
+ {
+  "sommet": 3856,
+  "repos_m": [
+   -2.28375,
+   0.05952,
+   0.77131
+  ],
+  "stretch_LBS_120G": 1.7606,
+  "stretch_SQ_120G": 1.8672,
+  "stretch_SQV1_120G": 1.8693,
+  "deplacement_LBS_m": 0.0569,
+  "deplacement_SQ_m": 0.05655,
+  "correction_volume_m": 0.011913,
+  "poids": [
+   [
+    "mixamorig:RightUpLeg",
+    0.5922040939331055
+   ],
+   [
+    "mixamorig:LeftUpLeg",
+    0.2372155636548996
+   ],
+   [
+    "mixamorig:Hips",
+    0.17003975808620453
+   ],
+   [
+    "mixamorig:Spine",
+    0.0005405716365203261
+   ]
+  ],
+  "distance_centre_hanche_G_m": 0.1398,
+  "distance_segment_plus_proche": {
+   "os": "mixamorig:RightUpLeg",
+   "m": 0.1304
+  },
+  "aretes_incidentes": 5,
+  "polygones_incidents": 5
+ },
+ {
+  "sommet": 3870,
+  "repos_m": [
+   -2.29139,
+   -0.11172,
+   0.78389
+  ],
+  "stretch_LBS_120G": 1.3498,
+  "stretch_SQ_120G": 1.5416,
+  "stretch_SQV1_120G": 1.624,
+  "deplacement_LBS_m": 0.03699,
+  "deplacement_SQ_m": 0.05443,
+  "correction_volume_m": 0.01754,
+  "poids": [
+   [
+    "mixamorig:RightUpLeg",
+    0.48763400316238403
+   ],
+   [
+    "mixamorig:Hips",
+    0.32756975293159485
+   ],
+   [
+    "mixamorig:LeftUpLeg",
+    0.1805834174156189
+   ],
+   [
+    "mixamorig:Spine",
+    0.004212810192257166
+   ]
+  ],
+  "distance_centre_hanche_G_m": 0.1213,
+  "distance_segment_plus_proche": {
+   "os": "mixamorig:RightUpLeg",
+   "m": 0.1135
+  },
+  "aretes_incidentes": 5,
+  "polygones_incidents": 5
+ },
+ {
+  "sommet": 8092,
+  "repos_m": [
+   -2.26421,
+   0.08054,
+   0.85166
+  ],
+  "stretch_LBS_120G": 1.3726,
+  "stretch_SQ_120G": 1.4837,
+  "stretch_SQV1_120G": 1.5085,
+  "deplacement_LBS_m": 0.05787,
+  "deplacement_SQ_m": 0.06654,
+  "correction_volume_m": 0.009453,
+  "poids": [
+   [
+    "mixamorig:Hips",
+    0.406389981508255
+   ],
+   [
+    "mixamorig:LeftUpLeg",
+    0.28609350323677063
+   ],
+   [
+    "mixamorig:RightUpLeg",
+    0.26761671900749207
+   ],
+   [
+    "mixamorig:Spine",
+    0.0398997962474823
+   ]
+  ],
+  "distance_centre_hanche_G_m": 0.1168,
+  "distance_segment_plus_proche": {
+   "os": "mixamorig:Hips",
+   "m": 0.1168
+  },
+  "aretes_incidentes": 4,
+  "polygones_incidents": 4
+ },
+ {
+  "sommet": 8093,
+  "repos_m": [
+   -2.26414,
+   0.0732,
+   0.81655
+  ],
+  "stretch_LBS_120G": 1.5774,
+  "stretch_SQ_120G": 1.6672,
+  "stretch_SQV1_120G": 1.6946,
+  "deplacement_LBS_m": 0.07365,
+  "deplacement_SQ_m": 0.07733,
+  "correction_volume_m": 0.010093,
+  "poids": [
+   [
+    "mixamorig:LeftUpLeg",
+    0.35009002685546875
+   ],
+   [
+    "mixamorig:RightUpLeg",
+    0.33643072843551636
+   ],
+   [
+    "mixamorig:Hips",
+    0.30487579107284546
+   ],
+   [
+    "mixamorig:Spine",
+    0.00860346294939518
+   ]
+  ],
+  "distance_centre_hanche_G_m": 0.1215,
+  "distance_segment_plus_proche": {
+   "os": "mixamorig:Hips",
+   "m": 0.1215
+  },
+  "aretes_incidentes": 4,
+  "polygones_incidents": 4
+ },
+ {
+  "sommet": 8653,
+  "repos_m": [
+   -2.24536,
+   0.09132,
+   0.81086
+  ],
+  "stretch_LBS_120G": 1.4713,
+  "stretch_SQ_120G": 1.3679,
+  "stretch_SQV1_120G": 1.4081,
+  "deplacement_LBS_m": 0.12478,
+  "deplacement_SQ_m": 0.12219,
+  "correction_volume_m": 0.014787,
+  "poids": [
+   [
+    "mixamorig:LeftUpLeg",
+    0.513913094997406
+   ],
+   [
+    "mixamorig:Hips",
+    0.26143622398376465
+   ],
+   [
+    "mixamorig:RightUpLeg",
+    0.2151915729045868
+   ],
+   [
+    "mixamorig:Spine",
+    0.00945907924324274
+   ]
+  ],
+  "distance_centre_hanche_G_m": 0.1415,
+  "distance_segment_plus_proche": {
+   "os": "mixamorig:Hips",
+   "m": 0.1415
+  },
+  "aretes_incidentes": 4,
+  "polygones_incidents": 4
+ },
+ {
+  "sommet": 8654,
+  "repos_m": [
+   -2.21825,
+   0.10348,
+   0.81431
+  ],
+  "stretch_LBS_120G": 1.4259,
+  "stretch_SQ_120G": 1.2847,
+  "stretch_SQV1_120G": 1.4043,
+  "deplacement_LBS_m": 0.16959,
+  "deplacement_SQ_m": 0.16181,
+  "correction_volume_m": 0.007209,
+  "poids": [
+   [
+    "mixamorig:LeftUpLeg",
+    0.6537121534347534
+   ],
+   [
+    "mixamorig:Hips",
+    0.20184312760829926
+   ],
+   [
+    "mixamorig:RightUpLeg",
+    0.1332370638847351
+   ],
+   [
+    "mixamorig:Spine",
+    0.011207652278244495
+   ]
+  ],
+  "distance_centre_hanche_G_m": 0.1567,
+  "distance_segment_plus_proche": {
+   "os": "mixamorig:LeftUpLeg",
+   "m": 0.1518
+  },
+  "aretes_incidentes": 4,
+  "polygones_incidents": 4
+ },
+ {
+  "sommet": 8733,
+  "repos_m": [
+   -2.25183,
+   -0.06738,
+   0.75647
+  ],
+  "stretch_LBS_120G": 2.4215,
+  "stretch_SQ_120G": 2.436,
+  "stretch_SQV1_120G": 2.4926,
+  "deplacement_LBS_m": 0.11332,
+  "deplacement_SQ_m": 0.12077,
+  "correction_volume_m": 0.001335,
+  "poids": [
+   [
+    "mixamorig:LeftUpLeg",
+    0.5390413999557495
+   ],
+   [
+    "mixamorig:RightUpLeg",
+    0.28131526708602905
+   ],
+   [
+    "mixamorig:Hips",
+    0.17937976121902466
+   ],
+   [
+    "mixamorig:Spine",
+    0.0002635660348460078
+   ]
+  ],
+  "distance_centre_hanche_G_m": 0.122,
+  "distance_segment_plus_proche": {
+   "os": "mixamorig:LeftUpLeg",
+   "m": 0.1029
+  },
+  "aretes_incidentes": 4,
+  "polygones_incidents": 4
+ },
+ {
+  "sommet": 8734,
+  "repos_m": [
+   -2.25689,
+   -0.0285,
+   0.75245
+  ],
+  "stretch_LBS_120G": 2.4714,
+  "stretch_SQ_120G": 2.5896,
+  "stretch_SQV1_120G": 2.5862,
+  "deplacement_LBS_m": 0.1188,
+  "deplacement_SQ_m": 0.12143,
+  "correction_volume_m": 0.003659,
+  "poids": [
+   [
+    "mixamorig:LeftUpLeg",
+    0.567226767539978
+   ],
+   [
+    "mixamorig:RightUpLeg",
+    0.3111136555671692
+   ],
+   [
+    "mixamorig:Hips",
+    0.12165956944227219
+   ]
+  ],
+  "distance_centre_hanche_G_m": 0.1211,
+  "distance_segment_plus_proche": {
+   "os": "mixamorig:LeftUpLeg",
+   "m": 0.1027
+  },
+  "aretes_incidentes": 4,
+  "polygones_incidents": 4
+ },
+ {
+  "sommet": 8735,
+  "repos_m": [
+   -2.25262,
+   0.01046,
+   0.75988
+  ],
+  "stretch_LBS_120G": 2.1703,
+  "stretch_SQ_120G": 2.1615,
+  "stretch_SQV1_120G": 2.1425,
+  "deplacement_LBS_m": 0.12252,
+  "deplacement_SQ_m": 0.1229,
+  "correction_volume_m": 0.008156,
+  "poids": [
+   [
+    "mixamorig:LeftUpLeg",
+    0.5805427432060242
+   ],
+   [
+    "mixamorig:RightUpLeg",
+    0.290597528219223
+   ],
+   [
+    "mixamorig:Hips",
+    0.1288597285747528
+   ]
+  ],
+  "distance_centre_hanche_G_m": 0.1224,
+  "distance_segment_plus_proche": {
+   "os": "mixamorig:LeftUpLeg",
+   "m": 0.1079
+  },
+  "aretes_incidentes": 4,
+  "polygones_incidents": 4
+ },
+ {
+  "sommet": 8820,
+  "repos_m": [
+   -2.24707,
+   -0.06352,
+   0.74099
+  ],
+  "stretch_LBS_120G": 2.1113,
+  "stretch_SQ_120G": 1.8833,
+  "stretch_SQV1_120G": 1.905,
+  "deplacement_LBS_m": 0.16305,
+  "deplacement_SQ_m": 0.16694,
+  "correction_volume_m": 0.006128,
+  "poids": [
+   [
+    "mixamorig:LeftUpLeg",
+    0.6950000524520874
+   ],
+   [
+    "mixamorig:RightUpLeg",
+    0.19369356334209442
+   ],
+   [
+    "mixamorig:Hips",
+    0.11130638420581818
+   ]
+  ],
+  "distance_centre_hanche_G_m": 0.1366,
+  "distance_segment_plus_proche": {
+   "os": "mixamorig:LeftUpLeg",
+   "m": 0.0972
+  },
+  "aretes_incidentes": 4,
+  "polygones_incidents": 4
+ },
+ {
+  "sommet": 8969,
+  "repos_m": [
+   -2.25681,
+   -0.02753,
+   0.73488
+  ],
+  "stretch_LBS_120G": 2.0565,
+  "stretch_SQ_120G": 2.0159,
+  "stretch_SQV1_120G": 2.0212,
+  "deplacement_LBS_m": 0.16921,
+  "deplacement_SQ_m": 0.17051,
+  "correction_volume_m": 0.003382,
+  "poids": [
+   [
+    "mixamorig:LeftUpLeg",
+    0.7052731513977051
+   ],
+   [
+    "mixamorig:RightUpLeg",
+    0.20934787392616272
+   ],
+   [
+    "mixamorig:Hips",
+    0.08537895977497101
+   ]
+  ],
+  "distance_centre_hanche_G_m": 0.1387,
+  "distance_segment_plus_proche": {
+   "os": "mixamorig:LeftUpLeg",
+   "m": 0.1026
+  },
+  "aretes_incidentes": 4,
+  "polygones_incidents": 4
+ },
+ {
+  "sommet": 9115,
+  "repos_m": [
+   -2.24466,
+   0.05937,
+   0.77122
+  ],
+  "stretch_LBS_120G": 1.895,
+  "stretch_SQ_120G": 1.8111,
+  "stretch_SQV1_120G": 1.8272,
+  "deplacement_LBS_m": 0.14423,
+  "deplacement_SQ_m": 0.14251,
+  "correction_volume_m": 0.011818,
+  "poids": [
+   [
+    "mixamorig:LeftUpLeg",
+    0.6014434695243835
+   ],
+   [
+    "mixamorig:RightUpLeg",
+    0.2316504716873169
+   ],
+   [
+    "mixamorig:Hips",
+    0.16632457077503204
+   ],
+   [
+    "mixamorig:Spine",
+    0.0005814688047394156
+   ]
+  ],
+  "distance_centre_hanche_G_m": 0.1398,
+  "distance_segment_plus_proche": {
+   "os": "mixamorig:LeftUpLeg",
+   "m": 0.13
+  },
+  "aretes_incidentes": 5,
+  "polygones_incidents": 5
+ },
+ {
+  "sommet": 9130,
+  "repos_m": [
+   -2.26429,
+   -0.02866,
+   0.7616
+  ],
+  "stretch_LBS_120G": 2.4714,
+  "stretch_SQ_120G": 2.5896,
+  "stretch_SQV1_120G": 2.5862,
+  "deplacement_LBS_m": 0.08325,
+  "deplacement_SQ_m": 0.08491,
+  "correction_volume_m": 0.006797,
+  "poids": [
+   [
+    "mixamorig:LeftUpLeg",
+    0.4300406575202942
+   ],
+   [
+    "mixamorig:RightUpLeg",
+    0.4280985891819
+   ],
+   [
+    "mixamorig:Hips",
+    0.14186076819896698
+   ]
+  ],
+  "distance_centre_hanche_G_m": 0.1118,
+  "distance_segment_plus_proche": {
+   "os": "mixamorig:LeftUpLeg",
+   "m": 0.11
+  },
+  "aretes_incidentes": 4,
+  "polygones_incidents": 4
+ },
+ {
+  "sommet": 9131,
+  "repos_m": [
+   -2.26437,
+   -0.07071,
+   0.75671
+  ],
+  "stretch_LBS_120G": 2.4215,
+  "stretch_SQ_120G": 2.5184,
+  "stretch_SQV1_120G": 2.4926,
+  "deplacement_LBS_m": 0.08349,
+  "deplacement_SQ_m": 0.09073,
+  "correction_volume_m": 0.005514,
+  "poids": [
+   [
+    "mixamorig:LeftUpLeg",
+    0.39480656385421753
+   ],
+   [
+    "mixamorig:RightUpLeg",
+    0.39448022842407227
+   ],
+   [
+    "mixamorig:Hips",
+    0.21039728820323944
+   ],
+   [
+    "mixamorig:Spine",
+    0.00031590746948495507
+   ]
+  ],
+  "distance_centre_hanche_G_m": 0.1221,
+  "distance_segment_plus_proche": {
+   "os": "mixamorig:LeftUpLeg",
+   "m": 0.1159
+  },
+  "aretes_incidentes": 4,
+  "polygones_incidents": 4
+ },
+ {
+  "sommet": 9133,
+  "repos_m": [
+   -2.23672,
+   -0.112,
+   0.78352
+  ],
+  "stretch_LBS_120G": 1.5862,
+  "stretch_SQ_120G": 1.4971,
+  "stretch_SQV1_120G": 1.6276,
+  "deplacement_LBS_m": 0.10107,
+  "deplacement_SQ_m": 0.12014,
+  "correction_volume_m": 0.003964,
+  "poids": [
+   [
+    "mixamorig:LeftUpLeg",
+    0.49149468541145325
+   ],
+   [
+    "mixamorig:Hips",
+    0.32668688893318176
+   ],
+   [
+    "mixamorig:RightUpLeg",
+    0.17767219245433807
+   ],
+   [
+    "mixamorig:Spine",
+    0.00414622575044632
+   ]
+  ],
+  "distance_centre_hanche_G_m": 0.1219,
+  "distance_segment_plus_proche": {
+   "os": "mixamorig:LeftUpLeg",
+   "m": 0.1133
+  },
+  "aretes_incidentes": 5,
+  "polygones_incidents": 5
+ },
+ {
+  "sommet": 9134,
+  "repos_m": [
+   -2.26447,
+   -0.12108,
+   0.7841
+  ],
+  "stretch_LBS_120G": 1.5862,
+  "stretch_SQ_120G": 1.5416,
+  "stretch_SQV1_120G": 1.6276,
+  "deplacement_LBS_m": 0.06562,
+  "deplacement_SQ_m": 0.08831,
+  "correction_volume_m": 0.009544,
+  "poids": [
+   [
+    "mixamorig:Hips",
+    0.38954925537109375
+   ],
+   [
+    "mixamorig:LeftUpLeg",
+    0.3044111430644989
+   ],
+   [
+    "mixamorig:RightUpLeg",
+    0.3010723292827606
+   ],
+   [
+    "mixamorig:Spine",
+    0.004967257846146822
+   ]
+  ],
+  "distance_centre_hanche_G_m": 0.1245,
+  "distance_segment_plus_proche": {
+   "os": "mixamorig:Hips",
+   "m": 0.1245
+  },
+  "aretes_incidentes": 4,
+  "polygones_incidents": 4
+ }
+]

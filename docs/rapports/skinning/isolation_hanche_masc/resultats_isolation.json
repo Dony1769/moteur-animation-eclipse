@@ -1,0 +1,2248 @@
+{
+ "calibration": {
+  "hanche_G_60": {
+   "LBS": {
+    "etirement_max": 1.6554403485365352,
+    "etirement_p99": 1.1027264942182582,
+    "retournements": 0,
+    "volume_variation": -0.01098478024383347
+   },
+   "F0": {
+    "etirement_max": 1.763128449452118,
+    "etirement_p99": 1.0723776590195495,
+    "retournements": 0,
+    "volume_variation": -0.018862211477656158
+   },
+   "F1": {
+    "etirement_max": 1.723055465338699,
+    "etirement_p99": 1.0760419908422068,
+    "retournements": 0,
+    "volume_variation": 0.00013749822462993995
+   },
+   "F2": {
+    "etirement_max": 1.7233153573960394,
+    "etirement_p99": 1.0760112601018066,
+    "retournements": 0,
+    "volume_variation": -2.889562191578029e-15
+   },
+   "F3": {
+    "etirement_max": 1.7650122808152353,
+    "etirement_p99": 1.072874946149651,
+    "retournements": 0,
+    "volume_variation": -0.01891553655169208
+   },
+   "F4_0.5": {
+    "etirement_max": 1.763128449452118,
+    "etirement_p99": 1.0830916072505077,
+    "retournements": 0,
+    "volume_variation": -0.014243440271652124
+   },
+   "F4_1.0": {
+    "etirement_max": 1.763128449452118,
+    "etirement_p99": 1.0723776590195495,
+    "retournements": 0,
+    "volume_variation": -0.01881403621642662
+   },
+   "F4_1.5": {
+    "etirement_max": 1.763128449452118,
+    "etirement_p99": 1.0723776590195495,
+    "retournements": 0,
+    "volume_variation": -0.01885744149232579
+   },
+   "F5_0.01": {
+    "etirement_max": 1.665660416675516,
+    "etirement_p99": 1.0630127559931999,
+    "retournements": 0,
+    "volume_variation": -0.025472724391191404
+   },
+   "F5_0.1": {
+    "etirement_max": 1.763128449452118,
+    "etirement_p99": 1.0723776590195495,
+    "retournements": 0,
+    "volume_variation": -0.018862211477656158
+   },
+   "F5_1.0": {
+    "etirement_max": 1.7462780058059508,
+    "etirement_p99": 1.0927786331676053,
+    "retournements": 0,
+    "volume_variation": -0.012887778848538822
+   },
+   "F6_LBS_poids_modifies": {
+    "etirement_max": 5.503956487815388,
+    "etirement_p99": 1.0974403570994393,
+    "retournements": 2,
+    "volume_variation": -0.009118105751995956
+   },
+   "F6": {
+    "etirement_max": 1.6225924366143563,
+    "etirement_p99": 1.0710407155290054,
+    "retournements": 0,
+    "volume_variation": -0.019816458506950668
+   }
+  },
+  "hanche_G_90": {
+   "LBS": {
+    "etirement_max": 2.105446350155652,
+    "etirement_p99": 1.1536623541836009,
+    "retournements": 0,
+    "volume_variation": -0.027012478474478168
+   },
+   "F0": {
+    "etirement_max": 2.1987989211059262,
+    "etirement_p99": 1.1070418327600373,
+    "retournements": 0,
+    "volume_variation": -0.04246761756025749
+   },
+   "F1": {
+    "etirement_max": 2.132546456084147,
+    "etirement_p99": 1.1205874509170641,
+    "retournements": 0,
+    "volume_variation": 0.000736398110751081
+   },
+   "F2": {
+    "etirement_max": 2.1330574301513034,
+    "etirement_p99": 1.120284283086057,
+    "retournements": 0,
+    "volume_variation": 3.0546800310967734e-14
+   },
+   "F3": {
+    "etirement_max": 2.198436684836552,
+    "etirement_p99": 1.1066490564052125,
+    "retournements": 0,
+    "volume_variation": -0.042648792365499844
+   },
+   "F4_0.5": {
+    "etirement_max": 2.1987989211059262,
+    "etirement_p99": 1.1202429395699003,
+    "retournements": 0,
+    "volume_variation": -0.03343170573882714
+   },
+   "F4_1.0": {
+    "etirement_max": 2.1987989211059262,
+    "etirement_p99": 1.1070418327600373,
+    "retournements": 0,
+    "volume_variation": -0.04218410048310083
+   },
+   "F4_1.5": {
+    "etirement_max": 2.1987989211059262,
+    "etirement_p99": 1.1070418327600373,
+    "retournements": 0,
+    "volume_variation": -0.042458113594805634
+   },
+   "F5_0.01": {
+    "etirement_max": 2.052917945351673,
+    "etirement_p99": 1.0892031884544289,
+    "retournements": 0,
+    "volume_variation": -0.05616962358539836
+   },
+   "F5_0.1": {
+    "etirement_max": 2.1987989211059262,
+    "etirement_p99": 1.1070418327600373,
+    "retournements": 0,
+    "volume_variation": -0.04246761756025749
+   },
+   "F5_1.0": {
+    "etirement_max": 2.237094569656351,
+    "etirement_p99": 1.1357638738085705,
+    "retournements": 0,
+    "volume_variation": -0.030566370001516758
+   },
+   "F6_LBS_poids_modifies": {
+    "etirement_max": 7.7630009959127495,
+    "etirement_p99": 1.1486788563451678,
+    "retournements": 6,
+    "volume_variation": -0.022906738901637656
+   },
+   "F6": {
+    "etirement_max": 2.062317264740747,
+    "etirement_p99": 1.1048581716061816,
+    "retournements": 0,
+    "volume_variation": -0.04398759894138574
+   }
+  }
+ },
+ "investigation": {
+  "hanche_G_75": {
+   "LBS": {
+    "etirement_max": 1.8865731988877374,
+    "etirement_p99": 1.1314808443836226,
+    "retournements": 0,
+    "volume_variation": -0.018472922440304358
+   },
+   "F0": {
+    "etirement_max": 1.9863001929697977,
+    "etirement_p99": 1.089609597634353,
+    "retournements": 0,
+    "volume_variation": -0.029957431138829732
+   },
+   "F1": {
+    "etirement_max": 1.9341211868610515,
+    "etirement_p99": 1.0976891913018578,
+    "retournements": 0,
+    "volume_variation": 0.0003558081093972073
+   },
+   "F2": {
+    "etirement_max": 1.9346020237210433,
+    "etirement_p99": 1.0977955480866144,
+    "retournements": 0,
+    "volume_variation": -2.518047052660854e-14
+   },
+   "F3": {
+    "etirement_max": 1.9902735501589508,
+    "etirement_p99": 1.0874330054754746,
+    "retournements": 0,
+    "volume_variation": -0.0300613851097833
+   },
+   "F4_0.5": {
+    "etirement_max": 1.9863001929697977,
+    "etirement_p99": 1.1008555299076956,
+    "retournements": 0,
+    "volume_variation": -0.02321520890952902
+   },
+   "F4_1.0": {
+    "etirement_max": 1.9863001929697977,
+    "etirement_p99": 1.089609597634353,
+    "retournements": 0,
+    "volume_variation": -0.02980476169117
+   },
+   "F4_1.5": {
+    "etirement_max": 1.9863001929697977,
+    "etirement_p99": 1.089609597634353,
+    "retournements": 0,
+    "volume_variation": -0.029950379913896128
+   },
+   "F5_0.01": {
+    "etirement_max": 1.865714968598617,
+    "etirement_p99": 1.0770433162782311,
+    "retournements": 0,
+    "volume_variation": -0.03982180566623104
+   },
+   "F5_0.1": {
+    "etirement_max": 1.9863001929697977,
+    "etirement_p99": 1.089609597634353,
+    "retournements": 0,
+    "volume_variation": -0.029957431138829732
+   },
+   "F5_1.0": {
+    "etirement_max": 2.0005986077875733,
+    "etirement_p99": 1.117480399711024,
+    "retournements": 0,
+    "volume_variation": -0.021182168646515318
+   },
+   "F6_LBS_poids_modifies": {
+    "etirement_max": 6.68712247933357,
+    "etirement_p99": 1.1248706805626132,
+    "retournements": 4,
+    "volume_variation": -0.015544153056606298
+   },
+   "F6": {
+    "etirement_max": 1.8483244960007288,
+    "etirement_p99": 1.0892933120921169,
+    "retournements": 0,
+    "volume_variation": -0.03121923678623135
+   }
+  },
+  "hanche_G_105": {
+   "LBS": {
+    "etirement_max": 2.3026454578097084,
+    "etirement_p99": 1.1678736474315095,
+    "retournements": 1,
+    "volume_variation": -0.03602149171502239
+   },
+   "F0": {
+    "etirement_max": 2.4099103329290217,
+    "etirement_p99": 1.120822615764437,
+    "retournements": 0,
+    "volume_variation": -0.055635234259564216
+   },
+   "F1": {
+    "etirement_max": 2.36688528560035,
+    "etirement_p99": 1.1381625077126667,
+    "retournements": 1,
+    "volume_variation": 0.0013047805011142178
+   },
+   "F2": {
+    "etirement_max": 2.36649004348223,
+    "etirement_p99": 1.1364594136380335,
+    "retournements": 1,
+    "volume_variation": 3.9421884185100253e-13
+   },
+   "F3": {
+    "etirement_max": 2.4076104600069805,
+    "etirement_p99": 1.120166522115918,
+    "retournements": 0,
+    "volume_variation": -0.05592831742440774
+   },
+   "F4_0.5": {
+    "etirement_max": 2.4099103329290217,
+    "etirement_p99": 1.1312980814709246,
+    "retournements": 0,
+    "volume_variation": -0.04427382167400051
+   },
+   "F4_1.0": {
+    "etirement_max": 2.4099103329290217,
+    "etirement_p99": 1.120822615764437,
+    "retournements": 0,
+    "volume_variation": -0.055202760477139956
+   },
+   "F4_1.5": {
+    "etirement_max": 2.4099103329290217,
+    "etirement_p99": 1.120822615764437,
+    "retournements": 0,
+    "volume_variation": -0.05562326577982838
+   },
+   "F5_0.01": {
+    "etirement_max": 2.2203511917428935,
+    "etirement_p99": 1.1006787295799936,
+    "retournements": 0,
+    "volume_variation": -0.07371211409826704
+   },
+   "F5_0.1": {
+    "etirement_max": 2.4099103329290217,
+    "etirement_p99": 1.120822615764437,
+    "retournements": 0,
+    "volume_variation": -0.055635234259564216
+   },
+   "F5_1.0": {
+    "etirement_max": 2.444850997638782,
+    "etirement_p99": 1.151229764287572,
+    "retournements": 0,
+    "volume_variation": -0.040405490564641496
+   },
+   "F6_LBS_poids_modifies": {
+    "etirement_max": 8.710556565919429,
+    "etirement_p99": 1.160850188116205,
+    "retournements": 8,
+    "volume_variation": -0.030704115229109815
+   },
+   "F6": {
+    "etirement_max": 2.2546959526163186,
+    "etirement_p99": 1.1161550989283957,
+    "retournements": 1,
+    "volume_variation": -0.057314354950514776
+   }
+  },
+  "hanche_G_120": {
+   "LBS": {
+    "etirement_max": 2.4713830769575034,
+    "etirement_p99": 1.185001269785174,
+    "retournements": 4,
+    "volume_variation": -0.04488601279755409
+   },
+   "F0": {
+    "etirement_max": 2.5895921229991896,
+    "etirement_p99": 1.1316694542326213,
+    "retournements": 1,
+    "volume_variation": -0.06866487045174535
+   },
+   "F1": {
+    "etirement_max": 2.586226810865776,
+    "etirement_p99": 1.1544007894211803,
+    "retournements": 1,
+    "volume_variation": 0.002052663787538131
+   },
+   "F2": {
+    "etirement_max": 2.583682698499621,
+    "etirement_p99": 1.1522606132910296,
+    "retournements": 1,
+    "volume_variation": 2.703598224820043e-12
+   },
+   "F3": {
+    "etirement_max": 2.586278009567218,
+    "etirement_p99": 1.127406593810118,
+    "retournements": 0,
+    "volume_variation": -0.06911377770686579
+   },
+   "F4_0.5": {
+    "etirement_max": 2.5895921229991896,
+    "etirement_p99": 1.1488717663948824,
+    "retournements": 1,
+    "volume_variation": -0.055092832884454886
+   },
+   "F4_1.0": {
+    "etirement_max": 2.5895921229991896,
+    "etirement_p99": 1.1316694542326213,
+    "retournements": 1,
+    "volume_variation": -0.06807433560348462
+   },
+   "F4_1.5": {
+    "etirement_max": 2.5895921229991896,
+    "etirement_p99": 1.1316694542326213,
+    "retournements": 1,
+    "volume_variation": -0.06865058554863078
+   },
+   "F5_0.01": {
+    "etirement_max": 2.4022977100308913,
+    "etirement_p99": 1.1117094857766676,
+    "retournements": 0,
+    "volume_variation": -0.09158365103092428
+   },
+   "F5_0.1": {
+    "etirement_max": 2.5895921229991896,
+    "etirement_p99": 1.1316694542326213,
+    "retournements": 1,
+    "volume_variation": -0.06866487045174535
+   },
+   "F5_1.0": {
+    "etirement_max": 2.6152071532617915,
+    "etirement_p99": 1.1639478801073397,
+    "retournements": 2,
+    "volume_variation": -0.05003485907272847
+   },
+   "F6_LBS_poids_modifies": {
+    "etirement_max": 9.512237986999134,
+    "etirement_p99": 1.1836874389806966,
+    "retournements": 13,
+    "volume_variation": -0.03840490372794391
+   },
+   "F6": {
+    "etirement_max": 2.418122393878515,
+    "etirement_p99": 1.1275350226349101,
+    "retournements": 4,
+    "volume_variation": -0.07035287078479557
+   }
+  },
+  "hanche_D_75": {
+   "LBS": {
+    "etirement_max": 1.8303543379202534,
+    "etirement_p99": 1.1282906975867488,
+    "retournements": 0,
+    "volume_variation": -0.017767165020363955
+   },
+   "F0": {
+    "etirement_max": 1.941205339672203,
+    "etirement_p99": 1.0881599257473284,
+    "retournements": 0,
+    "volume_variation": -0.029368267321622024
+   },
+   "F1": {
+    "etirement_max": 1.8734370969805594,
+    "etirement_p99": 1.0943818820861004,
+    "retournements": 0,
+    "volume_variation": 0.0003400417392452073
+   },
+   "F2": {
+    "etirement_max": 1.873993802080571,
+    "etirement_p99": 1.0943341422665014,
+    "retournements": 0,
+    "volume_variation": -4.127945987968613e-16
+   },
+   "F3": {
+    "etirement_max": 1.947043279752846,
+    "etirement_p99": 1.087078313812439,
+    "retournements": 0,
+    "volume_variation": -0.029466462958368047
+   },
+   "F4_0.5": {
+    "etirement_max": 1.941205339672203,
+    "etirement_p99": 1.0989343435909997,
+    "retournements": 0,
+    "volume_variation": -0.02278997152293506
+   },
+   "F4_1.0": {
+    "etirement_max": 1.941205339672203,
+    "etirement_p99": 1.0881599257473284,
+    "retournements": 0,
+    "volume_variation": -0.02921984464373083
+   },
+   "F4_1.5": {
+    "etirement_max": 1.941205339672203,
+    "etirement_p99": 1.0881599257473284,
+    "retournements": 0,
+    "volume_variation": -0.029361529621786165
+   },
+   "F5_0.01": {
+    "etirement_max": 1.8220747190479523,
+    "etirement_p99": 1.0747542989079133,
+    "retournements": 0,
+    "volume_variation": -0.039594965229399086
+   },
+   "F5_0.1": {
+    "etirement_max": 1.941205339672203,
+    "etirement_p99": 1.0881599257473284,
+    "retournements": 0,
+    "volume_variation": -0.029368267321622024
+   },
+   "F5_1.0": {
+    "etirement_max": 1.9346607620625342,
+    "etirement_p99": 1.1174029935308953,
+    "retournements": 0,
+    "volume_variation": -0.020448657615776897
+   },
+   "F6_LBS_poids_modifies": {
+    "etirement_max": 6.637197271385612,
+    "etirement_p99": 1.123234615060885,
+    "retournements": 4,
+    "volume_variation": -0.01500365362242109
+   },
+   "F6": {
+    "etirement_max": 1.8379308028713413,
+    "etirement_p99": 1.088152674231279,
+    "retournements": 0,
+    "volume_variation": -0.030594466818939008
+   }
+  },
+  "hanche_D_120": {
+   "LBS": {
+    "etirement_max": 2.485441346796892,
+    "etirement_p99": 1.1822549126970165,
+    "retournements": 5,
+    "volume_variation": -0.04405741742799264
+   },
+   "F0": {
+    "etirement_max": 2.5758278305852427,
+    "etirement_p99": 1.1274941684649928,
+    "retournements": 1,
+    "volume_variation": -0.06781847887831656
+   },
+   "F1": {
+    "etirement_max": 2.6044741355115946,
+    "etirement_p99": 1.1535515729937036,
+    "retournements": 1,
+    "volume_variation": 0.001986543794315727
+   },
+   "F2": {
+    "etirement_max": 2.602170992425837,
+    "etirement_p99": 1.151452985549283,
+    "retournements": 1,
+    "volume_variation": 2.2662423473947684e-12
+   },
+   "F3": {
+    "etirement_max": 2.540617792182453,
+    "etirement_p99": 1.1237013220500287,
+    "retournements": 0,
+    "volume_variation": -0.06823009962410018
+   },
+   "F4_0.5": {
+    "etirement_max": 2.5758278305852427,
+    "etirement_p99": 1.1440320578267458,
+    "retournements": 1,
+    "volume_variation": -0.05445915637574123
+   },
+   "F4_1.0": {
+    "etirement_max": 2.5758278305852427,
+    "etirement_p99": 1.1274941684649928,
+    "retournements": 1,
+    "volume_variation": -0.06724783980711119
+   },
+   "F4_1.5": {
+    "etirement_max": 2.5758278305852427,
+    "etirement_p99": 1.1274941684649928,
+    "retournements": 1,
+    "volume_variation": -0.06780454253757175
+   },
+   "F5_0.01": {
+    "etirement_max": 2.380046946331654,
+    "etirement_p99": 1.1104116156920598,
+    "retournements": 0,
+    "volume_variation": -0.09113019356844694
+   },
+   "F5_0.1": {
+    "etirement_max": 2.5758278305852427,
+    "etirement_p99": 1.1274941684649928,
+    "retournements": 1,
+    "volume_variation": -0.06781847887831656
+   },
+   "F5_1.0": {
+    "etirement_max": 2.645398977987777,
+    "etirement_p99": 1.1594907444461307,
+    "retournements": 2,
+    "volume_variation": -0.049116793870335046
+   },
+   "F6_LBS_poids_modifies": {
+    "etirement_max": 9.43568465427731,
+    "etirement_p99": 1.1785934039343249,
+    "retournements": 14,
+    "volume_variation": -0.037811546321057224
+   },
+   "F6": {
+    "etirement_max": 2.4581738368282346,
+    "etirement_p99": 1.1258229444341512,
+    "retournements": 4,
+    "volume_variation": -0.06944290660838613
+   }
+  }
+ },
+ "independantes": {
+  "L_abd30": {
+   "LBS": {
+    "etirement_max": 1.909938716727686,
+    "etirement_p99": 1.04277192566376,
+    "retournements": 0,
+    "volume_variation": 0.009902448303663894
+   },
+   "F0": {
+    "etirement_max": 1.8985193843706356,
+    "etirement_p99": 1.0367345779711563,
+    "retournements": 0,
+    "volume_variation": 0.011158767200701886
+   },
+   "F1": {
+    "etirement_max": 1.9770217894001996,
+    "etirement_p99": 1.0374096442192016,
+    "retournements": 0,
+    "volume_variation": 4.668790132320252e-05
+   },
+   "F2": {
+    "etirement_max": 1.9773772475520797,
+    "etirement_p99": 1.0374166284410546,
+    "retournements": 0,
+    "volume_variation": -8.668686574734087e-15
+   },
+   "F3": {
+    "etirement_max": 1.897866031806879,
+    "etirement_p99": 1.0367105443996558,
+    "retournements": 0,
+    "volume_variation": 0.011168258523427309
+   },
+   "F4_0.5": {
+    "etirement_max": 1.8985193843706356,
+    "etirement_p99": 1.0400448878168296,
+    "retournements": 0,
+    "volume_variation": 0.012072229167490692
+   },
+   "F4_1.0": {
+    "etirement_max": 1.8985193843706356,
+    "etirement_p99": 1.038257256425374,
+    "retournements": 0,
+    "volume_variation": 0.011201533613324242
+   },
+   "F4_1.5": {
+    "etirement_max": 1.8985193843706356,
+    "etirement_p99": 1.0367345779711563,
+    "retournements": 0,
+    "volume_variation": 0.011162440525102485
+   },
+   "F5_0.01": {
+    "etirement_max": 1.7303265616972798,
+    "etirement_p99": 1.0320750802915293,
+    "retournements": 0,
+    "volume_variation": 0.008890546264141954
+   },
+   "F5_0.1": {
+    "etirement_max": 1.8985193843706356,
+    "etirement_p99": 1.0367345779711563,
+    "retournements": 0,
+    "volume_variation": 0.011158767200701886
+   },
+   "F5_1.0": {
+    "etirement_max": 1.9586840802010381,
+    "etirement_p99": 1.0427197828229458,
+    "retournements": 0,
+    "volume_variation": 0.010130689618177298
+   },
+   "F6_LBS_poids_modifies": {
+    "etirement_max": 4.154764773774094,
+    "etirement_p99": 1.0387274279277015,
+    "retournements": 0,
+    "volume_variation": 0.008270608480202233
+   },
+   "F6": {
+    "etirement_max": 1.8324289523572947,
+    "etirement_p99": 1.034335307937343,
+    "retournements": 0,
+    "volume_variation": 0.010417161706414227
+   }
+  },
+  "L_add20": {
+   "LBS": {
+    "etirement_max": 1.2655458760892047,
+    "etirement_p99": 1.019230947238154,
+    "retournements": 0,
+    "volume_variation": -0.008112036816641126
+   },
+   "F0": {
+    "etirement_max": 1.2097592974475146,
+    "etirement_p99": 1.0200453244134569,
+    "retournements": 0,
+    "volume_variation": -0.010409676298849806
+   },
+   "F1": {
+    "etirement_max": 1.2010876388875569,
+    "etirement_p99": 1.0244413525340053,
+    "retournements": 0,
+    "volume_variation": 4.16100931686731e-05
+   },
+   "F2": {
+    "etirement_max": 1.2011157971516069,
+    "etirement_p99": 1.0244417255301863,
+    "retournements": 0,
+    "volume_variation": -5.779124383156058e-15
+   },
+   "F3": {
+    "etirement_max": 1.209775290762951,
+    "etirement_p99": 1.0200680007777616,
+    "retournements": 0,
+    "volume_variation": -0.010417211435614013
+   },
+   "F4_0.5": {
+    "etirement_max": 1.2097592974475146,
+    "etirement_p99": 1.0175333591280136,
+    "retournements": 0,
+    "volume_variation": -0.010196043358785658
+   },
+   "F4_1.0": {
+    "etirement_max": 1.2097592974475146,
+    "etirement_p99": 1.021465176856156,
+    "retournements": 0,
+    "volume_variation": -0.010372427108331087
+   },
+   "F4_1.5": {
+    "etirement_max": 1.2097592974475146,
+    "etirement_p99": 1.0200453244134569,
+    "retournements": 0,
+    "volume_variation": -0.010410486297466194
+   },
+   "F5_0.01": {
+    "etirement_max": 1.139093407889289,
+    "etirement_p99": 1.0206621554348307,
+    "retournements": 0,
+    "volume_variation": -0.01043651051533894
+   },
+   "F5_0.1": {
+    "etirement_max": 1.2097592974475146,
+    "etirement_p99": 1.0200453244134569,
+    "retournements": 0,
+    "volume_variation": -0.010409676298849806
+   },
+   "F5_1.0": {
+    "etirement_max": 1.2510468787466293,
+    "etirement_p99": 1.0205855154761134,
+    "retournements": 0,
+    "volume_variation": -0.008591995571791034
+   },
+   "F6_LBS_poids_modifies": {
+    "etirement_max": 1.8644343681304247,
+    "etirement_p99": 1.0209428927874538,
+    "retournements": 3,
+    "volume_variation": -0.006874237062195154
+   },
+   "F6": {
+    "etirement_max": 1.1308248365266427,
+    "etirement_p99": 1.018649722804808,
+    "retournements": 0,
+    "volume_variation": -0.009990911382415275
+   }
+  },
+  "L_ext30": {
+   "LBS": {
+    "etirement_max": 1.446978414530722,
+    "etirement_p99": 1.0186534853161842,
+    "retournements": 0,
+    "volume_variation": 0.004711322171075651
+   },
+   "F0": {
+    "etirement_max": 1.336355684188588,
+    "etirement_p99": 1.0179159012996544,
+    "retournements": 0,
+    "volume_variation": -0.0007681124411786493
+   },
+   "F1": {
+    "etirement_max": 1.3338068247221122,
+    "etirement_p99": 1.0181959972396943,
+    "retournements": 0,
+    "volume_variation": 2.191203220154813e-07
+   },
+   "F2": {
+    "etirement_max": 1.3338075465864785,
+    "etirement_p99": 1.0181957510252115,
+    "retournements": 0,
+    "volume_variation": -9.081481173530949e-15
+   },
+   "F3": {
+    "etirement_max": 1.3358379751336058,
+    "etirement_p99": 1.0179162463995746,
+    "retournements": 0,
+    "volume_variation": -0.0007655709347505295
+   },
+   "F4_0.5": {
+    "etirement_max": 1.4441075903912015,
+    "etirement_p99": 1.0164082522518798,
+    "retournements": 0,
+    "volume_variation": 0.0013652874501267917
+   },
+   "F4_1.0": {
+    "etirement_max": 1.336355684188588,
+    "etirement_p99": 1.0181115868625612,
+    "retournements": 0,
+    "volume_variation": -0.000696955411579966
+   },
+   "F4_1.5": {
+    "etirement_max": 1.336355684188588,
+    "etirement_p99": 1.0179159012996544,
+    "retournements": 0,
+    "volume_variation": -0.0007671691005017374
+   },
+   "F5_0.01": {
+    "etirement_max": 1.2584966221885252,
+    "etirement_p99": 1.0152113006043055,
+    "retournements": 0,
+    "volume_variation": -0.005824174555955007
+   },
+   "F5_0.1": {
+    "etirement_max": 1.336355684188588,
+    "etirement_p99": 1.0179159012996544,
+    "retournements": 0,
+    "volume_variation": -0.0007681124411786493
+   },
+   "F5_1.0": {
+    "etirement_max": 1.4055436894168534,
+    "etirement_p99": 1.0189713288508666,
+    "retournements": 0,
+    "volume_variation": 0.0034674257609464405
+   },
+   "F6_LBS_poids_modifies": {
+    "etirement_max": 2.6936795524583816,
+    "etirement_p99": 1.017768145753735,
+    "retournements": 0,
+    "volume_variation": 0.004120442246532704
+   },
+   "F6": {
+    "etirement_max": 1.3807671399857646,
+    "etirement_p99": 1.0165681159357347,
+    "retournements": 0,
+    "volume_variation": -0.001450170611054663
+   }
+  },
+  "L_int30": {
+   "LBS": {
+    "etirement_max": 1.3713203206158957,
+    "etirement_p99": 1.0103257057643822,
+    "retournements": 0,
+    "volume_variation": -0.012659123961521185
+   },
+   "F0": {
+    "etirement_max": 1.3483727695890955,
+    "etirement_p99": 1.0134500182129413,
+    "retournements": 0,
+    "volume_variation": -0.011677480016629306
+   },
+   "F1": {
+    "etirement_max": 1.31018832619746,
+    "etirement_p99": 1.0193004961437295,
+    "retournements": 0,
+    "volume_variation": 5.3396248743182886e-05
+   },
+   "F2": {
+    "etirement_max": 1.3103534596175468,
+    "etirement_p99": 1.0193254012368504,
+    "retournements": 0,
+    "volume_variation": 1.3003029862101131e-14
+   },
+   "F3": {
+    "etirement_max": 1.3469194712875112,
+    "etirement_p99": 1.0134879658849656,
+    "retournements": 0,
+    "volume_variation": -0.011679033498040321
+   },
+   "F4_0.5": {
+    "etirement_max": 1.3483727695890955,
+    "etirement_p99": 1.0117753177978843,
+    "retournements": 0,
+    "volume_variation": -0.010395267875752538
+   },
+   "F4_1.0": {
+    "etirement_max": 1.3483727695890955,
+    "etirement_p99": 1.013476175772092,
+    "retournements": 0,
+    "volume_variation": -0.011589151722600466
+   },
+   "F4_1.5": {
+    "etirement_max": 1.3483727695890955,
+    "etirement_p99": 1.0134500182129413,
+    "retournements": 0,
+    "volume_variation": -0.011676108173028306
+   },
+   "F5_0.01": {
+    "etirement_max": 1.2845025247641548,
+    "etirement_p99": 1.0141901937236755,
+    "retournements": 0,
+    "volume_variation": -0.009194991625789066
+   },
+   "F5_0.1": {
+    "etirement_max": 1.3483727695890955,
+    "etirement_p99": 1.0134500182129413,
+    "retournements": 0,
+    "volume_variation": -0.011677480016629306
+   },
+   "F5_1.0": {
+    "etirement_max": 1.392716805391992,
+    "etirement_p99": 1.010380319617617,
+    "retournements": 0,
+    "volume_variation": -0.012569003081661747
+   },
+   "F6_LBS_poids_modifies": {
+    "etirement_max": 2.2877285868878516,
+    "etirement_p99": 1.0091261172040122,
+    "retournements": 3,
+    "volume_variation": -0.011969456092617967
+   },
+   "F6": {
+    "etirement_max": 1.27211578454253,
+    "etirement_p99": 1.011875358863464,
+    "retournements": 0,
+    "volume_variation": -0.011072161360800983
+   }
+  },
+  "R_abd30": {
+   "LBS": {
+    "etirement_max": 1.8973734665728914,
+    "etirement_p99": 1.0418261838348954,
+    "retournements": 0,
+    "volume_variation": 0.010112586388029317
+   },
+   "F0": {
+    "etirement_max": 1.8868423706677975,
+    "etirement_p99": 1.0362953845697445,
+    "retournements": 0,
+    "volume_variation": 0.01131573414874488
+   },
+   "F1": {
+    "etirement_max": 1.96583174550091,
+    "etirement_p99": 1.0367554766605576,
+    "retournements": 0,
+    "volume_variation": 4.814281153653088e-05
+   },
+   "F2": {
+    "etirement_max": 1.9661921566106502,
+    "etirement_p99": 1.0367583847658617,
+    "retournements": 0,
+    "volume_variation": 9.90707037112467e-15
+   },
+   "F3": {
+    "etirement_max": 1.8862133405562804,
+    "etirement_p99": 1.0361772429935938,
+    "retournements": 0,
+    "volume_variation": 0.011324921439635949
+   },
+   "F4_0.5": {
+    "etirement_max": 1.8868423706677975,
+    "etirement_p99": 1.037937645493348,
+    "retournements": 0,
+    "volume_variation": 0.012208374856802059
+   },
+   "F4_1.0": {
+    "etirement_max": 1.8868423706677975,
+    "etirement_p99": 1.0373437422784881,
+    "retournements": 0,
+    "volume_variation": 0.01134280468394103
+   },
+   "F4_1.5": {
+    "etirement_max": 1.8868423706677975,
+    "etirement_p99": 1.0362953845697445,
+    "retournements": 0,
+    "volume_variation": 0.011319342602982016
+   },
+   "F5_0.01": {
+    "etirement_max": 1.7212371364012173,
+    "etirement_p99": 1.0317017965106683,
+    "retournements": 0,
+    "volume_variation": 0.008972597028451577
+   },
+   "F5_0.1": {
+    "etirement_max": 1.8868423706677975,
+    "etirement_p99": 1.0362953845697445,
+    "retournements": 0,
+    "volume_variation": 0.01131573414874488
+   },
+   "F5_1.0": {
+    "etirement_max": 1.9466702171707433,
+    "etirement_p99": 1.0406183850232729,
+    "retournements": 0,
+    "volume_variation": 0.010325091774487332
+   },
+   "F6_LBS_poids_modifies": {
+    "etirement_max": 4.2235659428751635,
+    "etirement_p99": 1.0379097921697047,
+    "retournements": 0,
+    "volume_variation": 0.008750450178386526
+   },
+   "F6": {
+    "etirement_max": 1.8745567735048572,
+    "etirement_p99": 1.033896887831791,
+    "retournements": 0,
+    "volume_variation": 0.010605950414213906
+   }
+  },
+  "R_add20": {
+   "LBS": {
+    "etirement_max": 1.2670978692953407,
+    "etirement_p99": 1.0174809593957939,
+    "retournements": 0,
+    "volume_variation": -0.008271543515637986
+   },
+   "F0": {
+    "etirement_max": 1.2045218015831884,
+    "etirement_p99": 1.0195478630526238,
+    "retournements": 0,
+    "volume_variation": -0.010524467157667947
+   },
+   "F1": {
+    "etirement_max": 1.1910478715031994,
+    "etirement_p99": 1.0244734471134722,
+    "retournements": 0,
+    "volume_variation": 4.26519212674322e-05
+   },
+   "F2": {
+    "etirement_max": 1.1910948452849335,
+    "etirement_p99": 1.0244697796151705,
+    "retournements": 0,
+    "volume_variation": 2.889562191578029e-15
+   },
+   "F3": {
+    "etirement_max": 1.2045301326124838,
+    "etirement_p99": 1.0194621191931306,
+    "retournements": 0,
+    "volume_variation": -0.010531917051178263
+   },
+   "F4_0.5": {
+    "etirement_max": 1.2045218015831884,
+    "etirement_p99": 1.0170146296965237,
+    "retournements": 0,
+    "volume_variation": -0.010298755378021449
+   },
+   "F4_1.0": {
+    "etirement_max": 1.2045218015831884,
+    "etirement_p99": 1.0207115000404028,
+    "retournements": 0,
+    "volume_variation": -0.010482386167728815
+   },
+   "F4_1.5": {
+    "etirement_max": 1.2045218015831884,
+    "etirement_p99": 1.0195478630526238,
+    "retournements": 0,
+    "volume_variation": -0.01052524801249939
+   },
+   "F5_0.01": {
+    "etirement_max": 1.134409151634511,
+    "etirement_p99": 1.02046323646313,
+    "retournements": 0,
+    "volume_variation": -0.010475313970164176
+   },
+   "F5_0.1": {
+    "etirement_max": 1.2045218015831884,
+    "etirement_p99": 1.0195478630526238,
+    "retournements": 0,
+    "volume_variation": -0.010524467157667947
+   },
+   "F5_1.0": {
+    "etirement_max": 1.2478183661908988,
+    "etirement_p99": 1.0197760784606145,
+    "retournements": 0,
+    "volume_variation": -0.00874273718130311
+   },
+   "F6_LBS_poids_modifies": {
+    "etirement_max": 1.8374449852653973,
+    "etirement_p99": 1.019943487733351,
+    "retournements": 3,
+    "volume_variation": -0.007274203440271448
+   },
+   "F6": {
+    "etirement_max": 1.1284129551136701,
+    "etirement_p99": 1.0183521778814668,
+    "retournements": 0,
+    "volume_variation": -0.0101268647737054
+   }
+  },
+  "L_flex30": {
+   "LBS": {
+    "etirement_max": 1.317577503037142,
+    "etirement_p99": 1.0466819519763553,
+    "retournements": 0,
+    "volume_variation": -0.0010975535832396088
+   },
+   "F0": {
+    "etirement_max": 1.31090933012292,
+    "etirement_p99": 1.0348619938899184,
+    "retournements": 0,
+    "volume_variation": -0.003480974588564116
+   },
+   "F1": {
+    "etirement_max": 1.3004021052570034,
+    "etirement_p99": 1.0353598466117966,
+    "retournements": 0,
+    "volume_variation": 4.517702882227484e-06
+   },
+   "F2": {
+    "etirement_max": 1.3004155296893416,
+    "etirement_p99": 1.0353597634921012,
+    "retournements": 0,
+    "volume_variation": 6.604713580749781e-15
+   },
+   "F3": {
+    "etirement_max": 1.311080238124552,
+    "etirement_p99": 1.0349096468315813,
+    "retournements": 0,
+    "volume_variation": -0.003487837435310421
+   },
+   "F4_0.5": {
+    "etirement_max": 1.31090933012292,
+    "etirement_p99": 1.0411975792737733,
+    "retournements": 0,
+    "volume_variation": -0.0021198263908926767
+   },
+   "F4_1.0": {
+    "etirement_max": 1.31090933012292,
+    "etirement_p99": 1.0348619938899184,
+    "retournements": 0,
+    "volume_variation": -0.003537226256797138
+   },
+   "F4_1.5": {
+    "etirement_max": 1.31090933012292,
+    "etirement_p99": 1.0348619938899184,
+    "retournements": 0,
+    "volume_variation": -0.003479675370511089
+   },
+   "F5_0.01": {
+    "etirement_max": 1.2693616619431412,
+    "etirement_p99": 1.032165681106327,
+    "retournements": 0,
+    "volume_variation": -0.005458119125964955
+   },
+   "F5_0.1": {
+    "etirement_max": 1.31090933012292,
+    "etirement_p99": 1.0348619938899184,
+    "retournements": 0,
+    "volume_variation": -0.003480974588564116
+   },
+   "F5_1.0": {
+    "etirement_max": 1.294924543372662,
+    "etirement_p99": 1.0418255732298753,
+    "retournements": 0,
+    "volume_variation": -0.0017040379081308366
+   },
+   "F6_LBS_poids_modifies": {
+    "etirement_max": 2.9328041081286864,
+    "etirement_p99": 1.0435185623840706,
+    "retournements": 0,
+    "volume_variation": -0.0007336839407760908
+   },
+   "F6": {
+    "etirement_max": 1.3357572713821133,
+    "etirement_p99": 1.033345685359815,
+    "retournements": 0,
+    "volume_variation": -0.0038447101619988764
+   }
+  },
+  "L_flex60": {
+   "LBS": {
+    "etirement_max": 1.6554404224014019,
+    "etirement_p99": 1.1027265020934789,
+    "retournements": 0,
+    "volume_variation": -0.010984801391990134
+   },
+   "F0": {
+    "etirement_max": 1.763128499947792,
+    "etirement_p99": 1.0723776577287187,
+    "retournements": 0,
+    "volume_variation": -0.01886224984178886
+   },
+   "F1": {
+    "etirement_max": 1.7230554298998366,
+    "etirement_p99": 1.0760420032359022,
+    "retournements": 0,
+    "volume_variation": 0.0001374987835858183
+   },
+   "F2": {
+    "etirement_max": 1.7233153229615226,
+    "etirement_p99": 1.0760112723686157,
+    "retournements": 0,
+    "volume_variation": -8.668686574734087e-15
+   },
+   "F3": {
+    "etirement_max": 1.7650123282159282,
+    "etirement_p99": 1.0728749640595194,
+    "retournements": 0,
+    "volume_variation": -0.018915575007335567
+   },
+   "F4_0.5": {
+    "etirement_max": 1.763128499947792,
+    "etirement_p99": 1.0830916120190333,
+    "retournements": 0,
+    "volume_variation": -0.014243461863230474
+   },
+   "F4_1.0": {
+    "etirement_max": 1.763128499947792,
+    "etirement_p99": 1.0723776577287187,
+    "retournements": 0,
+    "volume_variation": -0.01881406278058423
+   },
+   "F4_1.5": {
+    "etirement_max": 1.763128499947792,
+    "etirement_p99": 1.0723776577287187,
+    "retournements": 0,
+    "volume_variation": -0.018857479762068464
+   },
+   "F5_0.01": {
+    "etirement_max": 1.6656604317195431,
+    "etirement_p99": 1.0630127444075566,
+    "retournements": 0,
+    "volume_variation": -0.02547279831336065
+   },
+   "F5_0.1": {
+    "etirement_max": 1.763128499947792,
+    "etirement_p99": 1.0723776577287187,
+    "retournements": 0,
+    "volume_variation": -0.01886224984178886
+   },
+   "F5_1.0": {
+    "etirement_max": 1.7462780863317704,
+    "etirement_p99": 1.0927786593144804,
+    "retournements": 0,
+    "volume_variation": -0.012887802952183863
+   },
+   "F6_LBS_poids_modifies": {
+    "etirement_max": 5.503956799435098,
+    "etirement_p99": 1.0974403628901,
+    "retournements": 2,
+    "volume_variation": -0.009118126895417659
+   },
+   "F6": {
+    "etirement_max": 1.6225924807558638,
+    "etirement_p99": 1.0710407174602072,
+    "retournements": 0,
+    "volume_variation": -0.019816497129374316
+   }
+  },
+  "L_genou30": {
+   "LBS": {
+    "etirement_max": 1.0716717620372576,
+    "etirement_p99": 1.0018633354900506,
+    "retournements": 0,
+    "volume_variation": -0.0033941062250489804
+   },
+   "F0": {
+    "etirement_max": 1.0389137934689103,
+    "etirement_p99": 1.0019664090806364,
+    "retournements": 0,
+    "volume_variation": -0.005114535092696068
+   },
+   "F1": {
+    "etirement_max": 1.0409327541453282,
+    "etirement_p99": 1.0076436741036967,
+    "retournements": 0,
+    "volume_variation": 9.677923448489257e-06
+   },
+   "F2": {
+    "etirement_max": 1.0409288209757355,
+    "etirement_p99": 1.0076290214019064,
+    "retournements": 0,
+    "volume_variation": -9.081481173530949e-15
+   },
+   "F3": {
+    "etirement_max": 1.038526930536831,
+    "etirement_p99": 1.0019409448354564,
+    "retournements": 0,
+    "volume_variation": -0.005119977680685679
+   },
+   "F4_0.5": {
+    "etirement_max": 1.0716717620372576,
+    "etirement_p99": 1.0041296433617604,
+    "retournements": 0,
+    "volume_variation": -0.003540098879259571
+   },
+   "F4_1.0": {
+    "etirement_max": 1.1051196869564988,
+    "etirement_p99": 1.0026432236039617,
+    "retournements": 0,
+    "volume_variation": -0.004354638141632523
+   },
+   "F4_1.5": {
+    "etirement_max": 1.0470149685001648,
+    "etirement_p99": 1.001607197307145,
+    "retournements": 0,
+    "volume_variation": -0.005038684523812386
+   },
+   "F5_0.01": {
+    "etirement_max": 1.060665262147212,
+    "etirement_p99": 1.003231642473706,
+    "retournements": 0,
+    "volume_variation": -0.007109524040619457
+   },
+   "F5_0.1": {
+    "etirement_max": 1.0389137934689103,
+    "etirement_p99": 1.0019664090806364,
+    "retournements": 0,
+    "volume_variation": -0.005114535092696068
+   },
+   "F5_1.0": {
+    "etirement_max": 1.045088082531468,
+    "etirement_p99": 1.003205345826287,
+    "retournements": 0,
+    "volume_variation": -0.003770953483120329
+   },
+   "F6_LBS_poids_modifies": {
+    "etirement_max": 1.0716717620372576,
+    "etirement_p99": 1.0018633354900506,
+    "retournements": 0,
+    "volume_variation": -0.0033941062250489804
+   },
+   "F6": {
+    "etirement_max": 1.0389137934689103,
+    "etirement_p99": 1.0019664090806364,
+    "retournements": 0,
+    "volume_variation": -0.005114535092695861
+   }
+  },
+  "L_genou60": {
+   "LBS": {
+    "etirement_max": 1.1364477510904158,
+    "etirement_p99": 1.0106684342488905,
+    "retournements": 0,
+    "volume_variation": -0.0075304532650360715
+   },
+   "F0": {
+    "etirement_max": 1.0567671236617595,
+    "etirement_p99": 1.0060532593495295,
+    "retournements": 0,
+    "volume_variation": -0.011489663897729551
+   },
+   "F1": {
+    "etirement_max": 1.0608113110605581,
+    "etirement_p99": 1.0171963072931034,
+    "retournements": 0,
+    "volume_variation": 4.924225614048471e-05
+   },
+   "F2": {
+    "etirement_max": 1.060793957928241,
+    "etirement_p99": 1.0171220304625672,
+    "retournements": 0,
+    "volume_variation": 5.779124383156058e-15
+   },
+   "F3": {
+    "etirement_max": 1.0545771997824178,
+    "etirement_p99": 1.0060451972750595,
+    "retournements": 0,
+    "volume_variation": -0.0115545921122346
+   },
+   "F4_0.5": {
+    "etirement_max": 1.1364477510904158,
+    "etirement_p99": 1.0131212551334374,
+    "retournements": 0,
+    "volume_variation": -0.007840092158686474
+   },
+   "F4_1.0": {
+    "etirement_max": 1.2248939739713272,
+    "etirement_p99": 1.010041193625282,
+    "retournements": 0,
+    "volume_variation": -0.009875053412911956
+   },
+   "F4_1.5": {
+    "etirement_max": 1.0940317394018626,
+    "etirement_p99": 1.0040653089551703,
+    "retournements": 0,
+    "volume_variation": -0.01132890031161139
+   },
+   "F5_0.01": {
+    "etirement_max": 1.099930329153972,
+    "etirement_p99": 1.0055657537087166,
+    "retournements": 0,
+    "volume_variation": -0.01576537455582412
+   },
+   "F5_0.1": {
+    "etirement_max": 1.0567671236617595,
+    "etirement_p99": 1.0060532593495295,
+    "retournements": 0,
+    "volume_variation": -0.011489663897729551
+   },
+   "F5_1.0": {
+    "etirement_max": 1.082663242655998,
+    "etirement_p99": 1.0083886506013078,
+    "retournements": 0,
+    "volume_variation": -0.008443422300352213
+   },
+   "F6_LBS_poids_modifies": {
+    "etirement_max": 1.1364477510904158,
+    "etirement_p99": 1.0106684342488905,
+    "retournements": 0,
+    "volume_variation": -0.0075304532650360715
+   },
+   "F6": {
+    "etirement_max": 1.0567671236617595,
+    "etirement_p99": 1.0060532593495295,
+    "retournements": 0,
+    "volume_variation": -0.011489663897729551
+   }
+  },
+  "R_flex30": {
+   "LBS": {
+    "etirement_max": 1.312916547976235,
+    "etirement_p99": 1.0472189152796079,
+    "retournements": 0,
+    "volume_variation": -0.000790749688294743
+   },
+   "F0": {
+    "etirement_max": 1.3024205840211227,
+    "etirement_p99": 1.0340518692385223,
+    "retournements": 0,
+    "volume_variation": -0.00327121244786143
+   },
+   "F1": {
+    "etirement_max": 1.2894807209805959,
+    "etirement_p99": 1.0350615969101251,
+    "retournements": 0,
+    "volume_variation": 3.982734804304805e-06
+   },
+   "F2": {
+    "etirement_max": 1.2894961578637782,
+    "etirement_p99": 1.035059971251698,
+    "retournements": 0,
+    "volume_variation": 0.0
+   },
+   "F3": {
+    "etirement_max": 1.3026919161723811,
+    "etirement_p99": 1.0339299222872584,
+    "retournements": 0,
+    "volume_variation": -0.0032778512736928865
+   },
+   "F4_0.5": {
+    "etirement_max": 1.3024205840211227,
+    "etirement_p99": 1.0413634219874106,
+    "retournements": 0,
+    "volume_variation": -0.001979395346045694
+   },
+   "F4_1.0": {
+    "etirement_max": 1.3024205840211227,
+    "etirement_p99": 1.0340518692385223,
+    "retournements": 0,
+    "volume_variation": -0.003324838164267826
+   },
+   "F4_1.5": {
+    "etirement_max": 1.3024205840211227,
+    "etirement_p99": 1.0340518692385223,
+    "retournements": 0,
+    "volume_variation": -0.003270054149803359
+   },
+   "F5_0.01": {
+    "etirement_max": 1.2606161725192044,
+    "etirement_p99": 1.0319622641038628,
+    "retournements": 0,
+    "volume_variation": -0.005412986725827842
+   },
+   "F5_0.1": {
+    "etirement_max": 1.3024205840211227,
+    "etirement_p99": 1.0340518692385223,
+    "retournements": 0,
+    "volume_variation": -0.00327121244786143
+   },
+   "F5_1.0": {
+    "etirement_max": 1.292111406329065,
+    "etirement_p99": 1.041068637468023,
+    "retournements": 0,
+    "volume_variation": -0.0014016553209870027
+   },
+   "F6_LBS_poids_modifies": {
+    "etirement_max": 2.9175767695744765,
+    "etirement_p99": 1.0443512043106364,
+    "retournements": 0,
+    "volume_variation": -0.0004864017596286071
+   },
+   "F6": {
+    "etirement_max": 1.3345750465989126,
+    "etirement_p99": 1.0330506161141153,
+    "retournements": 0,
+    "volume_variation": -0.003627746550448689
+   }
+  },
+  "R_flex60": {
+   "LBS": {
+    "etirement_max": 1.6029491801069755,
+    "etirement_p99": 1.1009616469678707,
+    "retournements": 0,
+    "volume_variation": -0.01039059624865458
+   },
+   "F0": {
+    "etirement_max": 1.73095781397008,
+    "etirement_p99": 1.0714434024064947,
+    "retournements": 0,
+    "volume_variation": -0.018397545716239718
+   },
+   "F1": {
+    "etirement_max": 1.678733007427582,
+    "etirement_p99": 1.0752390474765219,
+    "retournements": 0,
+    "volume_variation": 0.0001302431977488583
+   },
+   "F2": {
+    "etirement_max": 1.6790482050028341,
+    "etirement_p99": 1.0751301612782889,
+    "retournements": 0,
+    "volume_variation": -6.191918981952919e-16
+   },
+   "F3": {
+    "etirement_max": 1.7337374326787112,
+    "etirement_p99": 1.0713162039307074,
+    "retournements": 0,
+    "volume_variation": -0.018448334473849203
+   },
+   "F4_0.5": {
+    "etirement_max": 1.73095781397008,
+    "etirement_p99": 1.0818541202821959,
+    "retournements": 0,
+    "volume_variation": -0.013914068085155733
+   },
+   "F4_1.0": {
+    "etirement_max": 1.73095781397008,
+    "etirement_p99": 1.0714434024064947,
+    "retournements": 0,
+    "volume_variation": -0.018349988926060233
+   },
+   "F4_1.5": {
+    "etirement_max": 1.73095781397008,
+    "etirement_p99": 1.0714434024064947,
+    "retournements": 0,
+    "volume_variation": -0.01839304198720739
+   },
+   "F5_0.01": {
+    "etirement_max": 1.6345168736382536,
+    "etirement_p99": 1.0614599928518875,
+    "retournements": 0,
+    "volume_variation": -0.025317767343996888
+   },
+   "F5_0.1": {
+    "etirement_max": 1.73095781397008,
+    "etirement_p99": 1.0714434024064947,
+    "retournements": 0,
+    "volume_variation": -0.018397545716239718
+   },
+   "F5_1.0": {
+    "etirement_max": 1.6883575786408007,
+    "etirement_p99": 1.0912577203410614,
+    "retournements": 0,
+    "volume_variation": -0.012281493007434698
+   },
+   "F6_LBS_poids_modifies": {
+    "etirement_max": 5.464916713377247,
+    "etirement_p99": 1.0968825296153775,
+    "retournements": 1,
+    "volume_variation": -0.008654941552562042
+   },
+   "F6": {
+    "etirement_max": 1.60778730005355,
+    "etirement_p99": 1.0700945680339113,
+    "retournements": 0,
+    "volume_variation": -0.01932670297656998
+   }
+  },
+  "R_flex90": {
+   "LBS": {
+    "etirement_max": 2.0478041685774944,
+    "etirement_p99": 1.1507571160213796,
+    "retournements": 0,
+    "volume_variation": -0.026227309523284042
+   },
+   "F0": {
+    "etirement_max": 2.155352053762775,
+    "etirement_p99": 1.1038392085049205,
+    "retournements": 0,
+    "volume_variation": -0.04176764493302602
+   },
+   "F1": {
+    "etirement_max": 2.0829246885259654,
+    "etirement_p99": 1.1166537491907644,
+    "retournements": 0,
+    "volume_variation": 0.0007075650747982007
+   },
+   "F2": {
+    "etirement_max": 2.0827353156775543,
+    "etirement_p99": 1.116273335364063,
+    "retournements": 0,
+    "volume_variation": -2.518047052660854e-14
+   },
+   "F3": {
+    "etirement_max": 2.1438567658299927,
+    "etirement_p99": 1.104124754747873,
+    "retournements": 0,
+    "volume_variation": -0.04193728886771043
+   },
+   "F4_0.5": {
+    "etirement_max": 2.155352053762775,
+    "etirement_p99": 1.118984337590431,
+    "retournements": 0,
+    "volume_variation": -0.032919413021373106
+   },
+   "F4_1.0": {
+    "etirement_max": 2.155352053762775,
+    "etirement_p99": 1.1038392085049205,
+    "retournements": 0,
+    "volume_variation": -0.04149299152921843
+   },
+   "F4_1.5": {
+    "etirement_max": 2.155352053762775,
+    "etirement_p99": 1.1038392085049205,
+    "retournements": 0,
+    "volume_variation": -0.04175848533220427
+   },
+   "F5_0.01": {
+    "etirement_max": 1.9964879612756703,
+    "etirement_p99": 1.0866167457359286,
+    "retournements": 0,
+    "volume_variation": -0.055865483225439695
+   },
+   "F5_0.1": {
+    "etirement_max": 2.155352053762775,
+    "etirement_p99": 1.1038392085049205,
+    "retournements": 0,
+    "volume_variation": -0.04176764493302602
+   },
+   "F5_1.0": {
+    "etirement_max": 2.16799965114114,
+    "etirement_p99": 1.1350801619846909,
+    "retournements": 0,
+    "volume_variation": -0.029734177996794307
+   },
+   "F6_LBS_poids_modifies": {
+    "etirement_max": 7.703092845160226,
+    "etirement_p99": 1.1446401661407897,
+    "retournements": 6,
+    "volume_variation": -0.022316906163846097
+   },
+   "F6": {
+    "etirement_max": 2.07470174971411,
+    "etirement_p99": 1.1053053023422998,
+    "retournements": 0,
+    "volume_variation": -0.043241688720566634
+   }
+  },
+  "R_flex120": {
+   "LBS": {
+    "etirement_max": 2.485441407338839,
+    "etirement_p99": 1.1822549165862273,
+    "retournements": 5,
+    "volume_variation": -0.04405743477518576
+   },
+   "F0": {
+    "etirement_max": 2.5758279007861486,
+    "etirement_p99": 1.127494205127807,
+    "retournements": 1,
+    "volume_variation": -0.06781851200257002
+   },
+   "F1": {
+    "etirement_max": 2.6044743018261087,
+    "etirement_p99": 1.153551624809096,
+    "retournements": 1,
+    "volume_variation": 0.001986545801507379
+   },
+   "F2": {
+    "etirement_max": 2.602171154867081,
+    "etirement_p99": 1.1514529775752993,
+    "retournements": 1,
+    "volume_variation": 2.2955507639093456e-12
+   },
+   "F3": {
+    "etirement_max": 2.5406178490973574,
+    "etirement_p99": 1.1237013171381471,
+    "retournements": 0,
+    "volume_variation": -0.06823013298449196
+   },
+   "F4_0.5": {
+    "etirement_max": 2.5758279007861486,
+    "etirement_p99": 1.1440320638861947,
+    "retournements": 1,
+    "volume_variation": -0.05445917521978784
+   },
+   "F4_1.0": {
+    "etirement_max": 2.5758279007861486,
+    "etirement_p99": 1.127494205127807,
+    "retournements": 1,
+    "volume_variation": -0.06724785659555689
+   },
+   "F4_1.5": {
+    "etirement_max": 2.5758279007861486,
+    "etirement_p99": 1.127494205127807,
+    "retournements": 1,
+    "volume_variation": -0.06780457537112597
+   },
+   "F5_0.01": {
+    "etirement_max": 2.380047062026016,
+    "etirement_p99": 1.1104114990732092,
+    "retournements": 0,
+    "volume_variation": -0.09113025252111996
+   },
+   "F5_0.1": {
+    "etirement_max": 2.5758279007861486,
+    "etirement_p99": 1.127494205127807,
+    "retournements": 1,
+    "volume_variation": -0.06781851200257002
+   },
+   "F5_1.0": {
+    "etirement_max": 2.6453990421633558,
+    "etirement_p99": 1.1594907426366003,
+    "retournements": 2,
+    "volume_variation": -0.04911681415879185
+   },
+   "F6_LBS_poids_modifies": {
+    "etirement_max": 9.435684903318052,
+    "etirement_p99": 1.1785934154464415,
+    "retournements": 14,
+    "volume_variation": -0.0378115634643711
+   },
+   "F6": {
+    "etirement_max": 2.458173921316718,
+    "etirement_p99": 1.1258228798699936,
+    "retournements": 4,
+    "volume_variation": -0.06944294012898226
+   }
+  },
+  "R_genou90": {
+   "LBS": {
+    "etirement_max": 1.180807627932757,
+    "etirement_p99": 1.0177303668747897,
+    "retournements": 8,
+    "volume_variation": -0.011451979544973028
+   },
+   "F0": {
+    "etirement_max": 1.0824415755018797,
+    "etirement_p99": 1.0101688533392685,
+    "retournements": 0,
+    "volume_variation": -0.017551136398488765
+   },
+   "F1": {
+    "etirement_max": 1.0822706845362082,
+    "etirement_p99": 1.026820421580291,
+    "retournements": 0,
+    "volume_variation": 0.00011584762959551815
+   },
+   "F2": {
+    "etirement_max": 1.0822717779008666,
+    "etirement_p99": 1.0266673533567532,
+    "retournements": 0,
+    "volume_variation": 1.568619475428073e-14
+   },
+   "F3": {
+    "etirement_max": 1.0886232219711538,
+    "etirement_p99": 1.0094385498402008,
+    "retournements": 0,
+    "volume_variation": -0.01784505505319823
+   },
+   "F4_0.5": {
+    "etirement_max": 1.180807627932757,
+    "etirement_p99": 1.0218140328598635,
+    "retournements": 8,
+    "volume_variation": -0.011886770448607973
+   },
+   "F4_1.0": {
+    "etirement_max": 1.2929168972987581,
+    "etirement_p99": 1.0153457953272318,
+    "retournements": 4,
+    "volume_variation": -0.015264049385229161
+   },
+   "F4_1.5": {
+    "etirement_max": 1.180807627932757,
+    "etirement_p99": 1.0070823582754727,
+    "retournements": 0,
+    "volume_variation": -0.01731579557732171
+   },
+   "F5_0.01": {
+    "etirement_max": 1.1274363947080592,
+    "etirement_p99": 1.006835432504751,
+    "retournements": 0,
+    "volume_variation": -0.023252087050035456
+   },
+   "F5_0.1": {
+    "etirement_max": 1.0824415755018797,
+    "etirement_p99": 1.0101688533392685,
+    "retournements": 0,
+    "volume_variation": -0.017551136398488765
+   },
+   "F5_1.0": {
+    "etirement_max": 1.1465831597692169,
+    "etirement_p99": 1.0150727606400063,
+    "retournements": 1,
+    "volume_variation": -0.0129278142333945
+   },
+   "F6_LBS_poids_modifies": {
+    "etirement_max": 1.180807627932757,
+    "etirement_p99": 1.0177303668747897,
+    "retournements": 8,
+    "volume_variation": -0.011451979544973028
+   },
+   "F6": {
+    "etirement_max": 1.0824415755018797,
+    "etirement_p99": 1.0101688533392685,
+    "retournements": 0,
+    "volume_variation": -0.017551136398488765
+   }
+  },
+  "L_combo_flex60_abd20_int20_genou60": {
+   "LBS": {
+    "etirement_max": 2.3306338653377163,
+    "etirement_p99": 1.1184201977919337,
+    "retournements": 0,
+    "volume_variation": -0.015465537642199914
+   },
+   "F0": {
+    "etirement_max": 2.362017865400046,
+    "etirement_p99": 1.0796188722395121,
+    "retournements": 0,
+    "volume_variation": -0.025701462749301664
+   },
+   "F1": {
+    "etirement_max": 2.2485144231515286,
+    "etirement_p99": 1.0811008085481635,
+    "retournements": 0,
+    "volume_variation": 0.000256855953058033
+   },
+   "F2": {
+    "etirement_max": 2.249427835364491,
+    "etirement_p99": 1.0810694744863487,
+    "retournements": 0,
+    "volume_variation": 1.4035016359093284e-14
+   },
+   "F3": {
+    "etirement_max": 2.358741936003017,
+    "etirement_p99": 1.0799287333596255,
+    "retournements": 0,
+    "volume_variation": -0.02579333538980216
+   },
+   "F4_0.5": {
+    "etirement_max": 2.362017865400046,
+    "etirement_p99": 1.0976089264094449,
+    "retournements": 0,
+    "volume_variation": -0.015816496811079137
+   },
+   "F4_1.0": {
+    "etirement_max": 2.362017865400046,
+    "etirement_p99": 1.0863863144894408,
+    "retournements": 0,
+    "volume_variation": -0.02391918560249659
+   },
+   "F4_1.5": {
+    "etirement_max": 2.362017865400046,
+    "etirement_p99": 1.083296501214198,
+    "retournements": 0,
+    "volume_variation": -0.02553713055941145
+   },
+   "F5_0.01": {
+    "etirement_max": 2.0378878406370577,
+    "etirement_p99": 1.0671499685924257,
+    "retournements": 0,
+    "volume_variation": -0.03944549798834915
+   },
+   "F5_0.1": {
+    "etirement_max": 2.362017865400046,
+    "etirement_p99": 1.0796188722395121,
+    "retournements": 0,
+    "volume_variation": -0.025701462749301664
+   },
+   "F5_1.0": {
+    "etirement_max": 2.445328488034357,
+    "etirement_p99": 1.099866147758006,
+    "retournements": 0,
+    "volume_variation": -0.017703642673792173
+   },
+   "F6_LBS_poids_modifies": {
+    "etirement_max": 7.142000507380692,
+    "etirement_p99": 1.1098038549257105,
+    "retournements": 2,
+    "volume_variation": -0.01436894660668796
+   },
+   "F6": {
+    "etirement_max": 2.137661581228043,
+    "etirement_p99": 1.0722050595600505,
+    "retournements": 0,
+    "volume_variation": -0.026973264288056648
+   }
+  },
+  "L_combo_flex90_abd30_ext30": {
+   "LBS": {
+    "etirement_max": 1.9814696429098047,
+    "etirement_p99": 1.1406069313469054,
+    "retournements": 0,
+    "volume_variation": -0.010856831482228595
+   },
+   "F0": {
+    "etirement_max": 1.5143096835131369,
+    "etirement_p99": 1.097215515114556,
+    "retournements": 0,
+    "volume_variation": -0.032099947472730324
+   },
+   "F1": {
+    "etirement_max": 1.503976246216665,
+    "etirement_p99": 1.1048072244367704,
+    "retournements": 0,
+    "volume_variation": 0.00043809443205280004
+   },
+   "F2": {
+    "etirement_max": 1.5021905611705155,
+    "etirement_p99": 1.1048513240197346,
+    "retournements": 0,
+    "volume_variation": -8.875083874132518e-15
+   },
+   "F3": {
+    "etirement_max": 1.4937621148507962,
+    "etirement_p99": 1.098261349740759,
+    "retournements": 0,
+    "volume_variation": -0.03238762019969818
+   },
+   "F4_0.5": {
+    "etirement_max": 1.9774175047480254,
+    "etirement_p99": 1.118330882513351,
+    "retournements": 0,
+    "volume_variation": -0.023319797451822707
+   },
+   "F4_1.0": {
+    "etirement_max": 1.5143096835131369,
+    "etirement_p99": 1.097215515114556,
+    "retournements": 0,
+    "volume_variation": -0.03192911993319949
+   },
+   "F4_1.5": {
+    "etirement_max": 1.5143096835131369,
+    "etirement_p99": 1.097215515114556,
+    "retournements": 0,
+    "volume_variation": -0.032096103059994455
+   },
+   "F5_0.01": {
+    "etirement_max": 1.4582375185317982,
+    "etirement_p99": 1.0792859383559814,
+    "retournements": 0,
+    "volume_variation": -0.049647966491817
+   },
+   "F5_0.1": {
+    "etirement_max": 1.5143096835131369,
+    "etirement_p99": 1.097215515114556,
+    "retournements": 0,
+    "volume_variation": -0.032099947472730324
+   },
+   "F5_1.0": {
+    "etirement_max": 1.5802940177606313,
+    "etirement_p99": 1.121936724262899,
+    "retournements": 0,
+    "volume_variation": -0.01577459605797427
+   },
+   "F6_LBS_poids_modifies": {
+    "etirement_max": 4.302393622455316,
+    "etirement_p99": 1.1406069313469054,
+    "retournements": 5,
+    "volume_variation": -0.009136197833159342
+   },
+   "F6": {
+    "etirement_max": 1.5714107921662164,
+    "etirement_p99": 1.092631245183151,
+    "retournements": 0,
+    "volume_variation": -0.03419603735725516
+   }
+  },
+  "R_combo_flex90_abd30_ext30": {
+   "LBS": {
+    "etirement_max": 1.9573727579371936,
+    "etirement_p99": 1.1366087567077268,
+    "retournements": 0,
+    "volume_variation": -0.010509094628250743
+   },
+   "F0": {
+    "etirement_max": 1.5040348321023278,
+    "etirement_p99": 1.0965842396267975,
+    "retournements": 0,
+    "volume_variation": -0.03174003650520583
+   },
+   "F1": {
+    "etirement_max": 1.4991406450736726,
+    "etirement_p99": 1.103149654197671,
+    "retournements": 0,
+    "volume_variation": 0.0004285935403566286
+   },
+   "F2": {
+    "etirement_max": 1.4972925577291532,
+    "etirement_p99": 1.1029681407482486,
+    "retournements": 0,
+    "volume_variation": 1.7337373149468175e-14
+   },
+   "F3": {
+    "etirement_max": 1.4836619212033133,
+    "etirement_p99": 1.094992916625193,
+    "retournements": 0,
+    "volume_variation": -0.032016857288806294
+   },
+   "F4_0.5": {
+    "etirement_max": 1.895272847723381,
+    "etirement_p99": 1.1166158619941822,
+    "retournements": 0,
+    "volume_variation": -0.023194149270612724
+   },
+   "F4_1.0": {
+    "etirement_max": 1.5040348321023278,
+    "etirement_p99": 1.0965842396267975,
+    "retournements": 0,
+    "volume_variation": -0.03157499538719834
+   },
+   "F4_1.5": {
+    "etirement_max": 1.5040348321023278,
+    "etirement_p99": 1.0965842396267975,
+    "retournements": 0,
+    "volume_variation": -0.031736331473411435
+   },
+   "F5_0.01": {
+    "etirement_max": 1.4499838549202948,
+    "etirement_p99": 1.0762776450188472,
+    "retournements": 0,
+    "volume_variation": -0.049452619082221615
+   },
+   "F5_0.1": {
+    "etirement_max": 1.5040348321023278,
+    "etirement_p99": 1.0965842396267975,
+    "retournements": 0,
+    "volume_variation": -0.03174003650520583
+   },
+   "F5_1.0": {
+    "etirement_max": 1.564693831402806,
+    "etirement_p99": 1.121984578201368,
+    "retournements": 0,
+    "volume_variation": -0.015375483631925561
+   },
+   "F6_LBS_poids_modifies": {
+    "etirement_max": 4.148074714925789,
+    "etirement_p99": 1.1366087567077268,
+    "retournements": 4,
+    "volume_variation": -0.008956790763570944
+   },
+   "F6": {
+    "etirement_max": 1.5614333313610496,
+    "etirement_p99": 1.0895283074726585,
+    "retournements": 0,
+    "volume_variation": -0.03377139099412223
+   }
+  },
+  "R_combo_flex60_abd20_int20_genou60": {
+   "LBS": {
+    "etirement_max": 2.2822106803238325,
+    "etirement_p99": 1.1140420899361825,
+    "retournements": 0,
+    "volume_variation": -0.014700442564918462
+   },
+   "F0": {
+    "etirement_max": 2.304931074223041,
+    "etirement_p99": 1.0780374256592828,
+    "retournements": 0,
+    "volume_variation": -0.02512311282417638
+   },
+   "F1": {
+    "etirement_max": 2.1930040259913497,
+    "etirement_p99": 1.0799396468708509,
+    "retournements": 0,
+    "volume_variation": 0.00024383219483837244
+   },
+   "F2": {
+    "etirement_max": 2.1939171594824964,
+    "etirement_p99": 1.0797636552366063,
+    "retournements": 0,
+    "volume_variation": 1.8162962347061897e-14
+   },
+   "F3": {
+    "etirement_max": 2.3018993046969394,
+    "etirement_p99": 1.07739623980861,
+    "retournements": 0,
+    "volume_variation": -0.025219100896874184
+   },
+   "F4_0.5": {
+    "etirement_max": 2.304931074223041,
+    "etirement_p99": 1.097646947992253,
+    "retournements": 0,
+    "volume_variation": -0.015332495437689045
+   },
+   "F4_1.0": {
+    "etirement_max": 2.304931074223041,
+    "etirement_p99": 1.0841500086387252,
+    "retournements": 0,
+    "volume_variation": -0.023419138165511364
+   },
+   "F4_1.5": {
+    "etirement_max": 2.304931074223041,
+    "etirement_p99": 1.0801968008568996,
+    "retournements": 0,
+    "volume_variation": -0.024956480639259194
+   },
+   "F5_0.01": {
+    "etirement_max": 1.9981625824452691,
+    "etirement_p99": 1.0652416270314815,
+    "retournements": 0,
+    "volume_variation": -0.03924169943253797
+   },
+   "F5_0.1": {
+    "etirement_max": 2.304931074223041,
+    "etirement_p99": 1.0780374256592828,
+    "retournements": 0,
+    "volume_variation": -0.02512311282417638
+   },
+   "F5_1.0": {
+    "etirement_max": 2.3900990308740875,
+    "etirement_p99": 1.0985946295453757,
+    "retournements": 0,
+    "volume_variation": -0.01694520885938104
+   },
+   "F6_LBS_poids_modifies": {
+    "etirement_max": 7.094332206823495,
+    "etirement_p99": 1.1054262267610635,
+    "retournements": 2,
+    "volume_variation": -0.013573015390311558
+   },
+   "F6": {
+    "etirement_max": 2.178269983171648,
+    "etirement_p99": 1.0692717611751392,
+    "retournements": 0,
+    "volume_variation": -0.026373010297225122
+   }
+  },
+  "L_combo_flex120_genou90": {
+   "LBS": {
+    "etirement_max": 2.4713831374450024,
+    "etirement_p99": 1.185168003416269,
+    "retournements": 12,
+    "volume_variation": -0.05618700450680897
+   },
+   "F0": {
+    "etirement_max": 2.59416554088904,
+    "etirement_p99": 1.1260630216625584,
+    "retournements": 1,
+    "volume_variation": -0.08661213516924811
+   },
+   "F1": {
+    "etirement_max": 2.617968702036405,
+    "etirement_p99": 1.1764016699114777,
+    "retournements": 1,
+    "volume_variation": 0.00335865488553161
+   },
+   "F2": {
+    "etirement_max": 2.6107907287908376,
+    "etirement_p99": 1.1705957787258838,
+    "retournements": 1,
+    "volume_variation": 2.5350541901312847e-11
+   },
+   "F3": {
+    "etirement_max": 2.5716160927857477,
+    "etirement_p99": 1.122344485677936,
+    "retournements": 1,
+    "volume_variation": -0.08746457347319644
+   },
+   "F4_0.5": {
+    "etirement_max": 2.59416554088904,
+    "etirement_p99": 1.162889080417353,
+    "retournements": 9,
+    "volume_variation": -0.0669675491634071
+   },
+   "F4_1.0": {
+    "etirement_max": 2.59416554088904,
+    "etirement_p99": 1.1413452522910532,
+    "retournements": 5,
+    "volume_variation": -0.0836989728919144
+   },
+   "F4_1.5": {
+    "etirement_max": 2.59416554088904,
+    "etirement_p99": 1.1373009729193764,
+    "retournements": 1,
+    "volume_variation": -0.08638297251729143
+   },
+   "F5_0.01": {
+    "etirement_max": 2.3925015019630895,
+    "etirement_p99": 1.102549150713766,
+    "retournements": 0,
+    "volume_variation": -0.11478318908421421
+   },
+   "F5_0.1": {
+    "etirement_max": 2.59416554088904,
+    "etirement_p99": 1.1260630216625584,
+    "retournements": 1,
+    "volume_variation": -0.08661213516924811
+   },
+   "F5_1.0": {
+    "etirement_max": 2.6152616513357456,
+    "etirement_p99": 1.163947810312102,
+    "retournements": 3,
+    "volume_variation": -0.0628315841294967
+   },
+   "F6_LBS_poids_modifies": {
+    "etirement_max": 9.512238238277495,
+    "etirement_p99": 1.1844182232311007,
+    "retournements": 21,
+    "volume_variation": -0.04970589523180293
+   },
+   "F6": {
+    "etirement_max": 2.4195805775347075,
+    "etirement_p99": 1.121915425290709,
+    "retournements": 4,
+    "volume_variation": -0.08835956090824029
+   }
+  },
+  "R_combo_flex120_genou90": {
+   "LBS": {
+    "etirement_max": 2.485441407338839,
+    "etirement_p99": 1.1822549165862273,
+    "retournements": 13,
+    "volume_variation": -0.05550978394235749
+   },
+   "F0": {
+    "etirement_max": 2.581565038153336,
+    "etirement_p99": 1.1235043566837204,
+    "retournements": 1,
+    "volume_variation": -0.08600108907994575
+   },
+   "F1": {
+    "etirement_max": 2.6519407080845845,
+    "etirement_p99": 1.1748270617506293,
+    "retournements": 1,
+    "volume_variation": 0.0032847268998994995
+   },
+   "F2": {
+    "etirement_max": 2.647426275048957,
+    "etirement_p99": 1.1721159797763758,
+    "retournements": 1,
+    "volume_variation": 2.243827600680099e-11
+   },
+   "F3": {
+    "etirement_max": 2.5470113226887285,
+    "etirement_p99": 1.1184911859648203,
+    "retournements": 1,
+    "volume_variation": -0.0868270285572041
+   },
+   "F4_0.5": {
+    "etirement_max": 2.581565038153336,
+    "etirement_p99": 1.1566182530655238,
+    "retournements": 9,
+    "volume_variation": -0.06648044773180362
+   },
+   "F4_1.0": {
+    "etirement_max": 2.581565038153336,
+    "etirement_p99": 1.141413262523359,
+    "retournements": 5,
+    "volume_variation": -0.08317013632306483
+   },
+   "F4_1.5": {
+    "etirement_max": 2.581565038153336,
+    "etirement_p99": 1.136077032381602,
+    "retournements": 1,
+    "volume_variation": -0.08576421462351239
+   },
+   "F5_0.01": {
+    "etirement_max": 2.374740904507711,
+    "etirement_p99": 1.1009936301465506,
+    "retournements": 0,
+    "volume_variation": -0.11453394211628866
+   },
+   "F5_0.1": {
+    "etirement_max": 2.581565038153336,
+    "etirement_p99": 1.1235043566837204,
+    "retournements": 1,
+    "volume_variation": -0.08600108907994575
+   },
+   "F5_1.0": {
+    "etirement_max": 2.6455813120208727,
+    "etirement_p99": 1.1594907374285344,
+    "retournements": 3,
+    "volume_variation": -0.062096148754562513
+   },
+   "F6_LBS_poids_modifies": {
+    "etirement_max": 9.435684903318052,
+    "etirement_p99": 1.1801299951996649,
+    "retournements": 22,
+    "volume_variation": -0.04926391263154282
+   },
+   "F6": {
+    "etirement_max": 2.4642523879810314,
+    "etirement_p99": 1.118808161141097,
+    "retournements": 4,
+    "volume_variation": -0.08768730498042754
+   }
+  }
+ }
+}
