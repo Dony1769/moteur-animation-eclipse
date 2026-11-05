@@ -24,3 +24,16 @@ def classer(plis_centres, hanche):
     for i, c in enumerate(plis_centres):
         (acceptes if np.linalg.norm(c - centre) < z["rayon"] else defauts).append(i)
     return acceptes, defauts
+
+
+def classer_hanche(plis_centres, pivot_hanche, rayon=0.15):
+    """Règle qualitative (phase 4, erreur 117) : un pli de hanche n'est acceptable que côté fléchisseur antérieur
+    (Y > 0 dans le repère HBM, direction des orteils) et à moins de `rayon` du centre de la hanche.
+    Les coordonnées exactes du pli de l'aine ne sont PAS sourcées (Wikipedia, Medscape, Larkin 2014 : pas de chiffre).
+    Retourne (acceptes, defauts)."""
+    acceptes, defauts = [], []
+    for i, c in enumerate(plis_centres):
+        rel = np.asarray(c) - np.asarray(pivot_hanche)
+        ok = rel[1] > 0 and np.linalg.norm(rel) < rayon
+        (acceptes if ok else defauts).append(i)
+    return acceptes, defauts

@@ -737,3 +737,16 @@ Résultat (docs/rapports/phase4_psd_hanche_genou.json) : genou plis 0–4, étir
   extenseur. Donc le critère de plis doit distinguer zone acceptable et zone interdite (plis_zones_acceptables.py),
   et non compter tous les plis.
 - Référence : docs/rapports/phase4_rotation_repartie.json.
+
+## 117. Plis acceptables : règle de zone et coordonnées non sourcées
+- Erreur : le module plis_zones_acceptables.py définissait la zone de l'aine par un décalage (0, 0, −0,02) m et un
+  rayon de 0,13 m, sans source. Les sources lues (Wikipedia « Groin », Medscape/Hoagland via la page, Larkin et al. 2014)
+  décrivent la position qualitativement (front du corps, racine de la cuisse, près du tubercule pubien) mais ne donnent
+  aucune coordonnée par rapport au centre de la hanche.
+- Règle retenue, qualitative et vérifiable : pli acceptable seulement si côté fléchisseur antérieur (Y > 0) et à moins
+  de 0,15 m du centre de la hanche (classer_hanche).
+- Mesure : DQS hanche : plis 2, 4, 8 à 90, 105, 120°, tous antérieurs et à ≤ 0,14 m : aucun défaut de zone.
+  PSD hanche : 25 plis à 120° dont 9 postérieurs ou latéraux (défauts) et 4 au-delà de 0,15 m. La PSD réduit l'étirement
+  mais crée des plis interdits.
+- Conclusion : aucune méthode ne passe à la fois la zone des plis et l'étirement de jonction. Le blocage restant de la
+  hanche est l'étirement dans la bande (DQS p99 2,04 à 120°, PSD 1,15–1,2).

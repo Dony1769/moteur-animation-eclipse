@@ -865,3 +865,8 @@ Une rotation qui varie le long du membre sur une bande 2b induit un allongement 
 de 120° avec une bande de 10 cm, l'allongement est ≈ 2,6 : hors de portée. La peau doit donc se plier (pli
 fléchisseur) et s'étirer (côté extenseur) plutôt que tourner en continu. Le critère de plis doit tenir compte des zones
 acceptables. Voir erreurs_apprises entrée 116.
+
+## 92. Zone de plis : règle qualitative tant que les coordonnées ne sont pas sourcées
+Quand une source décrit une zone sans coordonnée, on écrit une règle qualitative vérifiable (côté, distance) et on
+déclare la coordonnée non sourcée. Appliquer la règle aux deux méthodes avant de les comparer : la correction PSD a créé
+des plis postérieurs interdits que le DQS n'avait pas. Voir erreurs_apprises entrée 117.
