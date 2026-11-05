@@ -547,3 +547,9 @@ Chaque erreur a une cause, une correction et un test. Une erreur corrigée doit 
 - Mais le deplacement atteint 71 mm (30 deg, 56 sommets), mediane 23 a 28 mm. Un creux poplite ne se gonfle pas de 7 cm : resultat non acceptable.
 - Cause probable : la poussee s'applique a des sommets profondement penetrants sans borne. Il faut borner le deplacement (cap) et verifier le repli et l'etirement, pas seulement la penetration.
 - Script : `engine/skinning/test_genou_gonflement.py`. Rapport : `docs/rapports/phase4_genou_gonflement.json`.
+
+## 92. Le genou par segments durs se dechire : etirement 3 a 8,7, 745 plis a 120 deg
+- Ce que les pénétrations cachaient : avec les segments durs séparés par os, la jointure se déchire. L'étirement max est 2,95 à 30°, 5,04 à 60°, 7,09 à 90°, 8,68 à 120°. À 120°, 745 faces sont retournées.
+- Le gonflement borné (cap 15 ou 10 mm) ne change presque rien à l'étirement ni aux plis : le problème n'est pas la pénétration, c'est l'absence de couture.
+- Conclusion : la calotte doit être une géométrie qui recouvre la jointure et relie les deux bords, pas une correction locale de sommets. Les résultats précédents du genou ne sont pas valides.
+- Script : `engine/skinning/test_genou_borne.py`. Rapport : `docs/rapports/phase4_genou_plis_etirement.json`.

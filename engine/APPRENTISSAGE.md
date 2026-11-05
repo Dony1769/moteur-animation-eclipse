@@ -740,3 +740,7 @@ Mesure LBS sans clé, bras gauche seul : 90° 24 -> 12 replis ; 120° 31 -> 19 ;
 
 ## 66. Une correction qui supprime la penetration doit aussi etre bornee
 - Zero penetration ne suffit pas : mesurer l'amplitude du deplacement, la localisation, les plis et l'etirement. Une poussee non bornee peut tout 'reparer' en gonflant la peau de plusieurs centimetres (erreur 91).
+
+## 67. Mesurer plis et etirement avant de juger une jointure
+- Une jointure peut avoir zero penetration et se dechirer : l'etirement de 8,7 et 745 plis cachaient le probleme. Mesurer les trois (penetration, plis, etirement) a chaque angle, avant toute conclusion.
+- Une separation de segments sans couture cree un dechirement. La couture doit etre generee, pas approximee par des poids.

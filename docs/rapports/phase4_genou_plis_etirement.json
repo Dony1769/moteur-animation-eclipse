@@ -1,0 +1,24 @@
+{
+  "objet": "genou : plis retournes et etirement par segments durs, avec gonflement borne (cap)",
+  "metrique_plis": "faces dont la normale se retourne par rapport au repos",
+  "metrique_etirement": "max longueur posee / longueur au repos",
+  "sans_correction": {
+    "30": {"penetrations": 16, "plis": 1, "etirement_max": 2.95},
+    "60": {"penetrations": 10, "plis": 2, "etirement_max": 5.04},
+    "90": {"penetrations": 7, "plis": 3, "etirement_max": 7.09},
+    "120": {"penetrations": 2, "plis": 745, "etirement_max": 8.68}
+  },
+  "gonflement_cap_15mm": {
+    "30": {"penetrations": 12, "plis": 1, "etirement_max": 3.13},
+    "60": {"penetrations": 9, "plis": 2, "etirement_max": 5.45},
+    "90": {"penetrations": 5, "plis": 4, "etirement_max": 7.33},
+    "120": {"penetrations": 1, "plis": 745, "etirement_max": 8.68}
+  },
+  "gonflement_cap_10mm": {
+    "30": {"penetrations": 15, "plis": 1, "etirement_max": 3.06},
+    "60": {"penetrations": 10, "plis": 2, "etirement_max": 5.31},
+    "90": {"penetrations": 7, "plis": 3, "etirement_max": 7.33},
+    "120": {"penetrations": 2, "plis": 745, "etirement_max": 8.68}
+  },
+  "statut": "NON VALIDE. Le cap ne change presque rien. L'etirement de 3 a 8,7 et les 745 plis a 120 degres montrent un dechirement de la jointure : les segments durs sans calotte se separent. La correction doit etre une calotte qui recouvre la jointure (couture generee), pas un gonflement."
+}
