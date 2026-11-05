@@ -709,3 +709,16 @@ Chaque erreur a une cause, une correction et un test. Une erreur corrigée doit 
   p99 jusqu'à 2,0 (hanche) et 2,6 (genou à 135°). Plis : hanche 2 (90°) et 8 (120°), genou 0.
 - Conclusion : DQS seul ne satisfait pas la phase 4 pour la hanche et le genou. Prochaine étape : correctifs de pose
   (PSD) pour réduire l'étirement de jonction et les plis, puis remesure.
+
+## 115. Correctif de pose : pondération par le poids d'os, filtre de rotation, cible géométrique
+Trois défauts trouvés en testant la PSD (Lewis et al. 2000) sur hanche et genou :
+1. Pondération par le poids de l'os articulé (`poids = W[:, os]`) : la correction est atténuée de moitié sur les
+   sommets à poids partagé, donc elle ne reproduit pas sa cible. Genou à 120° : étirement dans la bande 1,86 au lieu de
+   1,15 pour la cible ARAP. Méthode correcte : masque binaire (1 pour les sommets libres, 0 pour les ancres), ce qui
+   reproduit la cible aux exemples. Le témoin d'exactitude doit être vérifié avant de conclure.
+2. Filtre de rotation sur faces repliées (correctif_arap) : à la hanche 120°, 54 plis contre 25 sans filtre. Le filtre
+   ramène la rotation vers l'identité et écrase la cible. Désactivé.
+3. Cible ARAP géométrique : elle réduit l'étirement de jonction (genou : 1,13–1,15 dans la bande) mais crée des plis à la
+   hanche (25 à 120°) parce qu'elle ne contraint pas la face fléchisseur. Une cible géométrique seule ne suffit pas.
+Résultat (docs/rapports/phase4_psd_hanche_genou.json) : genou plis 0–4, étirement hors bande 1,01–1,02, dans la bande
+1,06–1,16 ; hanche plis 25 à 120° (non passé). Prochaine étape : cible sans plis (contrainte d'injectivité) pour la hanche.

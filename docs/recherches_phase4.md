@@ -76,3 +76,12 @@ Date : 2026-11-05. Objectif : sourcer les amplitudes actives de référence adul
 - Sources non officielles à lire ensuite (non encore accessibles par API) : Norkin & White, « Measurement of Joint Motion » ;
   AAOS « Joint Motion » tables. Ne pas utiliser les valeurs de la fiche StatPearls poignet (formulaire seulement).
 - Aucune contournement d'accès : seules les API officielles ont été utilisées.
+
+## Recherche PSD (correctifs de pose), 2026-11-05
+- Officiel : Lewis, Cordner, Fong, SIGGRAPH 2000 (PDF scribblethink.org) : δ exprimé dans le repère local, RBF
+  gaussienne, poids w = (ΦᵀΦ)⁻¹Φᵀd, limite : pas de discontinuités, pas de traitement des sommets partagés.
+- Non officiel (skinning.org, example-based.pdf) : PSD pondérée par les poids de peau (Kurihara & Miyata 2004) ; poussée
+  de la correction dans l'espace de repos ; décroissance vers zéro hors des données.
+- Application : masque binaire plutôt que poids d'os (erreur 115) ; cible ARAP partant de DQS.
+- Non résolu : plis de la hanche à 105–120° (face fléchisseur). Recherche suivante : cible injective (sans repliement)
+  et cibles anatomiques des plis (Hermawati & Marshall pour le coude).

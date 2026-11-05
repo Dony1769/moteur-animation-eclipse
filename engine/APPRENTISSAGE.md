@@ -853,3 +853,9 @@ physique du rig, on prend la plage basse tant que le désaccord n'est pas tranch
 Le maximum d'étirement est une statistique d'arêtes isolées. Le critère de phase 4 se mesure au 99e percentile hors
 bande, avec un témoin identité égal à 1,0. Sur hanche et genou, DQS seul donne p99 hors bande ≥ 1,01 et dans la bande
 jusqu'à 2,6 : il faut des correctifs de pose (PSD) pour la jonction, puis remesurer. Voir erreurs_apprises entrée 114.
+
+## 90. Correctif de pose : vérifier la reproduction des exemples avant de juger
+Une correction PSD doit reproduire sa cible aux angles d'entraînement. Un multiplicateur (poids d'os) qui n'est pas 1
+sur la cible la fait diverger : le vérifier par le témoin d'exactitude. Un filtre de rotation sur faces repliées peut
+aggraver les plis ; le mesurer avec et sans. Une cible ARAP réduit l'étirement mais pas forcément les plis. Voir
+erreurs_apprises entrée 115.
