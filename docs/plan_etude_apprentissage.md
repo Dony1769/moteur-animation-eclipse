@@ -130,6 +130,29 @@ Sources lues : dépôt officiel `https://github.com/makehumancommunity/makehuman
 Conséquence : on peut réutiliser les assets CC0 (cibles de morphologie déjà utilisées dans `engine/human_generator/`), en
 gardant l'attribution. Le code AGPL n'est pas copié.
 
+## Résultats : visage et expressions (MMD Tools, MediaPipe, OpenSeeFace, Rhubarb)
+
+| Projet | Commit lu | Licence du code (vérifiée) | Licence des modèles | Statut |
+|---|---|---|---|---|
+| MMD Tools (`MMD-Blender/blender_mmd_tools`) | 3451990 (2026-11-04) | GPL-3.0 (fichier LICENSE) | non concerné (addon) | Code GPL : étude seulement |
+| MediaPipe (`google-ai-edge/mediapipe`) | 2034af5 (2026-11-04) | Apache-2.0 (fichier LICENSE) | **non vérifiée** : les modèles de visage ne sont pas dans le dépôt ; leur fiche officielle est à lire | Code lu partiellement |
+| OpenSeeFace (`emilianavt/openseeface`) | 50c0974 (2026-09-18) | BSD-2-Clause (fichier LICENSE) | **non précisée** dans le dépôt : quatre modèles ONNX (`lm_model0..4_opt.onnx`) sans fichier de licence propre | Modèles à vérifier avant usage |
+| Rhubarb Lip Sync (`DanielSWolf/rhubarb-lip-sync`) | 9b9573c (2025-03-29) | MIT (LICENSE.md, résumé) | sans modèle (algorithme) | Déjà utilisé dans le studio : licence confirmée |
+
+Ce qui est lu :
+- MMD Tools : opérateurs de morphs (`operators/morph.py` : ajout, copie, enregistrement, décalage, morphs de matériaux
+  et d'os). Idée utile pour notre bibliothèque d'expressions : un morph = un nom + des décalages stockés, pas un fichier.
+- Rhubarb : six formes de bouche de base (A à F) et formes étendues ; les formes de transition sont à créer aussi
+  (« in-between ») pour que les passages restent fluides. Rhubarb ne fait que la synchronisation labiale.
+- OpenSeeFace : suivi en temps réel (MobileNetV3 converti en ONNX), calibration d'expressions par personne.
+  Idée utile : calibrer par personne plutôt que choisir un seuil universel.
+- MediaPipe : sorties de la tâche `face_landmarker` (points de repère, blendshapes en option, matrice de transformation).
+
+Limites et points à traiter avant usage :
+- Les modèles de OpenSeeFace et de MediaPipe ne sont pas licenciés par leur code : vérifier leurs fiches avant tout usage.
+- Aucun test local : MMD Tools et Blender exigent `bpy` ; MediaPipe et OpenSeeFace demandent des modèles et une caméra
+  (ou une vidéo), donc un téléchargement à valider avec vous.
+
 ## Limitations (à lire avant toute reprise)
 
 - **Test d'inférence local non exécuté.** Raisons mesurées : checkpoints de 1,7 à 4,4 Go ; 7 Go de RAM et 2 CPU ; 12 Go
@@ -190,6 +213,7 @@ gardant l'attribution. Le code AGPL n'est pas copié.
 
 - UniRig et Puppeteer : code et licences lus ; test local non exécuté (voir Limitations).
 - MPFB2 : licence vérifiée (code GPL-3.0, assets CC0), lecture partielle du rig ; test non exécuté (Blender absent).
+- Visage (MMD Tools, MediaPipe, OpenSeeFace, Rhubarb) : licences du code vérifiées, licences des modèles MediaPipe et OpenSeeFace à confirmer.
 - Les autres projets (TripoSR, Stable Fast 3D, Open3D, Instant Meshes, etc.) ne sont pas lus. Leurs licences
   ne sont pas vérifiées.
 - Anomalie texturage A1 (67 faces) ouverte dans `docs/todo.md`, non bloquante.
