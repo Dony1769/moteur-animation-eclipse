@@ -1,0 +1,63 @@
+{
+  "entree": "/tmp/claude-0/-home-claude/9ce8e1e5-f7cf-5619-8a75-3c6d9a11ab1c/scratchpad/corps_skin.blend",
+  "objet": "GEO-body_male_realistic",
+  "os": "mixamorig:LeftUpLeg",
+  "sens_flexion": -1.0,
+  "sommets_base": 10582,
+  "aretes": 21170,
+  "triangles": 21160,
+  "polygones": 10590,
+  "methode": "LBS, maillage de base, mètres monde",
+  "mesures": [
+    {
+      "angle": 0,
+      "etirement_max": 1.0,
+      "etirement_p99": 1.0,
+      "part_etire_gt_1_15": 0.0,
+      "part_comprime_lt_0_85": 0.0,
+      "triangles_retournes": 0,
+      "variation_volume_relative": 0.0,
+      "deplacement_max_m": 0.0
+    },
+    {
+      "angle": 30,
+      "etirement_max": 1.3176,
+      "etirement_p99": 1.0471,
+      "part_etire_gt_1_15": 0.00198,
+      "part_comprime_lt_0_85": 0.00061,
+      "triangles_retournes": 0,
+      "variation_volume_relative": -0.0011,
+      "deplacement_max_m": 0.4582
+    },
+    {
+      "angle": 60,
+      "etirement_max": 1.6554,
+      "etirement_p99": 1.1028,
+      "part_etire_gt_1_15": 0.00709,
+      "part_comprime_lt_0_85": 0.00227,
+      "triangles_retournes": 0,
+      "variation_volume_relative": -0.01099,
+      "deplacement_max_m": 0.8853
+    },
+    {
+      "angle": 90,
+      "etirement_max": 2.1054,
+      "etirement_p99": 1.1541,
+      "part_etire_gt_1_15": 0.01011,
+      "part_comprime_lt_0_85": 0.00354,
+      "triangles_retournes": 28,
+      "variation_volume_relative": -0.027,
+      "deplacement_max_m": 1.252
+    },
+    {
+      "angle": 120,
+      "etirement_max": 2.4714,
+      "etirement_p99": 1.1852,
+      "part_etire_gt_1_15": 0.01129,
+      "part_comprime_lt_0_85": 0.00435,
+      "triangles_retournes": 1662,
+      "variation_volume_relative": -0.0449,
+      "deplacement_max_m": 1.5333
+    }
+  ]
+}

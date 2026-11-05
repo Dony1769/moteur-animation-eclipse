@@ -1039,3 +1039,14 @@ Résultat (docs/rapports/phase4_psd_hanche_genou.json) : genou plis 0–4, étir
   test_maria_anim.py et engine/mesure.py ; le test 10 et le sondage ne l'appliquaient pas.
 - Résultat après correction (test_maria.py) : RESULTAT OK ; déplacement maximal de 0,93 m relatif à la hanche sur 8 images
   (mouvement des membres dans Running, pas une mesure de qualité de la déformation).
+
+## 146. Banc de hanche : métriques de retournement et de volume aveugles (filtre « 3 sommets »)
+- Constat : le premier rapport du banc (`hanche_banc_reference.json`) affichait 0 triangle retourné et une variation de
+  volume de 0,0 à 120°, alors que l'étirement atteignait 2,47. Signal jugé suspect avant interprétation.
+- Cause réelle : le filtre `if len(p.vertices) == 3` ne gardait que 20 polygones sur 10 590 (le maillage HBM est en quads).
+  Les retournements et le volume étaient donc calculés sur 0,2 % de la surface. Les arêtes, elles, étaient complètes.
+- Correction : triangulation en éventail de tous les polygones (quads et n-gones). Le nombre de polygones est lu pendant que
+  le maillage évalué est valide (une seconde lecture après la boucle plantait : « StructRNA of type Mesh has been removed »).
+- Résultat (mêmes entrées, `docs/rapports/hanche_banc_reference.json`) : 90° : 28 triangles retournés, volume −2,7 % ;
+  120° : 1 662 retournés, volume −4,5 %. L'ancien rapport est conservé sous `hanche_banc_reference_avant_correction_triangles.json`.
+- Règle : avant de conclure « zéro défaut » sur une métrique, compter les éléments mesurés et les comparer au total du maillage.

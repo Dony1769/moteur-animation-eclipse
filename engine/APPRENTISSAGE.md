@@ -965,3 +965,8 @@ exige maintenant un corps (`--corps NOM`) et refuse de mesurer sans choix. Pour 
 Avant de mesurer une déformation : vérifier que l'action contient du mouvement (plage d'images, canaux), que son slot est
 affecté (Blender 4.4+), et mesurer en mètres monde relatifs à la hanche (armature à l'échelle 0,01). Voir erreurs_apprises
 entrées 144 et 145.
+
+## 116. Compter les éléments mesurés avant de conclure
+Un test qui affiche « 0 défaut » doit d'abord prouver qu'il a vu la surface entière : comparer le nombre d'éléments mesurés
+au total du maillage. Un filtre implicite (ici « triangles seulement » sur un maillage en quads) peut rendre la métrique
+aveugle sans la moindre erreur. Voir erreurs_apprises entrée 146.
