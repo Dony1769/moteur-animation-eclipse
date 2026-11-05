@@ -723,3 +723,7 @@ Mesure LBS sans clé, bras gauche seul : 90° 24 -> 12 replis ; 120° 31 -> 19 ;
 - Source officielle des bornes : CDC / NCHS (jeu de données sur les amplitudes normales, 674 sujets). Les fiches et les sites de révision ne suffisent pas.
 - Le squelette de référence X-Bot donne les centres et les axes de flexion. Il faut le lire dans Blender (lecture des axes locaux des os) avant de poser une chaîne.
 - Une jonction se pose sur ses axes réels, pas sur un axe fixe commun à tous les membres.
+
+## 63. Une exclusion de zone ne doit jamais servir à valider une articulation
+- Exclure la zone de jonction du test fait disparaître précisément la pénétration à mesurer (erreur 88). Toute exclusion doit être justifiée et mesurée à part.
+- Une calotte définie seulement par un plan de coupure sur les sommets existants ne supprime pas la pénétration. Il faut générer la géométrie de jonction et la mesurer comme matière.

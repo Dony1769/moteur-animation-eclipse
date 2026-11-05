@@ -516,3 +516,13 @@ Chaque erreur a une cause, une correction et un test. Une erreur corrigée doit 
 - Méthode : bornes par articulation tirées du jeu officiel CDC / NCHS (674 sujets), dans `engine/skinning/limites_articulations.py`.
 - Mesure, six articulations, amplitudes normales : pénétrations nouvelles présentes partout sauf poignet (voir `docs/squelette_xbot_articulations.md`).
 - Lacune : abduction de hanche, abduction et élévation de l'épaule, poignet : aucune valeur officielle trouvée. Marquées « non vérifié ».
+
+## 88. Le « zéro pénétration » des segments durs était un artefact de l'exclusion de zone
+- Constat : le test précédent (`variantes_coude.py`) donnait 0 pénétration pour les segments durs, avec une zone d'exclusion de 13 cm autour du coude.
+- Or c'est dans cette zone que se trouvent les pénétrations. Sans exclusion, le groupe mobile (avant-bras) pénètre le groupe fixe : 8 / 4 / 16 / 19 / 17 à 30 / 60 / 90 / 105 / 120°. Elles sont à 4 à 7 cm du coude, donc sur les extrémités de tube.
+- Correction : le chiffre « 0 » est retiré. Ce n'était pas une mesure valide.
+- Essais de calotte (coupure au plan bissecteur, sphère de rayon variable) :
+  - rayon 4,1 cm (marqueur X-Bot) : 32 / 12 / 13 / 15 / 18 ;
+  - rayon 6 cm et plus : 33 / 5 / 14 / 10 / 11.
+  Aucune variante n'arrive à zéro. Le plan de coupure sur les sommets existants ne suffit pas : il faut générer une géométrie de sphère, traitée comme matière de jonction, et la mesurer.
+- Source : `engine/skinning/test_calotte_coude.py`, rapport à compléter dans `docs/rapports/`.
