@@ -697,3 +697,7 @@ Mesure LBS sans clé, bras gauche seul : 90° 24 -> 12 replis ; 120° 31 -> 19 ;
 - Source : Kavan et al. (I3D 2005), mélange de rotations par quaternions autour d'un centre de rotation. Supprime le rétrécissement de la LBS entre deux rotations.
 - Appliqué à la hanche : les plis ne disparaissent que si le tronc voisin se déplace de 12 à 26 cm, ce qui est non anatomique. Vérifier le voisinage avant de conclure (erreur 82).
 - Ce qui reste : un correctif de pose sur la frontière cuisse / tronc.
+
+## 58. Plis acceptables par zone anatomique
+- Un pli n'est acceptable que dans une zone de pli réelle (aine, pli fessier, creux poplité, pli du coude, aisselle) et sans pénétration. Hors zone, c'est un défaut.
+- Hanche : la majorité des plis sont sur le côté (trochanter, fessier externe), pas à l'aine. Ils sont donc des défauts. Voir erreur 83 et `engine/skinning/plis_zones_acceptables.py`.

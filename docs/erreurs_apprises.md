@@ -473,3 +473,9 @@ Chaque erreur a une cause, une correction et un test. Une erreur corrigée doit 
 - Variante corrigée (tronc au-dessus de la hanche bloqué) : 31 à 38 plis, déplacement du tronc 12 à 17 cm. Le problème n'est pas résolu.
 - Lecture : le point de contact est la frontière entre la cuisse proximale (dans le bassin) et le tronc (fixe). Un champ de poids ne suffit pas ; il faut un correctif de pose (ARAP ou formes-clés de la hanche), comme pour le bras en phase 4.
 - Règle retenue : un résultat « 0 pli » n'est valable que si les sommets voisins ne se déplacent pas de façon non anatomique. Toujours mesurer les déplacements du voisinage avant de conclure.
+
+## 83. Où un pli est acceptable : règle par zone anatomique
+- Recherche : les épaules et les hanches sont les zones à problème ; on ajoute des correctifs seulement si rien d'autre ne suffit, et les creux de peau réels (aine, pli fessier, creux poplité, pli du coude, aisselle) sont les seuls lieux où un pli est normal.
+- Règle retenue (`engine/skinning/plis_zones_acceptables.py`) : un pli n'est acceptable que dans une zone de pli anatomique et sans pénétration. Tout pli hors zone est un défaut.
+- Mesure sur la hanche (chaîne LBS, 90° et 120°) : 6 à 7 plis dans la zone de l'aine, 22 à 23 hors zone, surtout sur le côté (x ≈ −2,27 à −2,33 ; z 0,75 à 0,90 ; trochanter et fessier externe). Ces plis ne sont pas acceptables : ce sont des défauts.
+- Conséquence : la hanche n'est pas validée. Il faut un correctif de pose sur le côté de la hanche, ou un autre traitement de la frontière tronc / cuisse.
