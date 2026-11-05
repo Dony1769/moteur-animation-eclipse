@@ -843,3 +843,8 @@ Mesure LBS sans clé, bras gauche seul : 90° 24 -> 12 replis ; 120° 31 -> 19 ;
 - Une vérification de navigateur est un contrôle d'accès : ne pas la contourner, même avec autorisation.
 - Essayer les APIs officielles : NCBI E-utilities (efetch PubMed, résumé des fiches StatPearls) et Europe PMC (résumés d'études). Elles n'ont pas le corps des fiches.
 - Quand la source reste inaccessible, signaler la lacune dans le document et marquer les chiffres non officiels.
+
+## 88. Amplitudes : source secondaire, désaccords, plage basse pour les bornes
+Une valeur d'articulation n'est sourcée que si une source primaire a été lue. Quand la primaire est inaccessible, la valeur
+reste marquée « secondaire non vérifiée ». Chaque désaccord entre sources est écrit dans le tableau. Pour une borne
+physique du rig, on prend la plage basse tant que le désaccord n'est pas tranché. Voir docs/erreurs_apprises.md entrée 113.

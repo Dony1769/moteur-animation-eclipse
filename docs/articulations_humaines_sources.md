@@ -109,3 +109,33 @@ et le muscle moteur donne le sens. Le moteur doit reproduire ce couple : axe, se
 Requêtes Europe PMC testées sans valeur normative exploitable pour coude, poignet, épaule (journal complet dans
 docs/recherches_phase4.md). Les amplitudes du coude (0–145°), du poignet (80°/70°) et de l'épaule restent
 NON SOURCÉES et ne doivent pas être figées dans le rig avant une source lue.
+
+## 10. Amplitudes actives de référence (sourcées, 2026-11-05)
+Sources lues :
+- [NS-PHY2] Physiopedia, « Range of Motion Normative Values » (non officiel) : https://www.physio-pedia.com:443/Range_of_Motion_Normative_Values
+  Cite les valeurs AAOS tirées de Botman et al. (2020, matériel supplémentaire). La publication primaire n'a pas été
+  retrouvée par l'API Europe PMC (0 résultat) : valeurs à confirmer dans la source primaire.
+- [S-PMC-BRN] PMC9218764 table 1 (Burn Model System, J Burn Care Res 2018) : plages de mouvement « définies », pour
+  décrire un arc normal ; population de brûlés adultes, donc pas une référence de population saine.
+
+| Articulation | Mouvement | Valeur retenue (degrés) | Source | Désaccord constaté |
+|---|---|---|---|---|
+| Épaule | flexion | 180 | NS-PHY2 | — |
+| Épaule | extension | 40–60 | NS-PHY2 | — |
+| Épaule | abduction | 160–180 | NS-PHY2 | — |
+| Épaule | rotation médiale / latérale | 70 / 90 | NS-PHY2 | — |
+| Coude | flexion | 140–150 (borne 0–140 pour S-PMC-BRN) | NS-PHY2, S-PMC-BRN | 140 vs 145 du moteur |
+| Coude | extension | 0 | NS-PHY2, S-PMC-BRN | — |
+| Avant-bras | pronation / supination | 80–90 | NS-PHY2 | — |
+| Poignet | flexion / extension | 60–80 / 60–70 (S-PMC-BRN : 60 / 60) | NS-PHY2, S-PMC-BRN | moteur : 80 / 70, confirmé seulement pour la flexion haute |
+| Poignet | inclinaison radiale / ulnaire | 20 / 30 | NS-PHY2 | — |
+| Hanche | flexion | 120 | NS-PHY2, NS-MM | — |
+| Hanche | extension | 10 (NS-MM) ou 20 (NS-PHY2) | conflit | à arbitrer |
+| Hanche | abduction / adduction | 40 / 20 (NS-PHY2) ; 45 / 25 (NS-MM) | conflit | à arbitrer |
+| Hanche | rotation médiale / latérale | 45 / 45 (NS-PHY2) ; 15 / 35 (NS-MM) | conflit | fort écart |
+| Genou | flexion | 135 (NS-PHY2) ; 150 (S-PMC-BRN) | conflit | moteur : 150 (danse) |
+| Genou | extension | 0 | NS-PHY2, S-PMC-BRN | — |
+| Cheville | dorsiflexion / plantaroflexion | 20 / 50 (NS-PHY2) | NS-PHY2, NS-PHY | cohérent avec section 6 |
+
+Règle adoptée : pour borner le rig, prendre la plage basse quand les sources divergent (sécurité anatomique),
+et noter le désaccord. Les valeurs « conflit » ne doivent pas être figées sans lecture de la source primaire.

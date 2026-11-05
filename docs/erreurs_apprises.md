@@ -690,3 +690,12 @@ Chaque erreur a une cause, une correction et un test. Une erreur corrigée doit 
 - Demande : contourner la vérification du navigateur pour lire StatPearls. Refusé : c'est un contrôle contre les clients automatisés ; une autorisation de l'utilisateur ne le lève pas.
 - Voies légitimes testées : NCBI E-utilities efetch (résumé seulement, corps absent de l'API) ; Europe PMC (résumés, pas de valeurs normales en 1 requête).
 - Leçon : quand une source bloque l'accès automatisé, chercher l'API officielle ou une autre source primaire, et signaler la lacune plutôt que la contourner.
+
+## 113. Source secondaire prise pour primaire, et désaccords cachés
+- Erreur : des amplitudes (épaule, coude, poignet, hanche) ont été listées comme « sourcées » alors qu'une seule
+  source secondaire les citait ; les désaccords entre sources (hanche : extension 10 vs 20 ; rotation 15/35 vs 45/45 ;
+  genou 135 vs 150) n'étaient pas signalés.
+- Méthode correcte : (1) lire la source primaire ; si elle est inaccessible, le noter ; (2) lire la source secondaire
+  et indiquer qu'elle cite une primaire non vérifiée ; (3) recouper avec une deuxième source indépendante ;
+  (4) consigner chaque désaccord dans le tableau ; (5) pour une borne physique, prendre la plage basse.
+- Référence : docs/articulations_humaines_sources.md section 10.
