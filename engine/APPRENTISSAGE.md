@@ -664,3 +664,9 @@ Mesure LBS sans clé, bras gauche seul : 90° 24 -> 12 replis ; 120° 31 -> 19 ;
 - Blender : bras 0 pli à 60/75/90/105/120° ; avant-bras 0 pli ; jambe 0 pli à 60–90°, 2 à 105° et 120° ; étirement 1,05 à 1,22 partout (la référence était à 6,0 avant).
 - Non fait : la phase 4 n'est pas terminée. Reste : résidu de 2 plis à la jambe (erreur 76) ; confiance validée (erreur 74) ; poids par distance rejetés en brut (erreur 70) ; heat retenue comme base du bras (erreur 71).
 - Rapport : `docs/rapports/phase4_validation_base_blender.json`.
+
+## 51. Anatomie des articulations : jonctions, DDL et amplitudes
+- Une articulation a un type (charnière, condylienne, sphérique, pivot, sellaire, glissement) qui fixe ses degrés de liberté. Le rig doit suivre ce type : une charnière n'a qu'un axe.
+- Le fléchissement se fait toujours à la jonction : sans nœud de jonction, la déformation se répartit dans le maillage et l'aplatit.
+- Articulations à nœud : hanche (sphérique, 3 DDL), genou (charnière), cheville (charnière + sous-talienne), épaule (sphérique + clavicule), coude (charnière + pivot radio-ulnaire), poignet (condylienne), orteils et doigts (chaînes de charnières et de condyliennes), colonne (segments en série).
+- Référence : `docs/anatomie_articulations.md`. Amplitudes : ordres de grandeur, à confirmer par une source officielle avant de les figer dans le rig.
