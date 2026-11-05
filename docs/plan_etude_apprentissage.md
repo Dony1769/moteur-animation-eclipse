@@ -153,6 +153,30 @@ Limites et points à traiter avant usage :
 - Aucun test local : MMD Tools et Blender exigent `bpy` ; MediaPipe et OpenSeeFace demandent des modèles et une caméra
   (ou une vidéo), donc un téléchargement à valider avec vous.
 
+## Résultats : vêtements (OpenSew 2) et cheveux/vêtements dans Blender
+
+| Projet | Commit lu | Licence (vérifiée) | Statut |
+|---|---|---|---|
+| OpenSew 2 (`MarcelloMorettoni/opensew-2`) | 86b4322 (2026-08-26) | GPL-3.0-or-later (fichier LICENSE et README § License) ; avatars d'exemple CC0 1.0, générés avec MPFB2 à partir des données CC0 de MakeHuman (`clothing_design/assets/README.md`) | Code lu partiellement |
+| Blender (`blender/blender`) | licence lue dans le fichier COPYING du dépôt | GPL (texte COPYING) ; le dépôt complet n'est pas cloné (trop lourd) | Référence, outil à installer pour tester |
+
+Ce qui est lu dans OpenSew 2 (`clothing_design/`, 6 123 lignes de Python au total pour le dossier) :
+- `patterns.py` : construction de patrons 2D en panneaux (bordure resamplée, courbes de Bézier, contrôle des coutures
+  par segments nommés, ordre des chaînes de sommets).
+- `sim.py` : simulation de tissu via le solveur Cloth de Blender. Points utiles : épingler les épaules, réduire la gravité,
+  relaxer le vêtement en deux phases (rentrer, puis relâcher), décaler les couches pour éviter l'interpénétration
+  (`lift_off_layers`), soudure des coutures et fermeture des trous (`weld_seams`, `close_stray_holes`).
+- `avatar.py` : mesure du corps par sections horizontales et axes des membres, en masquant bras et tête par les poids.
+
+Ce qui est réutilisable comme idée, sans copie de code :
+- Mesurer le corps (sections et axes) avant de dessiner le vêtement : c'est notre phase 2 (corps paramétrique) qui en a besoin.
+- Le relâchement en deux phases et le décalage des couches pour éviter les interpénétrations. C'est directement lié à notre
+  problème de pénétration des membres (phase 4) : un vêtement peut servir de test de collision.
+
+Limites :
+- Le code dépend de l'API `bpy` (Blender) : pas exécutable hors Blender. Aucun test local ici.
+- GPL-3.0-or-later : on n'en copie aucune ligne ; on réimplémente les méthodes.
+
 ## Limitations (à lire avant toute reprise)
 
 - **Test d'inférence local non exécuté.** Raisons mesurées : checkpoints de 1,7 à 4,4 Go ; 7 Go de RAM et 2 CPU ; 12 Go
@@ -214,6 +238,7 @@ Limites et points à traiter avant usage :
 - UniRig et Puppeteer : code et licences lus ; test local non exécuté (voir Limitations).
 - MPFB2 : licence vérifiée (code GPL-3.0, assets CC0), lecture partielle du rig ; test non exécuté (Blender absent).
 - Visage (MMD Tools, MediaPipe, OpenSeeFace, Rhubarb) : licences du code vérifiées, licences des modèles MediaPipe et OpenSeeFace à confirmer.
+- Vêtements (OpenSew 2) : licence du code vérifiée (GPL-3.0-or-later), lecture partielle, pas de test local.
 - Les autres projets (TripoSR, Stable Fast 3D, Open3D, Instant Meshes, etc.) ne sont pas lus. Leurs licences
   ne sont pas vérifiées.
 - Anomalie texturage A1 (67 faces) ouverte dans `docs/todo.md`, non bloquante.
