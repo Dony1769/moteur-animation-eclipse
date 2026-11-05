@@ -808,3 +808,8 @@ Mesure LBS sans clé, bras gauche seul : 90° 24 -> 12 replis ; 120° 31 -> 19 ;
 ## 80. Cible anatomique de pli : vérifier le type de donnée publiée
 - Une étude peut donner une loi d'échelle et des postures-clés sans donner le maillage. Ici : rapport chair haute/milieu en fonction de l'angle (ajustement publié), et 4 postures.
 - Reconstruire la cible à partir de la loi, en le signalant comme approximation, avant de déclarer la jonction valide.
+
+## 81. Une correction ne vaut que si elle dépasse le bruit de la mesure
+- Réduire la saillie de la sphère selon une loi publiée n'a changé la médiane que de 0,01 à 0,03 cm, contre 0,5 cm de variation de base avec l'angle.
+- Avant de conclure à une correction, mesurer le bruit (variation de la base, classification des sommets). Si l'effet est plus petit, le résultat est négatif.
+- Une sphère ne peut pas exprimer un pli : il faut une géométrie de pli explicite.

@@ -641,3 +641,11 @@ Chaque erreur a une cause, une correction et un test. Une erreur corrigée doit 
 - Limite : les 16 distances radiales ne sont pas publiées en brut. La cible de maillage doit être reconstruite, donc elle reste une approximation.
 - Écarté : SKEL (arXiv 2509.06607) ne traite ni la chair ni le pli.
 - Leçon : vérifier ce qu'une source fournit réellement (loi, données brutes, ou maillage) avant de la retenir comme cible.
+
+## 106. Réduction de saillie fléchisseur par la loi publiée : effet négligeable, résultat négatif
+- Correction : sommets de la sphère côté fléchisseur rapprochés du centre, de 1,5 cm × (1 − r(θ)) avec r = loi publiée / loi(0), poids cos² (bissectrice des membres).
+- Mesure (médiane / p90, cm) : fléchisseur 1,10 → 1,10 à 0° ; 0,78 → 0,76 à 30° ; 0,54 → 0,51 à 60° ; 0,69 → 0,69 à 90° ; 1,01 → 1,00 à 120° ; 1,15 → 1,12 à 135°. Extenseur inchangé.
+- Effet réel : 0,01 à 0,03 cm. La variation de la base d'un angle à l'autre (0,5 cm) est plus grande que l'effet. Une réduction radiale de la sphère ne produit pas de pli.
+- Leçon : une correction chiffrée doit dépasser le bruit de la mesure ; sinon elle n'a pas d'effet démontrable. Et la base elle-même change avec l'angle (ensemble de sommets exposés), à corriger avant de comparer.
+- Conséquence : la sphère ne peut pas exprimer le pli. Il faut changer la géométrie de jonction (surface de pli explicite), pas seulement réduire la saillie.
+- Script : `engine/skinning/reference/correction_pose_flechisseur_coude.py`.
