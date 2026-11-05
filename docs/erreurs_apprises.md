@@ -438,3 +438,10 @@ Chaque erreur a une cause, une correction et un test. Une erreur corrigée doit 
 - L'étirement maximal est très localisé : p99 = 1,00 pour toutes les bandes, les arêtes les plus étirées sont peu nombreuses, vers z ≈ 0,564 m (bord inférieur de la bande).
 - Ouvert : le critère « étirement max ≤ 1,25 » n'est pas atteint à 0 pli. Il faut décider si l'on évalue l'étirement au p99 (honnête) ou en max (strict). Les résultats avec p99 sont à consigner dans le rapport de validation.
 - Méthode retenue pour la suite : tester la chaîne en Blender (LBS réelle) avant d'en conclure ; ne pas généraliser avant.
+
+## 78. Genou : chaîne de nœuds validée dans Blender (LBS réelle)
+- Critères mécaniques (demande de l'utilisateur) : segments rigides, centre anatomique, pas de pénétration, section non aplatie. L'étirement devient secondaire.
+- Mesure dans Blender (`engine/skinning/chaine_genou_blender.py`, K=8, bande 0,15 m) : écart Blender/numpy 0,000 mm ; 0 pli à 60, 90, 105, 120° ; cuisse et jambe rigides (0,00 mm) ; section du genou 0,995–0,999 (base actuelle : 0,52 à 120°).
+- Erreur de contrôle corrigée : l'axe de la section était mesuré sur le plan horizontal. Il faut le mesurer perpendiculairement à l'axe du segment (`engine/skinning/mesure_section_genou.py`).
+- Hauteur du genou vérifiée : pivot Mixamo à z = 0,476 m, soit 0,285 × 1,69 m (taille du maillage) ; c'est le bon centre.
+- Rapport : `docs/rapports/phase4_genou_chaine_blender.json`. Ouvert : coude, cheville, hanche, épaule, poignet ; nœuds à ajouter au squelette HBM.

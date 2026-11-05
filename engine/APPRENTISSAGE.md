@@ -675,3 +675,8 @@ Mesure LBS sans clé, bras gauche seul : 90° 24 -> 12 replis ; 120° 31 -> 19 ;
 - Un pli se produit quand l'angle entier est appliqué sur une bande étroite : la corde entre deux rotations de même axe rétrécit de cos(Δθ/2). Une bande large réduit Δθ et supprime les plis, au prix d'un étirement localisé.
 - Mesure : 0 pli à 90° et 120° avec B = 0,15 m (étirement max 1,37, p99 1,00). Le critère max ≤ 1,25 n'est pas atteint.
 - Voir erreur 77 et `engine/skinning/test_chaine_genou.py`.
+
+## 53. Genou validé dans Blender par chaîne de nœuds
+- La chaîne de nœuds coaxiaux donne en LBS réelle : 0 pli, segments rigides, section du genou conservée (0,995–0,999).
+- Critère de section : perpendiculaire à l'axe du segment, jamais sur le plan horizontal.
+- Voir erreur 78 et `docs/rapports/phase4_genou_chaine_blender.json`.

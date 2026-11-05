@@ -1,0 +1,49 @@
+{
+  "objet": "chaine de noeuds coaxiaux, genou gauche",
+  "K": 8,
+  "bande_m": 0.15,
+  "validation": "LBS Blender reelle (engine/skinning/chaine_genou_blender.py), ecart Blender/numpy 0.000 mm",
+  "resultats": {
+    "60": {
+      "plis": 0,
+      "section_genou": 0.999,
+      "rigidite_jambe_mm": 0.0
+    },
+    "90": {
+      "plis": 0,
+      "section_genou": 0.997,
+      "rigidite_jambe_mm": 0.0
+    },
+    "105": {
+      "plis": 0,
+      "section_genou": 0.996,
+      "rigidite_jambe_mm": 0.0
+    },
+    "120": {
+      "plis": 0,
+      "section_genou": 0.995,
+      "rigidite_jambe_mm": 0.0
+    }
+  },
+  "base_actuelle_numpy": {
+    "plis": {
+      "60": 0,
+      "90": 5,
+      "105": 7,
+      "120": 10
+    },
+    "section_genou": {
+      "60": 0.877,
+      "90": 0.723,
+      "105": 0.626,
+      "120": 0.519
+    },
+    "rigidite_jambe_mm": {
+      "90": 15.96,
+      "105": 20.02,
+      "120": 22.64
+    }
+  },
+  "stretch_info": "etirement max 1.37 localise, p99 1.00 (indicateur secondaire)",
+  "limites": "validation sur le genou seulement ; centre du genou = pivot Mixamo LeftLeg (z 0,476 m, coherent avec 0,285 h) ; pas encore sur coude, cheville, hanche, epaule, poignet"
+}
