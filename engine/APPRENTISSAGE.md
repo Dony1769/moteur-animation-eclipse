@@ -1090,3 +1090,13 @@ Une erreur d'arête dans l'axe de l'arête ne se corrige pas par une rotation. V
 
 ## 148. Une cohérence de rotation locale ne suffit pas à valider une transformation
 Deux méthodes peuvent tourner de la même façon et se distinguer par leur aire et leur étirement. Voir entrée 190.
+
+## 149. Une propagation dans un solveur global se caractérise par sa portée et sa dépendance aux paramètres
+Le déplacement propagé dépend de l'écart d'angle entre voisins et de λ (portée ≈ λ^(−1/2) arêtes). Voir entrée 192.
+
+## 150. Un compteur de retournements doit être relatif au mouvement rigide local
+Comparer à la normale au repos crée de faux positifs sous rotation rigide. Voir entrée 193.
+
+## 151. Deux mécanismes peuvent se superposer : les séparer par une expérience, pas par une corrélation
+La compression (moyenne des rotations) et la propagation (écart entre voisins) répondent différemment à la polaire.
+Voir entrée 194.

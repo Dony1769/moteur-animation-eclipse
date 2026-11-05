@@ -1355,3 +1355,25 @@ Résultat (docs/rapports/phase4_psd_hanche_genou.json) : genou plis 0–4, étir
 - Cause probable : le système de contraintes transmet les rotations des voisins, sans que le sommet ait lui-même
   une transformation non rigide. Mesuré sur un seul changement de poids, non démontré à poids d'origine.
 - Règle : tester la propagation en modifiant les poids seuls, à géométrie et transformations fixes.
+
+## 192. La propagation de SQ vers les sommets à poids pur croît avec l'écart d'angle entre os et avec la finesse du maillage
+- Constat (synthétique, plan 21×21, λ = 0,1, interface brutale) : déplacement à l'interface 0,10 h (écart 30°),
+  0,195 h (60°), 0,338 h (120°). En absolu, le déplacement reste constant (≈ 0,018 m) quand le maillage passe de
+  11 à 41 points par côté, alors qu'il passe de 0,085 h à 0,31 h.
+- Règle : la même erreur absolue pèse davantage en unités d'arête sur un maillage fin. Comparer les amplifications
+  dans une unité commune (absolue et relative) avant de conclure.
+- Statut : mécanisme réel de la formulation, mesuré. Voir `RAPPORT_propagation_synthetique.md`.
+
+## 193. Compter les retournements en comparant au repos crée de faux positifs sous rotation rigide
+- Constat : une rotation rigide de 120° d'un feuillet plan inverse la normale par rapport au repos. Le compteur
+  initial signalait 400 retournements pour LBS (rigide, sans défaut) et 360 pour SQ.
+- Correction : la normale déformée est comparée à la normale au repos tournée par le repère rigide local (polaire
+  de la moyenne de Mv sur le triangle). Après correction : 0 retournement pour LBS et SQ dans toutes les configurations.
+- Règle : un retournement se mesure relativement au mouvement rigide local, jamais au seul repos. Vérifier la métrique
+  sur un mouvement rigide avant de l'utiliser.
+
+## 194. Une moyenne arithmétique de rotations comprime, la polaire de cette moyenne ne résout pas la propagation
+- Constat : à 120°, l'aire minimale tombe à 0,51 avec R_ab = (R_a + R_b)/2 et remonte à 0,90 avec la polaire de cette
+  moyenne. Mais la propagation vers les sommets purs augmente (0,34 h → 0,39 h).
+- Règle : deux phénomènes distincts (compression par moyenne non orthogonale ; propagation par écart de rotation entre
+  voisins). Les traiter séparément ; supprimer l'un ne supprime pas l'autre.

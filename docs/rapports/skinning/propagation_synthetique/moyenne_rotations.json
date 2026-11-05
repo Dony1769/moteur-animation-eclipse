@@ -1,0 +1,250 @@
+{
+ "n21_angle30": {
+  "moyenne_arithmetique": {
+   "profil_pur_D_sur_h": {
+    "0": 0.1011,
+    "1": 0.0809,
+    "2": 0.0648,
+    "3": 0.052,
+    "4": 0.0419
+   },
+   "retournements": 0,
+   "etirement_max": 1.0071348587482747,
+   "aire_min": 0.9663509680790682,
+   "moyenne_SQ_moins_LBS": 5.567173464217987e-16
+  },
+  "polaire_de_la_moyenne": {
+   "profil_pur_D_sur_h": {
+    "0": 0.102,
+    "1": 0.0816,
+    "2": 0.0654,
+    "3": 0.0525,
+    "4": 0.0423
+   },
+   "retournements": 0,
+   "etirement_max": 1.0038112187968038,
+   "aire_min": 0.9901862398845664,
+   "moyenne_SQ_moins_LBS": 5.381846417834225e-16
+  },
+  "LBS": {
+   "retournements": 0
+  }
+ },
+ "n21_angle60": {
+  "moyenne_arithmetique": {
+   "profil_pur_D_sur_h": {
+    "0": 0.1953,
+    "1": 0.1563,
+    "2": 0.1252,
+    "3": 0.1005,
+    "4": 0.081
+   },
+   "retournements": 0,
+   "etirement_max": 1.0263748317581156,
+   "aire_min": 0.8677932063426046,
+   "moyenne_SQ_moins_LBS": 1.0076466987068473e-15
+  },
+  "polaire_de_la_moyenne": {
+   "profil_pur_D_sur_h": {
+    "0": 0.2022,
+    "1": 0.1618,
+    "2": 0.1296,
+    "3": 0.104,
+    "4": 0.0838
+   },
+   "retournements": 0,
+   "etirement_max": 1.0149026581513687,
+   "aire_min": 0.9635963682663102,
+   "moyenne_SQ_moins_LBS": 1.0709792030303767e-15
+  },
+  "LBS": {
+   "retournements": 0
+  }
+ },
+ "n21_angle90": {
+  "moyenne_arithmetique": {
+   "profil_pur_D_sur_h": {
+    "0": 0.2762,
+    "1": 0.221,
+    "2": 0.177,
+    "3": 0.1421,
+    "4": 0.1145
+   },
+   "retournements": 0,
+   "etirement_max": 1.052088679975692,
+   "aire_min": 0.7114266748953468,
+   "moyenne_SQ_moins_LBS": 1.4490569450327842e-15
+  },
+  "polaire_de_la_moyenne": {
+   "profil_pur_D_sur_h": {
+    "0": 0.299,
+    "1": 0.2393,
+    "2": 0.1916,
+    "3": 0.1538,
+    "4": 0.1239
+   },
+   "retournements": 0,
+   "etirement_max": 1.032301049095661,
+   "aire_min": 0.9286391144228728,
+   "moyenne_SQ_moins_LBS": 1.4699249909858635e-15
+  },
+  "LBS": {
+   "retournements": 0
+  }
+ },
+ "n21_angle120": {
+  "moyenne_arithmetique": {
+   "profil_pur_D_sur_h": {
+    "0": 0.3383,
+    "1": 0.2707,
+    "2": 0.2168,
+    "3": 0.174,
+    "4": 0.1402
+   },
+   "retournements": 0,
+   "etirement_max": 1.0771888812086237,
+   "aire_min": 0.5091056809099919,
+   "moyenne_SQ_moins_LBS": 1.7696950058262323e-15
+  },
+  "polaire_de_la_moyenne": {
+   "profil_pur_D_sur_h": {
+    "0": 0.3906,
+    "1": 0.3126,
+    "2": 0.2504,
+    "3": 0.2009,
+    "4": 0.1619
+   },
+   "retournements": 0,
+   "etirement_max": 1.054544358019247,
+   "aire_min": 0.8983136958129364,
+   "moyenne_SQ_moins_LBS": 1.7911219600573418e-15
+  },
+  "LBS": {
+   "retournements": 0
+  }
+ },
+ "n41_angle30": {
+  "moyenne_arithmetique": {
+   "profil_pur_D_sur_h": {
+    "0": 0.1013,
+    "1": 0.081,
+    "2": 0.0648,
+    "3": 0.0518,
+    "4": 0.0414
+   },
+   "retournements": 0,
+   "etirement_max": 1.0072329581567805,
+   "aire_min": 0.9663544409903353,
+   "moyenne_SQ_moins_LBS": 4.999735679944062e-16
+  },
+  "polaire_de_la_moyenne": {
+   "profil_pur_D_sur_h": {
+    "0": 0.1021,
+    "1": 0.0817,
+    "2": 0.0653,
+    "3": 0.0522,
+    "4": 0.0418
+   },
+   "retournements": 0,
+   "etirement_max": 1.0038659349370869,
+   "aire_min": 0.990059023588758,
+   "moyenne_SQ_moins_LBS": 5.139943057178455e-16
+  },
+  "LBS": {
+   "retournements": 0
+  }
+ },
+ "n41_angle60": {
+  "moyenne_arithmetique": {
+   "profil_pur_D_sur_h": {
+    "0": 0.1956,
+    "1": 0.1565,
+    "2": 0.1251,
+    "3": 0.1,
+    "4": 0.08
+   },
+   "retournements": 0,
+   "etirement_max": 1.0267340354005194,
+   "aire_min": 0.8678080979875537,
+   "moyenne_SQ_moins_LBS": 8.745775432672863e-16
+  },
+  "polaire_de_la_moyenne": {
+   "profil_pur_D_sur_h": {
+    "0": 0.2025,
+    "1": 0.162,
+    "2": 0.1295,
+    "3": 0.1036,
+    "4": 0.0828
+   },
+   "retournements": 0,
+   "etirement_max": 1.0151154262674347,
+   "aire_min": 0.9631184250739707,
+   "moyenne_SQ_moins_LBS": 8.6737201119429465e-16
+  },
+  "LBS": {
+   "retournements": 0
+  }
+ },
+ "n41_angle90": {
+  "moyenne_arithmetique": {
+   "profil_pur_D_sur_h": {
+    "0": 0.2767,
+    "1": 0.2213,
+    "2": 0.1769,
+    "3": 0.1415,
+    "4": 0.1131
+   },
+   "retournements": 0,
+   "etirement_max": 1.052789418117254,
+   "aire_min": 0.7114645320741994,
+   "moyenne_SQ_moins_LBS": 1.1750310987988937e-15
+  },
+  "polaire_de_la_moyenne": {
+   "profil_pur_D_sur_h": {
+    "0": 0.2994,
+    "1": 0.2395,
+    "2": 0.1915,
+    "3": 0.1531,
+    "4": 0.1224
+   },
+   "retournements": 0,
+   "etirement_max": 1.0327583065308779,
+   "aire_min": 0.9276875753637964,
+   "moyenne_SQ_moins_LBS": 1.1883967895868202e-15
+  },
+  "LBS": {
+   "retournements": 0
+  }
+ },
+ "n41_angle120": {
+  "moyenne_arithmetique": {
+   "profil_pur_D_sur_h": {
+    "0": 0.3388,
+    "1": 0.271,
+    "2": 0.2167,
+    "3": 0.1733,
+    "4": 0.1385
+   },
+   "retournements": 0,
+   "etirement_max": 1.078215348782189,
+   "aire_min": 0.5091882327787702,
+   "moyenne_SQ_moins_LBS": 1.4593380885916185e-15
+  },
+  "polaire_de_la_moyenne": {
+   "profil_pur_D_sur_h": {
+    "0": 0.3912,
+    "1": 0.3129,
+    "2": 0.2502,
+    "3": 0.2001,
+    "4": 0.16
+   },
+   "retournements": 0,
+   "etirement_max": 1.055308372975281,
+   "aire_min": 0.8969464648773473,
+   "moyenne_SQ_moins_LBS": 1.4471061195717703e-15
+  },
+  "LBS": {
+   "retournements": 0
+  }
+ }
+}
