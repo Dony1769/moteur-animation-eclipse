@@ -127,6 +127,7 @@ def test_volume_cube():
 
 def test_lbs_vs_blender(npz):
     d = np.load(npz)
+    nom = os.path.basename(npz)
     rest, Wi, Ww, B = d["rest_monde"], d["W_idx"], d["W_w"], d["bones_rest_monde"]
     pire = 0.0
     nb = 0
@@ -135,7 +136,17 @@ def test_lbs_vs_blender(npz):
             pos, _ = M.calculer_toutes(rest, Wi, Ww, B, d[k])
             pire = max(pire, float(np.abs(pos["LBS"] - d[k[:-4] + "__ctrl"]).max()))
             nb += 1
-    verifier("7_lbs_vs_blender", pire < 1e-5, f"{nb} poses ; erreur max {pire:.2e} m")
+    verifier(f"7_lbs_vs_blender[{nom}]", pire < 1e-5, f"{nb} poses ; erreur max {pire:.2e} m")
+
+
+def test_normalisation_poids(rng):
+    """Entrée 152 : Blender normalise les poids par leur somme. Un sommet dont les poids totalisent 0,5 doit donner
+    le même résultat que le même sommet avec des poids doublés (et non un rétrécissement vers l'origine)."""
+    pos, Wi, Ww, R, t = scenario(rng)
+    p1 = M.lbs(pos, Wi, Ww, R, t)
+    p2 = M.lbs(pos, Wi, 0.5 * Ww, R, t)
+    verifier("8_normalisation_poids_comme_blender", np.abs(p1 - p2).max() < 1e-12,
+             f"écart {np.abs(p1 - p2).max():.2e}")
 
 
 def main():
@@ -146,8 +157,9 @@ def main():
     test_hybride_extremites(rng)
     test_retournement_rotation(rng)
     test_volume_cube()
-    if len(sys.argv) > 1:
-        test_lbs_vs_blender(sys.argv[1])
+    test_normalisation_poids(rng)
+    for chemin in sys.argv[1:]:
+        test_lbs_vs_blender(chemin)
     for nom, ok, d in RESULTATS:
         print(("OK   " if ok else "ECHEC") + " " + nom + " : " + d)
     echecs = [n for n, ok, _ in RESULTATS if not ok]

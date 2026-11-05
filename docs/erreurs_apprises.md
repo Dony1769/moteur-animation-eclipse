@@ -1077,3 +1077,43 @@ Résultat (docs/rapports/phase4_psd_hanche_genou.json) : genou plis 0–4, étir
 - Cause : la rotation autour de l'axe de la cuisse ne déplace pas le pied, qui est sur cet axe. Le rig n'a pas d'os
   d'orteil (19 os).
 - Correction : mesure du bout de l'os du pied (`tail`), décalé vers l'avant. Signes détectés, identiques des deux côtés.
+
+## 150. Asymétrie gauche-droite de l'abduction : signe de côté calculé sur la coordonnée absolue
+- Constat : abduction 30° côté gauche 1,41 contre 1,90 à droite (écart de 35 %).
+- Cause : `extraire_poses.py` déterminait le côté par `np.sign(x)` de la tête de l'os, c'est-à-dire le signe de la
+  coordonnée monde. Le rig est centré sur x ≈ −2,26 m, donc les deux jambes avaient le même signe : le mouvement
+  « abduction gauche » était en réalité une adduction. Le maillage et les os sont symétriques (écart miroir du repos
+  ≈ 1,6 mm au p99 sur le masculin).
+- Correction : signe relatif au plan médian, `xc = moyenne des têtes UpLeg gauche et droite`, `cote = sign(x − xc)`.
+- Résultat : abd30 gauche 1,910 contre droite 1,897 (écart de 0,7 %). Les 28 poses ont été réextraites.
+- Méthode : les résultats antérieurs sur les poses gauches (1,41 ; 2,47 des tableaux précédents) sont invalides.
+
+## 151. Rapport d'étirement sur arêtes de quelques millimètres : bruit, seuil choisi après observation
+- Constat : l'étirement maximal atteint 8,06 sur Maria, causé par des arêtes du cou et de la tête de 1 à 3 mm.
+- Cause : le repos contient des arêtes de 0,09 mm ; un rapport posé/repos sur une telle arête est sans signification.
+- Correction : ajout de `etirement_max_ge5mm` (arêtes ≥ 5 mm au repos) et de `delta_longueur_max_m` (variation absolue).
+- Limite honnête : le seuil de 5 mm a été choisi après avoir observé la sensibilité de la métrique. Il est déclaré
+  post hoc. Il doit être fixé à l'avance pour toute nouvelle morphologie.
+
+## 152. Poids non normalisés : le LBS rétrécissait les sommets vers l'origine
+- Constat : sur le corps féminin (poids automatiques Bone Heat), le contrôle LBS s'écartait de Blender de 0,277 m.
+- Cause : certains sommets ont des poids qui totalisent 0,878. Blender normalise les poids déformants par leur somme ;
+  le LBS brut les laissait se contracter. Exemple : sommet de repos x = −2,264, multiplié par 0,878, donne −1,988.
+- Correction : `methodes._valides` normalise chaque ligne par sa somme, comme Blender.
+- Résultat : écart LBS/Blender 4e-7 m (féminin), 2,3e-7 m (Maria), 3,8e-7 m (masculin). Test 8 ajouté.
+- Conséquence : tous les chiffres d'étirement et de symétrie du féminin et de Maria antérieurs à ce correctif sont invalides.
+
+## 153. Symétrie gauche-droite : un échec de comptage n'est pas une asymétrie de déformation
+- Constat : sur les trois morphologies, le test de symétrie échoue. Pour le masculin et le féminin, l'écart de
+  déformation p99 est inférieur à 1,2 mm et les écarts d'étirement sont inférieurs à 1 %. Les seuls échecs sont des
+  différences de comptage de retournements (1 polygone de différence, par exemple 3 contre 2).
+- Cause : un polygone proche du seuil de retournement bascule d'un côté seulement. Le critère « comptages égaux »
+  est trop strict pour un compte discret à cet endroit.
+- Décision : le critère n'est pas modifié (règle de la phase 4). Ces échecs sont conservés et doivent être expliqués
+  polygone par polygone avant toute conclusion.
+- Maria : l'étirement diffère de 9 à 22 % alors que l'écart de déformation p99 est nul. Cause trouvée : le maillage
+  de repos de Maria n'est pas symétrique (écart miroir p99 = 10,8 mm, quel que soit le plan de symétrie ; le masculin
+  a 1,6 mm et le féminin 3,3 mm). L'arête la plus étirée du côté gauche (x = 0, midline) a son image droite sur une
+  autre arête (6 % des arêtes n'ont pas d'image miroir). Le critère « étirement maximal » est donc sensible à la
+  topologie. Un critère robuste (percentile, ou étirement relatif au repos du même côté) devra être fixé AVANT la
+  mesure ; il n'est pas appliqué ici.

@@ -20,7 +20,8 @@ import numpy as np
 
 argv = sys.argv[sys.argv.index("--") + 1:]
 entree, sortie = argv[0], argv[1]
-OBJ = "GEO-body_male_realistic"
+# objet à mesurer : argument optionnel (morphologies, axe 4) ; défaut : corps masculin HBM
+OBJ = sys.argv[sys.argv.index("--") + 3] if len(sys.argv) > sys.argv.index("--") + 3 else "GEO-body_male_realistic"
 
 arm = next(o for o in bpy.data.objects if o.type == "ARMATURE")
 src = bpy.data.objects[OBJ]
@@ -105,12 +106,14 @@ for i, l in enumerate(listes):
 
 # -- signes : détectés géométriquement, jamais supposés --
 repos = poser({})
-rest_knee_x = {}
+# plan médian du corps : moyenne des têtes de cuisses au repos. Le corps n'est PAS centré sur x = 0 (ici x ≈ -2,26) :
+# un signe calculé sur la coordonnée absolue donne le même côté pour les deux jambes (entrée 150).
+xc_rest = 0.5 * (tete_monde("mixamorig:LeftUpLeg")[0] + tete_monde("mixamorig:RightUpLeg")[0])
 signes = {}
 for cote in ("Left", "Right"):
     haut, bas, pied = f"mixamorig:{cote}UpLeg", f"mixamorig:{cote}Leg", f"mixamorig:{cote}Foot"
     r_bas, r_pied = tete_monde(bas), tete_monde(pied)
-    cote_x = np.sign(r_bas[0])
+    cote_x = np.sign(r_bas[0] - xc_rest)  # côté par rapport au plan médian, pas par rapport à x = 0
 
     def flex_ok(s):
         poser({haut: (s * np.radians(60), 0, 0)})
@@ -166,13 +169,15 @@ data = {"rest_monde": positions_monde(copie, copie.data), "W_idx": W_idx, "W_w":
 b_boucle, b_tot = boucles(copie.data)
 data["b_boucle"], data["b_tot"] = b_boucle, b_tot
 
-# maillage haute résolution au repos
-src_ev = src.evaluated_get(dg()).data
-data["hr_rest"] = positions_monde(src, src_ev).astype(np.float32)
-h_boucle, h_tot = boucles(src_ev)
-data["hr_boucle"], data["hr_tot"] = h_boucle, h_tot
+# maillage haute résolution au repos (seulement si l'objet a un MULTIRES)
+A_MULTIRES = any(mo.type == "MULTIRES" for mo in src.modifiers)
+if A_MULTIRES:
+    src_ev = src.evaluated_get(dg()).data
+    data["hr_rest"] = positions_monde(src, src_ev).astype(np.float32)
+    h_boucle, h_tot = boucles(src_ev)
+    data["hr_boucle"], data["hr_tot"] = h_boucle, h_tot
 
-meta = {"ignores_groupes_non_os": ignores, "signes": signes, "poses": {}}
+meta = {"objet": OBJ, "multires": A_MULTIRES, "ignores_groupes_non_os": ignores, "signes": signes, "plan_median_x": float(xc_rest), "poses": {}}
 for cote in ("L", "R"):
     cote_nom = "Left" if cote == "L" else "Right"
     s = signes[cote_nom]
@@ -189,7 +194,7 @@ for cote in ("L", "R"):
         data[nom_pose + "__os"] = P
         cev = copie.evaluated_get(dg()).data
         data[nom_pose + "__ctrl"] = positions_monde(copie, cev)
-        if nom_pose in HAUTE_RES_POSES:
+        if A_MULTIRES and nom_pose in HAUTE_RES_POSES:
             sev = src.evaluated_get(dg()).data
             data[nom_pose + "__hr"] = positions_monde(src, sev).astype(np.float32)
         meta["poses"][nom_pose] = {"angles_deg": {k: [round(np.degrees(x), 3) for x in v] for k, v in ang.items()}}

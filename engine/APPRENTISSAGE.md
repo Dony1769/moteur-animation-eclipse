@@ -981,3 +981,15 @@ Dans une comparaison de méthodes, on ne change qu'une chose à la fois (les poi
 l'hypothèse est écrite avant la mesure. L'hypothèse « transition de poids trop brusque » a été réfutée : le lissage a
 dégradé l'étirement. Le résultat négatif est conservé dans `docs/rapports/skinning/experience_poids_lissage.json`.
 Un chiffre plus favorable ne suffit pas : vérifier aussi le volume, les sommets aberrants et la capture visuelle.
+
+## 119. Le signe d'un côté se mesure par rapport au plan médian, jamais en coordonnée absolue
+Un rig décentré (x ≈ −2,26 m) rend `sign(x)` identique pour les deux jambes : le côté devient faux sans erreur visible.
+Mesurer le côté par rapport au plan médian. Voir erreurs_apprises entrée 150.
+
+## 120. Une métrique normalisée par arête doit ignorer les arêtes sous-millimétriques
+Un rapport posé/repos sur une arête de 0,09 mm est du bruit. Mesurer aussi la variation absolue, et fixer le seuil
+avant la mesure. Voir entrée 151.
+
+## 121. Vérifier la symétrie du maillage de repos avant de tester la symétrie de la déformation
+Un écart miroir du repos de 11 mm (Maria) produit des écarts de métrique sans aucune asymétrie de déformation. Mesurer
+l'écart miroir du repos en premier, et le plan de symétrie par ajustement. Voir entrée 153.

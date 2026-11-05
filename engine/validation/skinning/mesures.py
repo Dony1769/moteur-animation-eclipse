@@ -69,6 +69,15 @@ def mesurer(pos, rest, boucle, tot, aretes_arr, Mv=None, seuils=(1.15, 0.85, 1.5
         "part_aretes_comprimees": float(np.mean(ratio < seuils[1])),
         "aretes": int(n),
     }
+    # étirement restreint aux arêtes de repos >= 5 mm (entrée 151) : un rapport sur une arête de 1 mm est bruité
+    ok5 = l_rest >= 0.005
+    r5 = l_pos[ok5] / l_rest[ok5]
+    t5 = np.sort(r5)
+    res["etirement_max_ge5mm"] = float(t5[-1]) if len(t5) else float("nan")
+    res["etirement_p99_ge5mm"] = float(t5[int(0.99 * (len(t5) - 1))]) if len(t5) else float("nan")
+    res["part_aretes_etirees_ge5mm"] = float(np.mean(r5 > seuils[0])) if len(r5) else float("nan")
+    # variation absolue de longueur d'arête (m) : indépendante de tout seuil de longueur
+    res["delta_longueur_max_m"] = float(np.abs(l_pos - l_rest).max())
     # sommets aberrants : sommet dont une arête incidente dépasse seuils[2]
     vmax = np.zeros(N)
     rr = np.zeros(len(aretes_arr))

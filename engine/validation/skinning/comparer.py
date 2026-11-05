@@ -46,6 +46,7 @@ def arrondir(obj):
 
 def main():
     npz, sortie = sys.argv[1], sys.argv[2]
+    poids_hr_npz = sys.argv[3] if len(sys.argv) > 3 else None  # poids transférés par Blender (extraire_poids_hr.py)
     os.makedirs(sortie, exist_ok=True)
     d = np.load(npz)
     rest = d["rest_monde"]
@@ -76,8 +77,15 @@ def main():
     if "hr_rest" in d.files:
         hr_rest = d["hr_rest"].astype(np.float64)
         Nh = len(hr_rest)
-        _, plus_proche = cKDTree(rest).query(hr_rest)
-        hW_idx, hW_w = W_idx[plus_proche], W_w[plus_proche]
+        if poids_hr_npz:
+            from experience_poids_lissage import creuser
+            ph = np.load(poids_hr_npz)
+            hW_idx, hW_w = creuser(ph["hr_pesos"].astype(np.float64))
+            transfert = "barycentrique Blender (POLYINTERP_NEAREST)"
+        else:
+            _, plus_proche = cKDTree(rest).query(hr_rest)
+            hW_idx, hW_w = W_idx[plus_proche], W_w[plus_proche]
+            transfert = "plus proche sommet (entrée 148, non fiable)"
         hb, ht = d["hr_boucle"], d["hr_tot"]
         Ahr = Ms.aretes(hb, ht, Nh)
         poses_hr = [("neutre", B)] + [(k[: -len("__hr")], d[k[: -len("__hr")] + "__os"])
@@ -87,7 +95,10 @@ def main():
             pos_m, diag = M.calculer_toutes(hr_rest, hW_idx, hW_w, B, pm)
             entree = {"diagnostic_transformations": diag, "methodes": {}}
             if nom != "neutre":
-                entree["erreur_LBS_vs_Blender_m"] = float(np.abs(pos_m["LBS"] - d[nom + "__hr"]).max())
+                e = np.linalg.norm(pos_m["LBS"] - d[nom + "__hr"], axis=1)
+                entree["erreur_LBS_vs_Blender_m"] = float(e.max())
+                entree["controle_LBS"] = {"mediane_m": float(np.median(e)), "part_gt_1mm": float((e > 1e-3).mean()),
+                                          "part_gt_1cm": float((e > 1e-2).mean()), "max_m": float(e.max())}
             Mv = M.repere_rigide(hW_idx, hW_w, B, pm)
             for m in METHODES:
                 entree["methodes"][m] = Ms.mesurer(pos_m[m], hr_rest, hb, ht, Ahr, Mv=Mv)
@@ -119,7 +130,7 @@ def main():
         fig.savefig(os.path.join(sortie, "captures_profil.png"), dpi=110)
         plt.close(fig)
 
-    resume = {"fichier_source": npz, "methodes": METHODES, "poses_base": ["neutre"] + poses,
+    resume = {"fichier_source": npz, "transfert_poids_hr": transfert if "hr_rest" in d.files else None, "methodes": METHODES, "poses_base": ["neutre"] + poses,
               "poses_hr": sorted(hr.keys()), "signes": json.loads(open(npz.replace(".npz", ".json")).read())["signes"],
               "base": arrondir(base), "hr": arrondir(hr)}
     with open(os.path.join(sortie, "comparatif.json"), "w") as f:

@@ -61,9 +61,14 @@ def qmul(a, b):
 
 
 def _valides(W_idx, W_w):
+    """Indices et poids valides, NORMALISÉS par leur somme. Blender normalise la somme des poids des os déformants
+    (sinon un sommet dont les poids totalisent 0,878 se rétrécit vers l'origine : entrée 152). Sans effet sur les
+    poids déjà normalisés (HBM masculin, Maria)."""
     valide = W_idx >= 0
     ids = np.where(valide, W_idx, 0)
     w = np.where(valide, W_w, 0.0)
+    somme = w.sum(axis=1, keepdims=True)
+    w = np.where(somme > 1e-12, w / np.maximum(somme, 1e-12), w)
     return ids, w
 
 
@@ -137,6 +142,26 @@ def hybride(pos_lbs, pos_dqs, a):
     if a.ndim == 1:
         a = a[:, None]
     return (1.0 - a) * pos_lbs + a * pos_dqs
+
+
+def calculer_depuis_T(pos, W_idx, W_w, T, angle_ref=np.radians(45.0)):
+    """Comme calculer_toutes, mais à partir des transformations T (J,4,4) = pose @ inverse(repos) directement.
+    Permet de modifier le pivot d'un os sans toucher aux poids (axe 1)."""
+    R, t, orth, det = decomposer(T)
+    Q = quat_depuis_matrice(R)
+    a_angle = np.clip(angle_relatif_max(W_idx, W_w, Q) / angle_ref, 0.0, 1.0)
+    p_lbs = lbs(pos, W_idx, W_w, R, t)
+    p_dqs = dqs(pos, W_idx, W_w, Q, t)
+    sortie = {"LBS": p_lbs, "DQS": p_dqs, "HYBRIDE_global": hybride(p_lbs, p_dqs, 0.5),
+              "HYBRIDE_angle": hybride(p_lbs, p_dqs, a_angle)}
+    return sortie, {"erreur_orthonormalite": orth, "det_min": float(det.min()), "det_max": float(det.max())}
+
+
+def repere_depuis_T(W_idx, W_w, T):
+    """Équivalent de repere_rigide à partir de T."""
+    R = T[:, :3, :3]
+    ids, w = _valides(W_idx, W_w)
+    return np.einsum("nk,nkab->nab", w, R[ids])
 
 
 def calculer_toutes(pos, W_idx, W_w, bones_rest_monde, pose_monde, angle_ref=np.radians(45.0)):
