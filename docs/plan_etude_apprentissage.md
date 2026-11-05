@@ -75,6 +75,29 @@ Architecture lue (`skinning/skinning_models/models.py`) :
 Ce qui est réutilisable comme idée : le biais de distance dans le graphe d'articulations (TAJA). Il donne aux articulations
 voisines plus d'influence, sans codifier la géométrie. Ce qui ne l'est pas : la tête est apprise, sans contrainte d'injectivité.
 
+## Résultats : MPFB2 (makehumancommunity)
+
+Sources lues : dépôt officiel `https://github.com/makehumancommunity/mpfb2` (clone superficiel, commit 6ff1eb3, 2026-10-24),
+fichiers `LICENSE.md`, `LICENSE.CODE.md`, `LICENSE.ASSETS.md` à la racine du dépôt.
+
+| Élément | Licence vérifiée | Source |
+|---|---|---|
+| Code source (`src/mpfb/`) | GPL-3.0 | `LICENSE.CODE.md` et `LICENSE.md` § B |
+| Assets (morphes, vêtements, matériaux) | CC0 1.0 | `LICENSE.ASSETS.md` ; champs `license` par défaut à CC0 dans les propriétés de création |
+
+Limites :
+- Code GPL-3.0 : on n'en copie aucune ligne. On étudie la méthode et on réimplémente.
+- Assets CC0 : utilisables, à condition de conserver la mention d'origine (CREDITS.md du dépôt).
+
+Architecture lue (partielle) :
+- `services/rigservice.py` : rig MakeHuman sur Blender, poids au format « MHW » (dictionnaire de poids par os), refit d'un
+  squelette existant. Dépend de `bpy` : pas exécutable hors Blender.
+- Le format MHW (poids par sommet, par os) est une référence utile pour notre format de poids.
+- Pas de test local : MPFB2 est un addon Blender. Il faut Blender 4.x, non installé dans cette session.
+
+Ce qui reste à lire dans MPFB2 : la génération de morphologie (`services/humanservice.py`, `targetservice.py`) et
+la création de visage ; à relier à notre `engine/human_generator/`.
+
 ## Limitations (à lire avant toute reprise)
 
 - **Test d'inférence local non exécuté.** Raisons mesurées : checkpoints de 1,7 à 4,4 Go ; 7 Go de RAM et 2 CPU ; 12 Go
@@ -134,6 +157,7 @@ voisines plus d'influence, sans codifier la géométrie. Ce qui ne l'est pas : l
 ## Ce qui n'est pas encore fait
 
 - UniRig et Puppeteer : code et licences lus ; test local non exécuté (voir Limitations).
-- Les autres projets (MPFB2, MB-Lab, TripoSR, Stable Fast 3D, Open3D, Instant Meshes, etc.) ne sont pas lus. Leurs licences
+- MPFB2 : licence vérifiée (code GPL-3.0, assets CC0), lecture partielle du rig ; test non exécuté (Blender absent).
+- Les autres projets (MB-Lab, TripoSR, Stable Fast 3D, Open3D, Instant Meshes, etc.) ne sont pas lus. Leurs licences
   ne sont pas vérifiées.
 - Anomalie texturage A1 (67 faces) ouverte dans `docs/todo.md`, non bloquante.
