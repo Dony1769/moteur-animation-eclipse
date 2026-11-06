@@ -1132,3 +1132,12 @@ Voir entrée 203.
 
 ## 161. Une reproduction synthétique se juge sur des métriques réelles mesurées
 Un patch qui présente la régression ne suffit pas. Voir entrée 204 et docs/rapports/skinning/defaut_reel/RAPPORT_defaut_reel.md.
+
+## 162. Un chemin de calcul alternatif se vérifie contre le pipeline avant tout usage
+Voir entrée 205.
+
+## 163. Un compte de retournements se lit avec la qualité de sa référence
+Voir entrée 206.
+
+## 164. Un maximum ne résume pas une distribution
+Voir entrée 207 et docs/rapports/skinning/comparaison_morphologies/RAPPORT_comparaison.md.

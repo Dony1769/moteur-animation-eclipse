@@ -1442,3 +1442,22 @@ Résultat (docs/rapports/phase4_psd_hanche_genou.json) : genou plis 0–4, étir
   ~3 et |G| d'un facteur ~2,4. Le gradient obtenu (2,73 /m) n'est pas celui visé (3,73 /m).
 - Règle : un patch n'est représentatif que s'il reproduit quantitativement les mesures réelles, après calibrage de
   ses paramètres sur les seules mesures géométriques, pas sur la régression.
+
+## 205. Des poids non normalisés produisent un faux écart entre chemins de calcul
+- Constat : le féminin a des sommes de poids de 0,878 à 1,0. Le pipeline normalise (`methodes._valides`), le chemin
+  dense des interventions ne normalisait pas : écart de 0,28 m sur LBS. Le contrôle de cohérence l'a détecté.
+- Correction : normaliser les poids par somme dans le chemin dense ; écart ramené à 1e-15 m pour les trois morphologies.
+- Règle : tout chemin de calcul alternatif doit reproduire exactement le pipeline (contrôle obligatoire) avant usage.
+
+## 206. Un retournement comptant contre une référence dégénérée n'est pas une preuve de repli
+- Constat : les 769 retournements synthétiques apparaissent uniquement avec un angle relatif de 180° entre cuisses ; là
+  où ils apparaissent, la valeur singulière minimale de la moyenne Mv est médiane 0,17 (contre 0,5 globalement). La
+  référence de l'orientation est mal définie dans ces triangles.
+- Règle : avant de compter des retournements, vérifier que la référence est bien conditionnée, et rapporter la
+  dégénérescence à côté du compte.
+
+## 207. Un maximum amélioré ne prouve pas une distribution améliorée
+- Constat : sur le critère du maximum, le masculin a des poses où SQ dépasse LBS, alors que son p99 par arête moyen est
+  meilleur que LBS et identique au féminin. Maria, sans régression maximale, aggrave davantage les hanches par arête.
+- Règle : ne jamais conclure à une amélioration globale à partir du maximum ; comparer les distributions et les
+  proportions par région (voir RAPPORT_comparaison.md).

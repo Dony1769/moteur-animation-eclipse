@@ -1,0 +1,3391 @@
+{
+ "A_synthetique": {
+  "nb_configs": 144,
+  "nb_configs_avec_nouveaux": 31,
+  "total_nouveaux": 769,
+  "configs": [
+   {
+    "geo": "plat",
+    "nonuni": false,
+    "tri": "A",
+    "arr": "lisse",
+    "hist": "M",
+    "th": [
+     90,
+     0
+    ],
+    "nouveaux": 0
+   },
+   {
+    "geo": "plat",
+    "nonuni": false,
+    "tri": "A",
+    "arr": "lisse",
+    "hist": "M",
+    "th": [
+     120,
+     0
+    ],
+    "nouveaux": 0
+   },
+   {
+    "geo": "plat",
+    "nonuni": false,
+    "tri": "A",
+    "arr": "lisse",
+    "hist": "M",
+    "th": [
+     120,
+     -60
+    ],
+    "nouveaux": 4
+   },
+   {
+    "geo": "plat",
+    "nonuni": false,
+    "tri": "A",
+    "arr": "lisse",
+    "hist": "F",
+    "th": [
+     90,
+     0
+    ],
+    "nouveaux": 0
+   },
+   {
+    "geo": "plat",
+    "nonuni": false,
+    "tri": "A",
+    "arr": "lisse",
+    "hist": "F",
+    "th": [
+     120,
+     0
+    ],
+    "nouveaux": 0
+   },
+   {
+    "geo": "plat",
+    "nonuni": false,
+    "tri": "A",
+    "arr": "lisse",
+    "hist": "F",
+    "th": [
+     120,
+     -60
+    ],
+    "nouveaux": 0
+   },
+   {
+    "geo": "plat",
+    "nonuni": false,
+    "tri": "A",
+    "arr": "aleatoire",
+    "hist": "M",
+    "th": [
+     90,
+     0
+    ],
+    "nouveaux": 0
+   },
+   {
+    "geo": "plat",
+    "nonuni": false,
+    "tri": "A",
+    "arr": "aleatoire",
+    "hist": "M",
+    "th": [
+     120,
+     0
+    ],
+    "nouveaux": 0
+   },
+   {
+    "geo": "plat",
+    "nonuni": false,
+    "tri": "A",
+    "arr": "aleatoire",
+    "hist": "M",
+    "th": [
+     120,
+     -60
+    ],
+    "nouveaux": 41
+   },
+   {
+    "geo": "plat",
+    "nonuni": false,
+    "tri": "A",
+    "arr": "aleatoire",
+    "hist": "F",
+    "th": [
+     90,
+     0
+    ],
+    "nouveaux": 0
+   },
+   {
+    "geo": "plat",
+    "nonuni": false,
+    "tri": "A",
+    "arr": "aleatoire",
+    "hist": "F",
+    "th": [
+     120,
+     0
+    ],
+    "nouveaux": 0
+   },
+   {
+    "geo": "plat",
+    "nonuni": false,
+    "tri": "A",
+    "arr": "aleatoire",
+    "hist": "F",
+    "th": [
+     120,
+     -60
+    ],
+    "nouveaux": 22
+   },
+   {
+    "geo": "plat",
+    "nonuni": false,
+    "tri": "A",
+    "arr": "alterne",
+    "hist": "M",
+    "th": [
+     90,
+     0
+    ],
+    "nouveaux": 0
+   },
+   {
+    "geo": "plat",
+    "nonuni": false,
+    "tri": "A",
+    "arr": "alterne",
+    "hist": "M",
+    "th": [
+     120,
+     0
+    ],
+    "nouveaux": 0
+   },
+   {
+    "geo": "plat",
+    "nonuni": false,
+    "tri": "A",
+    "arr": "alterne",
+    "hist": "M",
+    "th": [
+     120,
+     -60
+    ],
+    "nouveaux": 28
+   },
+   {
+    "geo": "plat",
+    "nonuni": false,
+    "tri": "A",
+    "arr": "alterne",
+    "hist": "F",
+    "th": [
+     90,
+     0
+    ],
+    "nouveaux": 0
+   },
+   {
+    "geo": "plat",
+    "nonuni": false,
+    "tri": "A",
+    "arr": "alterne",
+    "hist": "F",
+    "th": [
+     120,
+     0
+    ],
+    "nouveaux": 0
+   },
+   {
+    "geo": "plat",
+    "nonuni": false,
+    "tri": "A",
+    "arr": "alterne",
+    "hist": "F",
+    "th": [
+     120,
+     -60
+    ],
+    "nouveaux": 18
+   },
+   {
+    "geo": "plat",
+    "nonuni": false,
+    "tri": "B",
+    "arr": "lisse",
+    "hist": "M",
+    "th": [
+     90,
+     0
+    ],
+    "nouveaux": 0
+   },
+   {
+    "geo": "plat",
+    "nonuni": false,
+    "tri": "B",
+    "arr": "lisse",
+    "hist": "M",
+    "th": [
+     120,
+     0
+    ],
+    "nouveaux": 0
+   },
+   {
+    "geo": "plat",
+    "nonuni": false,
+    "tri": "B",
+    "arr": "lisse",
+    "hist": "M",
+    "th": [
+     120,
+     -60
+    ],
+    "nouveaux": 3
+   },
+   {
+    "geo": "plat",
+    "nonuni": false,
+    "tri": "B",
+    "arr": "lisse",
+    "hist": "F",
+    "th": [
+     90,
+     0
+    ],
+    "nouveaux": 0
+   },
+   {
+    "geo": "plat",
+    "nonuni": false,
+    "tri": "B",
+    "arr": "lisse",
+    "hist": "F",
+    "th": [
+     120,
+     0
+    ],
+    "nouveaux": 0
+   },
+   {
+    "geo": "plat",
+    "nonuni": false,
+    "tri": "B",
+    "arr": "lisse",
+    "hist": "F",
+    "th": [
+     120,
+     -60
+    ],
+    "nouveaux": 0
+   },
+   {
+    "geo": "plat",
+    "nonuni": false,
+    "tri": "B",
+    "arr": "aleatoire",
+    "hist": "M",
+    "th": [
+     90,
+     0
+    ],
+    "nouveaux": 0
+   },
+   {
+    "geo": "plat",
+    "nonuni": false,
+    "tri": "B",
+    "arr": "aleatoire",
+    "hist": "M",
+    "th": [
+     120,
+     0
+    ],
+    "nouveaux": 0
+   },
+   {
+    "geo": "plat",
+    "nonuni": false,
+    "tri": "B",
+    "arr": "aleatoire",
+    "hist": "M",
+    "th": [
+     120,
+     -60
+    ],
+    "nouveaux": 40
+   },
+   {
+    "geo": "plat",
+    "nonuni": false,
+    "tri": "B",
+    "arr": "aleatoire",
+    "hist": "F",
+    "th": [
+     90,
+     0
+    ],
+    "nouveaux": 0
+   },
+   {
+    "geo": "plat",
+    "nonuni": false,
+    "tri": "B",
+    "arr": "aleatoire",
+    "hist": "F",
+    "th": [
+     120,
+     0
+    ],
+    "nouveaux": 0
+   },
+   {
+    "geo": "plat",
+    "nonuni": false,
+    "tri": "B",
+    "arr": "aleatoire",
+    "hist": "F",
+    "th": [
+     120,
+     -60
+    ],
+    "nouveaux": 17
+   },
+   {
+    "geo": "plat",
+    "nonuni": false,
+    "tri": "B",
+    "arr": "alterne",
+    "hist": "M",
+    "th": [
+     90,
+     0
+    ],
+    "nouveaux": 0
+   },
+   {
+    "geo": "plat",
+    "nonuni": false,
+    "tri": "B",
+    "arr": "alterne",
+    "hist": "M",
+    "th": [
+     120,
+     0
+    ],
+    "nouveaux": 0
+   },
+   {
+    "geo": "plat",
+    "nonuni": false,
+    "tri": "B",
+    "arr": "alterne",
+    "hist": "M",
+    "th": [
+     120,
+     -60
+    ],
+    "nouveaux": 0
+   },
+   {
+    "geo": "plat",
+    "nonuni": false,
+    "tri": "B",
+    "arr": "alterne",
+    "hist": "F",
+    "th": [
+     90,
+     0
+    ],
+    "nouveaux": 0
+   },
+   {
+    "geo": "plat",
+    "nonuni": false,
+    "tri": "B",
+    "arr": "alterne",
+    "hist": "F",
+    "th": [
+     120,
+     0
+    ],
+    "nouveaux": 0
+   },
+   {
+    "geo": "plat",
+    "nonuni": false,
+    "tri": "B",
+    "arr": "alterne",
+    "hist": "F",
+    "th": [
+     120,
+     -60
+    ],
+    "nouveaux": 0
+   },
+   {
+    "geo": "plat",
+    "nonuni": true,
+    "tri": "A",
+    "arr": "lisse",
+    "hist": "M",
+    "th": [
+     90,
+     0
+    ],
+    "nouveaux": 0
+   },
+   {
+    "geo": "plat",
+    "nonuni": true,
+    "tri": "A",
+    "arr": "lisse",
+    "hist": "M",
+    "th": [
+     120,
+     0
+    ],
+    "nouveaux": 0
+   },
+   {
+    "geo": "plat",
+    "nonuni": true,
+    "tri": "A",
+    "arr": "lisse",
+    "hist": "M",
+    "th": [
+     120,
+     -60
+    ],
+    "nouveaux": 9
+   },
+   {
+    "geo": "plat",
+    "nonuni": true,
+    "tri": "A",
+    "arr": "lisse",
+    "hist": "F",
+    "th": [
+     90,
+     0
+    ],
+    "nouveaux": 0
+   },
+   {
+    "geo": "plat",
+    "nonuni": true,
+    "tri": "A",
+    "arr": "lisse",
+    "hist": "F",
+    "th": [
+     120,
+     0
+    ],
+    "nouveaux": 0
+   },
+   {
+    "geo": "plat",
+    "nonuni": true,
+    "tri": "A",
+    "arr": "lisse",
+    "hist": "F",
+    "th": [
+     120,
+     -60
+    ],
+    "nouveaux": 0
+   },
+   {
+    "geo": "plat",
+    "nonuni": true,
+    "tri": "A",
+    "arr": "aleatoire",
+    "hist": "M",
+    "th": [
+     90,
+     0
+    ],
+    "nouveaux": 0
+   },
+   {
+    "geo": "plat",
+    "nonuni": true,
+    "tri": "A",
+    "arr": "aleatoire",
+    "hist": "M",
+    "th": [
+     120,
+     0
+    ],
+    "nouveaux": 0
+   },
+   {
+    "geo": "plat",
+    "nonuni": true,
+    "tri": "A",
+    "arr": "aleatoire",
+    "hist": "M",
+    "th": [
+     120,
+     -60
+    ],
+    "nouveaux": 54
+   },
+   {
+    "geo": "plat",
+    "nonuni": true,
+    "tri": "A",
+    "arr": "aleatoire",
+    "hist": "F",
+    "th": [
+     90,
+     0
+    ],
+    "nouveaux": 0
+   },
+   {
+    "geo": "plat",
+    "nonuni": true,
+    "tri": "A",
+    "arr": "aleatoire",
+    "hist": "F",
+    "th": [
+     120,
+     0
+    ],
+    "nouveaux": 0
+   },
+   {
+    "geo": "plat",
+    "nonuni": true,
+    "tri": "A",
+    "arr": "aleatoire",
+    "hist": "F",
+    "th": [
+     120,
+     -60
+    ],
+    "nouveaux": 29
+   },
+   {
+    "geo": "plat",
+    "nonuni": true,
+    "tri": "A",
+    "arr": "alterne",
+    "hist": "M",
+    "th": [
+     90,
+     0
+    ],
+    "nouveaux": 0
+   },
+   {
+    "geo": "plat",
+    "nonuni": true,
+    "tri": "A",
+    "arr": "alterne",
+    "hist": "M",
+    "th": [
+     120,
+     0
+    ],
+    "nouveaux": 0
+   },
+   {
+    "geo": "plat",
+    "nonuni": true,
+    "tri": "A",
+    "arr": "alterne",
+    "hist": "M",
+    "th": [
+     120,
+     -60
+    ],
+    "nouveaux": 27
+   },
+   {
+    "geo": "plat",
+    "nonuni": true,
+    "tri": "A",
+    "arr": "alterne",
+    "hist": "F",
+    "th": [
+     90,
+     0
+    ],
+    "nouveaux": 0
+   },
+   {
+    "geo": "plat",
+    "nonuni": true,
+    "tri": "A",
+    "arr": "alterne",
+    "hist": "F",
+    "th": [
+     120,
+     0
+    ],
+    "nouveaux": 0
+   },
+   {
+    "geo": "plat",
+    "nonuni": true,
+    "tri": "A",
+    "arr": "alterne",
+    "hist": "F",
+    "th": [
+     120,
+     -60
+    ],
+    "nouveaux": 20
+   },
+   {
+    "geo": "plat",
+    "nonuni": true,
+    "tri": "B",
+    "arr": "lisse",
+    "hist": "M",
+    "th": [
+     90,
+     0
+    ],
+    "nouveaux": 0
+   },
+   {
+    "geo": "plat",
+    "nonuni": true,
+    "tri": "B",
+    "arr": "lisse",
+    "hist": "M",
+    "th": [
+     120,
+     0
+    ],
+    "nouveaux": 0
+   },
+   {
+    "geo": "plat",
+    "nonuni": true,
+    "tri": "B",
+    "arr": "lisse",
+    "hist": "M",
+    "th": [
+     120,
+     -60
+    ],
+    "nouveaux": 9
+   },
+   {
+    "geo": "plat",
+    "nonuni": true,
+    "tri": "B",
+    "arr": "lisse",
+    "hist": "F",
+    "th": [
+     90,
+     0
+    ],
+    "nouveaux": 0
+   },
+   {
+    "geo": "plat",
+    "nonuni": true,
+    "tri": "B",
+    "arr": "lisse",
+    "hist": "F",
+    "th": [
+     120,
+     0
+    ],
+    "nouveaux": 0
+   },
+   {
+    "geo": "plat",
+    "nonuni": true,
+    "tri": "B",
+    "arr": "lisse",
+    "hist": "F",
+    "th": [
+     120,
+     -60
+    ],
+    "nouveaux": 0
+   },
+   {
+    "geo": "plat",
+    "nonuni": true,
+    "tri": "B",
+    "arr": "aleatoire",
+    "hist": "M",
+    "th": [
+     90,
+     0
+    ],
+    "nouveaux": 0
+   },
+   {
+    "geo": "plat",
+    "nonuni": true,
+    "tri": "B",
+    "arr": "aleatoire",
+    "hist": "M",
+    "th": [
+     120,
+     0
+    ],
+    "nouveaux": 0
+   },
+   {
+    "geo": "plat",
+    "nonuni": true,
+    "tri": "B",
+    "arr": "aleatoire",
+    "hist": "M",
+    "th": [
+     120,
+     -60
+    ],
+    "nouveaux": 49
+   },
+   {
+    "geo": "plat",
+    "nonuni": true,
+    "tri": "B",
+    "arr": "aleatoire",
+    "hist": "F",
+    "th": [
+     90,
+     0
+    ],
+    "nouveaux": 0
+   },
+   {
+    "geo": "plat",
+    "nonuni": true,
+    "tri": "B",
+    "arr": "aleatoire",
+    "hist": "F",
+    "th": [
+     120,
+     0
+    ],
+    "nouveaux": 0
+   },
+   {
+    "geo": "plat",
+    "nonuni": true,
+    "tri": "B",
+    "arr": "aleatoire",
+    "hist": "F",
+    "th": [
+     120,
+     -60
+    ],
+    "nouveaux": 31
+   },
+   {
+    "geo": "plat",
+    "nonuni": true,
+    "tri": "B",
+    "arr": "alterne",
+    "hist": "M",
+    "th": [
+     90,
+     0
+    ],
+    "nouveaux": 0
+   },
+   {
+    "geo": "plat",
+    "nonuni": true,
+    "tri": "B",
+    "arr": "alterne",
+    "hist": "M",
+    "th": [
+     120,
+     0
+    ],
+    "nouveaux": 0
+   },
+   {
+    "geo": "plat",
+    "nonuni": true,
+    "tri": "B",
+    "arr": "alterne",
+    "hist": "M",
+    "th": [
+     120,
+     -60
+    ],
+    "nouveaux": 0
+   },
+   {
+    "geo": "plat",
+    "nonuni": true,
+    "tri": "B",
+    "arr": "alterne",
+    "hist": "F",
+    "th": [
+     90,
+     0
+    ],
+    "nouveaux": 0
+   },
+   {
+    "geo": "plat",
+    "nonuni": true,
+    "tri": "B",
+    "arr": "alterne",
+    "hist": "F",
+    "th": [
+     120,
+     0
+    ],
+    "nouveaux": 0
+   },
+   {
+    "geo": "plat",
+    "nonuni": true,
+    "tri": "B",
+    "arr": "alterne",
+    "hist": "F",
+    "th": [
+     120,
+     -60
+    ],
+    "nouveaux": 0
+   },
+   {
+    "geo": "courbe",
+    "nonuni": false,
+    "tri": "A",
+    "arr": "lisse",
+    "hist": "M",
+    "th": [
+     90,
+     0
+    ],
+    "nouveaux": 0
+   },
+   {
+    "geo": "courbe",
+    "nonuni": false,
+    "tri": "A",
+    "arr": "lisse",
+    "hist": "M",
+    "th": [
+     120,
+     0
+    ],
+    "nouveaux": 0
+   },
+   {
+    "geo": "courbe",
+    "nonuni": false,
+    "tri": "A",
+    "arr": "lisse",
+    "hist": "M",
+    "th": [
+     120,
+     -60
+    ],
+    "nouveaux": 3
+   },
+   {
+    "geo": "courbe",
+    "nonuni": false,
+    "tri": "A",
+    "arr": "lisse",
+    "hist": "F",
+    "th": [
+     90,
+     0
+    ],
+    "nouveaux": 0
+   },
+   {
+    "geo": "courbe",
+    "nonuni": false,
+    "tri": "A",
+    "arr": "lisse",
+    "hist": "F",
+    "th": [
+     120,
+     0
+    ],
+    "nouveaux": 0
+   },
+   {
+    "geo": "courbe",
+    "nonuni": false,
+    "tri": "A",
+    "arr": "lisse",
+    "hist": "F",
+    "th": [
+     120,
+     -60
+    ],
+    "nouveaux": 0
+   },
+   {
+    "geo": "courbe",
+    "nonuni": false,
+    "tri": "A",
+    "arr": "aleatoire",
+    "hist": "M",
+    "th": [
+     90,
+     0
+    ],
+    "nouveaux": 0
+   },
+   {
+    "geo": "courbe",
+    "nonuni": false,
+    "tri": "A",
+    "arr": "aleatoire",
+    "hist": "M",
+    "th": [
+     120,
+     0
+    ],
+    "nouveaux": 0
+   },
+   {
+    "geo": "courbe",
+    "nonuni": false,
+    "tri": "A",
+    "arr": "aleatoire",
+    "hist": "M",
+    "th": [
+     120,
+     -60
+    ],
+    "nouveaux": 35
+   },
+   {
+    "geo": "courbe",
+    "nonuni": false,
+    "tri": "A",
+    "arr": "aleatoire",
+    "hist": "F",
+    "th": [
+     90,
+     0
+    ],
+    "nouveaux": 0
+   },
+   {
+    "geo": "courbe",
+    "nonuni": false,
+    "tri": "A",
+    "arr": "aleatoire",
+    "hist": "F",
+    "th": [
+     120,
+     0
+    ],
+    "nouveaux": 0
+   },
+   {
+    "geo": "courbe",
+    "nonuni": false,
+    "tri": "A",
+    "arr": "aleatoire",
+    "hist": "F",
+    "th": [
+     120,
+     -60
+    ],
+    "nouveaux": 22
+   },
+   {
+    "geo": "courbe",
+    "nonuni": false,
+    "tri": "A",
+    "arr": "alterne",
+    "hist": "M",
+    "th": [
+     90,
+     0
+    ],
+    "nouveaux": 0
+   },
+   {
+    "geo": "courbe",
+    "nonuni": false,
+    "tri": "A",
+    "arr": "alterne",
+    "hist": "M",
+    "th": [
+     120,
+     0
+    ],
+    "nouveaux": 0
+   },
+   {
+    "geo": "courbe",
+    "nonuni": false,
+    "tri": "A",
+    "arr": "alterne",
+    "hist": "M",
+    "th": [
+     120,
+     -60
+    ],
+    "nouveaux": 29
+   },
+   {
+    "geo": "courbe",
+    "nonuni": false,
+    "tri": "A",
+    "arr": "alterne",
+    "hist": "F",
+    "th": [
+     90,
+     0
+    ],
+    "nouveaux": 0
+   },
+   {
+    "geo": "courbe",
+    "nonuni": false,
+    "tri": "A",
+    "arr": "alterne",
+    "hist": "F",
+    "th": [
+     120,
+     0
+    ],
+    "nouveaux": 0
+   },
+   {
+    "geo": "courbe",
+    "nonuni": false,
+    "tri": "A",
+    "arr": "alterne",
+    "hist": "F",
+    "th": [
+     120,
+     -60
+    ],
+    "nouveaux": 13
+   },
+   {
+    "geo": "courbe",
+    "nonuni": false,
+    "tri": "B",
+    "arr": "lisse",
+    "hist": "M",
+    "th": [
+     90,
+     0
+    ],
+    "nouveaux": 0
+   },
+   {
+    "geo": "courbe",
+    "nonuni": false,
+    "tri": "B",
+    "arr": "lisse",
+    "hist": "M",
+    "th": [
+     120,
+     0
+    ],
+    "nouveaux": 0
+   },
+   {
+    "geo": "courbe",
+    "nonuni": false,
+    "tri": "B",
+    "arr": "lisse",
+    "hist": "M",
+    "th": [
+     120,
+     -60
+    ],
+    "nouveaux": 0
+   },
+   {
+    "geo": "courbe",
+    "nonuni": false,
+    "tri": "B",
+    "arr": "lisse",
+    "hist": "F",
+    "th": [
+     90,
+     0
+    ],
+    "nouveaux": 0
+   },
+   {
+    "geo": "courbe",
+    "nonuni": false,
+    "tri": "B",
+    "arr": "lisse",
+    "hist": "F",
+    "th": [
+     120,
+     0
+    ],
+    "nouveaux": 0
+   },
+   {
+    "geo": "courbe",
+    "nonuni": false,
+    "tri": "B",
+    "arr": "lisse",
+    "hist": "F",
+    "th": [
+     120,
+     -60
+    ],
+    "nouveaux": 0
+   },
+   {
+    "geo": "courbe",
+    "nonuni": false,
+    "tri": "B",
+    "arr": "aleatoire",
+    "hist": "M",
+    "th": [
+     90,
+     0
+    ],
+    "nouveaux": 0
+   },
+   {
+    "geo": "courbe",
+    "nonuni": false,
+    "tri": "B",
+    "arr": "aleatoire",
+    "hist": "M",
+    "th": [
+     120,
+     0
+    ],
+    "nouveaux": 0
+   },
+   {
+    "geo": "courbe",
+    "nonuni": false,
+    "tri": "B",
+    "arr": "aleatoire",
+    "hist": "M",
+    "th": [
+     120,
+     -60
+    ],
+    "nouveaux": 36
+   },
+   {
+    "geo": "courbe",
+    "nonuni": false,
+    "tri": "B",
+    "arr": "aleatoire",
+    "hist": "F",
+    "th": [
+     90,
+     0
+    ],
+    "nouveaux": 0
+   },
+   {
+    "geo": "courbe",
+    "nonuni": false,
+    "tri": "B",
+    "arr": "aleatoire",
+    "hist": "F",
+    "th": [
+     120,
+     0
+    ],
+    "nouveaux": 0
+   },
+   {
+    "geo": "courbe",
+    "nonuni": false,
+    "tri": "B",
+    "arr": "aleatoire",
+    "hist": "F",
+    "th": [
+     120,
+     -60
+    ],
+    "nouveaux": 18
+   },
+   {
+    "geo": "courbe",
+    "nonuni": false,
+    "tri": "B",
+    "arr": "alterne",
+    "hist": "M",
+    "th": [
+     90,
+     0
+    ],
+    "nouveaux": 0
+   },
+   {
+    "geo": "courbe",
+    "nonuni": false,
+    "tri": "B",
+    "arr": "alterne",
+    "hist": "M",
+    "th": [
+     120,
+     0
+    ],
+    "nouveaux": 0
+   },
+   {
+    "geo": "courbe",
+    "nonuni": false,
+    "tri": "B",
+    "arr": "alterne",
+    "hist": "M",
+    "th": [
+     120,
+     -60
+    ],
+    "nouveaux": 0
+   },
+   {
+    "geo": "courbe",
+    "nonuni": false,
+    "tri": "B",
+    "arr": "alterne",
+    "hist": "F",
+    "th": [
+     90,
+     0
+    ],
+    "nouveaux": 0
+   },
+   {
+    "geo": "courbe",
+    "nonuni": false,
+    "tri": "B",
+    "arr": "alterne",
+    "hist": "F",
+    "th": [
+     120,
+     0
+    ],
+    "nouveaux": 0
+   },
+   {
+    "geo": "courbe",
+    "nonuni": false,
+    "tri": "B",
+    "arr": "alterne",
+    "hist": "F",
+    "th": [
+     120,
+     -60
+    ],
+    "nouveaux": 0
+   },
+   {
+    "geo": "courbe",
+    "nonuni": true,
+    "tri": "A",
+    "arr": "lisse",
+    "hist": "M",
+    "th": [
+     90,
+     0
+    ],
+    "nouveaux": 0
+   },
+   {
+    "geo": "courbe",
+    "nonuni": true,
+    "tri": "A",
+    "arr": "lisse",
+    "hist": "M",
+    "th": [
+     120,
+     0
+    ],
+    "nouveaux": 0
+   },
+   {
+    "geo": "courbe",
+    "nonuni": true,
+    "tri": "A",
+    "arr": "lisse",
+    "hist": "M",
+    "th": [
+     120,
+     -60
+    ],
+    "nouveaux": 2
+   },
+   {
+    "geo": "courbe",
+    "nonuni": true,
+    "tri": "A",
+    "arr": "lisse",
+    "hist": "F",
+    "th": [
+     90,
+     0
+    ],
+    "nouveaux": 0
+   },
+   {
+    "geo": "courbe",
+    "nonuni": true,
+    "tri": "A",
+    "arr": "lisse",
+    "hist": "F",
+    "th": [
+     120,
+     0
+    ],
+    "nouveaux": 0
+   },
+   {
+    "geo": "courbe",
+    "nonuni": true,
+    "tri": "A",
+    "arr": "lisse",
+    "hist": "F",
+    "th": [
+     120,
+     -60
+    ],
+    "nouveaux": 0
+   },
+   {
+    "geo": "courbe",
+    "nonuni": true,
+    "tri": "A",
+    "arr": "aleatoire",
+    "hist": "M",
+    "th": [
+     90,
+     0
+    ],
+    "nouveaux": 0
+   },
+   {
+    "geo": "courbe",
+    "nonuni": true,
+    "tri": "A",
+    "arr": "aleatoire",
+    "hist": "M",
+    "th": [
+     120,
+     0
+    ],
+    "nouveaux": 0
+   },
+   {
+    "geo": "courbe",
+    "nonuni": true,
+    "tri": "A",
+    "arr": "aleatoire",
+    "hist": "M",
+    "th": [
+     120,
+     -60
+    ],
+    "nouveaux": 53
+   },
+   {
+    "geo": "courbe",
+    "nonuni": true,
+    "tri": "A",
+    "arr": "aleatoire",
+    "hist": "F",
+    "th": [
+     90,
+     0
+    ],
+    "nouveaux": 0
+   },
+   {
+    "geo": "courbe",
+    "nonuni": true,
+    "tri": "A",
+    "arr": "aleatoire",
+    "hist": "F",
+    "th": [
+     120,
+     0
+    ],
+    "nouveaux": 0
+   },
+   {
+    "geo": "courbe",
+    "nonuni": true,
+    "tri": "A",
+    "arr": "aleatoire",
+    "hist": "F",
+    "th": [
+     120,
+     -60
+    ],
+    "nouveaux": 29
+   },
+   {
+    "geo": "courbe",
+    "nonuni": true,
+    "tri": "A",
+    "arr": "alterne",
+    "hist": "M",
+    "th": [
+     90,
+     0
+    ],
+    "nouveaux": 0
+   },
+   {
+    "geo": "courbe",
+    "nonuni": true,
+    "tri": "A",
+    "arr": "alterne",
+    "hist": "M",
+    "th": [
+     120,
+     0
+    ],
+    "nouveaux": 0
+   },
+   {
+    "geo": "courbe",
+    "nonuni": true,
+    "tri": "A",
+    "arr": "alterne",
+    "hist": "M",
+    "th": [
+     120,
+     -60
+    ],
+    "nouveaux": 30
+   },
+   {
+    "geo": "courbe",
+    "nonuni": true,
+    "tri": "A",
+    "arr": "alterne",
+    "hist": "F",
+    "th": [
+     90,
+     0
+    ],
+    "nouveaux": 0
+   },
+   {
+    "geo": "courbe",
+    "nonuni": true,
+    "tri": "A",
+    "arr": "alterne",
+    "hist": "F",
+    "th": [
+     120,
+     0
+    ],
+    "nouveaux": 0
+   },
+   {
+    "geo": "courbe",
+    "nonuni": true,
+    "tri": "A",
+    "arr": "alterne",
+    "hist": "F",
+    "th": [
+     120,
+     -60
+    ],
+    "nouveaux": 16
+   },
+   {
+    "geo": "courbe",
+    "nonuni": true,
+    "tri": "B",
+    "arr": "lisse",
+    "hist": "M",
+    "th": [
+     90,
+     0
+    ],
+    "nouveaux": 0
+   },
+   {
+    "geo": "courbe",
+    "nonuni": true,
+    "tri": "B",
+    "arr": "lisse",
+    "hist": "M",
+    "th": [
+     120,
+     0
+    ],
+    "nouveaux": 0
+   },
+   {
+    "geo": "courbe",
+    "nonuni": true,
+    "tri": "B",
+    "arr": "lisse",
+    "hist": "M",
+    "th": [
+     120,
+     -60
+    ],
+    "nouveaux": 1
+   },
+   {
+    "geo": "courbe",
+    "nonuni": true,
+    "tri": "B",
+    "arr": "lisse",
+    "hist": "F",
+    "th": [
+     90,
+     0
+    ],
+    "nouveaux": 0
+   },
+   {
+    "geo": "courbe",
+    "nonuni": true,
+    "tri": "B",
+    "arr": "lisse",
+    "hist": "F",
+    "th": [
+     120,
+     0
+    ],
+    "nouveaux": 0
+   },
+   {
+    "geo": "courbe",
+    "nonuni": true,
+    "tri": "B",
+    "arr": "lisse",
+    "hist": "F",
+    "th": [
+     120,
+     -60
+    ],
+    "nouveaux": 0
+   },
+   {
+    "geo": "courbe",
+    "nonuni": true,
+    "tri": "B",
+    "arr": "aleatoire",
+    "hist": "M",
+    "th": [
+     90,
+     0
+    ],
+    "nouveaux": 0
+   },
+   {
+    "geo": "courbe",
+    "nonuni": true,
+    "tri": "B",
+    "arr": "aleatoire",
+    "hist": "M",
+    "th": [
+     120,
+     0
+    ],
+    "nouveaux": 0
+   },
+   {
+    "geo": "courbe",
+    "nonuni": true,
+    "tri": "B",
+    "arr": "aleatoire",
+    "hist": "M",
+    "th": [
+     120,
+     -60
+    ],
+    "nouveaux": 53
+   },
+   {
+    "geo": "courbe",
+    "nonuni": true,
+    "tri": "B",
+    "arr": "aleatoire",
+    "hist": "F",
+    "th": [
+     90,
+     0
+    ],
+    "nouveaux": 0
+   },
+   {
+    "geo": "courbe",
+    "nonuni": true,
+    "tri": "B",
+    "arr": "aleatoire",
+    "hist": "F",
+    "th": [
+     120,
+     0
+    ],
+    "nouveaux": 0
+   },
+   {
+    "geo": "courbe",
+    "nonuni": true,
+    "tri": "B",
+    "arr": "aleatoire",
+    "hist": "F",
+    "th": [
+     120,
+     -60
+    ],
+    "nouveaux": 28
+   },
+   {
+    "geo": "courbe",
+    "nonuni": true,
+    "tri": "B",
+    "arr": "alterne",
+    "hist": "M",
+    "th": [
+     90,
+     0
+    ],
+    "nouveaux": 0
+   },
+   {
+    "geo": "courbe",
+    "nonuni": true,
+    "tri": "B",
+    "arr": "alterne",
+    "hist": "M",
+    "th": [
+     120,
+     0
+    ],
+    "nouveaux": 0
+   },
+   {
+    "geo": "courbe",
+    "nonuni": true,
+    "tri": "B",
+    "arr": "alterne",
+    "hist": "M",
+    "th": [
+     120,
+     -60
+    ],
+    "nouveaux": 0
+   },
+   {
+    "geo": "courbe",
+    "nonuni": true,
+    "tri": "B",
+    "arr": "alterne",
+    "hist": "F",
+    "th": [
+     90,
+     0
+    ],
+    "nouveaux": 0
+   },
+   {
+    "geo": "courbe",
+    "nonuni": true,
+    "tri": "B",
+    "arr": "alterne",
+    "hist": "F",
+    "th": [
+     120,
+     0
+    ],
+    "nouveaux": 0
+   },
+   {
+    "geo": "courbe",
+    "nonuni": true,
+    "tri": "B",
+    "arr": "alterne",
+    "hist": "F",
+    "th": [
+     120,
+     -60
+    ],
+    "nouveaux": 0
+   }
+  ],
+  "effets_un_facteur_a_la_fois": [
+   {
+    "config": {
+     "geo": "plat",
+     "nonuni": false,
+     "tri": "A",
+     "arr": "lisse",
+     "hist": "M",
+     "th": [
+      120,
+      -60
+     ],
+     "nouveaux": 4
+    },
+    "variantes": {
+     "geometrie_inverse": 3,
+     "triangulation_inverse": 3,
+     "histogramme_inverse": 0,
+     "arrangement_lisse": 4,
+     "arrangement_alterne": 28,
+     "angles_90_0": 0,
+     "lambda_0.01": 9,
+     "lambda_1.0": 0
+    }
+   },
+   {
+    "config": {
+     "geo": "plat",
+     "nonuni": false,
+     "tri": "A",
+     "arr": "aleatoire",
+     "hist": "M",
+     "th": [
+      120,
+      -60
+     ],
+     "nouveaux": 41
+    },
+    "variantes": {
+     "geometrie_inverse": 35,
+     "triangulation_inverse": 40,
+     "histogramme_inverse": 22,
+     "arrangement_lisse": 4,
+     "arrangement_alterne": 28,
+     "angles_90_0": 0,
+     "lambda_0.01": 45,
+     "lambda_1.0": 21
+    }
+   },
+   {
+    "config": {
+     "geo": "plat",
+     "nonuni": false,
+     "tri": "A",
+     "arr": "aleatoire",
+     "hist": "F",
+     "th": [
+      120,
+      -60
+     ],
+     "nouveaux": 22
+    },
+    "variantes": {
+     "geometrie_inverse": 22,
+     "triangulation_inverse": 17,
+     "histogramme_inverse": 41,
+     "arrangement_lisse": 0,
+     "arrangement_alterne": 18,
+     "angles_90_0": 0,
+     "lambda_0.01": 20,
+     "lambda_1.0": 8
+    }
+   },
+   {
+    "config": {
+     "geo": "plat",
+     "nonuni": false,
+     "tri": "A",
+     "arr": "alterne",
+     "hist": "M",
+     "th": [
+      120,
+      -60
+     ],
+     "nouveaux": 28
+    },
+    "variantes": {
+     "geometrie_inverse": 29,
+     "triangulation_inverse": 0,
+     "histogramme_inverse": 18,
+     "arrangement_lisse": 4,
+     "arrangement_alterne": 28,
+     "angles_90_0": 0,
+     "lambda_0.01": 60,
+     "lambda_1.0": 10
+    }
+   },
+   {
+    "config": {
+     "geo": "plat",
+     "nonuni": false,
+     "tri": "A",
+     "arr": "alterne",
+     "hist": "F",
+     "th": [
+      120,
+      -60
+     ],
+     "nouveaux": 18
+    },
+    "variantes": {
+     "geometrie_inverse": 13,
+     "triangulation_inverse": 0,
+     "histogramme_inverse": 28,
+     "arrangement_lisse": 0,
+     "arrangement_alterne": 18,
+     "angles_90_0": 0,
+     "lambda_0.01": 38,
+     "lambda_1.0": 0
+    }
+   },
+   {
+    "config": {
+     "geo": "plat",
+     "nonuni": false,
+     "tri": "B",
+     "arr": "lisse",
+     "hist": "M",
+     "th": [
+      120,
+      -60
+     ],
+     "nouveaux": 3
+    },
+    "variantes": {
+     "geometrie_inverse": 0,
+     "triangulation_inverse": 4,
+     "histogramme_inverse": 0,
+     "arrangement_lisse": 3,
+     "arrangement_alterne": 0,
+     "angles_90_0": 0,
+     "lambda_0.01": 9,
+     "lambda_1.0": 0
+    }
+   },
+   {
+    "config": {
+     "geo": "plat",
+     "nonuni": false,
+     "tri": "B",
+     "arr": "aleatoire",
+     "hist": "M",
+     "th": [
+      120,
+      -60
+     ],
+     "nouveaux": 40
+    },
+    "variantes": {
+     "geometrie_inverse": 36,
+     "triangulation_inverse": 41,
+     "histogramme_inverse": 17,
+     "arrangement_lisse": 3,
+     "arrangement_alterne": 0,
+     "angles_90_0": 0,
+     "lambda_0.01": 41,
+     "lambda_1.0": 42
+    }
+   },
+   {
+    "config": {
+     "geo": "plat",
+     "nonuni": false,
+     "tri": "B",
+     "arr": "aleatoire",
+     "hist": "F",
+     "th": [
+      120,
+      -60
+     ],
+     "nouveaux": 17
+    },
+    "variantes": {
+     "geometrie_inverse": 18,
+     "triangulation_inverse": 22,
+     "histogramme_inverse": 40,
+     "arrangement_lisse": 0,
+     "arrangement_alterne": 0,
+     "angles_90_0": 0,
+     "lambda_0.01": 22,
+     "lambda_1.0": 18
+    }
+   },
+   {
+    "config": {
+     "geo": "plat",
+     "nonuni": true,
+     "tri": "A",
+     "arr": "lisse",
+     "hist": "M",
+     "th": [
+      120,
+      -60
+     ],
+     "nouveaux": 9
+    },
+    "variantes": {
+     "geometrie_inverse": 2,
+     "triangulation_inverse": 9,
+     "histogramme_inverse": 0,
+     "arrangement_lisse": 9,
+     "arrangement_alterne": 27,
+     "angles_90_0": 0,
+     "lambda_0.01": 9,
+     "lambda_1.0": 1
+    }
+   },
+   {
+    "config": {
+     "geo": "plat",
+     "nonuni": true,
+     "tri": "A",
+     "arr": "aleatoire",
+     "hist": "M",
+     "th": [
+      120,
+      -60
+     ],
+     "nouveaux": 54
+    },
+    "variantes": {
+     "geometrie_inverse": 53,
+     "triangulation_inverse": 49,
+     "histogramme_inverse": 29,
+     "arrangement_lisse": 9,
+     "arrangement_alterne": 27,
+     "angles_90_0": 0,
+     "lambda_0.01": 73,
+     "lambda_1.0": 27
+    }
+   },
+   {
+    "config": {
+     "geo": "plat",
+     "nonuni": true,
+     "tri": "A",
+     "arr": "aleatoire",
+     "hist": "F",
+     "th": [
+      120,
+      -60
+     ],
+     "nouveaux": 29
+    },
+    "variantes": {
+     "geometrie_inverse": 29,
+     "triangulation_inverse": 31,
+     "histogramme_inverse": 54,
+     "arrangement_lisse": 0,
+     "arrangement_alterne": 20,
+     "angles_90_0": 0,
+     "lambda_0.01": 37,
+     "lambda_1.0": 19
+    }
+   },
+   {
+    "config": {
+     "geo": "plat",
+     "nonuni": true,
+     "tri": "A",
+     "arr": "alterne",
+     "hist": "M",
+     "th": [
+      120,
+      -60
+     ],
+     "nouveaux": 27
+    },
+    "variantes": {
+     "geometrie_inverse": 30,
+     "triangulation_inverse": 0,
+     "histogramme_inverse": 20,
+     "arrangement_lisse": 9,
+     "arrangement_alterne": 27,
+     "angles_90_0": 0,
+     "lambda_0.01": 91,
+     "lambda_1.0": 8
+    }
+   },
+   {
+    "config": {
+     "geo": "plat",
+     "nonuni": true,
+     "tri": "A",
+     "arr": "alterne",
+     "hist": "F",
+     "th": [
+      120,
+      -60
+     ],
+     "nouveaux": 20
+    },
+    "variantes": {
+     "geometrie_inverse": 16,
+     "triangulation_inverse": 0,
+     "histogramme_inverse": 27,
+     "arrangement_lisse": 0,
+     "arrangement_alterne": 20,
+     "angles_90_0": 0,
+     "lambda_0.01": 71,
+     "lambda_1.0": 0
+    }
+   },
+   {
+    "config": {
+     "geo": "plat",
+     "nonuni": true,
+     "tri": "B",
+     "arr": "lisse",
+     "hist": "M",
+     "th": [
+      120,
+      -60
+     ],
+     "nouveaux": 9
+    },
+    "variantes": {
+     "geometrie_inverse": 1,
+     "triangulation_inverse": 9,
+     "histogramme_inverse": 0,
+     "arrangement_lisse": 9,
+     "arrangement_alterne": 0,
+     "angles_90_0": 0,
+     "lambda_0.01": 9,
+     "lambda_1.0": 2
+    }
+   },
+   {
+    "config": {
+     "geo": "plat",
+     "nonuni": true,
+     "tri": "B",
+     "arr": "aleatoire",
+     "hist": "M",
+     "th": [
+      120,
+      -60
+     ],
+     "nouveaux": 49
+    },
+    "variantes": {
+     "geometrie_inverse": 53,
+     "triangulation_inverse": 54,
+     "histogramme_inverse": 31,
+     "arrangement_lisse": 9,
+     "arrangement_alterne": 0,
+     "angles_90_0": 0,
+     "lambda_0.01": 65,
+     "lambda_1.0": 57
+    }
+   },
+   {
+    "config": {
+     "geo": "plat",
+     "nonuni": true,
+     "tri": "B",
+     "arr": "aleatoire",
+     "hist": "F",
+     "th": [
+      120,
+      -60
+     ],
+     "nouveaux": 31
+    },
+    "variantes": {
+     "geometrie_inverse": 28,
+     "triangulation_inverse": 29,
+     "histogramme_inverse": 49,
+     "arrangement_lisse": 0,
+     "arrangement_alterne": 0,
+     "angles_90_0": 0,
+     "lambda_0.01": 34,
+     "lambda_1.0": 32
+    }
+   },
+   {
+    "config": {
+     "geo": "courbe",
+     "nonuni": false,
+     "tri": "A",
+     "arr": "lisse",
+     "hist": "M",
+     "th": [
+      120,
+      -60
+     ],
+     "nouveaux": 3
+    },
+    "variantes": {
+     "geometrie_inverse": 4,
+     "triangulation_inverse": 0,
+     "histogramme_inverse": 0,
+     "arrangement_lisse": 3,
+     "arrangement_alterne": 29,
+     "angles_90_0": 0,
+     "lambda_0.01": 9,
+     "lambda_1.0": 0
+    }
+   },
+   {
+    "config": {
+     "geo": "courbe",
+     "nonuni": false,
+     "tri": "A",
+     "arr": "aleatoire",
+     "hist": "M",
+     "th": [
+      120,
+      -60
+     ],
+     "nouveaux": 35
+    },
+    "variantes": {
+     "geometrie_inverse": 41,
+     "triangulation_inverse": 36,
+     "histogramme_inverse": 22,
+     "arrangement_lisse": 3,
+     "arrangement_alterne": 29,
+     "angles_90_0": 0,
+     "lambda_0.01": 46,
+     "lambda_1.0": 23
+    }
+   },
+   {
+    "config": {
+     "geo": "courbe",
+     "nonuni": false,
+     "tri": "A",
+     "arr": "aleatoire",
+     "hist": "F",
+     "th": [
+      120,
+      -60
+     ],
+     "nouveaux": 22
+    },
+    "variantes": {
+     "geometrie_inverse": 22,
+     "triangulation_inverse": 18,
+     "histogramme_inverse": 35,
+     "arrangement_lisse": 0,
+     "arrangement_alterne": 13,
+     "angles_90_0": 0,
+     "lambda_0.01": 26,
+     "lambda_1.0": 10
+    }
+   },
+   {
+    "config": {
+     "geo": "courbe",
+     "nonuni": false,
+     "tri": "A",
+     "arr": "alterne",
+     "hist": "M",
+     "th": [
+      120,
+      -60
+     ],
+     "nouveaux": 29
+    },
+    "variantes": {
+     "geometrie_inverse": 28,
+     "triangulation_inverse": 0,
+     "histogramme_inverse": 13,
+     "arrangement_lisse": 3,
+     "arrangement_alterne": 29,
+     "angles_90_0": 0,
+     "lambda_0.01": 65,
+     "lambda_1.0": 5
+    }
+   },
+   {
+    "config": {
+     "geo": "courbe",
+     "nonuni": false,
+     "tri": "A",
+     "arr": "alterne",
+     "hist": "F",
+     "th": [
+      120,
+      -60
+     ],
+     "nouveaux": 13
+    },
+    "variantes": {
+     "geometrie_inverse": 18,
+     "triangulation_inverse": 0,
+     "histogramme_inverse": 29,
+     "arrangement_lisse": 0,
+     "arrangement_alterne": 13,
+     "angles_90_0": 0,
+     "lambda_0.01": 28,
+     "lambda_1.0": 0
+    }
+   },
+   {
+    "config": {
+     "geo": "courbe",
+     "nonuni": false,
+     "tri": "B",
+     "arr": "aleatoire",
+     "hist": "M",
+     "th": [
+      120,
+      -60
+     ],
+     "nouveaux": 36
+    },
+    "variantes": {
+     "geometrie_inverse": 40,
+     "triangulation_inverse": 35,
+     "histogramme_inverse": 18,
+     "arrangement_lisse": 0,
+     "arrangement_alterne": 0,
+     "angles_90_0": 0,
+     "lambda_0.01": 47,
+     "lambda_1.0": 38
+    }
+   },
+   {
+    "config": {
+     "geo": "courbe",
+     "nonuni": false,
+     "tri": "B",
+     "arr": "aleatoire",
+     "hist": "F",
+     "th": [
+      120,
+      -60
+     ],
+     "nouveaux": 18
+    },
+    "variantes": {
+     "geometrie_inverse": 17,
+     "triangulation_inverse": 22,
+     "histogramme_inverse": 36,
+     "arrangement_lisse": 0,
+     "arrangement_alterne": 0,
+     "angles_90_0": 0,
+     "lambda_0.01": 25,
+     "lambda_1.0": 17
+    }
+   },
+   {
+    "config": {
+     "geo": "courbe",
+     "nonuni": true,
+     "tri": "A",
+     "arr": "lisse",
+     "hist": "M",
+     "th": [
+      120,
+      -60
+     ],
+     "nouveaux": 2
+    },
+    "variantes": {
+     "geometrie_inverse": 9,
+     "triangulation_inverse": 1,
+     "histogramme_inverse": 0,
+     "arrangement_lisse": 2,
+     "arrangement_alterne": 30,
+     "angles_90_0": 0,
+     "lambda_0.01": 9,
+     "lambda_1.0": 0
+    }
+   },
+   {
+    "config": {
+     "geo": "courbe",
+     "nonuni": true,
+     "tri": "A",
+     "arr": "aleatoire",
+     "hist": "M",
+     "th": [
+      120,
+      -60
+     ],
+     "nouveaux": 53
+    },
+    "variantes": {
+     "geometrie_inverse": 54,
+     "triangulation_inverse": 53,
+     "histogramme_inverse": 29,
+     "arrangement_lisse": 2,
+     "arrangement_alterne": 30,
+     "angles_90_0": 0,
+     "lambda_0.01": 76,
+     "lambda_1.0": 37
+    }
+   },
+   {
+    "config": {
+     "geo": "courbe",
+     "nonuni": true,
+     "tri": "A",
+     "arr": "aleatoire",
+     "hist": "F",
+     "th": [
+      120,
+      -60
+     ],
+     "nouveaux": 29
+    },
+    "variantes": {
+     "geometrie_inverse": 29,
+     "triangulation_inverse": 28,
+     "histogramme_inverse": 53,
+     "arrangement_lisse": 0,
+     "arrangement_alterne": 16,
+     "angles_90_0": 0,
+     "lambda_0.01": 35,
+     "lambda_1.0": 21
+    }
+   },
+   {
+    "config": {
+     "geo": "courbe",
+     "nonuni": true,
+     "tri": "A",
+     "arr": "alterne",
+     "hist": "M",
+     "th": [
+      120,
+      -60
+     ],
+     "nouveaux": 30
+    },
+    "variantes": {
+     "geometrie_inverse": 27,
+     "triangulation_inverse": 0,
+     "histogramme_inverse": 16,
+     "arrangement_lisse": 2,
+     "arrangement_alterne": 30,
+     "angles_90_0": 0,
+     "lambda_0.01": 98,
+     "lambda_1.0": 7
+    }
+   },
+   {
+    "config": {
+     "geo": "courbe",
+     "nonuni": true,
+     "tri": "A",
+     "arr": "alterne",
+     "hist": "F",
+     "th": [
+      120,
+      -60
+     ],
+     "nouveaux": 16
+    },
+    "variantes": {
+     "geometrie_inverse": 20,
+     "triangulation_inverse": 0,
+     "histogramme_inverse": 30,
+     "arrangement_lisse": 0,
+     "arrangement_alterne": 16,
+     "angles_90_0": 0,
+     "lambda_0.01": 56,
+     "lambda_1.0": 0
+    }
+   },
+   {
+    "config": {
+     "geo": "courbe",
+     "nonuni": true,
+     "tri": "B",
+     "arr": "lisse",
+     "hist": "M",
+     "th": [
+      120,
+      -60
+     ],
+     "nouveaux": 1
+    },
+    "variantes": {
+     "geometrie_inverse": 9,
+     "triangulation_inverse": 2,
+     "histogramme_inverse": 0,
+     "arrangement_lisse": 1,
+     "arrangement_alterne": 0,
+     "angles_90_0": 0,
+     "lambda_0.01": 9,
+     "lambda_1.0": 0
+    }
+   },
+   {
+    "config": {
+     "geo": "courbe",
+     "nonuni": true,
+     "tri": "B",
+     "arr": "aleatoire",
+     "hist": "M",
+     "th": [
+      120,
+      -60
+     ],
+     "nouveaux": 53
+    },
+    "variantes": {
+     "geometrie_inverse": 49,
+     "triangulation_inverse": 53,
+     "histogramme_inverse": 28,
+     "arrangement_lisse": 1,
+     "arrangement_alterne": 0,
+     "angles_90_0": 0,
+     "lambda_0.01": 68,
+     "lambda_1.0": 57
+    }
+   },
+   {
+    "config": {
+     "geo": "courbe",
+     "nonuni": true,
+     "tri": "B",
+     "arr": "aleatoire",
+     "hist": "F",
+     "th": [
+      120,
+      -60
+     ],
+     "nouveaux": 28
+    },
+    "variantes": {
+     "geometrie_inverse": 31,
+     "triangulation_inverse": 29,
+     "histogramme_inverse": 53,
+     "arrangement_lisse": 0,
+     "arrangement_alterne": 0,
+     "angles_90_0": 0,
+     "lambda_0.01": 31,
+     "lambda_1.0": 36
+    }
+   }
+  ],
+  "resume_par_facteur": {
+   "geometrie_inverse": {
+    "configs_ou_disparaissent": 1,
+    "configs_ou_persistent": 30,
+    "total_nouveaux_apres": 766
+   },
+   "triangulation_inverse": {
+    "configs_ou_disparaissent": 9,
+    "configs_ou_persistent": 22,
+    "total_nouveaux_apres": 585
+   },
+   "histogramme_inverse": {
+    "configs_ou_disparaissent": 7,
+    "configs_ou_persistent": 24,
+    "total_nouveaux_apres": 738
+   },
+   "arrangement_lisse": {
+    "configs_ou_disparaissent": 13,
+    "configs_ou_persistent": 18,
+    "total_nouveaux_apres": 80
+   },
+   "arrangement_alterne": {
+    "configs_ou_disparaissent": 11,
+    "configs_ou_persistent": 20,
+    "total_nouveaux_apres": 476
+   },
+   "angles_90_0": {
+    "configs_ou_disparaissent": 31,
+    "configs_ou_persistent": 0,
+    "total_nouveaux_apres": 0
+   },
+   "lambda_0.01": {
+    "configs_ou_disparaissent": 0,
+    "configs_ou_persistent": 31,
+    "total_nouveaux_apres": 1261
+   },
+   "lambda_1.0": {
+    "configs_ou_disparaissent": 9,
+    "configs_ou_persistent": 22,
+    "total_nouveaux_apres": 496
+   }
+  }
+ },
+ "B_controles": {
+  "B1_rigide_commun_nouveaux": 0,
+  "B1_rigide_commun_retournements_SQ": 0,
+  "B2_rotation_globale_nouveaux_avant": 28,
+  "B2_rotation_globale_nouveaux_apres": 28,
+  "B3_rotation_rigide_170_nouveaux": 0
+ },
+ "C_reel_maria": [
+  {
+   "pose": "generative_hanche_G_75",
+   "nouveaux": 2,
+   "nouveaux_si_lambda": {
+    "0.01": 2,
+    "1.0": 2
+   },
+   "nouveaux_si_cible_polaire": 2,
+   "triangles_exemples": [
+    {
+     "sommets": [
+      4226,
+      4225,
+      4216
+     ],
+     "poids_dominants": [
+      [
+       "mixamorig:LeftUpLeg",
+       0.756
+      ],
+      [
+       "mixamorig:LeftUpLeg",
+       0.798
+      ],
+      [
+       "mixamorig:LeftUpLeg",
+       0.691
+      ]
+     ],
+     "aire_repos": 0.00011863488143220697,
+     "aire_SQ": 8.26397452802596e-05
+    },
+    {
+     "sommets": [
+      4242,
+      4226,
+      4216
+     ],
+     "poids_dominants": [
+      [
+       "mixamorig:LeftUpLeg",
+       0.736
+      ],
+      [
+       "mixamorig:LeftUpLeg",
+       0.756
+      ],
+      [
+       "mixamorig:LeftUpLeg",
+       0.691
+      ]
+     ],
+     "aire_repos": 5.264166006719515e-05,
+     "aire_SQ": 1.947710152122678e-05
+    }
+   ]
+  },
+  {
+   "pose": "generative_hanche_G_105",
+   "nouveaux": 3,
+   "nouveaux_si_lambda": {
+    "0.01": 4,
+    "1.0": 3
+   },
+   "nouveaux_si_cible_polaire": 3,
+   "triangles_exemples": [
+    {
+     "sommets": [
+      4226,
+      4225,
+      4216
+     ],
+     "poids_dominants": [
+      [
+       "mixamorig:LeftUpLeg",
+       0.756
+      ],
+      [
+       "mixamorig:LeftUpLeg",
+       0.798
+      ],
+      [
+       "mixamorig:LeftUpLeg",
+       0.691
+      ]
+     ],
+     "aire_repos": 0.00011863488143220697,
+     "aire_SQ": 0.00015269557959249726
+    },
+    {
+     "sommets": [
+      4242,
+      4184,
+      4226
+     ],
+     "poids_dominants": [
+      [
+       "mixamorig:LeftUpLeg",
+       0.736
+      ],
+      [
+       "mixamorig:LeftUpLeg",
+       0.841
+      ],
+      [
+       "mixamorig:LeftUpLeg",
+       0.756
+      ]
+     ],
+     "aire_repos": 3.722877392348977e-05,
+     "aire_SQ": 4.684792007272128e-05
+    },
+    {
+     "sommets": [
+      4242,
+      4226,
+      4216
+     ],
+     "poids_dominants": [
+      [
+       "mixamorig:LeftUpLeg",
+       0.736
+      ],
+      [
+       "mixamorig:LeftUpLeg",
+       0.756
+      ],
+      [
+       "mixamorig:LeftUpLeg",
+       0.691
+      ]
+     ],
+     "aire_repos": 5.264166006719515e-05,
+     "aire_SQ": 4.281043195703841e-05
+    }
+   ]
+  },
+  {
+   "pose": "generative_hanche_G_120",
+   "nouveaux": 4,
+   "nouveaux_si_lambda": {
+    "0.01": 4,
+    "1.0": 3
+   },
+   "nouveaux_si_cible_polaire": 3,
+   "triangles_exemples": [
+    {
+     "sommets": [
+      4102,
+      4172,
+      4170
+     ],
+     "poids_dominants": [
+      [
+       "mixamorig:RightUpLeg",
+       0.767
+      ],
+      [
+       "mixamorig:Hips",
+       0.45
+      ],
+      [
+       "mixamorig:Hips",
+       0.45
+      ]
+     ],
+     "aire_repos": 6.974888883893065e-05,
+     "aire_SQ": 1.1512007412594067e-05
+    },
+    {
+     "sommets": [
+      4226,
+      4225,
+      4216
+     ],
+     "poids_dominants": [
+      [
+       "mixamorig:LeftUpLeg",
+       0.756
+      ],
+      [
+       "mixamorig:LeftUpLeg",
+       0.798
+      ],
+      [
+       "mixamorig:LeftUpLeg",
+       0.691
+      ]
+     ],
+     "aire_repos": 0.00011863488143220697,
+     "aire_SQ": 0.00018524311059093802
+    },
+    {
+     "sommets": [
+      4242,
+      4184,
+      4226
+     ],
+     "poids_dominants": [
+      [
+       "mixamorig:LeftUpLeg",
+       0.736
+      ],
+      [
+       "mixamorig:LeftUpLeg",
+       0.841
+      ],
+      [
+       "mixamorig:LeftUpLeg",
+       0.756
+      ]
+     ],
+     "aire_repos": 3.722877392348977e-05,
+     "aire_SQ": 4.898974835031793e-05
+    },
+    {
+     "sommets": [
+      4242,
+      4226,
+      4216
+     ],
+     "poids_dominants": [
+      [
+       "mixamorig:LeftUpLeg",
+       0.736
+      ],
+      [
+       "mixamorig:LeftUpLeg",
+       0.756
+      ],
+      [
+       "mixamorig:LeftUpLeg",
+       0.691
+      ]
+     ],
+     "aire_repos": 5.264166006719515e-05,
+     "aire_SQ": 5.177786810306531e-05
+    }
+   ]
+  },
+  {
+   "pose": "reelle_L_combo_flex120_genou90",
+   "nouveaux": 4,
+   "nouveaux_si_lambda": {
+    "0.01": 4,
+    "1.0": 3
+   },
+   "nouveaux_si_cible_polaire": 3,
+   "triangles_exemples": [
+    {
+     "sommets": [
+      4102,
+      4172,
+      4170
+     ],
+     "poids_dominants": [
+      [
+       "mixamorig:RightUpLeg",
+       0.767
+      ],
+      [
+       "mixamorig:Hips",
+       0.45
+      ],
+      [
+       "mixamorig:Hips",
+       0.45
+      ]
+     ],
+     "aire_repos": 6.974888883893065e-05,
+     "aire_SQ": 1.151202903353368e-05
+    },
+    {
+     "sommets": [
+      4226,
+      4225,
+      4216
+     ],
+     "poids_dominants": [
+      [
+       "mixamorig:LeftUpLeg",
+       0.756
+      ],
+      [
+       "mixamorig:LeftUpLeg",
+       0.798
+      ],
+      [
+       "mixamorig:LeftUpLeg",
+       0.691
+      ]
+     ],
+     "aire_repos": 0.00011863488143220697,
+     "aire_SQ": 0.00018524327380230003
+    },
+    {
+     "sommets": [
+      4242,
+      4184,
+      4226
+     ],
+     "poids_dominants": [
+      [
+       "mixamorig:LeftUpLeg",
+       0.736
+      ],
+      [
+       "mixamorig:LeftUpLeg",
+       0.841
+      ],
+      [
+       "mixamorig:LeftUpLeg",
+       0.756
+      ]
+     ],
+     "aire_repos": 3.722877392348977e-05,
+     "aire_SQ": 4.89897612930286e-05
+    },
+    {
+     "sommets": [
+      4242,
+      4226,
+      4216
+     ],
+     "poids_dominants": [
+      [
+       "mixamorig:LeftUpLeg",
+       0.736
+      ],
+      [
+       "mixamorig:LeftUpLeg",
+       0.756
+      ],
+      [
+       "mixamorig:LeftUpLeg",
+       0.691
+      ]
+     ],
+     "aire_repos": 5.264166006719515e-05,
+     "aire_SQ": 5.17778941570382e-05
+    }
+   ]
+  },
+  {
+   "pose": "reelle_L_combo_flex60_abd20_int20_genou60",
+   "nouveaux": 3,
+   "nouveaux_si_lambda": {
+    "0.01": 1,
+    "1.0": 3
+   },
+   "nouveaux_si_cible_polaire": 2,
+   "triangles_exemples": [
+    {
+     "sommets": [
+      4226,
+      4225,
+      4216
+     ],
+     "poids_dominants": [
+      [
+       "mixamorig:LeftUpLeg",
+       0.756
+      ],
+      [
+       "mixamorig:LeftUpLeg",
+       0.798
+      ],
+      [
+       "mixamorig:LeftUpLeg",
+       0.691
+      ]
+     ],
+     "aire_repos": 0.00011863488143220697,
+     "aire_SQ": 3.577297701944569e-05
+    },
+    {
+     "sommets": [
+      4242,
+      4184,
+      4226
+     ],
+     "poids_dominants": [
+      [
+       "mixamorig:LeftUpLeg",
+       0.736
+      ],
+      [
+       "mixamorig:LeftUpLeg",
+       0.841
+      ],
+      [
+       "mixamorig:LeftUpLeg",
+       0.756
+      ]
+     ],
+     "aire_repos": 3.722877392348977e-05,
+     "aire_SQ": 1.8526329558365378e-05
+    },
+    {
+     "sommets": [
+      4242,
+      4226,
+      4216
+     ],
+     "poids_dominants": [
+      [
+       "mixamorig:LeftUpLeg",
+       0.736
+      ],
+      [
+       "mixamorig:LeftUpLeg",
+       0.756
+      ],
+      [
+       "mixamorig:LeftUpLeg",
+       0.691
+      ]
+     ],
+     "aire_repos": 5.264166006719515e-05,
+     "aire_SQ": 1.9835730894288918e-05
+    }
+   ]
+  },
+  {
+   "pose": "reelle_L_flex120",
+   "nouveaux": 4,
+   "nouveaux_si_lambda": {
+    "0.01": 4,
+    "1.0": 3
+   },
+   "nouveaux_si_cible_polaire": 3,
+   "triangles_exemples": [
+    {
+     "sommets": [
+      4102,
+      4172,
+      4170
+     ],
+     "poids_dominants": [
+      [
+       "mixamorig:RightUpLeg",
+       0.767
+      ],
+      [
+       "mixamorig:Hips",
+       0.45
+      ],
+      [
+       "mixamorig:Hips",
+       0.45
+      ]
+     ],
+     "aire_repos": 6.974888883893065e-05,
+     "aire_SQ": 1.151202903353368e-05
+    },
+    {
+     "sommets": [
+      4226,
+      4225,
+      4216
+     ],
+     "poids_dominants": [
+      [
+       "mixamorig:LeftUpLeg",
+       0.756
+      ],
+      [
+       "mixamorig:LeftUpLeg",
+       0.798
+      ],
+      [
+       "mixamorig:LeftUpLeg",
+       0.691
+      ]
+     ],
+     "aire_repos": 0.00011863488143220697,
+     "aire_SQ": 0.00018524327380230003
+    },
+    {
+     "sommets": [
+      4242,
+      4184,
+      4226
+     ],
+     "poids_dominants": [
+      [
+       "mixamorig:LeftUpLeg",
+       0.736
+      ],
+      [
+       "mixamorig:LeftUpLeg",
+       0.841
+      ],
+      [
+       "mixamorig:LeftUpLeg",
+       0.756
+      ]
+     ],
+     "aire_repos": 3.722877392348977e-05,
+     "aire_SQ": 4.89897612930286e-05
+    },
+    {
+     "sommets": [
+      4242,
+      4226,
+      4216
+     ],
+     "poids_dominants": [
+      [
+       "mixamorig:LeftUpLeg",
+       0.736
+      ],
+      [
+       "mixamorig:LeftUpLeg",
+       0.756
+      ],
+      [
+       "mixamorig:LeftUpLeg",
+       0.691
+      ]
+     ],
+     "aire_repos": 5.264166006719515e-05,
+     "aire_SQ": 5.17778941570382e-05
+    }
+   ]
+  },
+  {
+   "pose": "reelle_L_flex60",
+   "nouveaux": 3,
+   "nouveaux_si_lambda": {
+    "0.01": 1,
+    "1.0": 3
+   },
+   "nouveaux_si_cible_polaire": 3,
+   "triangles_exemples": [
+    {
+     "sommets": [
+      4226,
+      4225,
+      4216
+     ],
+     "poids_dominants": [
+      [
+       "mixamorig:LeftUpLeg",
+       0.756
+      ],
+      [
+       "mixamorig:LeftUpLeg",
+       0.798
+      ],
+      [
+       "mixamorig:LeftUpLeg",
+       0.691
+      ]
+     ],
+     "aire_repos": 0.00011863488143220697,
+     "aire_SQ": 4.8836537190502874e-05
+    },
+    {
+     "sommets": [
+      4242,
+      4184,
+      4226
+     ],
+     "poids_dominants": [
+      [
+       "mixamorig:LeftUpLeg",
+       0.736
+      ],
+      [
+       "mixamorig:LeftUpLeg",
+       0.841
+      ],
+      [
+       "mixamorig:LeftUpLeg",
+       0.756
+      ]
+     ],
+     "aire_repos": 3.722877392348977e-05,
+     "aire_SQ": 2.5043039847630418e-05
+    },
+    {
+     "sommets": [
+      4242,
+      4226,
+      4216
+     ],
+     "poids_dominants": [
+      [
+       "mixamorig:LeftUpLeg",
+       0.736
+      ],
+      [
+       "mixamorig:LeftUpLeg",
+       0.756
+      ],
+      [
+       "mixamorig:LeftUpLeg",
+       0.691
+      ]
+     ],
+     "aire_repos": 5.264166006719515e-05,
+     "aire_SQ": 8.71967081217512e-06
+    }
+   ]
+  },
+  {
+   "pose": "reelle_R_combo_flex120_genou90",
+   "nouveaux": 3,
+   "nouveaux_si_lambda": {
+    "0.01": 4,
+    "1.0": 3
+   },
+   "nouveaux_si_cible_polaire": 3,
+   "triangles_exemples": [
+    {
+     "sommets": [
+      4145,
+      4135,
+      4144
+     ],
+     "poids_dominants": [
+      [
+       "mixamorig:RightUpLeg",
+       0.756
+      ],
+      [
+       "mixamorig:RightUpLeg",
+       0.691
+      ],
+      [
+       "mixamorig:RightUpLeg",
+       0.798
+      ]
+     ],
+     "aire_repos": 0.00011863602239789106,
+     "aire_SQ": 0.00017607521205617577
+    },
+    {
+     "sommets": [
+      4161,
+      4145,
+      4103
+     ],
+     "poids_dominants": [
+      [
+       "mixamorig:RightUpLeg",
+       0.736
+      ],
+      [
+       "mixamorig:RightUpLeg",
+       0.756
+      ],
+      [
+       "mixamorig:RightUpLeg",
+       0.763
+      ]
+     ],
+     "aire_repos": 3.8098619362217404e-05,
+     "aire_SQ": 4.3628786719952594e-05
+    },
+    {
+     "sommets": [
+      4161,
+      4135,
+      4145
+     ],
+     "poids_dominants": [
+      [
+       "mixamorig:RightUpLeg",
+       0.736
+      ],
+      [
+       "mixamorig:RightUpLeg",
+       0.691
+      ],
+      [
+       "mixamorig:RightUpLeg",
+       0.756
+      ]
+     ],
+     "aire_repos": 5.2642162313308886e-05,
+     "aire_SQ": 4.643303232004798e-05
+    }
+   ]
+  },
+  {
+   "pose": "reelle_R_combo_flex60_abd20_int20_genou60",
+   "nouveaux": 1,
+   "nouveaux_si_lambda": {
+    "0.01": 1,
+    "1.0": 3
+   },
+   "nouveaux_si_cible_polaire": 1,
+   "triangles_exemples": [
+    {
+     "sommets": [
+      4161,
+      4145,
+      4103
+     ],
+     "poids_dominants": [
+      [
+       "mixamorig:RightUpLeg",
+       0.736
+      ],
+      [
+       "mixamorig:RightUpLeg",
+       0.756
+      ],
+      [
+       "mixamorig:RightUpLeg",
+       0.763
+      ]
+     ],
+     "aire_repos": 3.8098619362217404e-05,
+     "aire_SQ": 1.4758496742570612e-05
+    }
+   ]
+  },
+  {
+   "pose": "reelle_R_flex120",
+   "nouveaux": 3,
+   "nouveaux_si_lambda": {
+    "0.01": 4,
+    "1.0": 3
+   },
+   "nouveaux_si_cible_polaire": 3,
+   "triangles_exemples": [
+    {
+     "sommets": [
+      4145,
+      4135,
+      4144
+     ],
+     "poids_dominants": [
+      [
+       "mixamorig:RightUpLeg",
+       0.756
+      ],
+      [
+       "mixamorig:RightUpLeg",
+       0.691
+      ],
+      [
+       "mixamorig:RightUpLeg",
+       0.798
+      ]
+     ],
+     "aire_repos": 0.00011863602239789106,
+     "aire_SQ": 0.00017607521205617577
+    },
+    {
+     "sommets": [
+      4161,
+      4145,
+      4103
+     ],
+     "poids_dominants": [
+      [
+       "mixamorig:RightUpLeg",
+       0.736
+      ],
+      [
+       "mixamorig:RightUpLeg",
+       0.756
+      ],
+      [
+       "mixamorig:RightUpLeg",
+       0.763
+      ]
+     ],
+     "aire_repos": 3.8098619362217404e-05,
+     "aire_SQ": 4.3628786719952594e-05
+    },
+    {
+     "sommets": [
+      4161,
+      4135,
+      4145
+     ],
+     "poids_dominants": [
+      [
+       "mixamorig:RightUpLeg",
+       0.736
+      ],
+      [
+       "mixamorig:RightUpLeg",
+       0.691
+      ],
+      [
+       "mixamorig:RightUpLeg",
+       0.756
+      ]
+     ],
+     "aire_repos": 5.2642162313308886e-05,
+     "aire_SQ": 4.643303232004798e-05
+    }
+   ]
+  },
+  {
+   "pose": "reelle_R_flex60",
+   "nouveaux": 2,
+   "nouveaux_si_lambda": {
+    "0.01": 1,
+    "1.0": 3
+   },
+   "nouveaux_si_cible_polaire": 2,
+   "triangles_exemples": [
+    {
+     "sommets": [
+      4145,
+      4135,
+      4144
+     ],
+     "poids_dominants": [
+      [
+       "mixamorig:RightUpLeg",
+       0.756
+      ],
+      [
+       "mixamorig:RightUpLeg",
+       0.691
+      ],
+      [
+       "mixamorig:RightUpLeg",
+       0.798
+      ]
+     ],
+     "aire_repos": 0.00011863602239789106,
+     "aire_SQ": 4.562503610290406e-05
+    },
+    {
+     "sommets": [
+      4161,
+      4145,
+      4103
+     ],
+     "poids_dominants": [
+      [
+       "mixamorig:RightUpLeg",
+       0.736
+      ],
+      [
+       "mixamorig:RightUpLeg",
+       0.756
+      ],
+      [
+       "mixamorig:RightUpLeg",
+       0.763
+      ]
+     ],
+     "aire_repos": 3.8098619362217404e-05,
+     "aire_SQ": 2.118304765785504e-05
+    }
+   ]
+  }
+ ]
+}
