@@ -1,0 +1,304 @@
+{
+ "composante_des_sept": [
+  45
+ ],
+ "poses": {
+  "generative_hanche_G_105": {
+   "verif_solve_lam_vs_solve_fixe_m": 0.0,
+   "maillage_complet": {
+    "nouveau_A_sur_7": 3,
+    "nouveau_A_total": 3,
+    "SQ_total": 4,
+    "LBS_total": 16
+   },
+   "A_composante_native": {
+    "ecart_max_vs_maillage_complet_m": 0.0,
+    "nouveau_A_sur_7": 3
+   },
+   "E_disjoint_invariance": {
+    "composante_ajoutee": 46,
+    "ecart_max_composante_45_m": 0.0,
+    "ecart_max_composante_ajoutee_m": 8.659739592076221e-15
+   },
+   "B_fermee": {
+    "boucles_fermees": 3,
+    "faces_ajoutees": 50,
+    "aire_ajoutee_m2": 0.09971255306141859,
+    "maillage": {
+     "nouveau_A_sur_7": 3,
+     "nouveau_A_total": 5,
+     "SQ_total": 8,
+     "LBS_total": 16
+    },
+    "deplacement_max_sept_sommets_m": 0.009230523522662543,
+    "deplacement_moyen_sept_sommets_m": 0.00598933557336632
+   },
+   "C_contraintes_frontiere": {
+    "0.1": {
+     "nouveau_A_sur_7": 3,
+     "deplacement_max_sept_m": 0.0
+    },
+    "1.0": {
+     "nouveau_A_sur_7": 3,
+     "deplacement_max_sept_m": 0.011690054798320236
+    },
+    "10.0": {
+     "nouveau_A_sur_7": 3,
+     "deplacement_max_sept_m": 0.01981949993012592
+    },
+    "1000.0": {
+     "nouveau_A_sur_7": 3,
+     "deplacement_max_sept_m": 0.02197146189855197
+    }
+   },
+   "D_rayon": {
+    "1": {
+     "sommets": 33,
+     "faces": 46,
+     "aretes_frontiere": 18,
+     "sept_dans_domaine": 7,
+     "nouveau_A_sur_7_dans_domaine": 2,
+     "nouveau_A_total_domaine": 2
+    },
+    "2": {
+     "sommets": 65,
+     "faces": 93,
+     "aretes_frontiere": 35,
+     "sept_dans_domaine": 7,
+     "nouveau_A_sur_7_dans_domaine": 3,
+     "nouveau_A_total_domaine": 3
+    },
+    "3": {
+     "sommets": 98,
+     "faces": 147,
+     "aretes_frontiere": 47,
+     "sept_dans_domaine": 7,
+     "nouveau_A_sur_7_dans_domaine": 3,
+     "nouveau_A_total_domaine": 3
+    },
+    "4": {
+     "sommets": 128,
+     "faces": 199,
+     "aretes_frontiere": 59,
+     "sept_dans_domaine": 7,
+     "nouveau_A_sur_7_dans_domaine": 4,
+     "nouveau_A_total_domaine": 4
+    },
+    "5": {
+     "sommets": 147,
+     "faces": 240,
+     "aretes_frontiere": 56,
+     "sept_dans_domaine": 7,
+     "nouveau_A_sur_7_dans_domaine": 3,
+     "nouveau_A_total_domaine": 3
+    },
+    "6": {
+     "sommets": 155,
+     "faces": 262,
+     "aretes_frontiere": 50,
+     "sept_dans_domaine": 7,
+     "nouveau_A_sur_7_dans_domaine": 3,
+     "nouveau_A_total_domaine": 3
+    }
+   }
+  },
+  "reelle_R_flex120": {
+   "verif_solve_lam_vs_solve_fixe_m": 0.0,
+   "maillage_complet": {
+    "nouveau_A_sur_7": 3,
+    "nouveau_A_total": 3,
+    "SQ_total": 4,
+    "LBS_total": 18
+   },
+   "A_composante_native": {
+    "ecart_max_vs_maillage_complet_m": 0.0,
+    "nouveau_A_sur_7": 3
+   },
+   "E_disjoint_invariance": {
+    "composante_ajoutee": 46,
+    "ecart_max_composante_45_m": 0.0,
+    "ecart_max_composante_ajoutee_m": 1.272883067005015e-08
+   },
+   "B_fermee": {
+    "boucles_fermees": 3,
+    "faces_ajoutees": 50,
+    "aire_ajoutee_m2": 0.09971255306141859,
+    "maillage": {
+     "nouveau_A_sur_7": 3,
+     "nouveau_A_total": 5,
+     "SQ_total": 12,
+     "LBS_total": 18
+    },
+    "deplacement_max_sept_sommets_m": 0.010145292781931462,
+    "deplacement_moyen_sept_sommets_m": 0.006710848000940091
+   },
+   "C_contraintes_frontiere": {
+    "0.1": {
+     "nouveau_A_sur_7": 3,
+     "deplacement_max_sept_m": 0.0
+    },
+    "1.0": {
+     "nouveau_A_sur_7": 3,
+     "deplacement_max_sept_m": 0.012839532325410423
+    },
+    "10.0": {
+     "nouveau_A_sur_7": 3,
+     "deplacement_max_sept_m": 0.021639196144208686
+    },
+    "1000.0": {
+     "nouveau_A_sur_7": 3,
+     "deplacement_max_sept_m": 0.023935447450029283
+    }
+   },
+   "D_rayon": {
+    "1": {
+     "sommets": 33,
+     "faces": 46,
+     "aretes_frontiere": 18,
+     "sept_dans_domaine": 7,
+     "nouveau_A_sur_7_dans_domaine": 3,
+     "nouveau_A_total_domaine": 3
+    },
+    "2": {
+     "sommets": 65,
+     "faces": 93,
+     "aretes_frontiere": 35,
+     "sept_dans_domaine": 7,
+     "nouveau_A_sur_7_dans_domaine": 3,
+     "nouveau_A_total_domaine": 3
+    },
+    "3": {
+     "sommets": 98,
+     "faces": 147,
+     "aretes_frontiere": 47,
+     "sept_dans_domaine": 7,
+     "nouveau_A_sur_7_dans_domaine": 3,
+     "nouveau_A_total_domaine": 4
+    },
+    "4": {
+     "sommets": 128,
+     "faces": 199,
+     "aretes_frontiere": 59,
+     "sept_dans_domaine": 7,
+     "nouveau_A_sur_7_dans_domaine": 3,
+     "nouveau_A_total_domaine": 4
+    },
+    "5": {
+     "sommets": 147,
+     "faces": 240,
+     "aretes_frontiere": 56,
+     "sept_dans_domaine": 7,
+     "nouveau_A_sur_7_dans_domaine": 3,
+     "nouveau_A_total_domaine": 4
+    },
+    "6": {
+     "sommets": 155,
+     "faces": 262,
+     "aretes_frontiere": 50,
+     "sept_dans_domaine": 7,
+     "nouveau_A_sur_7_dans_domaine": 3,
+     "nouveau_A_total_domaine": 3
+    }
+   }
+  },
+  "reelle_L_flex120": {
+   "verif_solve_lam_vs_solve_fixe_m": 0.0,
+   "maillage_complet": {
+    "nouveau_A_sur_7": 4,
+    "nouveau_A_total": 4,
+    "SQ_total": 5,
+    "LBS_total": 17
+   },
+   "A_composante_native": {
+    "ecart_max_vs_maillage_complet_m": 0.0,
+    "nouveau_A_sur_7": 4
+   },
+   "E_disjoint_invariance": {
+    "composante_ajoutee": 46,
+    "ecart_max_composante_45_m": 0.0,
+    "ecart_max_composante_ajoutee_m": 1.272883067005015e-08
+   },
+   "B_fermee": {
+    "boucles_fermees": 3,
+    "faces_ajoutees": 50,
+    "aire_ajoutee_m2": 0.09971255306141859,
+    "maillage": {
+     "nouveau_A_sur_7": 3,
+     "nouveau_A_total": 6,
+     "SQ_total": 12,
+     "LBS_total": 17
+    },
+    "deplacement_max_sept_sommets_m": 0.010369010863713519,
+    "deplacement_moyen_sept_sommets_m": 0.006778164670455177
+   },
+   "C_contraintes_frontiere": {
+    "0.1": {
+     "nouveau_A_sur_7": 4,
+     "deplacement_max_sept_m": 0.0
+    },
+    "1.0": {
+     "nouveau_A_sur_7": 3,
+     "deplacement_max_sept_m": 0.012862732898180957
+    },
+    "10.0": {
+     "nouveau_A_sur_7": 3,
+     "deplacement_max_sept_m": 0.02180936790578078
+    },
+    "1000.0": {
+     "nouveau_A_sur_7": 3,
+     "deplacement_max_sept_m": 0.024138998567132922
+    }
+   },
+   "D_rayon": {
+    "1": {
+     "sommets": 33,
+     "faces": 46,
+     "aretes_frontiere": 18,
+     "sept_dans_domaine": 7,
+     "nouveau_A_sur_7_dans_domaine": 3,
+     "nouveau_A_total_domaine": 3
+    },
+    "2": {
+     "sommets": 65,
+     "faces": 93,
+     "aretes_frontiere": 35,
+     "sept_dans_domaine": 7,
+     "nouveau_A_sur_7_dans_domaine": 4,
+     "nouveau_A_total_domaine": 4
+    },
+    "3": {
+     "sommets": 98,
+     "faces": 147,
+     "aretes_frontiere": 47,
+     "sept_dans_domaine": 7,
+     "nouveau_A_sur_7_dans_domaine": 4,
+     "nouveau_A_total_domaine": 4
+    },
+    "4": {
+     "sommets": 128,
+     "faces": 199,
+     "aretes_frontiere": 59,
+     "sept_dans_domaine": 7,
+     "nouveau_A_sur_7_dans_domaine": 4,
+     "nouveau_A_total_domaine": 4
+    },
+    "5": {
+     "sommets": 147,
+     "faces": 240,
+     "aretes_frontiere": 56,
+     "sept_dans_domaine": 7,
+     "nouveau_A_sur_7_dans_domaine": 4,
+     "nouveau_A_total_domaine": 4
+    },
+    "6": {
+     "sommets": 155,
+     "faces": 262,
+     "aretes_frontiere": 50,
+     "sept_dans_domaine": 7,
+     "nouveau_A_sur_7_dans_domaine": 4,
+     "nouveau_A_total_domaine": 4
+    }
+   }
+  }
+ }
+}

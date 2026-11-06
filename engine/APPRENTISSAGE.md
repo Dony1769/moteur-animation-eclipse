@@ -1168,3 +1168,15 @@ Voir entrée 215.
 
 ## 173. Chaque nombre d'un rapport vient d'une sortie
 Voir entrée 216.
+
+## 174. Une égalité de compteurs ne prouve ni duplication ni symétrie
+Voir entrée 217.
+
+## 175. Un contrôle d'invariance doit comparer deux calculs indépendants
+Voir entrée 218.
+
+## 176. Une dimension de noyau se compare au nombre théorique
+Voir entrée 219.
+
+## 177. Fermer une frontière change la géométrie
+Voir entrée 220 et docs/rapports/skinning/topologie/RAPPORT_topologie.md.

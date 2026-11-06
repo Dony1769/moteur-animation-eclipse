@@ -1512,3 +1512,28 @@ Résultat (docs/rapports/phase4_psd_hanche_genou.json) : genou plis 0–4, étir
   77 cas (la valeur exacte est 18 : 14 parmi les nouvelles inversions, 4 hors de A). La correction a été faite après
   recomptage.
 - Règle : chaque nombre d'un rapport est tiré d'une sortie de script, jamais d'un souvenir de résumé.
+
+## 217. Des composantes de même taille ne sont pas des doublons sans vérification de position
+- Constat : 56 composantes de Maria ont exactement les mêmes nombres de sommets, d'arêtes et de faces, deux à deux.
+  Je les ai d'abord prises pour des doublons. La vérification de position montre des distances moyennes de 0,05 à
+  0,26 m : ce sont des pièces gauche/droite symétriques, qui ont la même triangulation.
+- Règle : une égalité de compteurs ne prouve ni la duplication ni la symétrie ; vérifier les positions, puis la
+  correspondance géométrique.
+
+## 218. Une comparaison d'un vecteur à lui-même ne teste rien
+- Constat : une version intermédiaire du contrôle E comparait la solution à elle-même et affichait 0. Le test a été
+  remplacé par l'ajout réel d'une composante disjointe, avec écart de la composante 45 de 0,0 m.
+- Règle : un contrôle d'invariance doit comparer deux calculs indépendants, et son résultat doit dépendre de l'entrée.
+
+## 219. Un nombre de valeurs propres demandé limite le compte de noyaux
+- Constat : le calcul de la dimension du noyau demandait 6 valeurs propres ; il retournait 6 pour Maria, alors que
+  le maillage a 73 composantes. Corrigé en demandant composantes + 3 : la dimension mesurée est 73.
+- Règle : une dimension de noyau se compare au nombre théorique (ici le nombre de composantes), jamais à un paramètre
+  de calcul.
+
+## 220. Fermer une frontière n'est pas une correction neutre
+- Constat : fermer les 50 arêtes de frontière de la composante 45 ajoute 0,10 m² de faces, environ quatre fois
+  l'aire de la pièce, et déplace les sept sommets de 6 à 10 mm. Le nombre de retournements passe de 4 à 3 pour une
+  pose et reste inchangé pour les deux autres.
+- Règle : une fermeture se mesure par le changement géométrique qu'elle introduit, et ce changement se rapporte avec
+  le résultat, sans le présenter comme une amélioration.

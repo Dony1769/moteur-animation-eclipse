@@ -1,0 +1,289 @@
+{
+ "paires_sommets_position_identique_1e-9": 125,
+ "paires_identiques_entre_composantes_differentes": 125,
+ "ecart_max_poids_entre_paires_identiques": 0.0,
+ "sommets_impliques": 250,
+ "groupes_composantes_identiques_V_E_F": {
+  "(16, 35, 20)": [
+   2,
+   3
+  ],
+  "(43, 110, 68)": [
+   15,
+   47
+  ],
+  "(275, 761, 485)": [
+   16,
+   48
+  ],
+  "(21, 50, 30)": [
+   17,
+   39,
+   49,
+   71
+  ],
+  "(144, 426, 284)": [
+   18,
+   50
+  ],
+  "(326, 972, 648)": [
+   19,
+   51
+  ],
+  "(44, 110, 66)": [
+   20,
+   22,
+   52,
+   54
+  ],
+  "(65, 169, 104)": [
+   21,
+   53
+  ],
+  "(271, 797, 527)": [
+   23,
+   55
+  ],
+  "(65, 174, 109)": [
+   24,
+   56
+  ],
+  "(373, 1101, 729)": [
+   25,
+   57
+  ],
+  "(28, 78, 52)": [
+   26,
+   28,
+   58,
+   60
+  ],
+  "(24, 66, 44)": [
+   27,
+   29,
+   30,
+   31,
+   59,
+   61,
+   62,
+   63
+  ],
+  "(201, 564, 364)": [
+   32,
+   64
+  ],
+  "(79, 209, 131)": [
+   33,
+   65
+  ],
+  "(208, 612, 404)": [
+   34,
+   66
+  ],
+  "(29, 72, 44)": [
+   35,
+   67
+  ],
+  "(69, 196, 128)": [
+   36,
+   68
+  ],
+  "(32, 77, 46)": [
+   37,
+   69
+  ],
+  "(109, 305, 196)": [
+   38,
+   70
+  ],
+  "(68, 187, 119)": [
+   41,
+   44
+  ],
+  "(81, 217, 136)": [
+   42,
+   43
+  ]
+ },
+ "composantes_dans_groupes_identiques": 56,
+ "verification_positions_groupes": [
+  {
+   "groupe": "(16, 35, 20)",
+   "composantes": [
+    2,
+    3
+   ],
+   "distance_max_positions": 0.06505195793177701,
+   "distance_moyenne_positions": 0.05055579969220944
+  },
+  {
+   "groupe": "(43, 110, 68)",
+   "composantes": [
+    15,
+    47
+   ],
+   "distance_max_positions": 0.1279188481519423,
+   "distance_moyenne_positions": 0.07350661691733167
+  },
+  {
+   "groupe": "(275, 761, 485)",
+   "composantes": [
+    16,
+    48
+   ],
+   "distance_max_positions": 0.21381296837575356,
+   "distance_moyenne_positions": 0.09738617437427155
+  },
+  {
+   "groupe": "(21, 50, 30)",
+   "composantes": [
+    17,
+    39
+   ],
+   "distance_max_positions": 0.19730597864223015,
+   "distance_moyenne_positions": 0.18244038122413264
+  },
+  {
+   "groupe": "(144, 426, 284)",
+   "composantes": [
+    18,
+    50
+   ],
+   "distance_max_positions": 0.3217277380873199,
+   "distance_moyenne_positions": 0.2649893498337156
+  },
+  {
+   "groupe": "(326, 972, 648)",
+   "composantes": [
+    19,
+    51
+   ],
+   "distance_max_positions": 0.2986499859720705,
+   "distance_moyenne_positions": 0.16903528965337686
+  }
+ ],
+ "soudure_diagnostique": {
+  "sommets_avant": 8094,
+  "sommets_apres": 7969,
+  "faces_avant": 14566,
+  "faces_apres": 14566,
+  "aretes_frontiere_avant": 1510,
+  "aretes_frontiere_apres": 1312,
+  "aretes_non_variete_apres": 30,
+  "composantes_apres": 62,
+  "surface_fermee_apres": false
+ },
+ "frontieres_distance_articulations_hipd": {
+  "hanche_G": {
+   "min": 0.36635725687915494,
+   "mediane": 2.515150080419437,
+   "n_sous_0_5": 16
+  },
+  "hanche_D": {
+   "min": 0.36635658367316976,
+   "mediane": 2.515151913206883,
+   "n_sous_0_5": 16
+  },
+  "genou_G": {
+   "min": 0.16927608643982472,
+   "mediane": 4.534307548165525,
+   "n_sous_0_5": 12
+  },
+  "genou_D": {
+   "min": 0.1692752341386971,
+   "mediane": 4.5322408805295655,
+   "n_sous_0_5": 12
+  }
+ },
+ "sept_triangles": [
+  [
+   4102,
+   4172,
+   4170
+  ],
+  [
+   4145,
+   4135,
+   4144
+  ],
+  [
+   4161,
+   4135,
+   4145
+  ],
+  [
+   4161,
+   4145,
+   4103
+  ],
+  [
+   4226,
+   4225,
+   4216
+  ],
+  [
+   4242,
+   4184,
+   4226
+  ],
+  [
+   4242,
+   4226,
+   4216
+  ]
+ ],
+ "sept_triangles_anneaux_jusqu_frontiere": {
+  "4102": 1,
+  "4103": 2,
+  "4135": 2,
+  "4144": 2,
+  "4145": 3,
+  "4161": 3,
+  "4170": 1,
+  "4172": 0,
+  "4184": 2,
+  "4216": 2,
+  "4225": 2,
+  "4226": 3,
+  "4242": 3
+ },
+ "sept_triangles_composante": [
+  45
+ ],
+ "sept_triangles_composantes_en_double": {},
+ "sept_triangles_distance_frontiere_hipd": {
+  "4102": 0.06668707005446223,
+  "4103": 0.04620332609941874,
+  "4135": 0.048399588402566335,
+  "4144": 0.04477655914402819,
+  "4145": 0.011874816543636911,
+  "4161": 0.061252898055800184,
+  "4170": 0.0637924444113093,
+  "4172": 0.0,
+  "4184": 0.04617601028729707,
+  "4216": 0.048403544836225026,
+  "4225": 0.044603945292858035,
+  "4226": 0.012055442571272725,
+  "4242": 0.06106303213206228
+ },
+ "connexions_entre_regions_aretes": {
+  "autre|cuisse_D": 124,
+  "autre|cuisse_G": 124,
+  "bassin|entrejambe": 75,
+  "cuisse_D|genou_D": 65,
+  "cuisse_G|genou_G": 65,
+  "autre|genou_D": 41,
+  "autre|genou_G": 41,
+  "cuisse_G|hanche_G": 34,
+  "cuisse_D|hanche_D": 34,
+  "bassin|hanche_G": 27,
+  "bassin|hanche_D": 27,
+  "autre|entrejambe": 18,
+  "cuisse_G|entrejambe": 16,
+  "cuisse_D|entrejambe": 16,
+  "entrejambe|hanche_G": 14,
+  "entrejambe|hanche_D": 14,
+  "bassin|cuisse_G": 4,
+  "bassin|cuisse_D": 4
+ }
+}

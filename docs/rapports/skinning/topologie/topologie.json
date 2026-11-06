@@ -1,0 +1,2833 @@
+{
+ "convention": "composantes = graphe des arêtes A (sommets référencés et non référencés) ; boucles = composantes du graphe des arêtes de frontière",
+ "masculin": {
+  "morphologie": "masculin",
+  "N_sommets": 10582,
+  "N_faces": 21160,
+  "N_aretes": 21170,
+  "sommets_non_references": 0,
+  "faces_repetition_indice": 0,
+  "faces_aire_nulle_1e-12": 0,
+  "faces_dupliquees": 0,
+  "composantes_graphe_aretes": 1,
+  "composantes_top10_tailles_sommets": [
+   10582
+  ],
+  "aretes_frontiere": 0,
+  "aretes_non_variete": 0,
+  "boucles_de_frontiere": 0,
+  "sommets_frontiere": 0,
+  "composantes": [
+   {
+    "id": 0,
+    "sommets": 10582,
+    "sommets_references": 10582,
+    "aretes": 21170,
+    "faces": 21160,
+    "aretes_frontiere": 0,
+    "boucles": 0,
+    "euler_V_E_F": 10572,
+    "bbox_min_m": [
+     -2.7047,
+     -0.1795,
+     -0.0055
+    ],
+    "bbox_max_m": [
+     -1.824,
+     0.111,
+     1.6844
+    ],
+    "etendue_m": 1.9276833830222118,
+    "centre_m": [
+     -2.2643,
+     -0.0544,
+     0.9159
+    ],
+    "distance_hanche_sur_hipd": 0.5437945720851739,
+    "labels_dominants": [
+     [
+      "bassin",
+      5656
+     ],
+     [
+      "cuisse_G",
+      2251
+     ],
+     [
+      "cuisse_D",
+      2250
+     ]
+    ],
+    "poids_nuls_sommets": 0
+   }
+  ],
+  "composantes_sans_face": 0,
+  "composantes_avec_frontiere": 0,
+  "composantes_fermees": 1,
+  "poids_nuls_total": 0,
+  "sommets_non_references_avec_poids": 0,
+  "systeme_SQ": {
+   "lambda": 0.1,
+   "entrees_hors_bloc_composante": 0,
+   "lambda_min": 0.0999999999999996,
+   "lambda_max": 8.436587881209428,
+   "conditionnement": 84.36587881209462,
+   "dimension_noyau_laplacien_sans_ancre": 1,
+   "ecart_max_solution_globale_vs_bloc": 2.6645352591003757e-15,
+   "conditions_de_frontiere_explicites": "aucune : ancre λ uniforme sur tous les sommets"
+  }
+ },
+ "feminin": {
+  "morphologie": "feminin",
+  "N_sommets": 10582,
+  "N_faces": 21160,
+  "N_aretes": 21170,
+  "sommets_non_references": 0,
+  "faces_repetition_indice": 0,
+  "faces_aire_nulle_1e-12": 0,
+  "faces_dupliquees": 0,
+  "composantes_graphe_aretes": 1,
+  "composantes_top10_tailles_sommets": [
+   10582
+  ],
+  "aretes_frontiere": 0,
+  "aretes_non_variete": 0,
+  "boucles_de_frontiere": 0,
+  "sommets_frontiere": 0,
+  "composantes": [
+   {
+    "id": 0,
+    "sommets": 10582,
+    "sommets_references": 10582,
+    "aretes": 21170,
+    "faces": 21160,
+    "aretes_frontiere": 0,
+    "boucles": 0,
+    "euler_V_E_F": 10572,
+    "bbox_min_m": [
+     -2.6855,
+     -0.1674,
+     0.002
+    ],
+    "bbox_max_m": [
+     -1.8432,
+     0.1152,
+     1.6413
+    ],
+    "etendue_m": 1.8645602093696263,
+    "centre_m": [
+     -2.2643,
+     -0.0528,
+     0.8981
+    ],
+    "distance_hanche_sur_hipd": 0.5192498100414019,
+    "labels_dominants": [
+     [
+      "bassin",
+      5607
+     ],
+     [
+      "cuisse_G",
+      2236
+     ],
+     [
+      "cuisse_D",
+      2235
+     ]
+    ],
+    "poids_nuls_sommets": 0
+   }
+  ],
+  "composantes_sans_face": 0,
+  "composantes_avec_frontiere": 0,
+  "composantes_fermees": 1,
+  "poids_nuls_total": 0,
+  "sommets_non_references_avec_poids": 0,
+  "systeme_SQ": {
+   "lambda": 0.1,
+   "entrees_hors_bloc_composante": 0,
+   "lambda_min": 0.0999999999999994,
+   "lambda_max": 8.436587881209455,
+   "conditionnement": 84.36587881209506,
+   "dimension_noyau_laplacien_sans_ancre": 1,
+   "ecart_max_solution_globale_vs_bloc": 2.6645352591003757e-15,
+   "conditions_de_frontiere_explicites": "aucune : ancre λ uniforme sur tous les sommets"
+  }
+ },
+ "maria": {
+  "morphologie": "maria",
+  "N_sommets": 8094,
+  "N_faces": 14566,
+  "N_aretes": 22604,
+  "sommets_non_references": 0,
+  "faces_repetition_indice": 0,
+  "faces_aire_nulle_1e-12": 0,
+  "faces_dupliquees": 0,
+  "composantes_graphe_aretes": 73,
+  "composantes_top10_tailles_sommets": [
+   907,
+   373,
+   373,
+   359,
+   326,
+   326,
+   277,
+   275,
+   275,
+   271
+  ],
+  "aretes_frontiere": 1510,
+  "aretes_non_variete": 0,
+  "boucles_de_frontiere": 88,
+  "sommets_frontiere": 1508,
+  "composantes": [
+   {
+    "id": 0,
+    "sommets": 21,
+    "sommets_references": 21,
+    "aretes": 45,
+    "faces": 25,
+    "aretes_frontiere": 15,
+    "boucles": 1,
+    "euler_V_E_F": 1,
+    "bbox_min_m": [
+     -0.0232,
+     -0.1062,
+     1.6134
+    ],
+    "bbox_max_m": [
+     0.0724,
+     0.0216,
+     1.7511
+    ],
+    "etendue_m": 0.21084908233496405,
+    "centre_m": [
+     0.0139,
+     -0.0609,
+     1.7114
+    ],
+    "distance_hanche_sur_hipd": 3.7316446574386752,
+    "labels_dominants": [
+     [
+      "bassin",
+      21
+     ]
+    ],
+    "poids_nuls_sommets": 0
+   },
+   {
+    "id": 1,
+    "sommets": 45,
+    "sommets_references": 45,
+    "aretes": 96,
+    "faces": 52,
+    "aretes_frontiere": 36,
+    "boucles": 1,
+    "euler_V_E_F": 1,
+    "bbox_min_m": [
+     -0.0753,
+     -0.0347,
+     1.5251
+    ],
+    "bbox_max_m": [
+     0.0754,
+     0.1,
+     1.6497
+    ],
+    "etendue_m": 0.23742991073797065,
+    "centre_m": [
+     0.0001,
+     0.0178,
+     1.5917
+    ],
+    "distance_hanche_sur_hipd": 3.1181128795963926,
+    "labels_dominants": [
+     [
+      "bassin",
+      45
+     ]
+    ],
+    "poids_nuls_sommets": 0
+   },
+   {
+    "id": 2,
+    "sommets": 16,
+    "sommets_references": 16,
+    "aretes": 35,
+    "faces": 20,
+    "aretes_frontiere": 10,
+    "boucles": 1,
+    "euler_V_E_F": 1,
+    "bbox_min_m": [
+     -0.0472,
+     -0.0832,
+     1.6185
+    ],
+    "bbox_max_m": [
+     -0.0176,
+     -0.075,
+     1.639
+    ],
+    "etendue_m": 0.03689992358403762,
+    "centre_m": [
+     -0.0328,
+     -0.0798,
+     1.6287
+    ],
+    "distance_hanche_sur_hipd": 3.3093541153443895,
+    "labels_dominants": [
+     [
+      "bassin",
+      16
+     ]
+    ],
+    "poids_nuls_sommets": 0
+   },
+   {
+    "id": 3,
+    "sommets": 16,
+    "sommets_references": 16,
+    "aretes": 35,
+    "faces": 20,
+    "aretes_frontiere": 10,
+    "boucles": 1,
+    "euler_V_E_F": 1,
+    "bbox_min_m": [
+     0.0176,
+     -0.0832,
+     1.6185
+    ],
+    "bbox_max_m": [
+     0.0472,
+     -0.075,
+     1.639
+    ],
+    "etendue_m": 0.03689992457427638,
+    "centre_m": [
+     0.0328,
+     -0.0798,
+     1.6287
+    ],
+    "distance_hanche_sur_hipd": 3.3093554184561755,
+    "labels_dominants": [
+     [
+      "bassin",
+      16
+     ]
+    ],
+    "poids_nuls_sommets": 0
+   },
+   {
+    "id": 4,
+    "sommets": 40,
+    "sommets_references": 40,
+    "aretes": 114,
+    "faces": 76,
+    "aretes_frontiere": 0,
+    "boucles": 0,
+    "euler_V_E_F": 2,
+    "bbox_min_m": [
+     -0.0183,
+     -0.1607,
+     1.2712
+    ],
+    "bbox_max_m": [
+     0.0183,
+     -0.1409,
+     1.3129
+    ],
+    "etendue_m": 0.058943705488347875,
+    "centre_m": [
+     0.0,
+     -0.1521,
+     1.2909
+    ],
+    "distance_hanche_sur_hipd": 1.7839067245604905,
+    "labels_dominants": [
+     [
+      "bassin",
+      40
+     ]
+    ],
+    "poids_nuls_sommets": 0
+   },
+   {
+    "id": 5,
+    "sommets": 60,
+    "sommets_references": 60,
+    "aretes": 170,
+    "faces": 110,
+    "aretes_frontiere": 10,
+    "boucles": 2,
+    "euler_V_E_F": 0,
+    "bbox_min_m": [
+     -0.0917,
+     -0.073,
+     1.4426
+    ],
+    "bbox_max_m": [
+     0.0917,
+     0.1166,
+     1.5147
+    ],
+    "etendue_m": 0.2735296763606064,
+    "centre_m": [
+     0.0004,
+     0.0197,
+     1.487
+    ],
+    "distance_hanche_sur_hipd": 2.58621004758585,
+    "labels_dominants": [
+     [
+      "bassin",
+      60
+     ]
+    ],
+    "poids_nuls_sommets": 0
+   },
+   {
+    "id": 6,
+    "sommets": 72,
+    "sommets_references": 72,
+    "aretes": 183,
+    "faces": 112,
+    "aretes_frontiere": 30,
+    "boucles": 1,
+    "euler_V_E_F": 1,
+    "bbox_min_m": [
+     -0.1648,
+     -0.1004,
+     1.3682
+    ],
+    "bbox_max_m": [
+     0.1648,
+     0.145,
+     1.4987
+    ],
+    "etendue_m": 0.4311771063524826,
+    "centre_m": [
+     -0.0,
+     0.0407,
+     1.4378
+    ],
+    "distance_hanche_sur_hipd": 2.345984335465399,
+    "labels_dominants": [
+     [
+      "bassin",
+      72
+     ]
+    ],
+    "poids_nuls_sommets": 0
+   },
+   {
+    "id": 7,
+    "sommets": 53,
+    "sommets_references": 53,
+    "aretes": 144,
+    "faces": 92,
+    "aretes_frontiere": 12,
+    "boucles": 1,
+    "euler_V_E_F": 1,
+    "bbox_min_m": [
+     -0.043,
+     -0.1183,
+     1.3978
+    ],
+    "bbox_max_m": [
+     0.043,
+     -0.0696,
+     1.4812
+    ],
+    "etendue_m": 0.1292859301558544,
+    "centre_m": [
+     0.0,
+     -0.0887,
+     1.4407
+    ],
+    "distance_hanche_sur_hipd": 2.3942370159056128,
+    "labels_dominants": [
+     [
+      "bassin",
+      53
+     ]
+    ],
+    "poids_nuls_sommets": 0
+   },
+   {
+    "id": 8,
+    "sommets": 58,
+    "sommets_references": 58,
+    "aretes": 168,
+    "faces": 112,
+    "aretes_frontiere": 0,
+    "boucles": 0,
+    "euler_V_E_F": 2,
+    "bbox_min_m": [
+     -0.0636,
+     -0.1288,
+     1.3771
+    ],
+    "bbox_max_m": [
+     0.0636,
+     -0.0568,
+     1.5005
+    ],
+    "etendue_m": 0.19131109934407164,
+    "centre_m": [
+     0.0,
+     -0.085,
+     1.4406
+    ],
+    "distance_hanche_sur_hipd": 2.3900294123223063,
+    "labels_dominants": [
+     [
+      "bassin",
+      58
+     ]
+    ],
+    "poids_nuls_sommets": 0
+   },
+   {
+    "id": 9,
+    "sommets": 80,
+    "sommets_references": 80,
+    "aretes": 200,
+    "faces": 120,
+    "aretes_frontiere": 40,
+    "boucles": 2,
+    "euler_V_E_F": 0,
+    "bbox_min_m": [
+     -0.1612,
+     -0.1283,
+     0.9808
+    ],
+    "bbox_max_m": [
+     0.1612,
+     0.1017,
+     1.1309
+    ],
+    "etendue_m": 0.4235054739670633,
+    "centre_m": [
+     -0.0,
+     -0.0165,
+     1.0719
+    ],
+    "distance_hanche_sur_hipd": 0.6415421884684331,
+    "labels_dominants": [
+     [
+      "bassin",
+      56
+     ],
+     [
+      "hanche_G",
+      8
+     ],
+     [
+      "hanche_D",
+      8
+     ]
+    ],
+    "poids_nuls_sommets": 0
+   },
+   {
+    "id": 10,
+    "sommets": 97,
+    "sommets_references": 97,
+    "aretes": 246,
+    "faces": 150,
+    "aretes_frontiere": 42,
+    "boucles": 1,
+    "euler_V_E_F": 1,
+    "bbox_min_m": [
+     -0.1346,
+     -0.1161,
+     0.898
+    ],
+    "bbox_max_m": [
+     0.1346,
+     0.12,
+     1.0994
+    ],
+    "etendue_m": 0.4108967440302967,
+    "centre_m": [
+     -0.0,
+     0.0236,
+     0.9922
+    ],
+    "distance_hanche_sur_hipd": 0.5158993722630439,
+    "labels_dominants": [
+     [
+      "entrejambe",
+      52
+     ],
+     [
+      "bassin",
+      29
+     ],
+     [
+      "hanche_G",
+      8
+     ]
+    ],
+    "poids_nuls_sommets": 0
+   },
+   {
+    "id": 11,
+    "sommets": 63,
+    "sommets_references": 63,
+    "aretes": 174,
+    "faces": 112,
+    "aretes_frontiere": 12,
+    "boucles": 1,
+    "euler_V_E_F": 1,
+    "bbox_min_m": [
+     -0.0676,
+     -0.1516,
+     0.9101
+    ],
+    "bbox_max_m": [
+     0.0676,
+     -0.1106,
+     1.0438
+    ],
+    "etendue_m": 0.1944607270122426,
+    "centre_m": [
+     0.0,
+     -0.1307,
+     0.9844
+    ],
+    "distance_hanche_sur_hipd": 0.8382589681803799,
+    "labels_dominants": [
+     [
+      "entrejambe",
+      45
+     ],
+     [
+      "bassin",
+      18
+     ]
+    ],
+    "poids_nuls_sommets": 0
+   },
+   {
+    "id": 12,
+    "sommets": 36,
+    "sommets_references": 36,
+    "aretes": 85,
+    "faces": 50,
+    "aretes_frontiere": 20,
+    "boucles": 1,
+    "euler_V_E_F": 1,
+    "bbox_min_m": [
+     -0.1595,
+     0.062,
+     1.1776
+    ],
+    "bbox_max_m": [
+     0.1595,
+     0.1693,
+     1.5189
+    ],
+    "etendue_m": 0.479354213410121,
+    "centre_m": [
+     0.0001,
+     0.1373,
+     1.3492
+    ],
+    "distance_hanche_sur_hipd": 2.021703108314714,
+    "labels_dominants": [
+     [
+      "bassin",
+      36
+     ]
+    ],
+    "poids_nuls_sommets": 0
+   },
+   {
+    "id": 13,
+    "sommets": 142,
+    "sommets_references": 142,
+    "aretes": 353,
+    "faces": 212,
+    "aretes_frontiere": 70,
+    "boucles": 1,
+    "euler_V_E_F": 1,
+    "bbox_min_m": [
+     -0.0471,
+     -0.1346,
+     1.3701
+    ],
+    "bbox_max_m": [
+     0.0471,
+     -0.0668,
+     1.4923
+    ],
+    "etendue_m": 0.1685709966278296,
+    "centre_m": [
+     0.0,
+     -0.0921,
+     1.4441
+    ],
+    "distance_hanche_sur_hipd": 2.4143728353075096,
+    "labels_dominants": [
+     [
+      "bassin",
+      142
+     ]
+    ],
+    "poids_nuls_sommets": 0
+   },
+   {
+    "id": 14,
+    "sommets": 157,
+    "sommets_references": 157,
+    "aretes": 426,
+    "faces": 270,
+    "aretes_frontiere": 42,
+    "boucles": 1,
+    "euler_V_E_F": 1,
+    "bbox_min_m": [
+     -0.1215,
+     -0.144,
+     1.1908
+    ],
+    "bbox_max_m": [
+     0.1215,
+     0.0714,
+     1.2932
+    ],
+    "etendue_m": 0.3405376750711198,
+    "centre_m": [
+     0.0,
+     -0.0427,
+     1.2234
+    ],
+    "distance_hanche_sur_hipd": 1.2957238669281834,
+    "labels_dominants": [
+     [
+      "bassin",
+      157
+     ]
+    ],
+    "poids_nuls_sommets": 0
+   },
+   {
+    "id": 15,
+    "sommets": 43,
+    "sommets_references": 43,
+    "aretes": 110,
+    "faces": 68,
+    "aretes_frontiere": 16,
+    "boucles": 1,
+    "euler_V_E_F": 1,
+    "bbox_min_m": [
+     -0.0984,
+     -0.1409,
+     0.9667
+    ],
+    "bbox_max_m": [
+     -0.0103,
+     -0.1048,
+     1.0882
+    ],
+    "etendue_m": 0.15437824980518158,
+    "centre_m": [
+     -0.0576,
+     -0.1214,
+     1.0311
+    ],
+    "distance_hanche_sur_hipd": 0.6799164726714307,
+    "labels_dominants": [
+     [
+      "bassin",
+      28
+     ],
+     [
+      "entrejambe",
+      15
+     ]
+    ],
+    "poids_nuls_sommets": 0
+   },
+   {
+    "id": 16,
+    "sommets": 275,
+    "sommets_references": 275,
+    "aretes": 761,
+    "faces": 485,
+    "aretes_frontiere": 67,
+    "boucles": 3,
+    "euler_V_E_F": -1,
+    "bbox_min_m": [
+     -0.171,
+     -0.1652,
+     1.2097
+    ],
+    "bbox_max_m": [
+     0.0,
+     0.1253,
+     1.5743
+    ],
+    "etendue_m": 0.4966016804858139,
+    "centre_m": [
+     -0.0793,
+     -0.0293,
+     1.3744
+    ],
+    "distance_hanche_sur_hipd": 1.9622816767678004,
+    "labels_dominants": [
+     [
+      "bassin",
+      275
+     ]
+    ],
+    "poids_nuls_sommets": 0
+   },
+   {
+    "id": 17,
+    "sommets": 21,
+    "sommets_references": 21,
+    "aretes": 50,
+    "faces": 30,
+    "aretes_frontiere": 10,
+    "boucles": 1,
+    "euler_V_E_F": 1,
+    "bbox_min_m": [
+     -0.1857,
+     -0.0697,
+     1.4342
+    ],
+    "bbox_max_m": [
+     -0.1384,
+     -0.041,
+     1.4821
+    ],
+    "etendue_m": 0.07322952189058872,
+    "centre_m": [
+     -0.1621,
+     -0.056,
+     1.4581
+    ],
+    "distance_hanche_sur_hipd": 2.4273400733173065,
+    "labels_dominants": [
+     [
+      "bassin",
+      21
+     ]
+    ],
+    "poids_nuls_sommets": 0
+   },
+   {
+    "id": 18,
+    "sommets": 144,
+    "sommets_references": 144,
+    "aretes": 426,
+    "faces": 284,
+    "aretes_frontiere": 0,
+    "boucles": 0,
+    "euler_V_E_F": 2,
+    "bbox_min_m": [
+     -0.1951,
+     -0.0694,
+     1.4015
+    ],
+    "bbox_max_m": [
+     -0.1065,
+     0.1453,
+     1.5623
+    ],
+    "etendue_m": 0.2824301141995107,
+    "centre_m": [
+     -0.1496,
+     0.046,
+     1.4859
+    ],
+    "distance_hanche_sur_hipd": 2.5559485529628607,
+    "labels_dominants": [
+     [
+      "bassin",
+      144
+     ]
+    ],
+    "poids_nuls_sommets": 0
+   },
+   {
+    "id": 19,
+    "sommets": 326,
+    "sommets_references": 326,
+    "aretes": 972,
+    "faces": 648,
+    "aretes_frontiere": 0,
+    "boucles": 0,
+    "euler_V_E_F": 2,
+    "bbox_min_m": [
+     -0.2733,
+     -0.0842,
+     1.3816
+    ],
+    "bbox_max_m": [
+     -0.02,
+     0.1484,
+     1.5574
+    ],
+    "etendue_m": 0.3862534767777576,
+    "centre_m": [
+     -0.1289,
+     0.0423,
+     1.4762
+    ],
+    "distance_hanche_sur_hipd": 2.495523423803971,
+    "labels_dominants": [
+     [
+      "bassin",
+      326
+     ]
+    ],
+    "poids_nuls_sommets": 0
+   },
+   {
+    "id": 20,
+    "sommets": 44,
+    "sommets_references": 44,
+    "aretes": 110,
+    "faces": 66,
+    "aretes_frontiere": 22,
+    "boucles": 2,
+    "euler_V_E_F": 0,
+    "bbox_min_m": [
+     -0.2844,
+     0.0007,
+     1.3793
+    ],
+    "bbox_max_m": [
+     -0.2403,
+     0.1023,
+     1.467
+    ],
+    "etendue_m": 0.14128159430134368,
+    "centre_m": [
+     -0.262,
+     0.0558,
+     1.4256
+    ],
+    "distance_hanche_sur_hipd": 2.3948077832505335,
+    "labels_dominants": [
+     [
+      "bassin",
+      44
+     ]
+    ],
+    "poids_nuls_sommets": 0
+   },
+   {
+    "id": 21,
+    "sommets": 65,
+    "sommets_references": 65,
+    "aretes": 169,
+    "faces": 104,
+    "aretes_frontiere": 26,
+    "boucles": 2,
+    "euler_V_E_F": 0,
+    "bbox_min_m": [
+     -0.2182,
+     -0.0168,
+     1.3589
+    ],
+    "bbox_max_m": [
+     -0.1581,
+     0.1105,
+     1.4702
+    ],
+    "etendue_m": 0.17945830468826396,
+    "centre_m": [
+     -0.1902,
+     0.0573,
+     1.4111
+    ],
+    "distance_hanche_sur_hipd": 2.2180053992351225,
+    "labels_dominants": [
+     [
+      "bassin",
+      65
+     ]
+    ],
+    "poids_nuls_sommets": 0
+   },
+   {
+    "id": 22,
+    "sommets": 44,
+    "sommets_references": 44,
+    "aretes": 110,
+    "faces": 66,
+    "aretes_frontiere": 22,
+    "boucles": 2,
+    "euler_V_E_F": 0,
+    "bbox_min_m": [
+     -0.3436,
+     -0.0021,
+     1.388
+    ],
+    "bbox_max_m": [
+     -0.3012,
+     0.0866,
+     1.4654
+    ],
+    "etendue_m": 0.12514675431637462,
+    "centre_m": [
+     -0.3237,
+     0.0467,
+     1.4275
+    ],
+    "distance_hanche_sur_hipd": 2.5293973292890066,
+    "labels_dominants": [
+     [
+      "bassin",
+      44
+     ]
+    ],
+    "poids_nuls_sommets": 0
+   },
+   {
+    "id": 23,
+    "sommets": 271,
+    "sommets_references": 271,
+    "aretes": 797,
+    "faces": 527,
+    "aretes_frontiere": 13,
+    "boucles": 1,
+    "euler_V_E_F": 1,
+    "bbox_min_m": [
+     -0.7237,
+     -0.0078,
+     1.3694
+    ],
+    "bbox_max_m": [
+     -0.3741,
+     0.1151,
+     1.5065
+    ],
+    "etendue_m": 0.39507985256146405,
+    "centre_m": [
+     -0.5223,
+     0.0506,
+     1.4449
+    ],
+    "distance_hanche_sur_hipd": 3.203980713900628,
+    "labels_dominants": [
+     [
+      "bassin",
+      271
+     ]
+    ],
+    "poids_nuls_sommets": 0
+   },
+   {
+    "id": 24,
+    "sommets": 65,
+    "sommets_references": 65,
+    "aretes": 174,
+    "faces": 109,
+    "aretes_frontiere": 21,
+    "boucles": 2,
+    "euler_V_E_F": 0,
+    "bbox_min_m": [
+     -0.7226,
+     -0.0112,
+     1.3804
+    ],
+    "bbox_max_m": [
+     -0.6139,
+     0.0984,
+     1.4596
+    ],
+    "etendue_m": 0.17356420374677148,
+    "centre_m": [
+     -0.6742,
+     0.0459,
+     1.4234
+    ],
+    "distance_hanche_sur_hipd": 3.716014685694383,
+    "labels_dominants": [
+     [
+      "bassin",
+      65
+     ]
+    ],
+    "poids_nuls_sommets": 0
+   },
+   {
+    "id": 25,
+    "sommets": 373,
+    "sommets_references": 373,
+    "aretes": 1101,
+    "faces": 729,
+    "aretes_frontiere": 15,
+    "boucles": 1,
+    "euler_V_E_F": 1,
+    "bbox_min_m": [
+     -0.8226,
+     -0.023,
+     1.3619
+    ],
+    "bbox_max_m": [
+     -0.6804,
+     0.0974,
+     1.4526
+    ],
+    "etendue_m": 0.20722512070856122,
+    "centre_m": [
+     -0.7554,
+     0.0427,
+     1.4202
+    ],
+    "distance_hanche_sur_hipd": 4.049676931773884,
+    "labels_dominants": [
+     [
+      "bassin",
+      373
+     ]
+    ],
+    "poids_nuls_sommets": 0
+   },
+   {
+    "id": 26,
+    "sommets": 28,
+    "sommets_references": 28,
+    "aretes": 78,
+    "faces": 52,
+    "aretes_frontiere": 0,
+    "boucles": 0,
+    "euler_V_E_F": 2,
+    "bbox_min_m": [
+     -0.2154,
+     -0.1047,
+     0.8438
+    ],
+    "bbox_max_m": [
+     -0.15,
+     0.0676,
+     1.01
+    ],
+    "etendue_m": 0.24816827025176283,
+    "centre_m": [
+     -0.1815,
+     -0.0182,
+     0.9217
+    ],
+    "distance_hanche_sur_hipd": 0.586452054373033,
+    "labels_dominants": [
+     [
+      "cuisse_D",
+      24
+     ],
+     [
+      "hanche_D",
+      4
+     ]
+    ],
+    "poids_nuls_sommets": 0
+   },
+   {
+    "id": 27,
+    "sommets": 24,
+    "sommets_references": 24,
+    "aretes": 66,
+    "faces": 44,
+    "aretes_frontiere": 0,
+    "boucles": 0,
+    "euler_V_E_F": 2,
+    "bbox_min_m": [
+     -0.1653,
+     -0.0582,
+     1.0545
+    ],
+    "bbox_max_m": [
+     -0.1395,
+     0.0126,
+     1.1257
+    ],
+    "etendue_m": 0.10368793719685095,
+    "centre_m": [
+     -0.1511,
+     -0.0198,
+     1.0932
+    ],
+    "distance_hanche_sur_hipd": 0.5842920466146307,
+    "labels_dominants": [
+     [
+      "bassin",
+      21
+     ],
+     [
+      "hanche_D",
+      3
+     ]
+    ],
+    "poids_nuls_sommets": 0
+   },
+   {
+    "id": 28,
+    "sommets": 28,
+    "sommets_references": 28,
+    "aretes": 78,
+    "faces": 52,
+    "aretes_frontiere": 0,
+    "boucles": 0,
+    "euler_V_E_F": 2,
+    "bbox_min_m": [
+     -0.2096,
+     -0.0986,
+     0.7874
+    ],
+    "bbox_max_m": [
+     -0.1543,
+     0.0635,
+     0.9434
+    ],
+    "etendue_m": 0.23170074596422482,
+    "centre_m": [
+     -0.1816,
+     -0.0173,
+     0.8613
+    ],
+    "distance_hanche_sur_hipd": 0.8239638420544991,
+    "labels_dominants": [
+     [
+      "cuisse_D",
+      27
+     ],
+     [
+      "hanche_D",
+      1
+     ]
+    ],
+    "poids_nuls_sommets": 0
+   },
+   {
+    "id": 29,
+    "sommets": 24,
+    "sommets_references": 24,
+    "aretes": 66,
+    "faces": 44,
+    "aretes_frontiere": 0,
+    "boucles": 0,
+    "euler_V_E_F": 2,
+    "bbox_min_m": [
+     -0.1975,
+     -0.0924,
+     0.7338
+    ],
+    "bbox_max_m": [
+     -0.1552,
+     0.0587,
+     0.8816
+    ],
+    "etendue_m": 0.21559552664221696,
+    "centre_m": [
+     -0.1774,
+     -0.0165,
+     0.8044
+    ],
+    "distance_hanche_sur_hipd": 1.0734136803284713,
+    "labels_dominants": [
+     [
+      "cuisse_D",
+      24
+     ]
+    ],
+    "poids_nuls_sommets": 0
+   },
+   {
+    "id": 30,
+    "sommets": 24,
+    "sommets_references": 24,
+    "aretes": 66,
+    "faces": 44,
+    "aretes_frontiere": 0,
+    "boucles": 0,
+    "euler_V_E_F": 2,
+    "bbox_min_m": [
+     -0.1897,
+     -0.0859,
+     0.6822
+    ],
+    "bbox_max_m": [
+     -0.1529,
+     0.0535,
+     0.8205
+    ],
+    "etendue_m": 0.19982542433999584,
+    "centre_m": [
+     -0.1697,
+     -0.0156,
+     0.7494
+    ],
+    "distance_hanche_sur_hipd": 1.327244932692501,
+    "labels_dominants": [
+     [
+      "cuisse_D",
+      24
+     ]
+    ],
+    "poids_nuls_sommets": 0
+   },
+   {
+    "id": 31,
+    "sommets": 24,
+    "sommets_references": 24,
+    "aretes": 66,
+    "faces": 44,
+    "aretes_frontiere": 0,
+    "boucles": 0,
+    "euler_V_E_F": 2,
+    "bbox_min_m": [
+     -0.1771,
+     -0.0649,
+     0.6455
+    ],
+    "bbox_max_m": [
+     -0.1447,
+     0.0345,
+     0.7436
+    ],
+    "etendue_m": 0.14329420002188162,
+    "centre_m": [
+     -0.1568,
+     -0.0148,
+     0.6938
+    ],
+    "distance_hanche_sur_hipd": 1.5895589008476316,
+    "labels_dominants": [
+     [
+      "cuisse_D",
+      24
+     ]
+    ],
+    "poids_nuls_sommets": 0
+   },
+   {
+    "id": 32,
+    "sommets": 201,
+    "sommets_references": 201,
+    "aretes": 564,
+    "faces": 364,
+    "aretes_frontiere": 36,
+    "boucles": 1,
+    "euler_V_E_F": 1,
+    "bbox_min_m": [
+     -0.1578,
+     -0.1833,
+     1.2757
+    ],
+    "bbox_max_m": [
+     -0.0081,
+     -0.0785,
+     1.3967
+    ],
+    "etendue_m": 0.21926091664793554,
+    "centre_m": [
+     -0.0673,
+     -0.1465,
+     1.3167
+    ],
+    "distance_hanche_sur_hipd": 1.8259613657915237,
+    "labels_dominants": [
+     [
+      "bassin",
+      201
+     ]
+    ],
+    "poids_nuls_sommets": 0
+   },
+   {
+    "id": 33,
+    "sommets": 79,
+    "sommets_references": 79,
+    "aretes": 209,
+    "faces": 131,
+    "aretes_frontiere": 25,
+    "boucles": 1,
+    "euler_V_E_F": 1,
+    "bbox_min_m": [
+     -0.1533,
+     -0.161,
+     1.246
+    ],
+    "bbox_max_m": [
+     -0.0238,
+     -0.0599,
+     1.328
+    ],
+    "etendue_m": 0.1836356454315575,
+    "centre_m": [
+     -0.126,
+     -0.101,
+     1.2916
+    ],
+    "distance_hanche_sur_hipd": 1.619889071599311,
+    "labels_dominants": [
+     [
+      "bassin",
+      79
+     ]
+    ],
+    "poids_nuls_sommets": 0
+   },
+   {
+    "id": 34,
+    "sommets": 208,
+    "sommets_references": 208,
+    "aretes": 612,
+    "faces": 404,
+    "aretes_frontiere": 12,
+    "boucles": 2,
+    "euler_V_E_F": 0,
+    "bbox_min_m": [
+     -0.1763,
+     -0.1266,
+     0.0845
+    ],
+    "bbox_max_m": [
+     -0.0145,
+     0.1131,
+     0.6858
+    ],
+    "etendue_m": 0.6671803551010274,
+    "centre_m": [
+     -0.0967,
+     -0.0282,
+     0.4908
+    ],
+    "distance_hanche_sur_hipd": 2.608753147229323,
+    "labels_dominants": [
+     [
+      "cuisse_D",
+      96
+     ],
+     [
+      "genou_D",
+      76
+     ],
+     [
+      "autre",
+      36
+     ]
+    ],
+    "poids_nuls_sommets": 0
+   },
+   {
+    "id": 35,
+    "sommets": 29,
+    "sommets_references": 29,
+    "aretes": 72,
+    "faces": 44,
+    "aretes_frontiere": 12,
+    "boucles": 1,
+    "euler_V_E_F": 1,
+    "bbox_min_m": [
+     -0.162,
+     -0.08,
+     0.0823
+    ],
+    "bbox_max_m": [
+     -0.0468,
+     0.0292,
+     0.1982
+    ],
+    "etendue_m": 0.19655820368123866,
+    "centre_m": [
+     -0.1036,
+     -0.0144,
+     0.1312
+    ],
+    "distance_hanche_sur_hipd": 4.46146537288119,
+    "labels_dominants": [
+     [
+      "cuisse_D",
+      19
+     ],
+     [
+      "autre",
+      10
+     ]
+    ],
+    "poids_nuls_sommets": 0
+   },
+   {
+    "id": 36,
+    "sommets": 69,
+    "sommets_references": 69,
+    "aretes": 196,
+    "faces": 128,
+    "aretes_frontiere": 8,
+    "boucles": 1,
+    "euler_V_E_F": 1,
+    "bbox_min_m": [
+     -0.168,
+     -0.1956,
+     -0.0015
+    ],
+    "bbox_max_m": [
+     -0.044,
+     0.1009,
+     0.2228
+    ],
+    "etendue_m": 0.3919388224740083,
+    "centre_m": [
+     -0.1042,
+     -0.0295,
+     0.0614
+    ],
+    "distance_hanche_sur_hipd": 4.823427408761305,
+    "labels_dominants": [
+     [
+      "cuisse_D",
+      57
+     ],
+     [
+      "autre",
+      12
+     ]
+    ],
+    "poids_nuls_sommets": 0
+   },
+   {
+    "id": 37,
+    "sommets": 32,
+    "sommets_references": 32,
+    "aretes": 77,
+    "faces": 46,
+    "aretes_frontiere": 16,
+    "boucles": 1,
+    "euler_V_E_F": 1,
+    "bbox_min_m": [
+     -0.1593,
+     -0.1075,
+     0.0657
+    ],
+    "bbox_max_m": [
+     -0.0513,
+     0.0183,
+     0.1329
+    ],
+    "etendue_m": 0.17885817485880628,
+    "centre_m": [
+     -0.1044,
+     -0.0266,
+     0.0938
+    ],
+    "distance_hanche_sur_hipd": 4.656121460211967,
+    "labels_dominants": [
+     [
+      "cuisse_D",
+      22
+     ],
+     [
+      "autre",
+      10
+     ]
+    ],
+    "poids_nuls_sommets": 0
+   },
+   {
+    "id": 38,
+    "sommets": 109,
+    "sommets_references": 109,
+    "aretes": 305,
+    "faces": 196,
+    "aretes_frontiere": 22,
+    "boucles": 2,
+    "euler_V_E_F": 0,
+    "bbox_min_m": [
+     -0.1775,
+     -0.108,
+     0.4689
+    ],
+    "bbox_max_m": [
+     -0.0025,
+     0.0805,
+     0.9075
+    ],
+    "etendue_m": 0.5085120014042894,
+    "centre_m": [
+     -0.0971,
+     -0.0096,
+     0.6932
+    ],
+    "distance_hanche_sur_hipd": 1.5610913228466519,
+    "labels_dominants": [
+     [
+      "cuisse_D",
+      48
+     ],
+     [
+      "genou_D",
+      38
+     ],
+     [
+      "autre",
+      23
+     ]
+    ],
+    "poids_nuls_sommets": 0
+   },
+   {
+    "id": 39,
+    "sommets": 21,
+    "sommets_references": 21,
+    "aretes": 50,
+    "faces": 30,
+    "aretes_frontiere": 10,
+    "boucles": 1,
+    "euler_V_E_F": 1,
+    "bbox_min_m": [
+     -0.1657,
+     0.1193,
+     1.4117
+    ],
+    "bbox_max_m": [
+     -0.1176,
+     0.1544,
+     1.4627
+    ],
+    "etendue_m": 0.07838338792028525,
+    "centre_m": [
+     -0.1416,
+     0.1374,
+     1.4371
+    ],
+    "distance_hanche_sur_hipd": 2.3982355087432956,
+    "labels_dominants": [
+     [
+      "bassin",
+      21
+     ]
+    ],
+    "poids_nuls_sommets": 0
+   },
+   {
+    "id": 40,
+    "sommets": 277,
+    "sommets_references": 277,
+    "aretes": 750,
+    "faces": 472,
+    "aretes_frontiere": 84,
+    "boucles": 3,
+    "euler_V_E_F": -1,
+    "bbox_min_m": [
+     -0.1256,
+     -0.1499,
+     1.0343
+    ],
+    "bbox_max_m": [
+     0.1256,
+     0.0995,
+     1.5256
+    ],
+    "etendue_m": 0.6055227210206672,
+    "centre_m": [
+     0.0,
+     -0.0442,
+     1.3285
+    ],
+    "distance_hanche_sur_hipd": 1.8030565543802966,
+    "labels_dominants": [
+     [
+      "bassin",
+      277
+     ]
+    ],
+    "poids_nuls_sommets": 0
+   },
+   {
+    "id": 41,
+    "sommets": 68,
+    "sommets_references": 68,
+    "aretes": 187,
+    "faces": 119,
+    "aretes_frontiere": 17,
+    "boucles": 2,
+    "euler_V_E_F": 0,
+    "bbox_min_m": [
+     -0.5187,
+     0.0042,
+     1.3923
+    ],
+    "bbox_max_m": [
+     -0.3355,
+     0.0748,
+     1.467
+    ],
+    "etendue_m": 0.21003716299991906,
+    "centre_m": [
+     -0.4053,
+     0.0447,
+     1.431
+    ],
+    "distance_hanche_sur_hipd": 2.763571165051529,
+    "labels_dominants": [
+     [
+      "bassin",
+      68
+     ]
+    ],
+    "poids_nuls_sommets": 0
+   },
+   {
+    "id": 42,
+    "sommets": 81,
+    "sommets_references": 81,
+    "aretes": 217,
+    "faces": 136,
+    "aretes_frontiere": 26,
+    "boucles": 2,
+    "euler_V_E_F": 0,
+    "bbox_min_m": [
+     -0.3139,
+     -0.0367,
+     1.322
+    ],
+    "bbox_max_m": [
+     -0.1226,
+     0.1039,
+     1.4648
+    ],
+    "etendue_m": 0.2770734178719627,
+    "centre_m": [
+     -0.2073,
+     0.0517,
+     1.4128
+    ],
+    "distance_hanche_sur_hipd": 2.2433669544746335,
+    "labels_dominants": [
+     [
+      "bassin",
+      81
+     ]
+    ],
+    "poids_nuls_sommets": 0
+   },
+   {
+    "id": 43,
+    "sommets": 81,
+    "sommets_references": 81,
+    "aretes": 217,
+    "faces": 136,
+    "aretes_frontiere": 26,
+    "boucles": 2,
+    "euler_V_E_F": 0,
+    "bbox_min_m": [
+     0.1226,
+     -0.0363,
+     1.322
+    ],
+    "bbox_max_m": [
+     0.3139,
+     0.1039,
+     1.4648
+    ],
+    "etendue_m": 0.2768394317405848,
+    "centre_m": [
+     0.2074,
+     0.0517,
+     1.4128
+    ],
+    "distance_hanche_sur_hipd": 2.2436062302453745,
+    "labels_dominants": [
+     [
+      "bassin",
+      81
+     ]
+    ],
+    "poids_nuls_sommets": 0
+   },
+   {
+    "id": 44,
+    "sommets": 68,
+    "sommets_references": 68,
+    "aretes": 187,
+    "faces": 119,
+    "aretes_frontiere": 17,
+    "boucles": 2,
+    "euler_V_E_F": 0,
+    "bbox_min_m": [
+     0.3355,
+     0.0042,
+     1.3923
+    ],
+    "bbox_max_m": [
+     0.5187,
+     0.0748,
+     1.467
+    ],
+    "etendue_m": 0.21003698567038095,
+    "centre_m": [
+     0.4054,
+     0.0447,
+     1.431
+    ],
+    "distance_hanche_sur_hipd": 2.7635712359703017,
+    "labels_dominants": [
+     [
+      "bassin",
+      68
+     ]
+    ],
+    "poids_nuls_sommets": 0
+   },
+   {
+    "id": 45,
+    "sommets": 155,
+    "sommets_references": 155,
+    "aretes": 418,
+    "faces": 262,
+    "aretes_frontiere": 50,
+    "boucles": 3,
+    "euler_V_E_F": -1,
+    "bbox_min_m": [
+     -0.1658,
+     -0.1059,
+     0.7645
+    ],
+    "bbox_max_m": [
+     0.1658,
+     0.1156,
+     1.0922
+    ],
+    "etendue_m": 0.5161431761753328,
+    "centre_m": [
+     0.0,
+     -0.0026,
+     0.917
+    ],
+    "distance_hanche_sur_hipd": 0.6440120103864916,
+    "labels_dominants": [
+     [
+      "entrejambe",
+      51
+     ],
+     [
+      "cuisse_D",
+      25
+     ],
+     [
+      "cuisse_G",
+      25
+     ]
+    ],
+    "poids_nuls_sommets": 0
+   },
+   {
+    "id": 46,
+    "sommets": 907,
+    "sommets_references": 907,
+    "aretes": 2622,
+    "faces": 1712,
+    "aretes_frontiere": 108,
+    "boucles": 5,
+    "euler_V_E_F": -3,
+    "bbox_min_m": [
+     -0.0797,
+     -0.1131,
+     1.5102
+    ],
+    "bbox_max_m": [
+     0.0797,
+     0.0768,
+     1.7296
+    ],
+    "etendue_m": 0.3311148106046109,
+    "centre_m": [
+     0.0001,
+     -0.0615,
+     1.598
+    ],
+    "distance_hanche_sur_hipd": 3.163939204485603,
+    "labels_dominants": [
+     [
+      "bassin",
+      907
+     ]
+    ],
+    "poids_nuls_sommets": 0
+   },
+   {
+    "id": 47,
+    "sommets": 43,
+    "sommets_references": 43,
+    "aretes": 110,
+    "faces": 68,
+    "aretes_frontiere": 16,
+    "boucles": 1,
+    "euler_V_E_F": 1,
+    "bbox_min_m": [
+     0.0103,
+     -0.1409,
+     0.9667
+    ],
+    "bbox_max_m": [
+     0.0984,
+     -0.1048,
+     1.0882
+    ],
+    "etendue_m": 0.15437841256175833,
+    "centre_m": [
+     0.0576,
+     -0.1214,
+     1.0311
+    ],
+    "distance_hanche_sur_hipd": 0.6799178928922489,
+    "labels_dominants": [
+     [
+      "bassin",
+      28
+     ],
+     [
+      "entrejambe",
+      15
+     ]
+    ],
+    "poids_nuls_sommets": 0
+   },
+   {
+    "id": 48,
+    "sommets": 275,
+    "sommets_references": 275,
+    "aretes": 761,
+    "faces": 485,
+    "aretes_frontiere": 67,
+    "boucles": 3,
+    "euler_V_E_F": -1,
+    "bbox_min_m": [
+     -0.0,
+     -0.1652,
+     1.2097
+    ],
+    "bbox_max_m": [
+     0.1721,
+     0.1253,
+     1.5743
+    ],
+    "etendue_m": 0.4969842618146731,
+    "centre_m": [
+     0.0794,
+     -0.0293,
+     1.3743
+    ],
+    "distance_hanche_sur_hipd": 1.9619729066258107,
+    "labels_dominants": [
+     [
+      "bassin",
+      275
+     ]
+    ],
+    "poids_nuls_sommets": 0
+   },
+   {
+    "id": 49,
+    "sommets": 21,
+    "sommets_references": 21,
+    "aretes": 50,
+    "faces": 30,
+    "aretes_frontiere": 10,
+    "boucles": 1,
+    "euler_V_E_F": 1,
+    "bbox_min_m": [
+     0.1384,
+     -0.0697,
+     1.4342
+    ],
+    "bbox_max_m": [
+     0.1857,
+     -0.041,
+     1.4821
+    ],
+    "etendue_m": 0.07322964332342255,
+    "centre_m": [
+     0.1621,
+     -0.056,
+     1.4581
+    ],
+    "distance_hanche_sur_hipd": 2.4273412980347704,
+    "labels_dominants": [
+     [
+      "bassin",
+      21
+     ]
+    ],
+    "poids_nuls_sommets": 0
+   },
+   {
+    "id": 50,
+    "sommets": 144,
+    "sommets_references": 144,
+    "aretes": 426,
+    "faces": 284,
+    "aretes_frontiere": 0,
+    "boucles": 0,
+    "euler_V_E_F": 2,
+    "bbox_min_m": [
+     0.1065,
+     -0.0694,
+     1.4015
+    ],
+    "bbox_max_m": [
+     0.1951,
+     0.1453,
+     1.5623
+    ],
+    "etendue_m": 0.28243031429929866,
+    "centre_m": [
+     0.1496,
+     0.046,
+     1.4859
+    ],
+    "distance_hanche_sur_hipd": 2.5559497920781844,
+    "labels_dominants": [
+     [
+      "bassin",
+      144
+     ]
+    ],
+    "poids_nuls_sommets": 0
+   },
+   {
+    "id": 51,
+    "sommets": 326,
+    "sommets_references": 326,
+    "aretes": 972,
+    "faces": 648,
+    "aretes_frontiere": 0,
+    "boucles": 0,
+    "euler_V_E_F": 2,
+    "bbox_min_m": [
+     0.02,
+     -0.0842,
+     1.3816
+    ],
+    "bbox_max_m": [
+     0.2733,
+     0.1484,
+     1.5574
+    ],
+    "etendue_m": 0.38625350818876103,
+    "centre_m": [
+     0.1289,
+     0.0423,
+     1.4762
+    ],
+    "distance_hanche_sur_hipd": 2.4955252617009003,
+    "labels_dominants": [
+     [
+      "bassin",
+      326
+     ]
+    ],
+    "poids_nuls_sommets": 0
+   },
+   {
+    "id": 52,
+    "sommets": 44,
+    "sommets_references": 44,
+    "aretes": 110,
+    "faces": 66,
+    "aretes_frontiere": 22,
+    "boucles": 2,
+    "euler_V_E_F": 0,
+    "bbox_min_m": [
+     0.2403,
+     0.0007,
+     1.3793
+    ],
+    "bbox_max_m": [
+     0.2844,
+     0.1023,
+     1.467
+    ],
+    "etendue_m": 0.1412813376748463,
+    "centre_m": [
+     0.262,
+     0.0558,
+     1.4256
+    ],
+    "distance_hanche_sur_hipd": 2.3948064245224656,
+    "labels_dominants": [
+     [
+      "bassin",
+      44
+     ]
+    ],
+    "poids_nuls_sommets": 0
+   },
+   {
+    "id": 53,
+    "sommets": 65,
+    "sommets_references": 65,
+    "aretes": 169,
+    "faces": 104,
+    "aretes_frontiere": 26,
+    "boucles": 2,
+    "euler_V_E_F": 0,
+    "bbox_min_m": [
+     0.1581,
+     -0.0168,
+     1.3589
+    ],
+    "bbox_max_m": [
+     0.2182,
+     0.1105,
+     1.4702
+    ],
+    "etendue_m": 0.17945828588601367,
+    "centre_m": [
+     0.1902,
+     0.0573,
+     1.4111
+    ],
+    "distance_hanche_sur_hipd": 2.2180061214864186,
+    "labels_dominants": [
+     [
+      "bassin",
+      65
+     ]
+    ],
+    "poids_nuls_sommets": 0
+   },
+   {
+    "id": 54,
+    "sommets": 44,
+    "sommets_references": 44,
+    "aretes": 110,
+    "faces": 66,
+    "aretes_frontiere": 22,
+    "boucles": 2,
+    "euler_V_E_F": 0,
+    "bbox_min_m": [
+     0.3012,
+     -0.0021,
+     1.388
+    ],
+    "bbox_max_m": [
+     0.3436,
+     0.0866,
+     1.4654
+    ],
+    "etendue_m": 0.1251468628750077,
+    "centre_m": [
+     0.3237,
+     0.0467,
+     1.4275
+    ],
+    "distance_hanche_sur_hipd": 2.5293960353810885,
+    "labels_dominants": [
+     [
+      "bassin",
+      44
+     ]
+    ],
+    "poids_nuls_sommets": 0
+   },
+   {
+    "id": 55,
+    "sommets": 271,
+    "sommets_references": 271,
+    "aretes": 797,
+    "faces": 527,
+    "aretes_frontiere": 13,
+    "boucles": 1,
+    "euler_V_E_F": 1,
+    "bbox_min_m": [
+     0.3741,
+     -0.0078,
+     1.3694
+    ],
+    "bbox_max_m": [
+     0.7237,
+     0.1151,
+     1.5065
+    ],
+    "etendue_m": 0.39507829401804967,
+    "centre_m": [
+     0.5223,
+     0.0506,
+     1.4449
+    ],
+    "distance_hanche_sur_hipd": 3.203980668202844,
+    "labels_dominants": [
+     [
+      "bassin",
+      271
+     ]
+    ],
+    "poids_nuls_sommets": 0
+   },
+   {
+    "id": 56,
+    "sommets": 65,
+    "sommets_references": 65,
+    "aretes": 174,
+    "faces": 109,
+    "aretes_frontiere": 21,
+    "boucles": 2,
+    "euler_V_E_F": 0,
+    "bbox_min_m": [
+     0.6139,
+     -0.0112,
+     1.3804
+    ],
+    "bbox_max_m": [
+     0.7226,
+     0.0984,
+     1.4596
+    ],
+    "etendue_m": 0.1735640091199163,
+    "centre_m": [
+     0.6742,
+     0.0459,
+     1.4234
+    ],
+    "distance_hanche_sur_hipd": 3.716012758750404,
+    "labels_dominants": [
+     [
+      "bassin",
+      65
+     ]
+    ],
+    "poids_nuls_sommets": 0
+   },
+   {
+    "id": 57,
+    "sommets": 373,
+    "sommets_references": 373,
+    "aretes": 1101,
+    "faces": 729,
+    "aretes_frontiere": 15,
+    "boucles": 1,
+    "euler_V_E_F": 1,
+    "bbox_min_m": [
+     0.6804,
+     -0.023,
+     1.3619
+    ],
+    "bbox_max_m": [
+     0.8226,
+     0.0974,
+     1.4526
+    ],
+    "etendue_m": 0.20722442030776303,
+    "centre_m": [
+     0.7554,
+     0.0427,
+     1.4202
+    ],
+    "distance_hanche_sur_hipd": 4.049676594996277,
+    "labels_dominants": [
+     [
+      "bassin",
+      373
+     ]
+    ],
+    "poids_nuls_sommets": 0
+   },
+   {
+    "id": 58,
+    "sommets": 28,
+    "sommets_references": 28,
+    "aretes": 78,
+    "faces": 52,
+    "aretes_frontiere": 0,
+    "boucles": 0,
+    "euler_V_E_F": 2,
+    "bbox_min_m": [
+     0.15,
+     -0.1047,
+     0.8438
+    ],
+    "bbox_max_m": [
+     0.2154,
+     0.0676,
+     1.01
+    ],
+    "etendue_m": 0.24816842883016413,
+    "centre_m": [
+     0.1815,
+     -0.0182,
+     0.9217
+    ],
+    "distance_hanche_sur_hipd": 0.5864518311294561,
+    "labels_dominants": [
+     [
+      "cuisse_G",
+      24
+     ],
+     [
+      "hanche_G",
+      4
+     ]
+    ],
+    "poids_nuls_sommets": 0
+   },
+   {
+    "id": 59,
+    "sommets": 24,
+    "sommets_references": 24,
+    "aretes": 66,
+    "faces": 44,
+    "aretes_frontiere": 0,
+    "boucles": 0,
+    "euler_V_E_F": 2,
+    "bbox_min_m": [
+     0.1395,
+     -0.0582,
+     1.0545
+    ],
+    "bbox_max_m": [
+     0.1653,
+     0.0126,
+     1.1257
+    ],
+    "etendue_m": 0.10368794198693866,
+    "centre_m": [
+     0.1511,
+     -0.0198,
+     1.0932
+    ],
+    "distance_hanche_sur_hipd": 0.5842930654199187,
+    "labels_dominants": [
+     [
+      "bassin",
+      21
+     ],
+     [
+      "hanche_G",
+      3
+     ]
+    ],
+    "poids_nuls_sommets": 0
+   },
+   {
+    "id": 60,
+    "sommets": 28,
+    "sommets_references": 28,
+    "aretes": 78,
+    "faces": 52,
+    "aretes_frontiere": 0,
+    "boucles": 0,
+    "euler_V_E_F": 2,
+    "bbox_min_m": [
+     0.1543,
+     -0.0986,
+     0.7874
+    ],
+    "bbox_max_m": [
+     0.2096,
+     0.0635,
+     0.9434
+    ],
+    "etendue_m": 0.23170082810672052,
+    "centre_m": [
+     0.1816,
+     -0.0173,
+     0.8613
+    ],
+    "distance_hanche_sur_hipd": 0.8239635120630452,
+    "labels_dominants": [
+     [
+      "cuisse_G",
+      27
+     ],
+     [
+      "hanche_G",
+      1
+     ]
+    ],
+    "poids_nuls_sommets": 0
+   },
+   {
+    "id": 61,
+    "sommets": 24,
+    "sommets_references": 24,
+    "aretes": 66,
+    "faces": 44,
+    "aretes_frontiere": 0,
+    "boucles": 0,
+    "euler_V_E_F": 2,
+    "bbox_min_m": [
+     0.1552,
+     -0.0924,
+     0.7338
+    ],
+    "bbox_max_m": [
+     0.1975,
+     0.0587,
+     0.8816
+    ],
+    "etendue_m": 0.21559560337930286,
+    "centre_m": [
+     0.1774,
+     -0.0165,
+     0.8044
+    ],
+    "distance_hanche_sur_hipd": 1.0734132526039337,
+    "labels_dominants": [
+     [
+      "cuisse_G",
+      24
+     ]
+    ],
+    "poids_nuls_sommets": 0
+   },
+   {
+    "id": 62,
+    "sommets": 24,
+    "sommets_references": 24,
+    "aretes": 66,
+    "faces": 44,
+    "aretes_frontiere": 0,
+    "boucles": 0,
+    "euler_V_E_F": 2,
+    "bbox_min_m": [
+     0.1529,
+     -0.0859,
+     0.6822
+    ],
+    "bbox_max_m": [
+     0.1897,
+     0.0535,
+     0.8205
+    ],
+    "etendue_m": 0.1998254902286059,
+    "centre_m": [
+     0.1697,
+     -0.0156,
+     0.7494
+    ],
+    "distance_hanche_sur_hipd": 1.3272444693025873,
+    "labels_dominants": [
+     [
+      "cuisse_G",
+      24
+     ]
+    ],
+    "poids_nuls_sommets": 0
+   },
+   {
+    "id": 63,
+    "sommets": 24,
+    "sommets_references": 24,
+    "aretes": 66,
+    "faces": 44,
+    "aretes_frontiere": 0,
+    "boucles": 0,
+    "euler_V_E_F": 2,
+    "bbox_min_m": [
+     0.1447,
+     -0.0649,
+     0.6455
+    ],
+    "bbox_max_m": [
+     0.1771,
+     0.0345,
+     0.7436
+    ],
+    "etendue_m": 0.14329428592252544,
+    "centre_m": [
+     0.1568,
+     -0.0148,
+     0.6938
+    ],
+    "distance_hanche_sur_hipd": 1.5895584554753952,
+    "labels_dominants": [
+     [
+      "cuisse_G",
+      24
+     ]
+    ],
+    "poids_nuls_sommets": 0
+   },
+   {
+    "id": 64,
+    "sommets": 201,
+    "sommets_references": 201,
+    "aretes": 564,
+    "faces": 364,
+    "aretes_frontiere": 36,
+    "boucles": 1,
+    "euler_V_E_F": 1,
+    "bbox_min_m": [
+     0.0081,
+     -0.1833,
+     1.2757
+    ],
+    "bbox_max_m": [
+     0.1578,
+     -0.0785,
+     1.3967
+    ],
+    "etendue_m": 0.21926085878443788,
+    "centre_m": [
+     0.0673,
+     -0.1465,
+     1.3167
+    ],
+    "distance_hanche_sur_hipd": 1.8259623272485088,
+    "labels_dominants": [
+     [
+      "bassin",
+      201
+     ]
+    ],
+    "poids_nuls_sommets": 0
+   },
+   {
+    "id": 65,
+    "sommets": 79,
+    "sommets_references": 79,
+    "aretes": 209,
+    "faces": 131,
+    "aretes_frontiere": 25,
+    "boucles": 1,
+    "euler_V_E_F": 1,
+    "bbox_min_m": [
+     0.0238,
+     -0.161,
+     1.246
+    ],
+    "bbox_max_m": [
+     0.1533,
+     -0.0599,
+     1.328
+    ],
+    "etendue_m": 0.183635598575029,
+    "centre_m": [
+     0.126,
+     -0.101,
+     1.2916
+    ],
+    "distance_hanche_sur_hipd": 1.6198901613376286,
+    "labels_dominants": [
+     [
+      "bassin",
+      79
+     ]
+    ],
+    "poids_nuls_sommets": 0
+   },
+   {
+    "id": 66,
+    "sommets": 208,
+    "sommets_references": 208,
+    "aretes": 612,
+    "faces": 404,
+    "aretes_frontiere": 12,
+    "boucles": 2,
+    "euler_V_E_F": 0,
+    "bbox_min_m": [
+     0.0145,
+     -0.1266,
+     0.0845
+    ],
+    "bbox_max_m": [
+     0.1763,
+     0.1131,
+     0.6858
+    ],
+    "etendue_m": 0.6671808192591225,
+    "centre_m": [
+     0.0967,
+     -0.0282,
+     0.4908
+    ],
+    "distance_hanche_sur_hipd": 2.6087504520125857,
+    "labels_dominants": [
+     [
+      "cuisse_G",
+      96
+     ],
+     [
+      "genou_G",
+      76
+     ],
+     [
+      "autre",
+      36
+     ]
+    ],
+    "poids_nuls_sommets": 0
+   },
+   {
+    "id": 67,
+    "sommets": 29,
+    "sommets_references": 29,
+    "aretes": 72,
+    "faces": 44,
+    "aretes_frontiere": 12,
+    "boucles": 1,
+    "euler_V_E_F": 1,
+    "bbox_min_m": [
+     0.0468,
+     -0.08,
+     0.0823
+    ],
+    "bbox_max_m": [
+     0.162,
+     0.0292,
+     0.1982
+    ],
+    "etendue_m": 0.19655811124728975,
+    "centre_m": [
+     0.1036,
+     -0.0144,
+     0.1312
+    ],
+    "distance_hanche_sur_hipd": 4.461464652994409,
+    "labels_dominants": [
+     [
+      "cuisse_G",
+      19
+     ],
+     [
+      "autre",
+      10
+     ]
+    ],
+    "poids_nuls_sommets": 0
+   },
+   {
+    "id": 68,
+    "sommets": 69,
+    "sommets_references": 69,
+    "aretes": 196,
+    "faces": 128,
+    "aretes_frontiere": 8,
+    "boucles": 1,
+    "euler_V_E_F": 1,
+    "bbox_min_m": [
+     0.044,
+     -0.1956,
+     -0.0015
+    ],
+    "bbox_max_m": [
+     0.168,
+     0.1009,
+     0.2228
+    ],
+    "etendue_m": 0.39193918950928197,
+    "centre_m": [
+     0.1042,
+     -0.0295,
+     0.0614
+    ],
+    "distance_hanche_sur_hipd": 4.823426147396492,
+    "labels_dominants": [
+     [
+      "cuisse_G",
+      57
+     ],
+     [
+      "autre",
+      12
+     ]
+    ],
+    "poids_nuls_sommets": 0
+   },
+   {
+    "id": 69,
+    "sommets": 32,
+    "sommets_references": 32,
+    "aretes": 77,
+    "faces": 46,
+    "aretes_frontiere": 16,
+    "boucles": 1,
+    "euler_V_E_F": 1,
+    "bbox_min_m": [
+     0.0513,
+     -0.1075,
+     0.0657
+    ],
+    "bbox_max_m": [
+     0.1593,
+     0.0183,
+     0.1329
+    ],
+    "etendue_m": 0.17885809456913496,
+    "centre_m": [
+     0.1044,
+     -0.0266,
+     0.0938
+    ],
+    "distance_hanche_sur_hipd": 4.656120599913083,
+    "labels_dominants": [
+     [
+      "cuisse_G",
+      22
+     ],
+     [
+      "autre",
+      10
+     ]
+    ],
+    "poids_nuls_sommets": 0
+   },
+   {
+    "id": 70,
+    "sommets": 109,
+    "sommets_references": 109,
+    "aretes": 305,
+    "faces": 196,
+    "aretes_frontiere": 22,
+    "boucles": 2,
+    "euler_V_E_F": 0,
+    "bbox_min_m": [
+     0.0025,
+     -0.108,
+     0.4689
+    ],
+    "bbox_max_m": [
+     0.1775,
+     0.0805,
+     0.9075
+    ],
+    "etendue_m": 0.5085113619762839,
+    "centre_m": [
+     0.0971,
+     -0.0096,
+     0.6932
+    ],
+    "distance_hanche_sur_hipd": 1.5610902903534825,
+    "labels_dominants": [
+     [
+      "cuisse_G",
+      48
+     ],
+     [
+      "genou_G",
+      38
+     ],
+     [
+      "autre",
+      23
+     ]
+    ],
+    "poids_nuls_sommets": 0
+   },
+   {
+    "id": 71,
+    "sommets": 21,
+    "sommets_references": 21,
+    "aretes": 50,
+    "faces": 30,
+    "aretes_frontiere": 10,
+    "boucles": 1,
+    "euler_V_E_F": 1,
+    "bbox_min_m": [
+     0.1176,
+     0.1193,
+     1.4117
+    ],
+    "bbox_max_m": [
+     0.1657,
+     0.1544,
+     1.4627
+    ],
+    "etendue_m": 0.07838340913803511,
+    "centre_m": [
+     0.1416,
+     0.1374,
+     1.4371
+    ],
+    "distance_hanche_sur_hipd": 2.3982367929960016,
+    "labels_dominants": [
+     [
+      "bassin",
+      21
+     ]
+    ],
+    "poids_nuls_sommets": 0
+   },
+   {
+    "id": 72,
+    "sommets": 359,
+    "sommets_references": 359,
+    "aretes": 962,
+    "faces": 599,
+    "aretes_frontiere": 127,
+    "boucles": 4,
+    "euler_V_E_F": -4,
+    "bbox_min_m": [
+     -0.091,
+     -0.1183,
+     1.5142
+    ],
+    "bbox_max_m": [
+     0.0889,
+     0.115,
+     1.7449
+    ],
+    "etendue_m": 0.37419458029624636,
+    "centre_m": [
+     -0.0002,
+     -0.0026,
+     1.655
+    ],
+    "distance_hanche_sur_hipd": 3.439072780767708,
+    "labels_dominants": [
+     [
+      "bassin",
+      359
+     ]
+    ],
+    "poids_nuls_sommets": 0
+   }
+  ],
+  "composantes_sans_face": 0,
+  "composantes_avec_frontiere": 55,
+  "composantes_fermees": 18,
+  "poids_nuls_total": 0,
+  "separation_composantes_principales": [
+   {
+    "composante": 46,
+    "distance_min_autre_composante_hipd": 0.0
+   },
+   {
+    "composante": 25,
+    "distance_min_autre_composante_hipd": 0.0
+   },
+   {
+    "composante": 57,
+    "distance_min_autre_composante_hipd": 0.0
+   },
+   {
+    "composante": 19,
+    "distance_min_autre_composante_hipd": 0.00615579210202553
+   },
+   {
+    "composante": 51,
+    "distance_min_autre_composante_hipd": 0.006291396682670026
+   },
+   {
+    "composante": 72,
+    "distance_min_autre_composante_hipd": 0.012694131479884976
+   },
+   {
+    "composante": 23,
+    "distance_min_autre_composante_hipd": 0.027252629129748362
+   },
+   {
+    "composante": 55,
+    "distance_min_autre_composante_hipd": 0.02725176059464527
+   }
+  ],
+  "sommets_non_references_avec_poids": 0,
+  "systeme_SQ": {
+   "lambda": 0.1,
+   "entrees_hors_bloc_composante": 0,
+   "lambda_min": 0.09999999999999919,
+   "lambda_max": 20.26396457191441,
+   "conditionnement": 202.63964571914576,
+   "dimension_noyau_laplacien_sans_ancre": 73,
+   "ecart_max_solution_globale_vs_bloc": 2.220446049250313e-15,
+   "conditions_de_frontiere_explicites": "aucune : ancre λ uniforme sur tous les sommets"
+  }
+ }
+}

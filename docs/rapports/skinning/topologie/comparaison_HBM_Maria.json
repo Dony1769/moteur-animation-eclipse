@@ -1,0 +1,146 @@
+{
+ "masculin": {
+  "sommets": 10582,
+  "faces": 21160,
+  "aretes": 21170,
+  "composantes": 1,
+  "tailles_composantes_top5": [
+   10582
+  ],
+  "aretes_frontiere": 0,
+  "sommets_frontiere": 0,
+  "distance_frontiere_aux_articulations_hipd": {
+   "hanche_G": null,
+   "hanche_D": null,
+   "genou_G": null,
+   "genou_D": null
+  },
+  "connexions_pelvis_cuisses_aretes": 46,
+  "connexions_entre_regions": {
+   "cuisse_D|genou_D": 39,
+   "cuisse_G|genou_G": 39,
+   "bassin|cuisse_D": 23,
+   "bassin|cuisse_G": 23,
+   "autre|entrejambe": 18,
+   "bassin|hanche_D": 15,
+   "cuisse_D|hanche_D": 15,
+   "bassin|hanche_G": 15,
+   "cuisse_G|hanche_G": 15,
+   "cuisse_D|entrejambe": 11,
+   "cuisse_G|entrejambe": 11,
+   "bassin|entrejambe": 10,
+   "autre|cuisse_D": 8,
+   "autre|cuisse_G": 8,
+   "autre|genou_D": 7,
+   "autre|genou_G": 7,
+   "entrejambe|hanche_D": 4,
+   "entrejambe|hanche_G": 4
+  },
+  "sommets_mixtes": 7557,
+  "composantes_zone_mixte": 3,
+  "tailles_composantes_mixte_top5": [
+   6632,
+   465,
+   460
+  ],
+  "sommets_mixtes_isoles": 0
+ },
+ "feminin": {
+  "sommets": 10582,
+  "faces": 21160,
+  "aretes": 21170,
+  "composantes": 1,
+  "tailles_composantes_top5": [
+   10582
+  ],
+  "aretes_frontiere": 0,
+  "sommets_frontiere": 0,
+  "distance_frontiere_aux_articulations_hipd": {
+   "hanche_G": null,
+   "hanche_D": null,
+   "genou_G": null,
+   "genou_D": null
+  },
+  "connexions_pelvis_cuisses_aretes": 52,
+  "connexions_entre_regions": {
+   "cuisse_D|genou_D": 31,
+   "cuisse_G|genou_G": 31,
+   "bassin|cuisse_D": 26,
+   "bassin|cuisse_G": 26,
+   "autre|cuisse_D": 22,
+   "autre|cuisse_G": 22,
+   "autre|entrejambe": 18,
+   "bassin|hanche_D": 15,
+   "bassin|hanche_G": 15,
+   "cuisse_D|hanche_D": 13,
+   "autre|genou_D": 13,
+   "cuisse_G|hanche_G": 13,
+   "autre|genou_G": 13,
+   "bassin|entrejambe": 10,
+   "cuisse_D|entrejambe": 10,
+   "cuisse_G|entrejambe": 10,
+   "entrejambe|hanche_D": 6,
+   "entrejambe|hanche_G": 6
+  },
+  "sommets_mixtes": 9071,
+  "composantes_zone_mixte": 3,
+  "tailles_composantes_mixte_top5": [
+   6261,
+   1406,
+   1404
+  ],
+  "sommets_mixtes_isoles": 0
+ },
+ "maria": {
+  "sommets": 8094,
+  "faces": 14566,
+  "aretes": 22604,
+  "composantes": 73,
+  "tailles_composantes_top5": [
+   907,
+   373,
+   373,
+   359,
+   326
+  ],
+  "aretes_frontiere": 1510,
+  "sommets_frontiere": 1508,
+  "distance_frontiere_aux_articulations_hipd": {
+   "hanche_G": 0.36635725687915494,
+   "hanche_D": 0.36635658367316976,
+   "genou_G": 0.16927608643982472,
+   "genou_D": 0.1692752341386971
+  },
+  "connexions_pelvis_cuisses_aretes": 8,
+  "connexions_entre_regions": {
+   "autre|cuisse_D": 124,
+   "autre|cuisse_G": 124,
+   "bassin|entrejambe": 75,
+   "cuisse_D|genou_D": 65,
+   "cuisse_G|genou_G": 65,
+   "autre|genou_D": 41,
+   "autre|genou_G": 41,
+   "cuisse_G|hanche_G": 34,
+   "cuisse_D|hanche_D": 34,
+   "bassin|hanche_G": 27,
+   "bassin|hanche_D": 27,
+   "autre|entrejambe": 18,
+   "cuisse_G|entrejambe": 16,
+   "cuisse_D|entrejambe": 16,
+   "entrejambe|hanche_G": 14,
+   "entrejambe|hanche_D": 14,
+   "bassin|cuisse_G": 4,
+   "bassin|cuisse_D": 4
+  },
+  "sommets_mixtes": 3135,
+  "composantes_zone_mixte": 53,
+  "tailles_composantes_mixte_top5": [
+   204,
+   204,
+   201,
+   201,
+   191
+  ],
+  "sommets_mixtes_isoles": 2
+ }
+}
