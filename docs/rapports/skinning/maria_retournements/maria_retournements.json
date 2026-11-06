@@ -1,0 +1,5717 @@
+{
+ "convention": "R_ab arithmétique, λ=0,1, référence = polaire(moyenne Mv) ; 29 poses",
+ "topologie": {
+  "aretes_depuis_triangles": 22604,
+  "aretes_depuis_A": 22604,
+  "identiques": true,
+  "sommets_degeneres_triangles": 0,
+  "indices_hors_bornes": 0,
+  "composantes_connexes": 73
+ },
+ "poses": {
+  "generative_hanche_G_75": {
+   "ecarts_solveurs_vs_origine_m": {
+    "LU_creux": 4.440892098500626e-16,
+    "gradient_conjugue": 8.926193117986259e-14,
+    "moindres_carres_LSQR": 1.0436096431476471e-14,
+    "LU_raffine_residu_etendu": 4.440892098500626e-15
+   },
+   "residu_absolu_LU_etendu": 8.319733790784767e-15,
+   "max_abs_b": 0.9103734758204304,
+   "residu_relatif_LU_etendu": 9.138813917317841e-15,
+   "retournements_nouveaux_par_solveur": {
+    "origine_ARAP": 2,
+    "LU_creux": 2,
+    "gradient_conjugue": 2,
+    "moindres_carres_LSQR": 2,
+    "LU_raffine_residu_etendu": 2
+   },
+   "infos": {
+    "cg_info": [
+     0,
+     0,
+     0
+    ],
+    "lsqr_info": [
+     2,
+     2,
+     2
+    ]
+   },
+   "classes": {
+    "1": 14550,
+    "2": 13,
+    "3": 2,
+    "4": 1
+   }
+  },
+  "generative_hanche_G_105": {
+   "ecarts_solveurs_vs_origine_m": {
+    "LU_creux": 4.440892098500626e-16,
+    "gradient_conjugue": 8.193445921733655e-14,
+    "moindres_carres_LSQR": 1.1102230246251565e-14,
+    "LU_raffine_residu_etendu": 4.440892098500626e-15
+   },
+   "residu_absolu_LU_etendu": 8.319733790784767e-15,
+   "max_abs_b": 0.9103734758204304,
+   "residu_relatif_LU_etendu": 9.138813917317841e-15,
+   "retournements_nouveaux_par_solveur": {
+    "origine_ARAP": 3,
+    "LU_creux": 3,
+    "gradient_conjugue": 3,
+    "moindres_carres_LSQR": 3,
+    "LU_raffine_residu_etendu": 3
+   },
+   "infos": {
+    "cg_info": [
+     0,
+     0,
+     0
+    ],
+    "lsqr_info": [
+     2,
+     2,
+     2
+    ]
+   },
+   "classes": {
+    "1": 14547,
+    "2": 15,
+    "3": 3,
+    "4": 1
+   }
+  },
+  "generative_hanche_G_120": {
+   "ecarts_solveurs_vs_origine_m": {
+    "LU_creux": 4.440892098500626e-16,
+    "gradient_conjugue": 8.504308368628699e-14,
+    "moindres_carres_LSQR": 9.547918011776346e-15,
+    "LU_raffine_residu_etendu": 4.440892098500626e-15
+   },
+   "residu_absolu_LU_etendu": 8.319733790784767e-15,
+   "max_abs_b": 0.9103734758204304,
+   "residu_relatif_LU_etendu": 9.138813917317841e-15,
+   "retournements_nouveaux_par_solveur": {
+    "origine_ARAP": 4,
+    "LU_creux": 4,
+    "gradient_conjugue": 4,
+    "moindres_carres_LSQR": 4,
+    "LU_raffine_residu_etendu": 4
+   },
+   "infos": {
+    "cg_info": [
+     0,
+     0,
+     0
+    ],
+    "lsqr_info": [
+     2,
+     2,
+     2
+    ]
+   },
+   "classes": {
+    "1": 14545,
+    "2": 16,
+    "3": 4,
+    "4": 1
+   }
+  },
+  "reelle_L_abd30": {
+   "ecarts_solveurs_vs_origine_m": {
+    "LU_creux": 1.1102230246251565e-15,
+    "gradient_conjugue": 9.192646643896296e-14,
+    "moindres_carres_LSQR": 1.0880185641326534e-14,
+    "LU_raffine_residu_etendu": 3.9968028886505635e-15
+   },
+   "residu_absolu_LU_etendu": 9.362302599846828e-15,
+   "max_abs_b": 0.9103735079001127,
+   "residu_relatif_LU_etendu": 1.028402355582833e-14,
+   "retournements_nouveaux_par_solveur": {
+    "origine_ARAP": 0,
+    "LU_creux": 0,
+    "gradient_conjugue": 0,
+    "moindres_carres_LSQR": 0,
+    "LU_raffine_residu_etendu": 0
+   },
+   "infos": {
+    "cg_info": [
+     0,
+     0,
+     0
+    ],
+    "lsqr_info": [
+     2,
+     2,
+     2
+    ]
+   },
+   "classes": {
+    "1": 14566,
+    "2": 0,
+    "3": 0,
+    "4": 0
+   }
+  },
+  "reelle_L_add20": {
+   "ecarts_solveurs_vs_origine_m": {
+    "LU_creux": 1.1102230246251565e-15,
+    "gradient_conjugue": 9.14823772291129e-14,
+    "moindres_carres_LSQR": 9.992007221626409e-15,
+    "LU_raffine_residu_etendu": 3.9968028886505635e-15
+   },
+   "residu_absolu_LU_etendu": 9.362302599846828e-15,
+   "max_abs_b": 0.9103735079001127,
+   "residu_relatif_LU_etendu": 1.028402355582833e-14,
+   "retournements_nouveaux_par_solveur": {
+    "origine_ARAP": 0,
+    "LU_creux": 0,
+    "gradient_conjugue": 0,
+    "moindres_carres_LSQR": 0,
+    "LU_raffine_residu_etendu": 0
+   },
+   "infos": {
+    "cg_info": [
+     0,
+     0,
+     0
+    ],
+    "lsqr_info": [
+     2,
+     2,
+     2
+    ]
+   },
+   "classes": {
+    "1": 14559,
+    "2": 7,
+    "3": 0,
+    "4": 0
+   }
+  },
+  "reelle_L_combo_flex120_genou90": {
+   "ecarts_solveurs_vs_origine_m": {
+    "LU_creux": 1.1102230246251565e-15,
+    "gradient_conjugue": 1.0369483049998962e-13,
+    "moindres_carres_LSQR": 1.0436096431476471e-14,
+    "LU_raffine_residu_etendu": 3.9968028886505635e-15
+   },
+   "residu_absolu_LU_etendu": 9.362302599846828e-15,
+   "max_abs_b": 0.9103735079001127,
+   "residu_relatif_LU_etendu": 1.028402355582833e-14,
+   "retournements_nouveaux_par_solveur": {
+    "origine_ARAP": 4,
+    "LU_creux": 4,
+    "gradient_conjugue": 4,
+    "moindres_carres_LSQR": 4,
+    "LU_raffine_residu_etendu": 4
+   },
+   "infos": {
+    "cg_info": [
+     0,
+     0,
+     0
+    ],
+    "lsqr_info": [
+     2,
+     2,
+     2
+    ]
+   },
+   "classes": {
+    "1": 14527,
+    "2": 26,
+    "3": 4,
+    "4": 9
+   }
+  },
+  "reelle_L_combo_flex60_abd20_int20_genou60": {
+   "ecarts_solveurs_vs_origine_m": {
+    "LU_creux": 1.1102230246251565e-15,
+    "gradient_conjugue": 9.059419880941277e-14,
+    "moindres_carres_LSQR": 1.0658141036401503e-14,
+    "LU_raffine_residu_etendu": 3.9968028886505635e-15
+   },
+   "residu_absolu_LU_etendu": 9.362302599846828e-15,
+   "max_abs_b": 0.9103735079001127,
+   "residu_relatif_LU_etendu": 1.028402355582833e-14,
+   "retournements_nouveaux_par_solveur": {
+    "origine_ARAP": 3,
+    "LU_creux": 3,
+    "gradient_conjugue": 3,
+    "moindres_carres_LSQR": 3,
+    "LU_raffine_residu_etendu": 3
+   },
+   "infos": {
+    "cg_info": [
+     0,
+     0,
+     0
+    ],
+    "lsqr_info": [
+     2,
+     2,
+     2
+    ]
+   },
+   "classes": {
+    "1": 14545,
+    "2": 18,
+    "3": 3,
+    "4": 0
+   }
+  },
+  "reelle_L_combo_flex90_abd30_ext30": {
+   "ecarts_solveurs_vs_origine_m": {
+    "LU_creux": 1.1102230246251565e-15,
+    "gradient_conjugue": 1.0325074129013956e-13,
+    "moindres_carres_LSQR": 9.769962616701378e-15,
+    "LU_raffine_residu_etendu": 3.9968028886505635e-15
+   },
+   "residu_absolu_LU_etendu": 9.362302599846828e-15,
+   "max_abs_b": 0.9103735079001127,
+   "residu_relatif_LU_etendu": 1.028402355582833e-14,
+   "retournements_nouveaux_par_solveur": {
+    "origine_ARAP": 0,
+    "LU_creux": 0,
+    "gradient_conjugue": 0,
+    "moindres_carres_LSQR": 0,
+    "LU_raffine_residu_etendu": 0
+   },
+   "infos": {
+    "cg_info": [
+     0,
+     0,
+     0
+    ],
+    "lsqr_info": [
+     2,
+     2,
+     2
+    ]
+   },
+   "classes": {
+    "1": 14555,
+    "2": 11,
+    "3": 0,
+    "4": 0
+   }
+  },
+  "reelle_L_ext30": {
+   "ecarts_solveurs_vs_origine_m": {
+    "LU_creux": 1.1102230246251565e-15,
+    "gradient_conjugue": 9.059419880941277e-14,
+    "moindres_carres_LSQR": 1.1102230246251565e-14,
+    "LU_raffine_residu_etendu": 3.9968028886505635e-15
+   },
+   "residu_absolu_LU_etendu": 9.362302599846828e-15,
+   "max_abs_b": 0.9103735079001127,
+   "residu_relatif_LU_etendu": 1.028402355582833e-14,
+   "retournements_nouveaux_par_solveur": {
+    "origine_ARAP": 0,
+    "LU_creux": 0,
+    "gradient_conjugue": 0,
+    "moindres_carres_LSQR": 0,
+    "LU_raffine_residu_etendu": 0
+   },
+   "infos": {
+    "cg_info": [
+     0,
+     0,
+     0
+    ],
+    "lsqr_info": [
+     2,
+     2,
+     2
+    ]
+   },
+   "classes": {
+    "1": 14566,
+    "2": 0,
+    "3": 0,
+    "4": 0
+   }
+  },
+  "reelle_L_flex120": {
+   "ecarts_solveurs_vs_origine_m": {
+    "LU_creux": 1.1102230246251565e-15,
+    "gradient_conjugue": 8.526512829121202e-14,
+    "moindres_carres_LSQR": 1.021405182655144e-14,
+    "LU_raffine_residu_etendu": 3.9968028886505635e-15
+   },
+   "residu_absolu_LU_etendu": 9.362302599846828e-15,
+   "max_abs_b": 0.9103735079001127,
+   "residu_relatif_LU_etendu": 1.028402355582833e-14,
+   "retournements_nouveaux_par_solveur": {
+    "origine_ARAP": 4,
+    "LU_creux": 4,
+    "gradient_conjugue": 4,
+    "moindres_carres_LSQR": 4,
+    "LU_raffine_residu_etendu": 4
+   },
+   "infos": {
+    "cg_info": [
+     0,
+     0,
+     0
+    ],
+    "lsqr_info": [
+     2,
+     2,
+     2
+    ]
+   },
+   "classes": {
+    "1": 14545,
+    "2": 16,
+    "3": 4,
+    "4": 1
+   }
+  },
+  "reelle_L_flex30": {
+   "ecarts_solveurs_vs_origine_m": {
+    "LU_creux": 1.1102230246251565e-15,
+    "gradient_conjugue": 9.325873406851315e-14,
+    "moindres_carres_LSQR": 1.0880185641326534e-14,
+    "LU_raffine_residu_etendu": 3.9968028886505635e-15
+   },
+   "residu_absolu_LU_etendu": 9.362302599846828e-15,
+   "max_abs_b": 0.9103735079001127,
+   "residu_relatif_LU_etendu": 1.028402355582833e-14,
+   "retournements_nouveaux_par_solveur": {
+    "origine_ARAP": 0,
+    "LU_creux": 0,
+    "gradient_conjugue": 0,
+    "moindres_carres_LSQR": 0,
+    "LU_raffine_residu_etendu": 0
+   },
+   "infos": {
+    "cg_info": [
+     0,
+     0,
+     0
+    ],
+    "lsqr_info": [
+     2,
+     2,
+     2
+    ]
+   },
+   "classes": {
+    "1": 14566,
+    "2": 0,
+    "3": 0,
+    "4": 0
+   }
+  },
+  "reelle_L_flex60": {
+   "ecarts_solveurs_vs_origine_m": {
+    "LU_creux": 1.1102230246251565e-15,
+    "gradient_conjugue": 8.79296635503124e-14,
+    "moindres_carres_LSQR": 1.1324274851176597e-14,
+    "LU_raffine_residu_etendu": 3.9968028886505635e-15
+   },
+   "residu_absolu_LU_etendu": 9.362302599846828e-15,
+   "max_abs_b": 0.9103735079001127,
+   "residu_relatif_LU_etendu": 1.028402355582833e-14,
+   "retournements_nouveaux_par_solveur": {
+    "origine_ARAP": 3,
+    "LU_creux": 3,
+    "gradient_conjugue": 3,
+    "moindres_carres_LSQR": 3,
+    "LU_raffine_residu_etendu": 3
+   },
+   "infos": {
+    "cg_info": [
+     0,
+     0,
+     0
+    ],
+    "lsqr_info": [
+     2,
+     2,
+     2
+    ]
+   },
+   "classes": {
+    "1": 14554,
+    "2": 9,
+    "3": 3,
+    "4": 0
+   }
+  },
+  "reelle_L_genou30": {
+   "ecarts_solveurs_vs_origine_m": {
+    "LU_creux": 1.1102230246251565e-15,
+    "gradient_conjugue": 8.903988657493755e-14,
+    "moindres_carres_LSQR": 1.2212453270876722e-14,
+    "LU_raffine_residu_etendu": 3.9968028886505635e-15
+   },
+   "residu_absolu_LU_etendu": 9.362302599846828e-15,
+   "max_abs_b": 0.9103735079001127,
+   "residu_relatif_LU_etendu": 1.028402355582833e-14,
+   "retournements_nouveaux_par_solveur": {
+    "origine_ARAP": 0,
+    "LU_creux": 0,
+    "gradient_conjugue": 0,
+    "moindres_carres_LSQR": 0,
+    "LU_raffine_residu_etendu": 0
+   },
+   "infos": {
+    "cg_info": [
+     0,
+     0,
+     0
+    ],
+    "lsqr_info": [
+     2,
+     2,
+     2
+    ]
+   },
+   "classes": {
+    "1": 14566,
+    "2": 0,
+    "3": 0,
+    "4": 0
+   }
+  },
+  "reelle_L_genou60": {
+   "ecarts_solveurs_vs_origine_m": {
+    "LU_creux": 1.1102230246251565e-15,
+    "gradient_conjugue": 8.970602038971265e-14,
+    "moindres_carres_LSQR": 9.103828801926284e-15,
+    "LU_raffine_residu_etendu": 3.9968028886505635e-15
+   },
+   "residu_absolu_LU_etendu": 9.362302599846828e-15,
+   "max_abs_b": 0.9103735079001127,
+   "residu_relatif_LU_etendu": 1.028402355582833e-14,
+   "retournements_nouveaux_par_solveur": {
+    "origine_ARAP": 0,
+    "LU_creux": 0,
+    "gradient_conjugue": 0,
+    "moindres_carres_LSQR": 0,
+    "LU_raffine_residu_etendu": 0
+   },
+   "infos": {
+    "cg_info": [
+     0,
+     0,
+     0
+    ],
+    "lsqr_info": [
+     2,
+     2,
+     2
+    ]
+   },
+   "classes": {
+    "1": 14554,
+    "2": 12,
+    "3": 0,
+    "4": 0
+   }
+  },
+  "reelle_L_genou90": {
+   "ecarts_solveurs_vs_origine_m": {
+    "LU_creux": 1.1102230246251565e-15,
+    "gradient_conjugue": 1.0813572259849025e-13,
+    "moindres_carres_LSQR": 9.992007221626409e-15,
+    "LU_raffine_residu_etendu": 3.9968028886505635e-15
+   },
+   "residu_absolu_LU_etendu": 9.362302599846828e-15,
+   "max_abs_b": 0.9103735079001127,
+   "residu_relatif_LU_etendu": 1.028402355582833e-14,
+   "retournements_nouveaux_par_solveur": {
+    "origine_ARAP": 0,
+    "LU_creux": 0,
+    "gradient_conjugue": 0,
+    "moindres_carres_LSQR": 0,
+    "LU_raffine_residu_etendu": 0
+   },
+   "infos": {
+    "cg_info": [
+     0,
+     0,
+     0
+    ],
+    "lsqr_info": [
+     2,
+     2,
+     2
+    ]
+   },
+   "classes": {
+    "1": 14548,
+    "2": 10,
+    "3": 0,
+    "4": 8
+   }
+  },
+  "reelle_L_int30": {
+   "ecarts_solveurs_vs_origine_m": {
+    "LU_creux": 1.1102230246251565e-15,
+    "gradient_conjugue": 8.992806499463768e-14,
+    "moindres_carres_LSQR": 1.0658141036401503e-14,
+    "LU_raffine_residu_etendu": 3.9968028886505635e-15
+   },
+   "residu_absolu_LU_etendu": 9.362302599846828e-15,
+   "max_abs_b": 0.9103735079001127,
+   "residu_relatif_LU_etendu": 1.028402355582833e-14,
+   "retournements_nouveaux_par_solveur": {
+    "origine_ARAP": 0,
+    "LU_creux": 0,
+    "gradient_conjugue": 0,
+    "moindres_carres_LSQR": 0,
+    "LU_raffine_residu_etendu": 0
+   },
+   "infos": {
+    "cg_info": [
+     0,
+     0,
+     0
+    ],
+    "lsqr_info": [
+     2,
+     2,
+     2
+    ]
+   },
+   "classes": {
+    "1": 14566,
+    "2": 0,
+    "3": 0,
+    "4": 0
+   }
+  },
+  "reelle_R_abd30": {
+   "ecarts_solveurs_vs_origine_m": {
+    "LU_creux": 1.1102230246251565e-15,
+    "gradient_conjugue": 9.14823772291129e-14,
+    "moindres_carres_LSQR": 9.325873406851315e-15,
+    "LU_raffine_residu_etendu": 3.9968028886505635e-15
+   },
+   "residu_absolu_LU_etendu": 9.362302599846828e-15,
+   "max_abs_b": 0.9103735079001127,
+   "residu_relatif_LU_etendu": 1.028402355582833e-14,
+   "retournements_nouveaux_par_solveur": {
+    "origine_ARAP": 0,
+    "LU_creux": 0,
+    "gradient_conjugue": 0,
+    "moindres_carres_LSQR": 0,
+    "LU_raffine_residu_etendu": 0
+   },
+   "infos": {
+    "cg_info": [
+     0,
+     0,
+     0
+    ],
+    "lsqr_info": [
+     2,
+     2,
+     2
+    ]
+   },
+   "classes": {
+    "1": 14566,
+    "2": 0,
+    "3": 0,
+    "4": 0
+   }
+  },
+  "reelle_R_add20": {
+   "ecarts_solveurs_vs_origine_m": {
+    "LU_creux": 1.1102230246251565e-15,
+    "gradient_conjugue": 9.015010959956271e-14,
+    "moindres_carres_LSQR": 9.992007221626409e-15,
+    "LU_raffine_residu_etendu": 3.9968028886505635e-15
+   },
+   "residu_absolu_LU_etendu": 9.362302599846828e-15,
+   "max_abs_b": 0.9103735079001127,
+   "residu_relatif_LU_etendu": 1.028402355582833e-14,
+   "retournements_nouveaux_par_solveur": {
+    "origine_ARAP": 0,
+    "LU_creux": 0,
+    "gradient_conjugue": 0,
+    "moindres_carres_LSQR": 0,
+    "LU_raffine_residu_etendu": 0
+   },
+   "infos": {
+    "cg_info": [
+     0,
+     0,
+     0
+    ],
+    "lsqr_info": [
+     2,
+     2,
+     2
+    ]
+   },
+   "classes": {
+    "1": 14561,
+    "2": 5,
+    "3": 0,
+    "4": 0
+   }
+  },
+  "reelle_R_combo_flex120_genou90": {
+   "ecarts_solveurs_vs_origine_m": {
+    "LU_creux": 1.1102230246251565e-15,
+    "gradient_conjugue": 1.0302869668521453e-13,
+    "moindres_carres_LSQR": 1.021405182655144e-14,
+    "LU_raffine_residu_etendu": 3.9968028886505635e-15
+   },
+   "residu_absolu_LU_etendu": 9.362302599846828e-15,
+   "max_abs_b": 0.9103735079001127,
+   "residu_relatif_LU_etendu": 1.028402355582833e-14,
+   "retournements_nouveaux_par_solveur": {
+    "origine_ARAP": 3,
+    "LU_creux": 3,
+    "gradient_conjugue": 3,
+    "moindres_carres_LSQR": 3,
+    "LU_raffine_residu_etendu": 3
+   },
+   "infos": {
+    "cg_info": [
+     0,
+     0,
+     0
+    ],
+    "lsqr_info": [
+     2,
+     2,
+     2
+    ]
+   },
+   "classes": {
+    "1": 14527,
+    "2": 27,
+    "3": 3,
+    "4": 9
+   }
+  },
+  "reelle_R_combo_flex60_abd20_int20_genou60": {
+   "ecarts_solveurs_vs_origine_m": {
+    "LU_creux": 1.1102230246251565e-15,
+    "gradient_conjugue": 8.881784197001252e-14,
+    "moindres_carres_LSQR": 1.0436096431476471e-14,
+    "LU_raffine_residu_etendu": 3.9968028886505635e-15
+   },
+   "residu_absolu_LU_etendu": 9.362302599846828e-15,
+   "max_abs_b": 0.9103735079001127,
+   "residu_relatif_LU_etendu": 1.028402355582833e-14,
+   "retournements_nouveaux_par_solveur": {
+    "origine_ARAP": 1,
+    "LU_creux": 1,
+    "gradient_conjugue": 1,
+    "moindres_carres_LSQR": 1,
+    "LU_raffine_residu_etendu": 1
+   },
+   "infos": {
+    "cg_info": [
+     0,
+     0,
+     0
+    ],
+    "lsqr_info": [
+     2,
+     2,
+     2
+    ]
+   },
+   "classes": {
+    "1": 14547,
+    "2": 18,
+    "3": 1,
+    "4": 0
+   }
+  },
+  "reelle_R_combo_flex90_abd30_ext30": {
+   "ecarts_solveurs_vs_origine_m": {
+    "LU_creux": 1.1102230246251565e-15,
+    "gradient_conjugue": 8.72635297355373e-14,
+    "moindres_carres_LSQR": 9.547918011776346e-15,
+    "LU_raffine_residu_etendu": 3.9968028886505635e-15
+   },
+   "residu_absolu_LU_etendu": 9.362302599846828e-15,
+   "max_abs_b": 0.9103735079001127,
+   "residu_relatif_LU_etendu": 1.028402355582833e-14,
+   "retournements_nouveaux_par_solveur": {
+    "origine_ARAP": 0,
+    "LU_creux": 0,
+    "gradient_conjugue": 0,
+    "moindres_carres_LSQR": 0,
+    "LU_raffine_residu_etendu": 0
+   },
+   "infos": {
+    "cg_info": [
+     0,
+     0,
+     0
+    ],
+    "lsqr_info": [
+     2,
+     2,
+     2
+    ]
+   },
+   "classes": {
+    "1": 14555,
+    "2": 11,
+    "3": 0,
+    "4": 0
+   }
+  },
+  "reelle_R_ext30": {
+   "ecarts_solveurs_vs_origine_m": {
+    "LU_creux": 1.1102230246251565e-15,
+    "gradient_conjugue": 9.214851104388799e-14,
+    "moindres_carres_LSQR": 1.0436096431476471e-14,
+    "LU_raffine_residu_etendu": 3.9968028886505635e-15
+   },
+   "residu_absolu_LU_etendu": 9.362302599846828e-15,
+   "max_abs_b": 0.9103735079001127,
+   "residu_relatif_LU_etendu": 1.028402355582833e-14,
+   "retournements_nouveaux_par_solveur": {
+    "origine_ARAP": 0,
+    "LU_creux": 0,
+    "gradient_conjugue": 0,
+    "moindres_carres_LSQR": 0,
+    "LU_raffine_residu_etendu": 0
+   },
+   "infos": {
+    "cg_info": [
+     0,
+     0,
+     0
+    ],
+    "lsqr_info": [
+     2,
+     2,
+     2
+    ]
+   },
+   "classes": {
+    "1": 14566,
+    "2": 0,
+    "3": 0,
+    "4": 0
+   }
+  },
+  "reelle_R_flex120": {
+   "ecarts_solveurs_vs_origine_m": {
+    "LU_creux": 1.1102230246251565e-15,
+    "gradient_conjugue": 8.482103908136196e-14,
+    "moindres_carres_LSQR": 1.0436096431476471e-14,
+    "LU_raffine_residu_etendu": 3.9968028886505635e-15
+   },
+   "residu_absolu_LU_etendu": 9.362302599846828e-15,
+   "max_abs_b": 0.9103735079001127,
+   "residu_relatif_LU_etendu": 1.028402355582833e-14,
+   "retournements_nouveaux_par_solveur": {
+    "origine_ARAP": 3,
+    "LU_creux": 3,
+    "gradient_conjugue": 3,
+    "moindres_carres_LSQR": 3,
+    "LU_raffine_residu_etendu": 3
+   },
+   "infos": {
+    "cg_info": [
+     0,
+     0,
+     0
+    ],
+    "lsqr_info": [
+     2,
+     2,
+     2
+    ]
+   },
+   "classes": {
+    "1": 14545,
+    "2": 17,
+    "3": 3,
+    "4": 1
+   }
+  },
+  "reelle_R_flex30": {
+   "ecarts_solveurs_vs_origine_m": {
+    "LU_creux": 1.1102230246251565e-15,
+    "gradient_conjugue": 8.970602038971265e-14,
+    "moindres_carres_LSQR": 9.547918011776346e-15,
+    "LU_raffine_residu_etendu": 3.9968028886505635e-15
+   },
+   "residu_absolu_LU_etendu": 9.362302599846828e-15,
+   "max_abs_b": 0.9103735079001127,
+   "residu_relatif_LU_etendu": 1.028402355582833e-14,
+   "retournements_nouveaux_par_solveur": {
+    "origine_ARAP": 0,
+    "LU_creux": 0,
+    "gradient_conjugue": 0,
+    "moindres_carres_LSQR": 0,
+    "LU_raffine_residu_etendu": 0
+   },
+   "infos": {
+    "cg_info": [
+     0,
+     0,
+     0
+    ],
+    "lsqr_info": [
+     2,
+     2,
+     2
+    ]
+   },
+   "classes": {
+    "1": 14566,
+    "2": 0,
+    "3": 0,
+    "4": 0
+   }
+  },
+  "reelle_R_flex60": {
+   "ecarts_solveurs_vs_origine_m": {
+    "LU_creux": 1.1102230246251565e-15,
+    "gradient_conjugue": 1.056932319443149e-13,
+    "moindres_carres_LSQR": 1.021405182655144e-14,
+    "LU_raffine_residu_etendu": 3.9968028886505635e-15
+   },
+   "residu_absolu_LU_etendu": 9.362302599846828e-15,
+   "max_abs_b": 0.9103735079001127,
+   "residu_relatif_LU_etendu": 1.028402355582833e-14,
+   "retournements_nouveaux_par_solveur": {
+    "origine_ARAP": 2,
+    "LU_creux": 2,
+    "gradient_conjugue": 2,
+    "moindres_carres_LSQR": 2,
+    "LU_raffine_residu_etendu": 2
+   },
+   "infos": {
+    "cg_info": [
+     0,
+     0,
+     0
+    ],
+    "lsqr_info": [
+     2,
+     2,
+     2
+    ]
+   },
+   "classes": {
+    "1": 14556,
+    "2": 8,
+    "3": 2,
+    "4": 0
+   }
+  },
+  "reelle_R_genou30": {
+   "ecarts_solveurs_vs_origine_m": {
+    "LU_creux": 1.1102230246251565e-15,
+    "gradient_conjugue": 9.015010959956271e-14,
+    "moindres_carres_LSQR": 1.0436096431476471e-14,
+    "LU_raffine_residu_etendu": 3.9968028886505635e-15
+   },
+   "residu_absolu_LU_etendu": 9.362302599846828e-15,
+   "max_abs_b": 0.9103735079001127,
+   "residu_relatif_LU_etendu": 1.028402355582833e-14,
+   "retournements_nouveaux_par_solveur": {
+    "origine_ARAP": 0,
+    "LU_creux": 0,
+    "gradient_conjugue": 0,
+    "moindres_carres_LSQR": 0,
+    "LU_raffine_residu_etendu": 0
+   },
+   "infos": {
+    "cg_info": [
+     0,
+     0,
+     0
+    ],
+    "lsqr_info": [
+     2,
+     2,
+     2
+    ]
+   },
+   "classes": {
+    "1": 14566,
+    "2": 0,
+    "3": 0,
+    "4": 0
+   }
+  },
+  "reelle_R_genou60": {
+   "ecarts_solveurs_vs_origine_m": {
+    "LU_creux": 1.1102230246251565e-15,
+    "gradient_conjugue": 9.192646643896296e-14,
+    "moindres_carres_LSQR": 1.1546319456101628e-14,
+    "LU_raffine_residu_etendu": 3.9968028886505635e-15
+   },
+   "residu_absolu_LU_etendu": 9.362302599846828e-15,
+   "max_abs_b": 0.9103735079001127,
+   "residu_relatif_LU_etendu": 1.028402355582833e-14,
+   "retournements_nouveaux_par_solveur": {
+    "origine_ARAP": 0,
+    "LU_creux": 0,
+    "gradient_conjugue": 0,
+    "moindres_carres_LSQR": 0,
+    "LU_raffine_residu_etendu": 0
+   },
+   "infos": {
+    "cg_info": [
+     0,
+     0,
+     0
+    ],
+    "lsqr_info": [
+     2,
+     2,
+     2
+    ]
+   },
+   "classes": {
+    "1": 14554,
+    "2": 12,
+    "3": 0,
+    "4": 0
+   }
+  },
+  "reelle_R_genou90": {
+   "ecarts_solveurs_vs_origine_m": {
+    "LU_creux": 1.1102230246251565e-15,
+    "gradient_conjugue": 1.0969003483296547e-13,
+    "moindres_carres_LSQR": 9.769962616701378e-15,
+    "LU_raffine_residu_etendu": 3.9968028886505635e-15
+   },
+   "residu_absolu_LU_etendu": 9.362302599846828e-15,
+   "max_abs_b": 0.9103735079001127,
+   "residu_relatif_LU_etendu": 1.028402355582833e-14,
+   "retournements_nouveaux_par_solveur": {
+    "origine_ARAP": 0,
+    "LU_creux": 0,
+    "gradient_conjugue": 0,
+    "moindres_carres_LSQR": 0,
+    "LU_raffine_residu_etendu": 0
+   },
+   "infos": {
+    "cg_info": [
+     0,
+     0,
+     0
+    ],
+    "lsqr_info": [
+     2,
+     2,
+     2
+    ]
+   },
+   "classes": {
+    "1": 14548,
+    "2": 10,
+    "3": 0,
+    "4": 8
+   }
+  },
+  "reelle_R_int30": {
+   "ecarts_solveurs_vs_origine_m": {
+    "LU_creux": 1.1102230246251565e-15,
+    "gradient_conjugue": 9.214851104388799e-14,
+    "moindres_carres_LSQR": 1.1102230246251565e-14,
+    "LU_raffine_residu_etendu": 3.9968028886505635e-15
+   },
+   "residu_absolu_LU_etendu": 9.362302599846828e-15,
+   "max_abs_b": 0.9103735079001127,
+   "residu_relatif_LU_etendu": 1.028402355582833e-14,
+   "retournements_nouveaux_par_solveur": {
+    "origine_ARAP": 0,
+    "LU_creux": 0,
+    "gradient_conjugue": 0,
+    "moindres_carres_LSQR": 0,
+    "LU_raffine_residu_etendu": 0
+   },
+   "infos": {
+    "cg_info": [
+     0,
+     0,
+     0
+    ],
+    "lsqr_info": [
+     2,
+     2,
+     2
+    ]
+   },
+   "classes": {
+    "1": 14566,
+    "2": 0,
+    "3": 0,
+    "4": 0
+   }
+  }
+ },
+ "retournements_nouveaux": [
+  {
+   "pose": "generative_hanche_G_75",
+   "triangle": 7487,
+   "sommets": [
+    4226,
+    4225,
+    4216
+   ],
+   "repos": [
+    [
+     0.01807,
+     -0.05908,
+     0.91479
+    ],
+    [
+     0.04009,
+     -0.08121,
+     0.91743
+    ],
+    [
+     0.01749,
+     -0.06218,
+     0.92208
+    ]
+   ],
+   "LBS": [
+    [
+     0.01807,
+     -0.08543,
+     1.0027
+    ],
+    [
+     0.04009,
+     -0.09389,
+     1.02565
+    ],
+    [
+     0.01749,
+     -0.0798,
+     1.00071
+    ]
+   ],
+   "SQ": [
+    [
+     0.01807,
+     -0.0782,
+     0.98114
+    ],
+    [
+     0.04009,
+     -0.09281,
+     0.99798
+    ],
+    [
+     0.01749,
+     -0.07499,
+     0.97411
+    ]
+   ],
+   "aire_repos": 0.00011863488143220697,
+   "aire_LBS": 8.337568506866944e-05,
+   "aire_SQ": 8.26397452802596e-05,
+   "rapport_aire_SQ_sur_repos": 0.6965889313716175,
+   "normale_repos": [
+    -0.64563,
+    -0.68307,
+    -0.34143
+   ],
+   "normale_SQ_unitaire": [
+    0.29561,
+    0.87831,
+    0.37575
+   ],
+   "normale_LBS_unitaire": [
+    -0.67489,
+    0.18309,
+    0.71485
+   ],
+   "produit_normale_SQ_reference": -0.6096696153924563,
+   "produit_normale_LBS_reference": 0.6045767076311882,
+   "produit_normale_SQ_repos_brut": -0.9190937876702996,
+   "poids_sommets": [
+    [
+     [
+      "mixamorig:LeftUpLeg",
+      0.7563
+     ],
+     [
+      "mixamorig:Hips",
+      0.2437
+     ]
+    ],
+    [
+     [
+      "mixamorig:LeftUpLeg",
+      0.7978
+     ],
+     [
+      "mixamorig:Hips",
+      0.2022
+     ]
+    ],
+    [
+     [
+      "mixamorig:LeftUpLeg",
+      0.6908
+     ],
+     [
+      "mixamorig:Hips",
+      0.3092
+     ]
+    ]
+   ],
+   "os_dominants": [
+    "mixamorig:LeftUpLeg",
+    "mixamorig:LeftUpLeg",
+    "mixamorig:LeftUpLeg"
+   ],
+   "angle_rotation_os_dominants_deg": [
+    75.0,
+    75.0,
+    75.0
+   ],
+   "angle_relatif_entre_os_dominants_deg": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "valeurs_singulieres_Mv_moyen": [
+    1.0,
+    0.849,
+    0.849
+   ],
+   "valeurs_singulieres_Dm_repos": [
+    0.03143,
+    0.00755
+   ],
+   "residu_relatif_local": 3.582975229266942e-15
+  },
+  {
+   "pose": "generative_hanche_G_75",
+   "triangle": 7515,
+   "sommets": [
+    4242,
+    4226,
+    4216
+   ],
+   "repos": [
+    [
+     0.01229,
+     -0.04715,
+     0.91699
+    ],
+    [
+     0.01807,
+     -0.05908,
+     0.91479
+    ],
+    [
+     0.01749,
+     -0.06218,
+     0.92208
+    ]
+   ],
+   "LBS": [
+    [
+     0.01229,
+     -0.07776,
+     0.99289
+    ],
+    [
+     0.01807,
+     -0.08543,
+     1.0027
+    ],
+    [
+     0.01749,
+     -0.0798,
+     1.00071
+    ]
+   ],
+   "SQ": [
+    [
+     0.01229,
+     -0.06663,
+     0.96257
+    ],
+    [
+     0.01807,
+     -0.0782,
+     0.98114
+    ],
+    [
+     0.01749,
+     -0.07499,
+     0.97411
+    ]
+   ],
+   "aire_repos": 5.264166006719515e-05,
+   "aire_LBS": 2.4624424710698915e-05,
+   "aire_SQ": 1.947710152122678e-05,
+   "rapport_aire_SQ_sur_repos": 0.3699940597687264,
+   "normale_repos": [
+    -0.89097,
+    -0.38828,
+    -0.2354
+   ],
+   "normale_SQ_unitaire": [
+    0.56168,
+    0.76933,
+    0.30437
+   ],
+   "normale_LBS_unitaire": [
+    -0.8119,
+    0.11862,
+    0.57162
+   ],
+   "produit_normale_SQ_reference": -0.7560202383855691,
+   "produit_normale_LBS_reference": 0.786705519663283,
+   "produit_normale_SQ_repos_brut": -0.8708070366782458,
+   "poids_sommets": [
+    [
+     [
+      "mixamorig:LeftUpLeg",
+      0.7364
+     ],
+     [
+      "mixamorig:Hips",
+      0.2636
+     ]
+    ],
+    [
+     [
+      "mixamorig:LeftUpLeg",
+      0.7563
+     ],
+     [
+      "mixamorig:Hips",
+      0.2437
+     ]
+    ],
+    [
+     [
+      "mixamorig:LeftUpLeg",
+      0.6908
+     ],
+     [
+      "mixamorig:Hips",
+      0.3092
+     ]
+    ]
+   ],
+   "os_dominants": [
+    "mixamorig:LeftUpLeg",
+    "mixamorig:LeftUpLeg",
+    "mixamorig:LeftUpLeg"
+   ],
+   "angle_rotation_os_dominants_deg": [
+    75.0,
+    75.0,
+    75.0
+   ],
+   "angle_relatif_entre_os_dominants_deg": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "valeurs_singulieres_Mv_moyen": [
+    1.0,
+    0.84045,
+    0.84045
+   ],
+   "valeurs_singulieres_Dm_repos": [
+    0.02083,
+    0.00505
+   ],
+   "residu_relatif_local": 3.2142490882093255e-15
+  },
+  {
+   "pose": "generative_hanche_G_105",
+   "triangle": 7487,
+   "sommets": [
+    4226,
+    4225,
+    4216
+   ],
+   "repos": [
+    [
+     0.01807,
+     -0.05908,
+     0.91479
+    ],
+    [
+     0.04009,
+     -0.08121,
+     0.91743
+    ],
+    [
+     0.01749,
+     -0.06218,
+     0.92208
+    ]
+   ],
+   "LBS": [
+    [
+     0.01807,
+     -0.0626,
+     1.03434
+    ],
+    [
+     0.04009,
+     -0.06067,
+     1.05794
+    ],
+    [
+     0.01749,
+     -0.05784,
+     1.027
+    ]
+   ],
+   "SQ": [
+    [
+     0.01807,
+     -0.06133,
+     1.00452
+    ],
+    [
+     0.04009,
+     -0.06982,
+     1.02343
+    ],
+    [
+     0.01749,
+     -0.06124,
+     0.99113
+    ]
+   ],
+   "aire_repos": 0.00011863488143220697,
+   "aire_LBS": 0.00011087147372770863,
+   "aire_SQ": 0.00015269557959249726,
+   "rapport_aire_SQ_sur_repos": 1.2871052573163655,
+   "normale_repos": [
+    -0.64563,
+    -0.68307,
+    -0.34143
+   ],
+   "normale_SQ_unitaire": [
+    0.36652,
+    0.93036,
+    -0.00939
+   ],
+   "normale_LBS_unitaire": [
+    -0.57123,
+    0.66704,
+    0.47828
+   ],
+   "produit_normale_SQ_reference": -0.6102592822100251,
+   "produit_normale_LBS_reference": 0.41791459213885623,
+   "produit_normale_SQ_repos_brut": -0.8689350557396702,
+   "poids_sommets": [
+    [
+     [
+      "mixamorig:LeftUpLeg",
+      0.7563
+     ],
+     [
+      "mixamorig:Hips",
+      0.2437
+     ]
+    ],
+    [
+     [
+      "mixamorig:LeftUpLeg",
+      0.7978
+     ],
+     [
+      "mixamorig:Hips",
+      0.2022
+     ]
+    ],
+    [
+     [
+      "mixamorig:LeftUpLeg",
+      0.6908
+     ],
+     [
+      "mixamorig:Hips",
+      0.3092
+     ]
+    ]
+   ],
+   "os_dominants": [
+    "mixamorig:LeftUpLeg",
+    "mixamorig:LeftUpLeg",
+    "mixamorig:LeftUpLeg"
+   ],
+   "angle_rotation_os_dominants_deg": [
+    105.0,
+    105.0,
+    105.0
+   ],
+   "angle_relatif_entre_os_dominants_deg": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "valeurs_singulieres_Mv_moyen": [
+    1.0,
+    0.72513,
+    0.72513
+   ],
+   "valeurs_singulieres_Dm_repos": [
+    0.03143,
+    0.00755
+   ],
+   "residu_relatif_local": 9.403124421770988e-15
+  },
+  {
+   "pose": "generative_hanche_G_105",
+   "triangle": 7489,
+   "sommets": [
+    4242,
+    4184,
+    4226
+   ],
+   "repos": [
+    [
+     0.01229,
+     -0.04715,
+     0.91699
+    ],
+    [
+     0.00965,
+     -0.03403,
+     0.91466
+    ],
+    [
+     0.01807,
+     -0.05908,
+     0.91479
+    ]
+   ],
+   "LBS": [
+    [
+     0.01229,
+     -0.06008,
+     1.02286
+    ],
+    [
+     0.00965,
+     -0.06458,
+     1.02739
+    ],
+    [
+     0.01807,
+     -0.0626,
+     1.03434
+    ]
+   ],
+   "SQ": [
+    [
+     0.01229,
+     -0.05686,
+     0.97985
+    ],
+    [
+     0.00965,
+     -0.05296,
+     0.9765
+    ],
+    [
+     0.01807,
+     -0.06133,
+     1.00452
+    ]
+   ],
+   "aire_repos": 3.722877392348977e-05,
+   "aire_LBS": 3.830941165089703e-05,
+   "aire_SQ": 4.684792007272128e-05,
+   "rapport_aire_SQ_sur_repos": 1.2583793430586827,
+   "normale_repos": [
+    -0.76034,
+    -0.25865,
+    -0.59581
+   ],
+   "normale_SQ_unitaire": [
+    0.86555,
+    0.48759,
+    -0.11438
+   ],
+   "normale_LBS_unitaire": [
+    -0.52469,
+    0.73671,
+    0.42657
+   ],
+   "produit_normale_SQ_reference": -0.9796800070193282,
+   "produit_normale_LBS_reference": 0.05820331196692953,
+   "produit_normale_SQ_repos_brut": -0.7160747271645431,
+   "poids_sommets": [
+    [
+     [
+      "mixamorig:LeftUpLeg",
+      0.7364
+     ],
+     [
+      "mixamorig:Hips",
+      0.2636
+     ]
+    ],
+    [
+     [
+      "mixamorig:LeftUpLeg",
+      0.8411
+     ],
+     [
+      "mixamorig:Hips",
+      0.1589
+     ]
+    ],
+    [
+     [
+      "mixamorig:LeftUpLeg",
+      0.7563
+     ],
+     [
+      "mixamorig:Hips",
+      0.2437
+     ]
+    ]
+   ],
+   "os_dominants": [
+    "mixamorig:LeftUpLeg",
+    "mixamorig:LeftUpLeg",
+    "mixamorig:LeftUpLeg"
+   ],
+   "angle_rotation_os_dominants_deg": [
+    105.0,
+    105.0,
+    105.0
+   ],
+   "angle_relatif_entre_os_dominants_deg": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "valeurs_singulieres_Mv_moyen": [
+    1.0,
+    0.75171,
+    0.75171
+   ],
+   "valeurs_singulieres_Dm_repos": [
+    0.01869,
+    0.00398
+   ],
+   "residu_relatif_local": 9.403124421770988e-15
+  },
+  {
+   "pose": "generative_hanche_G_105",
+   "triangle": 7515,
+   "sommets": [
+    4242,
+    4226,
+    4216
+   ],
+   "repos": [
+    [
+     0.01229,
+     -0.04715,
+     0.91699
+    ],
+    [
+     0.01807,
+     -0.05908,
+     0.91479
+    ],
+    [
+     0.01749,
+     -0.06218,
+     0.92208
+    ]
+   ],
+   "LBS": [
+    [
+     0.01229,
+     -0.06008,
+     1.02286
+    ],
+    [
+     0.01807,
+     -0.0626,
+     1.03434
+    ],
+    [
+     0.01749,
+     -0.05784,
+     1.027
+    ]
+   ],
+   "SQ": [
+    [
+     0.01229,
+     -0.05686,
+     0.97985
+    ],
+    [
+     0.01807,
+     -0.06133,
+     1.00452
+    ],
+    [
+     0.01749,
+     -0.06124,
+     0.99113
+    ]
+   ],
+   "aire_repos": 5.264166006719515e-05,
+   "aire_LBS": 2.8584960905987442e-05,
+   "aire_SQ": 4.281043195703841e-05,
+   "rapport_aire_SQ_sur_repos": 0.8132424376889418,
+   "normale_repos": [
+    -0.89097,
+    -0.38828,
+    -0.2354
+   ],
+   "normale_SQ_unitaire": [
+    0.67362,
+    0.73869,
+    -0.02388
+   ],
+   "normale_LBS_unitaire": [
+    -0.63229,
+    0.62602,
+    0.45641
+   ],
+   "produit_normale_SQ_reference": -0.8153244302590998,
+   "produit_normale_LBS_reference": 0.5515135902016568,
+   "produit_normale_SQ_repos_brut": -0.8813764895787526,
+   "poids_sommets": [
+    [
+     [
+      "mixamorig:LeftUpLeg",
+      0.7364
+     ],
+     [
+      "mixamorig:Hips",
+      0.2636
+     ]
+    ],
+    [
+     [
+      "mixamorig:LeftUpLeg",
+      0.7563
+     ],
+     [
+      "mixamorig:Hips",
+      0.2437
+     ]
+    ],
+    [
+     [
+      "mixamorig:LeftUpLeg",
+      0.6908
+     ],
+     [
+      "mixamorig:Hips",
+      0.3092
+     ]
+    ]
+   ],
+   "os_dominants": [
+    "mixamorig:LeftUpLeg",
+    "mixamorig:LeftUpLeg",
+    "mixamorig:LeftUpLeg"
+   ],
+   "angle_rotation_os_dominants_deg": [
+    105.0,
+    105.0,
+    105.0
+   ],
+   "angle_relatif_entre_os_dominants_deg": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "valeurs_singulieres_Mv_moyen": [
+    1.0,
+    0.70801,
+    0.70801
+   ],
+   "valeurs_singulieres_Dm_repos": [
+    0.02083,
+    0.00505
+   ],
+   "residu_relatif_local": 9.403124421770988e-15
+  },
+  {
+   "pose": "generative_hanche_G_120",
+   "triangle": 7335,
+   "sommets": [
+    4102,
+    4172,
+    4170
+   ],
+   "repos": [
+    [
+     -0.00635,
+     -0.0086,
+     0.90951
+    ],
+    [
+     -0.00015,
+     -0.00486,
+     0.92021
+    ],
+    [
+     -0.00011,
+     -0.01682,
+     0.9171
+    ]
+   ],
+   "LBS": [
+    [
+     -0.00635,
+     -0.0086,
+     0.90951
+    ],
+    [
+     -0.00015,
+     -0.02113,
+     0.95229
+    ],
+    [
+     -0.00011,
+     -0.0289,
+     0.95331
+    ]
+   ],
+   "SQ": [
+    [
+     -0.00635,
+     -0.02337,
+     0.94627
+    ],
+    [
+     -0.00015,
+     -0.03491,
+     0.96425
+    ],
+    [
+     -0.00011,
+     -0.03609,
+     0.96721
+    ]
+   ],
+   "aire_repos": 6.974888883893065e-05,
+   "aire_LBS": 0.0001615700750924276,
+   "aire_SQ": 1.1512007412594067e-05,
+   "rapport_aire_SQ_sur_repos": 0.16504933059476337,
+   "normale_repos": [
+    0.83412,
+    0.14133,
+    -0.53318
+   ],
+   "normale_SQ_unitaire": [
+    -0.56429,
+    -0.76942,
+    -0.29929
+   ],
+   "normale_LBS_unitaire": [
+    0.98892,
+    -0.01457,
+    -0.14772
+   ],
+   "produit_normale_SQ_reference": -0.3242207248104847,
+   "produit_normale_LBS_reference": 0.905929878963817,
+   "produit_normale_SQ_repos_brut": -0.41985208621693326,
+   "poids_sommets": [
+    [
+     [
+      "mixamorig:RightUpLeg",
+      0.7673
+     ],
+     [
+      "mixamorig:Hips",
+      0.2327
+     ]
+    ],
+    [
+     [
+      "mixamorig:Hips",
+      0.45
+     ],
+     [
+      "mixamorig:RightUpLeg",
+      0.275
+     ],
+     [
+      "mixamorig:LeftUpLeg",
+      0.275
+     ]
+    ],
+    [
+     [
+      "mixamorig:Hips",
+      0.45
+     ],
+     [
+      "mixamorig:RightUpLeg",
+      0.275
+     ],
+     [
+      "mixamorig:LeftUpLeg",
+      0.275
+     ]
+    ]
+   ],
+   "os_dominants": [
+    "mixamorig:RightUpLeg",
+    "mixamorig:Hips",
+    "mixamorig:Hips"
+   ],
+   "angle_rotation_os_dominants_deg": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "angle_relatif_entre_os_dominants_deg": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "valeurs_singulieres_Mv_moyen": [
+    1.0,
+    0.74218,
+    0.74218
+   ],
+   "valeurs_singulieres_Dm_repos": [
+    0.01596,
+    0.00874
+   ],
+   "residu_relatif_local": 7.306032980527848e-15
+  },
+  {
+   "pose": "generative_hanche_G_120",
+   "triangle": 7487,
+   "sommets": [
+    4226,
+    4225,
+    4216
+   ],
+   "repos": [
+    [
+     0.01807,
+     -0.05908,
+     0.91479
+    ],
+    [
+     0.04009,
+     -0.08121,
+     0.91743
+    ],
+    [
+     0.01749,
+     -0.06218,
+     0.92208
+    ]
+   ],
+   "LBS": [
+    [
+     0.01807,
+     -0.04586,
+     1.04467
+    ],
+    [
+     0.04009,
+     -0.03896,
+     1.06657
+    ],
+    [
+     0.01749,
+     -0.04253,
+     1.03501
+    ]
+   ],
+   "SQ": [
+    [
+     0.01807,
+     -0.04897,
+     1.01192
+    ],
+    [
+     0.04009,
+     -0.05413,
+     1.03075
+    ],
+    [
+     0.01749,
+     -0.05166,
+     0.99599
+    ]
+   ],
+   "aire_repos": 0.00011863488143220697,
+   "aire_LBS": 0.0001279361892751412,
+   "aire_SQ": 0.00018524311059093802,
+   "rapport_aire_SQ_sur_repos": 1.561455689546028,
+   "normale_repos": [
+    -0.64563,
+    -0.68307,
+    -0.34143
+   ],
+   "normale_SQ_unitaire": [
+    0.35874,
+    0.91817,
+    -0.16812
+   ],
+   "normale_LBS_unitaire": [
+    -0.54537,
+    0.78189,
+    0.30201
+   ],
+   "produit_normale_SQ_reference": -0.5467005025032693,
+   "produit_normale_LBS_reference": 0.4108089556404382,
+   "produit_normale_SQ_repos_brut": -0.8013920080938901,
+   "poids_sommets": [
+    [
+     [
+      "mixamorig:LeftUpLeg",
+      0.7563
+     ],
+     [
+      "mixamorig:Hips",
+      0.2437
+     ]
+    ],
+    [
+     [
+      "mixamorig:LeftUpLeg",
+      0.7978
+     ],
+     [
+      "mixamorig:Hips",
+      0.2022
+     ]
+    ],
+    [
+     [
+      "mixamorig:LeftUpLeg",
+      0.6908
+     ],
+     [
+      "mixamorig:Hips",
+      0.3092
+     ]
+    ]
+   ],
+   "os_dominants": [
+    "mixamorig:LeftUpLeg",
+    "mixamorig:LeftUpLeg",
+    "mixamorig:LeftUpLeg"
+   ],
+   "angle_rotation_os_dominants_deg": [
+    120.0,
+    120.0,
+    120.0
+   ],
+   "angle_relatif_entre_os_dominants_deg": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "valeurs_singulieres_Mv_moyen": [
+    1.0,
+    0.65951,
+    0.65951
+   ],
+   "valeurs_singulieres_Dm_repos": [
+    0.03143,
+    0.00755
+   ],
+   "residu_relatif_local": 6.550756300453412e-15
+  },
+  {
+   "pose": "generative_hanche_G_120",
+   "triangle": 7489,
+   "sommets": [
+    4242,
+    4184,
+    4226
+   ],
+   "repos": [
+    [
+     0.01229,
+     -0.04715,
+     0.91699
+    ],
+    [
+     0.00965,
+     -0.03403,
+     0.91466
+    ],
+    [
+     0.01807,
+     -0.05908,
+     0.91479
+    ]
+   ],
+   "LBS": [
+    [
+     0.01229,
+     -0.04605,
+     1.03341
+    ],
+    [
+     0.00965,
+     -0.05103,
+     1.04102
+    ],
+    [
+     0.01807,
+     -0.04586,
+     1.04467
+    ]
+   ],
+   "SQ": [
+    [
+     0.01229,
+     -0.04917,
+     0.98569
+    ],
+    [
+     0.00965,
+     -0.04623,
+     0.98364
+    ],
+    [
+     0.01807,
+     -0.04897,
+     1.01192
+    ]
+   ],
+   "aire_repos": 3.722877392348977e-05,
+   "aire_LBS": 4.879776532986537e-05,
+   "aire_SQ": 4.898974835031793e-05,
+   "rapport_aire_SQ_sur_repos": 1.3159108718164765,
+   "normale_repos": [
+    -0.76034,
+    -0.25865,
+    -0.59581
+   ],
+   "normale_SQ_unitaire": [
+    0.79101,
+    0.58509,
+    -0.17878
+   ],
+   "normale_LBS_unitaire": [
+    -0.58889,
+    0.75466,
+    0.2893
+   ],
+   "produit_normale_SQ_reference": -0.9739210932620014,
+   "produit_normale_LBS_reference": 0.17234309118138244,
+   "produit_normale_SQ_repos_brut": -0.6462522448240804,
+   "poids_sommets": [
+    [
+     [
+      "mixamorig:LeftUpLeg",
+      0.7364
+     ],
+     [
+      "mixamorig:Hips",
+      0.2636
+     ]
+    ],
+    [
+     [
+      "mixamorig:LeftUpLeg",
+      0.8411
+     ],
+     [
+      "mixamorig:Hips",
+      0.1589
+     ]
+    ],
+    [
+     [
+      "mixamorig:LeftUpLeg",
+      0.7563
+     ],
+     [
+      "mixamorig:Hips",
+      0.2437
+     ]
+    ]
+   ],
+   "os_dominants": [
+    "mixamorig:LeftUpLeg",
+    "mixamorig:LeftUpLeg",
+    "mixamorig:LeftUpLeg"
+   ],
+   "angle_rotation_os_dominants_deg": [
+    120.0,
+    120.0,
+    120.0
+   ],
+   "angle_relatif_entre_os_dominants_deg": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "valeurs_singulieres_Mv_moyen": [
+    1.0,
+    0.69408,
+    0.69408
+   ],
+   "valeurs_singulieres_Dm_repos": [
+    0.01869,
+    0.00398
+   ],
+   "residu_relatif_local": 4.4472027198953754e-15
+  },
+  {
+   "pose": "generative_hanche_G_120",
+   "triangle": 7515,
+   "sommets": [
+    4242,
+    4226,
+    4216
+   ],
+   "repos": [
+    [
+     0.01229,
+     -0.04715,
+     0.91699
+    ],
+    [
+     0.01807,
+     -0.05908,
+     0.91479
+    ],
+    [
+     0.01749,
+     -0.06218,
+     0.92208
+    ]
+   ],
+   "LBS": [
+    [
+     0.01229,
+     -0.04605,
+     1.03341
+    ],
+    [
+     0.01807,
+     -0.04586,
+     1.04467
+    ],
+    [
+     0.01749,
+     -0.04253,
+     1.03501
+    ]
+   ],
+   "SQ": [
+    [
+     0.01229,
+     -0.04917,
+     0.98569
+    ],
+    [
+     0.01807,
+     -0.04897,
+     1.01192
+    ],
+    [
+     0.01749,
+     -0.05166,
+     0.99599
+    ]
+   ],
+   "aire_repos": 5.264166006719515e-05,
+   "aire_LBS": 3.3009880280467946e-05,
+   "aire_SQ": 5.177786810306531e-05,
+   "rapport_aire_SQ_sur_repos": 0.983591095664019,
+   "normale_repos": [
+    -0.89097,
+    -0.38828,
+    -0.2354
+   ],
+   "normale_SQ_unitaire": [
+    0.65132,
+    0.74399,
+    -0.14923
+   ],
+   "normale_LBS_unitaire": [
+    -0.59616,
+    0.74743,
+    0.29316
+   ],
+   "produit_normale_SQ_reference": -0.7743966063454739,
+   "produit_normale_LBS_reference": 0.5214334343654333,
+   "produit_normale_SQ_repos_brut": -0.8340504722789079,
+   "poids_sommets": [
+    [
+     [
+      "mixamorig:LeftUpLeg",
+      0.7364
+     ],
+     [
+      "mixamorig:Hips",
+      0.2636
+     ]
+    ],
+    [
+     [
+      "mixamorig:LeftUpLeg",
+      0.7563
+     ],
+     [
+      "mixamorig:Hips",
+      0.2437
+     ]
+    ],
+    [
+     [
+      "mixamorig:LeftUpLeg",
+      0.6908
+     ],
+     [
+      "mixamorig:Hips",
+      0.3092
+     ]
+    ]
+   ],
+   "os_dominants": [
+    "mixamorig:LeftUpLeg",
+    "mixamorig:LeftUpLeg",
+    "mixamorig:LeftUpLeg"
+   ],
+   "angle_rotation_os_dominants_deg": [
+    120.0,
+    120.0,
+    120.0
+   ],
+   "angle_relatif_entre_os_dominants_deg": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "valeurs_singulieres_Mv_moyen": [
+    1.0,
+    0.63696,
+    0.63696
+   ],
+   "valeurs_singulieres_Dm_repos": [
+    0.02083,
+    0.00505
+   ],
+   "residu_relatif_local": 4.4472027198953754e-15
+  },
+  {
+   "pose": "reelle_L_combo_flex120_genou90",
+   "triangle": 7335,
+   "sommets": [
+    4102,
+    4172,
+    4170
+   ],
+   "repos": [
+    [
+     -0.00635,
+     -0.0086,
+     0.90951
+    ],
+    [
+     -0.00015,
+     -0.00486,
+     0.92021
+    ],
+    [
+     -0.00011,
+     -0.01682,
+     0.9171
+    ]
+   ],
+   "LBS": [
+    [
+     -0.00635,
+     -0.00863,
+     0.90957
+    ],
+    [
+     -0.00015,
+     -0.02116,
+     0.95234
+    ],
+    [
+     -0.00011,
+     -0.02893,
+     0.95337
+    ]
+   ],
+   "SQ": [
+    [
+     -0.00635,
+     -0.0234,
+     0.94632
+    ],
+    [
+     -0.00015,
+     -0.03494,
+     0.9643
+    ],
+    [
+     -0.00011,
+     -0.03613,
+     0.96727
+    ]
+   ],
+   "aire_repos": 6.974888883893065e-05,
+   "aire_LBS": 0.00016156985081912045,
+   "aire_SQ": 1.151202903353368e-05,
+   "rapport_aire_SQ_sur_repos": 0.16504964057733046,
+   "normale_repos": [
+    0.83412,
+    0.14133,
+    -0.53318
+   ],
+   "normale_SQ_unitaire": [
+    -0.56429,
+    -0.76942,
+    -0.29929
+   ],
+   "normale_LBS_unitaire": [
+    0.98892,
+    -0.01457,
+    -0.14772
+   ],
+   "produit_normale_SQ_reference": -0.324221075566921,
+   "produit_normale_LBS_reference": 0.9059299901887858,
+   "produit_normale_SQ_repos_brut": -0.4198524289974596,
+   "poids_sommets": [
+    [
+     [
+      "mixamorig:RightUpLeg",
+      0.7673
+     ],
+     [
+      "mixamorig:Hips",
+      0.2327
+     ]
+    ],
+    [
+     [
+      "mixamorig:Hips",
+      0.45
+     ],
+     [
+      "mixamorig:RightUpLeg",
+      0.275
+     ],
+     [
+      "mixamorig:LeftUpLeg",
+      0.275
+     ]
+    ],
+    [
+     [
+      "mixamorig:Hips",
+      0.45
+     ],
+     [
+      "mixamorig:RightUpLeg",
+      0.275
+     ],
+     [
+      "mixamorig:LeftUpLeg",
+      0.275
+     ]
+    ]
+   ],
+   "os_dominants": [
+    "mixamorig:RightUpLeg",
+    "mixamorig:Hips",
+    "mixamorig:Hips"
+   ],
+   "angle_rotation_os_dominants_deg": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "angle_relatif_entre_os_dominants_deg": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "valeurs_singulieres_Mv_moyen": [
+    1.0,
+    0.74218,
+    0.74218
+   ],
+   "valeurs_singulieres_Dm_repos": [
+    0.01596,
+    0.00874
+   ],
+   "residu_relatif_local": 7.517276335578572e-15
+  },
+  {
+   "pose": "reelle_L_combo_flex120_genou90",
+   "triangle": 7487,
+   "sommets": [
+    4226,
+    4225,
+    4216
+   ],
+   "repos": [
+    [
+     0.01807,
+     -0.05908,
+     0.91479
+    ],
+    [
+     0.04009,
+     -0.08121,
+     0.91743
+    ],
+    [
+     0.01749,
+     -0.06218,
+     0.92208
+    ]
+   ],
+   "LBS": [
+    [
+     0.01807,
+     -0.04589,
+     1.04473
+    ],
+    [
+     0.04009,
+     -0.03899,
+     1.06663
+    ],
+    [
+     0.01749,
+     -0.04256,
+     1.03507
+    ]
+   ],
+   "SQ": [
+    [
+     0.01807,
+     -0.049,
+     1.01198
+    ],
+    [
+     0.04009,
+     -0.05416,
+     1.0308
+    ],
+    [
+     0.01749,
+     -0.0517,
+     0.99604
+    ]
+   ],
+   "aire_repos": 0.00011863488143220697,
+   "aire_LBS": 0.00012793664855912022,
+   "aire_SQ": 0.00018524327380230003,
+   "rapport_aire_SQ_sur_repos": 1.561457065291172,
+   "normale_repos": [
+    -0.64563,
+    -0.68307,
+    -0.34143
+   ],
+   "normale_SQ_unitaire": [
+    0.35874,
+    0.91817,
+    -0.16811
+   ],
+   "normale_LBS_unitaire": [
+    -0.54537,
+    0.78189,
+    0.30201
+   ],
+   "produit_normale_SQ_reference": -0.5466998584591909,
+   "produit_normale_LBS_reference": 0.41080873481792507,
+   "produit_normale_SQ_repos_brut": -0.8013920241677691,
+   "poids_sommets": [
+    [
+     [
+      "mixamorig:LeftUpLeg",
+      0.7563
+     ],
+     [
+      "mixamorig:Hips",
+      0.2437
+     ]
+    ],
+    [
+     [
+      "mixamorig:LeftUpLeg",
+      0.7978
+     ],
+     [
+      "mixamorig:Hips",
+      0.2022
+     ]
+    ],
+    [
+     [
+      "mixamorig:LeftUpLeg",
+      0.6908
+     ],
+     [
+      "mixamorig:Hips",
+      0.3092
+     ]
+    ]
+   ],
+   "os_dominants": [
+    "mixamorig:LeftUpLeg",
+    "mixamorig:LeftUpLeg",
+    "mixamorig:LeftUpLeg"
+   ],
+   "angle_rotation_os_dominants_deg": [
+    120.0,
+    120.0,
+    120.0
+   ],
+   "angle_relatif_entre_os_dominants_deg": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "valeurs_singulieres_Mv_moyen": [
+    1.0,
+    0.65951,
+    0.65951
+   ],
+   "valeurs_singulieres_Dm_repos": [
+    0.03143,
+    0.00755
+   ],
+   "residu_relatif_local": 1.1580494187049364e-14
+  },
+  {
+   "pose": "reelle_L_combo_flex120_genou90",
+   "triangle": 7489,
+   "sommets": [
+    4242,
+    4184,
+    4226
+   ],
+   "repos": [
+    [
+     0.01229,
+     -0.04715,
+     0.91699
+    ],
+    [
+     0.00965,
+     -0.03403,
+     0.91466
+    ],
+    [
+     0.01807,
+     -0.05908,
+     0.91479
+    ]
+   ],
+   "LBS": [
+    [
+     0.01229,
+     -0.04609,
+     1.03347
+    ],
+    [
+     0.00965,
+     -0.05106,
+     1.04108
+    ],
+    [
+     0.01807,
+     -0.04589,
+     1.04473
+    ]
+   ],
+   "SQ": [
+    [
+     0.01229,
+     -0.0492,
+     0.98575
+    ],
+    [
+     0.00965,
+     -0.04627,
+     0.9837
+    ],
+    [
+     0.01807,
+     -0.049,
+     1.01198
+    ]
+   ],
+   "aire_repos": 3.722877392348977e-05,
+   "aire_LBS": 4.879795231091868e-05,
+   "aire_SQ": 4.89897612930286e-05,
+   "rapport_aire_SQ_sur_repos": 1.315911219469899,
+   "normale_repos": [
+    -0.76034,
+    -0.25865,
+    -0.59581
+   ],
+   "normale_SQ_unitaire": [
+    0.79101,
+    0.5851,
+    -0.17878
+   ],
+   "normale_LBS_unitaire": [
+    -0.58889,
+    0.75466,
+    0.2893
+   ],
+   "produit_normale_SQ_reference": -0.9739209887684271,
+   "produit_normale_LBS_reference": 0.1723422375492863,
+   "produit_normale_SQ_repos_brut": -0.6462522431404766,
+   "poids_sommets": [
+    [
+     [
+      "mixamorig:LeftUpLeg",
+      0.7364
+     ],
+     [
+      "mixamorig:Hips",
+      0.2636
+     ]
+    ],
+    [
+     [
+      "mixamorig:LeftUpLeg",
+      0.8411
+     ],
+     [
+      "mixamorig:Hips",
+      0.1589
+     ]
+    ],
+    [
+     [
+      "mixamorig:LeftUpLeg",
+      0.7563
+     ],
+     [
+      "mixamorig:Hips",
+      0.2437
+     ]
+    ]
+   ],
+   "os_dominants": [
+    "mixamorig:LeftUpLeg",
+    "mixamorig:LeftUpLeg",
+    "mixamorig:LeftUpLeg"
+   ],
+   "angle_rotation_os_dominants_deg": [
+    120.0,
+    120.0,
+    120.0
+   ],
+   "angle_relatif_entre_os_dominants_deg": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "valeurs_singulieres_Mv_moyen": [
+    1.0,
+    0.69408,
+    0.69408
+   ],
+   "valeurs_singulieres_Dm_repos": [
+    0.01869,
+    0.00398
+   ],
+   "residu_relatif_local": 1.16595519455019e-14
+  },
+  {
+   "pose": "reelle_L_combo_flex120_genou90",
+   "triangle": 7515,
+   "sommets": [
+    4242,
+    4226,
+    4216
+   ],
+   "repos": [
+    [
+     0.01229,
+     -0.04715,
+     0.91699
+    ],
+    [
+     0.01807,
+     -0.05908,
+     0.91479
+    ],
+    [
+     0.01749,
+     -0.06218,
+     0.92208
+    ]
+   ],
+   "LBS": [
+    [
+     0.01229,
+     -0.04609,
+     1.03347
+    ],
+    [
+     0.01807,
+     -0.04589,
+     1.04473
+    ],
+    [
+     0.01749,
+     -0.04256,
+     1.03507
+    ]
+   ],
+   "SQ": [
+    [
+     0.01229,
+     -0.0492,
+     0.98575
+    ],
+    [
+     0.01807,
+     -0.049,
+     1.01198
+    ],
+    [
+     0.01749,
+     -0.0517,
+     0.99604
+    ]
+   ],
+   "aire_repos": 5.264166006719515e-05,
+   "aire_LBS": 3.300999785665362e-05,
+   "aire_SQ": 5.17778941570382e-05,
+   "rapport_aire_SQ_sur_repos": 0.9835915905947042,
+   "normale_repos": [
+    -0.89097,
+    -0.38828,
+    -0.2354
+   ],
+   "normale_SQ_unitaire": [
+    0.65132,
+    0.74399,
+    -0.14923
+   ],
+   "normale_LBS_unitaire": [
+    -0.59616,
+    0.74743,
+    0.29316
+   ],
+   "produit_normale_SQ_reference": -0.7743960185140762,
+   "produit_normale_LBS_reference": 0.5214330964128385,
+   "produit_normale_SQ_repos_brut": -0.8340502470049949,
+   "poids_sommets": [
+    [
+     [
+      "mixamorig:LeftUpLeg",
+      0.7364
+     ],
+     [
+      "mixamorig:Hips",
+      0.2636
+     ]
+    ],
+    [
+     [
+      "mixamorig:LeftUpLeg",
+      0.7563
+     ],
+     [
+      "mixamorig:Hips",
+      0.2437
+     ]
+    ],
+    [
+     [
+      "mixamorig:LeftUpLeg",
+      0.6908
+     ],
+     [
+      "mixamorig:Hips",
+      0.3092
+     ]
+    ]
+   ],
+   "os_dominants": [
+    "mixamorig:LeftUpLeg",
+    "mixamorig:LeftUpLeg",
+    "mixamorig:LeftUpLeg"
+   ],
+   "angle_rotation_os_dominants_deg": [
+    120.0,
+    120.0,
+    120.0
+   ],
+   "angle_relatif_entre_os_dominants_deg": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "valeurs_singulieres_Mv_moyen": [
+    1.0,
+    0.63697,
+    0.63696
+   ],
+   "valeurs_singulieres_Dm_repos": [
+    0.02083,
+    0.00505
+   ],
+   "residu_relatif_local": 5.786491196087305e-15
+  },
+  {
+   "pose": "reelle_L_combo_flex60_abd20_int20_genou60",
+   "triangle": 7487,
+   "sommets": [
+    4226,
+    4225,
+    4216
+   ],
+   "repos": [
+    [
+     0.01807,
+     -0.05908,
+     0.91479
+    ],
+    [
+     0.04009,
+     -0.08121,
+     0.91743
+    ],
+    [
+     0.01749,
+     -0.06218,
+     0.92208
+    ]
+   ],
+   "LBS": [
+    [
+     -0.00086,
+     -0.06606,
+     0.9545
+    ],
+    [
+     0.01014,
+     -0.08334,
+     0.97754
+    ],
+    [
+     -0.00027,
+     -0.06318,
+     0.95767
+    ]
+   ],
+   "SQ": [
+    [
+     0.00223,
+     -0.06628,
+     0.94845
+    ],
+    [
+     0.01627,
+     -0.08846,
+     0.96693
+    ],
+    [
+     0.00462,
+     -0.06593,
+     0.9488
+    ]
+   ],
+   "aire_repos": 0.00011863488143220697,
+   "aire_LBS": 6.487850625764061e-05,
+   "aire_SQ": 3.577297701944569e-05,
+   "rapport_aire_SQ_sur_repos": 0.30153843951778964,
+   "normale_repos": [
+    -0.64563,
+    -0.68307,
+    -0.34143
+   ],
+   "normale_SQ_unitaire": [
+    -0.20183,
+    0.54849,
+    0.81143
+   ],
+   "normale_LBS_unitaire": [
+    -0.93245,
+    -0.16409,
+    0.3219
+   ],
+   "produit_normale_SQ_reference": -0.0741206973660551,
+   "produit_normale_LBS_reference": 0.8985350248830841,
+   "produit_normale_SQ_repos_brut": -0.5213911956177663,
+   "poids_sommets": [
+    [
+     [
+      "mixamorig:LeftUpLeg",
+      0.7563
+     ],
+     [
+      "mixamorig:Hips",
+      0.2437
+     ]
+    ],
+    [
+     [
+      "mixamorig:LeftUpLeg",
+      0.7978
+     ],
+     [
+      "mixamorig:Hips",
+      0.2022
+     ]
+    ],
+    [
+     [
+      "mixamorig:LeftUpLeg",
+      0.6908
+     ],
+     [
+      "mixamorig:Hips",
+      0.3092
+     ]
+    ]
+   ],
+   "os_dominants": [
+    "mixamorig:LeftUpLeg",
+    "mixamorig:LeftUpLeg",
+    "mixamorig:LeftUpLeg"
+   ],
+   "angle_rotation_os_dominants_deg": [
+    62.48,
+    62.48,
+    62.48
+   ],
+   "angle_relatif_entre_os_dominants_deg": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "valeurs_singulieres_Mv_moyen": [
+    1.0,
+    0.89294,
+    0.89294
+   ],
+   "valeurs_singulieres_Dm_repos": [
+    0.03143,
+    0.00755
+   ],
+   "residu_relatif_local": 7.557337263076901e-15
+  },
+  {
+   "pose": "reelle_L_combo_flex60_abd20_int20_genou60",
+   "triangle": 7489,
+   "sommets": [
+    4242,
+    4184,
+    4226
+   ],
+   "repos": [
+    [
+     0.01229,
+     -0.04715,
+     0.91699
+    ],
+    [
+     0.00965,
+     -0.03403,
+     0.91466
+    ],
+    [
+     0.01807,
+     -0.05908,
+     0.91479
+    ]
+   ],
+   "LBS": [
+    [
+     -0.00145,
+     -0.05585,
+     0.94694
+    ],
+    [
+     -0.00088,
+     -0.05066,
+     0.94067
+    ],
+    [
+     -0.00086,
+     -0.06606,
+     0.9545
+    ]
+   ],
+   "SQ": [
+    [
+     0.00326,
+     -0.05456,
+     0.93721
+    ],
+    [
+     0.00314,
+     -0.04498,
+     0.93097
+    ],
+    [
+     0.00223,
+     -0.06628,
+     0.94845
+    ]
+   ],
+   "aire_repos": 3.722877392348977e-05,
+   "aire_LBS": 1.371930551160773e-05,
+   "aire_SQ": 1.8526329558365378e-05,
+   "rapport_aire_SQ_sur_repos": 0.49763469504635105,
+   "normale_repos": [
+    -0.76034,
+    -0.25865,
+    -0.59581
+   ],
+   "normale_SQ_unitaire": [
+    0.9297,
+    0.20922,
+    0.30311
+   ],
+   "normale_LBS_unitaire": [
+    -0.89999,
+    -0.29211,
+    -0.32354
+   ],
+   "produit_normale_SQ_reference": -0.973535220222479,
+   "produit_normale_LBS_reference": 0.9877773105901072,
+   "produit_normale_SQ_repos_brut": -0.9416009703434997,
+   "poids_sommets": [
+    [
+     [
+      "mixamorig:LeftUpLeg",
+      0.7364
+     ],
+     [
+      "mixamorig:Hips",
+      0.2636
+     ]
+    ],
+    [
+     [
+      "mixamorig:LeftUpLeg",
+      0.8411
+     ],
+     [
+      "mixamorig:Hips",
+      0.1589
+     ]
+    ],
+    [
+     [
+      "mixamorig:LeftUpLeg",
+      0.7563
+     ],
+     [
+      "mixamorig:Hips",
+      0.2437
+     ]
+    ]
+   ],
+   "os_dominants": [
+    "mixamorig:LeftUpLeg",
+    "mixamorig:LeftUpLeg",
+    "mixamorig:LeftUpLeg"
+   ],
+   "angle_rotation_os_dominants_deg": [
+    62.48,
+    62.48,
+    62.48
+   ],
+   "angle_relatif_entre_os_dominants_deg": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "valeurs_singulieres_Mv_moyen": [
+    1.0,
+    0.90229,
+    0.90229
+   ],
+   "valeurs_singulieres_Dm_repos": [
+    0.01869,
+    0.00398
+   ],
+   "residu_relatif_local": 4.515123436256659e-15
+  },
+  {
+   "pose": "reelle_L_combo_flex60_abd20_int20_genou60",
+   "triangle": 7515,
+   "sommets": [
+    4242,
+    4226,
+    4216
+   ],
+   "repos": [
+    [
+     0.01229,
+     -0.04715,
+     0.91699
+    ],
+    [
+     0.01807,
+     -0.05908,
+     0.91479
+    ],
+    [
+     0.01749,
+     -0.06218,
+     0.92208
+    ]
+   ],
+   "LBS": [
+    [
+     -0.00145,
+     -0.05585,
+     0.94694
+    ],
+    [
+     -0.00086,
+     -0.06606,
+     0.9545
+    ],
+    [
+     -0.00027,
+     -0.06318,
+     0.95767
+    ]
+   ],
+   "SQ": [
+    [
+     0.00326,
+     -0.05456,
+     0.93721
+    ],
+    [
+     0.00223,
+     -0.06628,
+     0.94845
+    ],
+    [
+     0.00462,
+     -0.06593,
+     0.9488
+    ]
+   ],
+   "aire_repos": 5.264166006719515e-05,
+   "aire_LBS": 2.7339844790646647e-05,
+   "aire_SQ": 1.9835730894288918e-05,
+   "rapport_aire_SQ_sur_repos": 0.3768067129526184,
+   "normale_repos": [
+    -0.89097,
+    -0.38828,
+    -0.2354
+   ],
+   "normale_SQ_unitaire": [
+    -0.20566,
+    0.6866,
+    0.69734
+   ],
+   "normale_LBS_unitaire": [
+    -0.98898,
+    0.04684,
+    0.14046
+   ],
+   "produit_normale_SQ_reference": -0.007480528164915571,
+   "produit_normale_LBS_reference": 0.9394159314144696,
+   "produit_normale_SQ_repos_brut": -0.2475012740739733,
+   "poids_sommets": [
+    [
+     [
+      "mixamorig:LeftUpLeg",
+      0.7364
+     ],
+     [
+      "mixamorig:Hips",
+      0.2636
+     ]
+    ],
+    [
+     [
+      "mixamorig:LeftUpLeg",
+      0.7563
+     ],
+     [
+      "mixamorig:Hips",
+      0.2437
+     ]
+    ],
+    [
+     [
+      "mixamorig:LeftUpLeg",
+      0.6908
+     ],
+     [
+      "mixamorig:Hips",
+      0.3092
+     ]
+    ]
+   ],
+   "os_dominants": [
+    "mixamorig:LeftUpLeg",
+    "mixamorig:LeftUpLeg",
+    "mixamorig:LeftUpLeg"
+   ],
+   "angle_rotation_os_dominants_deg": [
+    62.48,
+    62.48,
+    62.48
+   ],
+   "angle_relatif_entre_os_dominants_deg": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "valeurs_singulieres_Mv_moyen": [
+    1.0,
+    0.88705,
+    0.88705
+   ],
+   "valeurs_singulieres_Dm_repos": [
+    0.02083,
+    0.00505
+   ],
+   "residu_relatif_local": 6.0111677516004535e-15
+  },
+  {
+   "pose": "reelle_L_flex120",
+   "triangle": 7335,
+   "sommets": [
+    4102,
+    4172,
+    4170
+   ],
+   "repos": [
+    [
+     -0.00635,
+     -0.0086,
+     0.90951
+    ],
+    [
+     -0.00015,
+     -0.00486,
+     0.92021
+    ],
+    [
+     -0.00011,
+     -0.01682,
+     0.9171
+    ]
+   ],
+   "LBS": [
+    [
+     -0.00635,
+     -0.00863,
+     0.90957
+    ],
+    [
+     -0.00015,
+     -0.02116,
+     0.95234
+    ],
+    [
+     -0.00011,
+     -0.02893,
+     0.95337
+    ]
+   ],
+   "SQ": [
+    [
+     -0.00635,
+     -0.0234,
+     0.94632
+    ],
+    [
+     -0.00015,
+     -0.03494,
+     0.9643
+    ],
+    [
+     -0.00011,
+     -0.03613,
+     0.96727
+    ]
+   ],
+   "aire_repos": 6.974888883893065e-05,
+   "aire_LBS": 0.00016156985081912045,
+   "aire_SQ": 1.151202903353368e-05,
+   "rapport_aire_SQ_sur_repos": 0.16504964057733046,
+   "normale_repos": [
+    0.83412,
+    0.14133,
+    -0.53318
+   ],
+   "normale_SQ_unitaire": [
+    -0.56429,
+    -0.76942,
+    -0.29929
+   ],
+   "normale_LBS_unitaire": [
+    0.98892,
+    -0.01457,
+    -0.14772
+   ],
+   "produit_normale_SQ_reference": -0.324221075566921,
+   "produit_normale_LBS_reference": 0.9059299901887858,
+   "produit_normale_SQ_repos_brut": -0.4198524289974596,
+   "poids_sommets": [
+    [
+     [
+      "mixamorig:RightUpLeg",
+      0.7673
+     ],
+     [
+      "mixamorig:Hips",
+      0.2327
+     ]
+    ],
+    [
+     [
+      "mixamorig:Hips",
+      0.45
+     ],
+     [
+      "mixamorig:RightUpLeg",
+      0.275
+     ],
+     [
+      "mixamorig:LeftUpLeg",
+      0.275
+     ]
+    ],
+    [
+     [
+      "mixamorig:Hips",
+      0.45
+     ],
+     [
+      "mixamorig:RightUpLeg",
+      0.275
+     ],
+     [
+      "mixamorig:LeftUpLeg",
+      0.275
+     ]
+    ]
+   ],
+   "os_dominants": [
+    "mixamorig:RightUpLeg",
+    "mixamorig:Hips",
+    "mixamorig:Hips"
+   ],
+   "angle_rotation_os_dominants_deg": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "angle_relatif_entre_os_dominants_deg": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "valeurs_singulieres_Mv_moyen": [
+    1.0,
+    0.74218,
+    0.74218
+   ],
+   "valeurs_singulieres_Dm_repos": [
+    0.01596,
+    0.00874
+   ],
+   "residu_relatif_local": 7.517276335578572e-15
+  },
+  {
+   "pose": "reelle_L_flex120",
+   "triangle": 7487,
+   "sommets": [
+    4226,
+    4225,
+    4216
+   ],
+   "repos": [
+    [
+     0.01807,
+     -0.05908,
+     0.91479
+    ],
+    [
+     0.04009,
+     -0.08121,
+     0.91743
+    ],
+    [
+     0.01749,
+     -0.06218,
+     0.92208
+    ]
+   ],
+   "LBS": [
+    [
+     0.01807,
+     -0.04589,
+     1.04473
+    ],
+    [
+     0.04009,
+     -0.03899,
+     1.06663
+    ],
+    [
+     0.01749,
+     -0.04256,
+     1.03507
+    ]
+   ],
+   "SQ": [
+    [
+     0.01807,
+     -0.049,
+     1.01198
+    ],
+    [
+     0.04009,
+     -0.05416,
+     1.0308
+    ],
+    [
+     0.01749,
+     -0.0517,
+     0.99604
+    ]
+   ],
+   "aire_repos": 0.00011863488143220697,
+   "aire_LBS": 0.00012793664855912022,
+   "aire_SQ": 0.00018524327380230003,
+   "rapport_aire_SQ_sur_repos": 1.561457065291172,
+   "normale_repos": [
+    -0.64563,
+    -0.68307,
+    -0.34143
+   ],
+   "normale_SQ_unitaire": [
+    0.35874,
+    0.91817,
+    -0.16811
+   ],
+   "normale_LBS_unitaire": [
+    -0.54537,
+    0.78189,
+    0.30201
+   ],
+   "produit_normale_SQ_reference": -0.5466998584591909,
+   "produit_normale_LBS_reference": 0.41080873481792507,
+   "produit_normale_SQ_repos_brut": -0.8013920241677691,
+   "poids_sommets": [
+    [
+     [
+      "mixamorig:LeftUpLeg",
+      0.7563
+     ],
+     [
+      "mixamorig:Hips",
+      0.2437
+     ]
+    ],
+    [
+     [
+      "mixamorig:LeftUpLeg",
+      0.7978
+     ],
+     [
+      "mixamorig:Hips",
+      0.2022
+     ]
+    ],
+    [
+     [
+      "mixamorig:LeftUpLeg",
+      0.6908
+     ],
+     [
+      "mixamorig:Hips",
+      0.3092
+     ]
+    ]
+   ],
+   "os_dominants": [
+    "mixamorig:LeftUpLeg",
+    "mixamorig:LeftUpLeg",
+    "mixamorig:LeftUpLeg"
+   ],
+   "angle_rotation_os_dominants_deg": [
+    120.0,
+    120.0,
+    120.0
+   ],
+   "angle_relatif_entre_os_dominants_deg": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "valeurs_singulieres_Mv_moyen": [
+    1.0,
+    0.65951,
+    0.65951
+   ],
+   "valeurs_singulieres_Dm_repos": [
+    0.03143,
+    0.00755
+   ],
+   "residu_relatif_local": 1.1580494187049364e-14
+  },
+  {
+   "pose": "reelle_L_flex120",
+   "triangle": 7489,
+   "sommets": [
+    4242,
+    4184,
+    4226
+   ],
+   "repos": [
+    [
+     0.01229,
+     -0.04715,
+     0.91699
+    ],
+    [
+     0.00965,
+     -0.03403,
+     0.91466
+    ],
+    [
+     0.01807,
+     -0.05908,
+     0.91479
+    ]
+   ],
+   "LBS": [
+    [
+     0.01229,
+     -0.04609,
+     1.03347
+    ],
+    [
+     0.00965,
+     -0.05106,
+     1.04108
+    ],
+    [
+     0.01807,
+     -0.04589,
+     1.04473
+    ]
+   ],
+   "SQ": [
+    [
+     0.01229,
+     -0.0492,
+     0.98575
+    ],
+    [
+     0.00965,
+     -0.04627,
+     0.9837
+    ],
+    [
+     0.01807,
+     -0.049,
+     1.01198
+    ]
+   ],
+   "aire_repos": 3.722877392348977e-05,
+   "aire_LBS": 4.879795231091868e-05,
+   "aire_SQ": 4.89897612930286e-05,
+   "rapport_aire_SQ_sur_repos": 1.315911219469899,
+   "normale_repos": [
+    -0.76034,
+    -0.25865,
+    -0.59581
+   ],
+   "normale_SQ_unitaire": [
+    0.79101,
+    0.5851,
+    -0.17878
+   ],
+   "normale_LBS_unitaire": [
+    -0.58889,
+    0.75466,
+    0.2893
+   ],
+   "produit_normale_SQ_reference": -0.9739209887684271,
+   "produit_normale_LBS_reference": 0.1723422375492863,
+   "produit_normale_SQ_repos_brut": -0.6462522431404766,
+   "poids_sommets": [
+    [
+     [
+      "mixamorig:LeftUpLeg",
+      0.7364
+     ],
+     [
+      "mixamorig:Hips",
+      0.2636
+     ]
+    ],
+    [
+     [
+      "mixamorig:LeftUpLeg",
+      0.8411
+     ],
+     [
+      "mixamorig:Hips",
+      0.1589
+     ]
+    ],
+    [
+     [
+      "mixamorig:LeftUpLeg",
+      0.7563
+     ],
+     [
+      "mixamorig:Hips",
+      0.2437
+     ]
+    ]
+   ],
+   "os_dominants": [
+    "mixamorig:LeftUpLeg",
+    "mixamorig:LeftUpLeg",
+    "mixamorig:LeftUpLeg"
+   ],
+   "angle_rotation_os_dominants_deg": [
+    120.0,
+    120.0,
+    120.0
+   ],
+   "angle_relatif_entre_os_dominants_deg": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "valeurs_singulieres_Mv_moyen": [
+    1.0,
+    0.69408,
+    0.69408
+   ],
+   "valeurs_singulieres_Dm_repos": [
+    0.01869,
+    0.00398
+   ],
+   "residu_relatif_local": 1.16595519455019e-14
+  },
+  {
+   "pose": "reelle_L_flex120",
+   "triangle": 7515,
+   "sommets": [
+    4242,
+    4226,
+    4216
+   ],
+   "repos": [
+    [
+     0.01229,
+     -0.04715,
+     0.91699
+    ],
+    [
+     0.01807,
+     -0.05908,
+     0.91479
+    ],
+    [
+     0.01749,
+     -0.06218,
+     0.92208
+    ]
+   ],
+   "LBS": [
+    [
+     0.01229,
+     -0.04609,
+     1.03347
+    ],
+    [
+     0.01807,
+     -0.04589,
+     1.04473
+    ],
+    [
+     0.01749,
+     -0.04256,
+     1.03507
+    ]
+   ],
+   "SQ": [
+    [
+     0.01229,
+     -0.0492,
+     0.98575
+    ],
+    [
+     0.01807,
+     -0.049,
+     1.01198
+    ],
+    [
+     0.01749,
+     -0.0517,
+     0.99604
+    ]
+   ],
+   "aire_repos": 5.264166006719515e-05,
+   "aire_LBS": 3.300999785665362e-05,
+   "aire_SQ": 5.17778941570382e-05,
+   "rapport_aire_SQ_sur_repos": 0.9835915905947042,
+   "normale_repos": [
+    -0.89097,
+    -0.38828,
+    -0.2354
+   ],
+   "normale_SQ_unitaire": [
+    0.65132,
+    0.74399,
+    -0.14923
+   ],
+   "normale_LBS_unitaire": [
+    -0.59616,
+    0.74743,
+    0.29316
+   ],
+   "produit_normale_SQ_reference": -0.7743960185140762,
+   "produit_normale_LBS_reference": 0.5214330964128385,
+   "produit_normale_SQ_repos_brut": -0.8340502470049949,
+   "poids_sommets": [
+    [
+     [
+      "mixamorig:LeftUpLeg",
+      0.7364
+     ],
+     [
+      "mixamorig:Hips",
+      0.2636
+     ]
+    ],
+    [
+     [
+      "mixamorig:LeftUpLeg",
+      0.7563
+     ],
+     [
+      "mixamorig:Hips",
+      0.2437
+     ]
+    ],
+    [
+     [
+      "mixamorig:LeftUpLeg",
+      0.6908
+     ],
+     [
+      "mixamorig:Hips",
+      0.3092
+     ]
+    ]
+   ],
+   "os_dominants": [
+    "mixamorig:LeftUpLeg",
+    "mixamorig:LeftUpLeg",
+    "mixamorig:LeftUpLeg"
+   ],
+   "angle_rotation_os_dominants_deg": [
+    120.0,
+    120.0,
+    120.0
+   ],
+   "angle_relatif_entre_os_dominants_deg": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "valeurs_singulieres_Mv_moyen": [
+    1.0,
+    0.63697,
+    0.63696
+   ],
+   "valeurs_singulieres_Dm_repos": [
+    0.02083,
+    0.00505
+   ],
+   "residu_relatif_local": 5.786491196087305e-15
+  },
+  {
+   "pose": "reelle_L_flex60",
+   "triangle": 7487,
+   "sommets": [
+    4226,
+    4225,
+    4216
+   ],
+   "repos": [
+    [
+     0.01807,
+     -0.05908,
+     0.91479
+    ],
+    [
+     0.04009,
+     -0.08121,
+     0.91743
+    ],
+    [
+     0.01749,
+     -0.06218,
+     0.92208
+    ]
+   ],
+   "LBS": [
+    [
+     0.01807,
+     -0.08999,
+     0.9836
+    ],
+    [
+     0.04009,
+     -0.10317,
+     1.00425
+    ],
+    [
+     0.01749,
+     -0.08499,
+     0.98428
+    ]
+   ],
+   "SQ": [
+    [
+     0.01807,
+     -0.08157,
+     0.9669
+    ],
+    [
+     0.04009,
+     -0.09877,
+     0.98176
+    ],
+    [
+     0.01749,
+     -0.0781,
+     0.9633
+    ]
+   ],
+   "aire_repos": 0.00011863488143220697,
+   "aire_LBS": 7.722536546286474e-05,
+   "aire_SQ": 4.8836537190502874e-05,
+   "rapport_aire_SQ_sur_repos": 0.4116541155596818,
+   "normale_repos": [
+    -0.64563,
+    -0.68307,
+    -0.34143
+   ],
+   "normale_SQ_unitaire": [
+    0.1088,
+    0.72574,
+    0.67931
+   ],
+   "normale_LBS_unitaire": [
+    -0.72678,
+    -0.17285,
+    0.66476
+   ],
+   "produit_normale_SQ_reference": -0.42020762549323926,
+   "produit_normale_LBS_reference": 0.7626623104144725,
+   "produit_normale_SQ_repos_brut": -0.7979151397217382,
+   "poids_sommets": [
+    [
+     [
+      "mixamorig:LeftUpLeg",
+      0.7563
+     ],
+     [
+      "mixamorig:Hips",
+      0.2437
+     ]
+    ],
+    [
+     [
+      "mixamorig:LeftUpLeg",
+      0.7978
+     ],
+     [
+      "mixamorig:Hips",
+      0.2022
+     ]
+    ],
+    [
+     [
+      "mixamorig:LeftUpLeg",
+      0.6908
+     ],
+     [
+      "mixamorig:Hips",
+      0.3092
+     ]
+    ]
+   ],
+   "os_dominants": [
+    "mixamorig:LeftUpLeg",
+    "mixamorig:LeftUpLeg",
+    "mixamorig:LeftUpLeg"
+   ],
+   "angle_rotation_os_dominants_deg": [
+    60.0,
+    60.0,
+    60.0
+   ],
+   "angle_relatif_entre_os_dominants_deg": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "valeurs_singulieres_Mv_moyen": [
+    1.0,
+    0.90092,
+    0.90092
+   ],
+   "valeurs_singulieres_Dm_repos": [
+    0.03143,
+    0.00755
+   ],
+   "residu_relatif_local": 7.820614957254855e-15
+  },
+  {
+   "pose": "reelle_L_flex60",
+   "triangle": 7489,
+   "sommets": [
+    4242,
+    4184,
+    4226
+   ],
+   "repos": [
+    [
+     0.01229,
+     -0.04715,
+     0.91699
+    ],
+    [
+     0.00965,
+     -0.03403,
+     0.91466
+    ],
+    [
+     0.01807,
+     -0.05908,
+     0.91479
+    ]
+   ],
+   "LBS": [
+    [
+     0.01229,
+     -0.08024,
+     0.97557
+    ],
+    [
+     0.00965,
+     -0.07904,
+     0.97299
+    ],
+    [
+     0.01807,
+     -0.08999,
+     0.9836
+    ]
+   ],
+   "SQ": [
+    [
+     0.01229,
+     -0.06787,
+     0.95235
+    ],
+    [
+     0.00965,
+     -0.05976,
+     0.94725
+    ],
+    [
+     0.01807,
+     -0.08157,
+     0.9669
+    ]
+   ],
+   "aire_repos": 3.722877392348977e-05,
+   "aire_LBS": 1.2570345491449833e-05,
+   "aire_SQ": 2.5043039847630418e-05,
+   "rapport_aire_SQ_sur_repos": 0.6726796831691878,
+   "normale_repos": [
+    -0.76034,
+    -0.25865,
+    -0.59581
+   ],
+   "normale_SQ_unitaire": [
+    0.96044,
+    0.17669,
+    -0.21525
+   ],
+   "normale_LBS_unitaire": [
+    -0.61787,
+    0.24819,
+    0.74608
+   ],
+   "produit_normale_SQ_reference": -0.794020581590837,
+   "produit_normale_LBS_reference": 0.16143933510345457,
+   "produit_normale_SQ_repos_brut": -0.6477120688703779,
+   "poids_sommets": [
+    [
+     [
+      "mixamorig:LeftUpLeg",
+      0.7364
+     ],
+     [
+      "mixamorig:Hips",
+      0.2636
+     ]
+    ],
+    [
+     [
+      "mixamorig:LeftUpLeg",
+      0.8411
+     ],
+     [
+      "mixamorig:Hips",
+      0.1589
+     ]
+    ],
+    [
+     [
+      "mixamorig:LeftUpLeg",
+      0.7563
+     ],
+     [
+      "mixamorig:Hips",
+      0.2437
+     ]
+    ]
+   ],
+   "os_dominants": [
+    "mixamorig:LeftUpLeg",
+    "mixamorig:LeftUpLeg",
+    "mixamorig:LeftUpLeg"
+   ],
+   "angle_rotation_os_dominants_deg": [
+    60.0,
+    60.0,
+    60.0
+   ],
+   "angle_relatif_entre_os_dominants_deg": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "valeurs_singulieres_Mv_moyen": [
+    1.0,
+    0.90953,
+    0.90953
+   ],
+   "valeurs_singulieres_Dm_repos": [
+    0.01869,
+    0.00398
+   ],
+   "residu_relatif_local": 7.362892636939984e-15
+  },
+  {
+   "pose": "reelle_L_flex60",
+   "triangle": 7515,
+   "sommets": [
+    4242,
+    4226,
+    4216
+   ],
+   "repos": [
+    [
+     0.01229,
+     -0.04715,
+     0.91699
+    ],
+    [
+     0.01807,
+     -0.05908,
+     0.91479
+    ],
+    [
+     0.01749,
+     -0.06218,
+     0.92208
+    ]
+   ],
+   "LBS": [
+    [
+     0.01229,
+     -0.08024,
+     0.97557
+    ],
+    [
+     0.01807,
+     -0.08999,
+     0.9836
+    ],
+    [
+     0.01749,
+     -0.08499,
+     0.98428
+    ]
+   ],
+   "SQ": [
+    [
+     0.01229,
+     -0.06787,
+     0.95235
+    ],
+    [
+     0.01807,
+     -0.08157,
+     0.9669
+    ],
+    [
+     0.01749,
+     -0.0781,
+     0.9633
+    ]
+   ],
+   "aire_repos": 5.264166006719515e-05,
+   "aire_LBS": 2.6477513610933546e-05,
+   "aire_SQ": 8.71967081217512e-06,
+   "rapport_aire_SQ_sur_repos": 0.16564201814769483,
+   "normale_repos": [
+    -0.89097,
+    -0.38828,
+    -0.2354
+   ],
+   "normale_SQ_unitaire": [
+    -0.05593,
+    0.71582,
+    0.69604
+   ],
+   "normale_LBS_unitaire": [
+    -0.88322,
+    -0.16067,
+    0.44058
+   ],
+   "produit_normale_SQ_reference": -0.1923464279639852,
+   "produit_normale_LBS_reference": 0.9045984013461137,
+   "produit_normale_SQ_repos_brut": -0.3919490437396879,
+   "poids_sommets": [
+    [
+     [
+      "mixamorig:LeftUpLeg",
+      0.7364
+     ],
+     [
+      "mixamorig:Hips",
+      0.2636
+     ]
+    ],
+    [
+     [
+      "mixamorig:LeftUpLeg",
+      0.7563
+     ],
+     [
+      "mixamorig:Hips",
+      0.2437
+     ]
+    ],
+    [
+     [
+      "mixamorig:LeftUpLeg",
+      0.6908
+     ],
+     [
+      "mixamorig:Hips",
+      0.3092
+     ]
+    ]
+   ],
+   "os_dominants": [
+    "mixamorig:LeftUpLeg",
+    "mixamorig:LeftUpLeg",
+    "mixamorig:LeftUpLeg"
+   ],
+   "angle_rotation_os_dominants_deg": [
+    60.0,
+    60.0,
+    60.0
+   ],
+   "angle_relatif_entre_os_dominants_deg": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "valeurs_singulieres_Mv_moyen": [
+    1.0,
+    0.89549,
+    0.89549
+   ],
+   "valeurs_singulieres_Dm_repos": [
+    0.02083,
+    0.00505
+   ],
+   "residu_relatif_local": 7.820614957254855e-15
+  },
+  {
+   "pose": "reelle_R_combo_flex120_genou90",
+   "triangle": 7356,
+   "sommets": [
+    4145,
+    4135,
+    4144
+   ],
+   "repos": [
+    [
+     -0.01807,
+     -0.05908,
+     0.91479
+    ],
+    [
+     -0.01749,
+     -0.06218,
+     0.92208
+    ],
+    [
+     -0.04009,
+     -0.08121,
+     0.91743
+    ]
+   ],
+   "LBS": [
+    [
+     -0.01807,
+     -0.04589,
+     1.04473
+    ],
+    [
+     -0.01749,
+     -0.04256,
+     1.03507
+    ],
+    [
+     -0.04009,
+     -0.03899,
+     1.06663
+    ]
+   ],
+   "SQ": [
+    [
+     -0.01807,
+     -0.05074,
+     1.01111
+    ],
+    [
+     -0.01749,
+     -0.05278,
+     0.99552
+    ],
+    [
+     -0.04009,
+     -0.05506,
+     1.02991
+    ]
+   ],
+   "aire_repos": 0.00011863602239789106,
+   "aire_LBS": 0.00012793762443402356,
+   "aire_SQ": 0.00017607521205617577,
+   "rapport_aire_SQ_sur_repos": 1.4841631445265464,
+   "normale_repos": [
+    0.64563,
+    -0.68308,
+    -0.34142
+   ],
+   "normale_SQ_unitaire": [
+    -0.30064,
+    0.94416,
+    -0.13486
+   ],
+   "normale_LBS_unitaire": [
+    0.54537,
+    0.7819,
+    0.30201
+   ],
+   "produit_normale_SQ_reference": -0.4901792668350739,
+   "produit_normale_LBS_reference": 0.410807972799757,
+   "produit_normale_SQ_repos_brut": -0.7929841139259379,
+   "poids_sommets": [
+    [
+     [
+      "mixamorig:RightUpLeg",
+      0.7563
+     ],
+     [
+      "mixamorig:Hips",
+      0.2437
+     ]
+    ],
+    [
+     [
+      "mixamorig:RightUpLeg",
+      0.6908
+     ],
+     [
+      "mixamorig:Hips",
+      0.3092
+     ]
+    ],
+    [
+     [
+      "mixamorig:RightUpLeg",
+      0.7978
+     ],
+     [
+      "mixamorig:Hips",
+      0.2022
+     ]
+    ]
+   ],
+   "os_dominants": [
+    "mixamorig:RightUpLeg",
+    "mixamorig:RightUpLeg",
+    "mixamorig:RightUpLeg"
+   ],
+   "angle_rotation_os_dominants_deg": [
+    120.0,
+    120.0,
+    120.0
+   ],
+   "angle_relatif_entre_os_dominants_deg": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "valeurs_singulieres_Mv_moyen": [
+    1.0,
+    0.65951,
+    0.65951
+   ],
+   "valeurs_singulieres_Dm_repos": [
+    0.03143,
+    0.00755
+   ],
+   "residu_relatif_local": 1.1980497556960151e-14
+  },
+  {
+   "pose": "reelle_R_combo_flex120_genou90",
+   "triangle": 7358,
+   "sommets": [
+    4161,
+    4145,
+    4103
+   ],
+   "repos": [
+    [
+     -0.01229,
+     -0.04715,
+     0.91699
+    ],
+    [
+     -0.01807,
+     -0.05908,
+     0.91479
+    ],
+    [
+     -0.0098,
+     -0.03412,
+     0.91454
+    ]
+   ],
+   "LBS": [
+    [
+     -0.01229,
+     -0.04609,
+     1.03347
+    ],
+    [
+     -0.01807,
+     -0.04589,
+     1.04473
+    ],
+    [
+     -0.0098,
+     -0.04955,
+     1.02948
+    ]
+   ],
+   "SQ": [
+    [
+     -0.01229,
+     -0.0507,
+     0.98544
+    ],
+    [
+     -0.01807,
+     -0.05074,
+     1.01111
+    ],
+    [
+     -0.0098,
+     -0.04806,
+     0.98352
+    ]
+   ],
+   "aire_repos": 3.8098619362217404e-05,
+   "aire_LBS": 2.1631575842087396e-05,
+   "aire_SQ": 4.3628786719952594e-05,
+   "rapport_aire_SQ_sur_repos": 1.1451540095234918,
+   "normale_repos": [
+    0.75884,
+    -0.25749,
+    -0.59821
+   ],
+   "normale_SQ_unitaire": [
+    -0.77635,
+    0.6058,
+    -0.17402
+   ],
+   "normale_LBS_unitaire": [
+    0.88447,
+    0.11518,
+    0.45217
+   ],
+   "produit_normale_SQ_reference": -0.9786743830009293,
+   "produit_normale_LBS_reference": 0.7757114835891862,
+   "produit_normale_SQ_repos_brut": -0.6410198294292152,
+   "poids_sommets": [
+    [
+     [
+      "mixamorig:RightUpLeg",
+      0.7364
+     ],
+     [
+      "mixamorig:Hips",
+      0.2636
+     ]
+    ],
+    [
+     [
+      "mixamorig:RightUpLeg",
+      0.7563
+     ],
+     [
+      "mixamorig:Hips",
+      0.2437
+     ]
+    ],
+    [
+     [
+      "mixamorig:RightUpLeg",
+      0.7634
+     ],
+     [
+      "mixamorig:Hips",
+      0.2366
+     ]
+    ]
+   ],
+   "os_dominants": [
+    "mixamorig:RightUpLeg",
+    "mixamorig:RightUpLeg",
+    "mixamorig:RightUpLeg"
+   ],
+   "angle_rotation_os_dominants_deg": [
+    120.0,
+    120.0,
+    120.0
+   ],
+   "angle_relatif_entre_os_dominants_deg": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "valeurs_singulieres_Mv_moyen": [
+    1.0,
+    0.66375,
+    0.66375
+   ],
+   "valeurs_singulieres_Dm_repos": [
+    0.01859,
+    0.0041
+   ],
+   "residu_relatif_local": 1.3420141213370059e-14
+  },
+  {
+   "pose": "reelle_R_combo_flex120_genou90",
+   "triangle": 7384,
+   "sommets": [
+    4161,
+    4135,
+    4145
+   ],
+   "repos": [
+    [
+     -0.01229,
+     -0.04715,
+     0.91699
+    ],
+    [
+     -0.01749,
+     -0.06218,
+     0.92208
+    ],
+    [
+     -0.01807,
+     -0.05908,
+     0.91479
+    ]
+   ],
+   "LBS": [
+    [
+     -0.01229,
+     -0.04609,
+     1.03347
+    ],
+    [
+     -0.01749,
+     -0.04256,
+     1.03507
+    ],
+    [
+     -0.01807,
+     -0.04589,
+     1.04473
+    ]
+   ],
+   "SQ": [
+    [
+     -0.01229,
+     -0.0507,
+     0.98544
+    ],
+    [
+     -0.01749,
+     -0.05278,
+     0.99552
+    ],
+    [
+     -0.01807,
+     -0.05074,
+     1.01111
+    ]
+   ],
+   "aire_repos": 5.2642162313308886e-05,
+   "aire_LBS": 3.301036048120092e-05,
+   "aire_SQ": 4.643303232004798e-05,
+   "rapport_aire_SQ_sur_repos": 0.8820502479304289,
+   "normale_repos": [
+    0.89097,
+    -0.38828,
+    -0.23539
+   ],
+   "normale_SQ_unitaire": [
+    -0.5705,
+    0.81135,
+    -0.12741
+   ],
+   "normale_LBS_unitaire": [
+    0.59615,
+    0.74744,
+    0.29316
+   ],
+   "produit_normale_SQ_reference": -0.7051933466873552,
+   "produit_normale_LBS_reference": 0.5214274573687168,
+   "produit_normale_SQ_repos_brut": -0.7933461486590466,
+   "poids_sommets": [
+    [
+     [
+      "mixamorig:RightUpLeg",
+      0.7364
+     ],
+     [
+      "mixamorig:Hips",
+      0.2636
+     ]
+    ],
+    [
+     [
+      "mixamorig:RightUpLeg",
+      0.6908
+     ],
+     [
+      "mixamorig:Hips",
+      0.3092
+     ]
+    ],
+    [
+     [
+      "mixamorig:RightUpLeg",
+      0.7563
+     ],
+     [
+      "mixamorig:Hips",
+      0.2437
+     ]
+    ]
+   ],
+   "os_dominants": [
+    "mixamorig:RightUpLeg",
+    "mixamorig:RightUpLeg",
+    "mixamorig:RightUpLeg"
+   ],
+   "angle_rotation_os_dominants_deg": [
+    120.0,
+    120.0,
+    120.0
+   ],
+   "angle_relatif_entre_os_dominants_deg": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "valeurs_singulieres_Mv_moyen": [
+    1.0,
+    0.63697,
+    0.63696
+   ],
+   "valeurs_singulieres_Dm_repos": [
+    0.02083,
+    0.00505
+   ],
+   "residu_relatif_local": 1.3420141213370059e-14
+  },
+  {
+   "pose": "reelle_R_combo_flex60_abd20_int20_genou60",
+   "triangle": 7358,
+   "sommets": [
+    4161,
+    4145,
+    4103
+   ],
+   "repos": [
+    [
+     -0.01229,
+     -0.04715,
+     0.91699
+    ],
+    [
+     -0.01807,
+     -0.05908,
+     0.91479
+    ],
+    [
+     -0.0098,
+     -0.03412,
+     0.91454
+    ]
+   ],
+   "LBS": [
+    [
+     0.00145,
+     -0.05585,
+     0.94694
+    ],
+    [
+     0.00086,
+     -0.06606,
+     0.95451
+    ],
+    [
+     -0.00019,
+     -0.04929,
+     0.93828
+    ]
+   ],
+   "SQ": [
+    [
+     -0.00367,
+     -0.05523,
+     0.9366
+    ],
+    [
+     -0.00278,
+     -0.06676,
+     0.94751
+    ],
+    [
+     -0.00369,
+     -0.04606,
+     0.93034
+    ]
+   ],
+   "aire_repos": 3.8098619362217404e-05,
+   "aire_LBS": 2.359258114628672e-05,
+   "aire_SQ": 1.4758496742570612e-05,
+   "rapport_aire_SQ_sur_repos": 0.3873761566595426,
+   "normale_repos": [
+    0.75884,
+    -0.25749,
+    -0.59821
+   ],
+   "normale_SQ_unitaire": [
+    -0.94617,
+    0.18086,
+    0.26843
+   ],
+   "normale_LBS_unitaire": [
+    0.82015,
+    -0.37073,
+    -0.43579
+   ],
+   "produit_normale_SQ_reference": -0.9595085235471249,
+   "produit_normale_LBS_reference": 0.9998085621282672,
+   "produit_normale_SQ_repos_brut": -0.9251405647184467,
+   "poids_sommets": [
+    [
+     [
+      "mixamorig:RightUpLeg",
+      0.7364
+     ],
+     [
+      "mixamorig:Hips",
+      0.2636
+     ]
+    ],
+    [
+     [
+      "mixamorig:RightUpLeg",
+      0.7563
+     ],
+     [
+      "mixamorig:Hips",
+      0.2437
+     ]
+    ],
+    [
+     [
+      "mixamorig:RightUpLeg",
+      0.7634
+     ],
+     [
+      "mixamorig:Hips",
+      0.2366
+     ]
+    ]
+   ],
+   "os_dominants": [
+    "mixamorig:RightUpLeg",
+    "mixamorig:RightUpLeg",
+    "mixamorig:RightUpLeg"
+   ],
+   "angle_rotation_os_dominants_deg": [
+    62.48,
+    62.48,
+    62.48
+   ],
+   "angle_relatif_entre_os_dominants_deg": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "valeurs_singulieres_Mv_moyen": [
+    1.0,
+    0.89407,
+    0.89407
+   ],
+   "valeurs_singulieres_Dm_repos": [
+    0.01859,
+    0.0041
+   ],
+   "residu_relatif_local": 5.182015634399961e-15
+  },
+  {
+   "pose": "reelle_R_flex120",
+   "triangle": 7356,
+   "sommets": [
+    4145,
+    4135,
+    4144
+   ],
+   "repos": [
+    [
+     -0.01807,
+     -0.05908,
+     0.91479
+    ],
+    [
+     -0.01749,
+     -0.06218,
+     0.92208
+    ],
+    [
+     -0.04009,
+     -0.08121,
+     0.91743
+    ]
+   ],
+   "LBS": [
+    [
+     -0.01807,
+     -0.04589,
+     1.04473
+    ],
+    [
+     -0.01749,
+     -0.04256,
+     1.03507
+    ],
+    [
+     -0.04009,
+     -0.03899,
+     1.06663
+    ]
+   ],
+   "SQ": [
+    [
+     -0.01807,
+     -0.05074,
+     1.01111
+    ],
+    [
+     -0.01749,
+     -0.05278,
+     0.99552
+    ],
+    [
+     -0.04009,
+     -0.05506,
+     1.02991
+    ]
+   ],
+   "aire_repos": 0.00011863602239789106,
+   "aire_LBS": 0.00012793762443402356,
+   "aire_SQ": 0.00017607521205617577,
+   "rapport_aire_SQ_sur_repos": 1.4841631445265464,
+   "normale_repos": [
+    0.64563,
+    -0.68308,
+    -0.34142
+   ],
+   "normale_SQ_unitaire": [
+    -0.30064,
+    0.94416,
+    -0.13486
+   ],
+   "normale_LBS_unitaire": [
+    0.54537,
+    0.7819,
+    0.30201
+   ],
+   "produit_normale_SQ_reference": -0.4901792668350739,
+   "produit_normale_LBS_reference": 0.410807972799757,
+   "produit_normale_SQ_repos_brut": -0.7929841139259379,
+   "poids_sommets": [
+    [
+     [
+      "mixamorig:RightUpLeg",
+      0.7563
+     ],
+     [
+      "mixamorig:Hips",
+      0.2437
+     ]
+    ],
+    [
+     [
+      "mixamorig:RightUpLeg",
+      0.6908
+     ],
+     [
+      "mixamorig:Hips",
+      0.3092
+     ]
+    ],
+    [
+     [
+      "mixamorig:RightUpLeg",
+      0.7978
+     ],
+     [
+      "mixamorig:Hips",
+      0.2022
+     ]
+    ]
+   ],
+   "os_dominants": [
+    "mixamorig:RightUpLeg",
+    "mixamorig:RightUpLeg",
+    "mixamorig:RightUpLeg"
+   ],
+   "angle_rotation_os_dominants_deg": [
+    120.0,
+    120.0,
+    120.0
+   ],
+   "angle_relatif_entre_os_dominants_deg": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "valeurs_singulieres_Mv_moyen": [
+    1.0,
+    0.65951,
+    0.65951
+   ],
+   "valeurs_singulieres_Dm_repos": [
+    0.03143,
+    0.00755
+   ],
+   "residu_relatif_local": 1.1980497556960151e-14
+  },
+  {
+   "pose": "reelle_R_flex120",
+   "triangle": 7358,
+   "sommets": [
+    4161,
+    4145,
+    4103
+   ],
+   "repos": [
+    [
+     -0.01229,
+     -0.04715,
+     0.91699
+    ],
+    [
+     -0.01807,
+     -0.05908,
+     0.91479
+    ],
+    [
+     -0.0098,
+     -0.03412,
+     0.91454
+    ]
+   ],
+   "LBS": [
+    [
+     -0.01229,
+     -0.04609,
+     1.03347
+    ],
+    [
+     -0.01807,
+     -0.04589,
+     1.04473
+    ],
+    [
+     -0.0098,
+     -0.04955,
+     1.02948
+    ]
+   ],
+   "SQ": [
+    [
+     -0.01229,
+     -0.0507,
+     0.98544
+    ],
+    [
+     -0.01807,
+     -0.05074,
+     1.01111
+    ],
+    [
+     -0.0098,
+     -0.04806,
+     0.98352
+    ]
+   ],
+   "aire_repos": 3.8098619362217404e-05,
+   "aire_LBS": 2.1631575842087396e-05,
+   "aire_SQ": 4.3628786719952594e-05,
+   "rapport_aire_SQ_sur_repos": 1.1451540095234918,
+   "normale_repos": [
+    0.75884,
+    -0.25749,
+    -0.59821
+   ],
+   "normale_SQ_unitaire": [
+    -0.77635,
+    0.6058,
+    -0.17402
+   ],
+   "normale_LBS_unitaire": [
+    0.88447,
+    0.11518,
+    0.45217
+   ],
+   "produit_normale_SQ_reference": -0.9786743830009293,
+   "produit_normale_LBS_reference": 0.7757114835891862,
+   "produit_normale_SQ_repos_brut": -0.6410198294292152,
+   "poids_sommets": [
+    [
+     [
+      "mixamorig:RightUpLeg",
+      0.7364
+     ],
+     [
+      "mixamorig:Hips",
+      0.2636
+     ]
+    ],
+    [
+     [
+      "mixamorig:RightUpLeg",
+      0.7563
+     ],
+     [
+      "mixamorig:Hips",
+      0.2437
+     ]
+    ],
+    [
+     [
+      "mixamorig:RightUpLeg",
+      0.7634
+     ],
+     [
+      "mixamorig:Hips",
+      0.2366
+     ]
+    ]
+   ],
+   "os_dominants": [
+    "mixamorig:RightUpLeg",
+    "mixamorig:RightUpLeg",
+    "mixamorig:RightUpLeg"
+   ],
+   "angle_rotation_os_dominants_deg": [
+    120.0,
+    120.0,
+    120.0
+   ],
+   "angle_relatif_entre_os_dominants_deg": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "valeurs_singulieres_Mv_moyen": [
+    1.0,
+    0.66375,
+    0.66375
+   ],
+   "valeurs_singulieres_Dm_repos": [
+    0.01859,
+    0.0041
+   ],
+   "residu_relatif_local": 1.3420141213370059e-14
+  },
+  {
+   "pose": "reelle_R_flex120",
+   "triangle": 7384,
+   "sommets": [
+    4161,
+    4135,
+    4145
+   ],
+   "repos": [
+    [
+     -0.01229,
+     -0.04715,
+     0.91699
+    ],
+    [
+     -0.01749,
+     -0.06218,
+     0.92208
+    ],
+    [
+     -0.01807,
+     -0.05908,
+     0.91479
+    ]
+   ],
+   "LBS": [
+    [
+     -0.01229,
+     -0.04609,
+     1.03347
+    ],
+    [
+     -0.01749,
+     -0.04256,
+     1.03507
+    ],
+    [
+     -0.01807,
+     -0.04589,
+     1.04473
+    ]
+   ],
+   "SQ": [
+    [
+     -0.01229,
+     -0.0507,
+     0.98544
+    ],
+    [
+     -0.01749,
+     -0.05278,
+     0.99552
+    ],
+    [
+     -0.01807,
+     -0.05074,
+     1.01111
+    ]
+   ],
+   "aire_repos": 5.2642162313308886e-05,
+   "aire_LBS": 3.301036048120092e-05,
+   "aire_SQ": 4.643303232004798e-05,
+   "rapport_aire_SQ_sur_repos": 0.8820502479304289,
+   "normale_repos": [
+    0.89097,
+    -0.38828,
+    -0.23539
+   ],
+   "normale_SQ_unitaire": [
+    -0.5705,
+    0.81135,
+    -0.12741
+   ],
+   "normale_LBS_unitaire": [
+    0.59615,
+    0.74744,
+    0.29316
+   ],
+   "produit_normale_SQ_reference": -0.7051933466873552,
+   "produit_normale_LBS_reference": 0.5214274573687168,
+   "produit_normale_SQ_repos_brut": -0.7933461486590466,
+   "poids_sommets": [
+    [
+     [
+      "mixamorig:RightUpLeg",
+      0.7364
+     ],
+     [
+      "mixamorig:Hips",
+      0.2636
+     ]
+    ],
+    [
+     [
+      "mixamorig:RightUpLeg",
+      0.6908
+     ],
+     [
+      "mixamorig:Hips",
+      0.3092
+     ]
+    ],
+    [
+     [
+      "mixamorig:RightUpLeg",
+      0.7563
+     ],
+     [
+      "mixamorig:Hips",
+      0.2437
+     ]
+    ]
+   ],
+   "os_dominants": [
+    "mixamorig:RightUpLeg",
+    "mixamorig:RightUpLeg",
+    "mixamorig:RightUpLeg"
+   ],
+   "angle_rotation_os_dominants_deg": [
+    120.0,
+    120.0,
+    120.0
+   ],
+   "angle_relatif_entre_os_dominants_deg": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "valeurs_singulieres_Mv_moyen": [
+    1.0,
+    0.63697,
+    0.63696
+   ],
+   "valeurs_singulieres_Dm_repos": [
+    0.02083,
+    0.00505
+   ],
+   "residu_relatif_local": 1.3420141213370059e-14
+  },
+  {
+   "pose": "reelle_R_flex60",
+   "triangle": 7356,
+   "sommets": [
+    4145,
+    4135,
+    4144
+   ],
+   "repos": [
+    [
+     -0.01807,
+     -0.05908,
+     0.91479
+    ],
+    [
+     -0.01749,
+     -0.06218,
+     0.92208
+    ],
+    [
+     -0.04009,
+     -0.08121,
+     0.91743
+    ]
+   ],
+   "LBS": [
+    [
+     -0.01807,
+     -0.08999,
+     0.9836
+    ],
+    [
+     -0.01749,
+     -0.08499,
+     0.98428
+    ],
+    [
+     -0.04009,
+     -0.10317,
+     1.00425
+    ]
+   ],
+   "SQ": [
+    [
+     -0.01807,
+     -0.08187,
+     0.96565
+    ],
+    [
+     -0.01749,
+     -0.07832,
+     0.96251
+    ],
+    [
+     -0.04009,
+     -0.09875,
+     0.98093
+    ]
+   ],
+   "aire_repos": 0.00011863602239789106,
+   "aire_LBS": 7.72261724375975e-05,
+   "aire_SQ": 4.562503610290406e-05,
+   "rapport_aire_SQ_sur_repos": 0.3845799545595277,
+   "normale_repos": [
+    0.64563,
+    -0.68308,
+    -0.34142
+   ],
+   "normale_SQ_unitaire": [
+    0.0115,
+    0.66256,
+    0.74892
+   ],
+   "normale_LBS_unitaire": [
+    0.72678,
+    -0.17285,
+    0.66477
+   ],
+   "produit_normale_SQ_reference": -0.2793338467662611,
+   "produit_normale_LBS_reference": 0.7626629063241087,
+   "produit_normale_SQ_repos_brut": -0.7008503493205432,
+   "poids_sommets": [
+    [
+     [
+      "mixamorig:RightUpLeg",
+      0.7563
+     ],
+     [
+      "mixamorig:Hips",
+      0.2437
+     ]
+    ],
+    [
+     [
+      "mixamorig:RightUpLeg",
+      0.6908
+     ],
+     [
+      "mixamorig:Hips",
+      0.3092
+     ]
+    ],
+    [
+     [
+      "mixamorig:RightUpLeg",
+      0.7978
+     ],
+     [
+      "mixamorig:Hips",
+      0.2022
+     ]
+    ]
+   ],
+   "os_dominants": [
+    "mixamorig:RightUpLeg",
+    "mixamorig:RightUpLeg",
+    "mixamorig:RightUpLeg"
+   ],
+   "angle_rotation_os_dominants_deg": [
+    60.0,
+    60.0,
+    60.0
+   ],
+   "angle_relatif_entre_os_dominants_deg": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "valeurs_singulieres_Mv_moyen": [
+    1.0,
+    0.90092,
+    0.90092
+   ],
+   "valeurs_singulieres_Dm_repos": [
+    0.03143,
+    0.00755
+   ],
+   "residu_relatif_local": 5.122540004748095e-15
+  },
+  {
+   "pose": "reelle_R_flex60",
+   "triangle": 7358,
+   "sommets": [
+    4161,
+    4145,
+    4103
+   ],
+   "repos": [
+    [
+     -0.01229,
+     -0.04715,
+     0.91699
+    ],
+    [
+     -0.01807,
+     -0.05908,
+     0.91479
+    ],
+    [
+     -0.0098,
+     -0.03412,
+     0.91454
+    ]
+   ],
+   "LBS": [
+    [
+     -0.01229,
+     -0.08024,
+     0.97557
+    ],
+    [
+     -0.01807,
+     -0.08999,
+     0.9836
+    ],
+    [
+     -0.0098,
+     -0.07502,
+     0.96759
+    ]
+   ],
+   "SQ": [
+    [
+     -0.01229,
+     -0.06836,
+     0.95143
+    ],
+    [
+     -0.01807,
+     -0.08187,
+     0.96565
+    ],
+    [
+     -0.0098,
+     -0.06055,
+     0.94619
+    ]
+   ],
+   "aire_repos": 3.8098619362217404e-05,
+   "aire_LBS": 2.2381696743629078e-05,
+   "aire_SQ": 2.118304765785504e-05,
+   "rapport_aire_SQ_sur_repos": 0.5560056509255654,
+   "normale_repos": [
+    0.75884,
+    -0.25749,
+    -0.59821
+   ],
+   "normale_SQ_unitaire": [
+    -0.95454,
+    0.12219,
+    -0.27187
+   ],
+   "normale_LBS_unitaire": [
+    0.80124,
+    -0.5836,
+    -0.13198
+   ],
+   "produit_normale_SQ_reference": -0.7369284291806405,
+   "produit_normale_LBS_reference": 0.9941474786577127,
+   "produit_normale_SQ_repos_brut": -0.5931738750078235,
+   "poids_sommets": [
+    [
+     [
+      "mixamorig:RightUpLeg",
+      0.7364
+     ],
+     [
+      "mixamorig:Hips",
+      0.2636
+     ]
+    ],
+    [
+     [
+      "mixamorig:RightUpLeg",
+      0.7563
+     ],
+     [
+      "mixamorig:Hips",
+      0.2437
+     ]
+    ],
+    [
+     [
+      "mixamorig:RightUpLeg",
+      0.7634
+     ],
+     [
+      "mixamorig:Hips",
+      0.2366
+     ]
+    ]
+   ],
+   "os_dominants": [
+    "mixamorig:RightUpLeg",
+    "mixamorig:RightUpLeg",
+    "mixamorig:RightUpLeg"
+   ],
+   "angle_rotation_os_dominants_deg": [
+    60.0,
+    60.0,
+    60.0
+   ],
+   "angle_relatif_entre_os_dominants_deg": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "valeurs_singulieres_Mv_moyen": [
+    1.0,
+    0.90195,
+    0.90195
+   ],
+   "valeurs_singulieres_Dm_repos": [
+    0.01859,
+    0.0041
+   ],
+   "residu_relatif_local": 8.264364540993593e-15
+  }
+ ],
+ "classes": {
+  "generative_hanche_G_75": {
+   "1": 14550,
+   "2": 13,
+   "3": 2,
+   "4": 1
+  },
+  "generative_hanche_G_105": {
+   "1": 14547,
+   "2": 15,
+   "3": 3,
+   "4": 1
+  },
+  "generative_hanche_G_120": {
+   "1": 14545,
+   "2": 16,
+   "3": 4,
+   "4": 1
+  },
+  "reelle_L_abd30": {
+   "1": 14566,
+   "2": 0,
+   "3": 0,
+   "4": 0
+  },
+  "reelle_L_add20": {
+   "1": 14559,
+   "2": 7,
+   "3": 0,
+   "4": 0
+  },
+  "reelle_L_combo_flex120_genou90": {
+   "1": 14527,
+   "2": 26,
+   "3": 4,
+   "4": 9
+  },
+  "reelle_L_combo_flex60_abd20_int20_genou60": {
+   "1": 14545,
+   "2": 18,
+   "3": 3,
+   "4": 0
+  },
+  "reelle_L_combo_flex90_abd30_ext30": {
+   "1": 14555,
+   "2": 11,
+   "3": 0,
+   "4": 0
+  },
+  "reelle_L_ext30": {
+   "1": 14566,
+   "2": 0,
+   "3": 0,
+   "4": 0
+  },
+  "reelle_L_flex120": {
+   "1": 14545,
+   "2": 16,
+   "3": 4,
+   "4": 1
+  },
+  "reelle_L_flex30": {
+   "1": 14566,
+   "2": 0,
+   "3": 0,
+   "4": 0
+  },
+  "reelle_L_flex60": {
+   "1": 14554,
+   "2": 9,
+   "3": 3,
+   "4": 0
+  },
+  "reelle_L_genou30": {
+   "1": 14566,
+   "2": 0,
+   "3": 0,
+   "4": 0
+  },
+  "reelle_L_genou60": {
+   "1": 14554,
+   "2": 12,
+   "3": 0,
+   "4": 0
+  },
+  "reelle_L_genou90": {
+   "1": 14548,
+   "2": 10,
+   "3": 0,
+   "4": 8
+  },
+  "reelle_L_int30": {
+   "1": 14566,
+   "2": 0,
+   "3": 0,
+   "4": 0
+  },
+  "reelle_R_abd30": {
+   "1": 14566,
+   "2": 0,
+   "3": 0,
+   "4": 0
+  },
+  "reelle_R_add20": {
+   "1": 14561,
+   "2": 5,
+   "3": 0,
+   "4": 0
+  },
+  "reelle_R_combo_flex120_genou90": {
+   "1": 14527,
+   "2": 27,
+   "3": 3,
+   "4": 9
+  },
+  "reelle_R_combo_flex60_abd20_int20_genou60": {
+   "1": 14547,
+   "2": 18,
+   "3": 1,
+   "4": 0
+  },
+  "reelle_R_combo_flex90_abd30_ext30": {
+   "1": 14555,
+   "2": 11,
+   "3": 0,
+   "4": 0
+  },
+  "reelle_R_ext30": {
+   "1": 14566,
+   "2": 0,
+   "3": 0,
+   "4": 0
+  },
+  "reelle_R_flex120": {
+   "1": 14545,
+   "2": 17,
+   "3": 3,
+   "4": 1
+  },
+  "reelle_R_flex30": {
+   "1": 14566,
+   "2": 0,
+   "3": 0,
+   "4": 0
+  },
+  "reelle_R_flex60": {
+   "1": 14556,
+   "2": 8,
+   "3": 2,
+   "4": 0
+  },
+  "reelle_R_genou30": {
+   "1": 14566,
+   "2": 0,
+   "3": 0,
+   "4": 0
+  },
+  "reelle_R_genou60": {
+   "1": 14554,
+   "2": 12,
+   "3": 0,
+   "4": 0
+  },
+  "reelle_R_genou90": {
+   "1": 14548,
+   "2": 10,
+   "3": 0,
+   "4": 8
+  },
+  "reelle_R_int30": {
+   "1": 14566,
+   "2": 0,
+   "3": 0,
+   "4": 0
+  }
+ },
+ "conditionnement_M": {
+  "lambda_min": 0.09999999999999488,
+  "lambda_max": 20.263964571914418,
+  "cond": 202.63964571915454
+ },
+ "verification_categorie3": {
+  "nombre": 32,
+  "attendu": 32,
+  "toutes_categorie_3": true
+ }
+}

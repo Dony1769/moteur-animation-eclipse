@@ -1461,3 +1461,31 @@ Résultat (docs/rapports/phase4_psd_hanche_genou.json) : genou plis 0–4, étir
   meilleur que LBS et identique au féminin. Maria, sans régression maximale, aggrave davantage les hanches par arête.
 - Règle : ne jamais conclure à une amélioration globale à partir du maximum ; comparer les distributions et les
   proportions par région (voir RAPPORT_comparaison.md).
+
+## 208. Un décompte d'occurrences ne se lit pas comme un décompte de triangles
+- Constat : les « 32 retournements » de Maria sont 32 occurrences triangle × pose, réparties sur 7 triangles distincts
+  et 11 poses. Le texte de la demande et les premiers résumés les appelaient 32 triangles.
+- Correction : le rapport de Maria distingue occurrences et triangles distincts ; le JSON garde les deux.
+- Règle : toujours écrire l'unité du compte (occurrence, triangle distinct, arête×pose) à côté du nombre.
+
+## 209. Une affectation dure des poids ne démontre ni cause ni remède
+- Constat : remplacer les poids mixtes des sommets concernés par leur os dominant fait passer le total de 32 à 38
+  occurrences, et le contrôle à 31. Le test modifie aussi la géométrie résultante.
+- Règle : un tel test est une expérience de sensibilité, pas une preuve de mécanisme. Il ne permet pas de conclure
+  que les poids sont responsables ni qu'ils suffisent.
+
+## 210. Les caractéristiques d'un triangle retourné sont souvent des conséquences de sa déformation
+- Constat : l'angle des os dominants (AUC 0,90) et la contraction de Mv (AUC 0,88) séparent bien les retournements,
+  mais ils mesurent aussi la déformation elle-même.
+- Règle : une corrélation de ce type se rapporte comme observation confondue, jamais comme mécanisme démontré.
+
+## 211. Un taux de régression global peut masquer une queue de distribution différente
+- Constat : sur toute la surface, le taux de régression de Maria (0,50 %) est égal à celui du masculin (0,50 %) et du
+  féminin (0,51 %). Dans l'entrejambe, le p99 de SQ−LBS atteint 0,39 chez Maria contre 0,23 et 0,19.
+- Règle : comparer aussi les percentiles élevés par région ; un taux global égal ne prouve pas une distribution égale.
+
+## 212. Le volume d'un maillage ouvert ou multi-composantes n'est pas une mesure
+- Constat : Maria a 1 510 arêtes frontières et 73 composantes ; son volume signé ne peut pas être interprété. Le
+  masculin et le féminin sont fermés, orientés et connexes : leur volume est mesurable.
+- Règle : vérifier la fermeture, l'orientation et les composantes avant tout volume ; marquer le résultat non fiable
+  sinon. Un volume global ne prouve pas une conservation locale.

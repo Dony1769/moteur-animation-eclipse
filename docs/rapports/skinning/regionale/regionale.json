@@ -1,0 +1,1733 @@
+{
+ "protocole": {
+  "poses": [
+   "generative_hanche_G_75",
+   "generative_hanche_G_105",
+   "generative_hanche_G_120",
+   "reelle_L_abd30",
+   "reelle_L_add20",
+   "reelle_L_combo_flex120_genou90",
+   "reelle_L_combo_flex60_abd20_int20_genou60",
+   "reelle_L_combo_flex90_abd30_ext30",
+   "reelle_L_ext30",
+   "reelle_L_flex120",
+   "reelle_L_flex30",
+   "reelle_L_flex60",
+   "reelle_L_genou30",
+   "reelle_L_genou60",
+   "reelle_L_genou90",
+   "reelle_L_int30",
+   "reelle_R_abd30",
+   "reelle_R_add20",
+   "reelle_R_combo_flex120_genou90",
+   "reelle_R_combo_flex60_abd20_int20_genou60",
+   "reelle_R_combo_flex90_abd30_ext30",
+   "reelle_R_ext30",
+   "reelle_R_flex120",
+   "reelle_R_flex30",
+   "reelle_R_flex60",
+   "reelle_R_genou30",
+   "reelle_R_genou60",
+   "reelle_R_genou90",
+   "reelle_R_int30"
+  ],
+  "lambda": 0.1,
+  "normalisation": "distance entre hanches",
+  "regions": "comparaison.regions",
+  "arete_ge5mm": true
+ },
+ "phase3": {
+  "masculin": {
+   "autre": {
+    "aretes": 2436,
+    "aretes_regressees": 92,
+    "pourcentage_amelioration": 0.2512315270935961,
+    "pourcentage_regression": 0.03776683087027915,
+    "pourcentage_regression_ponderee_longueur": 0.04152099257264829,
+    "pourcentage_amelioration_ponderee_longueur": 0.24650633731302754,
+    "exc_percentiles_non_ponderes": {
+     "p50": -0.003364719412441153,
+     "p90": 0.02372812740775504,
+     "p95": 0.0439073720069772,
+     "p99": 0.08219609002958077
+    },
+    "exc_percentiles_ponderes_longueur": {
+     "p50": -0.0031092986135140433,
+     "p90": 0.027023834062321853,
+     "p95": 0.04655995566384299,
+     "p99": 0.0824674438609838
+    },
+    "deplacement_absolu_m_moyen": 0.00650951558518674,
+    "deplacement_absolu_m_p99": 0.020438200948511533,
+    "deplacement_normalise_hanche_p99": 0.09290301562017947,
+    "triangles": 1972,
+    "retournements_LBS": 0,
+    "retournements_SQ": 0,
+    "retournements_nouveaux_SQ": 0,
+    "deformation_surfacique_ponderee_aire": 0.03550167857067224,
+    "regressions_par_classe": {
+     "directe_mixte": 86,
+     "propagee_pure_anneau1_3": 6,
+     "pure_eloignee": 0
+    },
+    "aretes_par_classe": {
+     "directe_mixte": 2320,
+     "propagee_pure_anneau1_3": 116,
+     "pure_eloignee": 0
+    }
+   },
+   "bassin": {
+    "aretes": 229187,
+    "aretes_regressees": 911,
+    "pourcentage_amelioration": 0.0157993254416699,
+    "pourcentage_regression": 0.003974920043457962,
+    "pourcentage_regression_ponderee_longueur": 0.0068573116828813145,
+    "pourcentage_amelioration_ponderee_longueur": 0.030365615057861155,
+    "exc_percentiles_non_ponderes": {
+     "p50": -1.712643360463062e-10,
+     "p90": 0.00020354338670669484,
+     "p95": 0.0013312387827345434,
+     "p99": 0.021671476175860727
+    },
+    "exc_percentiles_ponderes_longueur": {
+     "p50": -1.184314347982133e-09,
+     "p90": 0.0009126439451618935,
+     "p95": 0.004742637872058304,
+     "p99": 0.0374605138279625
+    },
+    "deplacement_absolu_m_moyen": 0.00033620761342212125,
+    "deplacement_absolu_m_p99": 0.008538851062462612,
+    "deplacement_normalise_hanche_p99": 0.03881383765786505,
+    "triangles": 325902,
+    "retournements_LBS": 0,
+    "retournements_SQ": 0,
+    "retournements_nouveaux_SQ": 0,
+    "deformation_surfacique_ponderee_aire": 0.011196239843331535,
+    "regressions_par_classe": {
+     "directe_mixte": 911,
+     "propagee_pure_anneau1_3": 0,
+     "pure_eloignee": 0
+    },
+    "aretes_par_classe": {
+     "directe_mixte": 157325,
+     "propagee_pure_anneau1_3": 20155,
+     "pure_eloignee": 51707
+    }
+   },
+   "cuisse_D": {
+    "aretes": 105038,
+    "aretes_regressees": 50,
+    "pourcentage_amelioration": 0.013604600239913174,
+    "pourcentage_regression": 0.0004760182029360803,
+    "pourcentage_regression_ponderee_longueur": 0.0015151664960346908,
+    "pourcentage_amelioration_ponderee_longueur": 0.03360306336271925,
+    "exc_percentiles_non_ponderes": {
+     "p50": 1.20779752310618e-08,
+     "p90": 1.464041958070263e-05,
+     "p95": 0.0002354355861949756,
+     "p99": 0.007011061632883748
+    },
+    "exc_percentiles_ponderes_longueur": {
+     "p50": 9.769649808767706e-09,
+     "p90": 0.0002906887538859453,
+     "p95": 0.001905700787014417,
+     "p99": 0.01847961595572469
+    },
+    "deplacement_absolu_m_moyen": 0.00030928645405570014,
+    "deplacement_absolu_m_p99": 0.007964342235541676,
+    "deplacement_normalise_hanche_p99": 0.03620237480671553,
+    "triangles": 127977,
+    "retournements_LBS": 0,
+    "retournements_SQ": 0,
+    "retournements_nouveaux_SQ": 0,
+    "deformation_surfacique_ponderee_aire": 0.011860205648775471,
+    "regressions_par_classe": {
+     "directe_mixte": 47,
+     "propagee_pure_anneau1_3": 3,
+     "pure_eloignee": 0
+    },
+    "aretes_par_classe": {
+     "directe_mixte": 92713,
+     "propagee_pure_anneau1_3": 6902,
+     "pure_eloignee": 5423
+    }
+   },
+   "cuisse_G": {
+    "aretes": 105125,
+    "aretes_regressees": 85,
+    "pourcentage_amelioration": 0.014287752675386445,
+    "pourcentage_regression": 0.0008085612366230678,
+    "pourcentage_regression_ponderee_longueur": 0.0025159623781030823,
+    "pourcentage_amelioration_ponderee_longueur": 0.03561060337139181,
+    "exc_percentiles_non_ponderes": {
+     "p50": -4.949803678044873e-09,
+     "p90": 1.697692276900754e-05,
+     "p95": 0.00026697238141124485,
+     "p99": 0.00737761066850759
+    },
+    "exc_percentiles_ponderes_longueur": {
+     "p50": -6.52888532622716e-09,
+     "p90": 0.0003181942191280024,
+     "p95": 0.002001644173675936,
+     "p99": 0.020262530613577225
+    },
+    "deplacement_absolu_m_moyen": 0.00032236662262787676,
+    "deplacement_absolu_m_p99": 0.008374546850217874,
+    "deplacement_normalise_hanche_p99": 0.038066983429594727,
+    "triangles": 128035,
+    "retournements_LBS": 0,
+    "retournements_SQ": 0,
+    "retournements_nouveaux_SQ": 0,
+    "deformation_surfacique_ponderee_aire": 0.012574615092763797,
+    "regressions_par_classe": {
+     "directe_mixte": 79,
+     "propagee_pure_anneau1_3": 6,
+     "pure_eloignee": 0
+    },
+    "aretes_par_classe": {
+     "directe_mixte": 92452,
+     "propagee_pure_anneau1_3": 6815,
+     "pure_eloignee": 5858
+    }
+   },
+   "entrejambe": {
+    "aretes": 3741,
+    "aretes_regressees": 463,
+    "pourcentage_amelioration": 0.280940924886394,
+    "pourcentage_regression": 0.12376369954557605,
+    "pourcentage_regression_ponderee_longueur": 0.12868857718464397,
+    "pourcentage_amelioration_ponderee_longueur": 0.2607525157929762,
+    "exc_percentiles_non_ponderes": {
+     "p50": -0.00126675027021117,
+     "p90": 0.06193502159003583,
+     "p95": 0.11076729855102485,
+     "p99": 0.22955390104302456
+    },
+    "exc_percentiles_ponderes_longueur": {
+     "p50": -0.0009635888148575446,
+     "p90": 0.06772119196170924,
+     "p95": 0.11868211680472557,
+     "p99": 0.230145751731847
+    },
+    "deplacement_absolu_m_moyen": 0.005258851085930471,
+    "deplacement_absolu_m_p99": 0.028326704612403622,
+    "deplacement_normalise_hanche_p99": 0.12876066184612003,
+    "triangles": 3074,
+    "retournements_LBS": 23,
+    "retournements_SQ": 3,
+    "retournements_nouveaux_SQ": 0,
+    "deformation_surfacique_ponderee_aire": 0.1353963702565884,
+    "regressions_par_classe": {
+     "directe_mixte": 463,
+     "propagee_pure_anneau1_3": 0,
+     "pure_eloignee": 0
+    },
+    "aretes_par_classe": {
+     "directe_mixte": 3741,
+     "propagee_pure_anneau1_3": 0,
+     "pure_eloignee": 0
+    }
+   },
+   "frontiere": {
+    "aretes": 7888,
+    "aretes_regressees": 174,
+    "pourcentage_amelioration": 0.18559837728194725,
+    "pourcentage_regression": 0.022058823529411766,
+    "pourcentage_regression_ponderee_longueur": 0.026055208925115095,
+    "pourcentage_amelioration_ponderee_longueur": 0.20633059148145744,
+    "exc_percentiles_non_ponderes": {
+     "p50": -1.1097145411476106e-06,
+     "p90": 0.012033381888840601,
+     "p95": 0.02623011155028144,
+     "p99": 0.07642255957150307
+    },
+    "exc_percentiles_ponderes_longueur": {
+     "p50": -3.7275110775564995e-05,
+     "p90": 0.014906364840931335,
+     "p95": 0.03104836390714773,
+     "p99": 0.08179735823991449
+    },
+    "deplacement_absolu_m_moyen": 0.004109748508945882,
+    "deplacement_absolu_m_p99": 0.02289505609169834,
+    "deplacement_normalise_hanche_p99": 0.10407079170375033,
+    "triangles": 13804,
+    "retournements_LBS": 23,
+    "retournements_SQ": 0,
+    "retournements_nouveaux_SQ": 0,
+    "deformation_surfacique_ponderee_aire": 0.06495280103676056,
+    "regressions_par_classe": {
+     "directe_mixte": 173,
+     "propagee_pure_anneau1_3": 1,
+     "pure_eloignee": 0
+    },
+    "aretes_par_classe": {
+     "directe_mixte": 6322,
+     "propagee_pure_anneau1_3": 290,
+     "pure_eloignee": 1276
+    }
+   },
+   "genou_D": {
+    "aretes": 4611,
+    "aretes_regressees": 194,
+    "pourcentage_amelioration": 0.03621774018651052,
+    "pourcentage_regression": 0.04207330297115593,
+    "pourcentage_regression_ponderee_longueur": 0.04620444044817399,
+    "pourcentage_amelioration_ponderee_longueur": 0.038413326870627464,
+    "exc_percentiles_non_ponderes": {
+     "p50": 6.722252503355008e-05,
+     "p90": 0.016496443118136028,
+     "p95": 0.04005448395105771,
+     "p99": 0.1611433084889469
+    },
+    "exc_percentiles_ponderes_longueur": {
+     "p50": 0.00020995900144700507,
+     "p90": 0.01852036827643165,
+     "p95": 0.04474729134317945,
+     "p99": 0.17682634227203772
+    },
+    "deplacement_absolu_m_moyen": 0.0023969829443809113,
+    "deplacement_absolu_m_p99": 0.018426692286093057,
+    "deplacement_normalise_hanche_p99": 0.083759587529049,
+    "triangles": 4089,
+    "retournements_LBS": 22,
+    "retournements_SQ": 0,
+    "retournements_nouveaux_SQ": 0,
+    "deformation_surfacique_ponderee_aire": 0.04619756934053377,
+    "regressions_par_classe": {
+     "directe_mixte": 194,
+     "propagee_pure_anneau1_3": 0,
+     "pure_eloignee": 0
+    },
+    "aretes_par_classe": {
+     "directe_mixte": 4611,
+     "propagee_pure_anneau1_3": 0,
+     "pure_eloignee": 0
+    }
+   },
+   "genou_G": {
+    "aretes": 4553,
+    "aretes_regressees": 189,
+    "pourcentage_amelioration": 0.03821656050955414,
+    "pourcentage_regression": 0.04151109158796398,
+    "pourcentage_regression_ponderee_longueur": 0.04545081674849595,
+    "pourcentage_amelioration_ponderee_longueur": 0.04038514403261442,
+    "exc_percentiles_non_ponderes": {
+     "p50": 6.969320018868075e-05,
+     "p90": 0.016246128310775612,
+     "p95": 0.03916142528842382,
+     "p99": 0.1597244836846677
+    },
+    "exc_percentiles_ponderes_longueur": {
+     "p50": 0.00018396988726790978,
+     "p90": 0.0177692733756981,
+     "p95": 0.043328550562300415,
+     "p99": 0.16873359671095908
+    },
+    "deplacement_absolu_m_moyen": 0.0025042294058198905,
+    "deplacement_absolu_m_p99": 0.018865700542944383,
+    "deplacement_normalise_hanche_p99": 0.0857551247608432,
+    "triangles": 4002,
+    "retournements_LBS": 22,
+    "retournements_SQ": 0,
+    "retournements_nouveaux_SQ": 0,
+    "deformation_surfacique_ponderee_aire": 0.04626037253028132,
+    "regressions_par_classe": {
+     "directe_mixte": 189,
+     "propagee_pure_anneau1_3": 0,
+     "pure_eloignee": 0
+    },
+    "aretes_par_classe": {
+     "directe_mixte": 4553,
+     "propagee_pure_anneau1_3": 0,
+     "pure_eloignee": 0
+    }
+   },
+   "hanche_D": {
+    "aretes": 2755,
+    "aretes_regressees": 70,
+    "pourcentage_amelioration": 0.3045372050816697,
+    "pourcentage_regression": 0.025408348457350273,
+    "pourcentage_regression_ponderee_longueur": 0.02579918845579308,
+    "pourcentage_amelioration_ponderee_longueur": 0.3035861228340633,
+    "exc_percentiles_non_ponderes": {
+     "p50": -0.004622583012193426,
+     "p90": 0.007380811609162617,
+     "p95": 0.02353489436580945,
+     "p99": 0.09108652745939994
+    },
+    "exc_percentiles_ponderes_longueur": {
+     "p50": -0.004543523677385473,
+     "p90": 0.00760807492707387,
+     "p95": 0.024362291373632123,
+     "p99": 0.09174429801002934
+    },
+    "deplacement_absolu_m_moyen": 0.006393463073668914,
+    "deplacement_absolu_m_p99": 0.03180517084910089,
+    "deplacement_normalise_hanche_p99": 0.14457222979851792,
+    "triangles": 2378,
+    "retournements_LBS": 16,
+    "retournements_SQ": 0,
+    "retournements_nouveaux_SQ": 0,
+    "deformation_surfacique_ponderee_aire": 0.11263919677085321,
+    "regressions_par_classe": {
+     "directe_mixte": 70,
+     "propagee_pure_anneau1_3": 0,
+     "pure_eloignee": 0
+    },
+    "aretes_par_classe": {
+     "directe_mixte": 2668,
+     "propagee_pure_anneau1_3": 87,
+     "pure_eloignee": 0
+    }
+   },
+   "hanche_G": {
+    "aretes": 2755,
+    "aretes_regressees": 100,
+    "pourcentage_amelioration": 0.33248638838475497,
+    "pourcentage_regression": 0.036297640653357534,
+    "pourcentage_regression_ponderee_longueur": 0.037332298135870315,
+    "pourcentage_amelioration_ponderee_longueur": 0.3299920569649064,
+    "exc_percentiles_non_ponderes": {
+     "p50": -0.004043627549047857,
+     "p90": 0.009426948349235074,
+     "p95": 0.034182654043282024,
+     "p99": 0.10166538171634082
+    },
+    "exc_percentiles_ponderes_longueur": {
+     "p50": -0.0038939850786099952,
+     "p90": 0.00982254578268143,
+     "p95": 0.03576862680297441,
+     "p99": 0.10194460689138937
+    },
+    "deplacement_absolu_m_moyen": 0.007975705131075731,
+    "deplacement_absolu_m_p99": 0.033649669253719164,
+    "deplacement_normalise_hanche_p99": 0.15295650317597131,
+    "triangles": 2407,
+    "retournements_LBS": 25,
+    "retournements_SQ": 0,
+    "retournements_nouveaux_SQ": 0,
+    "deformation_surfacique_ponderee_aire": 0.16262617951324596,
+    "regressions_par_classe": {
+     "directe_mixte": 100,
+     "propagee_pure_anneau1_3": 0,
+     "pure_eloignee": 0
+    },
+    "aretes_par_classe": {
+     "directe_mixte": 2668,
+     "propagee_pure_anneau1_3": 87,
+     "pure_eloignee": 0
+    }
+   },
+   "__tous__": {
+    "aretes": 468089,
+    "aretes_regressees": 2328,
+    "pourcentage_amelioration": 0.025155472570387256,
+    "pourcentage_regression": 0.0049734131756994935,
+    "pourcentage_regression_ponderee_longueur": 0.010601603744298133,
+    "pourcentage_amelioration_ponderee_longueur": 0.05279161871559436,
+    "exc_percentiles_non_ponderes": {
+     "p50": -4.172728829132666e-11,
+     "p90": 0.00016952096629983,
+     "p95": 0.0016523745024421945,
+     "p99": 0.02599852521806955
+    },
+    "exc_percentiles_ponderes_longueur": {
+     "p50": -1.2042376208597832e-09,
+     "p90": 0.0015959221529715114,
+     "p95": 0.008218765914971752,
+     "p99": 0.0526862745392056
+    },
+    "deplacement_absolu_m_moyen": 0.0005841187838724892,
+    "deplacement_absolu_m_p99": 0.0122687708312639,
+    "deplacement_normalise_hanche_p99": 0.0557684020745633,
+    "triangles": 613640,
+    "retournements_LBS": 131,
+    "retournements_SQ": 3,
+    "retournements_nouveaux_SQ": 0,
+    "deformation_surfacique_ponderee_aire": 0.026767362217524817,
+    "regressions_par_classe": {
+     "directe_mixte": 2312,
+     "propagee_pure_anneau1_3": 16,
+     "pure_eloignee": 0
+    },
+    "aretes_par_classe": {
+     "directe_mixte": 369373,
+     "propagee_pure_anneau1_3": 34452,
+     "pure_eloignee": 64264
+    }
+   }
+  },
+  "feminin": {
+   "autre": {
+    "aretes": 3770,
+    "aretes_regressees": 222,
+    "pourcentage_amelioration": 0.19973474801061009,
+    "pourcentage_regression": 0.05888594164456233,
+    "pourcentage_regression_ponderee_longueur": 0.07071776166905755,
+    "pourcentage_amelioration_ponderee_longueur": 0.2005864643271517,
+    "exc_percentiles_non_ponderes": {
+     "p50": -3.895932206487984e-05,
+     "p90": 0.027105403411945533,
+     "p95": 0.05443026721583455,
+     "p99": 0.13196489751759907
+    },
+    "exc_percentiles_ponderes_longueur": {
+     "p50": -1.67819221505169e-05,
+     "p90": 0.03526486222321848,
+     "p95": 0.06281895595292404,
+     "p99": 0.14143170784468279
+    },
+    "deplacement_absolu_m_moyen": 0.004649069267047472,
+    "deplacement_absolu_m_p99": 0.021005219342053058,
+    "deplacement_normalise_hanche_p99": 0.09548043027643148,
+    "triangles": 2929,
+    "retournements_LBS": 0,
+    "retournements_SQ": 0,
+    "retournements_nouveaux_SQ": 0,
+    "deformation_surfacique_ponderee_aire": 0.03202911420407996,
+    "regressions_par_classe": {
+     "directe_mixte": 56,
+     "propagee_pure_anneau1_3": 166,
+     "pure_eloignee": 0
+    },
+    "aretes_par_classe": {
+     "directe_mixte": 2204,
+     "propagee_pure_anneau1_3": 1566,
+     "pure_eloignee": 0
+    }
+   },
+   "bassin": {
+    "aretes": 219733,
+    "aretes_regressees": 785,
+    "pourcentage_amelioration": 0.01621513382150155,
+    "pourcentage_regression": 0.003572517555396777,
+    "pourcentage_regression_ponderee_longueur": 0.00633121285822269,
+    "pourcentage_amelioration_ponderee_longueur": 0.03149713458214638,
+    "exc_percentiles_non_ponderes": {
+     "p50": -3.9289382858243016e-10,
+     "p90": 0.00018886888475910818,
+     "p95": 0.0012669826399284373,
+     "p99": 0.020626983523411822
+    },
+    "exc_percentiles_ponderes_longueur": {
+     "p50": -3.3838538671719395e-09,
+     "p90": 0.0007527438681087423,
+     "p95": 0.004473497126880463,
+     "p99": 0.0340878876130638
+    },
+    "deplacement_absolu_m_moyen": 0.0003409903031446292,
+    "deplacement_absolu_m_p99": 0.008978508318181493,
+    "deplacement_normalise_hanche_p99": 0.040812324951266035,
+    "triangles": 322828,
+    "retournements_LBS": 0,
+    "retournements_SQ": 0,
+    "retournements_nouveaux_SQ": 0,
+    "deformation_surfacique_ponderee_aire": 0.01046961582488527,
+    "regressions_par_classe": {
+     "directe_mixte": 785,
+     "propagee_pure_anneau1_3": 0,
+     "pure_eloignee": 0
+    },
+    "aretes_par_classe": {
+     "directe_mixte": 178089,
+     "propagee_pure_anneau1_3": 11165,
+     "pure_eloignee": 30479
+    }
+   },
+   "cuisse_D": {
+    "aretes": 97498,
+    "aretes_regressees": 61,
+    "pourcentage_amelioration": 0.009979691891115715,
+    "pourcentage_regression": 0.0006256538595663501,
+    "pourcentage_regression_ponderee_longueur": 0.0019703707622109935,
+    "pourcentage_amelioration_ponderee_longueur": 0.02705646431843008,
+    "exc_percentiles_non_ponderes": {
+     "p50": 9.234990494544348e-09,
+     "p90": 3.453794646723912e-06,
+     "p95": 6.923155422899163e-05,
+     "p99": 0.004078654704547246
+    },
+    "exc_percentiles_ponderes_longueur": {
+     "p50": 5.3868896254771414e-09,
+     "p90": 9.623821475927977e-05,
+     "p95": 0.0009119388827326065,
+     "p99": 0.017180313642596288
+    },
+    "deplacement_absolu_m_moyen": 0.00024047634509252695,
+    "deplacement_absolu_m_p99": 0.006944138350632303,
+    "deplacement_normalise_hanche_p99": 0.03156497948536236,
+    "triangles": 126672,
+    "retournements_LBS": 0,
+    "retournements_SQ": 0,
+    "retournements_nouveaux_SQ": 0,
+    "deformation_surfacique_ponderee_aire": 0.0099018509818889,
+    "regressions_par_classe": {
+     "directe_mixte": 15,
+     "propagee_pure_anneau1_3": 46,
+     "pure_eloignee": 0
+    },
+    "aretes_par_classe": {
+     "directe_mixte": 89291,
+     "propagee_pure_anneau1_3": 6206,
+     "pure_eloignee": 2001
+    }
+   },
+   "cuisse_G": {
+    "aretes": 97701,
+    "aretes_regressees": 124,
+    "pourcentage_amelioration": 0.01070613402114615,
+    "pourcentage_regression": 0.0012691784116846297,
+    "pourcentage_regression_ponderee_longueur": 0.004026507307937695,
+    "pourcentage_amelioration_ponderee_longueur": 0.029135486677637656,
+    "exc_percentiles_non_ponderes": {
+     "p50": -1.1826225332356444e-08,
+     "p90": 4.403295172705768e-06,
+     "p95": 8.660852120523366e-05,
+     "p99": 0.005057509725815645
+    },
+    "exc_percentiles_ponderes_longueur": {
+     "p50": -1.5790500419180954e-08,
+     "p90": 0.00011481759843743113,
+     "p95": 0.001129031250596007,
+     "p99": 0.023314987766623625
+    },
+    "deplacement_absolu_m_moyen": 0.0002554116168450598,
+    "deplacement_absolu_m_p99": 0.00743275277476592,
+    "deplacement_normalise_hanche_p99": 0.033786004398068115,
+    "triangles": 126904,
+    "retournements_LBS": 0,
+    "retournements_SQ": 0,
+    "retournements_nouveaux_SQ": 0,
+    "deformation_surfacique_ponderee_aire": 0.01073019181074993,
+    "regressions_par_classe": {
+     "directe_mixte": 37,
+     "propagee_pure_anneau1_3": 87,
+     "pure_eloignee": 0
+    },
+    "aretes_par_classe": {
+     "directe_mixte": 89320,
+     "propagee_pure_anneau1_3": 6293,
+     "pure_eloignee": 2088
+    }
+   },
+   "entrejambe": {
+    "aretes": 4002,
+    "aretes_regressees": 347,
+    "pourcentage_amelioration": 0.30059970014992504,
+    "pourcentage_regression": 0.08670664667666167,
+    "pourcentage_regression_ponderee_longueur": 0.09288420517031208,
+    "pourcentage_amelioration_ponderee_longueur": 0.2845247010222478,
+    "exc_percentiles_non_ponderes": {
+     "p50": -0.001846555537358907,
+     "p90": 0.043485475532616585,
+     "p95": 0.08243899549595332,
+     "p99": 0.1864850284995684
+    },
+    "exc_percentiles_ponderes_longueur": {
+     "p50": -0.0015267565274527382,
+     "p90": 0.04685973773231068,
+     "p95": 0.0866321668859829,
+     "p99": 0.22623418658418504
+    },
+    "deplacement_absolu_m_moyen": 0.005792023656431813,
+    "deplacement_absolu_m_p99": 0.024691132443538082,
+    "deplacement_normalise_hanche_p99": 0.11223495986074042,
+    "triangles": 3306,
+    "retournements_LBS": 6,
+    "retournements_SQ": 0,
+    "retournements_nouveaux_SQ": 0,
+    "deformation_surfacique_ponderee_aire": 0.11867858384515224,
+    "regressions_par_classe": {
+     "directe_mixte": 347,
+     "propagee_pure_anneau1_3": 0,
+     "pure_eloignee": 0
+    },
+    "aretes_par_classe": {
+     "directe_mixte": 4002,
+     "propagee_pure_anneau1_3": 0,
+     "pure_eloignee": 0
+    }
+   },
+   "frontiere": {
+    "aretes": 8700,
+    "aretes_regressees": 155,
+    "pourcentage_amelioration": 0.1660919540229885,
+    "pourcentage_regression": 0.017816091954022988,
+    "pourcentage_regression_ponderee_longueur": 0.021494552147042167,
+    "pourcentage_amelioration_ponderee_longueur": 0.18588481559242898,
+    "exc_percentiles_non_ponderes": {
+     "p50": -1.0485774213919719e-06,
+     "p90": 0.010421320846812089,
+     "p95": 0.02385500919550292,
+     "p99": 0.0682370553203267
+    },
+    "exc_percentiles_ponderes_longueur": {
+     "p50": -5.105446958301854e-06,
+     "p90": 0.012635366341197805,
+     "p95": 0.028459786070381254,
+     "p99": 0.07746434683355752
+    },
+    "deplacement_absolu_m_moyen": 0.003779976848831998,
+    "deplacement_absolu_m_p99": 0.0230459495069539,
+    "deplacement_normalise_hanche_p99": 0.10475668638448983,
+    "triangles": 15631,
+    "retournements_LBS": 18,
+    "retournements_SQ": 0,
+    "retournements_nouveaux_SQ": 0,
+    "deformation_surfacique_ponderee_aire": 0.05590912401728647,
+    "regressions_par_classe": {
+     "directe_mixte": 140,
+     "propagee_pure_anneau1_3": 15,
+     "pure_eloignee": 0
+    },
+    "aretes_par_classe": {
+     "directe_mixte": 7250,
+     "propagee_pure_anneau1_3": 1392,
+     "pure_eloignee": 58
+    }
+   },
+   "genou_D": {
+    "aretes": 5742,
+    "aretes_regressees": 220,
+    "pourcentage_amelioration": 0.03761755485893417,
+    "pourcentage_regression": 0.038314176245210725,
+    "pourcentage_regression_ponderee_longueur": 0.04004236516489425,
+    "pourcentage_amelioration_ponderee_longueur": 0.04040294078544443,
+    "exc_percentiles_non_ponderes": {
+     "p50": 5.710459942576129e-05,
+     "p90": 0.01306038398419872,
+     "p95": 0.03708603916279676,
+     "p99": 0.16290173384553494
+    },
+    "exc_percentiles_ponderes_longueur": {
+     "p50": 0.00017952355173486177,
+     "p90": 0.014341955095272382,
+     "p95": 0.038812678792480085,
+     "p99": 0.1950140039992867
+    },
+    "deplacement_absolu_m_moyen": 0.0020894248214518027,
+    "deplacement_absolu_m_p99": 0.018709463100106433,
+    "deplacement_normalise_hanche_p99": 0.08504493849596609,
+    "triangles": 5191,
+    "retournements_LBS": 54,
+    "retournements_SQ": 0,
+    "retournements_nouveaux_SQ": 0,
+    "deformation_surfacique_ponderee_aire": 0.05114195034162903,
+    "regressions_par_classe": {
+     "directe_mixte": 218,
+     "propagee_pure_anneau1_3": 2,
+     "pure_eloignee": 0
+    },
+    "aretes_par_classe": {
+     "directe_mixte": 5162,
+     "propagee_pure_anneau1_3": 580,
+     "pure_eloignee": 0
+    }
+   },
+   "genou_G": {
+    "aretes": 5684,
+    "aretes_regressees": 224,
+    "pourcentage_amelioration": 0.03536242083040113,
+    "pourcentage_regression": 0.03940886699507389,
+    "pourcentage_regression_ponderee_longueur": 0.04119741314291732,
+    "pourcentage_amelioration_ponderee_longueur": 0.03813987578218218,
+    "exc_percentiles_non_ponderes": {
+     "p50": 7.804798414767777e-05,
+     "p90": 0.01573850922869836,
+     "p95": 0.0377468321099928,
+     "p99": 0.15293996454624167
+    },
+    "exc_percentiles_ponderes_longueur": {
+     "p50": 0.0002481614290417244,
+     "p90": 0.01687620320830355,
+     "p95": 0.039830553907164536,
+     "p99": 0.19390933646192088
+    },
+    "deplacement_absolu_m_moyen": 0.0021408376051742324,
+    "deplacement_absolu_m_p99": 0.018619397622819948,
+    "deplacement_normalise_hanche_p99": 0.08463554069895526,
+    "triangles": 5162,
+    "retournements_LBS": 54,
+    "retournements_SQ": 0,
+    "retournements_nouveaux_SQ": 0,
+    "deformation_surfacique_ponderee_aire": 0.05254684309636621,
+    "regressions_par_classe": {
+     "directe_mixte": 221,
+     "propagee_pure_anneau1_3": 3,
+     "pure_eloignee": 0
+    },
+    "aretes_par_classe": {
+     "directe_mixte": 5133,
+     "propagee_pure_anneau1_3": 551,
+     "pure_eloignee": 0
+    }
+   },
+   "hanche_D": {
+    "aretes": 2871,
+    "aretes_regressees": 69,
+    "pourcentage_amelioration": 0.29292929292929293,
+    "pourcentage_regression": 0.024033437826541274,
+    "pourcentage_regression_ponderee_longueur": 0.025012749481286848,
+    "pourcentage_amelioration_ponderee_longueur": 0.29475212782674576,
+    "exc_percentiles_non_ponderes": {
+     "p50": -0.004148374632555463,
+     "p90": 0.006231994248649286,
+     "p95": 0.021738762047880167,
+     "p99": 0.09294898906014681
+    },
+    "exc_percentiles_ponderes_longueur": {
+     "p50": -0.004158882663862696,
+     "p90": 0.006363874994365965,
+     "p95": 0.022447719347642787,
+     "p99": 0.0935576785832918
+    },
+    "deplacement_absolu_m_moyen": 0.006482585042212605,
+    "deplacement_absolu_m_p99": 0.03525703124177715,
+    "deplacement_normalise_hanche_p99": 0.16026285935966997,
+    "triangles": 2523,
+    "retournements_LBS": 17,
+    "retournements_SQ": 0,
+    "retournements_nouveaux_SQ": 0,
+    "deformation_surfacique_ponderee_aire": 0.11056038727649206,
+    "regressions_par_classe": {
+     "directe_mixte": 69,
+     "propagee_pure_anneau1_3": 0,
+     "pure_eloignee": 0
+    },
+    "aretes_par_classe": {
+     "directe_mixte": 2233,
+     "propagee_pure_anneau1_3": 638,
+     "pure_eloignee": 0
+    }
+   },
+   "hanche_G": {
+    "aretes": 2813,
+    "aretes_regressees": 93,
+    "pourcentage_amelioration": 0.323498044792037,
+    "pourcentage_regression": 0.03306078919303235,
+    "pourcentage_regression_ponderee_longueur": 0.03407522360377,
+    "pourcentage_amelioration_ponderee_longueur": 0.32345669391102555,
+    "exc_percentiles_non_ponderes": {
+     "p50": -0.003934906413809447,
+     "p90": 0.008475570743447382,
+     "p95": 0.03155792374825225,
+     "p99": 0.12570469373124896
+    },
+    "exc_percentiles_ponderes_longueur": {
+     "p50": -0.003896453491869267,
+     "p90": 0.00884400116603528,
+     "p95": 0.03242836290909619,
+     "p99": 0.1258651739916221
+    },
+    "deplacement_absolu_m_moyen": 0.008101248831993913,
+    "deplacement_absolu_m_p99": 0.03638072063042921,
+    "deplacement_normalise_hanche_p99": 0.16537065397863696,
+    "triangles": 2494,
+    "retournements_LBS": 37,
+    "retournements_SQ": 0,
+    "retournements_nouveaux_SQ": 0,
+    "deformation_surfacique_ponderee_aire": 0.16383642852044694,
+    "regressions_par_classe": {
+     "directe_mixte": 93,
+     "propagee_pure_anneau1_3": 0,
+     "pure_eloignee": 0
+    },
+    "aretes_par_classe": {
+     "directe_mixte": 2204,
+     "propagee_pure_anneau1_3": 609,
+     "pure_eloignee": 0
+    }
+   },
+   "__tous__": {
+    "aretes": 448514,
+    "aretes_regressees": 2300,
+    "pourcentage_amelioration": 0.024862100179704534,
+    "pourcentage_regression": 0.0051280450554497745,
+    "pourcentage_regression_ponderee_longueur": 0.010939084358767205,
+    "pourcentage_amelioration_ponderee_longueur": 0.05278612579608108,
+    "exc_percentiles_non_ponderes": {
+     "p50": -4.1874487211046585e-10,
+     "p90": 0.0001332343157956719,
+     "p95": 0.001458808210470987,
+     "p99": 0.02729164587095491
+    },
+    "exc_percentiles_ponderes_longueur": {
+     "p50": -4.103921504194587e-09,
+     "p90": 0.0014236638423497149,
+     "p95": 0.008137953561262658,
+     "p99": 0.053561252078280865
+    },
+    "deplacement_absolu_m_moyen": 0.0005852337644753888,
+    "deplacement_absolu_m_p99": 0.012358924109425495,
+    "deplacement_normalise_hanche_p99": 0.05617819897549196,
+    "triangles": 613640,
+    "retournements_LBS": 186,
+    "retournements_SQ": 0,
+    "retournements_nouveaux_SQ": 0,
+    "deformation_surfacique_ponderee_aire": 0.027273551438777677,
+    "regressions_par_classe": {
+     "directe_mixte": 1981,
+     "propagee_pure_anneau1_3": 319,
+     "pure_eloignee": 0
+    },
+    "aretes_par_classe": {
+     "directe_mixte": 384888,
+     "propagee_pure_anneau1_3": 29000,
+     "pure_eloignee": 34626
+    }
+   }
+  },
+  "maria": {
+   "autre": {
+    "aretes": 9860,
+    "aretes_regressees": 99,
+    "pourcentage_amelioration": 0.03671399594320487,
+    "pourcentage_regression": 0.010040567951318458,
+    "pourcentage_regression_ponderee_longueur": 0.008035055322870637,
+    "pourcentage_amelioration_ponderee_longueur": 0.0340320151775544,
+    "exc_percentiles_non_ponderes": {
+     "p50": 5.981114381548025e-08,
+     "p90": 0.0003072588039781943,
+     "p95": 0.008704547154354297,
+     "p99": 0.050315976998480186
+    },
+    "exc_percentiles_ponderes_longueur": {
+     "p50": 6.499648042002093e-08,
+     "p90": 0.0004533188431874438,
+     "p95": 0.007362426143051181,
+     "p99": 0.041477662118887926
+    },
+    "deplacement_absolu_m_moyen": 0.0015519947677071788,
+    "deplacement_absolu_m_p99": 0.03311766078628716,
+    "deplacement_normalise_hanche_p99": 0.17090760738875113,
+    "triangles": 5336,
+    "retournements_LBS": 0,
+    "retournements_SQ": 0,
+    "retournements_nouveaux_SQ": 0,
+    "deformation_surfacique_ponderee_aire": 0.004290321595744059,
+    "regressions_par_classe": {
+     "directe_mixte": 94,
+     "propagee_pure_anneau1_3": 5,
+     "pure_eloignee": 0
+    },
+    "aretes_par_classe": {
+     "directe_mixte": 6496,
+     "propagee_pure_anneau1_3": 3364,
+     "pure_eloignee": 0
+    }
+   },
+   "bassin": {
+    "aretes": 481429,
+    "aretes_regressees": 20,
+    "pourcentage_amelioration": 0.0004902072787472296,
+    "pourcentage_regression": 4.1542989724341494e-05,
+    "pourcentage_regression_ponderee_longueur": 4.3239258339299684e-05,
+    "pourcentage_amelioration_ponderee_longueur": 0.000833687755430272,
+    "exc_percentiles_non_ponderes": {
+     "p50": 6.156248077981985e-08,
+     "p90": 3.053104515871041e-07,
+     "p95": 7.002235067332663e-07,
+     "p99": 2.63766307295743e-06
+    },
+    "exc_percentiles_ponderes_longueur": {
+     "p50": 5.0895523684424404e-08,
+     "p90": 2.617836600826706e-07,
+     "p95": 6.402020477080939e-07,
+     "p99": 2.4044849576965177e-06
+    },
+    "deplacement_absolu_m_moyen": 1.3138987147957925e-05,
+    "deplacement_absolu_m_p99": 4.5073117020771024e-07,
+    "deplacement_normalise_hanche_p99": 2.3260515400782316e-06,
+    "triangles": 344230,
+    "retournements_LBS": 0,
+    "retournements_SQ": 0,
+    "retournements_nouveaux_SQ": 0,
+    "deformation_surfacique_ponderee_aire": 5.259773250603531e-05,
+    "regressions_par_classe": {
+     "directe_mixte": 20,
+     "propagee_pure_anneau1_3": 0,
+     "pure_eloignee": 0
+    },
+    "aretes_par_classe": {
+     "directe_mixte": 204508,
+     "propagee_pure_anneau1_3": 75777,
+     "pure_eloignee": 201144
+    }
+   },
+   "cuisse_D": {
+    "aretes": 27521,
+    "aretes_regressees": 216,
+    "pourcentage_amelioration": 0.02390901493405036,
+    "pourcentage_regression": 0.007848552014825042,
+    "pourcentage_regression_ponderee_longueur": 0.008054515592829329,
+    "pourcentage_amelioration_ponderee_longueur": 0.024377091202436585,
+    "exc_percentiles_non_ponderes": {
+     "p50": -4.695639099772109e-08,
+     "p90": 1.0664513522273822e-06,
+     "p95": 0.0017178165139821733,
+     "p99": 0.03941009432774691
+    },
+    "exc_percentiles_ponderes_longueur": {
+     "p50": -1.0516758452983055e-07,
+     "p90": 1.3712373631014074e-06,
+     "p95": 0.0025199540060068812,
+     "p99": 0.040890142343101024
+    },
+    "deplacement_absolu_m_moyen": 0.0010157789564608144,
+    "deplacement_absolu_m_p99": 0.01922513112070794,
+    "deplacement_normalise_hanche_p99": 0.0992135641094468,
+    "triangles": 17371,
+    "retournements_LBS": 2,
+    "retournements_SQ": 0,
+    "retournements_nouveaux_SQ": 0,
+    "deformation_surfacique_ponderee_aire": 0.005152404036955187,
+    "regressions_par_classe": {
+     "directe_mixte": 183,
+     "propagee_pure_anneau1_3": 33,
+     "pure_eloignee": 0
+    },
+    "aretes_par_classe": {
+     "directe_mixte": 10179,
+     "propagee_pure_anneau1_3": 10237,
+     "pure_eloignee": 7105
+    }
+   },
+   "cuisse_G": {
+    "aretes": 27521,
+    "aretes_regressees": 289,
+    "pourcentage_amelioration": 0.03208458994949311,
+    "pourcentage_regression": 0.010501071908724248,
+    "pourcentage_regression_ponderee_longueur": 0.011278516342534285,
+    "pourcentage_amelioration_ponderee_longueur": 0.032873935363447127,
+    "exc_percentiles_non_ponderes": {
+     "p50": -2.1890090406984086e-08,
+     "p90": 7.172778772490673e-06,
+     "p95": 0.002963610998127475,
+     "p99": 0.05206485889658066
+    },
+    "exc_percentiles_ponderes_longueur": {
+     "p50": -4.9885576114405694e-08,
+     "p90": 0.00011530821056659796,
+     "p95": 0.00395865942093214,
+     "p99": 0.05743006270514267
+    },
+    "deplacement_absolu_m_moyen": 0.0011925415669472676,
+    "deplacement_absolu_m_p99": 0.024525017472860258,
+    "deplacement_normalise_hanche_p99": 0.1265642547794142,
+    "triangles": 17371,
+    "retournements_LBS": 2,
+    "retournements_SQ": 0,
+    "retournements_nouveaux_SQ": 0,
+    "deformation_surfacique_ponderee_aire": 0.0070990362879201465,
+    "regressions_par_classe": {
+     "directe_mixte": 236,
+     "propagee_pure_anneau1_3": 53,
+     "pure_eloignee": 0
+    },
+    "aretes_par_classe": {
+     "directe_mixte": 10179,
+     "propagee_pure_anneau1_3": 10237,
+     "pure_eloignee": 7105
+    }
+   },
+   "entrejambe": {
+    "aretes": 11745,
+    "aretes_regressees": 1194,
+    "pourcentage_amelioration": 0.20085142613878246,
+    "pourcentage_regression": 0.1016602809706258,
+    "pourcentage_regression_ponderee_longueur": 0.1044621275667527,
+    "pourcentage_amelioration_ponderee_longueur": 0.19950020548875438,
+    "exc_percentiles_non_ponderes": {
+     "p50": 0.0,
+     "p90": 0.05087317712156392,
+     "p95": 0.1347331992446679,
+     "p99": 0.3853777626413978
+    },
+    "exc_percentiles_ponderes_longueur": {
+     "p50": 1.1102230246251565e-16,
+     "p90": 0.05327145157568029,
+     "p95": 0.12736559360088104,
+     "p99": 0.34084738405558146
+    },
+    "deplacement_absolu_m_moyen": 0.006620195837358005,
+    "deplacement_absolu_m_p99": 0.04573504388409613,
+    "deplacement_normalise_hanche_p99": 0.23602110591358327,
+    "triangles": 6844,
+    "retournements_LBS": 107,
+    "retournements_SQ": 39,
+    "retournements_nouveaux_SQ": 32,
+    "deformation_surfacique_ponderee_aire": 0.05983635127719182,
+    "regressions_par_classe": {
+     "directe_mixte": 1169,
+     "propagee_pure_anneau1_3": 25,
+     "pure_eloignee": 0
+    },
+    "aretes_par_classe": {
+     "directe_mixte": 6757,
+     "propagee_pure_anneau1_3": 116,
+     "pure_eloignee": 4872
+    }
+   },
+   "frontiere": {
+    "aretes": 21431,
+    "aretes_regressees": 576,
+    "pourcentage_amelioration": 0.05902664364705333,
+    "pourcentage_regression": 0.02687695394521954,
+    "pourcentage_regression_ponderee_longueur": 0.030797482910851947,
+    "pourcentage_amelioration_ponderee_longueur": 0.06414700115101328,
+    "exc_percentiles_non_ponderes": {
+     "p50": 1.5543122344752192e-15,
+     "p90": 0.0012366095452113202,
+     "p95": 0.019443885924380844,
+     "p99": 0.10693260598093365
+    },
+    "exc_percentiles_ponderes_longueur": {
+     "p50": 1.5543122344752192e-15,
+     "p90": 0.0020380113901469063,
+     "p95": 0.023449866297669934,
+     "p99": 0.13443154375397828
+    },
+    "deplacement_absolu_m_moyen": 0.0026956446564776163,
+    "deplacement_absolu_m_p99": 0.037039139885722515,
+    "deplacement_normalise_hanche_p99": 0.1911448643204666,
+    "triangles": 20184,
+    "retournements_LBS": 56,
+    "retournements_SQ": 0,
+    "retournements_nouveaux_SQ": 0,
+    "deformation_surfacique_ponderee_aire": 0.017067909028963463,
+    "regressions_par_classe": {
+     "directe_mixte": 570,
+     "propagee_pure_anneau1_3": 6,
+     "pure_eloignee": 0
+    },
+    "aretes_par_classe": {
+     "directe_mixte": 12383,
+     "propagee_pure_anneau1_3": 5626,
+     "pure_eloignee": 3422
+    }
+   },
+   "genou_D": {
+    "aretes": 7917,
+    "aretes_regressees": 147,
+    "pourcentage_amelioration": 0.027409372236958444,
+    "pourcentage_regression": 0.01856763925729443,
+    "pourcentage_regression_ponderee_longueur": 0.01982034350291192,
+    "pourcentage_amelioration_ponderee_longueur": 0.027268891251415805,
+    "exc_percentiles_non_ponderes": {
+     "p50": 2.8869883150761666e-08,
+     "p90": 0.00047640473269807733,
+     "p95": 0.004688621768816614,
+     "p99": 0.09464992547076942
+    },
+    "exc_percentiles_ponderes_longueur": {
+     "p50": 5.37826981839018e-08,
+     "p90": 0.0005261857540915896,
+     "p95": 0.007353382574689385,
+     "p99": 0.09078500043237993
+    },
+    "deplacement_absolu_m_moyen": 0.0006590999285788645,
+    "deplacement_absolu_m_p99": 0.014017597130584088,
+    "deplacement_normalise_hanche_p99": 0.07233946873202861,
+    "triangles": 4698,
+    "retournements_LBS": 56,
+    "retournements_SQ": 16,
+    "retournements_nouveaux_SQ": 0,
+    "deformation_surfacique_ponderee_aire": 0.021965022552740167,
+    "regressions_par_classe": {
+     "directe_mixte": 147,
+     "propagee_pure_anneau1_3": 0,
+     "pure_eloignee": 0
+    },
+    "aretes_par_classe": {
+     "directe_mixte": 4756,
+     "propagee_pure_anneau1_3": 2784,
+     "pure_eloignee": 377
+    }
+   },
+   "genou_G": {
+    "aretes": 7917,
+    "aretes_regressees": 147,
+    "pourcentage_amelioration": 0.027409372236958444,
+    "pourcentage_regression": 0.01856763925729443,
+    "pourcentage_regression_ponderee_longueur": 0.019820314987415516,
+    "pourcentage_amelioration_ponderee_longueur": 0.027268864984316375,
+    "exc_percentiles_non_ponderes": {
+     "p50": 3.3600043747306074e-08,
+     "p90": 0.000801146031694966,
+     "p95": 0.005264279635788414,
+     "p99": 0.09465072441491448
+    },
+    "exc_percentiles_ponderes_longueur": {
+     "p50": 5.6526387177060704e-08,
+     "p90": 0.0007487973624559362,
+     "p95": 0.007383637047852579,
+     "p99": 0.09078551767423403
+    },
+    "deplacement_absolu_m_moyen": 0.0006817744813281987,
+    "deplacement_absolu_m_p99": 0.014017590699494048,
+    "deplacement_normalise_hanche_p99": 0.07233943554362744,
+    "triangles": 4698,
+    "retournements_LBS": 56,
+    "retournements_SQ": 16,
+    "retournements_nouveaux_SQ": 0,
+    "deformation_surfacique_ponderee_aire": 0.02203288185199791,
+    "regressions_par_classe": {
+     "directe_mixte": 147,
+     "propagee_pure_anneau1_3": 0,
+     "pure_eloignee": 0
+    },
+    "aretes_par_classe": {
+     "directe_mixte": 4756,
+     "propagee_pure_anneau1_3": 2784,
+     "pure_eloignee": 377
+    }
+   },
+   "hanche_D": {
+    "aretes": 1827,
+    "aretes_regressees": 125,
+    "pourcentage_amelioration": 0.16037219485495346,
+    "pourcentage_regression": 0.06841817186644773,
+    "pourcentage_regression_ponderee_longueur": 0.07593018851209811,
+    "pourcentage_amelioration_ponderee_longueur": 0.17017348537778013,
+    "exc_percentiles_non_ponderes": {
+     "p50": -7.771561172376096e-16,
+     "p90": 0.024308855783512384,
+     "p95": 0.08055154827306382,
+     "p99": 0.2576423737569196
+    },
+    "exc_percentiles_ponderes_longueur": {
+     "p50": -1.2212453270876722e-15,
+     "p90": 0.02782997376629276,
+     "p95": 0.08556363106274696,
+     "p99": 0.2968945593971319
+    },
+    "deplacement_absolu_m_moyen": 0.006329608104800994,
+    "deplacement_absolu_m_p99": 0.042361646662117815,
+    "deplacement_normalise_hanche_p99": 0.21861229036647498,
+    "triangles": 841,
+    "retournements_LBS": 8,
+    "retournements_SQ": 0,
+    "retournements_nouveaux_SQ": 0,
+    "deformation_surfacique_ponderee_aire": 0.09758422836564112,
+    "regressions_par_classe": {
+     "directe_mixte": 122,
+     "propagee_pure_anneau1_3": 3,
+     "pure_eloignee": 0
+    },
+    "aretes_par_classe": {
+     "directe_mixte": 1218,
+     "propagee_pure_anneau1_3": 203,
+     "pure_eloignee": 406
+    }
+   },
+   "hanche_G": {
+    "aretes": 1827,
+    "aretes_regressees": 174,
+    "pourcentage_amelioration": 0.17405582922824303,
+    "pourcentage_regression": 0.09523809523809523,
+    "pourcentage_regression_ponderee_longueur": 0.10386146186162218,
+    "pourcentage_amelioration_ponderee_longueur": 0.18844166647370852,
+    "exc_percentiles_non_ponderes": {
+     "p50": -4.440892098500626e-16,
+     "p90": 0.04404671887787589,
+     "p95": 0.12812962466645328,
+     "p99": 0.3282376782020754
+    },
+    "exc_percentiles_ponderes_longueur": {
+     "p50": -4.440892098500626e-16,
+     "p90": 0.05576046954568563,
+     "p95": 0.1428758985661975,
+     "p99": 0.35896505820793717
+    },
+    "deplacement_absolu_m_moyen": 0.006586524940329836,
+    "deplacement_absolu_m_p99": 0.051340245690602644,
+    "deplacement_normalise_hanche_p99": 0.2649474131145374,
+    "triangles": 841,
+    "retournements_LBS": 13,
+    "retournements_SQ": 0,
+    "retournements_nouveaux_SQ": 0,
+    "deformation_surfacique_ponderee_aire": 0.14608581161181003,
+    "regressions_par_classe": {
+     "directe_mixte": 168,
+     "propagee_pure_anneau1_3": 6,
+     "pure_eloignee": 0
+    },
+    "aretes_par_classe": {
+     "directe_mixte": 1218,
+     "propagee_pure_anneau1_3": 203,
+     "pure_eloignee": 406
+    }
+   },
+   "__tous__": {
+    "aretes": 598995,
+    "aretes_regressees": 2987,
+    "pourcentage_amelioration": 0.01136570422123724,
+    "pourcentage_regression": 0.004986686032437666,
+    "pourcentage_regression_ponderee_longueur": 0.007567081907613543,
+    "pourcentage_amelioration_ponderee_longueur": 0.017149158264255292,
+    "exc_percentiles_non_ponderes": {
+     "p50": 5.021048021802699e-08,
+     "p90": 4.002430102900689e-07,
+     "p95": 1.1537324127175452e-06,
+     "p99": 0.014205211145423198
+    },
+    "exc_percentiles_ponderes_longueur": {
+     "p50": 3.363604705874934e-08,
+     "p90": 4.7353194443378044e-07,
+     "p95": 2.545006066223543e-06,
+     "p99": 0.032888968230706056
+    },
+    "deplacement_absolu_m_moyen": 0.00042094071819863383,
+    "deplacement_absolu_m_p99": 0.013723059320219224,
+    "deplacement_normalise_hanche_p99": 0.07081947150819616,
+    "triangles": 422414,
+    "retournements_LBS": 300,
+    "retournements_SQ": 71,
+    "retournements_nouveaux_SQ": 32,
+    "deformation_surfacique_ponderee_aire": 0.007008501086528751,
+    "regressions_par_classe": {
+     "directe_mixte": 2856,
+     "propagee_pure_anneau1_3": 131,
+     "pure_eloignee": 0
+    },
+    "aretes_par_classe": {
+     "directe_mixte": 262450,
+     "propagee_pure_anneau1_3": 111331,
+     "pure_eloignee": 225214
+    }
+   }
+  }
+ },
+ "phase4_volume": {
+  "masculin": {
+   "topologie": {
+    "aretes": 21170,
+    "aretes_frontiere": 0,
+    "aretes_non_variete": 0,
+    "aretes_orientation_incoherente": 0,
+    "surface_fermee": true,
+    "orientation_coherente": true,
+    "composantes": 1,
+    "tailles_composantes_top5": [
+     10582
+    ]
+   },
+   "origine_m": [
+    -2.2643,
+    -0.0544,
+    0.9159
+   ],
+   "par_pose": {
+    "generative_hanche_G_75": {
+     "volume_LBS": 0.06599613730266293,
+     "volume_SQ": 0.06522393933660486
+    },
+    "generative_hanche_G_105": {
+     "volume_LBS": 0.06481620267447309,
+     "volume_SQ": 0.0634974094637875
+    },
+    "generative_hanche_G_120": {
+     "volume_LBS": 0.06422016802208115,
+     "volume_SQ": 0.06262131986951966
+    },
+    "reelle_L_abd30": {
+     "volume_LBS": 0.0679040468310365,
+     "volume_SQ": 0.06798851948219452
+    },
+    "reelle_L_add20": {
+     "volume_LBS": 0.0666927848489503,
+     "volume_SQ": 0.0665382956512425
+    },
+    "reelle_L_combo_flex120_genou90": {
+     "volume_LBS": 0.06346030941241948,
+     "volume_SQ": 0.06141457766791959
+    },
+    "reelle_L_combo_flex60_abd20_int20_genou60": {
+     "volume_LBS": 0.06619834851475782,
+     "volume_SQ": 0.0655101030916496
+    },
+    "reelle_L_combo_flex90_abd30_ext30": {
+     "volume_LBS": 0.06650822973095118,
+     "volume_SQ": 0.06507988034386136
+    },
+    "reelle_L_ext30": {
+     "volume_LBS": 0.06755500473038113,
+     "volume_SQ": 0.06718657727964747
+    },
+    "reelle_L_flex120": {
+     "volume_LBS": 0.06422016666895565,
+     "volume_SQ": 0.06262131762444455
+    },
+    "reelle_L_flex30": {
+     "volume_LBS": 0.06716442624240969,
+     "volume_SQ": 0.06700416924745405
+    },
+    "reelle_L_flex60": {
+     "volume_LBS": 0.06649962526152112,
+     "volume_SQ": 0.06596995961971197
+    },
+    "reelle_L_genou30": {
+     "volume_LBS": 0.06701001012192118,
+     "volume_SQ": 0.0668943315406932
+    },
+    "reelle_L_genou60": {
+     "volume_LBS": 0.06673188949394919,
+     "volume_SQ": 0.06646567920337332
+    },
+    "reelle_L_genou90": {
+     "volume_LBS": 0.06647838194845258,
+     "volume_SQ": 0.0660705663146575
+    },
+    "reelle_L_int30": {
+     "volume_LBS": 0.06638704678588332,
+     "volume_SQ": 0.06645305078113804
+    },
+    "reelle_R_abd30": {
+     "volume_LBS": 0.067918176142581,
+     "volume_SQ": 0.06799907366097603
+    },
+    "reelle_R_add20": {
+     "volume_LBS": 0.06668205990182591,
+     "volume_SQ": 0.06653057731778783
+    },
+    "reelle_R_combo_flex120_genou90": {
+     "volume_LBS": 0.06350584452029233,
+     "volume_SQ": 0.06145566332162166
+    },
+    "reelle_R_combo_flex60_abd20_int20_genou60": {
+     "volume_LBS": 0.0662497921487893,
+     "volume_SQ": 0.0655489903133473
+    },
+    "reelle_R_combo_flex90_abd30_ext30": {
+     "volume_LBS": 0.06653161093936058,
+     "volume_SQ": 0.06510408011804124
+    },
+    "reelle_R_ext30": {
+     "volume_LBS": 0.06753491647979637,
+     "volume_SQ": 0.0671747970371467
+    },
+    "reelle_R_flex120": {
+     "volume_LBS": 0.06427588013658032,
+     "volume_SQ": 0.06267822750833572
+    },
+    "reelle_R_flex30": {
+     "volume_LBS": 0.0671850551913598,
+     "volume_SQ": 0.06701827328121471
+    },
+    "reelle_R_flex60": {
+     "volume_LBS": 0.06653957855992831,
+     "volume_SQ": 0.06600120549970472
+    },
+    "reelle_R_genou30": {
+     "volume_LBS": 0.0670030548909617,
+     "volume_SQ": 0.06688805003683827
+    },
+    "reelle_R_genou60": {
+     "volume_LBS": 0.06672121218200798,
+     "volume_SQ": 0.06645483440170422
+    },
+    "reelle_R_genou90": {
+     "volume_LBS": 0.06646821303231756,
+     "volume_SQ": 0.06605811655883345
+    },
+    "reelle_R_int30": {
+     "volume_LBS": 0.0664111427711523,
+     "volume_SQ": 0.0664726004965649
+    }
+   },
+   "volume_repos": 0.0672382237958672,
+   "fiable": true,
+   "variation_relative_moyenne_LBS": -0.014892583287944731,
+   "variation_relative_moyenne_SQ": -0.024608490221077077,
+   "avertissement": "volume signé sur surface fermée orientée"
+  },
+  "feminin": {
+   "topologie": {
+    "aretes": 21170,
+    "aretes_frontiere": 0,
+    "aretes_non_variete": 0,
+    "aretes_orientation_incoherente": 0,
+    "surface_fermee": true,
+    "orientation_coherente": true,
+    "composantes": 1,
+    "tailles_composantes_top5": [
+     10582
+    ]
+   },
+   "origine_m": [
+    -2.2643,
+    -0.0528,
+    0.8981
+   ],
+   "par_pose": {
+    "generative_hanche_G_75": {
+     "volume_LBS": 0.05088553334133755,
+     "volume_SQ": 0.050175835028371404
+    },
+    "generative_hanche_G_105": {
+     "volume_LBS": 0.049782699669427624,
+     "volume_SQ": 0.048581887283347426
+    },
+    "generative_hanche_G_120": {
+     "volume_LBS": 0.049226589015456255,
+     "volume_SQ": 0.04777346242613666
+    },
+    "reelle_L_abd30": {
+     "volume_LBS": 0.0525997677523815,
+     "volume_SQ": 0.05272635366453908
+    },
+    "reelle_L_add20": {
+     "volume_LBS": 0.0515830089474048,
+     "volume_SQ": 0.05141041033928582
+    },
+    "reelle_L_combo_flex120_genou90": {
+     "volume_LBS": 0.048534514292305646,
+     "volume_SQ": 0.04668704448056989
+    },
+    "reelle_L_combo_flex60_abd20_int20_genou60": {
+     "volume_LBS": 0.050911700873666886,
+     "volume_SQ": 0.05037312361520741
+    },
+    "reelle_L_combo_flex90_abd30_ext30": {
+     "volume_LBS": 0.051536829639891,
+     "volume_SQ": 0.05021686845335764
+    },
+    "reelle_L_ext30": {
+     "volume_LBS": 0.05257574372269314,
+     "volume_SQ": 0.052173459566475115
+    },
+    "reelle_L_flex120": {
+     "volume_LBS": 0.049226590002613584,
+     "volume_SQ": 0.0477734623587416
+    },
+    "reelle_L_flex30": {
+     "volume_LBS": 0.051982041374489474,
+     "volume_SQ": 0.05182911339753589
+    },
+    "reelle_L_flex60": {
+     "volume_LBS": 0.05135710095550827,
+     "volume_SQ": 0.05086637299298544
+    },
+    "reelle_L_genou30": {
+     "volume_LBS": 0.0518018603131587,
+     "volume_SQ": 0.05174422621982557
+    },
+    "reelle_L_genou60": {
+     "volume_LBS": 0.05154854346083824,
+     "volume_SQ": 0.05135749141514337
+    },
+    "reelle_L_genou90": {
+     "volume_LBS": 0.05136383031120242,
+     "volume_SQ": 0.050989401931991696
+    },
+    "reelle_L_int30": {
+     "volume_LBS": 0.051097224437732416,
+     "volume_SQ": 0.051217171746824754
+    },
+    "reelle_R_abd30": {
+     "volume_LBS": 0.05257925776809893,
+     "volume_SQ": 0.052712870543067857
+    },
+    "reelle_R_add20": {
+     "volume_LBS": 0.05159782192326879,
+     "volume_SQ": 0.05142109524925693
+    },
+    "reelle_R_combo_flex120_genou90": {
+     "volume_LBS": 0.048513831060288455,
+     "volume_SQ": 0.04664484348532564
+    },
+    "reelle_R_combo_flex60_abd20_int20_genou60": {
+     "volume_LBS": 0.05088084478224282,
+     "volume_SQ": 0.05034080838446661
+    },
+    "reelle_R_combo_flex90_abd30_ext30": {
+     "volume_LBS": 0.05152494617976974,
+     "volume_SQ": 0.050196725657060376
+    },
+    "reelle_R_ext30": {
+     "volume_LBS": 0.05257098867324971,
+     "volume_SQ": 0.05216717362317302
+    },
+    "reelle_R_flex120": {
+     "volume_LBS": 0.0492097190561747,
+     "volume_SQ": 0.04774190131498852
+    },
+    "reelle_R_flex30": {
+     "volume_LBS": 0.05197562392160853,
+     "volume_SQ": 0.05182235912912518
+    },
+    "reelle_R_flex60": {
+     "volume_LBS": 0.05134476929304669,
+     "volume_SQ": 0.05085102815273107
+    },
+    "reelle_R_genou30": {
+     "volume_LBS": 0.05180111570055495,
+     "volume_SQ": 0.05174190273758697
+    },
+    "reelle_R_genou60": {
+     "volume_LBS": 0.05154640346635827,
+     "volume_SQ": 0.051352562404472155
+    },
+    "reelle_R_genou90": {
+     "volume_LBS": 0.051360018055384225,
+     "volume_SQ": 0.05098169928416049
+    },
+    "reelle_R_int30": {
+     "volume_LBS": 0.05109965825434593,
+     "volume_SQ": 0.05122027236168183
+    }
+   },
+   "volume_repos": 0.05205590474225482,
+   "fiable": true,
+   "variation_relative_moyenne_LBS": -0.018284494543901308,
+   "variation_relative_moyenne_SQ": -0.02949767078724304,
+   "avertissement": "volume signé sur surface fermée orientée"
+  },
+  "maria": {
+   "topologie": {
+    "aretes": 22604,
+    "aretes_frontiere": 1510,
+    "aretes_non_variete": 0,
+    "aretes_orientation_incoherente": 0,
+    "surface_fermee": false,
+    "orientation_coherente": true,
+    "composantes": 73,
+    "tailles_composantes_top5": [
+     907,
+     373,
+     373,
+     359,
+     326
+    ]
+   },
+   "origine_m": [
+    0.0,
+    -0.0114,
+    1.2874
+   ],
+   "par_pose": {
+    "generative_hanche_G_75": {
+     "volume_LBS": 0.09113567320490823,
+     "volume_SQ": 0.08982621190709976
+    },
+    "generative_hanche_G_105": {
+     "volume_LBS": 0.09119793117776637,
+     "volume_SQ": 0.08880969286190528
+    },
+    "generative_hanche_G_120": {
+     "volume_LBS": 0.09134075961070819,
+     "volume_SQ": 0.08836632710863433
+    },
+    "reelle_L_abd30": {
+     "volume_LBS": 0.09278542287043377,
+     "volume_SQ": 0.09211582307453745
+    },
+    "reelle_L_add20": {
+     "volume_LBS": 0.0918110079811613,
+     "volume_SQ": 0.0920263658678542
+    },
+    "reelle_L_combo_flex120_genou90": {
+     "volume_LBS": 0.09235014023962423,
+     "volume_SQ": 0.08903395759245264
+    },
+    "reelle_L_combo_flex60_abd20_int20_genou60": {
+     "volume_LBS": 0.09295048078106725,
+     "volume_SQ": 0.09144331440887477
+    },
+    "reelle_L_combo_flex90_abd30_ext30": {
+     "volume_LBS": 0.09165419654783874,
+     "volume_SQ": 0.08896685990393437
+    },
+    "reelle_L_ext30": {
+     "volume_LBS": 0.09216483410080997,
+     "volume_SQ": 0.09206614465350156
+    },
+    "reelle_L_flex120": {
+     "volume_LBS": 0.09134119298353068,
+     "volume_SQ": 0.08836735298426895
+    },
+    "reelle_L_flex30": {
+     "volume_LBS": 0.09159432923275448,
+     "volume_SQ": 0.0913696314335397
+    },
+    "reelle_L_flex60": {
+     "volume_LBS": 0.09122124072761394,
+     "volume_SQ": 0.09036081603749581
+    },
+    "reelle_L_genou30": {
+     "volume_LBS": 0.09330565941011791,
+     "volume_SQ": 0.0931232393875055
+    },
+    "reelle_L_genou60": {
+     "volume_LBS": 0.09476576461749336,
+     "volume_SQ": 0.09420058005690483
+    },
+    "reelle_L_genou90": {
+     "volume_LBS": 0.09613696461363033,
+     "volume_SQ": 0.09509432523128637
+    },
+    "reelle_L_int30": {
+     "volume_LBS": 0.09197058219655492,
+     "volume_SQ": 0.09172183552831807
+    },
+    "reelle_R_abd30": {
+     "volume_LBS": 0.09280371508247724,
+     "volume_SQ": 0.09209260117682276
+    },
+    "reelle_R_add20": {
+     "volume_LBS": 0.09179595115648694,
+     "volume_SQ": 0.0920430090463382
+    },
+    "reelle_R_combo_flex120_genou90": {
+     "volume_LBS": 0.09231242381566764,
+     "volume_SQ": 0.0890876834024789
+    },
+    "reelle_R_combo_flex60_abd20_int20_genou60": {
+     "volume_LBS": 0.09296139525299447,
+     "volume_SQ": 0.0914644169750199
+    },
+    "reelle_R_combo_flex90_abd30_ext30": {
+     "volume_LBS": 0.0916302767553419,
+     "volume_SQ": 0.0890107632323499
+    },
+    "reelle_R_ext30": {
+     "volume_LBS": 0.09214221959529283,
+     "volume_SQ": 0.09205772633625799
+    },
+    "reelle_R_flex120": {
+     "volume_LBS": 0.09130346541056465,
+     "volume_SQ": 0.08842103831081023
+    },
+    "reelle_R_flex30": {
+     "volume_LBS": 0.09159772288093136,
+     "volume_SQ": 0.09136505685152595
+    },
+    "reelle_R_flex60": {
+     "volume_LBS": 0.0912179055750977,
+     "volume_SQ": 0.09036333115253223
+    },
+    "reelle_R_genou30": {
+     "volume_LBS": 0.09330566585098994,
+     "volume_SQ": 0.09312325436978121
+    },
+    "reelle_R_genou60": {
+     "volume_LBS": 0.0947657753445028,
+     "volume_SQ": 0.09420060916967184
+    },
+    "reelle_R_genou90": {
+     "volume_LBS": 0.0961369781426631,
+     "volume_SQ": 0.09509436556173839
+    },
+    "reelle_R_int30": {
+     "volume_LBS": 0.09197772708672226,
+     "volume_SQ": 0.09173989407580117
+    }
+   },
+   "volume_repos": 0.092147049740293,
+   "fiable": false,
+   "variation_relative_moyenne_LBS": 0.0035224656765459367,
+   "variation_relative_moyenne_SQ": -0.009470699967805737,
+   "avertissement": "volume non fiable : surface non fermée ou orientation incohérente"
+  }
+ }
+}

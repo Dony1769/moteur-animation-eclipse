@@ -1,0 +1,756 @@
+{
+ "convention": "retournement : normale déformée opposée à la normale de référence polaire(Mv_moyen) appliquée à la normale de repos",
+ "poses_avec_nouveaux": [
+  "generative_hanche_G_75",
+  "generative_hanche_G_105",
+  "generative_hanche_G_120",
+  "reelle_L_combo_flex120_genou90",
+  "reelle_L_combo_flex60_abd20_int20_genou60",
+  "reelle_L_flex120",
+  "reelle_L_flex60",
+  "reelle_R_combo_flex120_genou90",
+  "reelle_R_combo_flex60_abd20_int20_genou60",
+  "reelle_R_flex120",
+  "reelle_R_flex60"
+ ],
+ "nombre_nouveaux_detail": 32,
+ "retournements_relatifs_LBS": 14,
+ "retournements_seulement_repere": 18,
+ "sommets_concernes": [
+  4102,
+  4103,
+  4135,
+  4144,
+  4145,
+  4161,
+  4170,
+  4172,
+  4184,
+  4216,
+  4225,
+  4226,
+  4242
+ ],
+ "triangles": [
+  {
+   "pose": "generative_hanche_G_75",
+   "triangle": [
+    4226,
+    4225,
+    4216
+   ],
+   "dot_SQ_LBS": 0.2299,
+   "retournement_relatif_LBS": false,
+   "retournement_seulement_repere": true,
+   "mixage_moyen": 0.2517,
+   "angle_dominant_max_deg": 75.0,
+   "angle_relatif_os_deg": 0.0,
+   "ratio_aire_SQ": 0.6966,
+   "ratio_aire_LBS": 0.7028,
+   "sv_min_Mv": 0.849,
+   "sv_max_Mv": 1.0,
+   "rapport_aspect_repos": 0.2535
+  },
+  {
+   "pose": "generative_hanche_G_75",
+   "triangle": [
+    4242,
+    4226,
+    4216
+   ],
+   "dot_SQ_LBS": -0.1908,
+   "retournement_relatif_LBS": true,
+   "retournement_seulement_repere": false,
+   "mixage_moyen": 0.2722,
+   "angle_dominant_max_deg": 75.0,
+   "angle_relatif_os_deg": 0.0,
+   "ratio_aire_SQ": 0.37,
+   "ratio_aire_LBS": 0.4678,
+   "sv_min_Mv": 0.8404,
+   "sv_max_Mv": 1.0,
+   "rapport_aspect_repos": 0.4756
+  },
+  {
+   "pose": "generative_hanche_G_105",
+   "triangle": [
+    4226,
+    4225,
+    4216
+   ],
+   "dot_SQ_LBS": 0.4067,
+   "retournement_relatif_LBS": false,
+   "retournement_seulement_repere": true,
+   "mixage_moyen": 0.2517,
+   "angle_dominant_max_deg": 105.0,
+   "angle_relatif_os_deg": 0.0,
+   "ratio_aire_SQ": 1.2871,
+   "ratio_aire_LBS": 0.9346,
+   "sv_min_Mv": 0.7251,
+   "sv_max_Mv": 1.0,
+   "rapport_aspect_repos": 0.2535
+  },
+  {
+   "pose": "generative_hanche_G_105",
+   "triangle": [
+    4242,
+    4184,
+    4226
+   ],
+   "dot_SQ_LBS": -0.1437,
+   "retournement_relatif_LBS": true,
+   "retournement_seulement_repere": false,
+   "mixage_moyen": 0.2221,
+   "angle_dominant_max_deg": 105.0,
+   "angle_relatif_os_deg": 0.0,
+   "ratio_aire_SQ": 1.2584,
+   "ratio_aire_LBS": 1.029,
+   "sv_min_Mv": 0.7517,
+   "sv_max_Mv": 1.0,
+   "rapport_aspect_repos": 0.5085
+  },
+  {
+   "pose": "generative_hanche_G_105",
+   "triangle": [
+    4242,
+    4226,
+    4216
+   ],
+   "dot_SQ_LBS": 0.0256,
+   "retournement_relatif_LBS": false,
+   "retournement_seulement_repere": true,
+   "mixage_moyen": 0.2722,
+   "angle_dominant_max_deg": 105.0,
+   "angle_relatif_os_deg": 0.0,
+   "ratio_aire_SQ": 0.8132,
+   "ratio_aire_LBS": 0.543,
+   "sv_min_Mv": 0.708,
+   "sv_max_Mv": 1.0,
+   "rapport_aspect_repos": 0.4756
+  },
+  {
+   "pose": "generative_hanche_G_120",
+   "triangle": [
+    4102,
+    4172,
+    4170
+   ],
+   "dot_SQ_LBS": -0.5026,
+   "retournement_relatif_LBS": true,
+   "retournement_seulement_repere": false,
+   "mixage_moyen": 0.4442,
+   "angle_dominant_max_deg": 0.0,
+   "angle_relatif_os_deg": 0.0,
+   "ratio_aire_SQ": 0.165,
+   "ratio_aire_LBS": 2.3165,
+   "sv_min_Mv": 0.7422,
+   "sv_max_Mv": 1.0,
+   "rapport_aspect_repos": 0.9566
+  },
+  {
+   "pose": "generative_hanche_G_120",
+   "triangle": [
+    4226,
+    4225,
+    4216
+   ],
+   "dot_SQ_LBS": 0.4715,
+   "retournement_relatif_LBS": false,
+   "retournement_seulement_repere": true,
+   "mixage_moyen": 0.2517,
+   "angle_dominant_max_deg": 120.0,
+   "angle_relatif_os_deg": 0.0,
+   "ratio_aire_SQ": 1.5615,
+   "ratio_aire_LBS": 1.0784,
+   "sv_min_Mv": 0.6595,
+   "sv_max_Mv": 1.0,
+   "rapport_aspect_repos": 0.2535
+  },
+  {
+   "pose": "generative_hanche_G_120",
+   "triangle": [
+    4242,
+    4184,
+    4226
+   ],
+   "dot_SQ_LBS": -0.076,
+   "retournement_relatif_LBS": true,
+   "retournement_seulement_repere": false,
+   "mixage_moyen": 0.2221,
+   "angle_dominant_max_deg": 120.0,
+   "angle_relatif_os_deg": 0.0,
+   "ratio_aire_SQ": 1.3159,
+   "ratio_aire_LBS": 1.3108,
+   "sv_min_Mv": 0.6941,
+   "sv_max_Mv": 1.0,
+   "rapport_aspect_repos": 0.5085
+  },
+  {
+   "pose": "generative_hanche_G_120",
+   "triangle": [
+    4242,
+    4226,
+    4216
+   ],
+   "dot_SQ_LBS": 0.124,
+   "retournement_relatif_LBS": false,
+   "retournement_seulement_repere": true,
+   "mixage_moyen": 0.2722,
+   "angle_dominant_max_deg": 120.0,
+   "angle_relatif_os_deg": 0.0,
+   "ratio_aire_SQ": 0.9836,
+   "ratio_aire_LBS": 0.6271,
+   "sv_min_Mv": 0.637,
+   "sv_max_Mv": 1.0,
+   "rapport_aspect_repos": 0.4756
+  },
+  {
+   "pose": "reelle_L_combo_flex120_genou90",
+   "triangle": [
+    4102,
+    4172,
+    4170
+   ],
+   "dot_SQ_LBS": -0.5026,
+   "retournement_relatif_LBS": true,
+   "retournement_seulement_repere": false,
+   "mixage_moyen": 0.4442,
+   "angle_dominant_max_deg": 0.0,
+   "angle_relatif_os_deg": 0.0,
+   "ratio_aire_SQ": 0.165,
+   "ratio_aire_LBS": 2.3165,
+   "sv_min_Mv": 0.7422,
+   "sv_max_Mv": 1.0,
+   "rapport_aspect_repos": 0.9566
+  },
+  {
+   "pose": "reelle_L_combo_flex120_genou90",
+   "triangle": [
+    4226,
+    4225,
+    4216
+   ],
+   "dot_SQ_LBS": 0.4715,
+   "retournement_relatif_LBS": false,
+   "retournement_seulement_repere": true,
+   "mixage_moyen": 0.2517,
+   "angle_dominant_max_deg": 120.0,
+   "angle_relatif_os_deg": 0.0,
+   "ratio_aire_SQ": 1.5615,
+   "ratio_aire_LBS": 1.0784,
+   "sv_min_Mv": 0.6595,
+   "sv_max_Mv": 1.0,
+   "rapport_aspect_repos": 0.2535
+  },
+  {
+   "pose": "reelle_L_combo_flex120_genou90",
+   "triangle": [
+    4242,
+    4184,
+    4226
+   ],
+   "dot_SQ_LBS": -0.076,
+   "retournement_relatif_LBS": true,
+   "retournement_seulement_repere": false,
+   "mixage_moyen": 0.2221,
+   "angle_dominant_max_deg": 120.0,
+   "angle_relatif_os_deg": 0.0,
+   "ratio_aire_SQ": 1.3159,
+   "ratio_aire_LBS": 1.3108,
+   "sv_min_Mv": 0.6941,
+   "sv_max_Mv": 1.0,
+   "rapport_aspect_repos": 0.5085
+  },
+  {
+   "pose": "reelle_L_combo_flex120_genou90",
+   "triangle": [
+    4242,
+    4226,
+    4216
+   ],
+   "dot_SQ_LBS": 0.124,
+   "retournement_relatif_LBS": false,
+   "retournement_seulement_repere": true,
+   "mixage_moyen": 0.2722,
+   "angle_dominant_max_deg": 120.0,
+   "angle_relatif_os_deg": 0.0,
+   "ratio_aire_SQ": 0.9836,
+   "ratio_aire_LBS": 0.6271,
+   "sv_min_Mv": 0.637,
+   "sv_max_Mv": 1.0,
+   "rapport_aspect_repos": 0.4756
+  },
+  {
+   "pose": "reelle_L_combo_flex60_abd20_int20_genou60",
+   "triangle": [
+    4226,
+    4225,
+    4216
+   ],
+   "dot_SQ_LBS": 0.3594,
+   "retournement_relatif_LBS": false,
+   "retournement_seulement_repere": true,
+   "mixage_moyen": 0.2517,
+   "angle_dominant_max_deg": 62.48,
+   "angle_relatif_os_deg": 0.0,
+   "ratio_aire_SQ": 0.3015,
+   "ratio_aire_LBS": 0.5469,
+   "sv_min_Mv": 0.8929,
+   "sv_max_Mv": 1.0,
+   "rapport_aspect_repos": 0.2535
+  },
+  {
+   "pose": "reelle_L_combo_flex60_abd20_int20_genou60",
+   "triangle": [
+    4242,
+    4184,
+    4226
+   ],
+   "dot_SQ_LBS": -0.9959,
+   "retournement_relatif_LBS": true,
+   "retournement_seulement_repere": false,
+   "mixage_moyen": 0.2221,
+   "angle_dominant_max_deg": 62.48,
+   "angle_relatif_os_deg": 0.0,
+   "ratio_aire_SQ": 0.4976,
+   "ratio_aire_LBS": 0.3685,
+   "sv_min_Mv": 0.9023,
+   "sv_max_Mv": 1.0,
+   "rapport_aspect_repos": 0.5085
+  },
+  {
+   "pose": "reelle_L_combo_flex60_abd20_int20_genou60",
+   "triangle": [
+    4242,
+    4226,
+    4216
+   ],
+   "dot_SQ_LBS": 0.3335,
+   "retournement_relatif_LBS": false,
+   "retournement_seulement_repere": true,
+   "mixage_moyen": 0.2722,
+   "angle_dominant_max_deg": 62.48,
+   "angle_relatif_os_deg": 0.0,
+   "ratio_aire_SQ": 0.3768,
+   "ratio_aire_LBS": 0.5194,
+   "sv_min_Mv": 0.887,
+   "sv_max_Mv": 1.0,
+   "rapport_aspect_repos": 0.4756
+  },
+  {
+   "pose": "reelle_L_flex120",
+   "triangle": [
+    4102,
+    4172,
+    4170
+   ],
+   "dot_SQ_LBS": -0.5026,
+   "retournement_relatif_LBS": true,
+   "retournement_seulement_repere": false,
+   "mixage_moyen": 0.4442,
+   "angle_dominant_max_deg": 0.0,
+   "angle_relatif_os_deg": 0.0,
+   "ratio_aire_SQ": 0.165,
+   "ratio_aire_LBS": 2.3165,
+   "sv_min_Mv": 0.7422,
+   "sv_max_Mv": 1.0,
+   "rapport_aspect_repos": 0.9566
+  },
+  {
+   "pose": "reelle_L_flex120",
+   "triangle": [
+    4226,
+    4225,
+    4216
+   ],
+   "dot_SQ_LBS": 0.4715,
+   "retournement_relatif_LBS": false,
+   "retournement_seulement_repere": true,
+   "mixage_moyen": 0.2517,
+   "angle_dominant_max_deg": 120.0,
+   "angle_relatif_os_deg": 0.0,
+   "ratio_aire_SQ": 1.5615,
+   "ratio_aire_LBS": 1.0784,
+   "sv_min_Mv": 0.6595,
+   "sv_max_Mv": 1.0,
+   "rapport_aspect_repos": 0.2535
+  },
+  {
+   "pose": "reelle_L_flex120",
+   "triangle": [
+    4242,
+    4184,
+    4226
+   ],
+   "dot_SQ_LBS": -0.076,
+   "retournement_relatif_LBS": true,
+   "retournement_seulement_repere": false,
+   "mixage_moyen": 0.2221,
+   "angle_dominant_max_deg": 120.0,
+   "angle_relatif_os_deg": 0.0,
+   "ratio_aire_SQ": 1.3159,
+   "ratio_aire_LBS": 1.3108,
+   "sv_min_Mv": 0.6941,
+   "sv_max_Mv": 1.0,
+   "rapport_aspect_repos": 0.5085
+  },
+  {
+   "pose": "reelle_L_flex120",
+   "triangle": [
+    4242,
+    4226,
+    4216
+   ],
+   "dot_SQ_LBS": 0.124,
+   "retournement_relatif_LBS": false,
+   "retournement_seulement_repere": true,
+   "mixage_moyen": 0.2722,
+   "angle_dominant_max_deg": 120.0,
+   "angle_relatif_os_deg": 0.0,
+   "ratio_aire_SQ": 0.9836,
+   "ratio_aire_LBS": 0.6271,
+   "sv_min_Mv": 0.637,
+   "sv_max_Mv": 1.0,
+   "rapport_aspect_repos": 0.4756
+  },
+  {
+   "pose": "reelle_L_flex60",
+   "triangle": [
+    4226,
+    4225,
+    4216
+   ],
+   "dot_SQ_LBS": 0.2471,
+   "retournement_relatif_LBS": false,
+   "retournement_seulement_repere": true,
+   "mixage_moyen": 0.2517,
+   "angle_dominant_max_deg": 60.0,
+   "angle_relatif_os_deg": 0.0,
+   "ratio_aire_SQ": 0.4117,
+   "ratio_aire_LBS": 0.6509,
+   "sv_min_Mv": 0.9009,
+   "sv_max_Mv": 1.0,
+   "rapport_aspect_repos": 0.2535
+  },
+  {
+   "pose": "reelle_L_flex60",
+   "triangle": [
+    4242,
+    4184,
+    4226
+   ],
+   "dot_SQ_LBS": -0.7102,
+   "retournement_relatif_LBS": true,
+   "retournement_seulement_repere": false,
+   "mixage_moyen": 0.2221,
+   "angle_dominant_max_deg": 60.0,
+   "angle_relatif_os_deg": 0.0,
+   "ratio_aire_SQ": 0.6727,
+   "ratio_aire_LBS": 0.3377,
+   "sv_min_Mv": 0.9095,
+   "sv_max_Mv": 1.0,
+   "rapport_aspect_repos": 0.5085
+  },
+  {
+   "pose": "reelle_L_flex60",
+   "triangle": [
+    4242,
+    4226,
+    4216
+   ],
+   "dot_SQ_LBS": 0.2411,
+   "retournement_relatif_LBS": false,
+   "retournement_seulement_repere": true,
+   "mixage_moyen": 0.2722,
+   "angle_dominant_max_deg": 60.0,
+   "angle_relatif_os_deg": 0.0,
+   "ratio_aire_SQ": 0.1656,
+   "ratio_aire_LBS": 0.503,
+   "sv_min_Mv": 0.8955,
+   "sv_max_Mv": 1.0,
+   "rapport_aspect_repos": 0.4756
+  },
+  {
+   "pose": "reelle_R_combo_flex120_genou90",
+   "triangle": [
+    4145,
+    4135,
+    4144
+   ],
+   "dot_SQ_LBS": 0.5335,
+   "retournement_relatif_LBS": false,
+   "retournement_seulement_repere": true,
+   "mixage_moyen": 0.2517,
+   "angle_dominant_max_deg": 120.0,
+   "angle_relatif_os_deg": 0.0,
+   "ratio_aire_SQ": 1.4842,
+   "ratio_aire_LBS": 1.0784,
+   "sv_min_Mv": 0.6595,
+   "sv_max_Mv": 1.0,
+   "rapport_aspect_repos": 0.2535
+  },
+  {
+   "pose": "reelle_R_combo_flex120_genou90",
+   "triangle": [
+    4161,
+    4145,
+    4103
+   ],
+   "dot_SQ_LBS": -0.6956,
+   "retournement_relatif_LBS": true,
+   "retournement_seulement_repere": false,
+   "mixage_moyen": 0.248,
+   "angle_dominant_max_deg": 120.0,
+   "angle_relatif_os_deg": 0.0,
+   "ratio_aire_SQ": 1.1452,
+   "ratio_aire_LBS": 0.5678,
+   "sv_min_Mv": 0.6637,
+   "sv_max_Mv": 1.0,
+   "rapport_aspect_repos": 0.511
+  },
+  {
+   "pose": "reelle_R_combo_flex120_genou90",
+   "triangle": [
+    4161,
+    4135,
+    4145
+   ],
+   "dot_SQ_LBS": 0.229,
+   "retournement_relatif_LBS": false,
+   "retournement_seulement_repere": true,
+   "mixage_moyen": 0.2722,
+   "angle_dominant_max_deg": 120.0,
+   "angle_relatif_os_deg": 0.0,
+   "ratio_aire_SQ": 0.8821,
+   "ratio_aire_LBS": 0.6271,
+   "sv_min_Mv": 0.637,
+   "sv_max_Mv": 1.0,
+   "rapport_aspect_repos": 0.4756
+  },
+  {
+   "pose": "reelle_R_combo_flex60_abd20_int20_genou60",
+   "triangle": [
+    4161,
+    4145,
+    4103
+   ],
+   "dot_SQ_LBS": -0.96,
+   "retournement_relatif_LBS": true,
+   "retournement_seulement_repere": false,
+   "mixage_moyen": 0.248,
+   "angle_dominant_max_deg": 62.48,
+   "angle_relatif_os_deg": 0.0,
+   "ratio_aire_SQ": 0.3874,
+   "ratio_aire_LBS": 0.6193,
+   "sv_min_Mv": 0.8941,
+   "sv_max_Mv": 1.0,
+   "rapport_aspect_repos": 0.511
+  },
+  {
+   "pose": "reelle_R_flex120",
+   "triangle": [
+    4145,
+    4135,
+    4144
+   ],
+   "dot_SQ_LBS": 0.5335,
+   "retournement_relatif_LBS": false,
+   "retournement_seulement_repere": true,
+   "mixage_moyen": 0.2517,
+   "angle_dominant_max_deg": 120.0,
+   "angle_relatif_os_deg": 0.0,
+   "ratio_aire_SQ": 1.4842,
+   "ratio_aire_LBS": 1.0784,
+   "sv_min_Mv": 0.6595,
+   "sv_max_Mv": 1.0,
+   "rapport_aspect_repos": 0.2535
+  },
+  {
+   "pose": "reelle_R_flex120",
+   "triangle": [
+    4161,
+    4145,
+    4103
+   ],
+   "dot_SQ_LBS": -0.6956,
+   "retournement_relatif_LBS": true,
+   "retournement_seulement_repere": false,
+   "mixage_moyen": 0.248,
+   "angle_dominant_max_deg": 120.0,
+   "angle_relatif_os_deg": 0.0,
+   "ratio_aire_SQ": 1.1452,
+   "ratio_aire_LBS": 0.5678,
+   "sv_min_Mv": 0.6637,
+   "sv_max_Mv": 1.0,
+   "rapport_aspect_repos": 0.511
+  },
+  {
+   "pose": "reelle_R_flex120",
+   "triangle": [
+    4161,
+    4135,
+    4145
+   ],
+   "dot_SQ_LBS": 0.229,
+   "retournement_relatif_LBS": false,
+   "retournement_seulement_repere": true,
+   "mixage_moyen": 0.2722,
+   "angle_dominant_max_deg": 120.0,
+   "angle_relatif_os_deg": 0.0,
+   "ratio_aire_SQ": 0.8821,
+   "ratio_aire_LBS": 0.6271,
+   "sv_min_Mv": 0.637,
+   "sv_max_Mv": 1.0,
+   "rapport_aspect_repos": 0.4756
+  },
+  {
+   "pose": "reelle_R_flex60",
+   "triangle": [
+    4145,
+    4135,
+    4144
+   ],
+   "dot_SQ_LBS": 0.3917,
+   "retournement_relatif_LBS": false,
+   "retournement_seulement_repere": true,
+   "mixage_moyen": 0.2517,
+   "angle_dominant_max_deg": 60.0,
+   "angle_relatif_os_deg": 0.0,
+   "ratio_aire_SQ": 0.3846,
+   "ratio_aire_LBS": 0.651,
+   "sv_min_Mv": 0.9009,
+   "sv_max_Mv": 1.0,
+   "rapport_aspect_repos": 0.2535
+  },
+  {
+   "pose": "reelle_R_flex60",
+   "triangle": [
+    4161,
+    4145,
+    4103
+   ],
+   "dot_SQ_LBS": -0.8003,
+   "retournement_relatif_LBS": true,
+   "retournement_seulement_repere": false,
+   "mixage_moyen": 0.248,
+   "angle_dominant_max_deg": 60.0,
+   "angle_relatif_os_deg": 0.0,
+   "ratio_aire_SQ": 0.556,
+   "ratio_aire_LBS": 0.5875,
+   "sv_min_Mv": 0.902,
+   "sv_max_Mv": 1.0,
+   "rapport_aspect_repos": 0.511
+  }
+ ],
+ "correlations_entrejambe_AUC": {
+  "mixage_moyen": {
+   "AUC": 0.772554507235041,
+   "median_positifs": 0.2516999964286884,
+   "median_negatifs": 0.15083333297173177,
+   "n_positifs": 32,
+   "n_negatifs": 2557
+  },
+  "angle_dominant_max_deg": {
+   "AUC": 0.8966317950723504,
+   "median_positifs": 105.0,
+   "median_negatifs": 0.0,
+   "n_positifs": 32,
+   "n_negatifs": 2557
+  },
+  "angle_relatif_os_deg": {
+   "AUC": 0.4585451701212358,
+   "median_positifs": 0.0,
+   "median_negatifs": 0.0,
+   "n_positifs": 32,
+   "n_negatifs": 2557
+  },
+  "ratio_aire_SQ": {
+   "AUC": 0.41721255377395383,
+   "median_positifs": 0.8820502479304289,
+   "median_negatifs": 0.9999999999999998,
+   "n_positifs": 32,
+   "n_negatifs": 2557
+  },
+  "ratio_aire_LBS": {
+   "AUC": 0.34495991396167386,
+   "median_positifs": 0.6390103329405343,
+   "median_negatifs": 1.0,
+   "n_positifs": 32,
+   "n_negatifs": 2557
+  },
+  "sv_min_Mv": {
+   "AUC": 0.12401007039499413,
+   "median_positifs": 0.7165681142965479,
+   "median_negatifs": 0.9999999999999999,
+   "n_positifs": 32,
+   "n_negatifs": 2557
+  },
+  "rapport_aspect_repos": {
+   "AUC": 0.588543703558858,
+   "median_positifs": 0.47557605377164897,
+   "median_negatifs": 0.3719090792370671,
+   "n_positifs": 32,
+   "n_negatifs": 2557
+  }
+ },
+ "experience_affectation_dure": {
+  "n_sommets_concernes": 13,
+  "n_controle": 13,
+  "poses": {
+   "generative_hanche_G_75": {
+    "nouveaux_base": 2,
+    "nouveaux_apres_affectation_dure_sommets_concernes": 3,
+    "nouveaux_apres_affectation_dure_controle": 2
+   },
+   "generative_hanche_G_105": {
+    "nouveaux_base": 3,
+    "nouveaux_apres_affectation_dure_sommets_concernes": 4,
+    "nouveaux_apres_affectation_dure_controle": 3
+   },
+   "generative_hanche_G_120": {
+    "nouveaux_base": 4,
+    "nouveaux_apres_affectation_dure_sommets_concernes": 4,
+    "nouveaux_apres_affectation_dure_controle": 4
+   },
+   "reelle_L_combo_flex120_genou90": {
+    "nouveaux_base": 4,
+    "nouveaux_apres_affectation_dure_sommets_concernes": 4,
+    "nouveaux_apres_affectation_dure_controle": 4
+   },
+   "reelle_L_combo_flex60_abd20_int20_genou60": {
+    "nouveaux_base": 3,
+    "nouveaux_apres_affectation_dure_sommets_concernes": 3,
+    "nouveaux_apres_affectation_dure_controle": 2
+   },
+   "reelle_L_flex120": {
+    "nouveaux_base": 4,
+    "nouveaux_apres_affectation_dure_sommets_concernes": 4,
+    "nouveaux_apres_affectation_dure_controle": 4
+   },
+   "reelle_L_flex60": {
+    "nouveaux_base": 3,
+    "nouveaux_apres_affectation_dure_sommets_concernes": 3,
+    "nouveaux_apres_affectation_dure_controle": 3
+   },
+   "reelle_R_combo_flex120_genou90": {
+    "nouveaux_base": 3,
+    "nouveaux_apres_affectation_dure_sommets_concernes": 4,
+    "nouveaux_apres_affectation_dure_controle": 3
+   },
+   "reelle_R_combo_flex60_abd20_int20_genou60": {
+    "nouveaux_base": 1,
+    "nouveaux_apres_affectation_dure_sommets_concernes": 3,
+    "nouveaux_apres_affectation_dure_controle": 1
+   },
+   "reelle_R_flex120": {
+    "nouveaux_base": 3,
+    "nouveaux_apres_affectation_dure_sommets_concernes": 4,
+    "nouveaux_apres_affectation_dure_controle": 3
+   },
+   "reelle_R_flex60": {
+    "nouveaux_base": 2,
+    "nouveaux_apres_affectation_dure_sommets_concernes": 2,
+    "nouveaux_apres_affectation_dure_controle": 2
+   }
+  }
+ }
+}

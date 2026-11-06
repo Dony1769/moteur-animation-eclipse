@@ -1141,3 +1141,18 @@ Voir entrée 206.
 
 ## 164. Un maximum ne résume pas une distribution
 Voir entrée 207 et docs/rapports/skinning/comparaison_morphologies/RAPPORT_comparaison.md.
+
+## 165. Un compte doit nommer son unité
+Voir entrée 208 et docs/rapports/skinning/maria_retournements/RAPPORT_maria_retournements.md.
+
+## 166. Une expérience de sensibilité n'est pas une preuve de mécanisme
+Voir entrée 209.
+
+## 167. Une corrélation avec la déformation n'est pas une cause
+Voir entrée 210.
+
+## 168. Un taux global égal peut cacher une queue différente
+Voir entrée 211 et docs/rapports/skinning/regionale/tableau_regional.md.
+
+## 169. Un volume n'est mesuré que sur une surface fermée et orientée
+Voir entrée 212.
