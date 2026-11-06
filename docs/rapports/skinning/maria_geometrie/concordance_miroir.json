@@ -1,0 +1,43 @@
+{
+ "convention": "mesure A (introduit par SQ) ; pose gauche/droite réelles, non miroir exactes",
+ "paires": [
+  {
+   "pose_gauche": "reelle_L_flex120",
+   "pose_droite": "reelle_R_flex120",
+   "nouveaux_gauche": 4,
+   "gauche_dont_miroir_droite_retourne": 3,
+   "gauche_sans_miroir": 0,
+   "nouveaux_droite": 3,
+   "droite_dont_miroir_gauche_retourne": 3
+  },
+  {
+   "pose_gauche": "reelle_L_flex60",
+   "pose_droite": "reelle_R_flex60",
+   "nouveaux_gauche": 3,
+   "gauche_dont_miroir_droite_retourne": 2,
+   "gauche_sans_miroir": 0,
+   "nouveaux_droite": 2,
+   "droite_dont_miroir_gauche_retourne": 2
+  },
+  {
+   "pose_gauche": "reelle_L_combo_flex120_genou90",
+   "pose_droite": "reelle_R_combo_flex120_genou90",
+   "nouveaux_gauche": 4,
+   "gauche_dont_miroir_droite_retourne": 3,
+   "gauche_sans_miroir": 0,
+   "nouveaux_droite": 3,
+   "droite_dont_miroir_gauche_retourne": 3
+  },
+  {
+   "pose_gauche": "reelle_L_combo_flex60_abd20_int20_genou60",
+   "pose_droite": "reelle_R_combo_flex60_abd20_int20_genou60",
+   "nouveaux_gauche": 3,
+   "gauche_dont_miroir_droite_retourne": 1,
+   "gauche_sans_miroir": 0,
+   "nouveaux_droite": 1,
+   "droite_dont_miroir_gauche_retourne": 1
+  }
+ ],
+ "total_gauche": 14,
+ "total_gauche_concordant": 9
+}

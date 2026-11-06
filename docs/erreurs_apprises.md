@@ -1489,3 +1489,26 @@ Résultat (docs/rapports/phase4_psd_hanche_genou.json) : genou plis 0–4, étir
   masculin et le féminin sont fermés, orientés et connexes : leur volume est mesurable.
 - Règle : vérifier la fermeture, l'orientation et les composantes avant tout volume ; marquer le résultat non fiable
   sinon. Un volume global ne prouve pas une conservation locale.
+
+## 213. Une courbure discrète près d'un bord ouvert n'est pas une courbure
+- Constat : le défaut angulaire d'un sommet de bord utilise π au lieu de 2π ; près d'un bord ouvert (1 508 sommets de
+  bord chez Maria), il prend des valeurs négatives (−1,35 pour le triangle 4102). Ce n'est pas une courbure physique.
+- Règle : exclure ou marquer les sommets de bord dans toute mesure de courbure ; ne jamais interpréter une courbure
+  moyenne qui contient un sommet de bord.
+
+## 214. Un effectif identique entre deux côtés ne démontre pas la symétrie
+- Constat : les effectifs genou gauche et droit de Maria étaient identiques (147 et 147). La comparaison appariée
+  (correspondance miroir des sommets, des triangles, des poids et des poses) montre une symétrie de repos réelle,
+  mais des poses L et R qui ne sont pas des miroirs exacts : la concordance est de 9 sur 14, pas totale.
+- Règle : vérifier la symétrie par appariement géométrique et par paires de poses, jamais par égalité de compteurs.
+
+## 215. Une mesure qui ne se déclenche jamais doit être signalée comme inactive
+- Constat : la mesure C (inversion par rapport à la forme SQ propre) ne se déclenche dans aucun des 77 cas.
+  Elle ne peut donc ni valider ni invalider un mécanisme sur ce jeu de données.
+- Règle : une mesure sans aucun déclenchement se rapporte comme « non discriminante sur ce jeu », pas comme validée.
+
+## 216. Un compte écrit avant recalcul est une erreur de rédaction
+- Constat : le rapport géométrique a d'abord écrit « 14 occurrences » pour la mesure B sans l'avoir recalculée sur les
+  77 cas (la valeur exacte est 18 : 14 parmi les nouvelles inversions, 4 hors de A). La correction a été faite après
+  recomptage.
+- Règle : chaque nombre d'un rapport est tiré d'une sortie de script, jamais d'un souvenir de résumé.

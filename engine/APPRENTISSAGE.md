@@ -1156,3 +1156,15 @@ Voir entrée 211 et docs/rapports/skinning/regionale/tableau_regional.md.
 
 ## 169. Un volume n'est mesuré que sur une surface fermée et orientée
 Voir entrée 212.
+
+## 170. Une courbure discrète n'a pas de sens au bord ouvert
+Voir entrée 213.
+
+## 171. L'égalité de deux compteurs n'est pas une symétrie
+Voir entrée 214 et docs/rapports/skinning/maria_geometrie/RAPPORT_geometrie.md.
+
+## 172. Une mesure inactive ne valide rien
+Voir entrée 215.
+
+## 173. Chaque nombre d'un rapport vient d'une sortie
+Voir entrée 216.
