@@ -1126,3 +1126,9 @@ Voir entrée 201.
 ## 159. Une répartition spatiale à histogramme fixé change le résultat
 Dans le plan de jonction, à histogramme identique, la répartition spatiale modifie fortement la régression. Un
 histogramme de poids ne suffit donc pas à décrire un défaut. Voir docs/rapports/skinning/terme_G/RAPPORT_terme_G.md.
+
+## 160. Un compte doit porter sur les éléments nouveaux, pas sur les totaux
+Voir entrée 203.
+
+## 161. Une reproduction synthétique se juge sur des métriques réelles mesurées
+Un patch qui présente la régression ne suffit pas. Voir entrée 204 et docs/rapports/skinning/defaut_reel/RAPPORT_defaut_reel.md.

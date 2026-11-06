@@ -1428,3 +1428,17 @@ Résultat (docs/rapports/phase4_psd_hanche_genou.json) : genou plis 0–4, étir
   des valeurs de l'ordre de 20. L'excédent max et l'étirement max sont alors peu représentatifs.
 - Règle : rapporter aussi une statistique robuste (part régressée, médiane pondérée par la longueur) et ne pas
   conclure à un effet « arêtes non uniformes » sur le seul excédent max.
+
+## 203. Un compte de retournements par totaux masque les triangles nouveaux
+- Constat : le rapport terme G annonçait 3 configurations sur 144 avec retournements SQ supplémentaires. Ce chiffre
+  comparait les totaux SQ et LBS. Le compte par triangle (SQ retourné, LBS non retourné) donne 31 configurations et
+  769 triangles.
+- Correction : compter les triangles nouveaux, pas les totaux. Le rapport terme G est corrigé en pied de page.
+- Règle : une propriété « pas de nouveau retournement » se mesure par triangle, en intersection, jamais par différence
+  de totaux.
+
+## 204. Un patch appariement par formule à deux paramètres ne reproduit pas les métriques réelles
+- Constat : le patch apparié (pas, largeur déduite du gradient, angles réels) surestime la part régressée d'un facteur
+  ~3 et |G| d'un facteur ~2,4. Le gradient obtenu (2,73 /m) n'est pas celui visé (3,73 /m).
+- Règle : un patch n'est représentatif que s'il reproduit quantitativement les mesures réelles, après calibrage de
+  ses paramètres sur les seules mesures géométriques, pas sur la régression.

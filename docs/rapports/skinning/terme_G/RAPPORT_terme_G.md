@@ -121,3 +121,9 @@ Hypothétique : que ce mécanisme soit exactement celui du défaut masculin rée
 réelle de la régression comparée au maillage masculin.
 
 Non démontré : une formulation corrigée. Aucune nouvelle méthode n'est validée ni intégrée.
+
+## Correction (voir docs/rapports/skinning/defaut_reel/RAPPORT_defaut_reel.md, phase 3B)
+
+Le compte « 3 configurations sur 144 avec retournements supplémentaires » comparait les totaux de retournements SQ et LBS.
+Le compte correct, triangle par triangle (SQ retourné et LBS non retourné), donne 31 configurations sur 144, pour 769
+triangles au total. Ce tableau de la section 4, point 6, est donc remplacé par ce compte corrigé.

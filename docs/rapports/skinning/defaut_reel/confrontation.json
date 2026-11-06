@@ -1,0 +1,356 @@
+{
+ "phase2": {
+  "reel_zone_L_flex120": {
+   "metriques": {
+    "nb_aretes": 1178,
+    "longueur_mediane_m": 0.02869641907920764,
+    "gradient_L1_mediane_par_m": 3.7310962576400986,
+    "G_sur_longueur_mediane": 0.07068563839086381,
+    "Mvd_sur_longueur_mediane": 0.996895390461802,
+    "part_regression_0_05": 0.08913412563667232,
+    "exc_p50": -0.022047882468390734,
+    "exc_p90": 0.04251222730101451,
+    "exc_p99": 0.17939196132767193,
+    "rho_SQ_p99": 1.8147452587024508
+   },
+   "angles_os_remarquables_deg": {
+    "mixamorig:LeftUpLeg": 120.0
+   }
+  },
+  "variantes": {
+   "V0_apparie": {
+    "parametres": {
+     "h": 0.02869641907920764,
+     "largeur": 0.536035487131868,
+     "th_G": 120.00000394341166,
+     "th_D": 0.0,
+     "arrangement": "lisse"
+    },
+    "metriques": {
+     "nb_aretes": 1240,
+     "longueur_mediane_m": 0.02869641907920764,
+     "gradient_L1_mediane_par_m": 2.7323834447348236,
+     "G_sur_longueur_mediane": 0.16681211266986873,
+     "Mvd_sur_longueur_mediane": 0.8945736611962626,
+     "part_regression_0_05": 0.25967741935483873,
+     "exc_p50": 0.0013665213287586964,
+     "exc_p90": 0.11956763678425467,
+     "exc_p99": 0.20782088188373352,
+     "rho_SQ_p99": 1.2260573791424694
+    }
+   },
+   "V1_largeur_0.30": {
+    "parametres": {
+     "h": 0.02869641907920764,
+     "largeur": 0.3,
+     "th_G": 120.00000394341166,
+     "th_D": 0.0,
+     "arrangement": "lisse"
+    },
+    "metriques": {
+     "nb_aretes": 1240,
+     "longueur_mediane_m": 0.02869641907920764,
+     "gradient_L1_mediane_par_m": 4.714045207910314,
+     "G_sur_longueur_mediane": 0.03990707087112369,
+     "Mvd_sur_longueur_mediane": 1.0,
+     "part_regression_0_05": 0.19435483870967743,
+     "exc_p50": 0.0013035460936141052,
+     "exc_p90": 0.09129654176234747,
+     "exc_p99": 0.21626314821520445,
+     "rho_SQ_p99": 1.3328242668485275
+    }
+   },
+   "V2_pas_0.10": {
+    "parametres": {
+     "h": 0.1,
+     "largeur": 0.536035487131868,
+     "th_G": 120.00000394341166,
+     "th_D": 0.0,
+     "arrangement": "lisse"
+    },
+    "metriques": {
+     "nb_aretes": 1240,
+     "longueur_mediane_m": 0.1,
+     "gradient_L1_mediane_par_m": 0.0,
+     "G_sur_longueur_mediane": 0.0,
+     "Mvd_sur_longueur_mediane": 1.0,
+     "part_regression_0_05": 0.12419354838709677,
+     "exc_p50": 6.221530549732623e-05,
+     "exc_p90": 0.06531510763608514,
+     "exc_p99": 0.29714802349491465,
+     "rho_SQ_p99": 1.503319222883813
+    }
+   },
+   "V3_angles_120_0": {
+    "parametres": {
+     "h": 0.02869641907920764,
+     "largeur": 0.536035487131868,
+     "th_G": 120.0,
+     "th_D": 0.0,
+     "arrangement": "lisse"
+    },
+    "metriques": {
+     "nb_aretes": 1240,
+     "longueur_mediane_m": 0.02869641907920764,
+     "gradient_L1_mediane_par_m": 2.7323834447348236,
+     "G_sur_longueur_mediane": 0.16681210935560992,
+     "Mvd_sur_longueur_mediane": 0.894573665632383,
+     "part_regression_0_05": 0.25967741935483873,
+     "exc_p50": 0.0013665212430726825,
+     "exc_p90": 0.11956762691869845,
+     "exc_p99": 0.2078208679245159,
+     "rho_SQ_p99": 1.226057368827964
+    }
+   },
+   "V4_angles_90_0": {
+    "parametres": {
+     "h": 0.02869641907920764,
+     "largeur": 0.536035487131868,
+     "th_G": 90.0,
+     "th_D": 0.0,
+     "arrangement": "lisse"
+    },
+    "metriques": {
+     "nb_aretes": 1240,
+     "longueur_mediane_m": 0.02869641907920764,
+     "gradient_L1_mediane_par_m": 2.7323834447348236,
+     "G_sur_longueur_mediane": 0.13620151694619742,
+     "Mvd_sur_longueur_mediane": 0.9310431580555073,
+     "part_regression_0_05": 0.16451612903225807,
+     "exc_p50": 0.0005203587233251206,
+     "exc_p90": 0.06827040346038767,
+     "exc_p99": 0.11828807269831572,
+     "rho_SQ_p99": 1.1444888361568053
+    }
+   },
+   "V5_arrangement_aleatoire": {
+    "parametres": {
+     "h": 0.02869641907920764,
+     "largeur": 0.536035487131868,
+     "th_G": 120.00000394341166,
+     "th_D": 0.0,
+     "arrangement": "aleatoire"
+    },
+    "metriques": {
+     "nb_aretes": 1240,
+     "longueur_mediane_m": 0.02869641907920764,
+     "gradient_L1_mediane_par_m": 26.382834650370636,
+     "G_sur_longueur_mediane": 1.778753691201814,
+     "Mvd_sur_longueur_mediane": 0.9100926069807561,
+     "part_regression_0_05": 0.0532258064516129,
+     "exc_p50": -1.1678938737588282,
+     "exc_p90": 0.004764473221621991,
+     "exc_p99": 0.14600946767279896,
+     "rho_SQ_p99": 1.1254447546161368
+    }
+   }
+  }
+ },
+ "phase3A": {
+  "reel_pose_L_flex120": {
+   "nb_sommets_pur_voisinage_pur_meme_os": 2751,
+   "deplacement_max_voisinage_pur_m": 0.00879297129663508,
+   "deplacement_par_distance_au_bord_pur": {
+    "0": {
+     "nb": 274,
+     "deplacement_max_m": 0.013850528883543323,
+     "deplacement_median_m": 1.2252985129612048e-06
+    },
+    "1": {
+     "nb": 242,
+     "deplacement_max_m": 0.00879297129663508,
+     "deplacement_median_m": 3.3032584092337414e-07
+    },
+    "2": {
+     "nb": 217,
+     "deplacement_max_m": 0.000111299285003762,
+     "deplacement_median_m": 1.8188888249781057e-07
+    },
+    "3": {
+     "nb": 218,
+     "deplacement_max_m": 2.2440164667807393e-06,
+     "deplacement_median_m": 1.6400862881765498e-07
+    },
+    "4": {
+     "nb": 212,
+     "deplacement_max_m": 1.600364583317753e-06,
+     "deplacement_median_m": 1.234381492117516e-07
+    },
+    "5": {
+     "nb": 202,
+     "deplacement_max_m": 1.1420681789142141e-06,
+     "deplacement_median_m": 9.66176977066199e-08
+    },
+    "6": {
+     "nb": 178,
+     "deplacement_max_m": 8.154961197928263e-07,
+     "deplacement_median_m": 7.964613623274172e-08
+    },
+    "7": {
+     "nb": 154,
+     "deplacement_max_m": 5.826433671478434e-07,
+     "deplacement_median_m": 4.129321521146688e-08
+    }
+   }
+  },
+  "patch_V0": {
+   "nb_sommets_pur_voisinage_pur_meme_os": 0,
+   "deplacement_max_voisinage_pur_m": null,
+   "deplacement_par_distance_au_bord_pur": {
+    "0": {
+     "nb": 22,
+     "deplacement_max_m": 0.0769164111147562
+    },
+    "1": {
+     "nb": 0,
+     "deplacement_max_m": null
+    },
+    "2": {
+     "nb": 0,
+     "deplacement_max_m": null
+    },
+    "3": {
+     "nb": 0,
+     "deplacement_max_m": null
+    },
+    "4": {
+     "nb": 0,
+     "deplacement_max_m": null
+    },
+    "5": {
+     "nb": 0,
+     "deplacement_max_m": null
+    },
+    "6": {
+     "nb": 0,
+     "deplacement_max_m": null
+    },
+    "7": {
+     "nb": 0,
+     "deplacement_max_m": null
+    }
+   }
+  }
+ },
+ "phase3B": {
+  "patch_V0_nouveaux_retournements": [],
+  "nb_nouveaux_retournements_patch_V0": 0,
+  "config_120_moins60_lisse": {
+   "nb_nouveaux_retournements": 4,
+   "triangles": [
+    {
+     "sommets": [
+      180,
+      181,
+      202
+     ],
+     "poids_sommets": [
+      [
+       0.0,
+       0.45,
+       0.55
+      ],
+      [
+       0.0,
+       0.55,
+       0.45
+      ],
+      [
+       0.0,
+       0.65,
+       0.35
+      ]
+     ],
+     "aire_repos": 0.0004500000000000008,
+     "aire_LBS": 0.0002716615541441231,
+     "aire_SQ": 0.00022040182938724175,
+     "ecart_poids_max_arete": 0.20000000000000007
+    },
+    {
+     "sommets": [
+      180,
+      202,
+      201
+     ],
+     "poids_sommets": [
+      [
+       0.0,
+       0.45,
+       0.55
+      ],
+      [
+       0.0,
+       0.65,
+       0.35
+      ],
+      [
+       0.0,
+       0.45,
+       0.55
+      ]
+     ],
+     "aire_repos": 0.0004500000000000008,
+     "aire_LBS": 0.0005550000000000008,
+     "aire_SQ": 0.0002490946428210484,
+     "ecart_poids_max_arete": 0.20000000000000007
+    },
+    {
+     "sommets": [
+      201,
+      202,
+      223
+     ],
+     "poids_sommets": [
+      [
+       0.0,
+       0.45,
+       0.55
+      ],
+      [
+       0.0,
+       0.65,
+       0.35
+      ],
+      [
+       0.0,
+       0.65,
+       0.35
+      ]
+     ],
+     "aire_repos": 0.00045,
+     "aire_LBS": 0.0005549999999999998,
+     "aire_SQ": 0.000250324785083178,
+     "ecart_poids_max_arete": 0.20000000000000007
+    },
+    {
+     "sommets": [
+      201,
+      223,
+      222
+     ],
+     "poids_sommets": [
+      [
+       0.0,
+       0.45,
+       0.55
+      ],
+      [
+       0.0,
+       0.65,
+       0.35
+      ],
+      [
+       0.0,
+       0.45,
+       0.55
+      ]
+     ],
+     "aire_repos": 0.00045,
+     "aire_LBS": 0.0005549999999999999,
+     "aire_SQ": 0.0002986820578151989,
+     "ecart_poids_max_arete": 0.20000000000000007
+    }
+   ]
+  }
+ }
+}
