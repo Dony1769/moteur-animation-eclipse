@@ -51,6 +51,11 @@ indice hors bornes. Ce contrôle porte sur l'implémentation du système ; il ne
 - Maria : 1 510 arêtes frontières, 73 composantes connexes. Le volume est **non fiable** et n'est pas interprété.
   Les orientations sont cohérentes, mais la surface n'est pas fermée.
 
+**Les 7 triangles.** (4226, 4225, 4216), (4242, 4226, 4216), (4242, 4184, 4226), (4102, 4172, 4170),
+(4145, 4135, 4144), (4161, 4145, 4103), (4161, 4135, 4145). Six d'entre eux ont un angle d'os dominant de 120° dans
+au moins une pose. **Le triangle (4102, 4172, 4170) se retourne avec un angle dominant nul** (3 occurrences, poses
+hanche gauche 120° et flexion 120° gauche) : la corrélation par angle n'explique donc pas tous les cas.
+
 ## 2. Corrélations (observations, pas mécanisme)
 
 Comparaison des 32 occurrences aux triangles de l'entrejambe qui ne sont pas retournés par SQ, pendant les mêmes
