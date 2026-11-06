@@ -42,7 +42,7 @@ Lecture (ne pas confondre maximum et qualité globale) :
 - Sur la **distribution par arête**, le masculin et le féminin sont presque identiques (p99 de la différence : 0,0268
   contre 0,0267 ; part régressée 0,50 % contre 0,51 %). La différence visible sur le maximum n'apparaît donc pas dans la
   distribution.
-- Maria a la part régressée la plus faible en moyenne, mais la **pire** propagation vers les poids purs (0,045 m à
+- La part régressée moyenne est la même pour les trois (≈ 0,5 %) ; Maria a un p99 de différence plus faible (0,0166), mais la **pire** propagation vers les poids purs (0,045 m à
   l'anneau 0, contre 0,009 masculin et 0,014 féminin) et les seuls retournements nouveaux.
 - Le volume diminue davantage avec SQ qu'avec LBS pour le masculin et le féminin (de 0,010 à 0,012 de plus en relatif),
   alors qu'il augmente avec SQ pour Maria.
